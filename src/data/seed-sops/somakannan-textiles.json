@@ -1,0 +1,2350 @@
+{
+ "id": "somakannan-textiles",
+ "company": "Somakannan Textiles",
+ "industry": "Home textiles manufacturing and export",
+ "industryTags": [
+  "manufacturing",
+  "textiles"
+ ],
+ "sourceFile": "SOP/Somakanan SOP Manual.docx",
+ "frontMatter": {
+  "introduction": "This Standard Operating Procedure (SOP) manual is designed to provide clear, step-by-step instructions for all operational processes at Somakannan Textiles. As manufacturers and exporters of home textiles, our commitment to quality and excellence is reflected in this document. It serves as a vital resource for employees, ensuring consistency, efficiency, and compliance across all operations.\n\nBy adhering to these procedures, we aim to enhance the quality of our products, optimize production workflows, and maintain a safe, sustainable, and productive working environment. This SOP manual underscores our dedication to manufacturing high-quality home textile products while meeting the highest standards in the global textile industry.",
+  "objective": "",
+  "scope": "",
+  "reviewMechanism": ""
+ },
+ "sops": [
+  {
+   "title": "Responding to Workplace Safety Incidents and Mitigating Risks",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Health & Safety Manager",
+   "sourceWords": 485,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes clear guidelines for identifying, reporting, and managing workplace safety incidents, risks, and hazards at Somakannan Textiles. The objective is to provide a safe and healthy work environment, minimize the occurrence of incidents through proactive measures, and foster a culture of safety across all operational areas."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Somakannan Textiles facilities, including production units, administrative offices, storage spaces, and other work areas. It is relevant to all employees, contractors, and stakeholders involved in workplace safety and risk management practices, ensuring compliance with local and international safety standards."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Reporting Protocol",
+     "steps": [
+      {
+       "heading": "Immediate Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any workplace safety incident, near-miss, or hazardous condition must be immediately reported by the affected employee or witness to their direct supervisor. This includes events such as equipment malfunctions, slips, falls, or exposure to hazardous materials."
+        }
+       ],
+       "responsible": "Affected employee or witness"
+      },
+      {
+       "heading": "Reporting Channels",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incidents can be reported via:"
+        },
+        {
+         "type": "numbered",
+         "text": "In-person communication to the supervisor.\nEmail: safety@somakannantextiles.com."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The supervisor must complete an Incident Report Form, capturing:"
+        },
+        {
+         "type": "numbered",
+         "text": "Date and time of the incident.\nLocation of the incident.\nNames of individuals involved.\nA detailed description of the incident.\nImmediate corrective actions taken."
+        }
+       ],
+       "responsible": "Supervisor"
+      },
+      {
+       "heading": "Initial Response",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Supervisors must secure the incident area to prevent further harm. Immediate actions include: Administering first aid, evacuating the area, if necessary and shutting down faulty equipment."
+        }
+       ],
+       "responsible": "Supervisor"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Risk Assessment and Management",
+     "steps": [
+      {
+       "heading": "Conducting Risk Assessments",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Risk assessments are conducted annually and as needed across all Somakannan Textiles facilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Each work area maintains a Risk Register documenting: identified hazards, likelihood and severity of risks, and mitigation measures."
+        }
+       ]
+      },
+      {
+       "heading": "Risk Control Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Engineering Controls: Modifications to equipment or workspaces to eliminate hazards."
+        },
+        {
+         "type": "paragraph",
+         "text": "Administrative Controls: Implementation of safety protocols, training, and standard procedures."
+        },
+        {
+         "type": "paragraph",
+         "text": "Personal Protective Equipment (PPE): Provision of gloves, masks, goggles, and other protective gear as required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Investigating Workplace Safety Incidents",
+     "steps": [
+      {
+       "heading": "Investigation Team",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "An investigation team comprising the Safety Officer, relevant supervisors, and other key personnel will handle reported incidents."
+        }
+       ],
+       "responsible": "Safety Officer"
+      },
+      {
+       "heading": "Root Cause Analysis (RCA)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The team performs an RCA to uncover the underlying causes of the incident. The findings are documented along with Corrective and Preventive Actions (CAPA)."
+        }
+       ],
+       "responsible": "Investigation team"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Safety Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mandatory Training: All new hires must complete safety training during onboarding. Training covers:"
+      },
+      {
+       "type": "numbered",
+       "text": "Hazard identification.\nSafe work practices.\nEmergency response procedures.\nProper use of equipment and PPE."
+      },
+      {
+       "type": "paragraph",
+       "text": "Refresher training is conducted annually or after major incidents."
+      },
+      {
+       "type": "paragraph",
+       "text": "Record-Keeping: The HR and Safety departments maintain detailed records of training attendance and evaluation results."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Report incidents, comply with safety protocols, and participate in training sessions."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Document incidents, secure affected areas, conduct regular inspections, and report to the Safety Officer."
+       ]
+      },
+      {
+       "role": "Safety Officer",
+       "responsibilities": [
+        "Oversee incident investigations, manage risk assessments, and organize safety training programs."
+       ]
+      },
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Support safety initiatives, review and approve protocols, and allocate necessary resources."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years or as required based on:"
+      },
+      {
+       "type": "numbered",
+       "text": "Changes in regulatory standards.\nSignificant workplace incidents.\nFeedback from safety audits and inspections."
+      },
+      {
+       "type": "paragraph",
+       "text": "The Health & Safety Manager will oversee the review process and implement updates as necessary."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Optimizing Water Usage Through Technological Solutions",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "Facility Head",
+   "sourceWords": 464,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish a structured framework for optimizing domestic water consumption at Somakannan Textiles through the integration of water-efficient technologies and infrastructure upgrades. This initiative aims to reduce freshwater demand, minimize wastage, improve resource efficiency, and support sustainable water management practices in alignment with Indian regulatory requirements and ESG standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all domestic water use areas within Somakannan Textiles. The SOP is applicable to all employees, facility staff, maintenance teams, and management involved in water usage and infrastructure management."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Water Usage Assessment and Baseline Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A comprehensive facility-wide water usage assessment has been conducted to identify high-consumption zones, loss points, and inefficiencies.\nDigital water meters and sub-metering systems are installed to enable zone-wise consumption monitoring.\nBaseline water consumption data has been established and is maintained for benchmarking, performance evaluation, and improvement planning."
+        }
+       ]
+      },
+      {
+       "heading": "Technological Systems for Water Optimization",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Automated water control systems are installed and operational, including:\nSmart monitoring technologies are implemented, including:\nLeak detection and loss prevention technologies are in place, including:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Sensor-based flow control devices"
+        },
+        {
+         "text": "Automatic shut-off valves"
+        },
+        {
+         "text": "Timer-based water control units"
+        },
+        {
+         "text": "Pressure-regulating valves to control excess flow"
+        },
+        {
+         "text": "Digital water meters with data logging"
+        },
+        {
+         "text": "Smart leak detection sensors"
+        },
+        {
+         "text": "Pipeline monitoring systems"
+        },
+        {
+         "text": "Automated overflow prevention devices in tanks and reservoirs"
+        }
+       ]
+      },
+      {
+       "heading": "Infrastructure Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "High-efficiency, leak-proof pipelines, valves, and fittings are installed across water distribution networks.\nSegregated water distribution systems are maintained to enable controlled distribution and optimized reuse.\nAutomated tank level controllers and overflow prevention systems are operational."
+        }
+       ]
+      },
+      {
+       "heading": "Operation, Maintenance, and Performance Optimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Preventive maintenance schedules are implemented for all water-related systems and technologies.\nRoutine inspections of sensors, valves, pipelines, meters, and control units are carried out.\nConsumption data is analysed to optimize flow rates, system efficiency, and operational performance.\nContinuous improvement actions are implemented based on performance trends and monitoring outputs."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Water consumption is monitored in real-time using water meters and sensors, and data is recorded and analysed to evaluate the effectiveness of upgrades and set benchmarks for water efficiency improvements."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP operates in compliance with:"
+      },
+      {
+       "type": "bullets",
+       "text": "Water (Prevention and Control of Pollution) Act, 1974\nApplicable state and local water regulations\nEnvironmental protection norms\nISO 14001 Environmental Management System principles"
+      },
+      {
+       "type": "paragraph",
+       "text": "All records, monitoring data, audits, and performance reports are maintained for regulatory and certification purposes."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Facility Head",
+       "responsibilities": [
+        "Responsible for operation, maintenance, monitoring, and performance management of all water optimization systems and technologies."
+       ]
+      },
+      {
+       "role": "Sustainability Lead",
+       "responsibilities": [
+        "Responsible for performance reporting, regulatory alignment, ESG integration, and continuous improvement of water efficiency initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed biennially or earlier in the event of regulatory updates, technology upgrades, infrastructure changes, or significant operational modifications. The review process includes performance analysis, system evaluation, risk assessment, and alignment with sustainability objectives. Approved revisions are documented and implemented across the organisation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Optimizing Water Usage through Recycling and Reuse",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Lead",
+   "sourceWords": 661,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the operational framework for water recycling and reuse at Somakannan Textiles. The objective is to reduce freshwater dependency, minimize water wastage, improve resource efficiency, and strengthen sustainable water management practices. These measures support the organisation’s environmental responsibility commitments and long-term sustainability goals."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments and operational areas at Somakannan Textiles, including production support areas, utilities, facility management, housekeeping, maintenance, storage areas, and common infrastructure. The SOP is applicable to all employees, technicians, facility staff, and management involved in water handling and infrastructure operations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "RO Reject Water Recovery and Reuse",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reject water generated from drinking water RO systems is collected through dedicated pipelines and directed to reuse storage tanks."
+        },
+        {
+         "type": "paragraph",
+         "text": "Collected RO reject water is reused for:"
+        },
+        {
+         "type": "bullets",
+         "text": "Floor and surface cleaning\nYard and pathway washing\nUtility washing activities\nGardening and greenbelt maintenance\nFlushing systems where dual plumbing infrastructure exists"
+        },
+        {
+         "type": "paragraph",
+         "text": "Storage tanks are fitted with level sensors and overflow prevention systems to avoid water loss."
+        },
+        {
+         "type": "paragraph",
+         "text": "RO reject reuse systems are inspected regularly to ensure hygienic handling and operational reliability."
+        }
+       ]
+      },
+      {
+       "heading": "AC Condensate Water Recovery",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Condensate water generated from air-conditioning systems (split AC units and HVAC systems) is collected through condensate trays and gravity pipelines."
+        },
+        {
+         "type": "paragraph",
+         "text": "Collected condensate water is stored in dedicated tanks and reused for:"
+        },
+        {
+         "type": "bullets",
+         "text": "Cleaning and housekeeping\nGardening and landscape irrigation\nUtility washing\nFlushing systems were permitted by infrastructure design"
+        },
+        {
+         "type": "paragraph",
+         "text": "Storage systems are equipped with automated level controllers and overflow protection mechanisms."
+        }
+       ]
+      },
+      {
+       "heading": "Rainwater Harvesting and Direct Reuse",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To reduce dependency on groundwater and promote sustainable water reuse practices in alignment with applicable government regulations, Somakannan Textiles has implemented an integrated rainwater harvesting system within its facility infrastructure."
+        },
+        {
+         "type": "bullets",
+         "text": "Strategic Rooftop Collection: Rainwater is collected from the rooftop surfaces of production sheds, weaving and spinning units, warehouses, and administrative buildings. Rooftop structures are designed and maintained to ensure smooth water flow toward designated collection points, free from obstruction and operational interference.\nFirst-Flush Diversion System: An automated first-flush diversion mechanism diverts the initial rainfall runoff, which may contain dust and surface contaminants, away from the storage system. This ensures improved water quality before collection and storage.\nStorage and Filtration Infrastructure: Post-diversion, rainwater is routed through structured filtration units and stored in underground RCC storage tanks. The tanks are designed with protective linings, level indicators, overflow control systems, and maintenance access points to ensure water safety, structural integrity, and operational reliability.\nUtilization of Harvested Rainwater: The harvested rainwater is utilized for non-potable facility and operational purposes, including:\nMonitoring and Maintenance: Water quality and system performance are periodically monitored using defined inspection and maintenance schedules. Storage tanks, filtration systems, and collection channels are cleaned and maintained at regular intervals to prevent contamination and ensure long-term system efficiency and reliability."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Water recycling and reuse activities are monitored through volume tracking of recovered water sources, storage tank level monitoring, and reuse consumption records. Data is documented periodically to assess reduction in freshwater usage and performance of recovery system."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Ensure adherence to local, state, and national water management regulations. Non-compliance will result in necessary corrective actions, including employee retraining and process adjustments. All records related to water recovery, reuse volumes, inspections, and monitoring are maintained for audit and compliance verification."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Responsible for providing resources, infrastructure support, and strategic oversight for water recycling and reuse systems."
+       ]
+      },
+      {
+       "role": "Facility Head",
+       "responsibilities": [
+        "Responsible for operation, maintenance, monitoring, and performance management of all water recovery and reuse infrastructure."
+       ]
+      },
+      {
+       "role": "Sustainability Lead",
+       "responsibilities": [
+        "Responsible for performance tracking, reporting, regulatory alignment, and sustainability integration."
+       ]
+      },
+      {
+       "role": "Operations Team",
+       "responsibilities": [
+        "Responsible for adhering to reuse practices and reporting system issues or inefficiencies."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed every two years or earlier in the event of regulatory changes, infrastructure upgrades, technology additions, or operational modifications. The review process shall include performance data analysis, system effectiveness evaluation, risk assessment, and sustainability alignment. Approved revisions shall be formally documented and implemented across the organisation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Handling, Storage, and Transportation of Hazardous Substances",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "S",
+   "department": "",
+   "owner": "Safety Officer",
+   "sourceWords": 664,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) establishes a controlled system for the labelling, storage, handling, and transportation of hazardous substances at Somakannan Textiles. The procedure ensures protection of employee health and safety, environmental safeguarding, fire and operational risk prevention, and regulatory compliance.\nThe system is designed to minimize exposure risks, prevent incidents, and maintain safe operational conditions across all activities involving hazardous substances arising from manufacturing and maintenance operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all personnel, contractors, and operational units involved in the handling, storage, movement, and logistics of hazardous substances at Somakannan Textiles’ facilities in India. It covers all hazardous substances used or generated during manufacturing, packaging, maintenance, housekeeping, and logistics operations, including production-related inputs, maintenance-related substances, operational consumables, equipment-related substances, and process-generated hazardous materials."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Labelling Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All hazardous substances, containers, storage units, and handling areas are clearly labelled in accordance with applicable Indian safety and industrial standards.\nLabels include standardized identification elements such as:\nSubstance identification\nHazard indication\nHandling instructions\nStorage requirements\nAccess restrictions.\nLabelling information is maintained in updated condition and revised in line with operational changes, risk assessments, and regulatory requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Storage Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Dedicated and controlled hazardous substance storage zones are established and maintained with restricted access and safety signage.\nHazardous substances are stored in structured storage systems designed to prevent instability, leakage, damage, obstruction, and fire risk escalation.\nStorage infrastructure is subject to routine inspection to identify risks related to accumulation, deterioration, unsafe stacking, obstruction, or ignition potential."
+        },
+        {
+         "type": "table",
+         "text": "Material Storage Control Table",
+         "columns": [
+          "Material Category",
+          "Storage Method",
+          "Safety Control Measures"
+         ],
+         "rows": [
+          [
+           "Packaging materials (plastics, wraps, cartons, strapping)",
+           "Stored in covered storage spaces & enclosed containers to prevent damage and scattering",
+           "Fire prevention measures, safe stacking, restricted access"
+          ],
+          [
+           "Combustible materials (fibers, yarn waste, lint, textile waste)",
+           "Stored in controlled zones with fire-resistant arrangements and separation from ignition sources",
+           "Fire safety systems, ventilation, access control"
+          ],
+          [
+           "Machine-related materials (oils, lubricants, belts, spare parts)",
+           "Stored in structured maintenance storage locations with spill-prevention and stability controls",
+           "Organized shelving, secure placement, inspection routines"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Handling Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Only trained and authorized personnel are permitted to handle hazardous substances.\nHandling operations are conducted using appropriate Personal Protective Equipment (PPE) as defined by internal safety requirements.\nHandling activities follow approved operational procedures, safe manual handling practices, and equipment-specific safety instructions.\nControlled operating instructions and safety guidance documents are maintained and accessible at relevant operational locations.\nEmergency preparedness systems, including incident response procedures, emergency control measures, and mock drills, are integrated into operational controls to ensure readiness for incident response."
+        }
+       ]
+      },
+      {
+       "heading": "Transportation Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Transportation of hazardous substances is carried out in accordance with applicable Indian transport safety regulations and factory safety rules\nOnly authorized vehicles, trained operators, and approved material handling equipment are used for internal and external movement activities.\nHazardous substances are properly packaged, sealed, and mechanically secured to prevent tipping, displacement, impact damage, or accidental release during transit.\nTransport consignments are accompanied by emergency response instructions, contact details of responsible personnel, and incident reporting procedures, where applicable.\nAll transport activities are formally documented through movement registers, permits, gate records, and tracking systems to ensure traceability, accountability, and operational control."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Hazardous substance management systems are monitored through routine inspections, internal audits, and documentation reviews. Storage areas, handling practices, labelling systems, and transport controls are periodically assessed for compliance and effectiveness. Deviations are recorded and addressed through corrective and preventive action mechanisms."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All hazardous substance management activities are conducted in accordance with applicable Indian regulations, factory safety rules, fire safety standards, and internal safety policies. Compliance records, inspection logs, transport documentation, and incident reports are maintained as controlled documents for audit and regulatory verification."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Provides governance, resources, and oversight for system implementation and regulatory compliance."
+       ]
+      },
+      {
+       "role": "Safety Officer",
+       "responsibilities": [
+        "Manages operational controls, training, inspections, documentation, and incident management."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Comply with handling, storage, transport, and safety protocols and report unsafe conditions or incidents."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is subject to biennial review to ensure continued regulatory alignment, operational relevance, and risk control effectiveness. Approved revisions are formally documented and communicated through the document control system."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Waste Sorting and Disposal Practices for Optimized Recovery and Reuse",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "Environmental Management",
+   "owner": "Environmental Officer",
+   "sourceWords": 871,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) establishes the operational framework for the effective management of waste generated during manufacturing processes at Somakannan Textiles. It defines the systems and controls in place to minimize waste generation, segregate waste into designated streams, and process waste for internal reuse or external recycling through authorized third parties. This SOP supports sustainability commitments, regulatory compliance, and operational efficiency."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments and personnel involved in manufacturing and waste management activities at Somakannan Textiles. It covers waste reduction controls, segregation systems, recovery mechanisms, and disposal processes for materials including fabric scraps, paper, plastic and packaging materials."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Waste Reduction Controls",
+       "body": []
+      },
+      {
+       "heading": "Fabric Reuse and Repurposing Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Recoverable fabric offcuts and production scraps generated during cutting, stitching, and finishing operations are systematically identified and segregated at source. Segregated materials are processed through internal reuse channels or repurposed into secondary utility products such as dishcloths, cushion fillers, cleaning cloths, and support materials."
+        },
+        {
+         "type": "paragraph",
+         "text": "Optimized cutting layouts, digital pattern planning systems, and material efficiency practices are implemented across production operations to minimize raw material wastage and maximize fabric utilization efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Packaging Optimization Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Packaging systems are structured to minimize material usage through standardized packaging dimensions, compact packaging design, and material reduction strategies. Environmentally preferable packaging materials, including recyclable, reusable, and biodegradable alternatives, are integrated into storage, handling, and dispatch operations to reduce waste generation and disposal impact."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Sorting and Stream-Based Disposal Systems",
+       "body": []
+      },
+      {
+       "heading": "Stream Identification and Documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste generated across operations is formally classified into defined waste streams based on material type, recyclability, and handling requirements. A structured waste stream register is maintained as part of the Environmental Management System (EMS), documenting waste type, source location, volume, handling method, storage controls, and authorized disposal or recovery route."
+        },
+        {
+         "type": "paragraph",
+         "text": "This register ensures traceability, regulatory compliance, and controlled waste flow management across the facility."
+        },
+        {
+         "type": "table",
+         "text": "Waste Stream Mapping Table",
+         "columns": [
+          "Waste Stream",
+          "Source Area",
+          "Segregation Method",
+          "Storage Method",
+          "Recovery / Disposal Route"
+         ],
+         "rows": [
+          [
+           "Fabric scraps / offcuts",
+           "Cutting, stitching, finishing units",
+           "Yellow coloured bins",
+           "Covered containers",
+           "Internal reuse / Authorized recyclers"
+          ],
+          [
+           "Plastic packaging",
+           "Stores, dispatch, packaging",
+           "Black coloured bins",
+           "Designated storage area",
+           "Authorized plastic recyclers"
+          ],
+          [
+           "Paper & cardboard",
+           "Offices, packaging units",
+           "Blue coloured bins",
+           "Dry storage",
+           "Authorized paper recyclers"
+          ],
+          [
+           "Metal scrap",
+           "Maintenance, fabrication areas",
+           "Red coloured bins",
+           "Secured scrap zone",
+           "Authorized scrap dealers"
+          ],
+          [
+           "Biodegradable waste",
+           "Canteen, common areas",
+           "Green Coloured bins",
+           "Closed containers",
+           "Composting / authorized handlers"
+          ],
+          [
+           "General waste",
+           "All operational areas",
+           "General waste bins",
+           "Central collection area",
+           "Municipal disposal system"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Sorting and Segregation Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Clearly labelled and colour-coded waste segregation infrastructure is installed and maintained across all operational and support areas. Waste segregation is enforced at the point of generation through structured placement of designated collection bins and controlled internal movement pathways."
+        },
+        {
+         "type": "paragraph",
+         "text": "Structured workforce awareness and compliance mechanisms are maintained through training programs, visual signage, and operational instructions to ensure consistent adherence to segregation protocols across all departments."
+        }
+       ]
+      },
+      {
+       "heading": "Disposal and Recycling Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reusable fabric waste is routed through controlled internal reuse systems or transferred to authorized third-party recycling agencies. Plastic, paper, metal, and recyclable packaging waste streams are transferred exclusively to certified recyclers through documented disposal channels."
+        },
+        {
+         "type": "paragraph",
+         "text": "Biodegradable waste streams are routed to composting systems or authorized organic waste handlers. General waste is disposed of through regulated municipal waste management systems in compliance with local regulatory frameworks."
+        },
+        {
+         "type": "paragraph",
+         "text": "All disposal and transfer activities are documented through waste transfer records, recycler certificates, and disposal manifests to ensure traceability and compliance verification."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Recovery and Reuse Systems",
+       "body": []
+      },
+      {
+       "heading": "Internal Recovery Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Recoverable textile waste is systematically converted into secondary utility products including napkins, aprons, cleaning cloths, protective packing materials, and internal support materials. These recovery systems are integrated into production planning to support circular material flow and internal material value retention."
+        },
+        {
+         "type": "paragraph",
+         "text": "Biodegradable waste streams are evaluated for integration into biomass and energy recovery pathways where technically and operationally feasible."
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Collaboration Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Formal partnerships are maintained with certified recycling organizations for structured recovery of plastics, metals, paper, and other recyclable materials. These partnerships operate under documented agreements defining material flow, compliance responsibilities, and reporting obligations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Usable scraps and surplus production materials are channelled through structured donation frameworks to NGOs, self-help groups, and community organizations for educational, social, and artisanal applications, supporting social value creation and circular economy integration."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Waste management activities are monitored through routine inspections, internal audits, and structured recordkeeping. Waste stream data, segregation compliance, recycling volumes, and disposal records are periodically reviewed to assess system effectiveness and identify improvement areas. Monitoring outcomes are documented and integrated into the Environmental Management System."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All waste handling, segregation, recycling, and disposal activities are conducted in compliance with applicable Indian environmental regulations and internal sustainability policies. Regulatory documentation, recycler certifications, and disposal records are maintained as controlled documents for audit and verification purposes."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Provides oversight, resources, and strategic direction for waste management implementation."
+       ]
+      },
+      {
+       "role": "Environmental Officer",
+       "responsibilities": [
+        "Manages operational execution, compliance monitoring, documentation, and coordination with authorized waste handlers."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow segregation, handling, and reporting procedures as part of daily operations."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed once in two years to ensure regulatory alignment, operational relevance, and system effectiveness. Reviews are conducted at least once every two years or earlier in response to regulatory changes, audits, or operational modifications. Approved revisions are formally documented and communicated across the organization."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Operational Energy Efficiency Enhancement",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Facility / Maintenance",
+   "owner": "Facility / Maintenance Head",
+   "sourceWords": 636,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured operational approach for improving energy efficiency at Somakannan through optimized lighting systems and controlled energy-use practices. The purpose of this SOP is to reduce electricity consumption, improve energy performance, enhance workplace safety and visibility, and support long-term sustainability objectives, ESG commitments, and responsible resource management across operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operational and functional areas of Somakannan, including production and processing areas, warehouses, storage facilities, utility sections, corridors, common areas, offices, administrative blocks, and applicable outdoor and security lighting. The scope covers lighting infrastructure upgrades, operational controls, energy-use optimization practices, monitoring systems, and governance mechanisms related to energy efficiency enhancement."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Energy-Efficient Lighting Upgrade",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All the Conventional fluorescent, incandescent, halogen, and legacy lighting systems have been replaced with energy-efficient lighting solutions across production areas, processing sections, warehouses, utility zones, and administrative offices.\nTLED (Tube LED) lighting systems have been installed as direct replacements for conventional tube lights, providing high lumen-per-watt efficiency, improved illumination quality, and extended operational lifespan with significantly lower power consumption.\nThis upgrade program has resulted in measurable reductions in lighting-related electricity consumption, improved lighting performance, and reduced maintenance requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Motion and Daylight Sensors",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Motion sensors are installed in low-traffic and intermittent-use areas such as storage rooms, corridors, utility sections, and restrooms to ensure lighting is activated only when occupancy is detected.\nDaylight-responsive sensors are installed near windows, ventilators, and natural light entry points to automatically dim or switch off artificial lighting when sufficient daylight is available.\nTogether, these systems prevent unnecessary energy consumption during non-operational hours and periods of high natural light availability."
+        }
+       ]
+      },
+      {
+       "heading": "Zonal and Smart Lighting Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The facility is divided into independent lighting zones based on functional activity areas and occupancy schedules. For example:"
+        },
+        {
+         "type": "bullets",
+         "text": "Core operational and production zones operate on extended schedules.\nStorage, loading, utility, and service zones follow reduced lighting cycles."
+        },
+        {
+         "type": "paragraph",
+         "text": "Smart control systems use programmable timers and automated control logic to dynamically regulate lighting intensity and duration based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Occupancy detection\nTime-of-day scheduling\nNatural light availability"
+        },
+        {
+         "type": "paragraph",
+         "text": "Emergency lighting systems, exit signage, and safety lighting remain exempt from automated controls to ensure uninterrupted safety compliance and regulatory adherence."
+        }
+       ]
+      },
+      {
+       "heading": "Energy-Efficient Motors and Machinery System",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "IE3 Efficiency motors are installed across production and processing machinery to reduce electrical losses and improve energy performance.\nMotors are selected based on optimized power ratings, load matching, and efficiency class standards to avoid overcapacity and energy wastage.\nEnergy-efficient drive systems and optimized mechanical transmission components are implemented to improve overall machine efficiency.\nPreventive maintenance programs ensure motors operate at optimal performance levels, reducing friction losses, overheating, and unnecessary power draw.\nEquipment upgrades and replacements prioritize energy-efficient machinery and motor systems as part of continuous improvement and sustainability planning."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Energy performance related to lighting systems is monitored on a continuous basis through monthly electricity consumption tracking and periodic energy performance reviews. Pre-upgrade and post-upgrade energy consumption data are compared to evaluate the effectiveness of energy efficiency measures. Monitoring focuses on reduction in lighting-related electricity usage, cost savings, improvement in illumination quality, and reduction in maintenance frequency. All monitoring records are maintained for internal reviews, audits, ESG reporting, and sustainability disclosures."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP supports compliance with internal energy management objectives, environmental sustainability commitments and ESG performance requirements. It aligns with applicable regulatory, safety, and infrastructure standards and supports principles of ISO 14001 and ISO 50001 energy management systems."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Facility / Maintenance Head",
+       "responsibilities": [
+        "Responsible for the implementation, operation, control, monitoring, documentation, and continuous improvement of energy efficiency measures under this SOP.",
+        "Oversees installation activities, system performance monitoring, maintenance planning, data recording, and reporting."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed biennially or in the event of significant infrastructure upgrades, technology changes, or regulatory and ESG requirement updates. The review process shall consider energy performance data, audit findings, operational feedback, and sustainability objectives. Continuous improvement actions identified during the review shall be formally integrated into future energy efficiency planning and implementation programs."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Transportation and Emissions Mitigation",
+   "code": "",
+   "catalogId": "transport-emissions",
+   "pillar": "E",
+   "department": "Operations",
+   "owner": "Operations Head",
+   "sourceWords": 614,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured framework for reducing greenhouse gas (GHG) emissions from transportation and logistics operations at Somakannan. The purpose is to minimize carbon emissions, optimize fuel consumption, improve logistics efficiency, reduce operational costs, and support sustainable mobility practices in alignment with ESG commitments and environmental responsibility objectives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all transportation and logistics activities of Somakannan, including company-owned vehicles, contracted logistics services, intra-city and inter-city transportation, material movement, product distribution, and employee-related transport operations where applicable. The scope covers fleet management, route planning, vehicle technology upgrades, digital monitoring systems, and operational controls associated with transport-related emissions."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Fleet Modernization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Legacy diesel-powered vehicles have been systematically phased out and replaced with BS-VI compliant, fuel-efficient commercial vehicles, in line with Indian vehicular emission norms.\nThese upgraded vehicles emit significantly lower levels of nitrogen oxides (NOₓ), particulate matter (PM), and hydrocarbons, improving air quality and reducing carbon footprint per kilometres travelled.\nRoutine engine diagnostics and emission testing are conducted to ensure ongoing compliance with Central Pollution Control Board (CPCB) standards."
+        }
+       ]
+      },
+      {
+       "heading": "Integration of Electric Vehicles (EVs)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Somakannan has introduced electric vehicles (EVs) such as Tata Tigor EV (for mid-loads) and Mahindra Treo (for light-load, short-range deliveries).\nThese vehicles are deployed primarily for intra-city transport, particularly around manufacturing hubs and distribution centres.\nThe use of EVs contributes to:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Zero tailpipe emissions"
+        },
+        {
+         "text": "Reduced operating costs per kilometre"
+        },
+        {
+         "text": "Eligibility for government incentives under FAME-II"
+        }
+       ]
+      },
+      {
+       "heading": "Smart Route Optimization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "AI-enabled route optimization software is used to design delivery schedules and dispatch routes that:"
+        },
+        {
+         "type": "bullets",
+         "text": "Minimize vehicle mileage and idle time\nReduce traffic-related delays\nOptimize delivery sequencing based on customer location and load capacity"
+        },
+        {
+         "type": "paragraph",
+         "text": "The system dynamically adjusts routes in response to real-time traffic data, weather conditions, and vehicle availability."
+        }
+       ]
+      },
+      {
+       "heading": "Real-Time Fleet Monitoring and Driver Training",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All vehicles are equipped with GPS tracking and fuel consumption sensors that provide live data on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Vehicle speed and route adherence\nEngine idling time\nFuel usage trends\nDriving behaviours such as harsh braking or over speeding"
+        },
+        {
+         "type": "paragraph",
+         "text": "Fleet managers use this data to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Identify inefficiencies and reduce fuel wastage\nGenerate monthly performance reports\nConduct driver training programs focused on eco-driving techniques, such as:"
+        },
+        {
+         "type": "bullets",
+         "text": "Optimal gear shifting\nSmooth acceleration\nAvoidance of unnecessary idling"
+        }
+       ]
+      },
+      {
+       "heading": "Regular Vehicle Cleaning and Maintenance Hygiene",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regular cleaning and washing of company vehicles is carried out to maintain operational efficiency and environmental hygiene.\nEngine compartments, air filters, exhaust systems, and external surfaces are cleaned periodically to prevent dust accumulation and performance inefficiencies.\nProper vehicle cleanliness supports better fuel efficiency, reduces mechanical strain, improves emission performance, and enhances overall fleet reliability.\nCleaning activities are integrated with routine maintenance schedules to ensure consistent vehicle performance and sustainability compliance."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Transport-related energy use and emissions performance shall be monitored through monthly fuel consumption tracking, vehicle performance reports, route efficiency analysis, and fleet utilization data. Key monitoring parameters shall include fuel consumption per kilometre, emissions intensity per delivery, vehicle utilization rates, idling duration, and maintenance efficiency. Monitoring records shall be maintained for internal reviews, ESG reporting, sustainability disclosures, and audit purposes."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP supports compliance with applicable environmental regulations, Indian vehicular emission standards, CPCB guidelines, internal sustainability commitments and ESG performance frameworks."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Operations Head",
+       "responsibilities": [
+        "Implementation, operational control, performance management, and reporting of transportation emissions reduction measures."
+       ]
+      },
+      {
+       "role": "Facility Head",
+       "responsibilities": [
+        "Fleet maintenance, emission compliance, vehicle performance monitoring, preventive maintenance, and continuous improvement of transport-related sustainability initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed biennially or in the event of significant changes in fleet composition, logistics infrastructure, regulatory requirements, or sustainability commitments. The review process shall consider emissions performance data, audit findings, operational feedback, and ESG objectives. Continuous improvement actions identified during the review shall be integrated into future transportation decarbonization and logistics optimization strategies."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Renewable Energy Generation",
+   "code": "",
+   "catalogId": "renewable-energy",
+   "pillar": "E",
+   "department": "",
+   "owner": "Facility Head",
+   "sourceWords": 601,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured framework for the generation of renewable energy at Somakannan through on-site clean energy systems. The purpose is to reduce dependence on conventional fossil-fuel-based electricity, lower greenhouse gas emissions, improve environmental performance, strengthen climate resilience, and support the organisation’s sustainability, ESG commitments, and long-term decarbonisation objectives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to on-site renewable energy generation systems operated by Somakannan, including rooftop solar photovoltaic (PV) installations and associated infrastructure. The scope covers warehouses, administrative buildings, and utility areas where renewable energy generation systems are installed and operated."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Automated Monitoring and Performance Tracking",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The installed rooftop solar PV system is equipped with advanced monitoring software that continuously tracks:"
+        },
+        {
+         "type": "bullets",
+         "text": "Real-time energy generation and cumulative output\nSystem efficiency and panel performance trends\nDeviations from expected parameters, such as voltage irregularities or sudden output drops\nAutomated alerts are generated in the event of system anomalies, enabling prompt diagnostics and timely corrective actions"
+        }
+       ]
+      },
+      {
+       "heading": "Preventive Maintenance and Inspection Schedule",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Solar Panel Cleaning: Carried out at regular intervals (e.g., monthly), depending on local environmental conditions. This ensures removal of dust, dirt, bird droppings, or debris that can obstruct sunlight and reduce efficiency.\nComponent Inspection: Routine inspections are conducted for:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Inverters and Junction Boxes – checked for faults, overheating, or signs of internal wear."
+        },
+        {
+         "text": "Cabling and Connectors – examined for physical damage, corrosion, or loose connections."
+        },
+        {
+         "text": "Mounting Structures – assessed for structural integrity, rust, and anchoring stability."
+        }
+       ]
+      },
+      {
+       "heading": "Fault Response and Corrective Maintenance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Any deviations or underperformance identified by the monitoring system are immediately reported to the maintenance team.\nOn-site diagnostics are carried out to identify issues such as:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Malfunctioning inverters or failed modules."
+        },
+        {
+         "text": "Faulty connectors, wiring damage, or panel shading."
+        },
+        {
+         "text": "Identified faults are promptly addressed through repair or component replacement using certified parts, ensuring minimal system downtime."
+        }
+       ]
+      },
+      {
+       "heading": "Health, Safety, and Risk Control Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Personal Protective Equipment (PPE): All personnel engaged in maintenance activities are required to wear appropriate PPE, including electrical-grade gloves, helmets, eye protection, non-conductive footwear, and harnesses for rooftop access.\nLockout/Tagout (LOTO): Strict LOTO procedures are followed before performing maintenance to eliminate the risk of electrical shock or unintended activation.\nFire Safety Compliance: Electrical installations are maintained in accordance with fire safety norms. Appropriate fire extinguishers (Class C-rated) are readily available near control panels and inverter stations."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation, Recordkeeping, and Compliance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Comprehensive records are maintained covering:"
+        },
+        {
+         "type": "bullets",
+         "text": "Daily, weekly, and monthly energy production data.\nScheduled maintenance, cleaning logs, and fault resolutions.\nSystem performance trends and deviation reports.\nRegulatory Compliance:"
+        },
+        {
+         "type": "bullets",
+         "text": "Operations align with the Electricity Act, 2003, CEA Safety Regulations, and relevant Bureau of Indian Standards (BIS) for solar installations.\nPeriodic internal audits are conducted to ensure continued compliance and system optimization."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Renewable energy generation is monitored through continuous tracking of system output, generation efficiency, operational uptime, and contribution to overall electricity consumption. Monitoring includes daily generation review, monthly performance analysis, and annual trend assessment. Data is used for sustainability reporting, ESG disclosures, GHG accounting (Scope 2), and performance benchmarking."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP supports compliance with national renewable energy policies, environmental regulations, energy regulations and ESG frameworks. It aligns with clean energy transition goals and climate mitigation commitments."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Facility Head",
+       "responsibilities": [
+        "System operation, maintenance, monitoring, and technical performance management of renewable energy infrastructure."
+       ]
+      },
+      {
+       "role": "Sustainability Lead",
+       "responsibilities": [
+        "Performance reporting, ESG integration, regulatory alignment, and continuous improvement planning related to renewable energy generation."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed biennially or in the event of regulatory changes, system expansion, technology upgrades, or sustainability strategy updates. The review shall incorporate performance data analysis, audit findings, risk assessments, and ESG objectives. Improvement actions identified during the review process shall be formally integrated into future renewable energy planning and operational controls."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Ensuring Employee Safety through PPE Provision",
+   "code": "",
+   "catalogId": "equipment-safety",
+   "pillar": "S",
+   "department": "Environmental Health and Safety",
+   "owner": "Environmental Health and Safety Officer",
+   "sourceWords": 595,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the framework for the provision, maintenance, and monitoring of personal protective equipment (PPE) at Somakannan Textiles. The goal is to safeguard employees from health and safety risks associated with work processes in the manufacturing of home textiles, including potential hazards like exposure to airborne particles, sharp tools, and heavy machinery."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees working in production, warehousing, packaging, and other departments at Somakannan Textiles. It covers the provision, correct usage, maintenance, and replacement of PPE such as gloves, masks, protective eyewear, safety shoes, and any other specialized protective gear required for specific tasks."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification of PPE Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.1.1 Risk Assessment: Regular departmental risk assessments are conducted to identify operational hazards and determine appropriate Personal Protective Equipment (PPE) requirements for each activity and work area."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.1.2 Task-Specific PPE: PPE is defined and assigned based on task-specific risks and exposure levels identified through risk assessments. PPE allocation is linked to operational activities and work conditions in each department."
+        }
+       ]
+      },
+      {
+       "heading": "Provision of PPE",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.2.1 PPE Allocation: PPE is systematically provided to all employees in accordance with their role, task exposure, and risk profile. The PPE provided includes, but is not limited to:"
+        },
+        {
+         "type": "numbered",
+         "text": "Gloves: Provided for handling sharp tools, equipment, and textile materials.\nMasks: Provided for protection against dust and airborne particles in production and weaving areas.\nProtective Eyewear: Provided for operations involving cutting, sewing, and machinery interaction.\nSafety Shoes: Provided for protection against impact, slipping, and material handling risks.\nProtective Clothing / Aprons: Provided for operations requiring body protection from operational exposure."
+        }
+       ]
+      },
+      {
+       "heading": "Training and Usage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.3.1 Employee Training: Structured training programs are conducted to ensure employees are aware of PPE requirements, correct usage methods, maintenance practices, and safety importance."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.3.2 Inspection Before Use: Employees are instructed to inspect PPE before use and report any defects, damage, or non-functionality for immediate replacement."
+        }
+       ]
+      },
+      {
+       "heading": "Maintenance and Replacement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.4.1 Regular Maintenance: Reusable PPE is cleaned and maintained through defined schedules to ensure hygiene, usability, and functional integrity."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.4.2 Timely Replacement: Damaged, worn-out, or non-compliant PPE is identified and replaced without delay to prevent compromise in protection."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.4.3 Inventory Management: A controlled PPE inventory system is maintained to ensure continuous availability of standard PPE items across all operational areas."
+        }
+       ]
+      },
+      {
+       "heading": "Hazard-Specific Guidelines",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "For material handling activities, appropriate hand protection, footwear, and protective clothing are implemented.\nFor dust-prone operational areas, respiratory protection and eye protection systems are implemented.\nFor high-noise operational zones, hearing protection devices are provided and enforced."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "4.1 Inspection and Audits: Routine workplace inspections and periodic audits are conducted to verify PPE availability, correct usage, and compliance with defined requirements.\n\n4.2 Key Performance Indicators (KPIs): PPE compliance levels are monitored through supervisory checks, incident analysis, and safety reporting systems.\n\n4.3 Feedback Mechanism: Employee feedback on PPE comfort, usability, and suitability is formally collected and used to improve PPE selection and implementation."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "PPE systems are implemented in alignment with applicable Indian occupational health and safety regulations, including the Factories Act, 1948, and relevant industry safety standards. PPE practices are aligned with Somakannan Textiles’ commitment to employee safety, welfare, and operational excellence."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Allocate budget and resources for PPE procurement, training, and implementation."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Ensure that employees in their departments are equipped with and using the correct PPE."
+       ]
+      },
+      {
+       "role": "Environmental Health and Safety Officer",
+       "responsibilities": [
+        "Oversee the implementation of this SOP, conduct risk assessments, and monitor compliance."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Use the provided PPE properly and report any issues or deficiencies immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This PPE provision system is reviewed biennially and following any incident, audit, or operational change. Reviews assess adequacy, effectiveness, compliance, and employee feedback. Revisions are documented and controlled through the document management system."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Provision of Emergency Equipment",
+   "code": "",
+   "catalogId": "emergency-equipment",
+   "pillar": "S",
+   "department": "HSE / Safety Department",
+   "owner": "Safety Head",
+   "sourceWords": 658,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a standardized procedure for the identification, provision, inspection, and maintenance of emergency equipment at Somakannan Textiles to ensure employee safety, operational preparedness, and effective emergency response during incidents and abnormal situations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, non-employee workers, and subcontractors across all operational areas, administrative buildings, warehouses, and production units of Somakannan Textiles. It covers emergency equipment related to fire safety, first aid, evacuation, rescue, incident containment, and natural event preparedness."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Equipment in place",
+     "steps": [
+      {
+       "heading": "Emergency Equipment in place",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following emergency equipments are installed and routinely maintained at Somakannan Textiles:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Fire Safety Equipment"
+        },
+        {
+         "type": "bullets",
+         "text": "ABC and CO₂ fire extinguishers\nFire hydrant systems with hose reels in high-risk and production zones\nFire alarms and manual call points\nSmoke and heat detectors\nFire blankets\nSand buckets and fire control tools"
+        },
+        {
+         "type": "paragraph",
+         "text": "First Aid and Medical Response"
+        },
+        {
+         "type": "bullets",
+         "text": "Fully stocked first aid kits in all departments (checked monthly)\nTrained first-aiders available in each operational shift\nEmergency medical contact points displayed across facilities"
+        },
+        {
+         "type": "paragraph",
+         "text": "Evacuation & Rescue Equipment"
+        },
+        {
+         "type": "bullets",
+         "text": "Emergency torches\nClearly marked emergency exits\nEmergency lighting systems\nDesignated emergency assembly points"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Equipment Mapping and Placement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Emergency equipment is deployed based on location-specific risk assessments conducted by the Safety Department in coordination with departmental heads.\nEquipment placement considers:\nNature of activity (weaving, spinning, packing, storage, machine operations)\nWorkforce density\nEquipment movement areas\nFire and operational risk zones\nFire extinguishers, first aid boxes, and emergency lighting are mounted at accessible heights, clearly visible, and labelled with standardized safety signage.\nEach floor and department maintains an Emergency Equipment Layout Map, which is:\nDisplayed at entry points and evacuation routes\nUpdated annually or after layout or operational changes\nA centralized Emergency Equipment Register is maintained, capturing:\nLocation\nEquipment ID\nType\nInspection dates\nMaintenance status"
+        }
+       ]
+      },
+      {
+       "heading": "Inspection and Maintenance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A monthly inspection schedule is implemented by the Safety Officer.\nInspection checklist includes:\nPhysical condition (damage, corrosion, wear)\nExpiry dates (first aid supplies, extinguishers)\nVisibility and accessibility\nProper placement and signage\nInspection tagging and records\nFire extinguishers undergo:\nMonthly visual inspection\nAnnual servicing by licensed vendors\nReplacement if pressure levels or physical condition are non-compliant\nEmergency lighting and alarms are function-tested periodically.\nPreventive maintenance logs are reviewed quarterly for planned servicing and replacement.\nInspection records are documented and deviations are addressed through corrective action procedures."
+        }
+       ],
+       "responsible": "Safety Officer"
+      },
+      {
+       "heading": "Restocking and Replacement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "First aid kits are restocked monthly using a standardized checklist.\nUsed or expired items are replaced immediately.\nEmergency torches and backup batteries are checked and replaced periodically.\nDamaged or expired equipment is:\nMarked “DO NOT USE”\nRemoved from service immediately\nReplaced through approved procurement channels\nDisposal of unusable equipment is carried out through approved internal disposal procedures and documented."
+        }
+       ]
+      },
+      {
+       "heading": "Training and Drills",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees receive induction training on:\nEmergency equipment locations\nFire extinguisher use\nEvacuation procedures\nEmergency contact systems\nRefresher training is conducted every 6 months, including:\nPractical demonstrations\nDepartment-wise hands-on training\nMock evacuation drills are conducted annually:\nIncluding timed evacuation\nEquipment use\nHeadcounts at assembly points\nDrill results and training records are reviewed in safety committee meetings for continuous improvement."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records Maintained",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Emergency Equipment Inspection Logs (Monthly)\nMaintenance and Servicing Records (Annual)\nFirst Aid Kit Restocking Records (Monthly)\nTraining and Drill Attendance Records\nEmergency Equipment Register"
+      },
+      {
+       "type": "paragraph",
+       "text": "All records are maintained in controlled digital format for a minimum of three years."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "HSE / Safety Department",
+       "responsibilities": [
+        "Ensures identification, installation, inspection, and maintenance of all emergency equipment as per risk assessments and legal standards."
+       ]
+      },
+      {
+       "role": "Unit Heads / Area Supervisors",
+       "responsibilities": [
+        "Monitor availability and readiness of emergency equipment in their respective areas.",
+        "Coordinate inspections and corrective actions with the Safety Department."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Are oriented during induction on emergency equipment in their work areas.",
+        "Immediately report any missing, damaged, or non-functional emergency equipment."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The emergency equipment provision system at Somakannan Textiles is reviewed biennially by the Safety Head in coordination with the Internal Safety Committee, with final approval by senior management. Reviews are also conducted after incidents, drills, audits, or operational changes. All findings are documented, corrective actions are implemented, and SOP revisions are formally controlled through the document management system."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sensitive Transaction Authorization Procedure",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 548,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes guidelines for reporting and obtaining approval for sensitive transactions at Somakannan Textiles. Sensitive transactions, such as gifts, travel, or other benefits, may involve external stakeholders, including vendors, clients, or business partners. This SOP ensures that these transactions are conducted transparently, ethically, and in compliance with Indian laws and company values."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, management, and external stakeholders associated with Somakannan Textiles. It encompasses all sensitive transactions, including gifts (both monetary and non-monetary), travel expenses sponsored by external parties, and other benefits (e.g., entertainment, accommodation)."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "General Guidelines for Sensitive Transactions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Value Limits:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Transactions valued above ₹5,000 must be reported to and approved by the immediate supervisor."
+        },
+        {
+         "text": "Transactions involving external parties exceeding ₹10,000 require additional approval from senior management."
+        }
+       ]
+      },
+      {
+       "heading": "Acceptable Items",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Nominal-value items (e.g., promotional items such as diaries, pens, or calendars) worth up to ₹2,000 may be accepted without prior approval but must be logged."
+        }
+       ]
+      },
+      {
+       "heading": "Prohibited Items",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Cash or cash equivalents, such as gift cards or vouchers, are strictly prohibited."
+        },
+        {
+         "text": "Any gift or benefit perceived as an attempt to influence a business decision is not allowed."
+        }
+       ]
+      },
+      {
+       "heading": "Gifts",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Definition: Items, benefits, or services offered by external stakeholders without an explicit or implicit expectation of return."
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval Process:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Documentation: A Gift Approval Form must be completed for items above ₹2,000."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Gifts below ₹2,000: No approval required but must be logged."
+        },
+        {
+         "text": "Gifts between ₹2,000–₹5,000: Approval required from the immediate supervisor."
+        },
+        {
+         "text": "Gifts above ₹5,000: Approval required from senior management."
+        }
+       ]
+      },
+      {
+       "heading": "Travel and Accommodation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Definition: Travel or accommodation expenses offered by external stakeholders, including domestic or international trips."
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval Process:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Domestic travel expenses exceeding ₹10,000 must be pre-approved by both the immediate supervisor and senior management."
+        },
+        {
+         "text": "International travel requires pre-approval regardless of value and must align with the company’s travel policies."
+        },
+        {
+         "text": "Employees must submit a Travel Report within five business days of returning, detailing all expenses and benefits received."
+        }
+       ]
+      },
+      {
+       "heading": "Entertainment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Definition: Events, meals, or recreational activities sponsored by external stakeholders."
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval Process:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Entertainment valued below ₹3,000: No prior approval needed, but the expense must be logged."
+        },
+        {
+         "text": "Entertainment exceeding ₹3,000: Pre-approval from the immediate supervisor is required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "4.1 Monitoring Mechanism: The Compliance Team will conduct quarterly audits of sensitive transactions to ensure adherence to this SOP and make regular checks to identify any trends or non-compliance."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "5.1 All employees must adhere to this SOP. Failure to comply may lead to disciplinary action, including termination."
+      },
+      {
+       "type": "paragraph",
+       "text": "5.2 Transactions violating Indian regulations or company ethics will be reported to the appropriate authorities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Employees are responsible for accurately reporting all sensitive transactions and seeking necessary approvals before engaging in any such transaction."
+       ]
+      },
+      {
+       "role": "Supervisors and Managers",
+       "responsibilities": [
+        "Supervisors and Managers are responsible for reviewing, approving sensitive transactions as per guidelines, and maintaining proper documentation for all approvals."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Senior Management is responsible for providing final approval for transactions exceeding thresholds and ensuring periodic training and awareness for employees."
+       ]
+      },
+      {
+       "role": "Compliance Team",
+       "responsibilities": [
+        "The Compliance Team is responsible for conducting audits to monitor adherence to the SOP and reporting any deviations or violations to senior management."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "7.1 This SOP will be reviewed biennially or sooner if necessitated by regulatory changes or operational requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "7.2 Employees can provide feedback or suggestions to the HR or Compliance departments for improving the process."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Safeguarding Third-Party Data from Unauthorized Access or Disclosure",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer (DPO)",
+   "sourceWords": 686,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the measures and procedures established by Somakannan Textiles to ensure the confidentiality, integrity, and security of third-party data. This document defines mechanisms to prevent unauthorized access or disclosure of sensitive information related to customers, clients, or suppliers. Additionally, it includes provisions for reporting security concerns and adhering to legal and industry standards for data protection."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and third-party service providers who handle or access third-party data within Somakannan Textiles. It encompasses all forms of sensitive data, including but not limited to personal information, financial records, business agreements, and confidential communications. The scope covers data stored or processed physically and digitally across all textile product categories."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Reporting Mechanism for Information Security Issues",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To protect third-party data effectively, all employees and stakeholders must have a reliable system to report potential security concerns. The reporting mechanism includes the following elements:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Confidentiality Guarantee: All reports of information security issues will be handled with strict confidentiality. The identity of the whistleblower will not be disclosed without their consent, except where required by law."
+        },
+        {
+         "text": "Non-Retaliation Guarantee: Employees or stakeholders who report security concerns in good faith will be protected from retaliation. Any act of reprisal, harassment, or disciplinary action against the whistleblower is strictly prohibited."
+        },
+        {
+         "text": "Dedicated Reporting Channels: Internal Reporting: Employees can report issues via a secure email system at security@somakannantextiles.com. Contact Person: A designated Data Protection Officer (DPO) will serve as the primary point of contact for reporting issues directly."
+        }
+       ]
+      },
+      {
+       "heading": "Physical Access Controls",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Restricted Access: Areas storing sensitive data, such as server rooms and file storage areas, are restricted to authorized personnel only. Access logs must be maintained and reviewed monthly."
+        },
+        {
+         "text": "Visitor Protocols: Visitors, including suppliers or clients, must sign a visitor log and be escorted by authorized personnel in restricted areas."
+        },
+        {
+         "text": "Surveillance and Monitoring: CCTV cameras and alarm systems must be installed to monitor restricted zones. Any suspicious activity should trigger immediate alerts to the security team."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Access Controls",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Authentication Standards: Employees accessing third-party data must use strong passwords and multi-factor authentication (MFA). Passwords should be updated every 90 days."
+        },
+        {
+         "text": "Role-Based Access Control (RBAC): Data access is restricted based on job roles. Permissions are reviewed quarterly to align with changing responsibilities."
+        },
+        {
+         "text": "Encryption Protocols: Sensitive data must be encrypted using AES-256 while at rest and TLS during transmission."
+        },
+        {
+         "text": "Approved Communication Platforms: Employees must use company-approved email and secure file-sharing platforms for exchanging sensitive information."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention and Disposal",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Retention Periods: Third-party data should only be retained for the duration necessary to meet business or legal requirements. Data beyond this period must be securely deleted."
+        },
+        {
+         "text": "Secure Disposal: Physical documents: Use cross-cut shredders or incineration for sensitive paper records. Digital data: Implement secure data-wiping tools to ensure permanent deletion."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "All access to sensitive data will be logged. Logs will record the identity of the user, time of access, and type of data accessed. These logs will be reviewed quarterly.\n\nDigital systems will use IDS to monitor unauthorized access attempts. Alerts must be reviewed and investigated by the IT team."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP aligns with Indian Personal Data Protection Laws and ISO 27001 to ensure the security of personal and sensitive data and adhere to international information security standards. Additionally, it complies with GDPR Compliance for handling EU clients' data in cross-border transactions."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "The DPO oversees compliance with this SOP and manages data security incidents and investigations."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "The IT Department implements and maintains technical security measures, including encryption and RBAC, and conducts regular system updates and vulnerability assessments."
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "The HR Department ensures employee training in information security protocols and maintains records of training sessions and certifications."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Employees must comply with this SOP, report security issues promptly, and use only authorized tools and platforms for handling sensitive data."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years or sooner if significant legal or operational changes occur.\n\nThe review process will be led by the DPO in collaboration with the IT and HR departments."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ESG Due Diligence Framework for Third-Party Engagement in Textile Manufacturing",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "",
+   "owner": "ESG Compliance Team",
+   "sourceWords": 545,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a comprehensive framework for conducting due diligence on third-party engagements to ensure alignment with ethical, environmental, and social governance (ESG) standards. Designed for Somakannan Textiles, the framework mitigates risks associated with unethical practices, ensures compliance with sustainability goals, and promotes transparency and accountability in business relationships. This SOP also upholds the company’s commitment to responsible sourcing and manufacturing of home textiles."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all third-party entities engaged by Somakannan Textiles, including suppliers, vendors, contractors, and logistics partners involved in the production, supply chain, and export of home textiles. The process encompasses onboarding, ongoing evaluations, and periodic reviews to maintain alignment with ESG standards and ensure compliance with applicable laws and certifications."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Risk-Based Approach",
+       "body": []
+      },
+      {
+       "heading": "Identify Risk Levels",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Classify third parties as low, medium, or high risk based on factors such as:"
+        },
+        {
+         "type": "numbered",
+         "text": "Geographical location (e.g., regions with labor law violations or environmental risks).\nNature of goods/services provided.\nPrior performance and compliance history."
+        }
+       ]
+      },
+      {
+       "heading": "Risk Assessment Criteria",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Evaluate third parties based on:"
+        },
+        {
+         "type": "numbered",
+         "text": "Ethical sourcing practices and adherence to labor laws.\nEnvironmental practices, including waste management and water usage.\nHistorical compliance with industry certifications such as OEKO-TEX® or BSCI."
+        }
+       ]
+      },
+      {
+       "heading": "Data Collection and Verification",
+       "body": []
+      },
+      {
+       "heading": "Information Gathering",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Obtain detailed information, including:"
+        },
+        {
+         "type": "numbered",
+         "text": "Ownership structure and certifications for sustainability or ethical compliance.\nRecords of environmental and social audits.\nReferences or testimonials from industry peers."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Review essential documents such as:"
+        },
+        {
+         "type": "numbered",
+         "text": "Business registrations and export licenses.\nCertifications for ethical and environmental standards.\nFinancial transparency records, where applicable."
+        }
+       ]
+      },
+      {
+       "heading": "Screening Tools",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Use industry benchmarks and databases to validate information, including assessments of environmental and social performance."
+        }
+       ]
+      },
+      {
+       "heading": "Onboarding and Approval",
+       "body": []
+      },
+      {
+       "heading": "Risk Mitigation Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For medium to high-risk third parties:"
+        },
+        {
+         "type": "numbered",
+         "text": "Require evidence of compliance with ethical and environmental practices.\nInclude contractual clauses mandating adherence to Somakannan’s ESG standards."
+        }
+       ]
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Submit due diligence findings for review by senior management or the ESG Compliance Team.\nApproval is contingent upon meeting all due diligence requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Monitoring and Evaluation",
+       "body": []
+      },
+      {
+       "heading": "Periodic Audits",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct regular evaluations to ensure compliance with Somakannan’s ESG standards:"
+        },
+        {
+         "type": "numbered",
+         "text": "High-risk third parties are reviewed semi-annually.\nOther entities are reviewed annually."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting Mechanisms",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Establish clear channels for reporting ESG concerns or incidents.\nEncourage third parties to disclose any compliance breaches proactively."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Benchmarking",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regularly benchmark third-party ESG performance against industry standards and internal goals."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "numbered",
+       "text": "Performance Metrics:\nTrack key performance indicators (KPIs), such as the percentage of suppliers meeting sustainability certifications or incidents of non-compliance.\nEnsure continuous improvement by analysing audit findings and incorporating lessons learned."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "numbered",
+       "text": "Ethical and Legal Standards:\nAdhere to all applicable laws and certifications, including those from the Handloom Export Promotion Council and globally recognized standards like OEKO-TEX®.\nNon-compliance may result in termination of business relationships or legal actions."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Allocate resources for implementing and monitoring the ESG framework effectively."
+       ]
+      },
+      {
+       "role": "ESG Compliance Team",
+       "responsibilities": [
+        "Oversee the due diligence process and ensure ongoing adherence to standards."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure compliance with ESG requirements within their operational domains."
+       ]
+      },
+      {
+       "role": "Third-Party Entities",
+       "responsibilities": [
+        "Fulfil contractual obligations, adhere to ESG standards, and cooperate during assessments."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Internal Reviews: Conduct biannual internal reviews to evaluate the effectiveness of this SOP.\nFeedback Integration: Incorporate feedback from employees, third parties, and audit results to improve the due diligence process."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

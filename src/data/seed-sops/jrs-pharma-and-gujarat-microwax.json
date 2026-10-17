@@ -1,0 +1,3423 @@
+{
+ "id": "jrs-pharma-and-gujarat-microwax",
+ "company": "JRS Pharma & Gujarat Microwax Pvt. Ltd.",
+ "industry": "Pharmaceutical excipient manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "pharma"
+ ],
+ "sourceFile": "SOP Manual  Employee Handbook/SOP MANUAL/SOP Manual - JRS&GMW.docx",
+ "frontMatter": {
+  "introduction": "Standard Operating Procedures (SOPs) are formally approved and documented instructions that define how routine and critical activities are to be performed within JRS Pharma & Gujarat Microwax Pvt. Ltd. (GMW). These procedures serve as a structured framework to ensure that operations are carried out in a consistent, controlled, and compliant manner across the organization.\n\nEstablished in 1991, GMW has grown to become one of India's premier producers of pharmaceutical excipients, manufacturing Microcrystalline Cellulose (MCC), Croscarmellose Sodium (CCS), and Sodium Starch Glycolate (SSG). In 2006, GMW entered a strategic joint venture with JRS Pharma, Germany — a global leader in excipient manufacturing — integrating international quality management standards, process excellence, and German engineering expertise into its operations.\n\nIn a regulated and quality-driven manufacturing environment, clearly defined procedures are essential to maintaining operational integrity, safeguarding stakeholder interests, and meeting applicable legal and regulatory requirements. SOPs provide clarity on processes, roles, responsibilities, and expected outcomes, thereby reducing variability and minimizing the risk of errors or non-compliance.\n\nAt JRS Pharma & Gujarat Microwax Pvt. Ltd., SOPs are designed to:\nStandardize workflows across manufacturing and administrative departments.\nEnsure adherence to GMP, ISO, Kosher, and Halal quality standards.\nPromote environmental stewardship in water, energy, and waste management.\nEnhance transparency and accountability in decision-making and execution.\nSupport employee training and operational knowledge continuity.\nFacilitate preparedness for internal and external audits including Indian FDA inspections.\nStrengthen governance, ethics, and anti-corruption controls.\n\nAll employees and relevant stakeholders are expected to understand, follow, and uphold the procedures outlined in this manual. Compliance with SOPs is mandatory and forms an integral part of GMW's quality management and governance framework.",
+  "objective": "",
+  "scope": "This Standard Operating Procedure (SOP) Manual is applicable to all operations and functional areas of JRS Pharma & Gujarat Microwax Pvt. Ltd. It governs the execution of activities that directly or indirectly impact the organization's quality standards, regulatory compliance, operational efficiency, environmental responsibility, and ethical conduct.\n\nThe provisions outlined in this manual apply to:\nAll permanent, temporary, probationary, and contractual employees\nManagement and supervisory personnel\nConsultants, interns, and trainees\nThird parties, vendors, suppliers, and service providers, where relevant to their scope of work\n\nThe SOPs are applicable across all departments including but not limited to manufacturing operations, quality assurance, procurement, administration, finance, human resources, compliance, health & safety, and sustainability functions across GMW's facilities at Ahmedabad and Mehsana, Gujarat.\n\nEvery individual performing tasks on behalf of Gujarat Microwax Pvt. Ltd. is required to adhere strictly to the applicable procedures relevant to their role and responsibilities. Non-compliance with these procedures may result in corrective actions as per company policies. These SOPs remain in force unless revised, superseded, or withdrawn through an officially approved amendment process.",
+  "reviewMechanism": "All Standard Operating Procedures (SOPs) at JRS Pharma & Gujarat Microwax Pvt. Ltd. maintained under a controlled document management system to ensure their continued accuracy, relevance, and compliance with GMP requirements, regulatory standards, and operational objectives. The review mechanism is designed to promote accountability, transparency, and continuous improvement across all functional areas.\n\nReview triggers: Annual Scheduled Review (Department Head, comprehensive content evaluation); Regulatory Change (Compliance / Regulatory, immediate compliance update); Process Modification (Concerned Department, operational alignment revision); Audit Observation (Quality / Compliance, corrective revision); Incident or Risk Event (EHS / Risk Committee, risk-based update); Management Directive (Senior Management, strategic alignment update).\n\nStage 1 — Initiation: The SOP Owner initiates the review before the defined review due date or upon identification of a triggering event such as a regulatory change, audit finding, or process modification.\n\nStage 2 — Evaluation: The SOP content is assessed against current GMP and regulatory requirements, internal audit findings, risk assessments and incident reports, performance indicators, and stakeholder feedback.\n\nStage 3 — Revision (If Required): Where gaps or improvements are identified, changes documented clearly, the version number updated, and the revision history capture the nature of modification.\n\nStage 4 — Approval & Authorization: Revised SOPs approved as per the Approval Matrix: Department Head, Quality/Compliance, and Top Management where applicable.\n\nStage 5 — Communication & Implementation: Updated SOPs communicated to relevant employees, uploaded to the controlled document repository, and supported with training where changes are significant.\n\nStage 6 — Archival Control: Superseded versions archived securely, marked as 'Outdated', and retained as per GMW's document retention policy.\n\nOversight & Continuous Governance: Senior Management at Gujarat Microwax Pvt. Ltd. periodically review the overall SOP governance system during Management Review Meetings to ensure alignment with GMP requirements, ESG commitments, customer quality expectations, and applicable regulatory standards. Systemic gaps identified during reviews trigger corrective and preventive actions at the organizational level.\n\nEffective Date: 01 April 2025. Last Review Date: 01 March 2026. Next Review Date: 01 March 2027. Approved By: General Manager."
+ },
+ "sops": [
+  {
+   "title": "EMPLOYEE WELL-BEING AND SAFETY INITIATIVES",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1055,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. (GMW) is committed to maintaining the highest standards of employee health and safety across all its manufacturing facilities and offices. As a pharmaceutical excipient manufacturer producing Microcrystalline Cellulose (MCC), Croscarmellose Sodium (CCS), and Sodium Starch Glycolate (SSG), GMW's operations involve handling chemical inputs, automated processing equipment, and industrial utilities.\n\nThis SOP establishes a structured framework for identifying, assessing, and controlling occupational health and safety hazards to protect all employees, contractors, and visitors from work-related injuries, illnesses, and hazardous substance exposure."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All manufacturing plants, laboratories, warehouses, and administrative offices of JRS & GMW\nAll permanent, probationary, contractual, and temporary employees\nContractors, visitors, and third-party workers engaged at JRS&GMW premises\nAll departments including Production, Quality Control, Warehouse, Utilities, and Administration"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Hazardous Substance",
+       "definition": "Any chemical, biological, or physical agent that poses a risk to health, including raw materials and process chemicals used in MCC, CCS, and SSG manufacturing"
+      },
+      {
+       "term": "Occupational Exposure Limit (OEL)",
+       "definition": "Maximum permissible concentration of a hazardous substance in the workplace air"
+      },
+      {
+       "term": "Personal Protective Equipment (PPE)",
+       "definition": "Equipment worn to minimize exposure to hazards including gloves, masks, goggles, and safety footwear"
+      },
+      {
+       "term": "Near Miss",
+       "definition": "An unplanned event that did not result in injury or damage but had the potential to do so"
+      },
+      {
+       "term": "Health Surveillance",
+       "definition": "Systematic monitoring of employee health to detect adverse effects of workplace hazards early"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve HSE framework",
+        "allocate resources",
+        "promote safety culture across all GMW facilities"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Conduct risk assessments",
+        "manage incident reporting",
+        "ensure regulatory compliance"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Ensure safe operating procedures in manufacturing areas",
+        "enforce PPE usage"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Coordinate health and safety training",
+        "maintain training records and medical surveillance records"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow all health and safety procedures",
+        "report hazards, incidents, or near misses immediately"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "PPE",
+         "Personal Protective Equipment"
+        ],
+        [
+         "OEL",
+         "Occupational Exposure Limit"
+        ],
+        [
+         "GMP",
+         "Good Manufacturing Practice"
+        ],
+        [
+         "MSDS/SDS",
+         "Material Safety Data Sheet / Safety Data Sheet"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "1.1 Hazardous Substance Exposure Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective\n\nTo identify, evaluate, and control exposure to hazardous substances used in GMW's excipient manufacturing processes to protect employee health."
+        },
+        {
+         "type": "paragraph",
+         "text": "Hazard Identification & Assessment\n\nAll raw materials, process chemicals, and intermediates inventoried and assessed for hazard classification\nSafety Data Sheets (SDS) obtained from suppliers and maintained in accessible locations at all GMW plants\nRisk assessments conducted for all manufacturing processes involving chemical exposure, high temperature, or mechanical hazards\nExposure monitoring conducted for employees working in proximity to cellulose processing, acid treatment, or chemical reagent handling areas\nRisk assessments reviewed annually or upon any process change"
+        },
+        {
+         "type": "paragraph",
+         "text": "Engineering & Administrative Controls\n\nClosed-loop manufacturing systems maintained to minimize dust and chemical exposure in MCC and CCS production lines\nLocal exhaust ventilation installed at chemical handling and dispensing stations\nProcess automation prioritized to reduce manual intervention in hazardous operations\nAccess to high-risk areas restricted to authorized and trained personnel only\nEmergency eyewash stations and safety showers installed at chemical handling areas and maintained in functional condition"
+        },
+        {
+         "type": "paragraph",
+         "text": "Personal Protective Equipment\n\nAppropriate PPE identified for each job category based on risk assessment findings\nPPE include gloves, safety goggles, dust masks or respirators, safety footwear, and lab coats as applicable\nPPE inspected before each use and replaced upon damage or expiry\nEmployees trained on correct donning, doffing, and disposal of PPE"
+        }
+       ]
+      },
+      {
+       "heading": "1.2 Incident Reporting & Investigation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reporting Protocol\n\nAll workplace injuries, illnesses, near misses, and dangerous occurrences reported to the EHS department within 24 hours\nAn incident report form completed by the concerned employee and their supervisor\nIncidents involving chemical exposure or injury reported to senior management within the same working day"
+        },
+        {
+         "type": "paragraph",
+         "text": "Investigation & Corrective Action\n\nRoot cause analysis conducted for all reportable incidents within 72 hours\nCorrective and preventive actions (CAPA) defined and implemented to prevent recurrence\nInvestigation findings communicated to relevant teams to improve overall safety awareness\nRepeat incidents in the same category trigger a mandatory review of existing risk controls"
+        }
+       ]
+      },
+      {
+       "heading": "1.3 Health Surveillance & Medical Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Program Implementation\n\nPre-employment medical examinations conducted for all new employees in manufacturing roles\nPeriodic health surveillance conducted annually for employees exposed to cellulose dust, chemical vapors, or noise above permissible levels\nResults of health surveillance maintained confidentially by the HR and EHS departments\nEmployees identified with occupational health conditions referred for treatment and redeployed to safer roles where feasible"
+        }
+       ]
+      },
+      {
+       "heading": "1.4 Safety Inspections",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Workplace safety inspections shall be conducted weekly by department supervisors and monthly by the EHS Department.\nInspection findings shall be documented and corrective actions assigned with defined completion dates.\nRepeated observations shall be escalated to senior management.\nInspection records shall be maintained for a minimum of five years."
+        }
+       ]
+      },
+      {
+       "heading": "1.5 Behavioral Safety Observations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Supervisors shall conduct behavioral safety observations on a monthly basis.\nUnsafe acts and unsafe conditions shall be immediately corrected.\nPositive safety behaviors shall be recognized and communicated.\nObservation findings shall be reviewed during monthly safety meetings."
+        }
+       ]
+      },
+      {
+       "heading": "1.6 Safety Committee Meetings",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Safety committee meetings shall be conducted quarterly.\nEmployee representatives shall participate in safety committee discussions.\nAccident trends, near misses, audit findings, and corrective actions shall be reviewed.\nMinutes of meetings shall be documented and retained."
+        }
+       ]
+      },
+      {
+       "heading": "1.5 Contractor Safety Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All contractors shall undergo site-specific safety induction before commencing work.\nContractors shall comply with all applicable safety requirements including PPE usage and permit-to-work requirements.\nContractor safety performance shall be monitored through periodic inspections.\nUnsafe acts or unsafe conditions identified during contractor activities shall be corrected immediately."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All health and safety activities comply with the Factories Act, 1948, Hazardous Chemicals Rules, applicable GMP standards, and ISO 45001 occupational health and safety management requirements\nEHS records including incident logs, risk assessment reports, PPE registers, and medical surveillance records maintained for a minimum of five years\nRegular internal audits verify compliance with health and safety protocols across all facilities"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual HSE performance reviews evaluate incident frequency rates, near miss trends, and PPE compliance levels\nEmployee safety suggestions incorporated into revised safety procedures\nQuantitative reduction targets for workplace incidents established and reviewed annually\nThis SOP reviewed annually to ensure alignment with regulatory updates and operational changes"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to providing a safe, healthy, and hazard-free working environment for all employees, contractors, and visitors across its manufacturing facilities. The Company implement robust risk controls, promote a proactive safety culture, and ensure that all personnel are equipped with the knowledge, training, and equipment necessary to perform their duties safely and with confidence."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "WORKPLACE STANDARDS AND CONDITIONS",
+   "code": "",
+   "catalogId": "internal-communication",
+   "pillar": "S",
+   "department": "HR Department",
+   "owner": "HR Department",
+   "sourceWords": 853,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to fostering a safe, fair, inclusive, and respectful workplace aligned with its Labor & Human Rights principles. As a GMP-certified pharmaceutical excipient manufacturer, ensuring positive working conditions is fundamental to employee well-being, operational excellence, and ethical business conduct."
+      },
+      {
+       "type": "paragraph",
+       "text": "To systematically assess workplace standards, employee engagement, and overall satisfaction, JRS&GMW conducts structured Employee Satisfaction Surveys and Third-Party Worker Voice Surveys. These mechanisms provide transparent, confidential, and measurable insights into workplace conditions, management practices, health and safety standards, equal opportunity, and ethical labor practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All permanent, probationary, contractual, and temporary employees of GMW\nThird-party workers including contractual labor, outsourced staff, and agency workers engaged at company premises\nAll departments and operational locations including Ahmedabad and Mehasana facilities\nThe procedure covers survey planning, execution, confidentiality safeguards, data analysis, corrective action planning, and monitoring"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Employee Satisfaction Survey",
+       "definition": "A structured and confidential questionnaire designed to measure employee perceptions regarding workplace environment, management practices, safety, compensation, fairness, and overall engagement"
+      },
+      {
+       "term": "Third-Party Worker Voice Survey",
+       "definition": "A feedback mechanism designed for contract and outsourced workers to assess working conditions, wage practices, treatment, safety standards, and grievance accessibility"
+      },
+      {
+       "term": "Working Conditions",
+       "definition": "The overall environment in which employees perform their duties including health and safety, workload, hours of work, facilities, fairness, and management behavior"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve survey framework; review consolidated results; ensure resources for corrective actions"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Design survey tools; coordinate implementation; ensure confidentiality; analyze data; prepare reports"
+       ]
+      },
+      {
+       "role": "Compliance / Labor Relations Officer",
+       "responsibilities": [
+        "Monitor adherence to labor standards; review risk areas; ensure corrective action tracking"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Facilitate participation; implement corrective actions within their teams"
+       ]
+      },
+      {
+       "role": "Contractor / Vendor Representatives",
+       "responsibilities": [
+        "Support third-party worker participation without retaliation"
+       ]
+      },
+      {
+       "role": "Employees & Third-Party Workers",
+       "responsibilities": [
+        "Provide honest and constructive feedback"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "HR",
+         "Human Resources"
+        ],
+        [
+         "CAP",
+         "Corrective Action Plan"
+        ],
+        [
+         "HSE",
+         "Health, Safety & Environment"
+        ],
+        [
+         "L&HR",
+         "Labor & Human Rights"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "2.1 Staff Engagement and Feedback Survey",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective: The Employee Satisfaction Survey conducted as a structured and data-driven mechanism to assess employee perceptions regarding workplace environment, management practices, career growth, safety standards, compensation systems, and organizational culture at GMW's manufacturing and administrative facilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Survey Planning and Development:"
+        },
+        {
+         "type": "bullets",
+         "text": "The HR Department design a comprehensive questionnaire containing both quantitative rating-based questions and qualitative open-ended questions\nThe questionnaire include a minimum of 35–40 structured questions covering multiple workplace dimensions\nQuestions framed in simple, unbiased language in both English and Gujarati to ensure clarity for all employees\nThe survey format includes a five-point rating scale from 'Strongly Agree' to 'Strongly Disagree'\nThe questionnaire reviewed and approved by senior management before distribution"
+        },
+        {
+         "type": "paragraph",
+         "text": "Survey Coverage Areas:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employees' perception regarding workplace cleanliness, infrastructure, and availability of necessary resources\nSatisfaction with health and safety measures including PPE availability and emergency preparedness training\nFairness in workload distribution and clarity of job roles and responsibilities\nTransparency in communication from supervisors and senior management\nTimeliness and accuracy of salary payments, overtime compensation, and statutory benefit compliance\nAvailability of learning and development opportunities at our facilities\nTrust in the grievance redressal mechanism and confidentiality of complaint handling"
+        },
+        {
+         "type": "paragraph",
+         "text": "Survey Implementation & Reporting:"
+        },
+        {
+         "type": "bullets",
+         "text": "The survey conducted annually with a target participation rate of at least 85% of total employees\nSurvey conducted anonymously to ensure employees feel comfortable providing honest feedback\nAny category scoring below 70% satisfaction classified as a priority improvement area\nA detailed report summarizing findings presented to senior management within 15 working days of survey completion"
+        }
+       ]
+      },
+      {
+       "heading": "2.2 Outsourced Staff Feedback Survey",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective: The Third-Party Worker Voice Survey conducted to ensure that contract and outsourced workers engaged at our facilities are treated fairly, compensated appropriately, and provided safe and dignified working conditions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Planning and Methodology:"
+        },
+        {
+         "type": "bullets",
+         "text": "Survey conducted independently by the HR or EHS team without the presence of contractor supervisors\nA minimum of 20% of the contract workforce randomly selected to participate\nInterviews may be conducted verbally in local languages including Gujarati to ensure comfort of respondents\nQuestionnaire include 20–25 structured questions designed to accommodate varying literacy levels"
+        },
+        {
+         "type": "paragraph",
+         "text": "Survey Coverage Areas:"
+        },
+        {
+         "type": "bullets",
+         "text": "Confirmation that wages are paid on time and in accordance with statutory minimum wage requirements\nVerification that overtime is voluntary and compensated as per legal standards\nAssurance that workers are not subjected to forced labor practices or retention of personal documents\nAssessment of availability and use of personal protective equipment\nEvaluation of whether workers feel respected and free from verbal or physical abuse\nAwareness of grievance reporting channels and confidence in non-retaliation practices"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All work environment practices comply with applicable Indian labor laws, occupational health and safety regulations, and statutory wage requirements\nSurvey findings documented, reviewed by senior management, and maintained as compliance records for audit and ESG assessment purposes\nRegular internal audits verify compliance with workplace safety standards, sanitation requirements, and working hour regulations"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Root cause analysis conducted for identified areas of dissatisfaction through focused group discussions\nTime-bound corrective action plans developed with assigned responsibilities and measurable improvement targets\nProgress on corrective actions reviewed quarterly by management to ensure accountability"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. reaffirms its commitment to upholding dignified working conditions, promoting worker engagement, and respecting labor and human rights principles across its operations and value chain. JRS&GMW ensure that every individual working within its facilities is treated with fairness, respect, and dignity."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "HUMAN RIGHTS SAFEGUARDS AGAINST LABOR EXPLOITATION",
+   "code": "",
+   "catalogId": "human-rights",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Department",
+   "sourceWords": 759,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. maintains a zero-tolerance policy toward child labor, forced labor, bonded labor, and human trafficking in its operations and supply chain. As a responsible excipient manufacturer with international partnerships and global customer commitments, JRS & GMW is obligated to ensure that its workforce is engaged freely, willingly, and with full legal compliance."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured framework for monitoring, preventing, and responding to incidents of child labor, forced labor, or human trafficking within JRS & GMW's direct operations and among its suppliers and contractors."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP applies to:\nAll GMW manufacturing facilities and administrative offices\nAll contractors, labor contractors, and temporary staffing agencies supplying workers to GMW\nGMW's supply chain including raw material suppliers of wood pulp, cotton linter, potato starch, and chemical inputs\nHR, Procurement, Compliance, and EHS functions"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Child Labor",
+       "definition": "Employment of individuals below the legal working age (18 years for hazardous work) in violation of applicable laws"
+      },
+      {
+       "term": "Forced Labor",
+       "definition": "Any work or service exacted from a person under menace of penalty and for which the person has not offered themselves voluntarily"
+      },
+      {
+       "term": "Human Trafficking",
+       "definition": "Recruitment, transportation, or receipt of persons by means of coercion for exploitation"
+      },
+      {
+       "term": "Bonded Labor",
+       "definition": "A form of forced labor where workers are compelled to work to repay a debt or loan"
+      },
+      {
+       "term": "Supplier Due Diligence",
+       "definition": "A risk-based assessment process to evaluate suppliers' compliance with human rights and labor standards"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definitions",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Child Labor",
+         "Employment of individuals below the legal working age (18 years for hazardous work) in violation of applicable laws"
+        ],
+        [
+         "Forced Labor",
+         "Any work or service exacted from a person under menace of penalty and for which the person has not offered themselves voluntarily"
+        ],
+        [
+         "Human Trafficking",
+         "Recruitment, transportation, or receipt of persons by means of coercion for exploitation"
+        ],
+        [
+         "Bonded Labor",
+         "A form of forced labor where workers are compelled to work to repay a debt or loan"
+        ],
+        [
+         "Supplier Due Diligence",
+         "A risk-based assessment process to evaluate suppliers' compliance with human rights and labor standards"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve zero-tolerance policy; ensure adequate resources for implementation and monitoring"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Verify age and documentation of all workers; screen labor contractors; maintain workforce records"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Conduct periodic audits of supplier labor practices; investigate reported cases"
+       ]
+      },
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Include anti-forced labor clauses in supplier contracts; screen high-risk suppliers"
+       ]
+      },
+      {
+       "role": "EHS / Security Team",
+       "responsibilities": [
+        "Monitor for indicators of exploitation; report suspicious activities to management"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "HR",
+         "Human Resources"
+        ],
+        [
+         "ILO",
+         "International Labor Organization"
+        ],
+        [
+         "CAP",
+         "Corrective Action Plan"
+        ],
+        [
+         "KYS",
+         "Know Your Supplier"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "3.1 Monitoring and Evaluation of Internal Control Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective\n\nTo establish robust internal controls to prevent child labor, forced labor, or human trafficking from occurring within GMW's direct operations and contracted workforce."
+        }
+       ]
+      },
+      {
+       "heading": "Worker Age & Documentation Verification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All prospective employees submit valid government-issued identity proof confirming age and eligibility to work\nHR Department verify original documents before onboarding; photocopies retained in personnel files\nNo person below 18 years of age employed in any capacity at our manufacturing or laboratory facilities\nLabor contractors required to submit verified age and identity records for all workers supplied to our facilities.\nSurprise audits conducted at contractor campsites or labor quarters where applicable"
+        }
+       ]
+      },
+      {
+       "heading": "Freedom of Employment Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "No worker required to deposit original identity documents, passports, or financial instruments with JRS&GMW or its contractors\nAll employment voluntary; no worker subjected to threats, monetary fines, or penalties to compel continued employment\nEmployment contracts provided in the worker's preferred language; oral contracts documented\nWorkers free to terminate employment in accordance with applicable notice period requirements without penalty"
+        }
+       ]
+      },
+      {
+       "heading": "Supplier & Contractor Screening",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All new labor contractors and staffing agencies complete a Pre-Qualification Assessment covering labor compliance\nSuppliers of key raw materials (wood pulp, cotton linter, potato starch) screened for child and forced labor risks\nHigh-risk suppliers identified through geographic or sectoral analysis undergo enhanced due diligence\nSupplier contracts include mandatory clauses prohibiting child labor, forced labor, and human trafficking\nNon-compliant suppliers issued corrective action notices; persistent non-compliance result in termination of business relationship"
+        }
+       ]
+      },
+      {
+       "heading": "Grievance Mechanism",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "An anonymous grievance reporting channel available for workers to report suspected violations\nReports of child labor, forced labor, or trafficking investigated confidentially within 48 hours\nWorkers reporting violations in good faith protected from retaliation\nVerified cases escalated to senior management and referred to appropriate authorities as required by law"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All employment practices comply with the Child Labor (Prohibition & Regulation) Act, 1986, Bonded Labor System (Abolition) Act, 1976, and applicable ILO conventions\nRecords of worker age verification, contractor assessments, and grievance investigations maintained for a minimum of five years\nAnnual audits assess effectiveness of controls against child labor and forced labor risks"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual supplier risk mapping identifies high-risk sourcing regions requiring enhanced monitoring\nProcurement team progressively increase the percentage of screened suppliers' year-on-year\nEmployee and worker awareness programs on rights and grievance mechanisms conducted annually"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to the elimination of child labor, forced labor, bonded labor, and human trafficking from its operations and supply chain. The Company maintain rigorous age verification systems, promote freedom of employment, and partner only with suppliers and contractors who share its commitment to ethical labor standards and human dignity."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ENERGY MANAGEMENT & CARBON FOOTPRINT REDUCTION INITIATIVES",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Officer",
+   "sourceWords": 1643,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) outlines the framework for training employees on energy conservation and climate action initiatives across JRS Pharma and Gujarat Microwax Pvt Ltd. The objective is to build awareness, enhance competencies, and promote responsible behavior toward reducing energy consumption and greenhouse gas (GHG) emissions in alignment with organizational sustainability goals and global climate commitments."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The SOP covers training related to energy efficiency, climate change awareness, carbon footprint reduction, and sustainable operational practices."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "GHG Emissions",
+       "definition": "Gases contributing to climate change including CO2, CH4, and N2O, measured in CO2 equivalent (CO2e)"
+      },
+      {
+       "term": "Scope 1 Emissions",
+       "definition": "Direct emissions from owned or controlled sources such as boilers, generators, and company vehicles"
+      },
+      {
+       "term": "Scope 2 Emissions",
+       "definition": "Indirect emissions from purchased electricity, heat, or steam consumed at GMW facilities"
+      },
+      {
+       "term": "Scope 3 Emissions",
+       "definition": "All other indirect emissions in GMW's value chain including raw materials, logistics, and product use"
+      },
+      {
+       "term": "Energy Intensity",
+       "definition": "Total energy consumed per unit of production output (kWh per tonne), used to track efficiency improvements"
+      },
+      {
+       "term": "Green Fuel",
+       "definition": "Fuel derived from biomass or other renewable sources used as a substitute for coal or fossil fuels (e.g., castor pellets)"
+      },
+      {
+       "term": "Carbon Offset",
+       "definition": "A verified reduction or removal of GHG emissions from an external project used to compensate for emissions elsewhere"
+      },
+      {
+       "term": "REC",
+       "definition": "Renewable Energy Certificate certifies that one megawatt-hour of electricity was generated from a renewable source"
+      },
+      {
+       "term": "VFD",
+       "definition": "Variable Frequency Drive an electronic device that controls motor speed to reduce energy consumption"
+      },
+      {
+       "term": "CHP",
+       "definition": "Combined Heat and Power simultaneous generation of electricity and useful heat from a single fuel source"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve energy strategy and GHG reduction targets",
+        "Allocate capital for renewable investments",
+        "Review annual energy performance reports"
+       ]
+      },
+      {
+       "role": "Sustainability Officer",
+       "responsibilities": [
+        "Oversee implementation of all energy programs",
+        "Track GHG metrics",
+        "Prepare annual sustainability disclosures",
+        "Coordinate energy audits"
+       ]
+      },
+      {
+       "role": "Facility / Utilities Manager",
+       "responsibilities": [
+        "Manage solar plant operations, boiler efficiency, VFD installations, and green fuel transition programs",
+        "Ensure preventive maintenance of energy systems"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Monitor compliance with energy regulations",
+        "Investigate energy-related incidents",
+        "Prepare regulatory submissions"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Implement process-level energy conservation measures",
+        "Report unusual energy consumption trends immediately"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source verified carbon credits and RECs",
+        "Evaluate and qualify green fuel suppliers"
+       ]
+      },
+      {
+       "role": "HR / Training Department",
+       "responsibilities": [
+        "Conduct energy and climate awareness training for all employees",
+        "Include energy conservation in onboarding programs"
+       ]
+      },
+      {
+       "role": "Logistics Manager",
+       "responsibilities": [
+        "Implement fleet optimization and low-carbon transportation measures",
+        "Report transport emissions quarterly"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Abbreviations",
+     "rows": [
+      {
+       "term": "GHG",
+       "definition": "Greenhouse Gas"
+      },
+      {
+       "term": "HVAC",
+       "definition": "Heating, Ventilation & Air Conditioning"
+      },
+      {
+       "term": "LED",
+       "definition": "Light Emitting Diode"
+      },
+      {
+       "term": "kWh",
+       "definition": "Kilowatt Hour"
+      },
+      {
+       "term": "CO2e",
+       "definition": "Carbon Dioxide Equivalent"
+      },
+      {
+       "term": "MW",
+       "definition": "Megawatt"
+      },
+      {
+       "term": "VFD",
+       "definition": "Variable Frequency Drive"
+      },
+      {
+       "term": "CHP",
+       "definition": "Combined Heat and Power (Cogeneration)"
+      },
+      {
+       "term": "REC",
+       "definition": "Renewable Energy Certificate"
+      },
+      {
+       "term": "SOP",
+       "definition": "Standard Operating Procedure"
+      },
+      {
+       "term": "EHS",
+       "definition": "Environment, Health & Safety"
+      },
+      {
+       "term": "ESG",
+       "definition": "Environmental, Social & Governance"
+      },
+      {
+       "term": "BEE",
+       "definition": "Bureau of Energy Efficiency (India)"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Training Needs Identification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To reduce energy consumption per unit of excipient production through systematic technology upgrades, process optimization, and equipment efficiency improvements across JRS & GMW's facilities."
+        }
+       ]
+      },
+      {
+       "heading": "Technology & Equipment Upgrade Implementation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To systematically replace or upgrade energy-inefficient equipment and implement smart energy management controls across JRS&GMW's production and utility areas."
+        },
+        {
+         "type": "bullets",
+         "text": "LED Lighting Transition"
+        },
+        {
+         "type": "bullets",
+         "text": "All conventional fluorescent and high-pressure sodium lighting across production floors, warehouses, corridors, and outdoor areas replaced with LED systems\nLED retrofits prioritized in high-usage areas operating more than 12 hours per day\nLighting power density (Watts per square metre) recorded before and after installation to quantify energy savings\nMotion sensors and daylight-linked auto-dimmers installed in low-occupancy areas such as storage rooms, corridors, and administrative offices to eliminate unnecessary lighting"
+        },
+        {
+         "type": "bullets",
+         "text": "Variable Frequency Drives (VFDs)"
+        },
+        {
+         "type": "bullets",
+         "text": "VFDs installed on all motors rated above 5.5 kW that operate at variable loads, including cooling tower fans, compressor drives, pump motors, and conveyor systems\nPrior to installation, a technical feasibility assessment confirm the motor's suitability for VFD operation and projected energy savings\nPost-installation energy consumption measured monthly for the first six months to validate savings against projections\nVFD maintenance including cooling fan inspection and parameter verification scheduled quarterly"
+        },
+        {
+         "type": "bullets",
+         "text": "Solar Plant Performance Monitoring"
+        },
+        {
+         "type": "bullets",
+         "text": "Solar generation data from our 7.4 MW plant captured via the inverter monitoring system and recorded daily in the Solar Performance Log\nMonthly solar generation compared against total facility electricity consumption to calculate the renewable energy share (%) for each reporting period\nAny deviation of more than 10% from projected generation investigated by the Utilities Manager within 5 working days and corrective action documented\nAnnual cleaning of solar panels scheduled during low-irradiation periods and documented in the Maintenance Register\nExpansion of solar capacity evaluated against production growth projections and land availability at each annual energy review"
+        }
+       ]
+      },
+      {
+       "heading": "Thermal Energy Recovery and Cogeneration Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To capture waste heat from boiler exhaust, dryer off-gases, and thermal processes and redirect it to productive end uses, thereby reducing primary energy demand."
+        },
+        {
+         "type": "numbered",
+         "text": "The Utilities Manager and Sustainability Officer jointly conduct a waste heat mapping exercise covering boiler flue gas, dryer exhaust air, cooling water return temperatures, and steam condensate return temperatures\nFor each identified waste heat source, the thermal energy content, current recovery rate (%), and technical feasibility of increased recovery quantified and recorded in a Waste Heat Recovery Register\nWhere boiler flue gas exit temperature exceeds 180°C, economizers (feedwater preheaters) installed on all boilers to recover heat from exhaust gases and preheat incoming feedwater, reducing fuel consumption per kilogram of steam generated\nPost-installation flue gas exit temperature monitored monthly to verify heat recovery performance and thermal energy recovered (GJ/year) reported in the Annual Energy Performance Report\nSteam condensate return systems audited annually; a target condensate return rate of at least 80% established and monitored monthly; failed steam traps repaired or replaced within 30 days\nThe technical and economic feasibility of a Combined Heat and Power (CHP) system at the Mehsana plant assessed by 2026, including electrical generation capacity, thermal utilization rate, payback period, and grid export potential"
+        }
+       ]
+      },
+      {
+       "heading": "Decarbonization through Alternative Fuel Transition",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Green Fuel Transition Program"
+        },
+        {
+         "type": "bullets",
+         "text": "We continue and accelerate the progressive replacement of coal with castor pellets; having already achieved 15% coal reduction, a structured Annual Coal Displacement Plan prepared each year\nThe Annual Coal Displacement Plan specify baseline coal consumption (tonnes/year), target displacement volume, target percentage replacement, and timeline for implementation\nBy end of 2026, GMW targets replacement of at least 50% of total coal consumption with green fuels (castor pellets or equivalent certified biomass)\nCastor pellet suppliers qualified through a vendor assessment process verifying moisture content (<10%), calorific value (≥4,000 kcal/kg), ash content, and absence of hazardous contaminants\nGreen fuel deliveries tested on receipt by QC using a Bomb Calorimeter and moisture analyser and results recorded in the Fuel Quality Register\nBoiler combustion parameters (excess air ratio, flue gas temperature, CO concentration) closely monitored during green fuel trials and adjusted to maintain combustion efficiency above 85%\nCarbon emission intensity — defined as kg CO2e per tonne of product — calculated annually using IPCC emission factors applicable to India"
+        }
+       ]
+      },
+      {
+       "heading": "GHG Inventory and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Annual GHG Inventory Procedure"
+        },
+        {
+         "type": "bullets",
+         "text": "The Sustainability Officer prepare an annual GHG inventory for all GMW facilities covering Scope 1, Scope 2, and relevant Scope 3 emission categories\nScope 1 emissions calculated using actual fuel consumption data and IPCC or MoEFCC emission factors for coal, green fuel, diesel, and LPG consumed at GMW facilities\nScope 2 emissions calculated from total purchased electricity units multiplied by the current Central Electricity Authority (CEA) grid emission factor for Western India\nAll supporting activity data (fuel invoices, electricity bills, fuel delivery records, transportation logs) archived for a minimum of 7 years to support third-party verification\nThe GHG Inventory Report reviewed by Top Management and disclosed in the Website.\nJRS & GMW explore third-party verification of its GHG inventory by a recognized certification body."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Metering and Monitoring",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Energy consumption data shall be collected monthly from all significant energy users.\nEnergy performance indicators shall be reviewed monthly.\nAbnormal energy consumption shall trigger investigation.\nEnergy monitoring records shall be maintained."
+        }
+       ]
+      },
+      {
+       "heading": "Preventive Maintenance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Energy-consuming equipment shall be maintained according to preventive maintenance schedules.\nEquipment efficiency shall be verified after maintenance activities.\nMaintenance findings affecting energy performance shall be documented.\nMaintenance records shall be retained."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Audit Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Comprehensive energy audits will be conducted at least once every three years by qualified personnel.\nEnergy saving opportunities shall be prioritized based on technical feasibility and payback period.\nProgress against audit recommendations shall be reviewed quarterly."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Awareness and Participation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees shall receive annual training on energy conservation practices.\nRecognized energy conservation initiatives shall be communicated throughout the organization."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All energy management activities comply with the Energy Conservation Act 2001 and its amendments, applicable environmental protection regulations under the Environment Protection Act 1986, and GMP facility management standards\nSolar plant commissioning records, green fuel transition data, energy audit reports, VFD installation certificates, and carbon credit certificates maintained for a minimum of 7 years\nAnnual GHG inventory reports prepared and disclosed as part of Our sustainability reporting obligations\nAll energy metering equipment used for regulatory or audit reporting calibrated annually and records maintained"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual energy consumption data compared against the previous year's baseline to measure percentage improvement against the Energy Intensity target\nCarbon emission reduction targets reviewed and updated annually based on actual production growth rates and technology upgrade outcomes\nWe have target of 50% solar energy contribution and 50% green fuel adoption by 2026 tracked quarterly and reported to Top Management at each quarterly ESG review\nEmployee suggestions for energy conservation collected through a structured Innovation Portal and evaluated monthly by the Sustainability Officer\nWe participate in sector-level energy benchmarking initiatives to compare its energy intensity against pharmaceutical excipient industry peers"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to responsible energy management and the progressive reduction of greenhouse gas emissions. Having already commissioned a 7.4 MW solar plant and initiated transition to castor pellet-based green fuel, JRS & GMW continue to invest in renewable energy, energy efficiency upgrades, and sustainable manufacturing practices to minimize its carbon footprint and contribute to India's clean energy objectives."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "WATER STEWARDSHIP INITIATIVES",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "Top Management",
+   "sourceWords": 1850,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Water is a critical resource for JRS Pharma & Gujarat Microwax Pvt. Ltd.'s manufacturing operations. JRS & GMW's production of Microcrystalline Cellulose (MCC), Croscarmellose Sodium (CCS), and Sodium Starch Glycolate (SSG) involves significant water use in hydrolysis, washing, and purification processes. These operations are located in Mehsana — a region identified as water-stressed under national water risk assessments.\n\nJRS&GMW has already invested in water treatment plants capable of recycling up to 450 cubic meters of water per day (30% of total water needs), with a target to raise this to 50% by 2026. This SOP establishes a comprehensive framework for water conservation, reuse, wastewater treatment, and groundwater protection across all JRS&GMW facilities."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All manufacturing plants and utility systems at JRS & GMW's Ahmedabad and Mehsana facilities\nWater Treatment Plants (WTP), Effluent Treatment Plants (ETP), Reverse Osmosis (RO) systems, and rainwater harvesting infrastructure\nAll departments involved in water use including Production, Utilities, QC Laboratory, and Housekeeping/Facility teams\nEffluent treatment, reuse, and discharge processes\nWater procurement from groundwater, municipal supply, or tanker sources"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Water Recycling Rate",
+       "definition": "Percentage of total water consumed at a facility that is treated and reused within the same facility"
+      },
+      {
+       "term": "Effluent",
+       "definition": "Wastewater generated from manufacturing processes requiring treatment before discharge or reuse"
+      },
+      {
+       "term": "BOD",
+       "definition": "Biochemical Oxygen Demand — a measure of the organic load in wastewater"
+      },
+      {
+       "term": "COD",
+       "definition": "Chemical Oxygen Demand — measures total oxidizable matter in wastewater"
+      },
+      {
+       "term": "TSS",
+       "definition": "Total Suspended Solids — particles suspended in water that can clog treatment systems"
+      },
+      {
+       "term": "API Residue",
+       "definition": "Traces of Active Pharmaceutical Ingredients or excipient residues present in process effluent streams"
+      },
+      {
+       "term": "Rainwater Harvesting",
+       "definition": "Collection, channeling, and storage of rainwater from rooftops and paved surfaces for subsequent non-potable use"
+      },
+      {
+       "term": "Zero Liquid Discharge (ZLD)",
+       "definition": "A wastewater treatment approach targeting elimination of all liquid effluent leaving a facility"
+      },
+      {
+       "term": "Groundwater Contamination",
+       "definition": "Introduction of pollutants into subsurface aquifers through inadequate containment or non-compliant discharge"
+      },
+      {
+       "term": "Closed-Loop Cooling",
+       "definition": "A cooling water circuit where water is continuously recirculated with minimal evaporative loss or discharge"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definitions",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Water Recycling Rate",
+         "Percentage of total water consumed at a facility that is treated and reused within the same facility"
+        ],
+        [
+         "Effluent",
+         "Wastewater generated from manufacturing processes requiring treatment before discharge or reuse"
+        ],
+        [
+         "BOD",
+         "Biochemical Oxygen Demand — a measure of the organic load in wastewater"
+        ],
+        [
+         "COD",
+         "Chemical Oxygen Demand — measures total oxidizable matter in wastewater"
+        ],
+        [
+         "TSS",
+         "Total Suspended Solids — particles suspended in water that can clog treatment systems"
+        ],
+        [
+         "API Residue",
+         "Traces of Active Pharmaceutical Ingredients or excipient residues present in process effluent streams"
+        ],
+        [
+         "Rainwater Harvesting",
+         "Collection, channeling, and storage of rainwater from rooftops and paved surfaces for subsequent non-potable use"
+        ],
+        [
+         "Zero Liquid Discharge (ZLD)",
+         "A wastewater treatment approach targeting elimination of all liquid effluent leaving a facility"
+        ],
+        [
+         "Groundwater Contamination",
+         "Introduction of pollutants into subsurface aquifers through inadequate containment or non-compliant discharge"
+        ],
+        [
+         "Closed-Loop Cooling",
+         "A cooling water circuit where water is continuously recirculated with minimal evaporative loss or discharge"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve water management targets and capital investments for WTP/ETP upgrades; review annual water performance reports"
+       ]
+      },
+      {
+       "role": "Utilities / Facility Manager",
+       "responsibilities": [
+        "Operate, maintain, and optimize WTP, ETP, RO, and cooling systems; implement water conservation measures"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Optimize in-process water usage during washing, hydrolysis, and rinsing steps; minimize water waste from batch failures"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Conduct water quality and compliance assessments; manage regulatory submissions to GPCB; investigate contamination incidents"
+       ]
+      },
+      {
+       "role": "QC Laboratory",
+       "responsibilities": [
+        "Test incoming water quality and outgoing effluent parameters against applicable standards; maintain test records"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "WTP",
+         "Water Treatment Plant"
+        ],
+        [
+         "ETP",
+         "Effluent Treatment Plant"
+        ],
+        [
+         "ZLD",
+         "Zero Liquid Discharge"
+        ],
+        [
+         "API",
+         "Active Pharmaceutical Ingredient"
+        ],
+        [
+         "MCC",
+         "Microcrystalline Cellulose"
+        ],
+        [
+         "CCS",
+         "Croscarmellose Sodium"
+        ],
+        [
+         "SSG",
+         "Sodium Starch Glycolate"
+        ],
+        [
+         "GPCB",
+         "Gujarat Pollution Control Board"
+        ],
+        [
+         "CPCB",
+         "Central Pollution Control Board"
+        ],
+        [
+         "BOD",
+         "Biochemical Oxygen Demand"
+        ],
+        [
+         "COD",
+         "Chemical Oxygen Demand"
+        ],
+        [
+         "TSS",
+         "Total Suspended Solids"
+        ],
+        [
+         "RO",
+         "Reverse Osmosis"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "5.1 Water Recovery and Conservation Technologies\n\nObjective\n\nTo maximize the volume of water recycled within JRS & GMW's manufacturing facilities, reducing overall freshwater consumption and environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Water Recovery and Conservation Technologies",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A detailed Water Balance Assessment conducted at both Ahmedabad and Mehsana facilities annually, mapping all water inputs, major water uses by process area, and water outputs (recycled, discharged, evaporated)\nThe Utilities Manager maintain a Water Consumption Register recording daily water meter readings from all inlet and recycle streams; monthly summaries prepared and shared with the Sustainability Officer\nMonitor and record water reuse streams including RO permeate, MEE condensate, and STP treated water to ensure effective recycling, compliance with quality standards, and optimization of overall water conservation practices.\nUtilize and track RO permeate, MEE condensate, and STP treated water for appropriate reuse applications, ensuring proper treatment, quality verification, and alignment with regulatory and sustainability requirements.\nOur existing WTP processing 450 m³/day operated at no less than 95% of design capacity during production periods, with operational parameters (pH, turbidity, TDS) logged twice daily\nProcess water from MCC washing and purification stages collected in a dedicated holding tank and routed through the WTP for treatment before reuse in non-critical applications such as floor washing, equipment exterior cleaning, and cooling tower make-up\nRecycled water quality specifications defined for each reuse application and verified by QC before authorization for reuse"
+        }
+       ]
+      },
+      {
+       "heading": "Water Metering and Monitoring",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Water consumption shall be monitored through calibrated meters.\nMeter readings shall be recorded daily.\nUnexpected increases in consumption shall be investigated.\nMonitoring data shall be reviewed monthly."
+        }
+       ]
+      },
+      {
+       "heading": "Water Awareness Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees shall receive training on water conservation practices.\nAwareness campaigns shall be conducted periodically.\nWater conservation suggestions shall be encouraged.\nResults of awareness initiatives shall be evaluated annually."
+        }
+       ]
+      },
+      {
+       "heading": "Water Audit Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Water audits shall be conducted annually.\nOpportunities for reuse and recycling shall be identified."
+        }
+       ]
+      },
+      {
+       "heading": "Water Leak Detection and Repair",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Water distribution systems shall be inspected monthly for leaks and inefficiencies.\nWater leaks shall be repaired within seven days of identification.\nSignificant water losses shall be investigated and corrective actions documented."
+        }
+       ]
+      },
+      {
+       "heading": "Water Risk Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Water-related risks shall be assessed annually considering availability, quality, regulatory requirements, and operational needs.\nMitigation measures shall be implemented for identified high-risk areas."
+        }
+       ]
+      },
+      {
+       "heading": "Implementation of Low Water Consumption Cooling Systems",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All cooling tower systems assessed annually for blowdown rate, cycles of concentration, make-up water consumption, and Legionella risk\nCycles of concentration in cooling towers optimized to the maximum technically feasible level to reduce blowdown frequency and freshwater make-up volume\nClosed-loop cooling circuits used wherever technically feasible for equipment such as reactors, autoclaves, and heat exchangers\nCooling tower blowdown water analyzed for TDS, pH, and microbial contamination monthly; where quality permits, it reused for garden irrigation or external cleaning after pH adjustment\nDrift eliminators installed and maintained on all cooling towers; drift loss rate not exceed 0.002% of recirculating volume\nA Cooling Water Chemical Treatment Program (corrosion inhibitors, scale inhibitors, biocides) managed monthly by the Utilities team under a qualified water treatment chemical supplier"
+        }
+       ]
+      },
+      {
+       "heading": "Wastewater Analysis and Compliance Monitoring",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Our Effluent Treatment Plant operated continuously during production periods with a process flow including primary screening, equalization, coagulation and flocculation, biological treatment, secondary clarification, and final polishing\nEffluent quality tested at defined intervals: pH, temperature, and color daily at ETP inlet and outlet; BOD, COD, TSS, TDS, and oil & grease weekly at ETP outlet; full characterization by GPCB-accredited external laboratory quarterly\nEffluent discharge complies at all times with standards prescribed by the Gujarat Pollution Control Board and Central Pollution Control Board\nIf any out-of-compliance effluent result is obtained, discharge immediately halted, the batch routed back to the equalization tank for re-treatment, and the EHS Manager notified within 2 hours\nTesting conducted by the in-house QC laboratory and verified by accredited external laboratories periodically\nUtilize findings from both previous and current water audit reports to implement corrective actions, optimize water usage, and strengthen overall water management practices.\nAll effluent testing records, GPCB submission reports, and Consent to Operate documentation maintained for a minimum of 7 years"
+        }
+       ]
+      },
+      {
+       "heading": "Integration of Rainwater Harvesting into Water Management System",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A feasibility study for rooftop rainwater harvesting conducted at Mehsana manufacturing facility by Q2 2025, assessing available rooftop area, average annual rainfall, storage capacity, and potential reuse volumes\nBased on the feasibility study, a Rainwater Harvesting System design developed encompassing guttering, first-flush diverters, storage tanks with minimum 5 days' non-potable consumption capacity, pump system, and reuse distribution piping\nHarvested rainwater channeled to sealed and covered storage tanks fitted with overflow protection, mosquito-proofing, and water level indicators\nHarvested rainwater used for cooling tower make-up water, garden and landscape irrigation, and external washing of vehicles and equipment (after quality confirmation)\nRWHS components inspected and cleaned at the start of each monsoon season (June) and documented in the RWHS Maintenance Log\nAnnual volume of rainwater harvested and utilized tracked and included in the Annual Water Management Report and sustainability disclosures"
+        }
+       ]
+      },
+      {
+       "heading": "Groundwater Quality Protection and Risk Mitigation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All chemical storage areas, ETP sludge storage areas, and raw material storage yards constructed on reinforced, impermeable concrete surfaces equipped with bunded secondary containment capable of holding 110% of the largest stored vessel\nETP and WTP structural integrity formally inspected quarterly by the Utilities Manager for cracks, seepage, discoloration of surrounding soil, and signs of leakage; findings documented in the ETP/WTP Inspection Register\nSolid waste and chemical sludge residues stored in sealed containers on impermeable surfaces, labeled with waste type and storage date, and disposed of only through GPCB-authorized vendors\nMonitor and maintain groundwater quality through regular borewell analysis reports to ensure compliance with regulatory standards and safe usage for operational purposes.\nImplement strict wastewater management practices with zero discharge, ensuring all effluent is treated and reused within the facility in accordance with Zero Liquid Discharge (ZLD) system requirements.\nGroundwater quality monitoring boreholes established at the site boundary in consultation with GPCB; samples analyzed quarterly for pH, TDS, nitrates, and specific chemical parameters\nAny indication of groundwater quality deterioration reported to GPCB within 48 hours and an emergency containment and remediation plan activated\nAll underground pipework carrying effluent or chemicals inspected for integrity using pressure testing or CCTV survey every 3 years"
+        }
+       ]
+      },
+      {
+       "heading": "Removal of Micro pollutants from Wastewater",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All process wastewater streams containing pharmaceutical excipient residues including cellulose derivatives from MCC production, sodium salt residues from CCS processing, and starch residues from SSG production segregated at source and routed to the ETP for enhanced treatment\nThe EHS Manager maintain a Process Wastewater Inventory documenting all residue-bearing streams, their typical concentration ranges, and the corresponding ETP treatment pathway\nEnhanced biological treatment using adapted microbial cultures capable of degrading cellulose and starch polymers maintained in the ETP; microbial culture health monitored through regular volatile suspended solids (VSS) and respiration rate testing\nAdvanced filtration stages (ultrafiltration or nanofiltration) evaluated for deployment where conventional biological treatment is insufficient to achieve prescribed effluent quality for cellulose residue removal\nMaintain regular maintenance records for ETP, MEE, and RO systems to ensure efficient operation, regulatory compliance, and consistent performance in wastewater treatment and water recovery processes.\nTreated effluent tested for cellulose residue, starch residue, and excipient-specific parameters before discharge to confirm removal effectiveness\nCompliance with pharmaceutical wastewater treatment guidelines issued by MoEFCC and GPCB maintained and documented in the Effluent Compliance Register"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All water management activities comply with the Environment Protection Act, Water (Prevention and Control of Pollution) Act, and Gujarat Pollution Control Board discharge standards\nEffluent testing records, water recycling performance data, and consent-to-operate documentation maintained for a minimum of five years\nWater consumption and recycling metrics disclosed in JRS&GMW's annual sustainability report"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "We have target of 50% water recycling by 2026 reviewed quarterly with corrective measures if progress is below schedule\nAnnual water audits identify high-consumption processes and opportunities for further reduction\nEnhanced filtration technologies for process water reuse and ZLD feasibility evaluated progressively as part of capital planning"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to responsible water stewardship across its manufacturing operations. The Company continue to invest in water treatment infrastructure, increase recycling rates, prevent contamination of natural water sources, and optimize process water usage to reduce its environmental impact. GMW aims to achieve 50% water recycling by 2026 and progressively work toward a water-efficient manufacturing model."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "EMISSIONS REDUCTION AND AIR QUALITY IMPROVEMENT INITIATIVES",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Department",
+   "sourceWords": 1520,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd.'s manufacturing processes involve thermal energy generation, chemical processing, and mechanical operations that may generate emissions including particulate matter, volatile organic compounds (VOCs), and process-related gases. As a responsible manufacturer and ISO-certified company, JRS&GMW is committed to minimizing its air quality impact across all facilities.\n\nThis SOP establishes a structured framework for monitoring, controlling, and reducing atmospheric emissions and environmental nuisances from GMW's Ahmedabad and Mehsana manufacturing facilities."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All manufacturing plants, boiler houses, utilities, and loading-unloading areas at JRS&GMW facilities\nAll sources of atmospheric emissions including boilers, spray dryers, fluid bed dryers, reactors, milling equipment, and vehicular movement\nNoise and odor generating activities within JRS&GMW's operational boundary\nEHS, Production, Utilities, and Maintenance departments"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Particulate Matter (PM)",
+       "definition": "Solid or liquid particles suspended in air from manufacturing, combustion, or mechanical processes"
+      },
+      {
+       "term": "VOC",
+       "definition": "Volatile Organic Compound — organic chemicals that vaporize at room temperature and may contribute to air pollution"
+      },
+      {
+       "term": "Noise Boundary Level",
+       "definition": "The permissible noise level measured at the site boundary as prescribed by regulatory standards"
+      },
+      {
+       "term": "Odor Nuisance",
+       "definition": "Objectionable smell generated by manufacturing processes affecting workers or surrounding communities"
+      },
+      {
+       "term": "Stack Emission",
+       "definition": "Pollutants released into the atmosphere through chimneys or exhaust stacks from boilers or dryers"
+      },
+      {
+       "term": "Bag Filter",
+       "definition": "A fabric filtration device that captures particulate matter from gas streams before emission to atmosphere"
+      },
+      {
+       "term": "Scrubber",
+       "definition": "A pollution control device using a liquid spray to remove gaseous pollutants from exhaust streams"
+      },
+      {
+       "term": "Biofilter",
+       "definition": "A pollution control system where microorganisms in a packed organic bed degrade odorous compounds"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definitions",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Particulate Matter (PM)",
+         "Solid or liquid particles suspended in air from manufacturing, combustion, or mechanical processes"
+        ],
+        [
+         "VOC",
+         "Volatile Organic Compound — organic chemicals that vaporize at room temperature and may contribute to air pollution"
+        ],
+        [
+         "Noise Boundary Level",
+         "The permissible noise level measured at the site boundary as prescribed by regulatory standards"
+        ],
+        [
+         "Odor Nuisance",
+         "Objectionable smell generated by manufacturing processes affecting workers or surrounding communities"
+        ],
+        [
+         "Stack Emission",
+         "Pollutants released into the atmosphere through chimneys or exhaust stacks from boilers or dryers"
+        ],
+        [
+         "Bag Filter",
+         "A fabric filtration device that captures particulate matter from gas streams before emission to atmosphere"
+        ],
+        [
+         "Scrubber",
+         "A pollution control device using a liquid spray to remove gaseous pollutants from exhaust streams"
+        ],
+        [
+         "Biofilter",
+         "A pollution control system where microorganisms in a packed organic bed degrade odorous compounds"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve air quality management framework and capital investment for emission controls"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Conduct emission monitoring; maintain GPCB compliance and Consent to Operate; investigate complaints"
+       ]
+      },
+      {
+       "role": "Facility / Utilities Manager",
+       "responsibilities": [
+        "Operate and maintain emission control equipment including bag filters and scrubbers; manage boiler combustion parameters"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Implement process-level emission reduction measures; report unusual emissions immediately"
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Carry out scheduled and corrective maintenance of all air pollution control equipment; calibrate emission monitoring instruments"
+       ]
+      },
+      {
+       "role": "Procurement",
+       "responsibilities": [
+        "Source low-emission fuels and eco-friendly process materials"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "VOC",
+         "Volatile Organic Compound"
+        ],
+        [
+         "PM",
+         "Particulate Matter"
+        ],
+        [
+         "NOx",
+         "Nitrogen Oxides"
+        ],
+        [
+         "SO2",
+         "Sulfur Dioxide"
+        ],
+        [
+         "GPCB",
+         "Gujarat Pollution Control Board"
+        ],
+        [
+         "CPCB",
+         "Central Pollution Control Board"
+        ],
+        [
+         "dB(A)",
+         "Decibels A-weighted (noise measurement unit)"
+        ],
+        [
+         "CTO",
+         "Consent to Operate"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "6.1 Air emissions Prevention and Control Actions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The EHS Manager maintain an Emission Source Register for each facility recording: unique source identifier, source type, location, rated capacity, primary pollutants emitted, installed control technology, applicable GPCB emission limit, monitoring frequency, and last monitoring result\nA visual Emission Source Map prepared for each facility identifying all stack locations, fugitive emission zones, and monitoring points; the Map displayed in the EHS office and reviewed annually\nAll significant emission sources at facilities identified and registered in the Emission Source Register; new equipment with potential atmospheric emissions undergo an EHS Pre-Commissioning Review before start-up\nBoiler operations optimized for combustion efficiency to minimize NOx and SO2 emissions; combustion optimization performed monthly by adjusting excess air ratio to maintain optimal CO2 concentration in flue gas (target: 12–14%)\nMaintain records of installed air pollution control equipment such as Electrostatic Precipitators (ESP), bag filters, and wet scrubbers, ensuring proper operation, periodic inspection, and effectiveness in controlling emissions.\nGreen fuel transition (castor pellets replacing coal) accelerated to reduce sulfur and particulate emissions\nEnsure third-party environmental monitoring is conducted through MoEF & CC approved laboratories, and maintain records to verify compliance with applicable air emission standards and regulatory requirements.\nPreventive maintenance schedules for emission control equipment strictly followed and documented"
+        }
+       ]
+      },
+      {
+       "heading": "6.2 Atmospheric Particulate Control and Reduction Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Control Technologies"
+        },
+        {
+         "type": "bullets",
+         "text": "All dust-generating processes including spray drying, fluid bed drying, milling, sieving, blending, and material transfer enclosed within sealed equipment or rooms equipped with local exhaust ventilation (LEV) systems\nBag filter systems (fabric filter dust collectors) with rated collection efficiency of ≥99% for particles above 1 micron installed on all process exhausts generating significant particulate emissions\nBag filter condition inspected monthly for filter bag integrity, differential pressure, clean side emission color, and hopper dust removal function; inlet and outlet concentrations measured semi-annually\nDusty raw materials including cellulose, sodium carboxymethyl cellulose, and starch handled using enclosed conveying systems (pneumatic or enclosed screw conveyors) loaded into enclosed hoppers or silos\nDuring loading, unloading, and transport of dry materials within the facility boundary, dust suppression measures (water misting, enclosed vehicles, dust sheets) employed\nProduction floor cleaning use wet mopping or vacuum cleaning methods; dry sweeping of dusty floor areas is prohibited as it resuspends settled dust"
+        },
+        {
+         "type": "paragraph",
+         "text": "Ambient Air Quality Monitoring"
+        },
+        {
+         "type": "bullets",
+         "text": "Ambient air quality monitoring shall be conducted through accredited laboratories at frequencies specified by regulatory requirements.\nParameters monitored shall include PM10, PM2.5, SO₂, NOx, and other applicable pollutants.\nMonitoring results shall be reviewed by the EHS Department and retained for regulatory compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Stack Emission Monitoring"
+        },
+        {
+         "type": "bullets",
+         "text": "Stack emissions shall be monitored according to regulatory requirements.\nMonitoring shall be performed by accredited laboratories.\nExceedances shall be investigated immediately.\nCorrective actions shall be implemented and documented."
+        },
+        {
+         "type": "paragraph",
+         "text": "Vehicle Emission Control"
+        },
+        {
+         "type": "bullets",
+         "text": "Company-owned vehicles shall undergo regular emission testing.\nVehicles exceeding prescribed limits shall not be operated until corrective action is completed.\nFuel consumption records shall be maintained.\nVehicle maintenance shall support emission reduction objectives."
+        }
+       ]
+      },
+      {
+       "heading": "6.3 Air Pollution Abatement for Chemical and Metal Emissions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Process Controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Chemical processes involving solvents or acid treatment conducted in enclosed systems with scrubbers; caustic scrubbers (NaOH solution) installed on hydrochloric acid storage and process vents\nEmission concentrations of VOCs, SO2, and NOx monitored at stack outlets as per GPCB consent conditions; stack emission testing conducted by accredited NABL/MoEFCC-recognized laboratories and results submitted to GPCB annually\nWet scrubbers or activated carbon adsorption units evaluated for VOC abatement where required; scrubber liquor chemistry and activated carbon saturation monitored per the equipment manufacturer's recommendations\nA register of all solvents, acids, and chemical reagents used in production maintained by EHS, including maximum inventory quantity, emission potential, and applicable control measures\nAll chemical transfer operations conducted using closed-loop systems or with local exhaust ventilation active to minimize fugitive VOC emissions"
+        }
+       ]
+      },
+      {
+       "heading": "6.4 Acoustic Monitoring and Noise Reduction Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Noise Monitoring Program"
+        },
+        {
+         "type": "bullets",
+         "text": "A Noise Zone Map of both facilities prepared identifying: high-noise zones (≥85 dB(A)), moderate-noise zones (70–85 dB(A)), and low-noise administrative and welfare areas (<70 dB(A))\nSite boundary noise measurements conducted annually at a minimum of four measurement points on the facility perimeter, at times representative of peak production operations, separately for daytime and nighttime periods\nMeasurement results compared against prescribed ambient noise standards: Daytime 75 dB(A) and Nighttime 70 dB(A) for industrial areas as per Noise Pollution (Regulation and Control) Rules 2000\nHigh-noise equipment including compressors, blowers, cooling towers, and grinding mills — fitted with acoustic enclosures, anti-vibration mounts, silencers on compressed air exhaust vents, and acoustic lagging on high-temperature pipework as appropriate\nAll employees working in zones where noise exposure exceeds 85 dB(A) enrolled in the Hearing Conservation Program comprising: mandatory provision and use of approved hearing protection (SNR ≥25 dB), annual audiometric testing, and noise awareness training\nNoise complaints received from neighboring properties logged, investigated using calibrated sound level meter measurements within 24 hours, and formally responded to within 15 working days; investigation findings and corrective actions documented"
+        }
+       ]
+      },
+      {
+       "heading": "6.5 Bio filtration System for Odor Emission Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Odor Control Measures"
+        },
+        {
+         "type": "bullets",
+         "text": "An Odor Impact Assessment conducted at both facilities to identify all potential odor-generating processes including castor pellet fuel storage, ETP aeration tanks, chemical reagent storage, and starch fermentation\nProcess areas identified as generating chemical or biological odors physically enclosed or operated under negative pressure ventilation; all ventilation exhausts from odor-generating areas ducted to an appropriate odor treatment unit before discharge\nFeasibility of biofilter installation for organic odor streams from starch and cellulose processing at Mehsana evaluated by Q3 2025, including space requirements, capital cost, and operational parameters\nChemical scrubbers (sodium hypochlorite or potassium permanganate) evaluated for chemical odors from reagent handling, and activated carbon adsorbers for low-volume, high-concentration VOC odor streams\nA response protocol for odor complaints established with defined investigation and response timelines; any complaint logged, investigated within 24 hours, and corrective measures implemented within 30 days\nBiomass fuel (castor pellet) storage areas covered and ventilated; storage duration not exceed 30 days to prevent decomposition and odor intensification"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All emission monitoring and control activities comply with the Air (Prevention and Control of Pollution) Act, GPCB consent conditions, and applicable environmental protection regulations\nStack emission test reports, noise monitoring records, and pollution control board submissions maintained for a minimum of five years\nWe maintain valid Consent to Operate under the Air Act at all manufacturing facilities"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual review of emission data identifies trends and areas requiring enhanced control measures\nTargets for particulate emission reduction and stack emission compliance set and tracked annually\nInvestments in cleaner fuel technologies and emission control equipment evaluated as part of capital planning"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to minimizing its atmospheric emissions and preventing air quality impacts on employees, neighboring communities, and the environment. The Company invest in appropriate emission control technologies, conduct regular monitoring, and continuously improve its processes to reduce particulate matter, chemical vapor, noise, and odor generation from its manufacturing operations."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "WASTE MINIMIZATION AND MANAGEMENT STRATEGIES",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Manager",
+   "sourceWords": 1520,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Effective waste management is a critical component of environmental stewardship and operational efficiency at JRS Pharma & Gujarat Microwax Pvt. Ltd. JRS&GMW's manufacturing of pharmaceutical excipients generates various waste streams including process residues, packaging waste, laboratory waste, chemical effluents, and solid wastes from facility operations."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a systematic framework for waste reduction, internal reuse and recovery, stream-specific segregation and disposal, employee training, and collaboration with authorized external waste management partners. The objective is to reduce environmental impact, optimize resource utilization, comply with regulatory requirements, and continuously improve waste performance across all JRS&GMW facilities."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All manufacturing units, warehouses, QC laboratories, administrative offices, and storage areas at JRS&GMW\nAll categories of waste generated from operational, production, and administrative activities\nAll permanent, contractual, and third-party workers involved in waste generation or handling\nTransportation of waste from GMW facilities to authorized treatment and disposal sites"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Waste Stream",
+       "definition": "A categorized type of waste such as hazardous, non-hazardous, recyclable, organic, e-waste, or packaging waste — each requiring a defined management pathway"
+      },
+      {
+       "term": "Reuse",
+       "definition": "Using materials again for the same or alternative purpose without significant reprocessing"
+      },
+      {
+       "term": "Recovery",
+       "definition": "Extraction of useful materials or energy from waste streams"
+      },
+      {
+       "term": "Authorized Recycler",
+       "definition": "Government-approved entity licensed to collect, treat, recycle, or dispose of specific waste streams"
+      },
+      {
+       "term": "TSDF",
+       "definition": "Treatment, Storage and Disposal Facility — GPCB-authorized facility for management of hazardous wastes"
+      },
+      {
+       "term": "Transboundary Movement",
+       "definition": "Movement of hazardous waste across state or national boundaries requiring prior informed consent and regulatory authorization"
+      },
+      {
+       "term": "Waste Manifest",
+       "definition": "A legally required document accompanying every consignment of hazardous waste from generator to disposal facility"
+      },
+      {
+       "term": "Waste Intensity",
+       "definition": "Volume or weight of waste generated per unit of production output — a key waste performance indicator"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve waste reduction targets and allocate resources for waste management infrastructure"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Waste classification, monitoring, regulatory compliance, vendor management, and hazardous waste returns to GPCB"
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Minimize waste generation at source; ensure proper segregation at production area bins; report unusual waste generation"
+       ]
+      },
+      {
+       "role": "QC Laboratory",
+       "responsibilities": [
+        "Segregate and safely store chemical waste, expired reagents, and contaminated samples; schedule disposal through EHS-approved vendor"
+       ]
+      },
+      {
+       "role": "Warehouse",
+       "responsibilities": [
+        "Proper segregation and temporary storage of different waste categories; maintain area cleanliness and labeling"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Employee training and waste awareness programs; include waste management in induction programs"
+       ]
+      },
+      {
+       "role": "Procurement",
+       "responsibilities": [
+        "Promote reusable and sustainable packaging; evaluate eco-friendly alternatives to reduce waste at source"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Abbreviations",
+     "rows": [
+      {
+       "term": "SOP",
+       "definition": "Standard Operating Procedure"
+      },
+      {
+       "term": "EHS",
+       "definition": "Environment, Health & Safety"
+      },
+      {
+       "term": "PPE",
+       "definition": "Personal Protective Equipment"
+      },
+      {
+       "term": "GPCB",
+       "definition": "Gujarat Pollution Control Board"
+      },
+      {
+       "term": "CPCB",
+       "definition": "Central Pollution Control Board"
+      },
+      {
+       "term": "TSDF",
+       "definition": "Treatment, Storage and Disposal Facility"
+      },
+      {
+       "term": "HWM Rules",
+       "definition": "Hazardous Waste Management and Transboundary Movement Rules 2016"
+      },
+      {
+       "term": "SWM Rules",
+       "definition": "Solid Waste Management Rules 2016"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Waste Reduction through Circular Material Management Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste Generation Baseline and Minimization at Source"
+        },
+        {
+         "type": "bullets",
+         "text": "The EHS Manager conduct a comprehensive Waste Generation Audit at each facility in Q1 of each year, identifying and quantifying all waste streams including process residues (cellulose pulp, chemical sludge), packaging waste, QC laboratory waste, ETP sludge, and maintenance waste\nA Waste Stream Map produced documenting: waste type, generation source/department, typical monthly volume, waste classification, applicable regulation, designated disposal or recovery route, and authorized vendor; the Map reviewed and updated annually\nWaste Intensity (kg of waste per tonne of product) calculated monthly by waste category and tracked as a key environmental KPI; significant increases trigger a Root Cause Analysis\nEach department head annually prepares a Departmental Waste Reduction Plan identifying at least three specific waste minimization actions for the coming year with measurable targets\nBaseline waste generation data recorded monthly to track trends and identify high-volume categories\nUtilize sludge dryer and filter press systems for effective dewatering and volume reduction of sludge, ensuring improved handling, disposal efficiency, and compliance with environmental management practices.\nProcess modifications to reduce batch reject rates, spillage, and rework systematically evaluated\nPackaging materials such as cartons and pallets inspected for reuse potential before disposal"
+        },
+        {
+         "type": "paragraph",
+         "text": "Internal waste sorting and disposal according to Waste form"
+        },
+        {
+         "type": "bullets",
+         "text": "Waste segregated at the point of generation into labeled, color-coded bins: Red (hazardous), Yellow (non-hazardous process waste), Green (recyclable), Black (general solid waste), Blue (e-waste), Orange (biomedical/clinical waste)\nColor-coded waste bins with clear bilingual labels (English and Gujarati) maintained across production floors, laboratories, and offices; mixed waste bins are strictly prohibited in production and chemical storage areas\nWaste collection routes and schedules defined and posted for each facility area; waste collected from production floor bins at least once per shift and daily from laboratory and office areas\nMaintain TSDF (Treatment, Storage and Disposal Facility) invoices and valid membership certificates as documented evidence of authorized hazardous waste disposal and compliance with applicable environmental regulations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Mapping of Waste Streams"
+        },
+        {
+         "type": "bullets",
+         "text": "MCC, CCS, and SSG production-specific waste streams including cellulose residues and spent reagents clearly mapped with disposal routes\nWaste generation quantities recorded monthly and compared against production output to calculate waste intensity\nMaintain waste mapping analysis through FORM 3 records and ensure timely submission to the Pollution Control Board, while also submitting annual hazardous waste returns in FORM IV and following established SOPs for hazardous waste management and mapping procedures.\nCellulose waste from MCC production assessed for alternative uses including sale as animal feed supplement, composting, or supply to paperboard manufacturers"
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste Inventory Management"
+        },
+        {
+         "type": "bullets",
+         "text": "A waste inventory register shall be maintained.\nWaste generation quantities shall be recorded monthly.\nWaste categories shall be reviewed periodically.\nInventory records shall support regulatory reporting."
+        },
+        {
+         "type": "paragraph",
+         "text": "Vendor Qualification and Evaluation"
+        },
+        {
+         "type": "bullets",
+         "text": "Waste disposal vendors shall possess valid licenses and regulatory approvals.\nVendor compliance shall be reviewed annually.\nRecords of waste transfer, disposal certificates, and manifests shall be maintained."
+        }
+       ]
+      },
+      {
+       "heading": "Prohibition and Regulation of Cross-Border Hazardous Waste Movement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous Waste Control"
+        },
+        {
+         "type": "bullets",
+         "text": "All hazardous waste generated at facilities classified in accordance with Schedule I and II of the Hazardous and Other Wastes (Management and Transboundary Movement) Rules 2016; an Annual Return submitted to GPCB before 30 June each year\nAll hazardous waste disposed of within India through authorized and licensed handlers; no hazardous waste exported or transferred across state boundaries without prior written consent from relevant regulatory authorities\nEvery consignment of hazardous waste leaving a facility accompanied by a completed Hazardous Waste Manifest (Form 13 under HWM Rules 2016) in the required number of copies\nOnly GPCB-licensed and registered transporters used for hazardous waste transportation; transporter registration number and vehicle registration verified before each collection\nAuthorized TSDF facilities used for disposal hold valid operating licenses from GPCB or CPCB; license validity verified annually by the EHS Manager\nWe maintain a valid Authorization from GPCB for storage of all hazardous waste categories; Authorization renewed well in advance of expiry\nMaintain online hazardous waste manifest records for final disposal, ensure transportation is supported with valid emergency (TREM) cards, keep updated waste inventory through FORM 3 submissions to the Pollution Control Board, and hold valid membership with authorized CHWTSDF facilities for compliant third-party waste handling and disposal.\nHazardous waste manifests, disposal certificates, annual returns, and transporter records maintained for a minimum of 7 years"
+        }
+       ]
+      },
+      {
+       "heading": "Temporary Waste Containment and Storage Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "TWSA Storage Controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Each facility maintains a dedicated TWSA on an impermeable concrete floor with bunded secondary containment, weather protection (roofed), adequate ventilation, fire suppression, and appropriate placarding\nAll waste containers in the TWSA clearly labeled with: waste type, hazard classification (UN number for hazardous waste), generation date, quantity, and the generating department\nHazardous waste not be stored in the TWSA for more than 90 days without GPCB authorization; storage duration tracked and a disposal schedule maintained\nNon-hazardous recyclable waste segregated within the TWSA and sold to authorized recyclers on a scheduled basis (at minimum monthly)\nThe TWSA inspected by the EHS Manager weekly for container integrity, proper labeling, segregation compliance, evidence of spillage or leakage, and fire safety compliance; inspection records maintained in the TWSA Inspection Log"
+        }
+       ]
+      },
+      {
+       "heading": "Workforce Training on Waste Handling and Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Training Program"
+        },
+        {
+         "type": "bullets",
+         "text": "Annual waste management training conducted for all employees covering waste categories, the color-coded segregation system, correct labeling and TWSA procedures, hazardous waste handling, and each employee's specific responsibilities\nNew employees receive waste segregation training during induction programs within the first week of employment; training records maintained in the HR Training Register\nThird-party contract workers attend a waste management briefing before commencing work; the contract supervisor confirm and document attendance\nPeriodic unannounced spot checks by the EHS Manager verify field-level adherence to waste segregation protocols; non-compliances recorded and addressed through retraining"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All waste management activities comply with the Hazardous and Other Wastes (Management & Transboundary Movement) Rules, Solid Waste Management Rules, and GPCB conditions\nWaste manifests, disposal certificates, and annual returns maintained for a minimum of five years\nWe maintain valid authorizations for storage and disposal of all hazardous waste categories generated at its facilities"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual waste audits identify high-volume waste streams and reduction opportunities\nTargets for percentage reduction in landfill waste and increase in recycling rates established annually\nCollaboration with certified recyclers expanded to explore innovative waste-to-value opportunities"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to minimizing waste generation and promoting responsible waste management practices across its operations. The Company prioritize waste reduction at source, encourage material reuse and recovery, and strengthen internal waste segregation systems in accordance with applicable regulatory requirements and its sustainability commitments."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "RESPONSIBLE USE OF MATERIALS AND CHEMICALS",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Department",
+   "sourceWords": 1626,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The responsible management of raw materials and chemical substances is fundamental to the safety, environmental performance, and product quality standards of JRS Pharma & Gujarat Microwax Pvt. Ltd. JRS&GMW uses a range of chemical reagents in its production of pharmaceutical excipients, including process chemicals such as hydrochloric acid, sodium hydroxide, sodium monochloroacetate, and various cleaning agents. These substances present potential risks to human health, the environment, and product quality if not rigorously managed throughout their lifecycle.\n\nThis SOP establishes a fully detailed framework for the responsible procurement, receipt, storage, handling, use, and disposal of all materials and chemical substances at JRS&GMW, covering hazard assessment, MSDS management, environmentally preferable material selection, hazardous substance controls, and emergency response measures for chemical incidents."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP applies to:\n\nAll raw materials, process chemicals, cleaning agents, laboratory reagents, maintenance chemicals, and auxiliary materials used or stored at JRS&GMW facilities\nAll purchasing, receiving, warehousing, production, QC laboratory, maintenance, and waste management activities involving chemical substances\nAll permanent, temporary, and contract workers involved in chemical handling\nVisitors and contractors working in areas where chemicals are stored or used"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "MSDS / SDS",
+       "definition": "Material Safety Data Sheet / Safety Data Sheet — a standardized document providing hazard information for a chemical substance"
+      },
+      {
+       "term": "Hazardous Substance",
+       "definition": "A substance posing substantial risk due to toxicity, flammability, reactivity, corrosiveness, or environmental harm"
+      },
+      {
+       "term": "CMR Substance",
+       "definition": "Carcinogenic, Mutagenic, or Reprotoxic substance — substances with potential to cause cancer, genetic damage, or reproductive harm"
+      },
+      {
+       "term": "PBT Substance",
+       "definition": "Persistent, Bioaccumulative, and Toxic substance — chemicals that do not break down easily and accumulate in living organisms"
+      },
+      {
+       "term": "GHS",
+       "definition": "Globally Harmonized System of Classification and Labeling of Chemicals — the international standard for classifying and labeling chemicals"
+      },
+      {
+       "term": "Eco-Friendly Material",
+       "definition": "Materials with reduced environmental impact in production, use, or disposal relative to conventional alternatives"
+      },
+      {
+       "term": "Approved Vendor List (AVL)",
+       "definition": "A list of suppliers who have passed GMW's qualification criteria for supply of materials or services"
+      },
+      {
+       "term": "Secondary Containment",
+       "definition": "A containment system designed to capture spills or leaks from primary containers"
+      },
+      {
+       "term": "Chemical Incompatibility",
+       "definition": "The potential for two or more chemicals to react dangerously when in contact, generating heat, toxic gas, fire, or explosion"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "MSDS / SDS",
+         "Material Safety Data Sheet / Safety Data Sheet"
+        ],
+        [
+         "GHS",
+         "Globally Harmonized System of Classification and Labeling of Chemicals"
+        ],
+        [
+         "PPE",
+         "Personal Protective Equipment"
+        ],
+        [
+         "CMR",
+         "Carcinogenic, Mutagenic, Reprotoxic"
+        ],
+        [
+         "PBT",
+         "Persistent, Bioaccumulative, and Toxic"
+        ],
+        [
+         "GPCB",
+         "Gujarat Pollution Control Board"
+        ],
+        [
+         "QA",
+         "Quality Assurance"
+        ],
+        [
+         "AVL",
+         "Approved Vendor List"
+        ],
+        [
+         "FIFO",
+         "First In, First Out (stock rotation principle)"
+        ],
+        [
+         "MSIHC Rules",
+         "Manufacture, Storage and Import of Hazardous Chemical Rules 1989"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve policy commitments on hazardous substance reduction and eco-friendly material adoption",
+        "Review annual chemical management performance"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Maintain Material Hazard Register",
+        "Conduct chemical risk assessments",
+        "Manage MSDS library",
+        "Lead emergency response",
+        "Regulatory compliance"
+       ]
+      },
+      {
+       "role": "Quality Assurance (QA)",
+       "responsibilities": [
+        "Qualify chemical suppliers",
+        "Ensure incoming material specifications meet quality and safety standards",
+        "Approve new chemicals before use"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source materials from approved vendors",
+        "Incorporate environmental and safety criteria in vendor evaluation",
+        "Seek environmentally preferable alternatives"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Ensure chemicals are handled per MSDS requirements",
+        "Ensure PPE use",
+        "Report chemical incidents immediately"
+       ]
+      },
+      {
+       "role": "Warehouse Team",
+       "responsibilities": [
+        "Receive, label, and store chemicals in designated areas",
+        "Maintain chemical segregation",
+        "Manage stock rotation (FIFO)",
+        "Check container integrity"
+       ]
+      },
+      {
+       "role": "QC Laboratory",
+       "responsibilities": [
+        "Manage laboratory chemicals and reagents safely",
+        "Maintain MSDS for all lab chemicals",
+        "Safely dispose of expired chemicals"
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Safely handle and store maintenance chemicals (lubricants, solvents, cleaning fluids)",
+        "Ensure proper disposal of used materials"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "8.1 Responsible Chemical Sourcing and Supplier Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective\n\nTo ensure that all materials and chemicals procured by JRS&GMW meet defined quality, safety, and environmental standards, and are sourced from qualified, responsible suppliers.\n\nVendor Qualification Procedure"
+        },
+        {
+         "type": "bullets",
+         "text": "No new chemical substance procured or introduced into Our facilities without prior EHS and QA approval; a New Chemical Introduction Form completed, reviewed against relevant SDS and regulatory requirements, and signed off before the first order is placed\nThe Procurement Team evaluate all chemical suppliers on the Approved Vendor List using criteria that include: product quality certifications, provision of current SDS (16-section GHS format), supply chain transparency, environmental management certifications (ISO 14001), and compliance with applicable chemical regulations\nBefore approving a new chemical supplier, the QA and EHS team jointly review the SDS confirming: hazard classification is complete and accurate, recommended PPE and handling requirements are practicable at our site, and disposal requirements can be met by our waste management system\nPromote the use of eco-friendly and bio-based materials by utilizing biomass pellets as boiler fuel\nThe Procurement team actively evaluate and prioritize environmentally preferable alternatives to currently used hazardous chemicals, including lower-toxicity cleaning agents, biodegradable packaging materials, and chemicals not classified as CMR or PBT\nSupplier environmental performance assessed during annual vendor reviews; suppliers with environmental violations receive corrective action requests; persistent non-compliance lead to removal from the AVL"
+        }
+       ]
+      },
+      {
+       "heading": "8.2 Material Receiving, Testing and Chemical Inventory Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incoming Inspection and Registration Protocol"
+        },
+        {
+         "type": "bullets",
+         "text": "All chemical deliveries received at the designated chemical receiving dock by trained Warehouse personnel; chemical deliveries not be accepted outside normal working hours unless pre-authorized by EHS or Warehouse Manager\nIncoming materials inspected on arrival for: correct material name and grade, complete GHS hazard labels with pictograms and batch/lot number, intact and undamaged packaging, valid Certificate of Analysis (CoA), and current SDS (not more than 3 years old)\nAny delivery with damaged containers, missing labels, or absent documentation quarantined in the designated holding area, tagged with a 'HOLD — Do Not Use' label, and reported to QA and EHS for disposition within the same working day\nReceived chemicals logged into the Chemical Inventory System recording: material name, supplier, batch number, quantity received, date of receipt, storage location, and expiry date (where applicable)\nMSDS/SDS for all received materials uploaded to the MSDS Library and made accessible to all personnel handling that substance within 24 hours of first receipt"
+        }
+       ]
+      },
+      {
+       "heading": "8.3 Emergency Preparedness and Response for Environmental Incidents",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Chemical Spill Response Procedure"
+        },
+        {
+         "type": "bullets",
+         "text": "Upon discovery of a chemical spill, all persons in the immediate area alerted and evacuated if the spill involves a volatile, toxic, or flammable chemical; the Supervisor and EHS Manager contacted immediately providing: chemical name, estimated spill volume, and whether drainage or water bodies are at risk\nIf safe to do so and with appropriate PPE, the spill stopped at source (close valve, right container, seal leak); spill absorbent materials (vermiculite, absorbent pads) or appropriate neutralizing agents deployed immediately\nSpilled material prevented from reaching drains, waterways, or soil by deploying drain plugs and containment barriers; collected spill waste stored in labeled containers for disposal as hazardous waste.\nIf the spill reaches a drainage system or watercourse, GPCB notified immediately (within 24 hours) and the Environmental Emergency Protocol activated\nAn Incident Investigation Report using 5-Why or fishbone root cause analysis completed within 5 working days; lessons learned shared with all relevant employees through toolbox talks and incorporated into chemical handling procedures and training materials\nAll chemical emergency incidents spills, releases, near-misses recorded in the Incident Register"
+        }
+       ]
+      },
+      {
+       "heading": "8.4 Safer Chemical Substitution and Reduction Program",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Substitution & Reduction Controls"
+        },
+        {
+         "type": "bullets",
+         "text": "The EHS Manager maintain a Hazardous Substance Inventory listing all CMR, PBT, and environmentally hazardous substances currently in use; annual review assess substitution feasibility for each listed substance\nFor each identified CMR or PBT substance, the EHS and QA teams investigate technically feasible alternatives; substitution decisions documented including why substitution is or is not feasible, timeline for transition, and any validations required\nAnnual targets for reduction in the number of CMR and PBT substances in use, and reduction in total hazardous chemical consumption (kg/year), set and tracked\nWhere elimination or substitution is not feasible, engineering and administrative controls applied to minimize worker exposure and environmental risk, per the Hierarchy of Controls"
+        }
+       ]
+      },
+      {
+       "heading": "8.5 Chemical Storage and Segregation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Storage & Segregation Requirements"
+        },
+        {
+         "type": "bullets",
+         "text": "A Chemical Storage Map maintained for each facility indicating: storage areas for each chemical category, segregation zones, quantity limits per area, and emergency equipment locations (eyewash, fire extinguishers, spill kit)\nAcids (HCl, H2SO4) stored separately from bases (NaOH, Na2CO3); oxidizing agents stored separately from flammable and organic materials; gas cylinders secured with anti-topple chains in ventilated areas with caps fitted when not in use\nAll chemical storage areas have: secondary containment capable of retaining 110% of the largest container, adequate ventilation, no ignition sources in flammable storage areas, temperature controls where required by SDS, and appropriate fire suppression and spill response equipment\nChemical containers labeled at all times using our GHS-compliant label format; labels that become damaged or detached immediately replaced; unlabeled containers not be used\nStock rotation on a First-In, First-Out (FIFO) basis implemented; chemicals approaching their expiry date flagged to QA 30 days in advance for disposition\nAccess to chemical storage areas controlled by the Warehouse Supervisor; unauthorized personnel not enter without supervision"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All chemical management activities comply with the Manufacture, Storage and Import of Hazardous Chemical (MSIHC) Rules 1989, Hazardous and Other Wastes Rules 2016, Environment Protection Act 1986, and applicable BIS and GHS standards\nMSDS/SDS files, Chemical Inventory Registers, incident reports, and vendor qualification records maintained for a minimum of seven years\nAll workers handling chemicals trained, and training records maintained and available for regulatory inspection"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual review of the Hazardous Substance Inventory identifies substitution opportunities and track progress against reduction targets\nLessons learned from all chemical spills and near-misses incorporated into handling procedures, training content, and engineering control upgrades\nJRS&GMW progressively transition to environmentally preferable materials across all product lines and facility operations, with annual targets for adoption of approved alternatives"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to the responsible management of all materials and chemicals used in its manufacturing operations. The Company ensure the safety of its employees and the protection of the environment through rigorous hazard assessment, safe handling practices, emergency preparedness, and the progressive substitution of hazardous substances with environmentally preferable alternatives."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "PRODUCT LIFE CYCLE END MANAGEMENT AND RECOVERY MEASURES",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "Sustainability / EHS",
+   "owner": "Sustainability / EHS",
+   "sourceWords": 745,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. recognizes that environmental responsibility extends beyond the manufacturing process to encompass the full lifecycle of its excipient products. As a supplier of MCC, CCS, and SSG to the pharmaceutical, food, and cosmetic industries, JRS & GMW acknowledges its role in supporting customers with appropriate product end-of-life guidance.\n\nThis SOP establishes a structured framework for collaboration with external stakeholders on end-of-life management, information on proper disposal, optimization of primary packaging, and demand estimation to prevent overproduction."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Product End-of-Life",
+       "definition": "The stage at which a product or material is no longer suitable for its intended use and requires disposal, recycling, or recovery"
+      },
+      {
+       "term": "Circular Material Flow",
+       "definition": "A system designed to keep materials in use for as long as possible, extracting maximum value before recovery and regeneration"
+      },
+      {
+       "term": "Primary Packaging",
+       "definition": "The packaging material that is in direct contact with the product such as inner bags, containers, or drums"
+      },
+      {
+       "term": "Demand Estimation",
+       "definition": "Forecasting of market demand to align production output with actual requirements, preventing overproduction"
+      },
+      {
+       "term": "Reverse Logistics",
+       "definition": "The process of moving products from customers back toward manufacturers for reuse, recycling, or proper disposal"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve end-of-life and circular economy strategies; support sustainability commitments"
+       ]
+      },
+      {
+       "role": "Sales & Marketing",
+       "responsibilities": [
+        "Communicate product disposal guidelines to customers; promote circular material flow principles"
+       ]
+      },
+      {
+       "role": "Production Planning",
+       "responsibilities": [
+        "Implement demand-driven production scheduling to minimize excess inventory"
+       ]
+      },
+      {
+       "role": "Logistics",
+       "responsibilities": [
+        "Manage packaging optimization and reverse logistics coordination"
+       ]
+      },
+      {
+       "role": "Sustainability / EHS",
+       "responsibilities": [
+        "Monitor end-of-life performance; develop disposal guidance documentation"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "MCC",
+         "Microcrystalline Cellulose"
+        ],
+        [
+         "CCS",
+         "Croscarmellose Sodium"
+        ],
+        [
+         "SSG",
+         "Sodium Starch Glycolate"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "ESG",
+         "Environmental, Social & Governance"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "9.1 Coordination with External Stakeholders for Product Disposal and Recycling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Stakeholder Engagement"
+        }
+       ]
+      },
+      {
+       "heading": "9.2 Provision of Disposal Guidance to Support Circular Material Flow",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Disposal Communication"
+        }
+       ]
+      },
+      {
+       "heading": "9.3 Optimization of Packaging, Material Composition & sustainable packaging material",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Packaging Design Review"
+        },
+        {
+         "type": "paragraph",
+         "text": "Sustainable Packaging Review"
+        }
+       ]
+      },
+      {
+       "heading": "9.4 Inventory Optimization through Accurate Demand Forecasting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Production Planning Controls"
+        }
+       ]
+      },
+      {
+       "heading": "9.5 Product Stewardship Review",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to promoting environmental responsibility beyond its manufacturing boundaries by supporting responsible product end-of-life management. The Company provide clear disposal guidance, optimize packaging materials, prevent overproduction, and collaborate with stakeholders to advance circular economy principles within the pharmaceutical excipient supply chain."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "CUSTOMER HEALTH & SAFETY MEASURES",
+   "code": "",
+   "catalogId": "customer-health-safety",
+   "pillar": "S",
+   "department": "Quality Assurance",
+   "owner": "Quality Assurance",
+   "sourceWords": 712,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to ensuring that all excipient products manufactured and distributed meet the highest standards of quality, safety, and regulatory compliance. As a GMP-certified manufacturer supplying pharmaceutical, food, and cosmetic industries, JRS & GMW recognizes its obligation to provide complete, accurate, and transparent product safety information to its customers.\n\nThis SOP establishes a structured framework for customer health and safety awareness, provision of product composition information, and communication of health and safety issues associated with MCC, CCS, and SSG products."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:\n\nAll excipient products manufactured, marketed, or distributed by JRS & GMW\nQuality Assurance, Regulatory Affairs, Production, Sales, and Customer Service departments\nAll customer health and safety-related communications and documentation"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Customer Health & Safety Information",
+       "definition": "Product-related data including handling instructions, storage conditions, composition, safety warnings, and regulatory compliance declarations"
+      },
+      {
+       "term": "Product Safety Communication",
+       "definition": "Formal or informal sharing of information regarding safe use, handling, and disposal of products"
+      },
+      {
+       "term": "Adverse Event",
+       "definition": "Any undesirable experience associated with the use of a product reported by a customer or end user"
+      },
+      {
+       "term": "Certificate of Analysis (CoA)",
+       "definition": "A document confirming that a product meets defined quality specifications"
+      },
+      {
+       "term": "Safety Data Sheet (SDS)",
+       "definition": "Comprehensive document providing hazard, handling, storage, and emergency information for products"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definitions",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Customer Health & Safety Information",
+         "Product-related data including handling instructions, storage conditions, composition, safety warnings, and regulatory compliance declarations"
+        ],
+        [
+         "Product Safety Communication",
+         "Formal or informal sharing of information regarding safe use, handling, and disposal of products"
+        ],
+        [
+         "Adverse Event",
+         "Any undesirable experience associated with the use of a product reported by a customer or end user"
+        ],
+        [
+         "Certificate of Analysis (CoA)",
+         "A document confirming that a product meets defined quality specifications"
+        ],
+        [
+         "Safety Data Sheet (SDS)",
+         "Comprehensive document providing hazard, handling, storage, and emergency information for products"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Quality Assurance",
+       "responsibilities": [
+        "Maintain product safety documentation; manage complaint investigations; issue CoA and SDS"
+       ]
+      },
+      {
+       "role": "Regulatory Affairs",
+       "responsibilities": [
+        "Ensure compliance with applicable pharmacopeial and regulatory requirements"
+       ]
+      },
+      {
+       "role": "Customer Service",
+       "responsibilities": [
+        "Collect, document, and respond to customer health and safety queries and complaints"
+       ]
+      },
+      {
+       "role": "Sales & Marketing",
+       "responsibilities": [
+        "Communicate product safety information to customers; distribute SDS and technical data sheets"
+       ]
+      },
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve customer safety communication policies and complaint management framework"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "QA",
+         "Quality Assurance"
+        ],
+        [
+         "RA",
+         "Regulatory Affairs"
+        ],
+        [
+         "SDS",
+         "Safety Data Sheet"
+        ],
+        [
+         "CoA",
+         "Certificate of Analysis"
+        ],
+        [
+         "CAPA",
+         "Corrective and Preventive Action"
+        ],
+        [
+         "MCC",
+         "Microcrystalline Cellulose"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "10.1 Occupational Health and Safety Awareness and Training Initiatives"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Customer Education Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "We provide comprehensive product safety information to all customers through Safety Data Sheets (SDS), Certificate of Analysis (CoA), and Technical Data Sheets\nProduct labels and packaging clearly indicate storage conditions, handling precautions, shelf life, and applicable regulatory standards (USP, NF, BP, EP)\nDigital versions of SDS and product documentation maintained on website and provided to customers on request\nPeriodic customer awareness communications issued regarding updates to product specifications, handling requirements, or regulatory changes\nTechnical support provided by qualified team to assist customers with safe formulation and handling of excipients"
+        }
+       ]
+      },
+      {
+       "heading": "10.2 Transparency in Product Composition and Material Disclosure - Composition Disclosure",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Full composition information including raw material sources, chemical identity, and pharmacopeial grade disclosed in product documentation\nNon-GMO status of wood pulp and cotton linter-based products declared where applicable\nKosher and Halal certifications maintained and communicated to relevant customers\nImpurity profiles and residual solvent data included in technical documentation for pharmaceutical-grade customers\nCustomers requiring food-grade or cosmetic-grade specifications receive separate documentation addressing their sector's regulatory requirements"
+        }
+       ]
+      },
+      {
+       "heading": "10.3 Disclosure of Product-Related Health and Safety Information - Hazard Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "SDS for MCC, CCS, and SSG maintained in accordance with GHS format and updated whenever new health or safety information is identified\nInhalation precautions for cellulose-based excipients clearly communicated, particularly for fine-grade MCC with potential respiratory exposure\nAllergen status of starch-based products (SSG from potato starch) disclosed to food and pharmaceutical customers\nEmergency response information including first aid measures and medical contact details included in product documentation"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All product safety communication complies with applicable GMP regulations, pharmacopeial standards (USP, BP, EP), and food safety regulations for food-grade excipients\nSDS, CoA, and customer complaint records maintained for a minimum of five years for audit and regulatory review purposes\nWe respond to regulatory authority inquiries regarding product safety within defined statutory timelines"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual review of customer health and safety feedback identify recurring concerns and drive product improvement\nSDS and product safety documentation reviewed and updated at least every three years or upon receipt of new regulatory or safety information\nCustomer satisfaction on product safety communication measured through periodic surveys"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to ensuring that all customers receive complete, accurate, and up-to-date information on the health and safety aspects of its pharmaceutical excipient products. GMW maintain high standards of product safety communication, provide transparent composition data, and respond promptly to customer queries and safety concerns to safeguard the health and wellbeing of all product end users."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Integrity and Anti-Corruption Control",
+   "code": "",
+   "catalogId": "anti-corruption",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 965,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to conducting all business activities with integrity, transparency, and full compliance with applicable anti-corruption and anti-bribery laws. The Company maintains a zero-tolerance approach toward bribery, facilitation payments, kickbacks, and any improper financial or non-financial advantage, in line with its core value of Integrity.\n\nThis SOP establishes a structured framework for anti-corruption risk identification, assessment, gift and hospitality management, and escalated approval protocols for sensitive transactions across JRS & GMW's operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees, directors, and officers of JRS & GMW\nThird-party intermediaries, consultants, and agents acting on behalf of the Company\nFinancial, procurement, sales, regulatory, and administrative departments\nAll sensitive financial and contractual transactions including procurement, licensing, government interactions, and distributor appointments"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Sensitive Transaction",
+       "definition": "Any transaction involving heightened corruption risk due to value, nature, jurisdiction, involvement of public officials, or unusual payment structures"
+      },
+      {
+       "term": "Public Official",
+       "definition": "Any government employee, regulatory authority representative, or person acting in official capacity"
+      },
+      {
+       "term": "Facilitation Payment",
+       "definition": "A small unofficial payment made to expedite routine governmental actions"
+      },
+      {
+       "term": "Conflict of Interest",
+       "definition": "A situation where personal interests interfere with professional responsibilities"
+      },
+      {
+       "term": "Due Diligence",
+       "definition": "A risk-based assessment conducted prior to approving a transaction or engaging a third party"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Abbreviations",
+     "rows": [
+      {
+       "term": "CFO",
+       "definition": "Chief Financial Officer"
+      },
+      {
+       "term": "HOD",
+       "definition": "Head of Department"
+      },
+      {
+       "term": "AML",
+       "definition": "Anti-Money Laundering"
+      },
+      {
+       "term": "CAPA",
+       "definition": "Corrective and Preventive Action"
+      },
+      {
+       "term": "NDA",
+       "definition": "Non-Disclosure Agreement"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Board / Top Management",
+       "responsibilities": [
+        "Oversight of anti-corruption framework; approve zero-tolerance policy"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Risk review and validation of sensitive transactions; maintain audit records"
+       ]
+      },
+      {
+       "role": "CFO / Finance Head",
+       "responsibilities": [
+        "Financial due diligence and payment authorization for critical transactions"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Initial review and justification of sensitive transactions"
+       ]
+      },
+      {
+       "role": "Internal Audit",
+       "responsibilities": [
+        "Periodic verification of compliance with anti-corruption protocols"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Report suspicious transactions through established grievance channels"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "11.1 Evaluation of Control Systems for Corruption and Bribery Prevention",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Audit Program"
+        },
+        {
+         "type": "bullets",
+         "text": "The Internal Audit function conduct annual audits of anti-corruption controls covering procurement, vendor selection, regulatory interactions, and cash-intensive transactions\nAudit scope include verification of gift registers, third-party due diligence records, and approval documentation for sensitive transactions\nHigh-risk processes including government-related dealings, licensing approvals, and sole-source contracts subject to enhanced audit scrutiny\nAudit findings reported to senior management and the Board with defined timelines for corrective action"
+        },
+        {
+         "type": "paragraph",
+         "text": "Anti-Corruption Risk Assessment"
+        },
+        {
+         "type": "bullets",
+         "text": "The Compliance Officer conduct annual corruption risk assessments covering all key business functions\nRisks classified as High (government interactions, high-value contracts), Medium (distributor incentives), or Low (standardized transactions)\nMitigation controls including approval hierarchies, segregation of duties, and transaction monitoring defined for each risk level"
+        }
+       ]
+      },
+      {
+       "heading": "11.2 Authorization Framework for Sensitive Transactions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification and Classification of Sensitive Transactions"
+        },
+        {
+         "type": "bullets",
+         "text": "Define and categorize sensitive transactions such as high-value financial approvals, vendor payments, contract sign-offs, capital expenditures, and any transactions with potential financial, legal, or reputational risks.\nEstablish clear thresholds and criteria to determine transaction sensitivity based on value, nature, risk exposure, and regulatory implications, ensuring consistent classification across all departments.\nPeriodically review and update the classification criteria to align with evolving business operations, regulatory requirements, and internal risk management policies."
+        },
+        {
+         "type": "paragraph",
+         "text": "Authorization Hierarchy and Approval Matrix"
+        },
+        {
+         "type": "bullets",
+         "text": "Develop and implement a structured authorization matrix defining approval levels based on transaction type, value, and associated risk, ensuring appropriate segregation of duties and accountability.\nEnsure that all sensitive transactions require multi-level approvals from designated authorities such as department heads, finance controllers, and senior management.\nClearly communicate the approval hierarchy across the organization and make it accessible to all relevant stakeholders for consistent implementation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Segregation of Duties and Internal Controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Ensure segregation of duties by assigning different individuals for initiation, verification, approval, and execution of sensitive transactions to prevent conflicts of interest and reduce fraud risks.\nImplement internal control mechanisms such as maker-checker systems, dual authorization, and system-based restrictions to enhance transparency and accountability.\nConduct periodic checks to ensure that segregation of duties is maintained and any deviations are promptly addressed."
+        },
+        {
+         "type": "paragraph",
+         "text": "Documentation and Record Management"
+        },
+        {
+         "type": "bullets",
+         "text": "Maintain comprehensive documentation for all sensitive transactions, including approval records, supporting documents, contracts, invoices, and justification notes to ensure audit readiness and traceability.\nEnsure that all approvals are documented either through digital systems or authorized physical records with proper signatures and timestamps.\nRetain records in accordance with document retention policies and regulatory requirements to support internal and external audits."
+        },
+        {
+         "type": "paragraph",
+         "text": "Digital Controls and System-Based Approvals"
+        },
+        {
+         "type": "bullets",
+         "text": "Utilize ERP systems or digital platforms to enforce authorization workflows, ensuring that transactions cannot proceed without required approvals.\nConfigure system controls such as access restrictions, approval limits, and automated alerts to prevent unauthorized or duplicate transactions.\nRegularly review system access rights and authorization settings to ensure alignment with roles and responsibilities."
+        }
+       ]
+      },
+      {
+       "heading": "11.3 Anti-Bribery Training",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees in high-risk functions shall receive annual anti-corruption training.\nTraining attendance shall be recorded.\nTraining effectiveness shall be evaluated periodically.\nRefresher training shall be provided when required."
+        }
+       ]
+      },
+      {
+       "heading": "11.4 Whistleblower Protection",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Whistle blower process is also mentioned in the HR Manual.\nEmployees may report concerns anonymously.\nReports shall be investigated confidentially."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All anti-corruption activities comply with the Prevention of Corruption Act, Foreign Corrupt Practices Act (where applicable), and applicable Indian law\nAnti-corruption records including audit reports, gift registers, and transaction approvals maintained for a minimum of seven years\nViolations may result in disciplinary action including termination, contract cancellation, and reporting to regulatory authorities"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "100% employee anti-corruption training coverage targeted annually\nAll critical transactions reviewed under the escalated approval protocol\nRed-flag incidents tracked and a year-on-year reduction target established\nThird-party due diligence completed for all new vendors and business partners prior to contract signing"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to conducting its business with integrity, transparency, and accountability. The Company maintains a zero-tolerance approach toward bribery, corruption, facilitation payments, and any form of unethical conduct. All employees, management, and third parties acting on behalf of GMW are expected to comply with applicable anti-corruption laws, internal policies, and the ethical standards befitting a company with 30 years of trusted manufacturing excellence."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "RESPONSIBLE DATA AND INFORMATION MANAGEMENT PRACTICES",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "Compliance Officer / DPO",
+   "sourceWords": 1476,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. recognizes that responsible information management is fundamental to maintaining stakeholder trust, regulatory compliance, and operational integrity. As a pharmaceutical excipient manufacturer operating under GMP regulations with an international joint venture partnership with JRS Pharma, Germany, JRS & GMW handles confidential information including customer data, proprietary formulation records, quality documentation, employee data, and financial information."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured framework to ensure secure handling, retention, processing, and protection of confidential information including procedures for incident response, records retention, third-party data protection, and stakeholder consent for data processing."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All employees, contractors, and third parties handling GMW's data and confidential information\nAll physical and digital records including quality records, batch documentation, financial records, and personal data\nInternal systems, cloud platforms, laboratory information management systems, and third-party data processors\nAll departments including QA, Production, Finance, HR, and IT"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Confidential Information",
+       "definition": "Any non-public information that could cause harm to GMW, its customers, or stakeholders if disclosed without authorization"
+      },
+      {
+       "term": "Personal Data",
+       "definition": "Information relating to an identifiable individual including employee records and customer contact information"
+      },
+      {
+       "term": "Data Breach",
+       "definition": "Unauthorized access, disclosure, loss, or alteration of confidential information"
+      },
+      {
+       "term": "Incident Response Plan (IRP)",
+       "definition": "Structured process for detecting, managing, and mitigating data breaches"
+      },
+      {
+       "term": "Records Retention Schedule",
+       "definition": "Defined timeline for maintaining and securely disposing of records"
+      },
+      {
+       "term": "Stakeholder Consent",
+       "definition": "Explicit authorization obtained for processing, storing, or sharing personal data"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Oversight of information governance framework; approve data protection policies"
+       ]
+      },
+      {
+       "role": "IT Department / System Administrator",
+       "responsibilities": [
+        "Implement technical security controls; manage access rights and system security"
+       ]
+      },
+      {
+       "role": "Compliance Officer / DPO",
+       "responsibilities": [
+        "Monitor regulatory compliance; manage breach response; maintain consent records"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Safeguard employee data; coordinate data protection training"
+       ]
+      },
+      {
+       "role": "QA Department",
+       "responsibilities": [
+        "Maintain GMP records; ensure batch documentation integrity and access control"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Maintain confidentiality; report data security incidents immediately"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbreviation",
+        "Full Form / Meaning"
+       ],
+       "rows": [
+        [
+         "IRP",
+         "Incident Response Plan"
+        ],
+        [
+         "IT",
+         "Information Technology"
+        ],
+        [
+         "DPO",
+         "Data Protection Officer"
+        ],
+        [
+         "NDA",
+         "Non-Disclosure Agreement"
+        ],
+        [
+         "GMP",
+         "Good Manufacturing Practice"
+        ],
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "12.1 Information Security Compliance and Control Audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Security Audit Program"
+        },
+        {
+         "type": "bullets",
+         "text": "Annual information security audits assess access controls, password management, system security, and physical record protection\nGMP document control audits verify integrity of batch records, quality documents, and regulatory submissions\nThird-party service providers with access to GMW systems included in periodic security assessments\nPenetration testing conducted periodically to identify vulnerabilities in IT infrastructure"
+        }
+       ]
+      },
+      {
+       "heading": "12.2 Information Security Incident Management and Response Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incident Identification and Reporting"
+        },
+        {
+         "type": "bullets",
+         "text": "Establish clear guidelines for identifying information security incidents such as data breaches, unauthorized access, malware attacks, phishing attempts, and system failures affecting confidentiality, integrity, or availability of information.\nEnsure all employees promptly report suspected or confirmed incidents through designated communication channels such as IT helpdesk, incident reporting systems, or authorized personnel.\nEncourage a culture of transparency and timely reporting without fear of reprisal to ensure early detection and mitigation of potential security threats."
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Classification and Prioritization"
+        },
+        {
+         "type": "bullets",
+         "text": "Classify incidents based on severity, impact, and urgency, considering factors such as data sensitivity, operational disruption, financial impact, and regulatory implications.\nAssign priority levels to incidents to ensure appropriate response timelines and allocation of resources for effective resolution.\nMaintain a standardized classification framework to ensure consistency and accuracy in incident handling across the organization."
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Response and Containment Measures"
+        },
+        {
+         "type": "bullets",
+         "text": "Initiate immediate response actions to contain and minimize the impact of identified incidents, including isolating affected systems, restricting access, and preventing further data compromise.\nImplement predefined response plans tailored to different types of incidents to ensure structured and efficient handling.\nCoordinate with relevant internal teams and external experts, if required, to manage complex or high-risk incidents effectively."
+        },
+        {
+         "type": "paragraph",
+         "text": "Investigation and Root Cause Analysis"
+        },
+        {
+         "type": "bullets",
+         "text": "Conduct thorough investigations to determine the root cause of the incident, including analysis of system logs, user activities, and security controls.\nIdentify vulnerabilities, control failures, or procedural gaps that contributed to the incident occurrence.\nDocument findings and ensure they are reviewed by appropriate authorities for further action and preventive planning."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recovery and System Restoration"
+        },
+        {
+         "type": "bullets",
+         "text": "Restore affected systems, data, and operations in a controlled and secure manner to ensure business continuity.\nValidate system integrity and functionality before resuming normal operations to prevent recurrence or residual risks.\nEnsure backup systems and data recovery mechanisms are utilized effectively during restoration processes."
+        },
+        {
+         "type": "paragraph",
+         "text": "Communication and Escalation Protocols"
+        },
+        {
+         "type": "bullets",
+         "text": "Establish clear communication channels for internal and external stakeholders, including management, regulatory authorities, and affected parties where applicable.\nEnsure timely escalation of critical incidents to senior management and relevant authorities based on predefined thresholds and regulatory requirements.\nMaintain transparency in communication while safeguarding sensitive information and organizational reputation."
+        }
+       ]
+      },
+      {
+       "heading": "12.3 Implementation of Information Retention and Archiving Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Records Classification and Retention"
+        },
+        {
+         "type": "bullets",
+         "text": "Records categorized as GMP/Quality Records, Regulatory Records, Financial Records, HR Records, Customer Records, and Environmental Records\nGMP batch records and quality documents retained for a minimum of one year beyond the product shelf life or as per regulatory requirements\nFinancial records retained for seven years in compliance with statutory requirements\nThe records retention schedule reviewed annually and updated upon regulatory changes"
+        }
+       ]
+      },
+      {
+       "heading": "12.4 Controls to Prevent Unauthorized Access to Third-Party Data",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third-Party Data Protection"
+        },
+        {
+         "type": "bullets",
+         "text": "Non-Disclosure Agreements (NDAs) executed with all parties receiving confidential GMW information including customer formulation data\nData protection clauses included in all vendor and contractor agreements\nOnly necessary data shared with third parties; sensitive information transmitted through encrypted channels\nThird-party compliance with confidentiality requirements assessed periodically"
+        }
+       ]
+      },
+      {
+       "heading": "12.5 Consent Management Measures for Processing and Sharing Confidential Information",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure all confidential or sensitive information is clearly identified and categorized before processing, so that appropriate consent requirements and data handling controls are applied consistently across all departments and functions.\nObtain clear, informed, and documented consent from individuals or stakeholders prior to collecting, processing, or sharing any confidential information, with full transparency on purpose, usage, and duration of data handling.\nRestrict the use of confidential information strictly to the purpose for which consent has been obtained, ensuring that no unauthorized processing, duplication, or secondary use is carried out without additional approval.\nShare confidential information with third parties only after verifying valid consent, executing appropriate confidentiality agreements, and ensuring that the receiving party complies with applicable data protection and security requirements.\nMaintain proper records of consent, including details such as date, purpose, scope, and validity, ensuring traceability and availability of documentation for audit, regulatory inspection, and internal review purposes.\nProvide a clear mechanism for individuals to withdraw or modify their consent at any time, and ensure that such requests are implemented promptly, including stopping further data processing where applicable.\nMonitor data handling activities regularly to ensure compliance with consent requirements, and conduct periodic audits to identify gaps, unauthorized usage, or non-compliance in consent management practices.\nImplement appropriate technical and administrative controls such as access restrictions, secure storage, and system-based approvals to safeguard confidential information from unauthorized access, disclosure, or misuse.\nConduct regular employee training and awareness programs to ensure understanding of consent management principles, data privacy obligations, and responsible handling of confidential information.\nContinuously improve consent management practices by incorporating audit findings, regulatory updates, and industry best practices to strengthen data governance and ensure long-term compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Classification"
+        },
+        {
+         "type": "bullets",
+         "text": "Information shall be classified as Public, Internal, Confidential, or Restricted.\nAppropriate controls shall be applied according to classification.\nEmployees shall receive training on classification requirements.\nCompliance shall be monitored periodically."
+        },
+        {
+         "type": "paragraph",
+         "text": "Cybersecurity Monitoring"
+        },
+        {
+         "type": "bullets",
+         "text": "Information systems shall be monitored for security incidents.\nSecurity vulnerabilities shall be addressed promptly.\nIncident logs shall be maintained.\nSecurity performance shall be reviewed quarterly."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Retention"
+        },
+        {
+         "type": "bullets",
+         "text": "Records shall be retained according to legal and business requirements.\nExpired records shall be disposed of securely.\nRetention schedules shall be reviewed annually.\nDisposal activities shall be documented."
+        },
+        {
+         "type": "paragraph",
+         "text": "Information Access Control"
+        },
+        {
+         "type": "bullets",
+         "text": "Access to company systems shall be granted based on job responsibilities.\nUser access rights shall be reviewed every six months.\nUnauthorized access attempts shall be investigated.\nEmployee access shall be revoked immediately upon termination or role change."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Backup and Recovery"
+        },
+        {
+         "type": "bullets",
+         "text": "Critical business data shall be backed up daily.\nBackup restoration tests shall be conducted at least annually.\nBackup records shall be maintained and reviewed periodically.\nDisaster recovery procedures shall be tested annually."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All information management activities comply with the Information Technology Act, applicable data protection regulations, and GMP document control requirements\nViolation of data confidentiality policies may result in disciplinary action and legal consequences\nRecords related to access logs, incident reports, consent documentation, and compliance audits retained for a minimum of five to seven years"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual information security training mandatory for all employees\nAccess control mechanisms reviewed annually and updated as required\nData protection impact assessments performed for high-risk data processing activities\nIncident response simulations conducted periodically to test organizational preparedness"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "JRS & GMW Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "JRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to safeguarding confidential, personal, and business information through responsible information management practices. The Company implement appropriate technical and organizational controls to prevent unauthorized access, disclosure, loss, or misuse of data, in alignment with its commitment to integrity and the trust placed in it by its customers, partners, and employees."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

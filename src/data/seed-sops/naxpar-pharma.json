@@ -1,0 +1,3241 @@
+{
+ "id": "naxpar-pharma",
+ "company": "NAXPAR PHARMA PVT. LTD",
+ "industry": "Pharmaceutical and healthcare formulations manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "pharma"
+ ],
+ "sourceFile": "SOP/SOP Manual- Naxpar.docx",
+ "frontMatter": {
+  "introduction": "Structured Practices for Consistent Performance — at Naxpar Pharma Pvt. Ltd., our Standard Operating Practices form the foundation of quality, compliance and sustainable growth.\n\nAt Naxpar Pharma Pvt. Ltd., clearly defined and consistently implemented practices form the basis of reliable and efficient operations. This Standard Operating Practices (SOP) document serves as a structured framework designed to ensure uniformity, accountability and operational control across all functions.\n\nAs a manufacturer of pharmaceutical and healthcare formulations, a strong emphasis is placed on maintaining high standards of quality, regulatory compliance and responsible manufacturing. From material handling to final product dispatch, this document supports systematic execution of activities while ensuring safety, efficiency and adherence to applicable standards.\n\nEach section of this document is developed to establish clarity in processes, minimise operational variability and align practices with the expectations of customers, regulatory authorities and other stakeholders. It enables effective coordination across functions while reinforcing a culture of discipline, consistency and continuous improvement.\n\nThis document is designed as a dynamic system, evolving with operational requirements and industry expectations. Regular updates and improvements ensure that practices remain relevant, effectiveand aligned with environmental responsibility, workplace safety and ethical business conduct.",
+  "objective": "",
+  "scope": "The Standard Operating Practices document applies to all operations of Naxpar Pharma Pvt. Ltd., covering employees, contractors, vendors and relevant stakeholders. It establishes a structured framework for integrating Sustainability principles into day-to-day activities across the organisation.\n\nThis document outlines standard practices aimed at reducing environmental impact, ensuring safe and healthy working conditions, maintaining ethical business conduct and promoting transparent stakeholder engagement. It reflects a systematic approach towards responsible operations, regulatory compliance and sustainable growth aligned with applicable standards.",
+  "reviewMechanism": "This document is designed as a dynamic system, evolving with operational requirements and industry expectations. Regular updates and improvements ensure that practices remain relevant, effective and aligned with environmental responsibility, workplace safety and ethical business conduct."
+ },
+ "sops": [
+  {
+   "title": "Efficient Energy Management",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 1090,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Naxpar Pharma Pvt. Ltd., we maintain a systematic approach to managing energy consumption across all operational activities. Energy usage is controlled through defined practices, efficient equipment utilisation and continuous monitoring mechanisms. We focus on minimising energy loss, improving process efficiency and ensuring responsible consumption across production and support functions. These practices contribute to operational efficiency while supporting environmental responsibility and sustainability objectives."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define standardised practices for effective energy management, ensuring optimal utilisation of energy resources, improved operational efficiency and reduced environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "These practices apply to all areas of operations where energy is utilised, including manufacturing processes, utility systems, storage areas and supporting functions, ensuring consistent control and responsible usage across the organisation."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following procedures reflects the established practices implemented to enhance energy efficiency, optimize resource utilization and minimize environmental impact in our operations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Energy Conservation Through Technological Advancements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "At Naxpar Pharma Pvt. Ltd., energy conservation is integrated into operational practices through the adoption of advanced technologies, standardised equipment specifications and controlled usage mechanisms."
+        }
+       ]
+      },
+      {
+       "heading": "Standardisation of Energy-Efficient Equipment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Defined procurement specifications are established to ensure the selection and use of energy-efficient equipment across all applicable operations.\nElectronically Commutated (EC) fans and blowers are utilised to enable precise speed control, reduced power consumption and improved system efficiency.\nEC systems support lower heat generation, reduced operational losses and consistent performance under continuous operating conditions.\nStandardisation of IE3 efficiency motors is maintained across relevant systems to ensure higher energy efficiency compared to conventional motors.\nIE3 motors contribute to improved starting performance, better thermal management and enhanced operational reliability.\nSelection of energy-efficient equipment is aligned with recognised efficiency standards to support compliance and sustainability objectives.\nPeriodic evaluation of equipment performance is carried out to ensure continued efficiency and identify opportunities for improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Energy-Efficient Lighting Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "LED Lighting Conversion"
+        },
+        {
+         "type": "bullets",
+         "text": "All conventional fluorescent, incandescent and halogen lighting systems have been replaced with energy-efficient LED fixtures across production areas, packaging sections, warehouses and administrative offices.\nLEDs are selected for their high lumen-per-watt efficiency and extended service life, ensuring optimal illumination with reduced power consumption.\nThis upgrade has contributed to noticeable reductions in lighting-related energy usage, along with lower maintenance requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Motion Sensors"
+        },
+        {
+         "type": "bullets",
+         "text": "Motion sensors are installed in low-traffic areas such as storage rooms, corridors, utility areas and restrooms, ensuring that lighting is activated only when required.\nThese sensor-based systems help prevent unnecessary energy consumption during low-traffic hours."
+        }
+       ]
+      },
+      {
+       "heading": "Heat Recovery and Resource Optimisation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Boiler Waste Heat Recovery"
+        },
+        {
+         "type": "bullets",
+         "text": "Boiler at Naxpar Pharma Pvt. Ltd. generate significant thermal energy from flue gases during operation.\nThis heat is recovered using economizer systems, which extract thermal energy from high-temperature flue gases.\nThe recovered thermal energy is utilised for preheating boiler inlet-water and maintaining required temperatures in the infeed water to the boiler.\nUtilisation of recovered heat reduces dependence on external fuel-based heating systems, thereby lowering overall energy consumption and associated carbon emissions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Pipeline Thermal Insulation System"
+        },
+        {
+         "type": "bullets",
+         "text": "All hot water and steam pipelines connected to Boiler heat recovery systems are fitted with high-quality insulation to minimize thermal losses.\nInsulation helps maintain consistent process temperatures, shortens heating cycle times and improves overall thermal efficiency."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reduction in External Energy Consumption"
+        },
+        {
+         "type": "bullets",
+         "text": "By reusing internally generated heat, the system reduces reliance on external heating systems such as electric boilers or fossil-fuel-based heaters.\nThis results in: Lower energy consumption; Reduced fuel usage; A measurable decrease in carbon dioxide emissions\nThe initiative directly supports Naxpar’s sustainability and decarbonization goals, aligning with both internal targets and external environmental compliance frameworks."
+        }
+       ]
+      },
+      {
+       "heading": "Clean Fuel Adoption and Emission Reduction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Transition to Cleaner Fuel Systems"
+        },
+        {
+         "type": "bullets",
+         "text": "Conventional diesel-fired boiler systems have been replaced with LPG-fired boilers for steam generation processes.\nThe boiler system has been upgraded from a 1.2 Ton Diesel-fired boiler to a higher-capacity 2.0 Ton LPG-fired boiler to improve operational efficiency and support production requirements.\nLPG is utilised as a cleaner fuel alternative due to its lower emission profile and improved combustion efficiency compared to diesel.\nBoiler operations follow optimized fuel usage and preventive maintenance practices to maintain energy efficiency and operational reliability.\nFuel consumption and boiler performance are periodically monitored to ensure efficient system operation.\nReplacement of diesel-based systems with LPG-fired boilers has resulted in reduced fuel-related emissions and improved environmental performance.\nThese initiatives support Naxpar Pharma’s environmental management and sustainability commitments."
+        },
+        {
+         "type": "paragraph",
+         "text": "Emission Reduction and Environmental Impact"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in diesel consumption has directly contributed to a decrease in carbon dioxide (CO₂) emissions generated during operations.\nCleaner combustion of LPG supports lower emission of particulate matter and other air pollutants.\nImplementation of cleaner fuel systems aligns with environmental compliance requirements and air quality standards.\nContinuous efforts are maintained to minimise the carbon footprint associated with manufacturing activities."
+        }
+       ]
+      },
+      {
+       "heading": "Carbon Audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar undertakes comprehensive carbon footprint assessments to quantify and manage its greenhouse gas (GHG) emissions. The calculation process follows internationally recognized standards, primarily the Greenhouse Gas (GHG) Protocol, ensuring consistency, accuracy and global comparability. Emissions are systematically categorized into:"
+        },
+        {
+         "type": "bullets",
+         "text": "Scope 1 – Direct emissions from sources owned or controlled by the company, such as emissions from boilers, generators and manufacturing equipment.\nScope 2 – Indirect emissions from the consumption of purchased electricity or other forms of imported energy used in production and administrative operations.\nScope 3 – Other indirect emissions that occur in the value chain, including emissions from upstream activities (e.g., raw material transportation, supplier emissions) and downstream activities (e.g., product distribution, waste disposal and employee commuting)."
+        },
+        {
+         "type": "paragraph",
+         "text": "To support this process, Naxpar maintains energy consumption data, production volumes, transport logs and supplier information. These data points are used to calculate CO₂-equivalent emissions across all scopes. Regular third-party carbon audits are performed to monitor emissions trends over time, assess progress toward emission reduction targets and identify opportunities for further energy efficiency or cleaner technologies. These audits also aid in maintaining regulatory compliance, improving environmental transparency and guiding sustainability initiatives across operations.\n\nBy embedding carbon footprint calculations into its environmental management system, Naxpar Pharma strengthens its strategic approach to sustainability and reaffirms its commitment to mitigating climate change."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Monitor energy performance and recommend improvements."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Ensure regular upkeep of energy-efficient equipment and adhere to energy-saving protocols and report inefficiencies."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Procure energy-efficient technologies and suppliers."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Implement energy-efficient practices in daily tasks."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Practices (SOP) is reviewed annually to evaluate its effectiveness in managing energy use, resource optimisation and emission reduction across operations at Naxpar Pharma Pvt. Ltd. Key parameters such as energy consumption, fuel usage, equipment performance are assessed to identify gaps and improvement opportunities. Based on the findings, necessary corrective actions and updates are implemented to enhance efficiency, ensure regulatory compliance and support continuous improvement in the current practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Conservation and Management Practices",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 2015,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Naxpar Pharma Pvt. Ltd., a systematic approach is followed for water conservation and management across all operations through controlled usage, recycling and monitoring practices. Technologies for water reuse, efficient cooling systems and rainwater harvesting are implemented to minimise consumption, while water audits, risk assessments and wastewater quality monitoring ensure responsible management and regulatory compliance. Control measures are established to prevent groundwater contamination and appropriate treatment processes are in place for removal of Active Pharmaceutical Ingredients (APIs) from wastewater, supporting sustainable water use and reduced environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure efficient use, conservation and responsible management of water resources while minimising environmental impact and maintaining regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This applies to all operations and activities at Naxpar Pharma Pvt. Ltd. where water is utilised, including production processes, utility systems, wastewater treatment and supporting functions, ensuring consistent control, monitoring and responsible water management across the organisation."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Water Reclamation",
+       "body": []
+      },
+      {
+       "heading": "Pre-Operation Checks",
+       "body": [],
+       "substeps": [
+        {
+         "text": "The operations, maintenance and EHS teams conduct routine inspections of the Effluent Treatment Plant (ETP), including feed tanks, pumps, pipelines, valves and storage tanks prior to operation.",
+         "responsible": "Operations, Maintenance and EHS Teams"
+        },
+        {
+         "text": "Operators verify that chemical dosing systems, pH adjustment units and treatment chemicals are available and functioning properly.",
+         "responsible": "Operators"
+        },
+        {
+         "text": "Safety personnel confirm the availability of personal protective equipment (PPE), spill containment materials and emergency response equipment.",
+         "responsible": "Safety Personnel"
+        }
+       ]
+      },
+      {
+       "heading": "Daily Operations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Influent Monitoring"
+        },
+        {
+         "type": "bullets",
+         "text": "Effluent generated from manufacturing and utility operations is collected and routed to the ETP for treatment.\nKey parameters such as pH, temperature, TDS, COD and flow rates are monitored regularly to ensure proper treatment performance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Effluent Treatment"
+        },
+        {
+         "type": "bullets",
+         "text": "Wastewater generated from manufacturing and utility operations is treated through a multi-stage treatment process within the Effluent Treatment Plant (ETP). These stages include primary treatment for removal of suspended solids, secondary biological treatment for degradation of organic matter and tertiary treatment for further purification and polishing of the treated effluent.\nDuring these treatment stages, residual Active Pharmaceutical Ingredients (APIs), intermediates and other pharmaceutical compounds present in the wastewater are reduced through chemical neutralization processes. These processes help break down complex pharmaceutical residues and minimize their presence in the treated water.\nElectrolyte or coagulant chemical such as ferric alum is added in controlled quantities in the neutralization tank, while air blowers ensure proper mixing and floc formation for effective removal of suspended contaminants.\nAdvanced treatment methods such as activated carbon adsorption or chemical oxidation are applied where required to further reduce trace pharmaceutical compounds. The treatment method is selected based on periodic assessment of effluent characteristics and API load.\nTreated effluent is regularly monitored for parameters such as pH, COD, TDS and residual API levels to ensure compliance with applicable regulatory standards. Any deviation in treatment efficiency is reported to the EHS team and corrective actions are implemented promptly."
+        },
+        {
+         "type": "paragraph",
+         "text": "Water Recovery and Reuse"
+        },
+        {
+         "type": "bullets",
+         "text": "Treated water suitable for reuse is stored in designated storage tanks and reused for non-critical applications such as floor cleaning, utility washing, cooling systems and other auxiliary activities.\nSampling & Testing\nTreated water is sampled periodically and analyzed for parameters such as pH, COD, TDS and suspended solids to verify compliance with internal standards and regulatory limits."
+        }
+       ]
+      },
+      {
+       "heading": "Non-Compliance Response Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Any deviation in treatment performance or water quality is immediately reported to the EHS Manager or designated responsible personnel.\nCorrective actions may include adjusting chemical dosing, modifying operational parameters, conducting equipment maintenance, or increasing monitoring frequency.\nAll deviations and corrective actions are recorded and reviewed to ensure effective resolution."
+        }
+       ],
+       "responsible": "EHS Manager"
+      },
+      {
+       "heading": "Post-Operation Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Operators ensure that tanks, pumps, pipelines and surrounding work areas are maintained in clean condition after operations.\nShutdown procedures for the ETP systems are carried out according to operational guidelines.\nDaily records of operational parameters, water quality results and maintenance activities are maintained."
+        }
+       ],
+       "responsible": "Operators"
+      },
+      {
+       "heading": "Routine Maintenance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintenance Schedule Table:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment",
+          "Task",
+          "Frequency",
+          "Responsible Team",
+          "Remarks"
+         ],
+         "rows": [
+          [
+           "ETP Pumps",
+           "Inspection and lubrication",
+           "Weekly",
+           "Maintenance Team",
+           "Monitor vibration and flow"
+          ],
+          [
+           "Chemical Dosing Systems",
+           "Calibration and inspection",
+           "Monthly",
+           "Maintenance Team",
+           "Ensure accurate dosing"
+          ],
+          [
+           "Flow Meters",
+           "Calibration",
+           "Annually",
+           "Maintenance Team",
+           "Ensure measurement accuracy"
+          ]
+         ]
+        }
+       ],
+       "responsible": "Maintenance Team"
+      },
+      {
+       "heading": "Emergency Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "In case of ETP system malfunction, overflow, or accidental spillage, operators initiate emergency shutdown and containment measures.\nThe EHS department is notified immediately and corrective measures are implemented.\nIncident details are documented and preventive measures are reviewed to avoid recurrence."
+        }
+       ],
+       "responsible": "Operators"
+      },
+      {
+       "heading": "Recycled Water Usage (Water Reuse)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Treated water recovered through the ETP is utilized for various non-potable applications within the facility to promote efficient water utilization and reduce dependence on freshwater sources. Typical reuse applications include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Cooling Systems: Treated water recovered from the ETP systems is utilized in cooling towers or condenser circulation systems to support heat exchange processes within manufacturing and utility operations. This helps maintain efficient cooling performance while reducing reliance on fresh water sources.\nHorticulture: Treated water recovered from ETP operations is used for gardening purposes in the plant premises to maintain green-belt area.\nCleaning and Construction Activities: External areas of the plant are cleaned using this treated water and construction/civil related requirements are also fulfilled using this treated water."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recycled water is allocated based on operational requirements and quality suitability. Storage tanks, transfer pipelines and valves are inspected regularly to ensure safe handling and prevent contamination. All reuse volumes are recorded in the Water Reuse Log Sheet and any deviation in quality or supply is reported to the Utilities Supervisor for corrective action."
+        }
+       ],
+       "responsible": "Utilities Supervisor"
+      },
+      {
+       "heading": "Reduction in Water Consumption",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Water Usage Optimization"
+        },
+        {
+         "type": "bullets",
+         "text": "Water-Efficient Washing & Cleaning Practices: All washing and cleaning tasks are performed in accordance with standardized work instructions designed to ensure effective cleaning with minimal water use. These instructions specify:\nNozzle Type & Spray Pattern: Use of high-pressure, low-flow nozzles and controlled-spray systems for optimal coverage.\nCleaning Sequence: A structured top-to-bottom process, moving from cleaner to dirtier areas to avoid repeated washing.\nMaximum Duration: Fixed time limits for each cleaning task to maintain consistency and prevent water wastage."
+        },
+        {
+         "type": "paragraph",
+         "text": "To support these practices, all equipment is maintained routinely to ensure accurate flow control, avoid leakages and sustain efficiency. Cleaning schedules are designed to balance hygiene needs with water conservation, preventing redundant or unnecessary washing activities. Additionally, all pharmaceutical-grade cleaning and sanitising agents used in the facility are low-rinse formulations, enabling effective cleaning without the need for extra rinse cycles or additional water beyond the specified limits. Treated water recovered from the on-site water treatment system is reused for non-potable cleaning activities such as external floor washing, The quality of reused water is verified regularly as per internal testing procedures."
+        },
+        {
+         "type": "bullets",
+         "text": "Water-Efficient Cooling Systems: Naxpar Pharma Pvt. Ltd. operates a closed-loop water cooling system to support efficient water use in its manufacturing operations. The system recirculates cooling water within a closed circuit, reducing the need for freshwater intake and minimizing water losses.\nTo maintain water efficiency, the Company follows the following operating practices:\nContinuous recirculation and reuse of cooling water.\nRegular monitoring of system performance, including water levels, temperature and pressure.\nRoutine inspection of pumps, pipelines and valves to identify and address leaks.\nPreventive maintenance of cooling equipment to ensure efficient operation."
+        },
+        {
+         "type": "paragraph",
+         "text": "These practices help optimize water consumption, reduce water wastage and support sustainable water management across operations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Rainwater Harvesting"
+        },
+        {
+         "type": "paragraph",
+         "text": "To reduce dependency on groundwater and promote sustainable water use practices in line with government regulations, Naxpar has implemented a robust rainwater harvesting system integrated into its facility infrastructure."
+        },
+        {
+         "type": "bullets",
+         "text": "Strategic Rooftop Collection: Rainwater is collected from the rooftop surfaces of production blocks, utility areas and administrative buildings. The collected rainwater is directed through a network of drainage channels and downpipes towards designated Rainwater Harvesting (RWH) pits located within the facility premises.\nGroundwater Recharge Infrastructure: The harvested rainwater is conveyed to dedicated RWH pits designed to facilitate the infiltration of water into the ground. This process supports the natural replenishment of the local groundwater table and enhances aquifer recharge. Periodic inspection and maintenance of the collection system and recharge structures are conducted to ensure effective rainwater harvesting and groundwater recharge."
+        }
+       ]
+      },
+      {
+       "heading": "Groundwater Contamination Prevention",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "As part of its environmental risk management and regulatory compliance framework, Naxpar Pharma Pvt. Ltd. has established structured groundwater and soil protection measures within its pharmaceutical manufacturing and chemical handling operations."
+        },
+        {
+         "type": "bullets",
+         "text": "Engineered Containment Systems: RCC flooring with chemical-resistant coating and designated collection pits have been constructed in tant coatings and designated collection pits are provided in solvent storage, reaction and handling areas. These engineered containment systems ensure that any accidental spills or leakages remain confined within a controlled boundary, preventing percolation into the soil and safeguarding underlying groundwater resources.\nSafe Chemical Storage Practices: Process chemicals, including solvents and reagents are stored in sealed, corrosion-resistant drums and tanks that are clearly labelled and positioned within designated storage zones equipped with secondary containment arrangements. This controlled storage practice significantly minimizes the possibility of uncontrolled discharge and environmental contamination.\nEmployee Training & Awareness: Periodic training sessions are conducted to ensure employees understand safe chemical handling, transfer procedures, spill prevention methods and wastewater management practices. These awareness programs strengthen operational discipline and reduce the risk of groundwater contamination incidents.\nInspection & Preventive Maintenance: Hazardous material storage areas, pipelines and transfer systems are routinely inspected and maintained to preserve containment integrity. Operational protocols include monitoring of storage conditions, scheduled leak detection checks and immediate implementation of corrective measures in the event of any irregularities.\nDocumentation & Compliance Monitoring: Detailed documentation and systematic record-keeping are maintained for chemical inventories, inspection reports, maintenance logs and employee training activities. This structured compliance framework supports adherence to environmental regulations and promotes continuous improvement in contamination prevention and environmental protection performance."
+        }
+       ]
+      },
+      {
+       "heading": "Water Audit",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Planning the Water Audit"
+        },
+        {
+         "type": "bullets",
+         "text": "Define audit objectives, scope and methodology in alignment with corporate sustainability targets.\nAssign responsibilities and establish a timeline for conducting the audit.\nCollect historical data on water consumption, wastewater generation, recycling efficiency and previous audit recommendations.\nDevelop a checklist of water-consuming activities, including cleaning, equipment cooling and sanitation, ensuring adherence to water management principles."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Collection"
+        },
+        {
+         "type": "bullets",
+         "text": "Water Consumption Monitoring:\nMeasure water consumption at different points using flow meters, manual readings and system logs.\nConduct physical inspections of pipelines, valves, cooling towers and equipment for leaks, corrosion and inefficiencies.\nReview the effectiveness of existing water-saving technologies and best operational practices.\nInterview employees to gather insights on daily water usage habits and identify potential areas for improvement.\nWastewater Quality Assessment:\nWastewater samples are collected from treatments inlet, each treatment stage and the final treated effluent. This enables a comprehensive evaluation of contaminant levels across the treatment process.\nSamples are tested for key environmental indicators such as pH, Biochemical Oxygen Demand (BOD), Chemical Oxygen Demand (COD), Total Suspended Solids (TSS)and Ammoniacal Nitrogen. These tests are performed using standard analytical methods to ensure accuracy and consistency.\nBy testing the quality of treated effluent used internally reuse water is routinely monitored to ensure it meets internal specifications and safety parameters.\nDetailed records are maintained for each sampling and testing activity. This includes sample logs, test reports, treatment system observations and any corrective actions taken in case of non-compliance. These records support internal audits, statutory reporting and continuous environmental performance improvement."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Analysis and Identification of Inefficiencies"
+        },
+        {
+         "type": "bullets",
+         "text": "Compare collected data against industry benchmarks, historical trends and regulatory limits.\nEvaluate the potential for integrating advanced water-saving measures, such as closed-loop systems and water-efficient fixtures.\nIdentify areas where wastewater treatment can be improved to enhance reuse."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Record Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Operators maintain records of treated water volumes, reuse quantities, storage levels and operational data.\nWater quality reports, maintenance logs and corrective action records are maintained for inspection and regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Personnel involved in wastewater treatment and reuse operations receive training on system operation, monitoring and safe handling practices.\nPeriodic refresher training is conducted to reinforce compliance with operational procedures and environmental management practices."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Ensures overall SOP implementation, regulatory compliance and performance reporting."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Maintains equipment and pipeline integrity to minimize water loss and prevent leakages."
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Implements water conservation practices during routine operations and monitors consumption."
+       ]
+      },
+      {
+       "role": "Quality Control Team",
+       "responsibilities": [
+        "Verifies that treated water meets internal reuse criteria and external discharge standards."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The EHS Manager conducts annual reviews to assess the effectiveness of water optimization practices. Annual audits are performed to ensure compliance with operational goals and regulatory standards. Performance data, including water usage efficiency and recycling rates, is analysed and improvements are proposed based on audit findings. Any necessary adjustments to processes, procedures, or technology are implemented to ensure continuous water resource optimization."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air pollution Management",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 1353,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Air Pollution Management Standard Operating Practices (SOP) at Naxpar Pharma Pvt. Ltd. outline the practices implemented to prevent, monitor and manage air emissions arising from manufacturing and utility operations. As the Company manufactures liquid formulations, the potential for particulate matter generation is inherently limited. Air emission management therefore focuses on maintaining efficient operations, preventing unnecessary emissions and ensuring compliance with applicable environmental requirements.\n\nThe SOP includes measures such as controlled manufacturing practices, preventive maintenance of utility equipment, periodic ambient air quality and stack emission monitoring and regular review of environmental performance. These practices help ensure that emissions remain within prescribed regulatory limits and support the Company's commitment to responsible environmental management."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish standardized practices for the prevention, monitoring and management of air emissions arising from manufacturing and utility operations, ensuring compliance with applicable environmental regulations, minimizing environmental impact and promoting continual improvement in environmental performance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "These practices apply to all operations and utility systems at Naxpar Pharma Pvt. Ltd. that generate air emissions, noise, or odour, ensuring consistent control and compliance across the facility."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Emissions Reduction and Monitoring",
+       "body": []
+      },
+      {
+       "heading": "Particulate Emission Prevention and Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "We at Naxpar Pharma Pvt. Ltd. manufacture liquid formulations and does not undertake tablet manufacturing or other powder-intensive operations that typically generate significant particulate matter emissions. As a result, the risk of particulate matter generation is minimized at the source through the nature of the manufacturing process.\n\nTo further mitigate particulate matter emissions, manufacturing activities are conducted in controlled process areas and in accordance with established operating procedures. Raw materials are handled carefully to prevent unnecessary releases and routine housekeeping practices are implemented to maintain clean operational areas and prevent the accumulation of particulate matter.\n\nEquipment and utility systems are regularly inspected and maintained to ensure efficient operation and to minimize the potential for unintended emissions. In addition, periodic ambient air quality monitoring is conducted through approved laboratories to assess air quality parameters and verify compliance with applicable environmental regulations and statutory requirements.\n\nThrough the use of liquid-based manufacturing processes, preventive maintenance practices, controlled operations and regular air quality monitoring, the Company effectively minimizes particulate matter emissions and maintains ambient air quality within prescribed regulatory limits."
+        }
+       ]
+      },
+      {
+       "heading": "SOx, NOx & VOC Emission Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. has undertaken a fuel transition initiative by replacing its High-Speed Diesel (HSD)-fired boiler with an LPG-fired boiler for utility operations. This transition was implemented to reduce air emissions associated with fuel combustion, as LPG is a cleaner-burning fuel with significantly lower sulphur content and improved combustion efficiency compared to HSD. As a result, the potential generation of sulphur oxides (SO₂), particulate matter and other combustion-related pollutants has been substantially reduced.\n\nTo further minimize emissions, the Company operates the boiler under controlled conditions and implements a preventive maintenance program covering burners, fuel supply systems and associated equipment. Regular inspection, tuning and maintenance activities are carried out to ensure efficient combustion, optimize fuel utilization and reduce the formation of nitrogen oxides (NOx).\n\nVolatile Organic Compound (VOC) emissions are controlled through responsible chemical and solvent management practices. Raw materials and solvents are stored in designated containers and handled in accordance with established operating procedures to minimize evaporation losses, leaks and unintended releases. Material handling activities are conducted in controlled process areas and good housekeeping practices are maintained throughout the facility to prevent fugitive VOC emissions.\n\nTo verify the effectiveness of these controls, Naxpar Pharma Pvt. Ltd. conducts periodic stack emission monitoring and ambient air quality monitoring through approved external laboratories. Monitoring results are reviewed against applicable regulatory requirements to confirm compliance and evaluate environmental performance. Any observations identified through monitoring activities are assessed and addressed through corrective and preventive actions, where necessary.\n\nThrough the adoption of cleaner fuel technology, controlled operational practices, preventive maintenance, responsible chemical management and periodic environmental monitoring, Naxpar Pharma Pvt. Ltd. continuously works to minimize VOC, SO₂ and NOx emissions and reduce the environmental impact of its operations"
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Maintenance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. conducts periodic monitoring and preventive maintenance activities to ensure effective air emission management. The LPG-fired boiler and other utility equipment are routinely inspected and maintained to support efficient operation and minimize emissions.\n\nStack emissions and ambient air quality are monitored through NABL-accredited laboratories in accordance with applicable regulatory requirements and Pollution Control Board consent conditions. Monitoring results are reviewed to verify compliance with prescribed environmental standards and identify opportunities for improvement."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Parameter",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Particulate Matter",
+           "Fine particles from processing units"
+          ],
+          [
+           "Sulfur Dioxide (SO₂)",
+           "Released during fuel combustion, contributes to acid rain"
+          ],
+          [
+           "Nitrogen Oxides (NOx)",
+           "Gases from machinery combustion processes"
+          ],
+          [
+           "Carbon Monoxide (CO)",
+           "Produced by incomplete fuel combustion"
+          ],
+          [
+           "VOCs",
+           "Emitted from chemicals"
+          ],
+          [
+           "Ozone (O₃)",
+           "Formed as a secondary pollutant"
+          ],
+          [
+           "Lead (Pb)",
+           "Checked for compliance though rarely generated"
+          ]
+         ]
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment / System",
+          "Inspection Frequency",
+          "Responsible Team",
+          "Purpose"
+         ],
+         "rows": [
+          [
+           "LPG-Fired Boiler",
+           "Bi-Annually",
+           "Utilities Team / EHS Team",
+           "Ensure Efficient combustion and minimize emissions"
+          ],
+          [
+           "Diesel Generator Sets",
+           "Bi-Annually",
+           "Utilities Team / EHS Team",
+           "Verify operational efficiency and compliance with emission requirements"
+          ],
+          [
+           "Ambient Monitoring",
+           "Bi-Annually",
+           "Utilities Team / EHS Team",
+           "Check atmospheric conditions to check the impact of our operations on ambient environment."
+          ],
+          [
+           "Stack Emission Monitoring",
+           "Bi-Annually",
+           "Utilities Team / EHS Team",
+           "Verify compliance with applicable emission standards."
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "All monitoring data are reviewed by the EHS Manager for compliance and corrective action."
+        }
+       ]
+      },
+      {
+       "heading": "Odor Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Naxpar Pharma Pvt. Ltd. implements operational controls to minimize the generation and release of odours arising from chemical storage, handling and manufacturing activities. Chemical storage areas and production sections are maintained under controlled conditions and provided with adequate ventilation to prevent the accumulation and spread of odorous vapours.\nChemicals and raw materials are stored in designated containers and handled in accordance with established operating procedures to minimize spills, leaks and unnecessary vapour releases. Good housekeeping practices are maintained throughout the facility to ensure clean and orderly operations.\nRoutine inspections are conducted to identify any potential sources of odour within operational areas. Any odour-related observations or concerns reported by employees or external stakeholders are documented, investigated and addressed through appropriate corrective actions.\nPersonnel involved in chemical handling and manufacturing activities are trained on proper storage, transfer, spill prevention and odour control practices. Periodic refresher training is provided to reinforce awareness and support the effective implementation of odour management measures across the facility."
+        }
+       ]
+      },
+      {
+       "heading": "Noise Control Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Foam-lined acoustic panels are installed around high-noise equipment such as air compressors, Diesel Generators and air handling units to absorb and reduce noise levels within Naxpar Pharma's Pvt. Ltd.'s manufacturing facilities.\nAll machinery is inspected and maintained routinely to ensure smooth operation and to minimize noise from mechanical wear, loose fittings, or vibrations. Faulty parts are replaced promptly.\nNoise mapping and monitoring is carried out on a bi-annual basis across all production areas during both day and night shifts using calibrated sound level meters. Areas exceeding permissible limits are prioritized for additional controls.\nWork rotation schedules are implemented to reduce prolonged exposure to high-noise zones. Ear protection (earplugs) is provided to employees in designated areas.\nWorkers are trained on hearing conservation practices and correct use of PPE. Monitoring results, maintenance logs and corrective actions are documented and reviewed periodically."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment",
+          "Source of Noise",
+          "Inspection Frequency",
+          "Responsible Team",
+          "Maintenance Action"
+         ],
+         "rows": [
+          [
+           "Compressors",
+           "Leaky valves",
+           "Bi-Annual",
+           "Maintenance Team",
+           "Repair/replace faulty parts"
+          ],
+          [
+           "Exhaust Fans",
+           "Vibration",
+           "Monthly",
+           "Maintenance Team",
+           "Check alignment and mounting"
+          ],
+          [
+           "Diesel Generators",
+           "Vibration or Engine Noise",
+           "Bi-Annual",
+           "EHS Team",
+           "Repair/replace faulty parts"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Earplugs are provided in high-noise areas and their usage is mandatory."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensures implementation of air pollution control practices and provides necessary resources for emission management systems."
+       ]
+      },
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Monitors air pollution control measures, ensures regulatory compliance and oversees performance of emission control systems."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure SOP practices related to air emissions are followed within their departments and staff are properly trained."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow standard procedures and report any abnormal emissions or operational issues to their supervisors."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The standard operating practices for air pollution management are reviewed bi-annually to ensure their effectiveness and compliance with environmental regulations. The Environmental Manager conducts the review process, ensuring alignment with current standards, operational changes and sustainability objectives. The review helps identify gaps, implement corrective actions and support continuous improvement in air quality management."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management Procedures",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "Plant Head",
+   "sourceWords": 3615,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Naxpar Pharma Pvt. Ltd. has established an integrated waste management system as part of its commitment to environmental protection, occupational safety and regulatory compliance. The company follows a structured approach to manage waste generated from its pharmaceutical manufacturing and support activities, including raw material handling, processing, packaging, quality control, utilities and maintenance operations.\n\nWaste management practices are systematically implemented across the facility with a focus on identification, segregation, minimisation, safe handling and environmentally responsible disposal. The key elements of the system include:\n\nIdentification of Waste Streams – All waste generated from various operations is identified, classified and recorded for proper management.\nSegregation at Source – Waste is segregated at the point of generation into hazardous, non-hazardous and recyclable categories to ensure safe handling and disposal.\nWaste Minimisation Practices – Process improvements and efficient use of materials are adopted to reduce the overall quantity of waste generated.\nSafe Storage and Handling – Waste is stored in designated areas with proper labelling, containment and handling procedures to avoid spillage or contamination.\nAuthorised Disposal and Recycling – Waste is disposed of or recycled through authorised vendors and approved facilities in accordance with environmental regulations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP defines a systematic framework for managing waste at Naxpar Pharma Pvt. Ltd. It ensures that all waste streams are handled in a safe, organised and environmentally responsible manner. The objective is to maintain compliance with applicable environmental regulations, protect employee health and support sustainable operational practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure is applicable to all operational and support areas of Naxpar Pharma Pvt. Ltd., covering the complete lifecycle of waste from its generation to final disposal or recycling. It includes waste generated from production processes, utilities, maintenance activities, laboratory and administrative functions, including both hazardous and non-hazardous categories."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Hazardous Waste",
+       "definition": "Waste containing chemical or toxic properties that may pose risks to human health or the environment, such as process residues, solvents and contaminated materials."
+      },
+      {
+       "term": "Non-Hazardous Waste",
+       "definition": "Waste that does not present significant environmental or health risks, including packaging waste, inert materials and general office waste."
+      },
+      {
+       "term": "Recyclable Waste",
+       "definition": "Materials that can be recovered and reused after processing, such as plastics, paper, metals and containers."
+      },
+      {
+       "term": "Biodegradable Waste",
+       "definition": "Organic waste that can naturally decompose, including food waste and plant-based materials."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Waste Stream Mapping",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "At Naxpar Pharma Pvt. Ltd., all waste is segregated at source and tracked through a structured Waste Stream Mapping process. This enables accurate identification, classification, storage, handling and disposal in compliance with:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016\nSolid Waste Management Rules, 2016\nE-Waste (Management & Handling) Rules, 2022\nBio- Medical Waste Management Rules 2016\nPlastic Waste Management Rules 2022"
+        },
+        {
+         "type": "paragraph",
+         "text": "A centralized Waste Stream Register is maintained and overseen by the EHS department in coordination with department heads. The register captures:"
+        },
+        {
+         "type": "bullets",
+         "text": "Source of waste generation\nType and classification\nActual quantity / volume generated\nStorage locations and disposal details\nAuthorized vendor information and manifests"
+        },
+        {
+         "type": "paragraph",
+         "text": "All records, including manifests, disposal certificates and qty. / volume logs, are archived for minimum five years for audits, sustainability reporting and regulatory inspections."
+        },
+        {
+         "type": "table",
+         "text": "Waste Stream Mapping",
+         "columns": [
+          "Waste Category",
+          "Description",
+          "Origin (Department/Process)",
+          "Waste Included",
+          "Storage / Handling Method",
+          "Disposal Method",
+          "Responsible Person"
+         ],
+         "rows": [
+          [
+           "Process Waste",
+           "Residues generated during manufacturing processes",
+           "Production Area",
+           "Batch residues, rejected raw material, formulation residues",
+           "Stored in labelled containers and segregated batch-wise",
+           "Disposed through authorized hazardous waste handlers",
+           "Production Manager"
+          ],
+          [
+           "Recyclable Paper Waste",
+           "Clean and recyclable paper-based waste",
+           "Packaging Area, Offices",
+           "Cartons, paper sheets, cardboard boxes, labels",
+           "Stored in dry & designated area away from moisture",
+           "Sent to authorized paper recyclers",
+           "Warehouse Manager"
+          ],
+          [
+           "Recyclable Plastic Waste",
+           "Plastic packaging and wrapping waste suitable for recycling",
+           "Packaging Area, Packing Material Store",
+           "Plastic containers, wrappers, polybags, stretch films",
+           "Collected separately in designated bins",
+           "Sent to authorized plastic recyclers",
+           "Warehouse Manager"
+          ],
+          [
+           "Dry General Waste",
+           "Non-hazardous and non-recyclable dry waste",
+           "Office Areas, Production Floor",
+           "Used tapes, disposable stationery, mixed dry waste",
+           "Segregated and collected daily in general waste bins",
+           "Sent to authorized waste handler",
+           "Warehouse Manager"
+          ],
+          [
+           "Wet / Organic Waste",
+           "Biodegradable food and pantry waste",
+           "Canteen, Pantry",
+           "Food waste, tea waste, biodegradable waste",
+           "Stored in covered leakproof bins and cleared daily",
+           "Sent for composting",
+           "Canteen Supervisor"
+          ],
+          [
+           "Hazardous Chemical Waste",
+           "Waste containing chemical residues requiring controlled handling",
+           "Production, QC Laboratory, Chemical Storage Area",
+           "Empty chemical containers, expired chemicals, contaminated containers",
+           "Stored in sealed and labelled hazardous waste containers in designated area",
+           "Handed over to authorized hazardous waste disposal agencies",
+           "EHS Team"
+          ],
+          [
+           "Laboratory Waste",
+           "Waste generated during quality testing and laboratory analysis",
+           "QC Laboratory",
+           "Sample residues, used glassware, testing materials",
+           "Segregated and stored in labelled laboratory waste containers",
+           "Disposed through authorized waste disposal / agencies",
+           "EHS Team"
+          ],
+          [
+           "Reject / Expired Product Waste",
+           "Non-conforming, expired, or damaged products not suitable for sale",
+           "QC Department, Warehouse",
+           "Rejected batches, expired products, damaged finished goods",
+           "Stored in identified reject material area with proper segregation",
+           "Disposed through authorized agencies",
+           "QA/QC In-charge"
+          ],
+          [
+           "Bio-Medical Waste",
+           "Residues of microbial cultures & media",
+           "Microbiology Laboratory",
+           "Solid & liquid microbiological waste originated during testing",
+           "Stored in separate colour coded bags with proper labelling",
+           "Disposed through authorized agency for incineration",
+           "Microbiology In-Charge"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Waste Segregation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Segregation at Source: All waste must be placed immediately into the dedicated bins at the point of generation. No waste shall be mixed at any stage of handling, storage or transport.\nCollection and Internal Transfer: Departmental staff or housekeeping personnel shall collect waste at scheduled intervals to avoid overflow, ensure cleanliness and prevent cross-contamination.\nTemporary Storage: Each waste category shall be transferred to its designated interim storage area. Hazardous waste must remain in sealed and clearly labelled containers as per regulatory requirements until collected by authorized vendors.\nDocumentation & Register Updating: All waste quantities, categories and disposal details shall be recorded in the centralized Waste Stream Register. Department heads must verify weekly entries for accuracy.\nFinal Disposal: Waste shall be disposed of through authorized recyclers, hazardous-waste vendors as per the disposal method listed in the Waste Stream Mapping Table.\nMonitoring: Supervisors and the EHS team shall routinely inspect segregation practices and provide refresher training to departments where non-compliance is observed."
+        }
+       ]
+      },
+      {
+       "heading": "Corrective Actions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Immediate Response: Any instance of mis-segregation or cross-contamination must be corrected immediately. Waste shall be re-segregated and handled according to the defined procedure.\nEmployee Retraining: Targeted training sessions are held for departments or shifts where errors are identified.\nRoot Cause Analysis: The EHS team shall investigate repeated non-compliance to identify process gaps and implement preventive measures."
+        }
+       ]
+      },
+      {
+       "heading": "Safety and Environmental Considerations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Personal Protective Equipment (PPE): All staff involved in waste handling, especially hazardous and chemical waste, are equipped with appropriate PPE including gloves, safety goggles, masks, aprons and closed footwear.\nSpill Management: Trained personnel follow a documented Spill Response Protocol, using spill kits, absorbents and neutralizing agents. All incidents are recorded in the incident log."
+        }
+       ]
+      },
+      {
+       "heading": "Total Waste Generation Reduction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. adopts a proactive, multi-tiered approach to minimize waste generation throughout its manufacturing and processing operations. Aligned with India’s environmental regulations and sustainability principles, the company emphasizes source reduction and process optimization over disposal, aiming to reduce its environmental footprint and enhance circularity."
+        }
+       ]
+      },
+      {
+       "heading": "Promotion of Material Reuse and Recovery",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification of Recoverable Materials\n\nA periodic waste stream audit is conducted to identify recyclable and recoverable materials generated during the product manufacturing process. These materials include, but are not limited to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Recyclable Paper Waste: Clean cardboard, paper sheets and cartons from packaging areas and offices.\nRecyclable Plastic Waste: Plastic films, wrappers and polybags from raw material receiving and packaging areas."
+        },
+        {
+         "type": "paragraph",
+         "text": "Collection and Segregation\n\nRecyclable paper and plastic waste is segregated at production, utility and packing areas, collected and disposed to the scrap collection area.\nTraining sessions and awareness programs are conducted to ensure all staff understand the value of reuse and their role in achieving waste reduction goals.\n\n3.1.3 Recovery and Reuse Processes\n\nRecoverable materials are processed to maximize reuse and minimize disposal. The process ensures materials are repurposed internally or sent to certified recyclers, as applicable."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Material Type",
+          "Recovery Percentage",
+          "Collection Method (Origin / Department)",
+          "Reused For"
+         ],
+         "rows": [
+          [
+           "Recyclable Paper Waste",
+           "90%",
+           "Sorting at Packaging Area, Offices",
+           "Sent to third-parties for further recycling."
+          ],
+          [
+           "Recyclable Plastic Waste",
+           "90%",
+           "Sorting at Raw Material Receiving & Packaging Areas",
+           ""
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Source Reduction through Process Optimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Right-First-Time (RFT) Production: Process controls during manufacturing & packing activities help reduce batch rejection, rework and material wastage.\nProcess Optimisation: Continuous improvement in formulation and production processes supports higher material utilization and minimizes process-related waste generation.\nLean Manufacturing Practices: Efficient production planning and inventory management help reduce excess material usage, unnecessary handling and operational waste.\nControlled Material Usage: Measured and controlled usage of raw materials, chemicals and packaging materials helps prevent overconsumption and avoidable waste generation.\nBatch Planning and Equipment Utilization: Production scheduling and optimum equipment utilization practices help minimize resource wastage and improve operational efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Storage, Handling and Transportation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Storage Procedures\n\nHazardous Waste\n\nContainers for Hazardous Waste: Hazardous waste is stored in leak-proof, sealed and chemically compatible containers to prevent leaks and contamination. These containers are chosen based on the specific chemical properties of the waste to ensure maximum safety. All containers remain securely closed during waste loading activities.\n\nLabeling of Hazardous Waste Containers\n\nTo ensure safe storage, handling and disposal of hazardous waste, Naxpar follows mandatory labelling procedures in line with the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016, issued by the Central Pollution Control Board (CPCB) and enforced by the State Pollution Control Board (SPCB).\n\nLabelling Specifications:"
+        },
+        {
+         "type": "bullets",
+         "text": "Material: Labels are made of chemical-resistant and weatherproof material, suitable for pharmaceutical manufacturing environments with exposure to solvents, chemicals and varying temperatures.\nSize: Minimum dimensions of 4 x 6 inches, visible from at least 2 meters.\nFont & Contrast: Bold text in English; Font size: minimum 12-point for key information; High contrast colors (e.g., black on white or red) for clear readability\nAdhesion: Labels must be securely affixed to resist heat, moisture and chemical exposure.\nPlacement: Affixed to the upper front portion of each container for easy visibility during inspection and handling.\nLabel Must Include: “Hazardous Waste” and relevant hazard symbol(s); Waste category and physical state (liquid, solid, slurry, sludge, etc.); Date of generation; Generator’s name and contact details; Emergency response information or hazard classification code"
+        },
+        {
+         "type": "paragraph",
+         "text": "Information Included on the Label\n\nEach hazardous waste container includes the following:"
+        },
+        {
+         "type": "bullets",
+         "text": "Waste Type\nWaste Code\nDate of Generation\nQuantity\nSignal Word: DANGER\nHazard Statement: Flammable liquid and vapor. Toxic if inhaled.\nHandling Instructions: Keep tightly closed. Store away from heat and flame.\nGenerator Name: Naxpar Pharma Pvt. Ltd.\nContact Person: EHS Manager\nContact Details: ehs@naxparlab.com"
+        },
+        {
+         "type": "bullets",
+         "text": "Labels are reviewed and annual internal waste audits are conducted to ensure clarity and regulatory compliance.\nDamaged or unreadable labels are immediately replaced.\nAny unlabeled containers are promptly flagged and relabeled by trained personnel."
+        },
+        {
+         "type": "bullets",
+         "text": "Hazardous waste is stored in clearly marked, secure areas away from operational zones.\nAccess is restricted to trained personnel only.\nThe storage zone features impervious flooring, bunds, proper ventilation and fire suppression systems.\nRegular inspections are conducted for leaks or container damage, with spill kits and emergency plans in place."
+        },
+        {
+         "type": "paragraph",
+         "text": "Non-Hazardous Waste Storage"
+        },
+        {
+         "type": "bullets",
+         "text": "Containers: Non-hazardous waste is stored in standard, non-leaking containers. These containers are not required to meet the same stringent specifications as hazardous waste containers but must still be durable enough to withstand normal handling conditions.\nLabeling: Non-hazardous waste is not required to have detailed hazard labels, containers are clearly labeled to indicate the waste type.\nStorage Areas: Non-hazardous waste is stored in designated collection areas that are separate from hazardous waste storage zones. These areas should be kept clean and organized to avoid cross-contamination with hazardous or recyclable waste.\nSpill Containment: Spill containment materials are available near storage areas to address any accidental spills promptly."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recyclable Waste Storage"
+        },
+        {
+         "type": "bullets",
+         "text": "Containers: Recyclable waste (e.g., plastics, paper, metals) are stored in separate areas marked clearly with the type of material.\nStorage Area: Recyclables are stored in areas that is dry, clean and away from potential contamination sources. The area is well-organized to facilitate easy access and transportation to recycling facilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Organic Waste Storage"
+        },
+        {
+         "type": "bullets",
+         "text": "Storage Conditions: Organic waste is kept in a cool, ventilated area to prevent odor buildup and promote efficient decomposition.\nSeparation: Organic waste is kept separate from non-hazardous and recyclable waste to avoid contamination."
+        },
+        {
+         "type": "paragraph",
+         "text": "4.1.5 Bio-Medical Waste Storage"
+        },
+        {
+         "type": "bullets",
+         "text": "Containers: BMW is stored in dedicated colour coded leak proof containers with double lined polybags\nStorage Areas: BMW is stored in designated collection & storage area that is completely separate from the process area & other waste storage areas.\nSpill Containment: Spill containment materials are available near storage areas to address any accidental spills promptly."
+        },
+        {
+         "type": "paragraph",
+         "text": "Handling Procedures\n\nHazardous Waste Handling"
+        },
+        {
+         "type": "bullets",
+         "text": "PPE: Mandatory use of gloves, goggles, masks/respirators and protective gear based on hazard level.\nTraining: Staff receive regular training on safe handling, segregation and emergency protocols.\nSpill Control: Secondary containment is used. Any spill is managed as per Naxpar’s spill response plan."
+        },
+        {
+         "type": "paragraph",
+         "text": "Non-Hazardous Waste Handling"
+        },
+        {
+         "type": "bullets",
+         "text": "PPE: While non-hazardous waste handling does not typically require specialized PPE, workers should wear gloves and other general protective equipment to prevent minor injuries.\nHandling Instructions: Non-hazardous waste should be handled with care to avoid contamination with hazardous or recyclable materials. The waste should be placed directly into designated containers to ensure segregation is maintained.\nSafety Considerations: The handling area for non-hazardous waste should be kept clean and organized to ensure safe handling and quick access to storage or disposal facilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recyclable Waste Handling"
+        },
+        {
+         "type": "bullets",
+         "text": "PPE: Employees should wear gloves and any other PPE deemed necessary to handle recyclables safely.\nSorting: Employees must follow proper sorting instructions to ensure that recyclable materials are separated by type (e.g., plastics, paper, cloth) and are not contaminated by non-recyclable or hazardous materials.\nHandling Procedures: Recyclables should be handled carefully to prevent breakage and must be compacted if needed to reduce volume and prepare them for transportation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Organic Waste Handling"
+        },
+        {
+         "type": "bullets",
+         "text": "PPE: Employees handling organic waste should wear gloves and any other suitable PPE to avoid direct contact with potentially contaminated materials.\nProper Handling: Organic waste must be handled in a manner that minimizes odor and contamination. Any spillage of organic material should be promptly cleaned up to prevent pests or other health risks."
+        },
+        {
+         "type": "bullets",
+         "text": "PPE: Employees handling BMW should adhere to mandatory use of gloves, goggles and masks to avoid direct contact with the contaminated materials.\nTraining: All the BMW handlers should receive regular training on safe handling & storage of material.\nHandling Instructions: BMW should be handled with care to avoid contamination with hazardous or recyclable materials.\nSafety Considerations: The BMW handlers should be vaccinated with Hepatitis-B vaccination."
+        },
+        {
+         "type": "paragraph",
+         "text": "Transportation Procedures\n\nNaxpar Pharma Pvt. Ltd. ensures that hazardous waste is transported with the highest standards of safety, compliance and traceability. All activities are performed in accordance with the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016, Motor Vehicles Act, 1988and the applicable State Pollution Control Board (SPCB) guidelines.\n\nHazardous Waste Transportation"
+        },
+        {
+         "type": "bullets",
+         "text": "All hazardous waste is transported exclusively by SPCB / CPCB authorized hazardous waste transport contractors.\nContractors are required to hold valid transport licenses, vehicle fitness certificates and personnel training certifications as per Rule 19 of the 2016 Hazardous Waste Rules.\nService-level agreements ensure contractors adhere to both national and state-level environmental laws and submit documentation before each dispatch."
+        },
+        {
+         "type": "paragraph",
+         "text": "Container Sealing and Vehicle Safety\n\nPre-Dispatch Inspection: All hazardous waste containers undergo visual and physical inspection by the EHS Team to ensure they are undamaged, leak-proof and compliant with prescribed specifications.\n\nContainer Specifications:"
+        },
+        {
+         "type": "bullets",
+         "text": "Constructed of HDPE material.\nEquipped with tamper-evident lids and secure locking systems.\nLabelled in accordance with Schedule II of the 2016 Rules, including waste category, generation date and hazard symbols in English.\nTransport Vehicle Safety Features: Clearly marked with “HAZARDOUS WASTE” placards, including appropriate UN hazard codes and color-coded labels. Vehicle body inspected for container stability and tie-down security prior to dispatch."
+        },
+        {
+         "type": "paragraph",
+         "text": "Documentation and Regulatory Compliance\n\nEach shipment is accompanied by a full set of documentation as required under Rule 19 of the Hazardous Waste Rules and SPCB SOPs:"
+        },
+        {
+         "type": "bullets",
+         "text": "Form 10 – Hazardous Waste Manifest: Contains generator details, transporter information, quantity, physical state and final disposal location; Signed by the generator (Naxpar Pharma Pvt. Ltd.), transporter and TSDF upon completion\nTransport Authorization Certificate: Verified copy of contractor’s waste transport approval issued by the SPCB.\nSafety Data Sheets (SDS): Specific to the hazardous material being transported; Includes chemical composition, physical properties, hazards, first aid measures and firefighting precautions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Emergency Preparedness and Response\n\nTransport vehicles are equipped and staffed to handle emergency situations involving hazardous waste."
+        },
+        {
+         "type": "bullets",
+         "text": "On-Board Emergency Kit Includes: Absorbent pads, neutralizing agents, spill containment socks, waste collection bags; Complete set of PPEs: gloves, masks, aprons, goggles, face shields; Fire extinguisher and first-aid kit\nPersonnel Training: Drivers and accompanying staff are trained in: Classification and handling of hazardous waste under Indian rules; On-site spill containment, evacuation procedures and safe zone establishment; Immediate communication protocols with SPCB, local authorities and emergency responders; First aid and hazard-specific response techniques\nTransportation Execution and Post-Delivery Verification: Route Planning and Pre-Dispatch Checks: Transported via pre-approved, low-risk routes identified to minimize environmental and human health risks; Vehicles undergo pre-departure inspections for: Container integrity, Proper label display, Documentation readiness, Secure cargo placement\nDelivery and Reconciliation at TSDF: On reaching the authorized Treatment, Storage and Disposal Facility (TSDF): Waste is unloaded under supervision; Quantity and type are verified against manifest entries; Any discrepancies are documented, reported and investigated; Form 10 is updated, signed and one copy is returned to Naxpar for records"
+        },
+        {
+         "type": "paragraph",
+         "text": "Non-Hazardous Waste Transportation"
+        },
+        {
+         "type": "bullets",
+         "text": "Transportation Vehicles: Non-hazardous waste is transported using regular vehicles designed to carry bulk waste. These vehicles should be equipped with secure and leak-proof containers to prevent contamination during transit.\nRoute Planning: Non-hazardous waste should be transported directly to disposal or recycling facilities without unnecessary detours to minimize time and risk of spillage."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recyclable Waste Transportation"
+        },
+        {
+         "type": "bullets",
+         "text": "Designated Vehicles: Recyclable materials should be transported in vehicles dedicated to recycling operations to ensure they are not contaminated by other waste streams.\nProper Sealing: Recyclable materials should be securely stored in containers to prevent leakage, breakage or contamination during transportation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Organic Waste Transportation"
+        },
+        {
+         "type": "bullets",
+         "text": "Transport Containers: Organic waste should be transported in sealed, vented containers to prevent odors and exposure to contaminants. Containers should be easy to unload at composting or organic recycling facilities.\nTransportation Vehicles: Organic waste is transported using trucks or vehicles designed for organic waste, with a focus on maintaining a hygienic and controlled environment during transit."
+        },
+        {
+         "type": "paragraph",
+         "text": "Bio-Medical Waste Transportation\n\nLicensed Contractors"
+        },
+        {
+         "type": "bullets",
+         "text": "BMW waste is transported exclusively by SPCB authorized waste transport contractors only.\nContractors are required to hold valid transport licenses, vehicle fitness certificates and personnel training certifications as per Biomedical Waste Management Rules.\nService-level agreements ensure contractors adhere to both national and state-level environmental laws."
+        },
+        {
+         "type": "paragraph",
+         "text": "Container Sealing and Vehicle Safety\n\nPre-Dispatch Inspection: All BMW waste bags undergo visual and physical inspection by the Micorbiology Team & EHS Team to ensure they are undamaged, leak-proof and compliant with prescribed specifications.\n\nBags Specifications: Colour coding on the bags as Yellow, Red, Blue as per the material stored in the bags with the compliance to Biomedical Waste Management Rules.\n\nTransport Vehicle Safety Features: Clearly marked with “BIOMEDICAL WASTE” placard, including appropriate UN hazard code & vehicle body inspected for stability and tie-down security prior to dispatch.\n\nDocumentation and Regulatory Compliance\n\nEach shipment is accompanied by a proper documentation as per the Biomedical Waste Management Rules, Manifest contains Name of company, Date/Time & quantity of each category (Yellow/Red/Blue/White).\n\nEfficient Treatment & Disposal Systems\n\nHazardous Waste Treatment and Disposal\n\nNaxpar Pharma is committed to minimizing the environmental and human health impacts of hazardous substances generated during production through the implementation of specialized treatment protocols and safe disposal systems. These procedures are aligned with the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016, the Environment (Protection) Act, 1986and State Pollution Control Board (SPCB) directives.\n\n5.1.1 Safe and Compliant Disposal\n\nHazardous waste is dispatched to CPCB/SPCB-authorized Treatment, Storage and Disposal Facilities (TSDFs):"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Type",
+          "Specialized Treatment",
+          "Final Disposal Method"
+         ],
+         "rows": [
+          [
+           "Used or Spent Oil",
+           "Segregated from source & stored separately",
+           "Sent to authorized TSDF for co-processing & safe disposal"
+          ],
+          [
+           "Process Waste",
+           "Segregated from source & stored separately",
+           "Sent to authorized TSDF for co-processing & safe disposal"
+          ],
+          [
+           "Empty Barrels & Containers",
+           "Segregated from source & stored separately",
+           "Sent to authorized recycler for reuse"
+          ],
+          [
+           "Chemical Sludge",
+           "Neutralized, collected & stored separately",
+           "Sent to authorized TSDF for safe disposal"
+          ],
+          [
+           "E-waste",
+           "Segregated and stored separately",
+           "Sent to authorized TSDF for co-processing & safe disposal"
+          ]
+         ]
+        },
+        {
+         "type": "bullets",
+         "text": "Form 10 (Manifest): Tracks each shipment from source to disposal\nDisposal Certificates and SDS records are maintained for each waste category\nAnnual Form IV submitted to SPCB as per compliance norms\nMonthly waste reconciliation conducted to verify treatment vs. disposal ratios"
+        },
+        {
+         "type": "paragraph",
+         "text": "Naxpar’ integration of specialized treatment techniques with regulatory-compliant disposal helps reduce long-term environmental impacts and supports its broader commitment to responsible production and chemical safety.\n\nNon-Hazardous Waste Disposal\n\nNon-hazardous waste generated from manufacturing, packaging, utility and administrative activities is segregated at source and collected in designated containers. Recyclable waste such as paper, cardboard, plastic and metal scrap is periodically handed over to authorized scrap vendors for recycling and resource recovery. Non-recyclable non-hazardous waste is disposed of through authorized waste disposal vendors in accordance with applicable regulatory requirements."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Plant Head",
+       "responsibilities": [
+        "Ensures implementation of waste management practices and regulatory compliance."
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Monitors waste management activities, maintains records and conducts training."
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Minimizes waste at source and ensures proper segregation."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Prevents leaks and maintains systems like ETP."
+       ]
+      },
+      {
+       "role": "QA Team",
+       "responsibilities": [
+        "Ensures compliance with GMP requirements."
+       ]
+      },
+      {
+       "role": "Stores",
+       "responsibilities": [
+        "Handles storage, labelling and coordinates authorized disposal."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow procedures and support waste minimization practices."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Waste Management SOP is reviewed annually by the EHS department to ensure regulatory compliance and effectiveness. Feedback from departments and waste vendors is considered and necessary improvements such as training or process updates are implemented. Review outcomes are documented and regular audits are conducted to ensure continuous improvement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hazardous Substances Management and Reduction",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "Plant Head",
+   "sourceWords": 627,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Naxpar Pharma Pvt. Ltd. has implemented effective systems for managing and reducing hazardous substances through proper identification, safe handling, storage and disposal practices. The company promotes safer alternatives, optimises processes to minimise waste and emissions and maintains strict controls such as labelling, segregation, PPE usage and SOP compliance. Continuous monitoring and training further ensure safety, regulatory compliance and reduced environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a systematic approach for the effective management and reduction of hazardous substances at Naxpar Pharma Pvt. Ltd., ensuring safe handling, storage and disposal practices, minimising risks to personnel and the environment and maintaining compliance with applicable regulatory and safety requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all hazardous substances used, handled, stored, transported and disposed of at Naxpar Pharma Pvt. Ltd., covering all departments including warehouse, production, quality control and utilities and involving all personnel responsible for chemical management across the facility."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Hazard Identification, Labelling & Inventory Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All incoming materials are evaluated using Safety Data Sheets (SDS), GHS hazard symbols and composition.\nEach hazardous material is labelled immediately upon receipt with:\nProduct name\nLot/batch number\nExpiry date\nStorage location\nLabels must remain clear, legible and intact throughout the material’s lifecycle.\nEvery item is barcode-tagged and entered into the hazardous material inventory system for traceability."
+        }
+       ]
+      },
+      {
+       "heading": "Storage Requirements",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Hazardous substances are stored only in designated, ventilated enclosures fitted with spill trays and fire-resistant structures.\nIncompatible materials are strictly segregated (e.g., acids away from solvents; oxidizers away from combustibles).\nStorage units include:\nFlame-proof cabinets\nSecondary containment trays\nMaterials are arranged using First-Expiry-First-Out (FEFO) rotation.\nSafety Data Sheets are displayed or accessible in all storage rooms."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Handling Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Only trained and authorized personnel may dispense, mix, transfer hazardous materials.\nMandatory PPE includes chemical-resistant gloves, goggles, respirators/masks and protective clothing.\nDecanting or mixing is carried out in well-ventilated or locally exhausted areas.\nEmergency response equipment—eyewash stations, fire extinguishers, spill kits—is kept within reach.\nControlled dispensing units and pre-measured packs are used to minimize material wastage and exposure."
+        }
+       ]
+      },
+      {
+       "heading": "Transportation & Movement Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Materials are moved in sealed, labelled containers that prevent spills, leaks and vapor release.\nTransport trolleys or carriers with secondary spill containment are used for internal transfers.\nExternal transport is conducted only through vendors compliant with hazardous waste transportation rules.\nMovement logs (issued quantity, recipient, time) are maintained and verified in periodic audits."
+        }
+       ]
+      },
+      {
+       "heading": "Disposal & Regulatory Compliance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Hazardous waste (used rags, expired chemicals, residue cans, oil-soaked materials) is segregated at source into labelled, leak-proof containers.\nWaste is stored in a designated hazardous waste holding area with spill containment and GHS signage.\nDisposal is carried out exclusively through authorized hazardous waste agencies, following statutory rules.\nManifests, tracking documents and certificates of disposal are retained for minimum five years."
+        }
+       ]
+      },
+      {
+       "heading": "Inspection, Monitoring and Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Routine inspections are conducted for:\nLabelling accuracy\nStorage conditions\nContainer integrity\nDeviations such as leakage, improper segregation or damaged containers are immediately corrected.\nPeriodic audits ensure compliance with SOP, ISO 14001 and safety regulations.\nIncident and near-miss reporting systems are maintained and reviewed."
+        }
+       ]
+      },
+      {
+       "heading": "Training and Awareness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodic refresher trainings are conducted for all relevant personnel.\nTraining covers:\nHazard identification\nSafe handling practices\nEmergency response procedures\nAwareness pictorials & signages are displayed at prominent storage locations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Plant Head",
+       "responsibilities": [
+        "Ensure implementation and regulatory compliance."
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Identify risks, ensure safe handling and provide training."
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Follow SOPs and report leaks or unsafe conditions."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Prevent leaks through proper equipment maintenance."
+       ]
+      },
+      {
+       "role": "QA Team",
+       "responsibilities": [
+        "Ensure GMP compliance."
+       ]
+      },
+      {
+       "role": "Stores",
+       "responsibilities": [
+        "Ensure proper storage and labelling."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow safety practices and use PPE."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually by the EHS team or earlier if there are changes in materials, processes or regulatory requirements. The review covers material usage and movement logs, incident and near-miss records and findings from internal compliance audits. Any improvements identified during the review are documented and implemented following management approval."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Material Management Procedures",
+   "code": "",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "Supply-chain",
+   "owner": "Supply-chain Team",
+   "sourceWords": 1046,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Material Management Procedure at Naxpar Pharma Pvt. Ltd. has established a structured approach for managing materials in production. It defines implemented procedures for efficient and sustainable procurement, storage, handling and utilization of raw materials. The SOP focuses on optimising material consumption, minimising waste and enhancing operational efficiency while ensuring compliance with environmental, health and safety regulations. It supports consistent and sustainable production practices across all departments."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to improve material efficiency and sustainability in product manufacturing. It establishes clear guidelines that are being followed to reduce material wastage, enhance resource optimisation and limit the environmental impact associated with material handling and disposal."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to all stages of material management at Naxpar Pharma Pvt. Ltd., including procurement, storage, handling, usage and reuse or recycling. It covers all raw materials used such as raw materials, excipients and packaging materials. The SOP ensures efficient material use, waste reduction and compliance with environmental standards and sustainability goals."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Material Consumption Reduction by Process Optimisation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Raw materials, excipients, chemicals and packaging materials used in pharmaceutical; cosmetic and herbal manufacturing are dispensed in controlled quantities based on approved batch requirements."
+        },
+        {
+         "text": "Manufacturing parameters such as temperature, mixing time, viscosity and processing conditions are monitored to maintain product quality and minimize material wastage during production."
+        },
+        {
+         "text": "Continuous monitoring of production operations helps optimize consumption of chemicals, water and utilities while maintaining operational efficiency."
+        },
+        {
+         "text": "Routine inspection and preventive maintenance of manufacturing and packaging equipment are conducted to reduce process losses and improve resource utilization."
+        }
+       ]
+      },
+      {
+       "heading": "Process Innovation for Precise Material Use",
+       "body": []
+      },
+      {
+       "heading": "Enhanced Production Planning and Process Scheduling",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Production batches are scheduled based on accurate demand forecasts and available machine capacity to ensure optimal utilisation of resources and avoid overproduction or excess material use."
+        },
+        {
+         "text": "Scheduling is designed and implemented to reduce frequent machine changeovers, thereby minimising the consumption of cleaning agents and water used between batches."
+        },
+        {
+         "text": "Same product formulations batches are being scheduled consecutively to minimise equipment cleaning between production runs."
+        },
+        {
+         "text": "By aligning batch size with operational capacity, idle machine time and material wastage are being minimised, thereby improving overall production efficiency."
+        },
+        {
+         "text": "Production schedules are being periodically reviewed and adjusted based on actual performance data and material consumption trends to enhance planning accuracy and sustain material efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Use of Eco-Friendly and Less-Hazardous Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. is committed to reducing the environmental and health impacts associated with manufacturing, cleaning and sanitation activities through the use of eco-friendly materials and the gradual adoption of less hazardous chemical alternatives wherever technically feasible:"
+        },
+        {
+         "type": "paragraph",
+         "text": "The Company has implemented the following practices:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Use of biodegradable AB Slurry during cleaning and sanitation activities to reduce environmental impacts associated with chemical residues and wastewater discharge."
+        },
+        {
+         "text": "Replacement of conventional detergent formulations such as Teepol with biodegradable detergent alternatives in suitable cleaning applications."
+        },
+        {
+         "text": "Use of Savlon for hygiene and sanitation activities where appropriate, considering its comparatively lower environmental impact profile."
+        },
+        {
+         "text": "Reduction in the use of Phenyl through the adoption of biodegradable cleaning products in applicable operations."
+        },
+        {
+         "text": "Periodic review of chemicals with higher environmental and health risks, including Formaldehyde, Glutaraldehyde, Bleaching Powder, Nitric Acid, Thinner, Germitol, Potassium Permanganate and Sanosil, to identify opportunities for consumption reduction and substitution."
+        },
+        {
+         "text": "Evaluation of lower-toxicity cleaning agents and disinfectants during procurement and operational reviews to support the transition towards safer chemical inputs."
+        },
+        {
+         "text": "Implementation of controlled handling, storage and usage practices for chemicals that cannot currently be substituted due to process, quality, or regulatory requirements."
+        },
+        {
+         "text": "Maintenance of SDS/MSDS documentation, chemical inventories and consumption records to support effective chemical management and continual improvement initiatives."
+        }
+       ]
+      },
+      {
+       "heading": "Pre-Approval and Testing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All altenative chemicals and materials undergo compatibility, performance and quality testing under relevant process conditions before approval for use. Only inputs with proven efficacy and regulatory compliance are permitted for production use."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Recordkeeping",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Chemical consumption records, supplier MSDS/SDS and environmental monitoring records are reviewed periodically to ensure inputs remain in continuous use and comply with applicable environmental and safety requirements. Audit trails are maintained for verification."
+        }
+       ]
+      },
+      {
+       "heading": "Reducing Hazardous By-Product Formation and Toxicity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma has implemented a series of proactive measures to limit the generation of hazardous by-products during manufacturing processes and reduce their impact on the environment:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Raw materials and chemicals used in the manufacturing process are carefully selected and evaluated to avoid the use of substances that may lead to the formation of Persistent Organic Pollutants (POPs), toxic residues, or other environmentally hazardous by-products. Process controls are maintained to ensure that manufacturing activities are conducted under defined operating conditions, thereby reducing the potential for unintended reactions and waste generation."
+        },
+        {
+         "text": "The Company promotes efficient use of materials and chemicals to minimize waste generation at source. Any hazardous waste generated during operations is segregated, handled, stored and disposed of through authorized waste management facilities in accordance with applicable environmental regulations."
+        },
+        {
+         "text": "Periodic reviews of raw material usage, manufacturing processes and waste management practices are conducted to support regulatory compliance and identify opportunities for continuous improvement in pollution prevention and environmental performance."
+        }
+       ]
+      },
+      {
+       "heading": "Efficient Inventory Management and Material Tracking",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A centralised inventory system has been implemented to:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Monitor incoming, stored and consumed raw materials, packaging materials and finished goods."
+        },
+        {
+         "text": "Prevent overstocking, expiry-related losses and storage inefficiencies."
+        },
+        {
+         "text": "Ensure proper stock rotation through the First-In-First-Out (FIFO) and where required First-Expiry-First-Out (FEFO) principle."
+        },
+        {
+         "text": "Support procurement planning based on production requirements and material consumption trends to minimize surplus inventory."
+        }
+       ]
+      },
+      {
+       "heading": "Training and Awareness on Sustainable Material Practices",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Training programs are being conducted periodically to educate employees on safe handling and material conservation practices."
+        },
+        {
+         "text": "Induction training is being provided to new employees on sustainable practices."
+        },
+        {
+         "text": "Awareness initiatives are being conducted to promote responsible material usage."
+        },
+        {
+         "text": "Training effectiveness is being evaluated through assessments and refresher sessions."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Responsibilities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Role",
+        "Responsibilities"
+       ],
+       "rows": [
+        [
+         "Supply-chain Team",
+         "Overseeing SOP implementation, maintaining records and ensuring efficient material usage and recovery practices."
+        ],
+        [
+         "Production Supervisors",
+         "Ensuring adherence to defined material handling and process parameters."
+        ],
+        [
+         "EHS Manager",
+         "Monitoring eco-friendly material usage, tracking environmental targets and ensuring regulatory alignment."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is being reviewed annually by the EHS Manager to evaluate progress in reducing hazardous material usage and improving eco-friendly practices. The review includes analysis of material consumption trends, waste generation data and supplier performance. Based on findings, necessary improvements and policy updates are being implemented with management approval. The review process is conducted in coordination with internal audit and compliance teams to ensure timely corrective actions and continuous improvement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Supplier Selection, Engagement and Management",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Procurement Team",
+   "sourceWords": 790,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure defines the systematic approach taken by Naxpar Pharma Pvt. Ltd. to integrate environmental, social and ethical sustainability into the selection, onboarding and ongoing management of suppliers. The objective is to ensure responsible sourcing, mitigate ESG risks and promote continuous sustainability improvement across the supply chain."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applies to all suppliers, subcontractors and service providers involved in materials procurement, manufacturing, packaging, logistics and support services for Naxpar Pharma Pvt. Ltd."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Initial Screening of Potential Suppliers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All prospective suppliers must complete a Sustainability Pre-Assessment Questionnaire as part of the onboarding process. This screening assesses the supplier’s current practices in the following areas:"
+        },
+        {
+         "type": "bullets",
+         "text": "Energy efficiency and GHG management\nWater and waste handling practices\nLabor rights, occupational safety and non-discrimination\nAnti-corruption and responsible sourcing\nCommitment to inclusive hiring and supplier diversity"
+        },
+        {
+         "type": "paragraph",
+         "text": "Only those meeting Naxpar Pharma Pvt. Ltd.’s minimum ESG thresholds advance to the evaluation stage."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Diversity Program",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. is committed to fostering an inclusive and equitable supply chain by prioritizing partnerships with diverse suppliers, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Women-owned businesses\nSocial enterprises\nMinority-owned or rural enterprises\nSmall-scale, community-based suppliers"
+        },
+        {
+         "type": "paragraph",
+         "text": "To ensure measurable progress, annual procurement targets are established to enhance diversity across all supplier tiers. Naxpar Pharma Pvt. Ltd. provides diverse suppliers with:"
+        },
+        {
+         "type": "bullets",
+         "text": "Enhanced visibility and preference during sourcing and contract award decisions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Additionally, a formal Supplier Diversity Program Report is prepared annually. This report outlines:"
+        },
+        {
+         "type": "bullets",
+         "text": "Participation of diverse suppliers in procurement activities\nInclusion of MSME suppliers within the vendor base\nSupplier performance in terms of quality and delivery\nCompliance with regulatory and operational requirements"
+        },
+        {
+         "type": "paragraph",
+         "text": "The report is reviewed by senior management and shared with relevant stakeholders to demonstrate accountability and continuous improvement in promoting supplier diversity."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation and Final Selection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Shortlisted suppliers are further assessed based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Historical performance and existing certifications (e.g., ISO 9001, ISO 14001, ISO 45001, REACH compliance)\nDocumented sustainability progress and transparency in reporting\nWillingness to engage in ongoing improvement and alignment with industry best practices"
+        },
+        {
+         "type": "paragraph",
+         "text": "Preference is given to suppliers who demonstrate proactive sustainability leadership."
+        }
+       ]
+      },
+      {
+       "heading": "Contractual Integration of Sustainability Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved suppliers sign a Supplier Code of Conduct and a formal contract containing enforceable sustainability clauses, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Environmental Compliance: Adherence to laws on emissions, effluents, water usage, chemical handling and waste disposal.\nLabor Rights: Upholding safe, fair and inclusive working conditions; strict prohibition of child or forced labor.\nEthical Conduct: Zero tolerance for corruption, bribery, or non-transparent business practices.\nDiversity & Inclusion: Encouragement of gender equality, inclusive hiring and supplier diversity."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring, Reporting and Verification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Suppliers are required to submit sustainability reports upon request detailing:"
+        },
+        {
+         "type": "bullets",
+         "text": "Energy and water usage\nEmissions and waste management\nLabor practices and compliance certifications\nIncident reports and corrective actions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd.’s EHS teams asses supplier self-assessment formson adherence to ESG expectations. Where non-compliance is observed:"
+        },
+        {
+         "type": "bullets",
+         "text": "A Corrective Action Plan (CAPA) is developed with the supplier\nClosure timelines are defined and tracked\nRepeat non-compliance may result in contract suspension or review."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Sustainability Assessment and Incentive Program",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Each supplier undergoes an Annual Sustainability Self-Assessment that evaluates performance across key ESG categories:"
+        },
+        {
+         "type": "bullets",
+         "text": "Carbon footprint and GHG reduction\nEnergy and water efficiency\nEthical sourcing and traceability\nWorker health, safety and fair treatment"
+        },
+        {
+         "type": "paragraph",
+         "text": "Top-performing suppliers in the supplier on-site audit and self-assessment may receive:"
+        },
+        {
+         "type": "bullets",
+         "text": "Sustainability Awards (e.g., “Best Sustainable Supplier of the Year”)\nCertificates of ESG Excellence\nFinancial incentives, preferential contract renewals, or volume increases\nPublic recognition in sustainability reports."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Grievance Mechanism",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. maintains a formal grievance mechanism that allows suppliers and subcontractors to raise concerns or complaints related but not limited to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Unfair treatment or contract disputes\nLabor rights violations\nEnvironmental or safety concerns\nBusiness ethics, bribery, or corruption\nDiscrimination or retaliation in procurement practices"
+        },
+        {
+         "type": "paragraph",
+         "text": "Submission Channels: Suppliers may submit grievances through the following secure and confidential channels:"
+        },
+        {
+         "type": "bullets",
+         "text": "Designated email: info@naxparlab.com\nConfidential feedback boxes available in multiple locations in the plant."
+        },
+        {
+         "type": "paragraph",
+         "text": "Handling Procedure:"
+        },
+        {
+         "type": "bullets",
+         "text": "An initial assessment is conducted within 7 days and full resolution (including investigation or mediation) is targeted within 30 days.\nSerious issues are escalated to the senior management and may involve third-party review."
+        },
+        {
+         "type": "paragraph",
+         "text": "Non-Retaliation Commitment: Naxpar Pharma Pvt. Ltd. guarantees that no supplier will face retaliation or reduced business opportunities for raising a grievance in good faith."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Screens and selects suppliers, embeds sustainability clauses into contracts and ensures documentation and review."
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Evaluates environmental and social performance; leads capacity-building and engagement programs."
+       ]
+      },
+      {
+       "role": "Compliance Team",
+       "responsibilities": [
+        "Monitors contractual adherence, oversees audits and manages corrective action plans."
+       ]
+      },
+      {
+       "role": "Suppliers",
+       "responsibilities": [
+        "Must comply with all contractual sustainability requirements and actively participate in improvement initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure is reviewed annually or when required by the EHS officer to ensure:"
+      },
+      {
+       "type": "bullets",
+       "text": "Regulatory updates or buyer requirements\nAudit findings and performance trends\nSupplier feedback"
+      },
+      {
+       "type": "paragraph",
+       "text": "Regular supplier consultations, surveys and engagement meetings are conducted to identify improvement opportunities, promote transparency and foster long-term collaboration."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Provision of Emergency Equipment",
+   "code": "",
+   "catalogId": "emergency-equipment",
+   "pillar": "S",
+   "department": "EHS Department",
+   "owner": "EHS Manager",
+   "sourceWords": 844,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define and implement safe and efficient work procedures for all manufacturing and operational activities at Naxpar Pharma Pvt. Ltd., covering formulation/production processes, material handling, quality control, packaging, storage and dispatch operations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure has been implemented and is applicable to all employees, contractual staff, temporary workers, drivers and visitors across all operational areas of Naxpar Pharma Pvt. Ltd., including production, processing, warehousing and logistics."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Naxpar Pharma Pvt. Ltd. ensures safe and compliant operations through strict adherence to established safety procedures, mandatory use of appropriate PPE and continuous monitoring practices to prevent accidents and maintain a safe working environment."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Emergency Equipment in Place",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following emergency equipment is already installed and routinely maintained at Naxpar Pharma Pvt. Ltd.:"
+      },
+      {
+       "type": "bullets",
+       "text": "Fire Safety Equipment: ABC and CO₂ fire extinguishers, fire hydrants with hose reels in high-risk zones, fire alarms, smoke detectors, fire blankets and sand buckets.\nFirst Aid and Medical Response: Fully stocked first aid kits in all departments (checked monthly), eye wash stations and emergency showers in chemical zones and trained first aiders on each shift.\nSpill Control and Containment: Chemical spill kits near storage/handling areas and secondary containment for hazardous substances.\nEvacuation & Rescue Equipment: Emergency torches, clearly marked exits with emergency lighting and a functional PA system tested during drills."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Equipment Mapping and Placement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Emergency equipment is deployed following thorough location-specific risk assessments conducted by the EHS Department in coordination with departmental heads."
+        },
+        {
+         "type": "paragraph",
+         "text": "Equipment placement considers:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of activity (e.g., chemical processing, storage, handling operations)\nDensity of personnel\nProximity to potential hazards (fire, chemicals, machinery)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Fire extinguishers, spill kits, first aid boxes and emergency lighting are mounted at eye level, within easy reach and clearly labelled with glow-in-the-dark signage."
+        },
+        {
+         "type": "paragraph",
+         "text": "Each floor and department maintains an Emergency Evacuation and Equipment Layout Map, which is:"
+        },
+        {
+         "type": "bullets",
+         "text": "Displayed at prominent locations such as entrance corridors and evacuation points\nUpdated annually or after any layout/operational changes"
+        },
+        {
+         "type": "paragraph",
+         "text": "A centralized Emergency Equipment Register is maintained by the EHS team, capturing location, equipment ID, type and inspection due dates."
+        }
+       ],
+       "responsible": "EHS Department"
+      },
+      {
+       "heading": "Inspection Approach",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A monthly inspection schedule is implemented by the EHS Officer and the inspection checklist includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Physical condition (corrosion, leakage, damage)\nExpiry dates (first aid items, fire extinguishers, spill absorbents)\nVisibility and accessibility (not blocked or relocated)\nTagging of inspection date and initials"
+        },
+        {
+         "type": "paragraph",
+         "text": "Fire extinguishers undergo:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monthly visual inspections\nAnnual servicing and pressure testing by a licensed vendor\nReplacement if pressure gauge is below standard range or any damage is noted"
+        },
+        {
+         "type": "paragraph",
+         "text": "Eye wash stations and emergency showers are flow-tested weekly to ensure functionality and cleanliness."
+        },
+        {
+         "type": "paragraph",
+         "text": "A preventive maintenance log is reviewed quarterly to plan upcoming servicing and replacements proactively."
+        },
+        {
+         "type": "paragraph",
+         "text": "Inspection findings are documented and deviations are flagged for immediate corrective action."
+        }
+       ],
+       "responsible": "EHS Officer"
+      },
+      {
+       "heading": "Restocking and Replacement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "First aid kits are restocked every month by the EHS representative using a standardized checklist that includes sterile gauze, bandages, antiseptic cream, eye drops, burn ointments, painkillers and gloves."
+        },
+        {
+         "type": "paragraph",
+         "text": "Used or expired items are replaced immediately."
+        },
+        {
+         "type": "paragraph",
+         "text": "Each kit includes a restocking card that logs previous usage and refill date."
+        },
+        {
+         "type": "paragraph",
+         "text": "Spill kits are replenished after any usage or at minimum on a quarterly basis."
+        },
+        {
+         "type": "paragraph",
+         "text": "Contents include chemical absorbents, neutralizers, PPE (gloves, goggles) and disposal bags."
+        },
+        {
+         "type": "paragraph",
+         "text": "All damaged or expired equipment is marked with “DO NOT USE” tape and immediately removed from the active area."
+        },
+        {
+         "type": "paragraph",
+         "text": "Disposal of such items, especially chemicals and medical supplies, is carried out as per Hazardous Waste Management Rules and documented with vendor disposal slips."
+        }
+       ],
+       "responsible": "EHS representative"
+      },
+      {
+       "heading": "Training and Drills",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All new employees receive mandatory training during induction on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Location and use of fire extinguishers, eye wash stations and first aid kits\nEmergency evacuation procedures and emergency contact points"
+        },
+        {
+         "type": "paragraph",
+         "text": "Refresher training sessions are held every 6 months and include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Live demonstrations by certified trainers\nDepartment-wise hands-on practice for operating fire extinguishers and spill kits"
+        },
+        {
+         "type": "paragraph",
+         "text": "Mock evacuation drills are conducted annually in coordination with local fire and emergency services."
+        },
+        {
+         "type": "paragraph",
+         "text": "Drills are unannounced to simulate real scenarios"
+        },
+        {
+         "type": "bullets",
+         "text": "Includes timed evacuation, equipment use and headcounts at designated assembly points"
+        },
+        {
+         "type": "paragraph",
+         "text": "Drill outcomes and training participation are recorded and reviewed during the EHS committee meetings for continuous improvement."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records Maintained",
+     "rows": [
+      {
+       "record": "Emergency Equipment Inspection Logs",
+       "owner": "",
+       "retention": "Minimum of three years",
+       "format": "Digital (Monthly)"
+      },
+      {
+       "record": "Maintenance and Servicing Reports",
+       "owner": "",
+       "retention": "Minimum of three years",
+       "format": "Digital (Annual)"
+      },
+      {
+       "record": "First Aid Kit Restocking Records",
+       "owner": "",
+       "retention": "Minimum of three years",
+       "format": "Digital (Monthly)"
+      },
+      {
+       "record": "Training and Drill Attendance Sheets",
+       "owner": "",
+       "retention": "Minimum of three years",
+       "format": "Digital (Quarterly)"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records Maintained",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All documents are retained in digital formats for a minimum of three years."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Ensures all emergency equipment is identified, installed and maintained as per risk assessments and legal standards."
+       ]
+      },
+      {
+       "role": "Unit Heads / Area Supervisor",
+       "responsibilities": [
+        "Monitor the presence and readiness of emergency equipment in their areas and coordinate with EHS for periodic checks."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Are oriented during induction to the emergency equipment in their work areas and are responsible for immediately reporting any deficiencies."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The emergency equipment provision procedure at Naxpar Pharma Pvt. Ltd. is reviewed by the EHS Manager in coordination with the Internal Safety Committee, with final approval by the Operations Head. Reviews are conducted annually and after any incidents to ensure equipment effectiveness and compliance. Feedback from drills and employees is incorporated for continuous improvement. All findings are recorded in the Emergency Equipment Review Log and the SOP is updated annually or as needed based on changes or audit results."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Equipment Safety Inspection",
+   "code": "",
+   "catalogId": "equipment-safety",
+   "pillar": "S",
+   "department": "EHS",
+   "owner": "EHS Dept.",
+   "sourceWords": 819,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured and auditable process for regularly inspecting machinery and equipment to ensure:"
+      },
+      {
+       "type": "bullets",
+       "text": "Workplace safety for all employees\nEarly detection and resolution of mechanical or electrical hazards\nCompliance with applicable legal and client-specific safety standards\nReduced risk of equipment-related incidents and downtime"
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP covers all operational machinery and equipment located in:"
+      },
+      {
+       "type": "bullets",
+       "text": "Production areas\nUtility and support systems (e.g., boilers, compressors, utilities)\nStorage and material handling zones\nElectrical and mechanical service areas"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Inspection Frequency & Types",
+     "steps": [
+      {
+       "heading": "Inspection Frequency & Types",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Frequency",
+          "Type of Inspection",
+          "Conducted By",
+          "Tools/Forms Used"
+         ],
+         "rows": [
+          [
+           "Daily",
+           "Visual Safety Check",
+           "Operators",
+           "Daily Logbook"
+          ],
+          [
+           "Weekly",
+           "Functional Test",
+           "Maintenance",
+           "Weekly Checklist"
+          ],
+          [
+           "Quarterly",
+           "Detailed Technical Review",
+           "Maintenance/EHS",
+           "Equipment Safety Inspection Audit Form"
+          ],
+          [
+           "Annually",
+           "Full Safety Audit",
+           "Internal",
+           "Annual Safety Review Report"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Naxpar Pharma Pvt. Ltd., a comprehensive system for equipment safety inspections and audits has been established to ensure that all critical equipment remains safe, reliable and compliant with statutory and operational requirements. The system covers lifting equipment, pressure vessels and associated safety devices across all operational areas."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Periodical Inspection System",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All equipment is subjected to periodic thorough examination by a Competent Person / Chartered Engineer in accordance with applicable provisions of the Factories Act and relevant rules.\nInspection frequency is defined based on:\nType of equipment\nUsage intensity\nRegulatory requirements\nEach inspection includes verification of:\nEquipment identification and tagging\nSafe working limits (load/pressure capacity)\nMechanical and structural integrity"
+        }
+       ]
+      },
+      {
+       "heading": "Lifting Equipment Inspection Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For lifting equipment such as hydraulic pallet trucks:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hydraulic System Checks:\nInspection for oil leakage\nVerification of hydraulic pump performance\nFunctional Checks:\nSmooth lifting and lowering operations\nStability during operation\nMechanical & Structural Integrity:\nInspection of load wheels and steering wheels\nOperational Verification:\nEquipment performance during normal operational conditions is assessed\nEquipment is certified as safe for operation only after successful inspection, with no observed defects."
+        }
+       ]
+      },
+      {
+       "heading": "Pressure Vessel Inspection Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For pressure vessels such as manufacturing vessels and autoclaves:"
+        },
+        {
+         "type": "bullets",
+         "text": "Internal & External Examination:\nVisual inspection for corrosion, scaling, deformation, or damage\nVerification of vessel condition under operating environment\nSafety Devices & Fittings:\nInspection of pressure gauges, safety valves and fittings\nConfirmation of proper installation and functioning\nPressure Testing Verification:\nReview of pressure testing and maintenance records wherever applicable\nVerification of safe operating performance"
+        }
+       ]
+      },
+      {
+       "heading": "Testing and Operational Verification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Equipment is subjected to functional testing under actual or simulated operating conditions\nKey parameters verified:\nPressure limits (for vessels)\nSafe operational performance of lifting equipment\nResponse of safety systems\nTesting ensures that equipment operates within design specifications and safety margins"
+        }
+       ]
+      },
+      {
+       "heading": "Defect Identification and Corrective Action System",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Any abnormalities identified during inspection are:\nClearly documented in inspection reports\nCategorised based on severity\nActions taken:\nImmediate rectification for critical defects\nPlanned maintenance for minor issues\nEquipment with safety-critical defects is:\nIsolated or tagged “Not in Use”\nReleased only after corrective action and re-inspection"
+        }
+       ]
+      },
+      {
+       "heading": "Documentation and Record Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Detailed inspection records are maintained, including:\nEquipment details (ID, capacity, location)\nDate of inspection and next due date\nObservations and test results\nCertification number and issuing authority\nRecords are:\nMaintained as controlled documents\nReadily available for internal and external audits\nTracked through a defined documentation system"
+        }
+       ]
+      },
+      {
+       "heading": "Certification and Compliance Assurance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All inspections are certified by:\nCompetent Person / Chartered Engineer\nCertification confirms:\nEquipment is safe and in good working condition\nNo defects affecting safe operation are present\nThe system ensures compliance with:\nFactories Act requirements (relevant sections and rules)\nApplicable engineering and safety standards"
+        }
+       ]
+      },
+      {
+       "heading": "Inspection Planning and Tracking",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A planned inspection schedule is maintained for all equipment\nKey controls include:\nTracking of due dates for next inspection\nPeriodic review by maintenance teams\nEnsuring no equipment operates beyond inspection validity"
+        }
+       ]
+      },
+      {
+       "heading": "Training and Awareness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All relevant personnel are trained in:\nPre-use inspection\nSafe equipment handling\nProper completion of inspection forms\nRefresher training is conducted annually or after machinery upgrades"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Inspection Review Meetings\n\nMonthly: Maintenance team review inspection logs and the audit forms\nQuarterly: Trends are analyzed to update inspection strategies or training needs\n\nAnnual SOP Review\n\nRevisions made based on:\nNew equipment\nAudit findings\nRegulatory or buyer requirements\nApproved changes are communicated and re-trained\n\nCAPA Tracking\n\nNon-conformities are tracked using a Corrective and Preventive Action Register.\nResolutions and re-verification are documented for closure"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Responsibilities",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Naxpar Pharma Pvt. Ltd., equipment safety inspections are carried out through coordinated efforts:"
+      },
+      {
+       "type": "bullets",
+       "text": "The EHS Dept. oversees the entire inspection system, ensures correct use of the Equipment Safety Inspection Audit Form, maintains records and conducts internal audits.\nThe Maintenance Team performs scheduled inspections, completes inspection forms and carries out timely repairs to ensure safe equipment operation.\nOperators conduct daily visual checks before use, report any issues immediately and follow all safety and training protocols.\nThe Engineering Lead supports technical diagnostics, suggests system improvements and coordinates external equipment audits when needed."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance Assurance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP and the associated inspection practices using the Equipment Safety Inspection Audit Form ensure that.:"
+      },
+      {
+       "type": "bullets",
+       "text": "Meets the safety obligations under The Factories Act, 1948and applicable State rules\nIs aligned with BIS/IS safety standards, buyer audit expectations and internal safety policies\nActively prevents equipment-related injuries and operational hazards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Workplace Safety Practices",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "EHS",
+   "owner": "EHS team",
+   "sourceWords": 1401,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Naxpar Pharma Pvt. Ltd., safe and efficient work procedures are established and implemented for all manufacturing and operational activities, covering processing, quality inspection, packaging, storage and dispatch operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "These procedures are applicable and enforced for all employees, contractual staff, temporary workers, drivers and visitors across all operational areas, including production, processing, warehousing and logistics zones."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "General Safety Rules (Site-wise)",
+     "steps": [
+      {
+       "heading": "General Safety Rules (Site-wise)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Area-specific PPE (safety shoes, gloves, high-visibility vests where required) is mandatorily worn.\nMachine guards are maintained intact and tampering is strictly prohibited.\nWork areas are kept clean and obstruction-free, especially in packing and storage zones.\nUnsafe conditions, near-misses and spills are reported immediately and addressed.\nFloor markings, signage and designated zones (storage, walkways, loading bays) are clearly defined and followed.\nSmoking, running in the warehouse and misuse of equipment are strictly prohibited."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PPE (Aligned to Operations)",
+     "steps": [
+      {
+       "heading": "PPE (Aligned to Operations)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Head Protection: Helmets are provided and used in loading/unloading or high-rack areas (if applicable).\nHand Protection: Appropriate gloves are issued and used during material handling and packing.\nFoot Protection: Safety shoes are mandatory and enforced.\nEye Protection: Safety glasses are used where dust or flying particles are present (inspection, unpacking).\nBody Protection: High-visibility jackets are worn in loading zones and during vehicle movement."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Safe Work Practices",
+       "body": []
+      },
+      {
+       "heading": "Material Handling & Equipment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Only trained and authorised personnel may operate material-handling equipment such as, hand pallet trolleys, forklifts, high reach trucks or drum lifters used for raw materials and finished materials.\nConduct pre-use safety checks for equipment such as brakes, wheels, handles, safety locks and alarms (where applicable).\nDo not exceed load capacities when stacking raw materials, r finished goods on pallets, racks, or trolleys.\nUse proper lifting techniques—bend knees, keep back straight and hold loads close to the body—to prevent strain when handling heavy materials, drums, or cartons.\nUtilise mechanical aids for heavy consignments or bulk loads to avoid manual overexertion and ensure operator safety."
+        }
+       ]
+      },
+      {
+       "heading": "Product Storage & Handling",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Store raw materials packing materials and finished products in clearly labelled shelving systems or designated bin locations.\nKeep different product types segregated (e.g., powders, liquids, packaged goods, accessories) to prevent mix-ups or cross-contamination.\nHandle heavy drums, bulk containers and large consignments with care, ensuring a secure grip to avoid hand injuries.\nEnsure racks, shelves and storage areas are not overfilled to prevent collapse or spillage of stored items.\nMaintain dry, well-ventilated storage conditions to protect materials from moisture, contamination, or degradation."
+        }
+       ]
+      },
+      {
+       "heading": "Packaging & batch consolidation Operations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Keep packing tables clean, organised and free from loose materials, debris, or packaging scraps.\nUse ergonomic workstations and anti-fatigue mats for prolonged handling of products, including bottles, drums, cartons and accessory sets.\nDispose of packaging waste—such as cardboard, plastic liners and other scrap materials—only in designated collection bins.\nAvoid excessive force when sealing containers, tying bundles, or strapping packages to prevent strain or musculoskeletal injuries.\nEnsure accurate labelling and barcoding of each product type before dispatch, including batch numbers, product codes and handling instructions."
+        }
+       ]
+      },
+      {
+       "heading": "Electrical Safety",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Do not use damaged electrical cords, plugs, extension boards, or portable equipment used in packing/dispatch areas.\nSwitch off all operational equipment—including tanks, pumps, filling machines and weighing/dispensing units—when not in use.\nReport any sparking, burning smell, overheating, or abnormal noise immediately to the EHS Dept.\nKeep all electrical panels unobstructed and ensure dry surroundings, especially in storage zones where flammable chemicals or materials are present."
+        }
+       ]
+      },
+      {
+       "heading": "Loading & Unloading Activities",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure delivery trucks, vans and cargo vehicles are completely stationary and secured before loading materials, drums, or packaged products.\nNever stand beneath suspended loads during handling of bulk containers, pallets, or heavy consignments.\nUse wheel stoppers, chocks and dock levellers where required.\nMaintain a safe distance from moving vehicles, forklifts, or trolleys in dispatch areas.\nEnsure cartons, drums, or pallets of materials and finished products are stacked evenly and secured properly to avoid tipping or shifting during transport."
+        }
+       ]
+      },
+      {
+       "heading": "Hazardous Substance Exposure Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure safe handling, dispensing and storage of chemicals used in production, processing, cleaning, or adhesive/finishing operations.\nMaintain up-to-date Material Safety Data Sheets (MSDS) for all chemicals at easily accessible locations.\nProvide chemical-specific PPE such as chemical-resistant gloves, safety goggles, aprons and face masks whenever handling solvents, reagents, cleaning agents, or other process chemicals.\nEnsure proper ventilation or local exhaust systems in areas where vapours, fumes, or solvent-based chemicals are used.\nLabel all chemical containers clearly; never store chemicals in unmarked bottles or food containers.\nStore chemicals in designated, well-ventilated storage areas away from heat, ignition sources and pharma materials.\nFollow the trainings provided on safe chemical handling, spill response and emergency procedures.\nUse spill kits immediately in case of chemical leaks; isolate the area and report to the supervisor.\nStrictly prohibit eating, drinking, or smoking in areas where chemicals are stored or used."
+        }
+       ]
+      },
+      {
+       "heading": "Slip, Trip & Fall Prevention Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Keep floors dry at all times; immediately clean water, oil, chemical, or solvent spills to prevent slips, especially in areas with powders, or liquid residues.\nUse anti-slip mats in high-traffic zones such as packing, dispatch and storage walkways.\nEnsure adequate lighting in storage rooms, inspection areas, stairways, loading bays and corridors.\nUse handrails when ascending/descending stairs or ramps.\nSecure loose cables, ropes, straps and packaging materials away from pathways.\nDo not climb on pallets, drums, storage racks, or unstable stacks.\nUse certified ladders or platforms for stacking/unstacking high rack items; ensure stability before use.\nWear slip-resistant safety shoes in all operational zones."
+        }
+       ]
+      },
+      {
+       "heading": "Housekeeping & Hygiene",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Immediately clean spills of chemicals, powders, residues and packaging waste to prevent slip, contamination and fire hazards in all operational areas.\nKeep emergency exits, fire extinguishers and aisles clear at all times.\nMaintain cleanliness in resting and eating areas; wash hands before breaks to avoid exposure to chemical residues, dust, or particulates.\nDispose of chemical, packaging and process waste only in designated collection bins or containers, following Naxpar’s hazardous and non-hazardous waste management protocols to ensure environmental compliance and safety."
+        }
+       ]
+      },
+      {
+       "heading": "Health & Wellness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Inform supervisors immediately if feeling unwell, exhausted, or experiencing difficulty due to dust exposure.\nTake scheduled rest breaks to reduce fatigue during repetitive packing or material-handling tasks.\nStay hydrated, especially during high-activity periods or hot weather.\nUse appropriate PPE such as dust masks, respirators, or chemical-rated masks when handling powders, fine particulates, or chemical materials to prevent inhalation hazards."
+        }
+       ]
+      },
+      {
+       "heading": "Ergonomic & RSI (Repetitive Strain Injury) Prevention – Workstation Setup & Posture",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure workstations lab benches, inspection tables, weighing stations and packing areas are adjusted to appropriate working height.\nMaintain neutral posture: straight spine, relaxed shoulders, wrists aligned with forearms.\nUse chairs with lumbar support and footrests where seated tasks are required for longer periods."
+        }
+       ]
+      },
+      {
+       "heading": "Task Rotation & Breaks",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Rotate employees between tasks such as weighing, mixing, inspection, labelling and packaging to reduce continuous strain.\nTake micro-breaks every 30–60 minutes to stretch shoulders, wrists, fingers and back.\nEncourage short walking breaks for employees performing prolonged standing or sitting tasks."
+        }
+       ]
+      },
+      {
+       "heading": "Tool & Equipment Ergonomics",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Use ergonomic hand tools, pipettes, scoops, dispensers and cutters with cushioned grips to minimise strain.\nKeep tools within easy reach to avoid overextension.\nUse magnifying tools and proper lighting for detailed inspections, labelling, or sampling."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Work Practices (Ergonomic)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Avoid excessive force when handling heavy chemical containers, bulk powders, or packaged intermediates.\nKeep wrists straight and avoid prolonged twisting while performing repetitive packing movements.\nFollow the 20-20-20 eye rule for employees working with detailed inspection, documentation, or lab instruments."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Report all incidents, including minor injuries, slips, chemical spills, exposure to reagents, equipment malfunctions, or near-misses, to the Safety Officer immediately for prompt investigation.\nAll incidents will be recorded, reviewed and discussed in monthly safety committee meetings."
+        }
+       ],
+       "responsible": "Safety Officer"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance & Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Non-compliance with safety rules may result in disciplinary action (warnings, retraining, suspension depending on severity).\nAll safety procedures will be reviewed annually or earlier in case of a major incident, audit finding, or statutory update.\nEmployees are encouraged to provide suggestions for improvement based on operational observations and safety needs."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Work Activity – Risk & Safety Matrix",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Work Activity",
+        "Key Risks",
+        "Safety Focus"
+       ],
+       "rows": [
+        [
+         "Loading & unloading",
+         "Crush injuries, vehicle movement",
+         "PPE, safe distance, clear communication"
+        ],
+        [
+         "Laboratory Operations",
+         "Chemical exposure, burns, inhalation hazards",
+         "PPE, fume hoods, MSDS, SOP compliance"
+        ],
+        [
+         "Material Handling",
+         "Back/shoulder injuries",
+         "Mechanical aids, proper lifting"
+        ],
+        [
+         "Equipment Operation",
+         "Pinch points, moving parts, electrical hazards",
+         "PPE, machine guards, authorized use, training"
+        ],
+        [
+         "Chemical Preparation & Mixing",
+         "Solvent/chemical exposure, reaction hazards, burns",
+         "PPE, ventilation, SOP compliance, spill kits"
+        ],
+        [
+         "Electrical Equipment",
+         "Shock, fire",
+         "Authorized use, inspection"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure shall be reviewed annually by the EHS team along with department heads to ensure continued suitability. Reviews will also be conducted immediately following any serious incident, audit observation or regulatory amendment. All corrective and preventive actions will be documented and communicated to employees."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Evaluation Practices",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Department",
+   "sourceWords": 431,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Defines the process for evaluating employee performance at Naxpar Pharma Pvt. Ltd., ensuring fair, structured and transparent assessments aligned with company objectives and individual growth."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applicable to all full-time employees across departments at Naxpar Pharma Pvt. Ltd."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Assessment of Individual Performance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Performance assessments are conducted annually as per organizational requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employee roles, responsibilities and reporting hierarchy are clearly defined for accurate evaluation."
+        },
+        {
+         "type": "paragraph",
+         "text": "A fixed review period ensures consistency and supports systematic evaluation of individual contributions."
+        }
+       ]
+      },
+      {
+       "heading": "Setting and Monitoring Key Performance Indicators (KPIs)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "KPIs are defined based on departmental and organizational goals."
+        },
+        {
+         "type": "paragraph",
+         "text": "They focus on safety, productivity, quality, efficiency and compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Continuous monitoring enables regular evaluation of employee performance and alignment with objectives."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Evaluation and Competency Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Performance is evaluated using structured tools such as the Employee Evaluation Form, which assesses role-specific performance and behavioural competencies."
+        },
+        {
+         "type": "paragraph",
+         "text": "A standardized rating system ensures fairness and transparency across all levels."
+        },
+        {
+         "type": "paragraph",
+         "text": "Competencies like technical skills, communication, teamwork and problem-solving are also evaluated for a comprehensive assessment."
+        }
+       ]
+      },
+      {
+       "heading": "Buyer Performance Evaluation (for Purchase Teams)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Specific evaluation is conducted for purchase team personnel based on procurement and supplier management effectiveness."
+        },
+        {
+         "type": "paragraph",
+         "text": "Key aspects include communication, responsiveness, timely procurement, supplier coordination and inclusion of sustainability criteria during supplier evaluation and selection."
+        },
+        {
+         "type": "paragraph",
+         "text": "Procurement efficiency, supplier relationship management and adherence to quality and sustainability requirements are considered key performance indicators."
+        },
+        {
+         "type": "paragraph",
+         "text": "A dedicated Stakeholder Interaction Section is used for roles involving communication with suppliers, vendors and service providers."
+        }
+       ]
+      },
+      {
+       "heading": "Review Timelines",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Review Type",
+          "Timing"
+         ],
+         "rows": [
+          [
+           "Annual Performance Review",
+           "April month each year"
+          ],
+          [
+           "ICDP Review",
+           "Every year or role change"
+          ],
+          [
+           "Mid-Year Review (optional)",
+           "October or as required"
+          ],
+          [
+           "Buyer Performance Evaluation",
+           "Annually"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Recognition, Improvement Areas and Development Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee achievements and additional contributions are recognized during assessment."
+        },
+        {
+         "type": "paragraph",
+         "text": "Performance gaps are identified and constructive feedback is provided for improvement."
+        },
+        {
+         "type": "paragraph",
+         "text": "The Individual Career Development Plan (ICDP) is used to outline employee goals, training needs and future growth opportunities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Training programs and skill development initiatives are implemented accordingly."
+        }
+       ]
+      },
+      {
+       "heading": "Final Performance Review, Feedback and Documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Overall performance is summarized into a final rating based on results and competencies."
+        },
+        {
+         "type": "paragraph",
+         "text": "The evaluation helps in decision-making related to promotions, increments and career growth."
+        },
+        {
+         "type": "paragraph",
+         "text": "Feedback is shared transparently between employees and managers."
+        },
+        {
+         "type": "paragraph",
+         "text": "All records are properly documented to ensure accountability and consistency."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation & Recordkeeping",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "HR maintains secure records, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Evaluation Forms\nICDP Documents\nReviewer & Employee Comments\nBuyer Performance Feedback Form (if applicable)"
+        }
+       ],
+       "responsible": "HR"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure shall be reviewed annually by HR Department incorporating feedback from department heads, employee representatives and key performance outcomes. Adjustments may be made to reflect evolving business needs, role definitions and buyer expectations."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "Management",
+   "sourceWords": 453,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to ensure that all business activities of Naxpar Pharma Pvt. Ltd. are conducted ethically, transparently and in compliance with applicable laws and Company requirements. This procedure establishes controls to prevent bribery, corruption, kickbacks, improper gifts, conflicts of interest and other sensitive transactions that may improperly influence business decisions or result in personal gain."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, management personnel, contractors, consultants and other individuals acting on behalf of Naxpar Pharma Pvt. Ltd."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Procedure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. prohibits all forms of bribery, corruption, kickbacks, facilitation payments, improper gifts, unauthorized donations and any other sensitive transactions intended to influence business decisions or obtain an unfair advantage."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees shall not offer, solicit, accept, or provide any gift, payment, hospitality, favor, service, or benefit that could influence, or appear to influence, business decisions."
+        },
+        {
+         "type": "paragraph",
+         "text": "All procurement, vendor selection, contracting and financial decisions shall be based solely on legitimate business considerations such as quality, cost, capability, compliance and business requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees shall immediately disclose any offer, request, or circumstance that may involve:"
+        },
+        {
+         "type": "bullets",
+         "text": "Gifts or hospitality of inappropriate value.\nPersonal benefits from suppliers, customers, or business partners.\nConflicts of interest.\nRequests for unofficial payments or favors.\nAny activity that may compromise ethical business conduct."
+        },
+        {
+         "type": "paragraph",
+         "text": "The Company shall maintain transparency in business dealings through appropriate documentation, financial controls and management oversight."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Prohibited Transactions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following types of transactions are strictly prohibited at Naxpar Pharma, regardless of value or intent:"
+      },
+      {
+       "type": "bullets",
+       "text": "Bribes, kickbacks, facilitation payments, or improper commissions.\nCash payments or cash equivalents intended to influence decisions.\nGifts, hospitality, or entertainment that may affect impartial judgment.\nPersonal benefits received in exchange for business favors.\nUndisclosed conflicts of interest.\nUnauthorized donations or sponsorships.\nProcurement decisions influenced by personal relationships or benefits.\nManipulation of records or transactions to conceal improper activities."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Reporting and Investigation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Employees are encouraged to report any suspected violation of this procedure to their Department Head or Management."
+      },
+      {
+       "type": "paragraph",
+       "text": "All concerns shall be treated confidentially and investigated appropriately. Retaliation against any individual who reports a concern in good faith shall not be tolerated."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Corrective Actions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Any violation of this procedure may result in disciplinary action, including termination of employment, depending on the nature and severity of the violation. Where applicable, legal action may also be pursued."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Comply with this procedure, avoid prohibited transactions and report any suspected violations."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Promote compliance, review reported concerns and support investigations where required."
+       ]
+      },
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Oversee implementation of the procedure, review significant violations and ensure appropriate corrective actions are taken."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Management shall review this procedure periodically to ensure its effectiveness and compliance with applicable legal and ethical requirements. Necessary updates, employee awareness initiatives and corrective actions shall be implemented to strengthen ethical business practices across the organization."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Anti-Corruption and Information Security Due Diligence Program on Third Parties",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Procurement Department",
+   "sourceWords": 398,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to establish a framework for conducting due diligence on third parties to identify and mitigate risks related to unethical business practices, corruption and information security. This process enables Naxpar Pharma Pvt. Ltd. to engage with business partners that operate in accordance with legal requirements, ethical standards and information security expectations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to suppliers, contractors, service providers, consultants and other third parties engaged or considered for engagement by Naxpar Pharma Pvt. Ltd."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Third-Party Identification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prior to engagement, the concerned department shall identify the third party and assess the nature of the proposed business relationship, services to be provided and potential risk exposure."
+        }
+       ]
+      },
+      {
+       "heading": "Due Diligence Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The third party shall undergo a due diligence review to assess its compliance with ethical business practices and information security requirements. The assessment may include review of:"
+        },
+        {
+         "type": "bullets",
+         "text": "Business registration and statutory compliance documents.\nPrevious business performance and reputation.\nCompliance with applicable laws and regulations.\nPolicies and practices related to ethics, anti-corruption and information security.\nAbility to protect confidential and business-sensitive information."
+        }
+       ]
+      },
+      {
+       "heading": "On-Site Audit",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "As part of the due diligence process, Naxpar Pharma Pvt. Ltd. may conduct on-site audits of third-party facilities to verify compliance with ethics and information security requirements.\n\nThe audit may include evaluation of:"
+        },
+        {
+         "type": "bullets",
+         "text": "Ethical business conduct and integrity practices.\nControls to prevent bribery, corruption and conflicts of interest.\nCompliance with applicable legal and regulatory requirements.\nProtection and handling of confidential information.\nPhysical and administrative controls implemented to safeguard information assets.\nRelevant records, procedures and management practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Audit findings shall be documented and considered during the supplier evaluation and approval process."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation and Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The results of the due diligence assessment and on-site audit findings shall be reviewed prior to establishing or continuing the business relationship. Where necessary, corrective actions may be requested before approval is granted."
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Naxpar Pharma Pvt. Ltd. shall periodically review third-party performance and compliance through supplier evaluations, business reviews and follow-up audits, where applicable. Any identified concerns relating to ethics, corruption, or information security shall be addressed through appropriate corrective actions."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Conduct due diligence activities and coordinate audits."
+       ]
+      },
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Review findings and approve necessary actions."
+       ]
+      },
+      {
+       "role": "Third Parties",
+       "responsibilities": [
+        "Cooperate during assessments and provide required information."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure shall be reviewed annually to ensure its continued effectiveness and alignment with the Company's ethics, compliance and information security requirements."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

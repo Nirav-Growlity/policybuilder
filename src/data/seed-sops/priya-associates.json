@@ -1,0 +1,1584 @@
+{
+ "id": "priya-associates",
+ "company": "Priya Associates",
+ "industry": "Environmental, waste management and corporate governance services",
+ "industryTags": [
+  "services"
+ ],
+ "sourceFile": "SOP Manual  Employee Handbook/SOP MANUAL/SOPs Manual - Priya Associates.docx",
+ "frontMatter": {
+  "introduction": "Standard Operating Procedures (SOPs) are formally approved, structured, and documented instructions that define how routine and critical activities are to be performed within Priya Associates. These procedures establish a consistent and controlled approach to operations, ensuring that all business activities are executed in alignment with organizational objectives, regulatory requirements, and industry best practices.\n\nAt Priya Associates, this SOP Manual has been developed as an integral component of the Company’s governance framework, supporting operational efficiency, risk management, and compliance across all functional areas. The SOPs are designed not only to standardize workflows but also to embed Environmental, Social, and Governance (ESG) principles into day-to-day operations.\n\nThis manual aims to:\nEnsure consistency and standardization of processes across departments.\nStrengthen compliance with applicable legal, regulatory, and ethical requirements.\nEnhance transparency, accountability, and internal controls.\nSupport employee training, knowledge management, and operational continuity.\nFacilitate readiness for internal audits, external assessments, and ESG evaluations.\nPromote responsible environmental practices, ethical conduct, and data protection.\n\nBy adhering to these SOPs, Priya Associates seeks to minimize operational risks, improve process efficiency, and drive continuous improvement across its activities. All employees, contractors, and relevant stakeholders are required to understand and comply with the procedures outlined in this manual as part of their roles and responsibilities.\n\nThis SOP Manual reflects the Company’s commitment to operational excellence, sustainability, and responsible business conduct, and shall be subject to periodic review to ensure its continued relevance and effectiveness.",
+  "objective": "This manual aims to:\nEnsure consistency and standardization of processes across departments.\nStrengthen compliance with applicable legal, regulatory, and ethical requirements.\nEnhance transparency, accountability, and internal controls.\nSupport employee training, knowledge management, and operational continuity.\nFacilitate readiness for internal audits, external assessments, and ESG evaluations.\nPromote responsible environmental practices, ethical conduct, and data protection.",
+  "scope": "This Standard Operating Procedure (SOP) Manual is applicable to all operations and functional areas of Priya Associates. It governs activities that directly or indirectly impact the organization’s environmental compliance, waste management practices, ethical business conduct, and data protection obligations.\n\nThe provisions outlined in this manual apply to:\nAll permanent, temporary, probationary, and contractual employees\nManagement and supervisory personnel\nThird parties, vendors, suppliers, and service providers, where relevant to their scope of work\n\nThese SOPs remain in force unless revised, superseded, or withdrawn through an officially approved amendment process.",
+  "reviewMechanism": "All Standard Operating Procedures (SOPs) shall be maintained under a controlled document management system to ensure their continued accuracy, relevance, and compliance with regulatory, operational, and strategic requirements. The review mechanism is designed to promote accountability, transparency, and continuous improvement across all functional areas of Priya Associates.\n\nReview Cycle Framework\nAnnual Scheduled Review: Comprehensive content evaluation (SOP Owner, Dept. Head)\nRegulatory Change: Immediate compliance update (Compliance / Regulatory)\nProcess Modification: Operational alignment revision (Concerned Department)\nAudit Observation: Corrective revision (Quality / Compliance)\nIncident or Risk Event: Risk-based update (EHS / Risk Committee)\nManagement Directive: Strategic alignment update (Senior Management)\n\nOversight & Continuous Governance\nSenior Management shall periodically review the overall SOP governance system during Management Review Meetings to ensure alignment with business objectives, compliance requirements, ESG commitments, and risk management priorities."
+ },
+ "sops": [
+  {
+   "title": "ENERGY UTILIZATION & GHG REDUCTION INITIATIVES",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Top Management",
+   "sourceWords": 1194,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "INTRODUCTION",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to reducing its environmental footprint by improving energy efficiency through the adoption of modern technologies and equipment upgrades. This SOP establishes a systematic approach to identifying, implementing, and monitoring energy efficiency improvements across all operational facilities to reduce power and fuel consumption compared to conventional industry practices."
+      },
+      {
+       "type": "paragraph",
+       "text": "Transportation-related emissions represent a significant share of organizational GHG footprint. Priya Associates is committed to implementing systematic measures to reduce greenhouse gas emissions arising from fleet operations, employee commuting, and logistics activities through route optimization, fleet management, and transition towards cleaner transportation alternatives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operational facilities, equipment, utility systems, and departments of Priya Associates. It covers technology assessment, procurement of energy-efficient equipment, installation, performance monitoring, and regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "DEFINITIONS",
+     "rows": [
+      {
+       "term": "Energy Efficiency",
+       "definition": "The ratio of useful energy output to total energy input, demonstrating how effectively energy is utilized in operational processes."
+      },
+      {
+       "term": "Equipment Upgrade",
+       "definition": "Replacement or retrofitting of existing equipment with modern, energy-efficient alternatives that consume less power or fuel."
+      },
+      {
+       "term": "GHG Emissions",
+       "definition": "Greenhouse gas emissions (CO2, CH4, N2O) resulting from energy consumption in operations, measured in CO2 equivalent."
+      },
+      {
+       "term": "Energy Baseline",
+       "definition": "Reference level of energy consumption established before upgrades, used to measure improvement over time."
+      },
+      {
+       "term": "Route Optimisation",
+       "definition": "Process of identifying the most efficient routes to reduce fuel consumption, distance travelled, and delivery time."
+      },
+      {
+       "term": "Electric Vehicle (EV)",
+       "definition": "A vehicle powered by electric motors using energy stored in rechargeable batteries."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "RESPONSIBILITIES",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve energy efficiency strategy and allocate capital budget for equipment upgrades"
+       ]
+      },
+      {
+       "role": "Facility / Operations Manager",
+       "responsibilities": [
+        "Identify upgrade opportunities, oversee installation, and monitor energy performance"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source and evaluate energy-efficient equipment from certified vendors"
+       ]
+      },
+      {
+       "role": "Finance Department",
+       "responsibilities": [
+        "Conduct cost-benefit analysis and track ROI on energy investments"
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Ensure safe installation and regulatory compliance of new equipment"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Follow energy conservation practices and report inefficiencies"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "ABBREVIATIONS",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbrev.",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "GHG",
+         "Greenhouse Gas"
+        ],
+        [
+         "kWh",
+         "Kilowatt Hour"
+        ],
+        [
+         "LED",
+         "Light Emitting Diode"
+        ],
+        [
+         "HVAC",
+         "Heating, Ventilation & Air Conditioning"
+        ],
+        [
+         "ROI",
+         "Return on Investment"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PROCEDURE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Energy Optimization through Technological Enhancement"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "Energy Assessment & Opportunity Identification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective: To systematically evaluate current energy consumption patterns and identify viable technology upgrades that can reduce energy use and GHG emissions."
+        }
+       ]
+      },
+      {
+       "heading": "Equipment Upgrade Implementation",
+       "body": []
+      },
+      {
+       "heading": "Specific Technology Measures",
+       "body": []
+      },
+      {
+       "heading": "Reduction of Emissions from Transportation Activities",
+       "body": []
+      },
+      {
+       "heading": "Fleet Management & Route Optimization",
+       "body": []
+      },
+      {
+       "heading": "Employee Commuting Program",
+       "body": []
+      },
+      {
+       "heading": "Fleet Transition to Cleaner Vehicles",
+       "body": []
+      },
+      {
+       "heading": "Monitoring & Reporting",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "COMPLIANCE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All energy efficiency activities shall comply with applicable energy efficiency regulations, environmental protection laws, and statutory reporting requirements. All transportation activities shall comply with applicable vehicle emission standards, road safety regulations, and environmental laws. Documentation including invoices, installation records, and monitoring data shall be retained for a minimum of five years."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "CONTINUOUS IMPROVEMENT",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Energy consumption data shall be benchmarked annually against industry peers.\nEmployee suggestions for energy efficiency improvements shall be formally collected and evaluated.\nEmerging energy-efficient technologies shall be assessed periodically for potential adoption.\nThis SOP shall be reviewed annually to ensure alignment with regulatory updates and sustainability objectives.\nFleet fuel efficiency benchmarks shall be reviewed annually and improvement targets set.\nEmployee feedback on commuting programs shall be incorporated into program enhancements.\nNew technologies for fleet emission reduction shall be assessed as they become commercially available."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Commitment Statement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to continuous improvement of energy efficiency across all operational facilities. The Company shall invest in technology upgrades that demonstrably reduce power and fuel consumption, lower GHG emissions, and contribute to long-term environmental and financial sustainability."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "WASTE MANAGEMENT & CONTROL PROCEDURE",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS / Admin Team",
+   "owner": "EHS / Admin Team",
+   "sourceWords": 1436,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to minimizing waste generation and maximizing material recovery through reuse and recycling initiatives. This SOP establishes a framework for reducing office waste, promoting circular material use, and collaborating with authorized third-party recyclers to ensure that waste generated is processed responsibly.\n\nExcessive paper consumption contributes significantly to office waste and resource depletion. Priya Associates is committed to implementing systematic measures to reduce paper usage across all departments through digital process adoption, printing guidelines, and employee awareness initiatives.\n\nProper waste sorting at the point of generation is fundamental to effective waste management and regulatory compliance. This SOP establishes a systematic framework for waste stream classification, bin systems, disposal procedures, and staff awareness to ensure every waste category is handled appropriately."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all administrative offices, operational areas, and storage facilities of Priya Associates. It covers all categories of office waste including paper, cardboard, plastics, electronic waste, and packaging materials."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "DEFINITIONS",
+     "rows": [
+      {
+       "term": "Recycling",
+       "definition": "The process of converting waste materials into new materials and objects, reducing consumption of fresh raw materials and energy."
+      },
+      {
+       "term": "Reuse",
+       "definition": "Using a material or product again for the same or a different purpose without significant reprocessing."
+      },
+      {
+       "term": "Authorised Recycler",
+       "definition": "A government-approved entity licensed to collect, treat, and recycle specific waste streams."
+      },
+      {
+       "term": "Waste Stream",
+       "definition": "A categorised type of waste requiring specific handling and disposal methods."
+      },
+      {
+       "term": "Paperless Process",
+       "definition": "An operational workflow that eliminates or significantly reduces the use of physical paper by substituting it with digital tools and electronic communications."
+      },
+      {
+       "term": "Waste Segregation",
+       "definition": "The practice of separating different types of waste at the point of generation to facilitate appropriate treatment and recycling."
+      },
+      {
+       "term": "Hazardous Waste",
+       "definition": "Waste that poses threats to public health or the environment due to toxicity, flammability, reactivity, or corrosiveness."
+      },
+      {
+       "term": "Disposal Certificate",
+       "definition": "Document issued by an authorized waste handler confirming compliant collection and disposal of waste."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "RESPONSIBILITIES",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve waste management policy and allocate resources for recycling infrastructure"
+       ]
+      },
+      {
+       "role": "EHS / Admin Team",
+       "responsibilities": [
+        "Implement recycling procedures, manage bins, coordinate with recycling vendors"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Conduct employee awareness and training on waste reuse and recycling"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source reusable and recyclable materials; engage authorized recyclers"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Segregate waste correctly, use recycling bins, and follow reuse guidelines"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "ABBREVIATIONS",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbrev.",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "PPE",
+         "Personal Protective Equipment"
+        ],
+        [
+         "ESG",
+         "Environmental, Social & Governance"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "WASTE CATEGORISATION BY STREAM",
+     "steps": [
+      {
+       "heading": "WASTE CATEGORISATION BY STREAM",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Stream",
+          "Examples",
+          "Bin Colour",
+          "Disposal Method"
+         ],
+         "rows": [
+          [
+           "Paper / Cardboard",
+           "Office paper, documents, boxes",
+           "Blue",
+           "Authorized paper recyclers"
+          ],
+          [
+           "Plastic Waste",
+           "Bottles, packaging, wrappers",
+           "Yellow",
+           "Authorized plastic recyclers"
+          ],
+          [
+           "Organic / Food",
+           "Kitchen scraps, perishables",
+           "Green",
+           "Municipal composting / collection"
+          ],
+          [
+           "General Non-Hazardous",
+           "Tissues, non-recyclables",
+           "Black / Grey",
+           "Municipal waste collection"
+          ],
+          [
+           "Hazardous Waste",
+           "Batteries, chemical containers",
+           "Red",
+           "Authorized hazardous waste handler"
+          ],
+          [
+           "Electronic Waste",
+           "Computers, cables, mobiles",
+           "Orange",
+           "Certified e-waste recyclers"
+          ],
+          [
+           "Glass",
+           "Glass bottles, containers",
+           "White",
+           "Authorized glass recyclers"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PROCEDURE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Waste Recovery & Recycling Practices"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "Office Waste Reduction Through Reuse",
+       "body": []
+      },
+      {
+       "heading": "Paper Reuse",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Single-sided printed papers that are no longer required shall be reused as draft printing or internal note paper.\nEmployees shall be encouraged to print only when necessary and to use both sides of paper wherever possible."
+        }
+       ]
+      },
+      {
+       "heading": "Packaging & Material Reuse",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Packaging materials such as cardboard boxes, envelopes, and bubble wrap shall be inspected for reuse potential before disposal.\nReusable containers, binders, and folders shall be returned to a common storage area for reuse rather than being discarded."
+        }
+       ]
+      },
+      {
+       "heading": "Recycling Bin Infrastructure",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Colour-coded recycling bins shall be placed at strategic locations throughout the office including workstations, printing areas, and kitchens.\nBins shall be clearly labelled with the type of waste accepted: paper, plastic, metal, cardboard, and general non-recyclable waste."
+        }
+       ]
+      },
+      {
+       "heading": "Recyclable Waste Categories",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Paper and cardboard shall be segregated, kept dry and clean, and delivered to authorized paper recyclers.\nPlastic bottles and packaging materials shall be rinsed if contaminated and placed in the designated plastic recycling bin.\nElectronic waste including old computers, cables, and batteries shall be handed over to certified e-waste recyclers."
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Recycling Partnerships",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Company shall engage authorized third-party recyclers with valid licences and compliance certifications.\nContractual agreements with recycling partners shall include clauses on legal compliance, traceability, and disposal certificates."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Communication & Awareness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "An annual communication shall be issued to all employees outlining the recycling program, bin locations, and segregation guidelines.\nNew employees shall be briefed on waste management procedures during induction.\nAwareness posters illustrating correct waste segregation shall be displayed near bin locations."
+        }
+       ]
+      },
+      {
+       "heading": "Paper Usage Optimization and Control - Printing Guidelines & Controls",
+       "body": []
+      },
+      {
+       "heading": "Default Printer Settings",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All office printers shall be configured to default to double-sided (duplex) printing.\nDefault print settings shall be set to black-and-white unless colour is specifically required.\nPrint preview shall be encouraged before printing to avoid incorrect or incomplete printouts."
+        }
+       ]
+      },
+      {
+       "heading": "Printing Authorization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Large volume print jobs above a defined threshold shall require approval from the Department Head.\nEmployees shall assess whether a document needs to be printed or can be shared electronically before initiating print jobs.\nPrint logs shall be reviewed monthly to identify departments with above-average printing volumes."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Process Adoption - Electronic Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal communications, approvals, memos, and meeting notes shall be conducted and shared via email or digital collaboration platforms.\nPhysical distribution of reports, agendas, and meeting materials shall be replaced with electronic distribution except where legally required."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Document Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A Digital Document Management System (DMS) shall be utilized for storing, retrieving, and managing business documents electronically.\nInternal forms including leave applications, expense claims, and purchase requests shall be digitized."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Communication & Training",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "An annual communication shall be issued to all employees outlining paper consumption targets and digital alternatives.\nTraining materials covering paper reduction strategies shall be included in induction programs.\nAwareness posters on paper-saving practices shall be displayed near printing stations."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Waste Sorting and Stream Based Disposal - Waste Stream Sorting System",
+       "body": []
+      },
+      {
+       "heading": "Bin Placement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Colour-coded waste bins shall be installed in all common areas, workstations, kitchens, storage rooms, and print stations.\nEach bin shall be clearly labelled with the waste stream name, acceptable items, and a visual illustration to guide correct disposal.\nAdequate bins shall be provided to ensure that employees never have to travel excessive distances to dispose of waste correctly."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Responsibilities",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees are responsible for sorting their waste at the point of generation before placing it in the designated bin.\nContamination of recyclable bins with non-recyclable or hazardous waste is strictly prohibited."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Collection & Interim Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Waste bins shall be emptied and collected as per a defined schedule to prevent overflow and maintain hygiene.\nCollected waste shall be transferred to a designated interim sorting area for verification of correct segregation.\nHazardous waste shall be stored in secure, labelled containers in a restricted-access area pending collection by authorized handlers."
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Disposal Arrangements",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Each waste stream shall be assigned to an appropriate authorized waste handler with valid licences.\nDisposal certificates shall be collected from waste handlers for each collection and maintained as compliance records.\nContracts with waste management companies shall include clauses on legal compliance, traceability, and documentation."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual training on waste stream sorting shall be conducted for all employees.\nNew employees shall receive waste segregation training during induction.\nVisual waste sorting guides shall be displayed in local languages at all waste disposal points."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Monthly records shall be maintained on the volume of waste recycled by category.\nRecycling rates shall be calculated and reviewed quarterly to assess program effectiveness.\nAnnual recycling performance data shall be included in the Company's sustainability reporting.\nMonthly paper consumption (in reams) shall be tracked by department and compared against baseline figures.\nAnnual paper reduction targets shall be set and reviewed during management meetings."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "COMPLIANCE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All waste recycling activities shall comply with applicable environmental protection laws. Records including recycling volumes, vendor contracts, and disposal certificates shall be maintained for a minimum of five years. All paper reduction initiatives shall comply with applicable document management regulations and data retention requirements. Records demonstrating paper consumption monitoring and reduction measures shall be maintained for audit purposes."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "CONTINUOUS IMPROVEMENT",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual waste audits shall identify high-volume waste streams and additional recycling opportunities.\nFeedback from employees on recycling program usability shall be incorporated into improvements.\nAnnual review of paper consumption data shall identify departments with the highest reduction opportunities.\nNew digital workflow tools and electronic signature solutions shall be evaluated for adoption.\nAnnual waste audits shall identify opportunities to improve sorting accuracy and reduce contamination rates.\nFeedback from waste vendors on contamination levels shall be used to improve employee training.\nThis SOP shall be reviewed annually to ensure alignment with regulatory and sustainability requirements."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Commitment Statement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to maximizing waste recovery through robust reuse and recycling programs. The Company shall maintain effective waste segregation systems, partner with authorized recyclers, and promote a culture of environmental responsibility among all employees."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Environmental Stewardship & Advocacy Measures",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "Procurement, Development, Marketing and Sales",
+   "owner": "Top Management",
+   "sourceWords": 778,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to offering products and services with a reduced environmental impact throughout their lifecycle from raw material extraction through production, use, and disposal and also recognizes that informed customers are better equipped to make environmentally and socially responsible purchasing decisions. This SOP establishes a framework for identifying, sourcing, and communicating eco-friendly product offerings to customers & proactively communicating accurate and meaningful information to customers regarding the environmental and social impacts of products and services offered by the Company."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to the procurement, development, marketing, and sales functions of Priya Associates. It covers all products sourced, manufactured, or distributed where environmental impact considerations are relevant."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Eco-Friendly Product",
+       "definition": "A product designed, produced, and disposed of with minimal environmental impact compared to conventional alternatives."
+      },
+      {
+       "term": "Product Lifecycle",
+       "definition": "Complete stages of a product from raw material extraction, manufacturing, distribution, use, to final disposal or recycling."
+      },
+      {
+       "term": "Green Procurement",
+       "definition": "The process of purchasing products and services that have a reduced environmental impact compared to conventional alternatives."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve green product strategy and sustainability commitments"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source and evaluate eco-friendly products and materials"
+       ]
+      },
+      {
+       "role": "Sales & Marketing",
+       "responsibilities": [
+        "Communicate green product attributes to customers"
+       ]
+      },
+      {
+       "role": "R&D / Product Team",
+       "responsibilities": [
+        "Design and develop products with reduced environmental impact"
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Evaluate environmental impact of products and ensure compliance with standards"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbrev.",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "EHS",
+         "Environment, Health & Safety"
+        ],
+        [
+         "VOC",
+         "Volatile Organic Compound"
+        ],
+        [
+         "ESG",
+         "Environmental, Social & Governance"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Provision of Sustainable and Low-Impact Products"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Green Product Identification & Selection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Evaluation Criteria"
+        },
+        {
+         "type": "bullets",
+         "text": "Products shall be evaluated based on recyclability, biodegradability, reduced toxicity, lower carbon footprint, and sustainable sourcing of raw materials.\nProducts with recognized environmental certifications shall be preferred.\nVOC content and hazardous substance levels shall be minimized wherever technically and economically feasible."
+        },
+        {
+         "type": "paragraph",
+         "text": "Supplier Requirements"
+        },
+        {
+         "type": "bullets",
+         "text": "Suppliers shall be required to provide environmental compliance documentation and material safety data sheets.\nSupplier environmental credentials shall be included as evaluation criteria during vendor selection."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Evaluation Criteria"
+        },
+        {
+         "text": "Supplier Requirements"
+        }
+       ]
+      },
+      {
+       "heading": "Product Development & Improvement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "New product designs shall incorporate lifecycle thinking, considering raw material choice, manufacturing efficiency, packaging minimization, and end-of-life recyclability.\nPackaging shall be minimized and designed using recyclable or biodegradable materials wherever feasible."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Environmental attributes of eco-friendly products shall be clearly communicated through product labelling, brochures, and the Company website.\nAccurate and verifiable environmental claims shall be used; misleading green claims are strictly prohibited.\nCustomer communications shall include information on proper product use, storage, and end-of-life disposal."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Awareness on Environmental and Social Impacts",
+       "body": []
+      },
+      {
+       "heading": "Product Impact Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The EHS / Sustainability team shall conduct or commission lifecycle assessments or environmental impact evaluations for key products.\nSocial impact considerations including supply chain labour practices and community impact shall be documented.\nImpact data shall be reviewed and updated as product formulations, materials, or supply chains change."
+        }
+       ],
+       "responsible": "EHS / Sustainability team"
+      },
+      {
+       "heading": "Customer Communication Channels",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Product Labelling"
+        },
+        {
+         "type": "bullets",
+         "text": "Product labels shall include relevant environmental information such as recycling instructions, material composition, and disposal guidance.\nRecognized environmental certification marks shall be displayed where applicable and verified."
+        },
+        {
+         "type": "paragraph",
+         "text": "Website & Digital Platforms"
+        },
+        {
+         "type": "bullets",
+         "text": "The Company website shall include a dedicated section on sustainability outlining environmental and social impact information for product categories.\nWeb content shall be reviewed periodically to ensure accuracy and avoid outdated or inaccurate claims."
+        },
+        {
+         "type": "paragraph",
+         "text": "Client Communications"
+        },
+        {
+         "type": "bullets",
+         "text": "Customer-facing emails, brochures, and presentations shall include relevant environmental and social impact information.\nSales staff shall be trained to accurately communicate product sustainability attributes without overstating environmental credentials."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Product Labelling"
+        },
+        {
+         "text": "Website & Digital Platforms"
+        },
+        {
+         "text": "Client Communications"
+        }
+       ]
+      },
+      {
+       "heading": "Anti-Greenwashing Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All environmental and social claims shall be supported by verifiable data or recognized certifications.\nMarketing materials containing environmental claims shall be reviewed and approved by the Compliance team before publication.\nClaims that cannot be substantiated shall not be used in customer communications."
+        }
+       ],
+       "responsible": "Compliance team"
+      },
+      {
+       "heading": "Monitoring & Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The proportion of eco-friendly products in the total product portfolio shall be tracked annually.\nSustainability performance of product portfolio shall be reviewed as part of annual ESG reporting."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All eco-friendly product claims shall comply with applicable environmental labelling standards and consumer protection regulations. Documentation including certifications and supplier assessments shall be maintained for audit purposes. All environmental and social impact communications shall comply with applicable consumer protection laws, environmental labelling regulations, and advertising standards. Documentation supporting claims shall be retained for audit and regulatory purposes."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual review of the product portfolio shall identify opportunities to introduce additional eco-friendly alternatives.\nAnnual review of customer-facing sustainability communications shall assess accuracy and alignment with current product data.\nThis SOP shall be reviewed annually to ensure alignment with evolving disclosure standards and regulatory requirements."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Commitment Statement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to expanding its portfolio of eco-friendly products that deliver reduced environmental impact across the full product lifecycle. The Company shall maintain transparency in environmental claims and continuously improve the sustainability of its products and supply chain."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Corporate Ethics and Integrity Practices",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 1449,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Sensitive transactions carry an inherently higher risk of corruption, conflict of interest, or perceived impropriety particularly when involving external stakeholders in contexts of hospitality, gifts, travel, or professional appreciation. Priya Associates maintains a zero-tolerance approach to bribery and corruption. This SOP establishes a structured, multi-level approval procedure to ensure all sensitive transactions receive appropriate scrutiny and authorization before execution.\n\nPriya Associates handles a range of confidential third-party data including customer information, client records, supplier data, and partner documentation as part of normal business operations. The Company is committed to implementing robust technical, organizational, and procedural controls to prevent unauthorized access, use, or disclosure of such data."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, directors, contractors, and third-party intermediaries acting on behalf of Priya Associates. It covers all sensitive financial and non-financial transactions including gifts, hospitality, entertainment, travel, donations, sponsorships, third-party commissions, and high-value procurement."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Sensitive Transaction",
+       "definition": "Any discretionary transaction where there is, or is perceived to be, a personal benefit in addition to a business benefit commonly arising in hospitality, travel, gifts, or appreciation of professional services."
+      },
+      {
+       "term": "Conflict of Interest",
+       "definition": "A situation where an employee's personal interests could influence or appear to influence their professional duties and decisions."
+      },
+      {
+       "term": "Facilitation Payment",
+       "definition": "A small informal payment made to expedite routine administrative processes strictly prohibited under this SOP."
+      },
+      {
+       "term": "Due Diligence",
+       "definition": "A structured risk assessment conducted prior to approving a sensitive or high-risk transaction."
+      },
+      {
+       "term": "Third-Party Data",
+       "definition": "Confidential information belonging to or identifying customers, clients, suppliers, or other external parties processed by Priya Associates."
+      },
+      {
+       "term": "Unauthorized Access",
+       "definition": "Any access to data by individuals or systems without explicit permission or legitimate business need."
+      },
+      {
+       "term": "Data Breach",
+       "definition": "Unauthorized access, disclosure, loss, destruction, or alteration of protected data."
+      },
+      {
+       "term": "Encryption",
+       "definition": "Converting readable data into an encoded format accessible only with the appropriate decryption key."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Board / Top Management",
+       "responsibilities": [
+        "Final oversight and approval of the highest-risk transactions"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Risk assessment, independent review, and validation of sensitive transactions"
+       ]
+      },
+      {
+       "role": "CFO / Finance Head",
+       "responsibilities": [
+        "Financial due diligence, budget verification, and payment authorization"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Initial review, business justification, and first-level approval"
+       ]
+      },
+      {
+       "role": "Internal Audit",
+       "responsibilities": [
+        "Periodic independent verification of compliance with approval protocols"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Disclose and report sensitive transactions; never bypass the approval process"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Abbreviations",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbrev.",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "CFO",
+         "Chief Financial Officer"
+        ],
+        [
+         "HOD",
+         "Head of Department"
+        ],
+        [
+         "CAPA",
+         "Corrective and Preventive Action"
+        ],
+        [
+         "NDA",
+         "Non-Disclosure Agreement"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Authorization Procedure for High-Risk Transactions"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification of Sensitive Transactions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Categories\n\nSensitive transactions include but are not limited to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Gifts, entertainment, or hospitality extended to or received from business partners, clients, or public officials\nSponsorship or donation payments\nThird-party commission or intermediary fee arrangements\nHigh-value procurement contracts above defined financial thresholds\nTravel and accommodation arranged for or sponsored by external parties\nSettlement agreements involving financial concessions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Prohibited Transactions"
+        },
+        {
+         "type": "bullets",
+         "text": "Cash gifts or cash equivalents of any value are strictly prohibited under all circumstances.\nLuxury travel or entertainment not linked to a legitimate business purpose is prohibited.\nAny transaction involving a public official that could be interpreted as an inducement is prohibited."
+        }
+       ]
+      },
+      {
+       "heading": "Tiered Approval Structure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Level 1 · Employee Disclosure & Departmental Review"
+        },
+        {
+         "type": "bullets",
+         "text": "The employee or initiating party shall complete a Sensitive Transaction Disclosure Form detailing the nature, value, business purpose, and parties involved.\nThe Department Head shall review the disclosure for business legitimacy and compliance with the Code of Ethics.\nThe Department Head shall either approve, reject, or escalate the transaction to the Compliance Officer."
+        },
+        {
+         "type": "paragraph",
+         "text": "Level 2 · Compliance Officer Review"
+        },
+        {
+         "type": "bullets",
+         "text": "The Compliance Officer shall independently assess the anti-corruption risk and check for conflicts of interest.\nThird-party due diligence records shall be reviewed for any counterparty involved.\nTransactions involving public officials shall automatically require additional scrutiny and escalation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Level 3 · Senior Management Approval"
+        },
+        {
+         "type": "bullets",
+         "text": "High-value or high-risk transactions exceeding defined thresholds shall require sign-off from the Managing Director or authorized Board representative.\nSenior Management approval shall be documented in writing and retained as part of the transaction record."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation Requirements",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Every approved sensitive transaction shall be accompanied by:"
+      },
+      {
+       "type": "bullets",
+       "text": "Completed Sensitive Transaction Disclosure Form\nConflict of interest declaration\nBusiness justification note and risk assessment (where applicable)\nApproval trail with signatures from each applicable level\nInvoice or supporting documentation of value"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Gift Register & Disclosure Records",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All gifts and hospitality received or offered shall be recorded in the Company Gift Register.\nThe Gift Register shall be reviewed quarterly by the Compliance Officer.\nEmployees who fail to disclose gifts or sensitive transactions shall be subject to disciplinary action."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Protection of Third-Party Data from Unauthorized Access",
+     "steps": [
+      {
+       "heading": "Protection of Third-Party Data from Unauthorized Access",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Access Control Management"
+        },
+        {
+         "type": "paragraph",
+         "text": "5.1 Role-Based Access Control"
+        },
+        {
+         "type": "bullets",
+         "text": "RBAC shall be implemented across all systems containing third-party data, ensuring each user can only access data relevant to their job function.\nAccess rights shall be formally requested through an Access Request Form, approved by the relevant Department Head, and activated by the IT Department.\nPrivileged or administrative access to data systems shall require additional approval from senior management.\nAccess rights shall be reviewed semi-annually and revoked immediately upon employee resignation, termination, or role change."
+        },
+        {
+         "type": "paragraph",
+         "text": "5.2 User Authentication"
+        },
+        {
+         "type": "bullets",
+         "text": "Unique user IDs and passwords shall be assigned to each authorized individual; shared accounts are strictly prohibited.\nMulti-Factor Authentication (MFA) shall be enabled for all systems containing sensitive third-party data.\nPassword policies shall enforce minimum length, complexity, and periodic mandatory changes."
+        },
+        {
+         "type": "paragraph",
+         "text": "5.3 Physical Access Controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Physical access to server rooms, data storage areas, and locations containing physical third-party records shall be restricted using access cards or biometric controls.\nVisitor access to restricted areas shall be logged and supervised."
+        },
+        {
+         "type": "paragraph",
+         "text": "6. Technical Security Controls"
+        },
+        {
+         "type": "paragraph",
+         "text": "6.1 Firewall & Network Security"
+        },
+        {
+         "type": "bullets",
+         "text": "Industry-standard firewalls shall be installed and configured to filter unauthorized network traffic and prevent intrusion.\nFirewall rules shall be reviewed and updated periodically to reflect current security requirements.\nNetwork activity shall be monitored through security logging systems to detect unusual or unauthorized access attempts."
+        },
+        {
+         "type": "paragraph",
+         "text": "6.2 Data Encryption"
+        },
+        {
+         "type": "bullets",
+         "text": "Third-party data stored on company servers and portable devices shall be encrypted using recognized encryption standards.\nData transmitted externally including via email or file transfer shall be encrypted during transit."
+        },
+        {
+         "type": "paragraph",
+         "text": "6.3 Endpoint Security"
+        },
+        {
+         "type": "bullets",
+         "text": "All devices used to access third-party data shall have up-to-date antivirus and anti-malware protection.\nSoftware and operating system patches shall be applied promptly to address known security vulnerabilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "7. Third-Party Vendor Data Protection"
+        },
+        {
+         "type": "bullets",
+         "text": "Before sharing third-party data with external service providers, an NDA or Data Processing Agreement shall be executed.\nThird-party vendors processing client or customer data shall be required to implement equivalent security controls.\nAny suspected breach by a vendor shall trigger immediate investigation and notification to affected parties as required by applicable regulations."
+        },
+        {
+         "type": "paragraph",
+         "text": "8. Subject Access Request Procedure"
+        },
+        {
+         "type": "bullets",
+         "text": "Data subjects have the right to request access to their personal data held by the Company.\nSubject Access Requests (SARs) shall be submitted in writing to the Compliance Officer or DPO.\nThe Company shall respond to SARs within the timeframe required by applicable data protection regulations."
+        },
+        {
+         "type": "paragraph",
+         "text": "7. Data Breach Incident Response"
+        },
+        {
+         "type": "bullets",
+         "text": "Any employee who suspects a data breach or unauthorized access shall immediately report it to the IT Helpdesk and Compliance Officer.\nThe Incident Response Plan (IRP) shall be activated to contain the breach and investigate root cause.\nAffected data subjects and relevant regulatory authorities shall be notified within required timeframes.\nAll incident reports, investigation findings, and remediation actions shall be documented and retained."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual mandatory data protection training shall be conducted for all employees.\nNew employees shall receive data protection induction training before being granted access to third-party data.\nPhishing awareness training shall be included in the annual security training program."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Audit & Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Internal Audit shall conduct periodic reviews of sensitive transaction records to verify compliance.\nNon-compliance shall result in disciplinary action, escalation to senior management, and corrective action plans."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All employees and third parties acting on behalf of Priya Associates are required to comply with this SOP, and any violations may lead to disciplinary action, including termination, financial penalties, or reporting to regulatory or law enforcement authorities. Anti-corruption records must be retained for a minimum of seven years. Additionally, all data protection activities must adhere to applicable data privacy and protection regulations, with relevant documentation such as access logs, incident reports, vendor agreements, SAR records, and training records maintained for a period of five to seven years."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual mandatory anti-corruption training shall be conducted for all employees.\nRisk assessment findings shall be reviewed during management review meetings.\nAnnual penetration testing and vulnerability assessments shall be conducted.\nAccess control systems shall be reviewed annually to reflect current organizational structure.\nLessons learned from security incidents shall be incorporated into updated procedures and training.\nThis SOP shall be reviewed annually or upon significant regulatory, operational, or technological changes."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Commitment Statement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to conducting all business activities with integrity, transparency, and full compliance with anti-corruption and anti-bribery laws. The Company maintains a zero-tolerance approach toward facilitation payments, kickbacks, or any form of improper personal benefit. All sensitive transactions shall be subject to the approval procedures defined in this SOP."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "SUSTAINABLE PURCHASING PRACTICES",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Procurement Team",
+   "sourceWords": 1184,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "INTRODUCTION",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates recognizes that procurement decisions have significant environmental, social, and governance implications across the supply chain. This SOP establishes a structured framework for integrating sustainability criteria into the internal purchasing processes for specific product and service categories including stationery, paper products, office furniture, equipment, and data hosting services. By embedding sustainability into procurement, Priya Associates aims to reduce its environmental footprint, support ethical supply chains, and promote responsible consumption across all operational functions."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all procurement and purchasing activities conducted by Priya Associates across all departments and operational units. It is applicable to all employees, department heads, and the procurement team involved in sourcing, evaluating, and purchasing the following specific product and service categories"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "DEFINITIONS",
+     "rows": [
+      {
+       "term": "Sustainable Procurement",
+       "definition": "The process of purchasing products and services that deliver best value for money while generating benefits not only for the organization but also for society and the economy, whilst minimizing environmental damage."
+      },
+      {
+       "term": "Green Supplier",
+       "definition": "A vendor or service provider that demonstrates verifiable environmental and social responsibility through certifications, practices, or policies."
+      },
+      {
+       "term": "Sustainability Criteria",
+       "definition": "Measurable environmental, social, and governance standards used to evaluate and select products, services, or suppliers."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "RESPONSIBILITIES",
+     "rows": [
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Implement sustainability criteria in all purchasing processes, maintain supplier records, and conduct evaluations"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Raise purchase requests in compliance with sustainable procurement guidelines and approve category-level sustainability requirements"
+       ]
+      },
+      {
+       "role": "Finance Department",
+       "responsibilities": [
+        "Ensure budget provisions support sustainable procurement and conduct cost-benefit analysis on sustainable alternatives"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Follow sustainable procurement guidelines when initiating purchase requests and avoid unauthorized purchasing"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "ABRIVIATIONS",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Abbrev.",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "SOP",
+         "Standard Operating Procedure"
+        ],
+        [
+         "EHS",
+         "Environment Health and Safety"
+        ],
+        [
+         "ESG",
+         "Environment, Section and Governance"
+        ],
+        [
+         "VOC",
+         "Volatile Organic Compound"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "Sustainability Criteria by Product and Service Category",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Sustainability criteria are defined for each product and service category below."
+        }
+       ]
+      },
+      {
+       "heading": "Stationery and Paper Products",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All paper and paper-based stationery products procured shall carry recognized environmental certifications such as FSC (Forest Stewardship Council), PEFC, or recycled content certification of minimum 30% post-consumer waste.\nPreference shall be given to chlorine-free processed paper, refillable pens and markers, and products with minimal or recyclable packaging.\nSingle-use plastic stationery items shall be replaced with sustainable alternatives wherever available and technically feasible.\nSuppliers of stationery products shall be required to provide product environmental declarations or equivalent documentation at the time of procurement."
+        }
+       ]
+      },
+      {
+       "heading": "Electrical Equipment and Appliances",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All electrical equipment and appliances including air conditioners, refrigerators, and lighting systems shall be procured with a minimum energy efficiency rating as per applicable Bureau of Energy Efficiency (BEE) star rating standards or equivalent.\nEquipment carrying Energy Star certification or equivalent shall be preferred during vendor evaluation.\nThe procurement team shall compare the lifecycle energy cost of equipment in addition to the purchase price when making procurement decisions.\nEquipment with built-in energy-saving features such as automatic shutdown, sleep mode, and programmable timers shall be preferred."
+        }
+       ]
+      },
+      {
+       "heading": "Cleaning and Maintenance Supplies",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Cleaning products procured shall be biodegradable, free from hazardous chemicals, and carry recognized environmental certifications wherever available.\nConcentrated cleaning products shall be preferred over pre-diluted formulations to reduce plastic packaging waste.\nSuppliers of facility maintenance services shall be required to demonstrate use of environmentally responsible products and waste disposal practices as a condition of engagement."
+        }
+       ]
+      },
+      {
+       "heading": "Packaging Materials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Packaging materials used for internal operations and outbound shipments shall be sourced with recycled content, be recyclable or compostable at end of use, and minimize volume and weight.\nSingle-use plastic packaging shall be progressively replaced with sustainable alternatives in line with the Company's waste reduction commitments."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Sustainability Evaluation Process",
+       "body": []
+      },
+      {
+       "heading": "Pre-Qualification of Suppliers",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All new suppliers for the defined product and service categories shall complete a Supplier Sustainability Questionnaire prior to being on boarded to the Preferred Supplier List.\nThe questionnaire shall assess the supplier's environmental certifications, energy management practices, waste management systems, social compliance, and any applicable ESG reporting.\nSuppliers who cannot meet minimum sustainability criteria shall not be approved for inclusion on the Preferred Supplier List for sustainability-sensitive categories."
+        }
+       ]
+      },
+      {
+       "heading": "Preferred Supplier List Maintenance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Procurement Team shall maintain and update the Preferred Supplier List on a minimum annual basis.\nSuppliers who fail to maintain their sustainability credentials or who are found non-compliant with environmental or social standards shall be placed on review and may be removed from the Preferred Supplier List.\nNewly certified or qualified sustainable suppliers shall be added to the list following successful pre-qualification."
+        }
+       ],
+       "responsible": "Procurement Team"
+      },
+      {
+       "heading": "Purchase Requisition and Approval Process",
+       "body": []
+      },
+      {
+       "heading": "Raising Purchase Request",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Any employee initiating a purchase request for products or services within the defined sustainability categories shall indicate the sustainability requirements applicable to the purchase on the standard Purchase Requisition Form.\nThe purchase request shall specify the required sustainability certification, eco-label, or minimum standard applicable to the product or service category."
+        }
+       ]
+      },
+      {
+       "heading": "Procurement Team Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Upon receipt of a purchase requisition, the Procurement Team shall verify that the requested product or service meets the applicable sustainability criteria.\nWhere a requisitioning department requests a non-sustainable alternative, the procurement team shall document the business justification and seek approval from the Department Head and EHS Team before proceeding.\nExceptions to sustainable procurement requirements shall be recorded in the Procurement Exception Register and reviewed quarterly by the EHS / Sustainability Team."
+        }
+       ],
+       "responsible": "Procurement Team"
+      },
+      {
+       "heading": "Purchase Order Issuance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Purchase orders issued to suppliers for sustainability-sensitive product categories shall include a clause requiring the supplier to deliver products accompanied by applicable sustainability certifications, eco-labels, or product declarations.\nSuppliers who deliver products that do not meet the specified sustainability standards shall be issued a non-conformance notice, and the procurement team shall seek corrective action or identify an alternative supplier."
+        }
+       ],
+       "responsible": "Procurement Team"
+      },
+      {
+       "heading": "Monitoring & Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Procurement Team shall maintain a Sustainable Procurement Register tracking all purchases made under this SOP, including the product or service category, supplier name, sustainability certification obtained, and purchase value.\nThe proportion of sustainable procurement spend as a percentage of total procurement spend for defined categories shall be calculated and reported quarterly to senior management.\nAnnual sustainable procurement performance data shall be included in the Company's ESG and sustainability reporting.\nSupplier sustainability audit results and corrective action records shall be maintained and reviewed annually."
+        }
+       ],
+       "responsible": "Procurement Team"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "COMPLIANCE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All procurement activities covered under this SOP shall comply with applicable environmental regulations, green procurement guidelines, and the Company's ESG commitments. Documentation including supplier questionnaires, certifications, purchase records, and evaluation matrices shall be maintained for a minimum of five years for audit and verification purposes."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "CONITUOUS IMPROVEMENT",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The list of sustainability-sensitive procurement categories shall be reviewed and expanded annually based on the Company's evolving environmental footprint and ESG commitments.\nSupplier sustainability performance data shall be benchmarked annually and shared with key suppliers to drive improvement.\nEmerging sustainability certifications and standards relevant to procured products and services shall be assessed for incorporation into procurement criteria.\nEmployee awareness on sustainable procurement practices shall be updated annually through training and communication campaigns.\nThis SOP shall be reviewed annually to align with updates in sustainability standards, regulatory requirements, and organizational procurement policies."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Commitment Statement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Priya Associates is committed to integrating sustainability into every stage of its procurement process. The Company shall ensure that purchasing decisions for key product and service categories actively support environmental responsibility, ethical supply chains, and long-term value creation. Sustainable procurement is a core element of the Company's ESG strategy and business conduct."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

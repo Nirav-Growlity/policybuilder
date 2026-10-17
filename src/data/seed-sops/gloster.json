@@ -1,0 +1,3577 @@
+{
+ "id": "gloster",
+ "company": "GLOSTER LIMITED",
+ "industry": "Jute and textile manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "textiles"
+ ],
+ "sourceFile": "SOP Manual  Employee Handbook/SOP MANUAL/SOP Manual - Gloster.docx",
+ "frontMatter": {
+  "introduction": "",
+  "objective": "This manual outlines Gloster Limited's operational framework for managing Environmental, Social, and Governance (ESG) initiatives. Our goal is to integrate sustainability and ethical governance into all business functions, ensuring compliance with regulatory standards and stakeholder expectations.\n\nThe purpose of this ESG SOP manual is to:\n\nEstablish clear guidelines for managing environmental responsibilities, including waste minimization, water conservation, and air emissions control.\nPromote social well-being through initiatives that enhance workplace safety, employee welfare, and community engagement.\nEnsure governance excellence by implementing policies that safeguard financial integrity, protect customer data, and uphold transparency.\nDrive continuous improvement in sustainability through innovation, monitoring, and regular policy reviews.\n\nThis document serves as a comprehensive resource to support our employees and stakeholders in achieving Gloster's ESG goals while fostering a culture of accountability and responsible business practices.",
+  "scope": "This SOP applies to all employees, subcontractors, stakeholders, internal and external customers, partners, vendors, regulatory bodies, the Board of Directors, and any other individual or entity associated with the Ananya unit of Gloster Limited.\n\nApproved By: General Manager",
+  "reviewMechanism": "Review Cycle: Typically conducted biennially, with adjustments made as necessary to comply with legal and regulatory changes or other emergent requirements."
+ },
+ "sops": [
+  {
+   "title": "Workplace Safety Incident & Risk Management System",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Health & Safety Manager",
+   "sourceWords": 652,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the procedures for identifying, reporting, and managing workplace safety incidents, risks, and potential hazards at Gloster Limited. It is designed to ensure a safe and healthy work environment for all employees, minimize incidents through preventive actions, and foster a proactive culture of safety awareness across all facilities."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting Safety Incidents",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Immediate Reporting: Any workplace safety incident or near-miss must be reported immediately by the employee involved to their immediate supervisor. This includes incidents such as slips, trips, falls, equipment malfunctions, or exposure to hazardous materials.\nUse the designated reporting channels:\nEmail: safety@gloster.com\nIncident Documentation: The supervisor must complete a Workplace Safety Incident Report Form with the following details:\nDate and time of the incident\nLocation\nNames of involved persons\nBrief description of the incident\nImmediate corrective actions taken\nInitial Response: The supervisor is responsible for securing the incident area to prevent further harm. Immediate actions, such as administering first aid, evacuating the area, or shutting down equipment, are taken as needed."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Health and Safety of Non-Employee and Contracted Workers",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Gloster Limited ensures that non-employee and contracted workers operating on Company premises are provided with a safe and healthy working environment and are protected from occupational hazards."
+      },
+      {
+       "type": "bullets",
+       "text": "Pre-Engagement Safety Requirements\nContractors and service providers must comply with Gloster Limited’s Health & Safety policies, site rules, and statutory safety requirements.\nPrior to commencement of work, contractors shall submit relevant risk assessments, method statements, and worker competency details, as applicable.\nHigh-risk activities are permitted only after approval through the Company’s permit-to-work system.\nSafety Induction and Awareness\nAll non-employee and contracted workers must undergo a mandatory site safety induction before accessing operational areas.\nThe induction covers:\nSite-specific hazards\nEmergency procedures and evacuation routes\nPPE requirements\nIncident and near-miss reporting procedures\nSupervision and Safe Work Practices\nContracted activities are carried out under designated supervision by authorized Gloster personnel.\nSupervisors ensure compliance with approved safe work practices and immediate correction of unsafe behaviors.\nPersonal Protective Equipment (PPE)\nAppropriate PPE is mandatory for all non-employee workers based on task-specific risks.\nCompliance with PPE requirements is monitored throughout the work period.\nIncident Reporting and Emergency Response\nAll safety incidents, injuries, near misses, or unsafe conditions involving non-employee or contract workers must be reported immediately through the same reporting channels as employees.\nNon-employee workers are included in emergency response procedures, including evacuation, first aid, and medical assistance."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Risk Assessment and Management",
+     "steps": [
+      {
+       "heading": "Risk Assessment and Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducting Risk Assessments:\nAnnual risk assessments must be conducted across all Gloster facilities. This includes evaluating the safety of equipment, tools, materials, and working conditions.\nEach work area will maintain a Risk Register where identified risks are documented, including their nature, likelihood, impact, and control measures.\nRisk Control Measures:\nEngineering Controls: Modify equipment or add barriers to mitigate risks.\nAdministrative Controls: Implement new safety protocols and rules.\nPersonal Protective Equipment (PPE): Ensure the use of gloves, masks, and safety goggles."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Investigating Workplace Safety Incidents",
+     "steps": [
+      {
+       "heading": "Investigating Workplace Safety Incidents",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Incident Investigation Team: A team comprising members of the Safety Committee and supervisors relevant to the incident area will investigate all reported incidents.\nRoot Cause Analysis:\nThe investigation team will perform RCA to determine the underlying causes of the incident.\nFindings from RCA are documented, along with recommendations for Corrective and Preventive Actions (CAPA) to avoid recurrence."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Safety Training",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Mandatory Safety Training: All new employees undergo onboarding safety training covering hazard identification, safe work practices, emergency responses, and proper equipment usage. Refresher courses are provided annually and following any major incident or policy update.\nRecord-Keeping:\nTraining attendance and assessment results are documented and maintained by the Training & Development Department."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Report incidents immediately, follow all safety protocols, participate in safety training sessions."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Document incidents, secure the area, report to Safety Officer, conduct routine inspections."
+       ]
+      },
+      {
+       "role": "Safety Officer",
+       "responsibilities": [
+        "Assess reported incidents, manage risk assessments, coordinate safety training, and maintain records."
+       ]
+      },
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Review and approve safety protocols, ensure sufficient resources, support safety initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Health & Safety Manager every two years or following any significant incident. Revisions are made to ensure ongoing compliance with regulatory standards and workplace safety practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Product Recovery and Disposal Strategy",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "",
+   "owner": "Environmental Safety Office",
+   "sourceWords": 2452,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines Gloster Limited’s sustainable product recovery and disposal strategy, aimed at reducing waste, minimizing environmental impact, and promoting responsible disposal practices throughout the product lifecycle. This approach aligns with Gloster’s commitment to sustainable practices and community welfare."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Guidelines for Product Users",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Design Principles:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Design Aimed at Reducing Resource Input:"
+      },
+      {
+       "type": "bullets",
+       "text": "At Gloster Limited, sustainable design is at the forefront of our product development process, aimed at minimizing resource input and maximizing efficiency. Our strategies include:\nMaterial Efficiency:\nIn the design phase, product teams are required to prioritize materials that minimize environmental impact, specifically those that reduce energy and water consumption during production.\nThis involves a careful selection process where sustainably sourced materials are given precedence. Recycled or upcycled materials should be incorporated whenever feasible, contributing directly to Gloster’s goal of fostering a circular economy.\nEach product should meet a minimum threshold of 25% recycled content, and records of material sources and recycled content percentages are to be maintained for every product line.\nAnnual audits will evaluate our compliance with these standards and assess any updates needed to meet emerging sustainability goals.\nThis approach not only enhances environmental responsibility but also strengthens our brand's commitment to reducing its carbon footprint.\nDurable Construction:\nAll products must be designed for longevity, ensuring they withstand rigorous use and reduce the need for frequent replacements, which lowers additional resource consumption over time.\nThe design team conducts standardized durability assessments on each product, testing for wear resistance, structural integrity, and suitability for long-term use.\nProducts are expected to meet high durability standards prior to market release, ensuring they align with Gloster’s reputation for quality.\nTo reinforce these standards, an annual review of durability benchmarks will be conducted, with updates implemented as necessary to keep pace with industry advancements.\nDocumentation of testing outcomes is required, and any material adjustments should be recorded to maintain compliance with Gloster’s durability protocols.\nFurthermore, feedback from end-users will be incorporated into future designs to enhance durability based on real-world use."
+      },
+      {
+       "type": "paragraph",
+       "text": "Waste Minimization and Low-Impact Dyeing Processes:"
+      },
+      {
+       "type": "bullets",
+       "text": "To further reduce resource input, excess materials from production, including offcuts and remnants, are to be repurposed or recycled whenever possible.\nOffcuts may be used in the creation of labels, smaller components, or secondary product lines, promoting resource efficiency. Additionally, all dyeing processes should prioritize the use of low-impact dyes that require minimal water and energy, reducing the environmental burden.\nDyeing standards will be evaluated quarterly to ensure they meet Gloster’s sustainability targets, with adjustments made as new, lower-impact technologies become available. All waste reduction practices must be recorded and reviewed biannually to identify areas for improvement and maximize resource efficiency.\nThese protocols support our commitment to minimizing environmental impact throughout the production lifecycle."
+      },
+      {
+       "type": "paragraph",
+       "text": "Reducing Microfiber Release and Fabric Fraying:"
+      },
+      {
+       "type": "bullets",
+       "text": "Understanding the environmental impact of microfibers, Gloster Limited takes proactive measures to minimize shedding and tearing through:\nInnovative Fabric Choices:\nOur product teams prioritize fabric technologies that reduce microfiber shedding during normal use and washing cycles, directly addressing the issue of microplastic pollution. Research teams actively collaborate with jute manufacturers to identify and test fabrics with low-shed properties, ensuring they meet both durability and environmental standards.\nEco-friendly fabric treatments are also explored to enhance material resilience while preserving comfort and softness. Each fabric undergoes testing to verify that it aligns with Gloster’s sustainability targets, and records of each material’s performance are maintained for ongoing evaluation.\nAdditionally, Gloster is committed to working with suppliers to adopt treatments that improve fabric durability without compromising on texture or aesthetic quality, helping to create a product that is both eco-friendly and user-friendly.\nRobust Design:\nTo enhance durability and further reduce shedding, products are designed with reinforced seams and construction techniques that mitigate stress points prone to tearing.\nGloster’s design teams incorporate reinforced stitching and structural elements in areas that typically endure high stress, such as hems, cuffs, and pockets, which supports product longevity. Feedback from users on product wear-and-tear is systematically collected and reviewed during the design process, allowing for continuous improvements that reflect real-world usage.\nTesting on resilience is performed as part of our standard quality control, ensuring that each product adheres to durability standards. Design adjustments are logged and reviewed quarterly to keep pace with innovation and maintain product quality, fostering a robust and eco-friendly design approach."
+      },
+      {
+       "type": "paragraph",
+       "text": "Information on Efficient Use, Storage, and Maintenance:"
+      },
+      {
+       "type": "bullets",
+       "text": "Gloster Limited is committed to empowering customers with comprehensive guidance on the efficient use, storage, and maintenance of its products. This initiative aims to extend the product life cycle and minimize environmental impact. Key recommendations include:\nProper Storage Techniques:\nWe advise customers to store jute products in a cool, dry environment, away from direct sunlight and temperature extremes. For example, a retail store stores their jute bags in climate-controlled rooms, helping preserve durability and prevent material degradation caused by UV light and fluctuating temperatures.\nTo avoid moisture accumulation, we recommend using breathable storage solutions like cotton bags or mesh containers. A customer found that using breathable storage helped significantly reduce mold formation on their stored goods, keeping their products in better condition for longer.\nWe suggest customers use temperature and humidity monitors to maintain optimal storage conditions. A customer added these devices to their storage areas, which helped them maintain consistent conditions and reduced instances of mildew and fiber deterioration.\nStore products in well-organized spaces to ensure proper air circulation. A customer who reorganized their warehouse reported improved airflow around their products, minimizing the risk of material degradation.\nMaintenance Practices:\nFor cleaning jute products, we recommend cold water washing and air drying to avoid weakening fibers. A local store follows this practice and has noticed a marked improvement in product lifespan, reducing wear and tear significantly.\nWe also suggest performing regular inspections for any signs of wear. A customer checks their jute bags every six months for fraying or stitching issues, which has helped prevent major damage and extend the life of their products\nIf minor damage occurs, we recommend customers use jute thread for stitching up small tears. A customer successfully repaired a small tear in a jute bag this way, preventing the issue from worsening and prolonging the product’s usability.\nWe advise customers to avoid harsh cleaning agents, which can weaken the fibers. A business switched from chemical cleaners to natural soap-based solutions, significantly improving the longevity of their jute products.\nUsage Tips:\nWe encourage customers to observe load limits to avoid overstretching jute products. For example, a company that uses jute sacks for transporting goods limits each sack to 50 kg, ensuring the material doesn't tear prematurely.\nCustomers should handle products gently to avoid rough abrasion. A customer who switched to gentler handling practices reported fewer product damages, leading to increased satisfaction.\nWe recommend that customers carefully handle jute products during transport to avoid damage from friction or impact. A customer who implemented this tip saw a decrease in product damages during shipment.\nWe suggest customers avoid overloading bags or sacks, as this can stress the fibers and reduce the product’s lifespan. A local company reports using lighter loads has resulted in longer-lasting jute products.\nCustomer Access to Product Care Information: Comprehensive guidance on storage, maintenance, and usage recommendations is available on our website and in product brochures. Customers can easily access practical tips on extending product lifespan and minimizing environmental impact."
+      },
+      {
+       "type": "paragraph",
+       "text": "Return Programs:"
+      },
+      {
+       "type": "bullets",
+       "text": "Collection Points:\nGloster Limited provides designated collection points for returning end-of-life products. Users can return products at the following locations:\nBansberia Collection Center\nCollection Hours: Monday to Saturday, 10:00 AM to 5:00 PM\nKolkata Drop-Off Point\nCollection Hours: Monday to Friday, 9:00 AM to 6:00 PM.\nReturn programs are designed to be convenient, with clear instructions provided on how and where to return products. Customers may also return products through mail-in options, which are detailed on the company’s website: https://www.glosterjute.com/about.\nFor any query or guidance contact following person:\nName : Mr. Abhishek Sharma\nContact Number: +91 9874820561\nRecycling Facilities:\nUsers are provided with detailed information on local recycling facilities capable of processing specific product types. This includes contact information, addresses, and guidelines on how to prepare products for recycling:\nBansberia Recycling Facility\nFacility Type: Certified for textile recycling\nKolkata Recycling Hub\nFacility Type: General recycling\nGloster Limited collaborates with these certified recycling partners to ensure that materials are processed in an environmentally friendly manner and that recycling practices are compliant with sustainability standards.\nSanitary Waste Management:\nFor products that cannot be recycled, Gloster Limited offers guidance on appropriate sanitary waste management practices. This includes:\nContact details for local waste management authorities and facilities.\nInstructions on safe disposal methods to prevent contamination and environmental harm.\nLocal Waste Management Authority\nDisposal Methods: Regular collection and safe handling guidelines. Contact: West Bengal Waste Authority, Phone: 040 2444 6000."
+      },
+      {
+       "type": "paragraph",
+       "text": "Environmental Impact Minimization:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Environmental Manager"
+      },
+      {
+       "type": "bullets",
+       "text": "Impact assessment: Gloster Limited is committed to continuously assessing the environmental impact of its products throughout their lifecycle. Our environmental impact assessments evaluate factors such as energy consumption, greenhouse gas emissions, resource usage, waste generation, and the toxicity of materials used. We also examine water usage, pollution risks, and effects on biodiversity, ensuring compliance with environmental regulations. This ongoing process allows us to monitor the effects of product design, manufacturing, usage, and disposal, helping us identify areas for improvement and make informed decisions to reduce our environmental footprint, enhance sustainability, and minimize negative impacts on ecosystems and human health.\nWaste to Landfill: Gloster Limited aims to reduce the amount of waste sent to landfill by promoting recycling and reusing materials wherever possible. Employees are encouraged to segregate waste into recyclable, compostable, and non-recyclable categories to streamline waste processing and ensure that reusable materials are utilized effectively.\nLeakage Prevention: Users are advised on how to prevent product component or residue leakage during disposal, especially for products that contain materials that could harm the environment. Proper storage and handling procedures will be introduced to prevent leaks, and all employees will be trained to handle hazardous materials safely, ensuring that waste disposal complies with environmental regulations.\nVirgin Material Use Reduction: The company encourages the reuse of product components to minimize the need for virgin materials in the production of new products. This includes utilizing materials from returned or recycled products and sourcing from suppliers that prioritize sustainable practices. The company also promotes using alternative, sustainable raw materials wherever possible to reduce the environmental footprint."
+      },
+      {
+       "type": "paragraph",
+       "text": "Proper Disposal of Products to Promote Circular Material Flow:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Gloster Limited actively encourages customers to return used products through our designated collection points or mail-in options, contributing to the promotion of a circular material flow. In collaboration with certified recycling agencies, we ensure that products returned at the end of their lifecycle are properly processed. By recycling these products, valuable materials are reclaimed and reintroduced into the production process, reducing the need for virgin resources and decreasing waste sent to landfills. This approach not only helps conserve natural resources but also supports the transition to a more sustainable, circular economy."
+      },
+      {
+       "type": "paragraph",
+       "text": "Packaging Optimization"
+      },
+      {
+       "type": "paragraph",
+       "text": "Design Principles:"
+      },
+      {
+       "type": "bullets",
+       "text": "Material Reduction (Lightweighting): Our team has redesigned product packaging for our skincare line to use thinner but durable materials. By reducing the thickness of plastic bottles, we’ve created lighter packages that require less energy during transport and produce less waste.\nThese lightweight packages maintain high standards for product protection while minimizing material use.\nMonomaterial Packaging: Our beverage cartons now use a single type of material, such as polyethylene. By removing mixed materials, these packages can now be fully recycled through standard plastic recycling channels, reducing their environmental footprint.\nThis shift simplifies the recycling process for consumers and supports our commitment to enhanced recyclability.\nUser-Friendly Recycling: Our packaging now includes clear, visual recycling instructions. For instance, snack wrappers display a “tear here” line along with recycling icons and simple text, guiding customers to separate plastic films from cardboard inserts.\nWe also provide a QR code on our packaging that links to an instructional video, helping customers understand how to prepare the packaging for recycling effectively."
+      },
+      {
+       "type": "paragraph",
+       "text": "Implementation Strategies:"
+      },
+      {
+       "type": "bullets",
+       "text": "Product Design Integration: During the design of our new line of eco-friendly jute bags, our team focused on selecting sustainable materials and packaging that would be easy to recycle. The design incorporated minimal packaging, using biodegradable labels and paper-based adhesives to ensure the packaging could be recycled alongside the product.\nAdditionally, the design of the jute bags took into consideration how the packaging could be reused for other purposes, further reducing waste.\nDesign for Easy Disassembling, Remanufacturing, or Recycling of Jute Products: For our jute-based products, we incorporated design elements that facilitate easy disassembly for recycling. Jute fibers are stitched together with biodegradable cotton threads, allowing the bags to be easily disassembled at the end of their life cycle.\nFurthermore, the jute products are designed for remanufacturing, where the jute material can be upcycled into new products, reducing waste and extending the life of the raw materials.\nWe collaborated with recycling partners to ensure the end-of-life process for our jute products is as sustainable as possible, reducing the environmental footprint of both the product and its packaging.\nContinuous Improvement: The company regularly reviews packaging designs to identify opportunities for further reduction in material use and improvements in recyclability."
+      },
+      {
+       "type": "paragraph",
+       "text": "Exclusions:"
+      },
+      {
+       "type": "bullets",
+       "text": "The SOP does not cover secondary and tertiary packaging, such as protective shrink wrap, foam reinforcement, crates, and pallets used for shipping and bulk transportation. Focus remains on primary packaging that comes into direct contact with the product."
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation",
+     "rows": [
+      {
+       "record": "Product return, recycling, and disposal practice records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Communication with Customers",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "User Instructions:"
+      },
+      {
+       "type": "bullets",
+       "text": "Detailed instructions on product return, recycling, and disposal are included with each product. These instructions are designed to be clear and accessible, ensuring that customers understand their options and responsibilities.\nThe company’s website provides additional resources and support for customers, including FAQs, contact information for customer service, and links to recycling and disposal facilities."
+      },
+      {
+       "type": "paragraph",
+       "text": "Customer Support:"
+      },
+      {
+       "type": "bullets",
+       "text": "Primary Contact Person:\nName: Mr. Abhishek Sharma\nPhone: +91 9874820561\nA dedicated Person is available to assist with any questions or concerns related to product disposal and recycling. This Person is trained to provide accurate information and guidance, helping customers to make environmentally responsible choices."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental Safety Office to assess its effectiveness in guiding product users and achieving environmental goals. The review will focus on evaluating the clarity of the SOP, the impact of packaging optimization strategies, and the overall effectiveness of disposal practices. Feedback from customers, employees, and partners will be collected to identify areas for improvement. The SOP will be updated as needed to reflect regulatory changes and best practices in sustainability."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "IT Incident Response process",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "IT Manager",
+   "sourceWords": 410,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP provides a structured response for managing IT security incidents at Gloster Limited. It is designed to prevent data breaches, minimize the impact of cyber threats, and maintain the security of Gloster’s information systems, supporting the company’s ethical standards and governance philosophy."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Process",
+     "steps": [
+      {
+       "heading": "Detection and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Detection and Immediate Reporting:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Initial Detection: Employees are required to report any suspicious activity or potential security breaches within 1 hour of discovery."
+        },
+        {
+         "type": "paragraph",
+         "text": "Designated Reporting Channels:"
+        },
+        {
+         "type": "bullets",
+         "text": "Email: itsecurity@gloster.com\nEmergency Contact: Mr. Abhishek Sharma, Phone: +91 98748 20561"
+        },
+        {
+         "type": "paragraph",
+         "text": "Required Details: Reports must include the incident date, time, system(s) affected, description of suspicious activity, and initial threat level assessment."
+        }
+       ],
+       "responsible": "Employees"
+      },
+      {
+       "heading": "Containment Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Immediate Actions: The IT Security Team takes containment actions, such as isolating affected systems, revoking access rights, or temporarily disabling network services, to prevent further compromise."
+        },
+        {
+         "type": "paragraph",
+         "text": "Documentation: All actions taken to contain the incident are recorded in the Incident Response Log with specific timestamps and responsible personnel."
+        }
+       ],
+       "responsible": "IT Security Team"
+      },
+      {
+       "heading": "Assessment and RCA",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assessment of Incident: Within 24 hours of containment, the Data Protection Team, in collaboration with the IT Security Team, assesses the incident’s scope, potential impact, and root causes."
+        },
+        {
+         "type": "paragraph",
+         "text": "Root Cause Analysis (RCA): The team performs RCA to identify vulnerabilities and determine appropriate corrective and preventive measures (CAPA)."
+        }
+       ],
+       "responsible": "Data Protection Team"
+      },
+      {
+       "heading": "Notification Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Decision to Notify: If a data breach impacts customer or employee data, the IT Security Manager, in consultation with Gloster’s Legal Department, determines if notification to authorities or affected individuals is required."
+        },
+        {
+         "type": "paragraph",
+         "text": "Notification Details: Notifications include information on the nature of the breach, data affected, and steps taken to mitigate the impact. Communication is consistent and transparent to reassure stakeholders."
+        }
+       ],
+       "responsible": "IT Security Manager"
+      },
+      {
+       "heading": "Documentation and Follow-up",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "CAPAs Implementation: Corrective Actions: Immediate measures are taken to rectify vulnerabilities. Preventive Actions: Long-term measures, such as updated access protocols or enhanced firewalls, are implemented to prevent recurrence."
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Log Maintenance: The Incident Response Log, containing details of all actions taken and personnel involved, is maintained for compliance and future reference."
+        },
+        {
+         "type": "paragraph",
+         "text": "Post-Incident Review: The IT Security Team conducts a review to identify lessons learned, update the Incident Handling SOP, and document improvements for future incidents."
+        }
+       ],
+       "responsible": "IT Security Team"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "IT Security Team",
+       "responsibilities": [
+        "Detect, respond to, and document IT security incidents."
+       ]
+      },
+      {
+       "role": "Data Protection Team",
+       "responsibilities": [
+        "Lead breach assessment and manage external notifications."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Report incidents and adhere to IT security guidelines."
+       ]
+      },
+      {
+       "role": "Legal Department",
+       "responsibilities": [
+        "Advises on regulatory compliance and legal requirements for breach notification."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the IT Manager to adapt to evolving cybersecurity threats, regulatory standards, and industry best practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Authorization & Approval Process for Critical Transactions",
+   "code": "GL-SOP-NO-04",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "Chief Financial Officer (CFO) and Compliance Officer",
+   "sourceWords": 632,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the approval process for critical transactions, such as high-value purchases, gifts, and travel expenses, to uphold Gloster Limited’s ethical standards and mitigate financial risks. It ensures compliance with company policies and prevents conflicts of interest."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Sensitive transactions under this SOP include discretionary interactions involving external stakeholders, such as suppliers, customers, consultants, agents, service providers, and government or regulatory representatives, where there is, or may be perceived to be, a personal benefit in addition to a legitimate business purpose."
+      },
+      {
+       "type": "paragraph",
+       "text": "These transactions may occur in the context of gifts, hospitality, travel, meals, accommodation, or appreciation of professional services and carry an inherently higher risk of improper influence or corruption."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Sensitive Transactions",
+       "definition": "Includes transactions such as gifts, travel, and other benefits that could create a conflict of interest."
+      },
+      {
+       "term": "Approval Authority",
+       "definition": "Designated individuals or departments responsible for reviewing and approving sensitive transactions."
+      },
+      {
+       "term": "Perceived or Implied Benefit",
+       "definition": "Any situation where a reasonable third party may perceive a transaction as providing a personal advantage, favor, or improper influence, even if no actual benefit was intended or received."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Approval Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Documentation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "All sensitive transactions must be identified and documented. Examples include gifts exceeding a specified monetary threshold, business travel for non-routine purposes, or other benefits."
+        },
+        {
+         "text": "Thresholds: Gifts or benefits valued above ₹5,000 and travel expenses above ₹25,000 require specific approval."
+        },
+        {
+         "text": "Prohibited and Restricted Transactions: Cash, cash equivalents, gift cards, vouchers, or personal loans are strictly prohibited."
+        },
+        {
+         "text": "Sensitive transactions must not influence, or appear to influence, business decisions."
+        },
+        {
+         "text": "Repeated or frequent gifts or hospitality to or from the same external stakeholder require enhanced scrutiny and senior management approval."
+        },
+        {
+         "text": "Any offer received that exceeds defined thresholds or creates discomfort must be reported even if declined."
+        },
+        {
+         "text": "Documentation: Complete a Sensitive Transaction Request Form for each transaction. This form should include: Name of the recipient; Description of the transaction (gift, travel, etc.); Monetary value; Purpose of the transaction; Date and location; Justification for the transaction and any supporting documentation (e.g., travel itineraries, invoices).",
+         "responsible": "Employees"
+        }
+       ]
+      },
+      {
+       "heading": "Initial Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Submit the completed Sensitive Transaction Request Form to the immediate supervisor or department head for an initial review. The supervisor will evaluate the transaction for compliance with company policies and potential conflicts of interest."
+        }
+       ],
+       "responsible": "Supervisors"
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Transactions requiring approval should be submitted to the following authorities based on the value. Gifts: Above ₹5,000: Department Head; Above ₹10,000: Senior Management. Travel Expenses: Above ₹25,000: Senior Management; Above ₹50,000: Executive Committee."
+        },
+        {
+         "type": "paragraph",
+         "text": "The approving authority will review the documentation and justification provided. They may request additional information if needed. Approval or rejection of the transaction must be documented in writing, including reasons for approval or denial."
+        }
+       ]
+      },
+      {
+       "heading": "Processing and Recording",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Processing: Once approved, process the transaction according to company procedures. Ensure that all documentation is complete and accurate. For travel expenses, ensure that travel arrangements are booked in accordance with company travel policies."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recording: Maintain a record of all sensitive transactions, including approvals, supporting documentation, and any related correspondence. Records should be retained for a minimum of 5 years and made available for audit or review as needed."
+        }
+       ]
+      },
+      {
+       "heading": "Post-Transaction Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Conduct annual reviews of sensitive transactions to ensure compliance with policies and identify any potential issues or patterns. Offers of gifts, hospitality, or benefits received from external stakeholders, whether accepted or declined, are reviewed periodically to identify patterns or potential risks. Review findings should be documented and reported to the relevant authorities for further action if required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Document and submit all sensitive transactions for approval."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Conduct initial review, ensure compliance, and provide recommendations."
+       ]
+      },
+      {
+       "role": "Finance & Compliance Team",
+       "responsibilities": [
+        "Maintain transaction records, conduct periodic reviews, and ensure adherence to ethical standards."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Chief Financial Officer (CFO) and Compliance Officer every two years to ensure it aligns with regulatory requirements and Gloster’s internal ethical policies."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Access Control & Customer Data Management Framework",
+   "code": "GL-SOP-NO-05",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "IT Manager",
+   "sourceWords": 1349,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the internal controls and procedures implemented by Gloster Limited’s to restrict unauthorized access to customer or client data, both physical and digital. It also provides guidelines on consulting and informing customers about the collection, storage, and sharing of their personal data."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Customer/Client Data",
+       "definition": "Personal and sensitive information collected from customers or clients, including names, addresses, contact details, payment information, and any other data shared during transactions."
+      },
+      {
+       "term": "Unauthorized Access",
+       "definition": "Access to data by individuals or entities not explicitly granted permission to view, modify, or use the data."
+      },
+      {
+       "term": "Data Retention Schedule",
+       "definition": "A timetable that specifies the duration for which different categories of data are kept and the actions to be taken at the end of the retention period."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Controls for Data Access",
+     "steps": [
+      {
+       "heading": "Physical Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Restricted Areas: Customer data is stored in secured areas accessible only to authorized personnel. Access to these areas requires security clearance and is monitored by CCTV. For example, physical copies of purchase orders and invoices containing customer addresses and payment details are kept in locked cabinets within a secured room."
+        },
+        {
+         "type": "paragraph",
+         "text": "Document Handling: Physical documents containing customer data must be stored in locked cabinets or rooms with restricted access. Employees must sign in and out when accessing these documents. Sensitive documents like contracts, legal agreements, and customer identification proofs are strictly controlled and logged."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "User Authentication: All employees accessing digital data systems must use unique user IDs and strong passwords. Multi-factor authentication (MFA) is enforced for sensitive data access. For instance, employees must enter a password and a one-time code sent to their mobile device to access the customer database."
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Permissions: Data access permissions are granted based on job roles and responsibilities. Employees only have access to the data necessary for their tasks. Regular audits are conducted to ensure compliance. For example, only the finance team can access customer payment details, while the sales team can view contact information and order history."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Encryption: Sensitive customer data is encrypted both in transit and at rest. Encryption keys are securely stored and managed. Emails containing customer details are encrypted before sending, and databases storing personal information are protected with strong encryption algorithms."
+        },
+        {
+         "type": "paragraph",
+         "text": "Third-Party Access: Access to customer data by third-party vendors or service providers is restricted and granted only when necessary. Contracts include clauses ensuring data protection compliance. For example, a third-party logistics provider is given access only to customer shipping addresses for order fulfilment."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Auditing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Activity Logs: All access to customer data is logged, including the date, time, and user involved. Logs are regularly reviewed for any unauthorized access attempts. If a breach attempt is detected, an alert is immediately sent to the IT security team."
+        },
+        {
+         "type": "paragraph",
+         "text": "Regular Audits: Data access controls are subject to regular internal audits to identify vulnerabilities and ensure adherence to this SOP. Audits include reviewing access logs, verifying encryption standards, and assessing third-party compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Data Communication Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Data Collection Notice:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Transparency: Customers are informed about the types of data being collected, the purpose of collection, and how it will be used at the time of data collection. For example, customers are notified that their contact information is collected for order processing and delivery notifications."
+        },
+        {
+         "type": "paragraph",
+         "text": "Consent: Explicit consent is obtained from customers before collecting their personal data, especially for sensitive information. Customers have the right to opt out of data collection where applicable. For instance, consent is required to collect and store customer bank account details for payment processing"
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Storage and Sharing Information:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Retention: Customers are informed about the duration for which their data will be stored and the criteria used to determine this period."
+        },
+        {
+         "type": "paragraph",
+         "text": "Third-Party Sharing: If customer data is shared with third parties (e.g., for shipping or payment processing), customers are informed of the entities involved and the purpose of sharing. Third-party partners are vetted to ensure they comply with data protection standards. For example, shipping addresses are shared with logistics providers solely for the purpose of order delivery."
+        },
+        {
+         "type": "paragraph",
+         "text": "Customer Consultation and Queries:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Requests: Customers have the right to request access to their data, request corrections, or ask for their data to be deleted. These requests are handled promptly and in accordance with data protection laws. For instance, a customer can request the deletion of their account and all associated personal information if they decide to stop using the company's services."
+        },
+        {
+         "type": "paragraph",
+         "text": "Communication Channels: Customers can contact the company via email: info@glosterjute.com or Tel: +913322309601 for any queries regarding their personal data."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Breach Notification:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Immediate Notification: In the event of a data breach that compromises customer data, affected customers are notified promptly. The notification includes details of the breach, the data affected, and the steps being taken to mitigate the impact. For example, if unauthorized access to customer email addresses is detected, the company will notify all affected customers and advise them on how to secure their accounts."
+        },
+        {
+         "type": "paragraph",
+         "text": "Follow-up Support: The company provides support to customers following a breach, including offering credit monitoring services or guidance on securing their personal information."
+        }
+       ]
+      },
+      {
+       "heading": "Consent Collection Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prior to collecting any personal or confidential information, Gloster Limited ensures that customers or clients are clearly informed about:\nThe type of data being collected (e.g., contact details, payment information, order history)\nThe purpose of data collection\nThe duration of data retention\nWhether the data will be shared with third parties and for what purpose\nConsent is obtained through one or more of the following mechanisms:\nSigned physical consent forms\nDigital consent checkboxes on websites or portals\nConsent clauses embedded in contracts, quotations, or service agreements\nEmail-based consent confirmations for remote transactions\nConsent requests are presented in clear, simple language and are obtained before any data is processed or stored."
+        }
+       ]
+      },
+      {
+       "heading": "Consent for Data Sharing with Third Parties",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where customer or client data is required to be shared with third parties (such as logistics partners, payment processors, IT service providers), separate and explicit consent is obtained. Customers are informed of: The name or category of third parties; The specific data elements being shared; The purpose and duration of such data sharing. Data sharing is strictly limited to the minimum information necessary to perform the intended service."
+        }
+       ]
+      },
+      {
+       "heading": "Consent Records and Evidence",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All consent records are: Logged electronically or physically; Linked to the relevant customer or transaction; Retained for a minimum of five (5) years or as required by applicable law. Consent records are made available for internal audits, external audits, and regulatory inspections."
+        }
+       ]
+      },
+      {
+       "heading": "Consent Withdrawal and Modification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customers and clients have the right to: Withdraw consent; Modify previously given consent; Request restriction of data processing. Consent withdrawal requests can be submitted via: Email: info@glosterjute.com; Written request to the registered office. Upon withdrawal of consent: Data processing is stopped unless legally required; Data is securely deleted or anonymized as per the Data Retention Schedule."
+        }
+       ]
+      },
+      {
+       "heading": "Periodic Consent Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Consent validity is reviewed periodically, especially when: The purpose of data use changes; New third parties are introduced; Retention periods are extended. Fresh consent is obtained wherever required."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention Schedule",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following table outlines the retention period for various types of customer data:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Type of Data",
+          "Retention Period",
+          "Retention Criteria"
+         ],
+         "rows": [
+          [
+           "Customer Contact Information",
+           "7 years",
+           "Retained for ongoing customer relationship and support"
+          ],
+          [
+           "Payment Information",
+           "5 years",
+           "Retained for audit purposes and to comply with financial regulations"
+          ],
+          [
+           "Order History",
+           "10 years",
+           "Retained for future orders, reference, and customer support"
+          ],
+          [
+           "Communication Records (Emails, Calls)",
+           "3 years",
+           "Retained for dispute resolution and customer service quality checks"
+          ],
+          [
+           "Sensitive Personal Data",
+           "Until consent is withdrawn or 5 years",
+           "Retained with explicit consent, until the customer requests deletion or the retention period ends"
+          ],
+          [
+           "Third-Party Data Sharing Logs",
+           "5 years",
+           "Retained for transparency and accountability purposes"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Note: Data that has reached the end of its retention period is securely deleted or anonymized, ensuring it is no longer identifiable."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "IT Manager",
+       "responsibilities": [
+        "Implements data protection controls, manages audits, and ensures compliance with data protection laws."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Adhere to data access protocols and report unauthorized access immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the IT Manager Every two year or following any significant changes in data protection laws or company operations to ensure its relevance and effectiveness."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air Emissions Management Guidelines",
+   "code": "GL-SOP-NO-06",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "Environmental Safety Office",
+   "owner": "Environmental Manager",
+   "sourceWords": 894,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the measures and technologies implemented by Gloster Limited to prevent and control air pollution within its textile manufacturing processes. It aligns with Gloster’s mission to reduce environmental impact, meet compliance standards, enhance sustainability practices, and ensure the health and safety of employees and surrounding communities."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Air Pollution Prevention Measures",
+     "steps": [
+      {
+       "heading": "Routine Air Quality Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Routine Monitoring: Gloster Limited conducts quarterly ambient air monitoring for PM10, PM2.5, SO2, and NOx to assess environmental impact and identify areas for improvement.\nPreventive Maintenance: Regular inspections and preventive maintenance are scheduled for critical equipment to prevent leaks, malfunctions, and ensure compliance.\nEmployee Training: Comprehensive training programs on environmental policies, spill prevention, and emergency response procedures are provided to all relevant staff.\nEmission Reporting: Emission levels are documented in compliance reports submitted to regulatory authorities, ensuring transparency and accountability."
+        }
+       ]
+      },
+      {
+       "heading": "Particulate Emissions Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Process Enclosures: Dust-generating processes, such as cutting and weaving, are enclosed to contain particulate emissions and prevent airborne pollutants from spreading.\nHousekeeping: Work areas are maintained with industrial vacuum systems, reducing particulate buildup and supporting clean air quality.\nDust Collection Systems: Dedicated dust collection systems are installed at key points to capture particulates before they disperse, minimizing workplace pollution."
+        }
+       ]
+      },
+      {
+       "heading": "Management of VOCs & Gaseous Emissions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Activated Carbon Filters: Carbon filters are installed in exhaust systems to capture and neutralize volatile organic compounds (VOCs) produced during dyeing and finishing.\nLow-VOC Materials: Whenever feasible, Gloster uses low-VOC dyes, adhesives, and solvents in manufacturing processes to reduce VOC emissions and ensure safer working conditions.\nVentilation System Checks: Regular inspections are conducted on ventilation systems to ensure they efficiently remove gaseous emissions from the workspace."
+        }
+       ]
+      },
+      {
+       "heading": "Sulfur Absorption Systems",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Closed-Loop Absorption: Enclosure systems are used to maintain a closed-loop sulfur absorption process, particularly in finishing treatments. These systems help contain emissions and improve air quality.\nRegular Monitoring: The sulfur absorption system is monitored daily to verify optimal performance and prevent excess emissions.\nEffluent Testing: Routine effluent tests are conducted to ensure sulfur levels in discharge meet regulatory standards, preventing environmental contamination."
+        }
+       ]
+      },
+      {
+       "heading": "Noise Pollution Mitigation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Sound Barriers: High-decibel equipment is fitted with sound barriers to reduce noise pollution and maintain a safe noise level for workers.\nOperational Scheduling: Noisy operations are scheduled during daytime hours to minimize impact on surrounding communities.\nNoise Monitoring: Monthly noise assessments are conducted in high-noise areas to ensure adherence to regulatory noise levels.\nProtective Equipment for Workers: Ear protection gear is provided to employees working in high-noise zones to reduce exposure to harmful sound levels."
+        }
+       ]
+      },
+      {
+       "heading": "Odor Control Strategies",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Activated Carbon Filters: Filters are installed in exhaust systems to capture and neutralize odorous compounds emitted during production.\nStorage of Odorous Materials: Materials that may emit odors are stored in sealed containers in well-ventilated areas, reducing odor levels in the workspace and community.\nOdor Source Inspection: Routine checks are carried out to identify and control any additional odor sources, helping maintain a pleasant working environment."
+        }
+       ]
+      },
+      {
+       "heading": "Traffic Management & Congestion Avoidance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Optimized Delivery Scheduling: Delivery and dispatch are scheduled during off-peak hours to prevent traffic congestion and reduce emissions.\nRoute Planning: Efficient routes are planned for company vehicles to avoid congested areas, ensuring reduced travel times and lower emissions.\nVehicle Maintenance: All company vehicles are regularly maintained to ensure fuel efficiency and minimized emissions, aligning with Gloster’s carbon footprint reduction goals.\nDriver Training Programs: Training is provided for drivers on eco-friendly driving practices to further reduce emissions and improve fuel efficiency."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation"
+      },
+      {
+       "type": "bullets",
+       "text": "Annual Assessments: Annual assessments are conducted to track emission control progress and identify potential improvements.\nData Analysis: Emission levels and maintenance activity data are analyzed to ensure compliance and assess the effectiveness of current practices.\nInternal Audits: Annual audits are performed to review the effectiveness of Gloster’s air pollution management system, ensuring all procedures are adhered to and improvements are implemented where necessary.\nEnvironmental Reporting: The Environmental Manager compiles a comprehensive report of findings, which is submitted to senior management for review and strategic planning."
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident Documentation: All incidents involving pollutant releases are documented with details on causes, immediate response actions, and outcomes.\nResponse Evaluation: Following each incident, evaluations are conducted to determine root causes and implement corrective measures to prevent recurrence.\nCorrective Action Plan: Corrective action plans are developed and executed based on incident evaluations, ensuring continuous improvement.\nRegulatory Reporting: Necessary reports are filed with environmental agencies as required by local and national regulations."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees SOP implementation, ensures regulatory compliance, manages audits, and submits environmental reports.",
+        "Develops and manages training programs related to air pollution management."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implements environmental standards in operational processes, oversees equipment maintenance, coordinates with logistics, and ensures compliance with air pollution control measures."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts routine inspections and preventive maintenance, ensures equipment complies with environmental standards, coordinates with the Environmental Manager to address air pollution issues, and supervises emission control equipment maintenance."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Conducts employee training on environmental policies, monitors adherence to safety protocols, ensures air pollution practices align with company standards, and leads incident investigations with the Environmental Manager."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental Safety Office to evaluate its effectiveness in achieving Gloster Limited’s environmental goals and regulatory compliance. The review includes evaluating emission control measures, equipment maintenance activities, and employee engagement in pollution prevention initiatives. Insights from these reviews will be used to enhance sustainability practices and ensure continuous improvement in environmental standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Management and Conservation Procedure",
+   "code": "GL-SOP-NO-07",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "Environmental / Utility",
+   "owner": "Environmental Manager",
+   "sourceWords": 1333,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Gloster Limited is committed to sustainable water management to reduce consumption, recycle resources, and mitigate environmental impacts. This SOP defines protocols for water recycling, water-saving technologies, wastewater treatment, rainwater harvesting, and risk assessments to enhance operational efficiency and ensure compliance with environmental standards."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Water Management Protocols Implemented at Gloster",
+     "steps": [
+      {
+       "heading": "Technologies for Water Recycling and Reuse",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "We have installed advanced closed-loop recycling systems that enable us to reuse water multiple times, significantly reducing freshwater demand."
+        },
+        {
+         "type": "bullets",
+         "text": "Reverse Osmosis Systems: Our RO systems treat wastewater to remove contaminants, enabling reuse in non-critical processes such as machine cooling and floor washing.\nEffluent Recycling Units: Treated effluents are reused in production, achieving a 20-30% reduction in overall water consumption annually.\nReuse of Condensate Water: Steam condensate from boilers is captured and recycled, reducing the need for additional water intake.\nData Logging and Monitoring: We maintain daily water consumption logs and conduct monthly performance reviews to identify further areas for water-saving improvements.\nEmployee Engagement: We encourage employees to participate in continuous improvement programs focused on optimizing water reuse through better operational practices."
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Waterless or Water-Saving Dyeing Technologies",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "We have implemented low liquor ratio dyeing machines, enabling us to dye fabrics using minimal water."
+        },
+        {
+         "type": "bullets",
+         "text": "Waterless Dyeing Pilot Programs: We are experimenting with supercritical CO2 dyeing technologies that use no water, with promising results in reducing resource consumption.\nAir-Dyeing Methods: We are in the process of installing air-dyeing systems that allow dyes to bond with fabric without water.\nDigital Printing Adoption: Digital printing methods significantly reduce water usage, as they avoid the need for pre-treatment and post-wash processes typical of conventional dyeing.\nChemical-Free Dye Innovations: We are collaborating with research institutes to develop biodegradable dyes that reduce chemical pollutants and require less rinsing during production.\nAnnual Dyeing Technology Assessments: These evaluations ensure we remain up-to-date with the latest water-saving innovations and assess scalability for larger production volumes."
+        }
+       ]
+      },
+      {
+       "heading": "Reduction of Water Consumption in Washing and Cleaning Processes",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "We have deployed automated washing systems that use water-efficient cycles, optimizing every wash to minimize waste."
+        },
+        {
+         "type": "bullets",
+         "text": "Steam Cleaning: Steam-based cleaning technologies have replaced traditional water-intensive washing wherever possible, especially in equipment maintenance.\nTrigger-Controlled Hoses: All cleaning staff use trigger-operated hoses to control water flow and prevent unnecessary wastage.\nCleaning Schedule Optimization: High-frequency cleaning areas, such as production floors, have been shifted to weekly cycles, supported by intermediate dry cleaning techniques.\nNon-Water Cleaning Agents: For machine parts, we use bio-degradable, non-water solvents that eliminate the need for rinsing with water.\nEmployee Training on Water Efficiency: Annual training programs are conducted, focusing on low-water cleaning techniques and machine-specific cleaning protocols to reduce water usage by at least 10% annually."
+        }
+       ]
+      },
+      {
+       "heading": "Comprehensive Water Risk Assessments",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To mitigate operational risks, we conduct comprehensive water risk assessments at multiple levels."
+        },
+        {
+         "type": "bullets",
+         "text": "Quarterly Risk Audits: Water risk assessments are carried out every quarter to identify vulnerabilities such as droughts, groundwater depletion, and local water regulations.\nWater Footprint Analysis: We evaluate the water footprint of each production stage to identify processes with the highest consumption and implement targeted reduction strategies.\nCommunity Impact Assessments: Collaboration with local authorities ensures that our operations do not negatively impact community water access.\nSeasonal Water Contingency Planning: We create water conservation plans for the dry season, including stockpiling treated water and reducing non-essential usage during critical periods.\nThird-Party Risk Audits: We engage independent auditors annually to validate our water-related risk assessments and recommend improvements."
+        }
+       ]
+      },
+      {
+       "heading": "Wastewater Quality Management and Compliance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Ensuring the quality of discharged water is a critical component of our environmental responsibility."
+        },
+        {
+         "type": "bullets",
+         "text": "Onsite Wastewater Treatment Plants (WWTPs): We operate fully compliant WWTPs that treat effluents to meet local environmental standards.\nZero Liquid Discharge (ZLD) Targets: We are working towards ZLD compliance, ensuring that all wastewater is treated and reused within the facility.\nMonthly Water Quality Tests: Samples from treated effluent are analyzed every month for parameters such as Biological Oxygen Demand (BOD) and Chemical Oxygen Demand (COD) to meet environmental norms.\nSludge Treatment: Sludge generated from WWTPs is treated to reduce toxicity and then safely disposed of or repurposed as agricultural compost.\nIndependent Wastewater Audits: Annual third-party assessments ensure that our wastewater systems comply with evolving environmental regulations and identify areas for further improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Water Accounting and Internal Water Audit",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Gloster Limited has established a formal water accounting and internal water audit mechanism to verify the implementation and effectiveness of its water management initiatives."
+        },
+        {
+         "type": "bullets",
+         "text": "Water intake, consumption, reuse, and discharge are measured using installed water meters and operational monitoring systems at key locations.\nWater consumption data is recorded on a daily basis and consolidated into monthly water accounting records by the Environmental / Utility team.\nAn annual water balance statement is prepared to assess total water withdrawal, recycled water usage, wastewater generation, and efficiency improvements.\nWater accounting records are reviewed to identify high-consumption areas, abnormal trends, and opportunities for water reduction."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Water Audit Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal water audits are conducted at least once every year or whenever there are significant process or operational changes.\nThe water audit includes:\nVerification of water accounting data and meter records\nReview of water-intensive processes and utilities\nAssessment of water recycling, reuse, and rainwater harvesting systems\nEvaluation of compliance with internal SOPs and applicable environmental regulations\nAudit findings are documented in internal water audit reports or review notes and communicated to plant management for action."
+        }
+       ]
+      },
+      {
+       "heading": "Corrective Actions and Follow-Up",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Improvement actions arising from water audits and water accounting reviews are formally documented.\nResponsibilities and timelines are assigned to relevant departments.\nImplementation status is monitored during periodic environmental and management reviews to ensure effectiveness."
+        }
+       ]
+      },
+      {
+       "heading": "Record Retention and Evidence Availability",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Water accounting data, audit records, and corrective action documentation are maintained as controlled records.\nThese records are made available for regulatory inspections, customer audits, and ESG / sustainability assessments."
+        }
+       ]
+      },
+      {
+       "heading": "Implementation of Rainwater Harvesting Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To supplement our water needs, we have installed rainwater harvesting system at all our facilities."
+        },
+        {
+         "type": "bullets",
+         "text": "Roof-Mounted Collection Systems: Rainwater is collected from roofs and stored in dedicated underground tanks with a storage capacity of up to 50,000 liters.\nPre-Filtration Systems: Before storage, rainwater passes through first-flush diverters and sediment filters, ensuring that only clean water enters the tanks.\nIrrigation and Non-Potable Usage: Harvested rainwater is primarily used for landscaping irrigation, cooling systems, and cleaning outdoor areas.\nBi-Annual Maintenance: The rainwater harvesting infrastructure is inspected twice a year, focusing on filter cleaning, tank desilting, and pump maintenance to ensure optimal performance.\nIntegration with Water Management System: Rainwater data is logged and reviewed alongside other water metrics to monitor overall efficiency and identify opportunities to further reduce reliance on municipal water supplies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting Mechanism",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "We have established a robust monitoring framework to track water-related performance metrics and ensure compliance."
+      },
+      {
+       "type": "bullets",
+       "text": "Real-Time Monitoring Systems: Water consumption and recycling rates are tracked in real time using automated sensors connected to a centralized data system.\nMonthly Reports: Water use, recycling levels, and wastewater test results are documented in monthly reports submitted to senior management for review.\nAnnual Environmental Impact Reports: Our water management efforts are included in annual sustainability reports, which are shared with stakeholders and regulatory authorities.\nIncident Reporting Protocols: Any incidents involving water contamination or unexpected disruptions are reported within 24 hours, followed by an investigation and corrective action."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Manages water-related initiatives, ensures compliance with environmental regulations, and prepares reports."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Oversees daily water use in manufacturing processes and implements water-saving technologies."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Inspects and maintains water treatment and rainwater harvesting systems."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Conducts water management training and monitors employee adherence to water-saving protocols."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow water management procedures and report water-related issues promptly."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental Safety Office to assess its effectiveness. The review will include evaluations of water consumption, recycling practices, wastewater quality, and compliance levels, with recommendations for continuous improvement."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Conclusion",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Gloster Limited, our water management practices reflect our commitment to sustainability. Through state-of-the-art recycling systems, innovative waterless technologies, and rainwater harvesting, we are reducing our water footprint and protecting community resources. Our efforts demonstrate a proactive approach to water conservation, ensuring compliance with environmental standards while maintaining operational efficiency."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management",
+   "code": "GL-SOP-NO-08",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 843,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this Standard Operating Procedure (SOP) is to establish a systematic approach to waste minimization and disposal at Gloster. This includes methods for reducing waste generation, ensuring effective waste sorting, and implementing safe disposal practices to comply with environmental regulations and promote sustainability."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Non-Hazardous Waste",
+       "definition": "Waste that does not pose a substantial hazard to human health or the environment."
+      },
+      {
+       "term": "Hazardous Waste",
+       "definition": "Waste that poses significant risks due to its chemical properties."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Cutting Master",
+       "responsibilities": [
+        "Oversees the disposal of fabric bits."
+       ]
+      },
+      {
+       "role": "Fabric Incharge",
+       "responsibilities": [
+        "Manages fabric rolls disposal."
+       ]
+      },
+      {
+       "role": "Accessories Incharge",
+       "responsibilities": [
+        "Handles poly bags, cones, labels, tags, cartons, and broken needles."
+       ]
+      },
+      {
+       "role": "Mechanic",
+       "responsibilities": [
+        "Responsible for the disposal of machine oil waste and toner cartridges."
+       ]
+      },
+      {
+       "role": "Admin",
+       "responsibilities": [
+        "Manages paper bits, PVC pipes, and broken furniture."
+       ]
+      },
+      {
+       "role": "Electrician",
+       "responsibilities": [
+        "Responsible for electrical waste, used batteries, and tube lights."
+       ]
+      },
+      {
+       "role": "HR",
+       "responsibilities": [
+        "Handles expired medicines and bio waste."
+       ]
+      },
+      {
+       "role": "House Keeping",
+       "responsibilities": [
+        "Manages sanitary waste and waste water."
+       ]
+      },
+      {
+       "role": "Finishing Incharge",
+       "responsibilities": [
+        "Oversees rag disposal."
+       ]
+      },
+      {
+       "role": "Godown Incharge",
+       "responsibilities": [
+        "Manages rejected products, surplus products, and scrap."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Waste Sorting Procedures",
+     "steps": [
+      {
+       "heading": "Waste Sorting Procedures",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "No",
+          "Waste Description",
+          "Material",
+          "Area",
+          "Type",
+          "Responsible person",
+          "Where to store",
+          "Storage Depletion Frequency",
+          ""
+         ],
+         "rows": [
+          [
+           "1",
+           "Fabric bits",
+           "Cotton, Polyester",
+           "Cutting, Sewing, Knitting, Dyeing",
+           "Non Hazardous",
+           "Cutting Master",
+           "Big bits sold for re – use, small bits sold for cleaning purpose",
+           "Weekly Twice",
+           ""
+          ],
+          [
+           "2",
+           "Fabric rolls",
+           "Cotton, Polyester",
+           "Fabric roll covers",
+           "Non Hazardous",
+           "Fabric Incharge",
+           "Sold for reuse",
+           "6 Months",
+           ""
+          ],
+          [
+           "3",
+           "Poly bags",
+           "PE , PP",
+           "Knitting, Dyeing",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Sold for reuse / recycling",
+           "3 Months",
+           ""
+          ],
+          [
+           "4",
+           "Cones",
+           "Paper, Plastic",
+           "Excess, mistakes",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Sold for reuse",
+           "3 Months",
+           ""
+          ],
+          [
+           "5",
+           "Labels, Tags",
+           "Nylon, Paper",
+           "Sewing",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Stored in house",
+           "3 Months",
+           ""
+          ],
+          [
+           "6",
+           "Broken needles, band / straight cutting knives",
+           "Metal",
+           "Cone bag covering, Packing",
+           "Hazardous",
+           "Accessories Incharge",
+           "Stored in house",
+           "3 Years",
+           ""
+          ],
+          [
+           "7",
+           "Cartons",
+           "Paper",
+           "Machines",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Sold for reuse / recycling",
+           "3 Months",
+           ""
+          ],
+          [
+           "8",
+           "Machine oil waste",
+           "Oil",
+           "Office Production",
+           "Hazardous",
+           "Mechanic",
+           "Sold for workshop for cleaning purposes",
+           "3 Months",
+           ""
+          ],
+          [
+           "9",
+           "Paper bits",
+           "Paper",
+           "Electrical",
+           "Hazardous",
+           "Admin",
+           "Disposed at garbage bins",
+           "3 Months",
+           ""
+          ],
+          [
+           "10",
+           "Tube Light",
+           "Glass",
+           "Electrical",
+           "Hazardous",
+           "Electrician",
+           "Panchayat dump yard",
+           "3 Months",
+           ""
+          ],
+          [
+           "11",
+           "Toner cartridges",
+           "Plastic",
+           "Printers, Copiers",
+           "Hazardous",
+           "Mechanic",
+           "Sent back to manufacturer",
+           "3 Months",
+           ""
+          ],
+          [
+           "12",
+           "Expired medicines",
+           "Medicines",
+           "First Aid Box",
+           "Hazardous",
+           "H R",
+           "Panchayat dump yard",
+           "Monthly",
+           ""
+          ],
+          [
+           "13",
+           "Used Battery",
+           "Plastic",
+           "Electrical",
+           "Hazardous",
+           "Electrician",
+           "Sold for exchange",
+           "3 Months",
+           ""
+          ],
+          [
+           "14",
+           "Electrical Waste",
+           "Rubber",
+           "Electrical",
+           "Hazardous",
+           "Electrician",
+           "Sold as scrap",
+           "3 Months",
+           ""
+          ],
+          [
+           "15",
+           "P.V.C. Pipes",
+           "PVC",
+           "Electrical",
+           "Hazardous",
+           "Admin",
+           "Sold as scrap",
+           "3 Months",
+           ""
+          ],
+          [
+           "16",
+           "Broken Furniture & Fittings",
+           "Wood",
+           "Office / Work area",
+           "Non Hazardous",
+           "Admin",
+           "Sold for scrap",
+           "3 Months",
+           ""
+          ],
+          [
+           "17",
+           "Sanitary",
+           "Solid",
+           "Toilets",
+           "Hazardous",
+           "Houser Keeping",
+           "Panchayat dump yard",
+           "Live",
+           ""
+          ],
+          [
+           "18",
+           "Waste water",
+           "Liquid",
+           "Wash areas",
+           "Non Hazardous",
+           "Houser Keeping",
+           "Panchayat Drainage",
+           "Live",
+           ""
+          ],
+          [
+           "19",
+           "Rag",
+           "Cotton, Lycra & Polyester",
+           "Cutting, Sewing and Packing",
+           "Hazardous",
+           "Finishing Incharge",
+           "Burning",
+           "1 Year",
+           ""
+          ],
+          [
+           "20",
+           "Rejected products & fabrics",
+           "Cotton, Lycra & Polyester",
+           "Cutting, Sewing and Packing",
+           "Non Hazardous",
+           "Godown Incharge",
+           "Sold for scrap",
+           "3 Months",
+           ""
+          ],
+          [
+           "21",
+           "Surplus products",
+           "Cotton, Lycra & Polyester",
+           "Cutting, Sewing and Packing",
+           "Non Hazardous",
+           "Godown Incharge",
+           "Sold",
+           "3 Months",
+           ""
+          ],
+          [
+           "22",
+           "Bio Waste",
+           "Cotton Viscose",
+           "First Aid",
+           "Non Hazardous",
+           "H.R",
+           "Land filling",
+           "3 Months",
+           ""
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Waste Reduction Measures",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Reuse and Recovery:"
+      },
+      {
+       "type": "bullets",
+       "text": "In our manufacturing facility, we prioritize the reuse and recovery of furniture and equipment. For instance, when a piece of office furniture is damaged, it is repaired rather than discarded. If the equipment is no longer functional, its components are salvaged and reused in new products, minimizing waste.\nMaterials such as fabric offcuts and remnants from production processes are not thrown away. Instead, they are repurposed into smaller products, like recycled fabric bags, or sold to partners who specialize in fabric recovery and reuse.\nLarge fabric rolls that are no longer needed for production are donated to local charities or sold to organizations focused on upcycling materials."
+      },
+      {
+       "type": "paragraph",
+       "text": "Waste Sorting categories:"
+      },
+      {
+       "type": "bullets",
+       "text": "All waste must be sorted into distinct categories, including wood, electronic waste (e-waste), electrical wires, scrap metals, glass, and plastics.\nE-waste, such as components from old machines, is to be separated and designated for specialized recycling.\nScrap metal waste will be collected and sent to certified metal recycling facilities, where it will be melted down and reused in the manufacturing process."
+      },
+      {
+       "type": "paragraph",
+       "text": "Waste Sorting Bins:"
+      },
+      {
+       "type": "bullets",
+       "text": "Waste sorting bins are to be clearly labeled according to the material type: wood, e-waste, electrical wiring, scrap metals, glass, and plastics.\nWood: Brown bin\nE-waste: Yellow bin\nElectrical Wiring: Blue bin\nScrap Metals: Green bin\nGlass: Clear or Transparent bin\nPlastics: Red bin\nAll employees must be trained regularly to ensure proper sorting of waste into the correct bins."
+      },
+      {
+       "type": "paragraph",
+       "text": "Electronic Waste Handling:"
+      },
+      {
+       "type": "bullets",
+       "text": "Any electronic components that are no longer functional must be dismantled, with parts like circuit boards, batteries, and metals separated for recycling.\nThese parts must be sent to certified e-waste recycling centers that adhere to environmental standards for responsible processing."
+      },
+      {
+       "type": "paragraph",
+       "text": "Metal, Glass, and Plastic Sorting:"
+      },
+      {
+       "type": "bullets",
+       "text": "Scrap metal will be sent to a certified metal recycling facility where it will be melted down and repurposed.\nGlass and plastics are to be sorted separately and delivered to specialized recycling plants where they will be processed into new materials."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hazardous Waste Management and Disposal Procedure",
+   "code": "GL-SOP-NO-09",
+   "catalogId": "hazardous-waste",
+   "pillar": "E",
+   "department": "Environmental",
+   "owner": "Environmental Manager",
+   "sourceWords": 1867,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this Standard Operating Procedure (SOP) is to outline the protocols and procedures for the safe labelling, storage, handling, and transportation of hazardous substances at Gloster. This SOP aims to minimize the risk of exposure to hazardous materials, ensure compliance with environmental regulations, and protect the health and safety of employees and the surrounding community."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Hazardous waste Minimization",
+     "steps": [
+      {
+       "heading": "Hazardous waste Minimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Only purchase what is needed for a three to six-month period;\nIf practical, use non-hazardous materials;\nSegregate non-hazardous waste materials from hazardous wastes;\nUse sound chemical hygiene practices to avoid spills while handling chemicals and keep all containers closed when not actively adding/removing chemicals;\nIf the chemical is still useful, recycle the waste instead of disposing of it by finding an associate that could use the remainder of the chemical;\nIf the material can be safely neutralized at the point of use, then do so; and\nProperly label waste to communicate hazards, which helps the disposal vendor more accurately define/manage waste streams."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Hazardous Substances Management Protocols",
+     "steps": [
+      {
+       "heading": "Use of alternatives and Less Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "To reduce exposure risks, we have replaced traditional solvents with water-based alternatives in our cleaning processes, which are less harmful to both employees and the environment."
+        },
+        {
+         "text": "Evaluate hazardous substances used in processes and identify less harmful alternatives that fulfill operational requirements."
+        },
+        {
+         "text": "Gradually replace high-risk substances with less hazardous options to reduce potential health and environmental risks."
+        },
+        {
+         "text": "In dyeing, we transitioned from chemical dyes to low-impact natural dyes derived from plant sources, which significantly reduced our hazardous waste output."
+        },
+        {
+         "text": "Consult with industry experts and regulatory bodies to stay informed on emerging safer alternatives and best practices in hazardous substance management."
+        },
+        {
+         "text": "Document and monitor the impact of reduced-hazard replacements to assess both safety improvements and any operational adjustments needed."
+        },
+        {
+         "text": "Conduct risk assessments for all hazardous substances, identifying where lower-risk materials could achieve similar results without compromising quality."
+        },
+        {
+         "text": "After assessing the use of certain solvents, we replaced high-VOC chemicals with less volatile alternatives in our coating process, which has improved air quality in our facilities."
+        },
+        {
+         "text": "Develop a phased approach to substitute or reduce usage of highly hazardous substances, setting realistic timelines to manage implementation effectively."
+        },
+        {
+         "text": "Monitor employee exposure levels and provide additional training on the safe handling of less hazardous alternatives to ensure workplace safety is maintained during transitions."
+        },
+        {
+         "text": "In collaboration with suppliers, we sourced eco-friendly alternatives to traditional flame retardants, which comply with safety regulations while being less toxic."
+        }
+       ]
+      },
+      {
+       "heading": "Minimization of Material Use through Process Enhancement",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Process Streamlining: Regularly evaluate manufacturing processes to identify inefficiencies and reduce excessive material consumption."
+        },
+        {
+         "text": "Analyze production stages to find areas of overuse or wastage of hazardous materials."
+        },
+        {
+         "text": "Implement advanced dyeing technologies that adapt based on real-time data to minimize dye and solvent use."
+        },
+        {
+         "text": "Utilize process simulations to test modifications, ensuring both economic and environmental benefits."
+        },
+        {
+         "text": "Continuously monitor and adapt processes to maintain optimal performance."
+        },
+        {
+         "text": "Lean Manufacturing Principles: Use Value Stream Mapping (VSM) to identify and eliminate non-value-added activities, thus minimizing hazardous material usage."
+        },
+        {
+         "text": "Train teams in lean techniques, encouraging a culture of continuous improvement for efficiency suggestions."
+        },
+        {
+         "text": "Introduce Just-in-Time (JIT) practices to align material use with production needs, reducing excess inventory."
+        },
+        {
+         "text": "Conserve hazardous materials through lean principles, enhancing productivity and sustainability."
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Recovered Material Resources",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Material Recovery Initiatives: Actively incorporate recovered input materials into production to support sustainability."
+        },
+        {
+         "text": "Identify opportunities to replace virgin hazardous materials with recovered options, lowering resource extraction and environmental impact."
+        },
+        {
+         "text": "Conduct regular audits to assess feasibility and quality of recycled or reclaimed materials, such as recycled fabrics."
+        },
+        {
+         "text": "Integrate these materials to reduce waste and contribute to a circular economy."
+        },
+        {
+         "text": "Supplier Partnerships: Collaborate with suppliers for high-quality recovered materials that meet quality and safety standards."
+        },
+        {
+         "text": "Engage suppliers specializing in sustainable recovery to align with our quality and environmental goals."
+        },
+        {
+         "text": "Build responsible supply chains that reinforce our sustainability practices."
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Sustainable or Bio-Based Raw Materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Sustainable Material Sourcing: Transition to eco-friendly, bio-based materials with lower environmental risks."
+        },
+        {
+         "text": "Research sustainable alternatives with reduced harm to human health and the environment."
+        },
+        {
+         "text": "Prioritize certified eco-friendly materials, such as organic cotton, to achieve sustainability goals."
+        },
+        {
+         "text": "Research and Development: Invest in R&D to explore alternative, eco-friendly materials and collaborate with institutions for innovation."
+        },
+        {
+         "text": "Test and validate bio-based materials to ensure performance and sustainability from production to disposal."
+        }
+       ]
+      },
+      {
+       "heading": "Labelling of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Standardized Labeling: In our chemical storage area, we use Globally Harmonized System (GHS) labels on all containers, such as hazard symbols indicating corrosive or flammable substances. This system helps us align with international safety standards and ensures consistent labeling across all sites."
+        },
+        {
+         "text": "Language and Clarity: For our production facility in France, all chemical labels are printed in both French and English. This ensures that our international team members, including those who speak English as a second language, can fully understand the hazards and safety precautions."
+        },
+        {
+         "text": "Regular Inspections: Conduct monthly label inspections to ensure intact, legible, and accurate labeling."
+        }
+       ]
+      },
+      {
+       "heading": "Storage of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Dedicated Storage Areas: In our chemical storage facility, we maintain separate, ventilated storage areas for flammable and corrosive chemicals. These areas are equipped with fire suppression systems, and access is restricted to trained personnel only. Every three months, our safety officer conducts compliance assessments to ensure that all storage protocols are followed, and no incompatible materials are stored together."
+        },
+        {
+         "text": "Secondary Containment: At our manufacturing plant, we have installed spill pallets and bunds under chemical storage tanks to contain any accidental spills. For example, our solvent storage area includes custom spill containment systems that hold up to 110% of the largest container's volume to prevent environmental contamination in case of leaks."
+        },
+        {
+         "text": "Environmental Controls: Our hazardous material storage room in the warehouse is monitored with temperature and humidity controls. We use automated sensors that send alerts if conditions exceed safe levels, ensuring substances are stored under the optimal conditions to maintain their stability."
+        },
+        {
+         "text": "Inventory Management: We use a digital inventory management system to track all hazardous substances in our warehouse. Every 30 days, we perform an inventory check to update the system and verify that all materials are accounted for and safely stored."
+        }
+       ]
+      },
+      {
+       "heading": "Handling of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Personal Protective Equipment (PPE): In our lab and persons who exposure with hazardous substance, all workers handling chemicals are required to wear gloves, goggles, and respirators. PPE is inspected weekly to ensure that it is in good condition. For instance, we recently replaced all worn gloves in the chemical mixing area after a routine inspection."
+        },
+        {
+         "text": "Training Programs: Our safety training program includes an annual session on handling hazardous substances, which is mandatory for all new hires and existing staff. The training covers proper techniques for handling, spill responses, and emergency procedures for exposure."
+        },
+        {
+         "text": "Controlled Handling Areas: In our production facility, we have designated areas for handling hazardous substances, such as chemical mixing zones, where proper ventilation systems and spill containment trays are installed. Only authorized personnel are allowed to operate in these areas, ensuring that all handling complies with safety protocols."
+        }
+       ]
+      },
+      {
+       "heading": "Transportation of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Certified Transport Vehicles: We utilize certified vehicles equipped with spill kits, fire extinguishers, and appropriate signage for transporting hazardous chemicals. For instance, our trucks used for transporting flammable liquids are regularly inspected every 15 days to ensure they meet safety standards."
+        },
+        {
+         "text": "Driver Training: All drivers responsible for transporting hazardous substances undergo training on safe handling, emergency spill response, and fire safety. Every six months, they attend a refresher course that covers updated safety regulations and emergency response techniques."
+        },
+        {
+         "text": "Documentation: For each hazardous shipment, we ensure that all drivers carry a complete set of documents, including Material Safety Data Sheets (MSDS), transport manifests, and emergency contact information. These documents are checked before departure to ensure compliance with legal and safety requirements."
+        },
+        {
+         "text": "Route Planning: When planning transportation routes for hazardous substances, we avoid densely populated areas and environmentally sensitive zones. We use GIS mapping to identify alternative routes that minimize risk and potential exposure in case of an accident."
+        }
+       ]
+      },
+      {
+       "heading": "Specialized Treatment and Safe Disposal of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Waste Segregation: In our production facility, we strictly separate hazardous and non-hazardous waste. For example, we use color-coded bins: red for hazardous materials and green for non-hazardous waste. This segregation is reviewed every two months to ensure compliance with local regulations and reduce cross-contamination risks.Separate hazardous from non-hazardous waste with proper labeling, reviewed every 2 months."
+        },
+        {
+         "text": "Neutralization and Treatment: Before disposing of certain hazardous chemicals, such as acids, we apply neutralization processes to reduce their toxicity. For example, our team neutralizes waste sulfuric acid using a neutralizing agent before disposal, significantly reducing environmental impact."
+        },
+        {
+         "text": "Waste Minimization: In our production process, we continuously strive to minimize hazardous waste by optimizing materials. For instance, we've switched to using water-based solvents instead of organic solvents, reducing the volume of hazardous waste generated."
+        },
+        {
+         "text": "Documentation and Reporting: We maintain monthly records of all hazardous waste disposal activities. For instance, after disposing of waste chemical containers, we generate detailed reports that include quantities, disposal methods, and certificates of destruction, which are kept in our compliance database for auditing purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Collaboration with Waste Bengal West Management Limited",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "We have partnered with Waste Bengal West Management Limited for the safe disposal of hazardous substances. They are a certified waste management provider specializing in handling and treating hazardous materials. Through this collaboration, we ensure that all hazardous waste is properly collected, treated, and disposed of in compliance with environmental regulations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation:"
+      },
+      {
+       "type": "bullets",
+       "text": "Routine Inspections: Conduct annual inspections of storage, handling, and transportation activities to ensure compliance with safety standards.\nData Analysis: Analyse incident reports, spill data, and disposal records to identify areas for improvement. Data should be reviewed annualy.\nInternal Audits: Conduct annual internal audits of hazardous substances management practices, reviewing all protocols and identifying areas for enhancement.\nIncident Reporting and Response:\nIncident Documentation: Document all incidents involving hazardous substances, including causes, response actions, and outcomes. Documentation should be completed within 24 hours of the incident.\nResponse Evaluation: Evaluate response actions following each incident to identify root causes and implement corrective measures. Evaluations should be conducted within 7 days of the incident.\nCorrective Action Plan: Develop and implement corrective action plans based on incident evaluations to prevent future occurrences."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Overall oversight of hazardous waste management policies.",
+        "Ensures compliance with environmental regulations.",
+        "Prepares and submits compliance reports.",
+        "Develops training programs for hazardous substances management."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implements procedures for safe handling, storage, and transportation of hazardous substances.",
+        "Coordinates safety measures across departments.",
+        "Manages logistics for compliant transport of hazardous materials."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts routine inspections and maintenance of hazardous waste storage systems.",
+        "Ensures safety equipment is maintained and adheres to standards.",
+        "Addresses hazardous substance-related issues with the Environmental Manager."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Delivers employee training on hazardous substances management.",
+        "Monitors adherence to safety protocols.",
+        "Leads investigations of incidents involving hazardous substances and implements corrective actions."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follows procedures for safe handling, storage, and disposal of hazardous substances.",
+        "Reports unsafe conditions or incidents immediately.",
+        "Participates in training related to hazardous substances management."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental Safety Office to assess its effectiveness in minimizing environmental impact and exposure to hazardous substances. The review will include evaluating storage, handling, and transportation protocols, as well as employee training and compliance levels. Any insights gathered will be used to enhance safety practices and ensure continued alignment with environmental standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Internal communication Procedure",
+   "code": "GL-SOP-NO-10",
+   "catalogId": "internal-communication",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 903,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this Standard Operating Procedure (SOP) is to establish clear internal communication processes to ensure the effective dissemination of information across the organization. Timely and accurate communication fosters transparency, enhances employee engagement, and ensures that all employees are informed about relevant updates, policies, and initiatives. This SOP sets the foundation for consistent communication to support organizational goals."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, departments, and contractors within the organization. It covers communication protocols for routine messages, company-wide announcements, policy changes, emergencies, and event notifications. It also outlines the roles and responsibilities of key stakeholders in facilitating internal communication."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Communication Channels",
+     "steps": [
+      {
+       "heading": "Email Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Purpose: Used for official communication, announcements, and policy changes.\nFormat: Emails should be clear and structured. Use subject lines that reflect the content (e.g., “Policy Update: New Leave Policy”)\nDistribution:\nAll Employees: Use company-wide email groups (e.g., all@company.com) for general announcements.\nTargeted Teams: Use department or project-specific mailing lists for focused communication.\nFrequency: Ongoing as needed, with major updates typically sent out by the end of the business day."
+        },
+        {
+         "type": "paragraph",
+         "text": "Two-way communication sessions allow employees to offer direct input and feedback on working conditions and benefits, while also enabling management to address any concerns raised, with the goal of creating an interactive and engaging dialogue between employees and management, through meetings or other communication methods preferred by the company. A detailed two-way communication procedure is available in the Employee Handbook."
+        }
+       ]
+      },
+      {
+       "heading": "Intranet/Company Portal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Purpose: Acts as a repository for policies, procedures, news updates, and event calendars.\nAccess: Employees are encouraged to access the portal at least once per day to stay informed.\nContent Types: HR announcements, meeting schedules, organizational charts, policy documents, and newsletters."
+        }
+       ]
+      },
+      {
+       "heading": "Meetings and Town Halls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Monthly Town Halls: Organized by senior management to discuss company performance, future plans, and address employee concerns.\nDepartmental Meetings: Weekly or bi-weekly meetings to monitor team progress and assign tasks.\nAd-hoc Meetings: Called when urgent updates or business changes arise."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Messaging Platforms (e.g., Microsoft Teams, Zoho Chat)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Purpose: Used for quick discussions, coordination, and task management.\nGuidelines: Employees must adhere to company guidelines for professional communication on these platforms."
+        }
+       ]
+      },
+      {
+       "heading": "Bulletin Boards and Digital Displays",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Location: Installed in break rooms and common areas.\nContent: Includes notices about safety measures, events, deadlines, and new policies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Manage and disseminate information related to employee benefits, holidays, recruitment updates, and policy changes.",
+        "Conduct internal communication surveys to gather feedback from employees on the effectiveness of communication."
+       ]
+      },
+      {
+       "role": "Department Heads/Managers",
+       "responsibilities": [
+        "Ensure that team members are aware of departmental goals, performance metrics, and updates.",
+        "Share project-related communication and monitor employee engagement within their departments."
+       ]
+      },
+      {
+       "role": "Senior Management and Executive Team",
+       "responsibilities": [
+        "Provide strategic communication on organizational goals, restructuring, and major business decisions.",
+        "Lead monthly town halls and address employee concerns during Q&A sessions."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Responsible for staying informed by checking emails, attending meetings, and reviewing communication platforms.",
+        "Provide feedback on communication quality when requested."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Communication Process",
+     "steps": [
+      {
+       "heading": "Message Drafting and Approval",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Messages should be concise, with a clear purpose, action items (if any), and deadlines.\nApproval Workflow:\nCompany-wide messages require approval from HR or senior management.\nDepartment-specific messages must be reviewed by the department head."
+        }
+       ]
+      },
+      {
+       "heading": "Distribution Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure that messages are distributed via appropriate channels (email, portal, messaging platforms) based on urgency and relevance.\nExamples:\nEmergency Communication: Use WhatsApp or SMS alerts for critical updates (e.g., IT outages, natural disasters).\nRoutine Announcements: Use email or intranet posts for policy changes or event notifications."
+        }
+       ]
+      },
+      {
+       "heading": "Handling Crisis Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Scenario 1: In case of a data breach or safety incident, communicate immediately to all affected employees.\nScenario 2: Provide step-by-step instructions on actions to be taken (e.g., evacuation protocols or password resets).\nHR and IT departments must coordinate on messaging to ensure clear and aligned responses during a crisis."
+        }
+       ]
+      },
+      {
+       "heading": "Event Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Invitations: Send meeting invites with clear agendas and objectives.\nFollow-ups: After meetings or events, circulate meeting minutes within 48 hours for reference and action."
+        }
+       ]
+      },
+      {
+       "heading": "Feedback Mechanism and Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee Surveys"
+        },
+        {
+         "type": "bullets",
+         "text": "Conduct quarterly surveys to assess the effectiveness of internal communication and identify areas for improvement.\nInclude questions about the clarity, frequency, and relevance of communication across departments."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Performance Reviews and KPIs",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Monitor attendance at meetings and employee engagement levels (e.g., responses to announcements, participation in Q&A sessions).\nTrack open rates of emails and user activity on the intranet to measure reach."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Issue Reporting Mechanism",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Employees can report communication issues (e.g., unclear instructions or missed announcements) via an online form on the portal.\nHR will address issues and suggest improvements during the next internal communication review."
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Record-Keeping",
+     "rows": [
+      {
+       "record": "Meeting Minutes and Reports",
+       "owner": "",
+       "retention": "",
+       "format": "Document minutes from all major meetings, including action items and deadlines. Store records on the company portal for easy access and future reference."
+      },
+      {
+       "record": "Communication Log",
+       "owner": "",
+       "retention": "Archive records quarterly for auditing purposes.",
+       "format": "Maintain a log of all company-wide communications, including emails and announcements, to ensure transparency and compliance."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Annual Review by HR",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "HR will conduct an annual review of internal communication strategies and platforms to ensure they align with organizational needs.\nFeedback from surveys and issue reports will inform any changes to the SOP."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Implement suggestions from employees and managers to improve communication flow.\nTest new communication tools periodically to enhance effectiveness and engagement."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Non-Compliance and Corrective Actions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Examples of Non-Compliance:\nFailure to communicate critical updates to relevant teams.\nEmployees not attending mandatory meetings or failing to review key announcements.\nCorrective Measures:\nIssuing reminders and warnings to departments or employees for repeated non-compliance.\nOffering additional training on the use of communication tools and protocols."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Conclusion",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "A well-structured internal communication process ensures that employees are informed, aligned with company goals, and actively engaged in their work. This SOP provides a framework for maintaining transparency, improving collaboration, and building a culture of trust within the organization. By adhering to these guidelines, the organization can enhance operational efficiency and foster a positive work environment."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Performance evaluation system and career development plan",
+   "code": "GL-SOP-NO-11",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "Human Resources Department",
+   "sourceWords": 609,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) outlines structured guidelines for assessing employee performance at Ananya Jute Mills. This approach focuses on quantitatively and qualitatively evaluating each employee’s contribution within the jute manufacturing process, identifying improvement areas, offering development support, and recognizing outstanding performance in line with our industry standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, including production teams, maintenance crews, quality control, administrative staff, and management at Ananya. It covers all performance evaluations conducted within the organization, particularly focusing on job roles and responsibilities specific to jute manufacturing operations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Performance Evaluation Framework",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.1.1 Performance Criteria: Define relevant performance criteria based on job roles, specific responsibilities, and organizational goals within the jute manufacturing context. Criteria may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Quality of output specific to jute processing standards.\nProductivity and efficiency in the manufacturing line.\nAdherence to safety protocols in the factory environment.\nTeam collaboration and communication, particularly in production workflows.\nProblem-solving abilities relevant to jute production challenges and machinery operation."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.1.2 Evaluation Metrics: Use metrics tailored to the manufacturing industry to provide a balanced view of performance. Examples include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Quantitative: Number of jute rolls processed, defect rates in finished products, attendance and punctuality records.\nQualitative: Feedback from supervisors on handling of jute fiber, team-based reviews on productivity, self-assessment insights."
+        }
+       ]
+      },
+      {
+       "heading": "Assessment Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "3.2.1 Frequency of Assessments: Schedule formal evaluations bi-annually to provide comprehensive feedback on employee performance. Conduct informal check-ins quarterly to discuss ongoing progress, address challenges in production, and offer support where needed.\n3.2.2 Evaluation Methods: Self-Assessment: Encourage employees to complete a self-assessment form that reflects on their contribution to jute manufacturing standards and safety practices.\nSupervisor Assessment: Supervisors will assess employees based on specific observations, performance data, and their adherence to production standards, providing feedback that is both practical and actionable.\nPeer Review: Implement a peer review process where team members share constructive insights on each other’s work quality and adherence to production protocols, fostering a collaborative work culture."
+        }
+       ]
+      },
+      {
+       "heading": "Feedback and Development",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.3.1 Performance Review Meetings: Hold a formal review meeting to discuss the evaluation results. Supervisors and employees will discuss areas of strength, opportunities for improvement, and necessary development steps, particularly focusing on production quality and safety compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.3.2 Goal Setting: Collaboratively establish SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals for the next assessment period, directly connected to jute production efficiency and quality standards."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.3.3 Training and Support: Identify skill gaps and training needs based on assessment findings, and offer resources to help employees enhance their technical skills and improve performance in jute-specific manufacturing processes."
+        }
+       ]
+      },
+      {
+       "heading": "Recognition and Rewards",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.4.1 Recognition Program: Create a recognition program to honor top-performing employees in areas like quality control, productivity, and adherence to safety standards. Recognition may include bonuses, awards, or public acknowledgment to motivate continuous improvement and excellence."
+        },
+        {
+         "type": "paragraph",
+         "text": "3.4.2 Career Advancement: Use the performance assessment results to make informed decisions about promotions, salary increases, and career development opportunities, ensuring that employee growth aligns with their contributions to the manufacturing process."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Regularly analyze performance data to detect patterns, identify ongoing training needs, and improve operational efficiency across the jute manufacturing processes.\nThe Human Resources Department is responsible for ensuring compliance with this SOP, promoting a transparent and fair performance assessment process."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Adherence to this SOP is mandatory for all employees. Non-compliance may result in corrective actions.\nAnanya Jute Mills is committed to conducting performance evaluations fairly and in accordance with labor laws and jute industry standards."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensure resources and support are in place to conduct effective evaluations and support employee growth."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Conduct thorough evaluations, provide continuous feedback, and support employees in achieving their goals."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Participate actively in evaluations, complete self-assessments sincerely, and seek growth opportunities aligned with their role."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Human Rights Protection Procedures",
+   "code": "GL-SOP-NO-12",
+   "catalogId": "human-rights",
+   "pillar": "S",
+   "department": "",
+   "owner": "Human Rights Officer",
+   "sourceWords": 474,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP defines procedures for identifying, monitoring, and addressing human rights risks across operations and within business relationships. It aims to uphold ethical practices, ensure respect for individual dignity, and comply with relevant laws and international human rights frameworks."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, suppliers, and partners involved with Gloster Limited's operations. It ensures compliance with human rights principles, including freedom from discrimination, fair labor practices, and safe working conditions."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Principles and Policies",
+     "steps": [
+      {
+       "heading": "Non-Discrimination",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Ensure equal treatment and prevent discrimination based on race, gender, religion, disability, or other protected categories."
+        }
+       ]
+      },
+      {
+       "heading": "Forced and Child Labor Prevention",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "No engagement or tolerance of forced, bonded, or child labor in any form."
+        }
+       ]
+      },
+      {
+       "heading": "Fair Compensation and Working Hours",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All employees must receive fair wages and comply with working hour regulations."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Working Conditions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Provide a safe and healthy work environment, ensuring protection from hazards."
+        }
+       ]
+      },
+      {
+       "heading": "Freedom of Association",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Support employees' rights to join unions and participate in collective bargaining."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Human Rights Due Diligence Process",
+     "steps": [
+      {
+       "heading": "Risk Identification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Conduct regular human rights risk assessments for suppliers, contractors, and internal operations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Maintain a Human Rights Risk Register for tracking identified risks and mitigation actions."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Screening",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Integrate human rights criteria into supplier selection processes."
+        },
+        {
+         "type": "paragraph",
+         "text": "Conduct audits of high-risk suppliers and require corrective actions when needed."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Training",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Provide mandatory human rights awareness training for all employees and contractors."
+        },
+        {
+         "type": "paragraph",
+         "text": "Conduct refresher courses annually or after major updates to human rights policies."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting and Grievance Mechanisms",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Anonymous Reporting Channels: Employees and stakeholders can report human rights violations anonymously via the company's designated email or hotline."
+        },
+        {
+         "type": "paragraph",
+         "text": "Grievance Handling: A Human Rights Officer will investigate reported grievances within 7 days."
+        },
+        {
+         "type": "paragraph",
+         "text": "Corrective actions are taken as needed, with updates provided to the complainant."
+        },
+        {
+         "type": "paragraph",
+         "text": "Escalation Procedure: Severe violations are escalated to senior management or external regulatory bodies if required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Adhere to human rights policies and report violations."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Monitor working conditions and ensure compliance with human rights protocols."
+       ]
+      },
+      {
+       "role": "Human Rights Officer",
+       "responsibilities": [
+        "Conduct risk assessments, investigate grievances, and manage corrective actions."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Ensure resources are allocated to human rights initiatives and oversee compliance."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Auditing",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Internal Audits: Conduct annual audits to ensure compliance with human rights procedures."
+      },
+      {
+       "type": "paragraph",
+       "text": "Supplier Audits: Assess high-risk suppliers biannually to verify adherence to human rights standards."
+      },
+      {
+       "type": "paragraph",
+       "text": "KPI Monitoring: Track performance indicators, such as resolved grievances and training completion rates, to measure effectiveness."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Corrective Actions and Sanctions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Non-Compliance Handling: Employees or suppliers found in violation of human rights policies will face disciplinary actions, including termination or suspension of contracts."
+      },
+      {
+       "type": "paragraph",
+       "text": "Corrective Action Plans (CAPs): CAPs are implemented to address violations and prevent recurrence."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Communication and Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Communication: Regular updates on human rights initiatives are shared via company portals and newsletters."
+      },
+      {
+       "type": "paragraph",
+       "text": "Documentation: Maintain detailed records of audits, grievance reports, and corrective actions for at least five years."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years or following significant changes in laws or company operations. The review will include feedback from employees, suppliers, and external stakeholders to ensure continuous improvement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Well-being and Support SOP",
+   "code": "GL-SOP-NO-13",
+   "catalogId": "employee-wellbeing",
+   "pillar": "S",
+   "department": "HR Department",
+   "owner": "HR Manager",
+   "sourceWords": 503,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures and initiatives to promote employee well-being at Gloster Limited. It aims to foster a positive work environment, ensure mental and physical health, and provide support services to enhance employee engagement, performance, and satisfaction."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and interns across Gloster Limited’s operations. It ensures that employees have access to mental, emotional, and physical well-being programs, along with support during challenging personal or professional situations."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Key Components of Employee Well-being",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Physical Well-being: Provide healthcare benefits, fitness programs, and ergonomic workstations.\nMental Health Support: Ensure access to counseling services and mental health awareness programs.\nWork-Life Balance: Promote flexible work arrangements and the right to disconnect outside working hours.\nSocial Well-being: Encourage community engagement through team-building events and volunteer initiatives.\nFinancial Well-being: Offer financial planning workshops and provide assistance during personal financial crises."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Employee Well-being Programs and Procedures",
+     "steps": [
+      {
+       "heading": "Health and Fitness Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Offer free annual health check-ups for all employees.\nProvide access to gym facilities or fitness reimbursement programs.\nPromote participation in wellness challenges, such as step-count competitions."
+        }
+       ]
+      },
+      {
+       "heading": "Mental Health and Counseling Support",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Provide access to Employee Assistance Programs (EAP) offering confidential counseling services.\nOrganize mental health workshops and stress management sessions quarterly.\nConduct annual surveys to assess employee stress levels and identify potential improvements."
+        }
+       ]
+      },
+      {
+       "heading": "Flexible Work Arrangements",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Offer remote or hybrid work options where applicable.\nPromote the use of paid leaves to avoid burnout.\nEncourage employees to take breaks and utilize wellness days."
+        }
+       ]
+      },
+      {
+       "heading": "Financial Well-being Support",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Provide financial education workshops on budgeting, savings, and retirement planning.\nOffer interest-free loans or salary advances in emergencies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Reporting and Grievance Mechanisms",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Well-being Feedback Mechanism: Employees can provide feedback on well-being initiatives through anonymous surveys and suggestion boxes.\nGrievance Reporting: Report any concerns regarding well-being to the HR department or through the dedicated email channel (hr@gloster.com).\nFollow-Up Process: HR will investigate well-being-related complaints within 7 days and provide appropriate solutions or escalate to senior management if required."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Participate in well-being programs and provide feedback for improvement."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Monitor team well-being and encourage participation in support initiatives."
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Implement well-being programs, manage grievances, and conduct periodic assessments."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Allocate resources to well-being initiatives and ensure their effectiveness."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Evaluation",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "KPI Tracking: Track metrics such as employee participation rates in wellness programs and absenteeism levels.\nAnnual Well-being Survey: Conduct a comprehensive survey to assess the effectiveness of well-being initiatives and identify areas for improvement.\nExternal Benchmarking: Compare the company’s well-being efforts with industry best practices annually."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Corrective Actions and Improvements",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Action Plans: Develop corrective actions based on survey results and grievance reports.\nProgram Updates: Introduce new well-being initiatives based on employee needs and trends.\nNon-Participation Monitoring: Identify barriers to employee participation in programs and address them proactively."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Communication and Documentation",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Communication: Regular updates on well-being programs are shared via email and the company’s intranet portal.\nRecord Keeping: Maintain records of well-being program participation, grievance resolutions, and feedback for a minimum of five years."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the HR Manager to ensure it aligns with evolving employee needs and industry standards. Recommendations for improvement will be implemented following each review."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Workplace Conduct SOP",
+   "code": "GL-SOP-NO-14",
+   "catalogId": "equal-opportunity",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "HR Department",
+   "sourceWords": 517,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes guidelines for maintaining professional workplace conduct and social standards at Gloster Limited. It promotes respect, inclusion, and fairness among employees, ensuring a positive work environment that reflects the company’s values and supports sustainable business practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, interns, and visitors at Gloster Limited. It covers behavioral expectations, interpersonal conduct, and social standards for both internal and external interactions."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Principles of Workplace Conduct",
+     "steps": [
+      {
+       "heading": "Respect and Dignity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Treat colleagues and stakeholders with courtesy and respect, regardless of their role or status."
+        }
+       ]
+      },
+      {
+       "heading": "Equal Opportunity and Inclusion",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Promote a culture of non-discrimination and inclusion, ensuring fairness in all aspects of employment."
+        }
+       ]
+      },
+      {
+       "heading": "Integrity and Accountability",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Demonstrate honesty and take responsibility for actions and decisions."
+        }
+       ]
+      },
+      {
+       "heading": "Harassment-Free Workplace",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintain a safe environment free from bullying, harassment, or any form of abuse."
+        }
+       ]
+      },
+      {
+       "heading": "Compliance with Laws and Policies",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Follow company policies and adhere to applicable laws, including labor and ethical standards."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Standards of Behavior and Procedures",
+     "steps": [
+      {
+       "heading": "Professional Conduct",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees must exhibit professionalism in their interactions with colleagues, customers, and stakeholders.\nDress appropriately according to the company’s dress code or specific safety requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Anti-Harassment and Anti-Bullying",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Any form of harassment, including sexual harassment or bullying, is strictly prohibited.\nEmployees can report incidents to HR or through designated anonymous channels. Investigations will be conducted promptly."
+        }
+       ]
+      },
+      {
+       "heading": "Diversity and Inclusion Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Promote equal treatment by avoiding bias in recruitment, performance evaluation, and promotions.\nParticipate in diversity training to foster an inclusive culture."
+        }
+       ]
+      },
+      {
+       "heading": "Social Media and External Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees must maintain professionalism in all public communications, including social media.\nAvoid disclosing confidential company information online or making inappropriate remarks that could harm the company’s reputation."
+        }
+       ]
+      },
+      {
+       "heading": "Conflict Resolution",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Address workplace disagreements respectfully, following escalation procedures if necessary.\nEmployees can raise concerns with supervisors or HR for mediation or intervention."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting and Grievance Mechanism",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Reporting Misconduct: Incidents related to inappropriate conduct must be reported immediately through HR or the anonymous reporting system.\nGrievance Handling Procedure: Complaints will be reviewed within 5 days by the HR department.\nConfidentiality will be maintained during the investigation process.\nCorrective actions or disciplinary measures will be taken based on findings."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Uphold workplace conduct standards and report misconduct."
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Monitor team behavior, promote ethical conduct, and address conflicts."
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Investigate complaints, resolve grievances, and ensure compliance with workplace standards."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Lead by example and provide resources for maintaining workplace conduct and social standards."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Evaluation",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Behavioral Assessments: Monitor employee behavior during performance reviews.\nRegular Surveys: Conduct annual surveys to gather feedback on the work environment and identify any conduct-related issues.\nAudit of Complaints: Track and analyze complaints to identify trends and areas for improvement."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Corrective Actions and Disciplinary Measures",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Corrective Actions: Coaching, mediation, or training may be provided for minor behavioral issues.\nDisciplinary Actions: Violations of conduct standards may lead to warnings, suspension, or termination of employment, depending on severity."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Communication and Documentation",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Internal Communication: Employees will be informed of updates to conduct standards through the intranet and newsletters.\nRecord Keeping: HR will maintain records of complaints, investigations, and disciplinary actions for at least five years."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years or following any significant legal or policy updates. Employee feedback will be incorporated into the review to ensure continuous improvement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "SOP for Ethical Compliance Due Diligence Program for Third Parties",
+   "code": "GL-SOP-NO-15",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Manager",
+   "sourceWords": 987,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) outlines a structured framework for implementing an Ethical Compliance Due Diligence Program for third parties associated with Ananya Jute Mills. This program aims to ensure that third-party entities align with our standards in areas such as anti-corruption, labor practices, environmental responsibility, data privacy, human rights, and health and safety, reducing risks linked to unethical practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all third-party engagements at Ananya Jute Mills, including suppliers, vendors, commission agents, brokers, sales representatives, distributors, contractors, customs brokers, and consultants. It is relevant across all departments interacting with third parties to uphold ethical, legal, and regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Initial Screening",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Initial Background Check: Conduct background checks on potential third parties to identify ethical risks, focusing on the following:"
+        },
+        {
+         "type": "bullets",
+         "text": "Anti-Corruption and Bribery: Verify compliance with anti-bribery laws and third-party policies.\nLabor Practices: Confirm fair labor standards adherence, ensuring no history of child or forced labor.\nEnvironmental Responsibility: Review practices for sustainability alignment and environmental protection.\nData Privacy and Information Security: Ensure compliance with information security standards.\nHuman Rights and Fair Treatment: Confirm commitment to human rights, diversity, and equity.\nHealth and Safety: Verify adherence to workplace health and safety protocols."
+        }
+       ]
+      },
+      {
+       "heading": "Ethical Risk Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assessment of Ethical Areas: The Compliance and Risk Management Team evaluates third-party practices, focusing on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Anti-Corruption Compliance: Reviewing adherence to anti-bribery laws.\nLabor and Human Rights: Ensuring alignment with fair labor and human rights practices.\nEnvironmental Responsibility: Assessing environmental practices to support sustainability objectives.\nData Privacy / Information security: Reviewing data handling protocols to protect sensitive company and client information.\nHealth and Safety Compliance: Confirming compliance with safety standards."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Collection and Benchmarking:"
+        },
+        {
+         "type": "bullets",
+         "text": "Data Collection: Gather relevant documents, such as certifications and policies on labor and environmental standards.\nBenchmarking: Compare third-party practices to industry standards within the jute manufacturing sector."
+        }
+       ],
+       "responsible": "Compliance and Risk Management Team"
+      },
+      {
+       "heading": "Documentation Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Required Documentation: Review the following to confirm compliance:"
+        },
+        {
+         "type": "bullets",
+         "text": "Anti-Corruption and Labor Policies: Documents on ethical practices, labor standards, and anti-bribery.\nEnvironmental Certifications: Relevant certifications showing alignment with environmental standards.\nData Privacy and Security Certifications: ISO 27001 or equivalent certifications for information security.\nHuman Rights and Health Standards: Documentation on human rights and safety standards."
+        }
+       ]
+      },
+      {
+       "heading": "Risk Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Ethical Risk Evaluation: Assess potential risks based on third-party data access, practices, and compliance records."
+        },
+        {
+         "type": "bullets",
+         "text": "Corruption Risks: Check the reputation and ethical track record.\nData Security Risks: Review the third-party’s data security policies and compliance history."
+        }
+       ]
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approval by Senior Management: Findings from the risk assessment guide final decisions. Approval from senior management, including Compliance and IT Security Officers, is required before engagement."
+        },
+        {
+         "type": "bullets",
+         "text": "Approval Documentation: Record the approval process to ensure transparency."
+        }
+       ],
+       "responsible": "Senior Management"
+      },
+      {
+       "heading": "Risk-Based Due Diligence Classification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third parties are classified based on corruption and information security risk prior to engagement:"
+        },
+        {
+         "type": "bullets",
+         "text": "Low Risk: Standard suppliers with no government interaction and no access to sensitive data\nMedium Risk: Vendors with limited data access or service-based contracts\nHigh Risk: Commission agents, customs brokers, consultants, IT vendors, distributors, or any third party interacting with government authorities or handling sensitive company data"
+        }
+       ]
+      },
+      {
+       "heading": "Anti-Corruption Due Diligence Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For all third parties, and especially high-risk third parties, the following anti-corruption checks are conducted:"
+        },
+        {
+         "type": "bullets",
+         "text": "Verification of ownership, management structure, and business reputation\nScreening for past legal, regulatory, or corruption-related violations\nDisclosure of any government affiliations or politically exposed persons (PEPs)\nReview of commission structures, incentives, and payment terms\nConfirmation of acceptance of Ananya Jute Mills’ Anti-Bribery and Anti-Corruption requirements"
+        },
+        {
+         "type": "paragraph",
+         "text": "All third-party contracts include anti-corruption clauses, audit rights, and termination rights for non-compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Information Security Due Diligence Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Information security due diligence is conducted for third parties that access, process, or store Company information. Controls include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Completion of an information security assessment or questionnaire\nEvaluation of data protection measures, access controls, and incident response capabilities\nClassification of data access (low, medium, high sensitivity)\nApproval of system or data access by IT Security prior to engagement\nContractual obligations covering confidentiality, data protection, and breach notification"
+        },
+        {
+         "type": "paragraph",
+         "text": "Access rights are reviewed periodically and revoked upon contract completion or termination."
+        }
+       ],
+       "responsible": "IT Security"
+      },
+      {
+       "heading": "Ongoing Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Scheduled Audits and Assessments: Ananya Jute Mills will conduct an on-site audit at least once a year for each third-party supplier to evaluate their compliance across key parameters, including anti-corruption measures, IT security, health and safety protocols, environmental impact, and social responsibility, among other criteria.\n\nAdditionally, all suppliers are required to complete a self-assessment annually to verify their adherence to these standards and maintain transparency.\n\nIncident Reporting: Third parties must immediately report any breaches in ethical standards or safety protocols.\n\nRegular Communication: Engage regularly with third parties to address compliance concerns and operational updates."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reporting Protocols: Require immediate reporting of any incidents or breaches in ethical standards, data security, or safety by third parties.\n\nResponse Planning: Collaborate on incident response plans that outline roles, responsibilities, and procedures for managing ethical or data-related incidents."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Record Keeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Documentation Maintenance: Maintain records of due diligence activities, risk assessments, approvals, and communications.\n\nRecord Retention: Retain records for a minimum of three years to support accountability and traceability in compliance activities."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Audits and Inspections: Conduct regular audits to confirm compliance with this SOP and identify potential improvement areas.\n\nCompliance Manager’s Responsibility: The Compliance Manager oversees due diligence practices and ensures adherence to this SOP."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Adherence Requirement: All employees and third parties must comply with this SOP. Non-compliance may lead to corrective actions or termination of engagement.\n\nRegulatory Compliance: Ananya Jute Mills – Gloster Limited will adhere to applicable local, national, and international ethical and regulatory standards."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensure SOP implementation and enforcement, providing necessary resources for training and compliance."
+       ]
+      },
+      {
+       "role": "Compliance and IT Security Officers",
+       "responsibilities": [
+        "Oversee monitoring, conduct training, and review this SOP periodically."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow all guidelines and report any ethical or compliance concerns to the Compliance Manager."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Review Period: This SOP will be reviewed and updated every two years or as needed based on regulatory or operational changes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "SOP for Internal Assessments",
+   "code": "GL-SOP-NO-16",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "",
+   "owner": "Chief Internal Auditor",
+   "sourceWords": 1016,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose and Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The aim of this procedure is to ensure that:"
+      },
+      {
+       "type": "bullets",
+       "text": "The internal assessment SOP aligns with the planned arrangements, meeting the requirements of the relevant standards and the internal management system policies of the organization."
+      },
+      {
+       "type": "paragraph",
+       "text": "This procedure covers the complete documented consumer product management system, including the internal audit process, within its scope."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Chief Internal Auditor",
+       "responsibilities": [
+        "Holds the primary responsibility for implementing and maintaining this procedure.",
+        "Supported by qualified internal auditors in carrying out this task."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Responsibility",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Chief Internal Auditor holds the primary responsibility for implementing and maintaining this procedure. They will be supported by qualified internal auditors in carrying out this task."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terms & Definitions",
+     "rows": [
+      {
+       "term": "Nonconformity",
+       "definition": "A situation where specified requirements are not fulfilled."
+      },
+      {
+       "term": "Critical Nonconformity",
+       "definition": "A major failure to meet safety or legal compliance."
+      },
+      {
+       "term": "Major Nonconformity",
+       "definition": "A substantial failure to meet any standard requirement or a scenario that raises significant doubt about the conformity of the product based on available objective evidence."
+      },
+      {
+       "term": "Minor Nonconformity",
+       "definition": "A failure to meet specific requirements, where conformity of the product remains in doubt based on objective evidence."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Process",
+     "steps": [
+      {
+       "heading": "Internal Audit Plan",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Chief Internal Auditor will create an Internal Audit Plan based on the following considerations:"
+        },
+        {
+         "type": "bullets",
+         "text": "The significance and status of operations related to the consumer product management system.\nThe importance of operations related to product safety, legality, and quality.\nResults from prior audits.\nRegular internal assessments on ESG issues including air pollution, health and safety, working conditions, child labor, forced labor and human trafficking, corruption, information security, employee satisfaction surveys, and other relevant ESG factors."
+        }
+       ],
+       "responsible": "Chief Internal Auditor"
+      },
+      {
+       "heading": "Internal Audit Schedule",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "An Internal Audit Schedule will be created according to the frequency specified in the Internal Audit Plan and will be shared with all relevant parties."
+        }
+       ]
+      },
+      {
+       "heading": "Auditor Qualification and Independence",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Internal audits will be performed by qualified internal auditors who are independent of the activities being examined. A List of Internal Auditors will be maintained by the Chief of Internal Audit."
+        }
+       ],
+       "responsible": "Chief of Internal Audit"
+      },
+      {
+       "heading": "Audit Preparation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Before conducting an audit, internal auditors will prepare an Internal Audit Checklist cum Observation Sheet , consulting the following:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hazards and risks associated with the operations.\nRelevant industry standards (e.g., BRC Standard).\nPrevious audit checklists and nonconformity reports, if applicable."
+        }
+       ],
+       "responsible": "Internal auditors"
+      },
+      {
+       "heading": "Conducting the Audit",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "During the audit, internal auditors will document observations against each checklist item. Any nonconformities identified will be recorded in the Internal Audit Nonconformity Report."
+        },
+        {
+         "type": "paragraph",
+         "text": "The auditor will review the Quality Assurance Plan to ensure it aligns with actual practices. They will also evaluate quality-related facilities such as designated quality checking areas, lighting, and waste disposal facilities. Any required modifications will be noted in the audit observation sheet."
+        },
+        {
+         "type": "paragraph",
+         "text": "Mechanical tools, machines, and tool management on the production floor will be checked, including the list of tools and their integrity."
+        },
+        {
+         "type": "paragraph",
+         "text": "Internal auditors are responsible for verifying control samples on the production floor and comparing them with the tamper-proof prototypes kept in secure storage. Any discrepancies will be documented."
+        },
+        {
+         "type": "paragraph",
+         "text": "The list of measuring and monitoring devices used in quality assurance procedures will be reviewed, and their calibration status will be verified against the master calibration list. Any devices not in use should be noted in the master list with reasons for their exclusion."
+        },
+        {
+         "type": "paragraph",
+         "text": "During the site audit, the auditor will verify that identification markings for semi-finished and finished goods are present, ensuring traceability is maintained. Missing marks will be noted during the site tour."
+        },
+        {
+         "type": "paragraph",
+         "text": "The internal audit will also assess the lighting conditions and ensure that they meet the standard requirements as per the most stringent buyer specifications."
+        },
+        {
+         "type": "paragraph",
+         "text": "Complaints handling will be reviewed to ensure that customer complaints are accurately recorded and resolved. All complaints should be documented with sufficient supporting details and properly closed in the complaint handling register."
+        },
+        {
+         "type": "paragraph",
+         "text": "To confirm that the most up-to-date documents are being used, the internal auditor will check whether the current versions are in use on the production floor, as documented in controlled documents."
+        },
+        {
+         "type": "paragraph",
+         "text": "Any corrective actions for identified nonconformities will be discussed and agreed upon by both the auditor and auditee. These actions will be recorded in the internal audit nonconformity report, along with a target completion date."
+        }
+       ],
+       "responsible": "Internal auditor"
+      },
+      {
+       "heading": "Submission of Checklist",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Once the audit is completed, the internal auditor will submit the Internal Audit Checklist cum Observation Sheet to the Chief Internal Auditor."
+        }
+       ],
+       "responsible": "Internal auditor"
+      },
+      {
+       "heading": "Follow-up Audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Chief Internal Auditor will coordinate follow-up audits to verify the implementation and effectiveness of corrective and/or preventive actions. The timelines for addressing nonconformities are as follows:"
+        },
+        {
+         "type": "bullets",
+         "text": "Minor Nonconformities: 60 days\nMajor Nonconformities: 30 days\nCritical Nonconformities: 7 days"
+        },
+        {
+         "type": "paragraph",
+         "text": "The results of follow-up audits will be documented in the Internal Audit Nonconformity Report."
+        }
+       ],
+       "responsible": "Chief Internal Auditor"
+      },
+      {
+       "heading": "Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "After the follow-up audit, the internal auditor will submit the Internal Audit Nonconformity Report to the Chief of Internal Audit."
+        },
+        {
+         "type": "paragraph",
+         "text": "The Chief Internal Auditor will prepare and forward the Internal Audit Summary Report for discussion during the Management Review Meeting."
+        },
+        {
+         "type": "paragraph",
+         "text": "In addition to departmental audits, a separate internal audit will be conducted annually."
+        }
+       ],
+       "responsible": "Internal auditor / Chief Internal Auditor"
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Reference",
+     "items": [
+      "01 Process Flow Chart: Internal Audit",
+      "DOC-GL-IAC-01 Internal Assessment on Corruption",
+      "DOC-GL-IALE-01 Internal Assessment on Labor Exploration",
+      "DOC-GL-IAIS-01 Internal Assessment on Information Security",
+      "DOC-GL-ESF-01 Employee Working condition Survey Form"
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "List of Records",
+     "rows": [
+      {
+       "record": "Internal Audit Plan",
+       "owner": "Chief of Internal Audit",
+       "retention": "3 years",
+       "format": ""
+      },
+      {
+       "record": "List of Internal Auditors",
+       "owner": "Chief of Internal Audit",
+       "retention": "3 years",
+       "format": ""
+      },
+      {
+       "record": "Internal Audit Schedule",
+       "owner": "Chief of Internal Audit",
+       "retention": "3 years",
+       "format": ""
+      },
+      {
+       "record": "Internal Audit Checklist cum Observation Sheet",
+       "owner": "Chief of Internal Audit",
+       "retention": "3 years",
+       "format": ""
+      },
+      {
+       "record": "Internal Audit Nonconformity Report",
+       "owner": "Chief of Internal Audit",
+       "retention": "3 years",
+       "format": ""
+      },
+      {
+       "record": "Internal Audit Summary Report",
+       "owner": "Chief of Internal Audit",
+       "retention": "3 years",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Schedule and Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) manual is designed to provide clear and concise guidelines for the operational processes within our organization. It serves as a vital resource for employees to ensure consistency, efficiency, and compliance in their daily tasks. By adhering to these procedures, we aim to enhance the quality of our services and maintain a safe and productive work environment. This document outlines the key protocols and standards that are essential for achieving our organizational objectives."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Description",
+        "Date",
+        "Review Number",
+        "Changes made"
+       ],
+       "rows": [
+        [
+         "Effective Date",
+         "01 / 01 /2023",
+         "00",
+         "Initial release of the SOP manual."
+        ],
+        [
+         "Last Review Date",
+         "01 / 01 / 2025",
+         "1.1",
+         "Updates related Data Access Control & Customer Data Management Framework"
+        ],
+        [
+         "Next Review Date",
+         "01 / 04 /2026",
+         "",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

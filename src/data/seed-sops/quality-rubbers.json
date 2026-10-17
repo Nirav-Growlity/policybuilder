@@ -1,0 +1,2799 @@
+{
+ "id": "quality-rubbers",
+ "company": "Quality Rubbers",
+ "industry": "Rubber raw material cleaning, upgrading and trading",
+ "industryTags": [
+  "chemicals",
+  "manufacturing"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Quality Rubbers/SOP (2).docx",
+ "frontMatter": {
+  "introduction": "This Standard Operating Procedure (SOP) Manual establishes a structured framework for the operational processes followed at Quality Rubbers. It is designed to ensure consistency, efficiency, and control across all business activities, including procurement, processing, quality management, storage, and dispatch.\n\nThe SOP defines standardized procedures, responsibilities, and controls required for effective execution of operations and compliance with applicable regulatory and customer requirements. It serves as a reference document to guide employees in performing their roles in a systematic and consistent manner.\n\nThe implementation of this SOP supports effective process management, product quality, workplace safety, and overall operational performance within the organization.",
+  "objective": "The objectives of this Standard Operating Procedure (SOP) are to:\nEstablish standardized procedures for all key operational activities to ensure consistency and efficiency.\nDefine roles, responsibilities, and controls required for effective execution of processes.\nEnsure compliance with applicable legal, regulatory, and customer requirements.\nMaintain product quality through controlled processing, handling, and storage practices.\nPromote safe working conditions and responsible operational practices.\nImprove resource utilization and minimize operational inefficiencies.\nSupport effective monitoring, documentation, and record-keeping across all functions.\nFacilitate continuous improvement in operational performance and overall business practices.",
+  "scope": "This policy applies to all employees, workers, directors, officers, contractors, and any third parties acting on behalf of Quality Rubbers. It covers all business activities associated with the Company's operations, including sourcing of raw rubber materials, cleaning and upgrading processes, storage, handling, transportation, and dispatch of materials, as well as interactions with customers, suppliers, regulatory authorities, and other stakeholders.\n\nThe Human Resource Management system at Quality Rubbers establishes structured processes and guidelines for workforce planning, recruitment, onboarding, and employee management to ensure compliance with applicable laws and organizational requirements.",
+  "reviewMechanism": "This Standard Operating Procedure (SOP) Manual is intended to provide general guidance for operational consistency, efficiency, and compliance within the organization. Employees are expected to follow the procedures outlined to support effective operations and maintain a safe and productive work environment.\n\nThis document is subject to regular review annually, or earlier as required based on changes in regulations, operations, or relevant standards. Any approved updates shall be communicated to relevant employees in a timely manner.\n\nRevision History\nRevision No. 0.0, 01/01/2025: Initial issue of SOP\nRevision No. 1.0, 01/01/2026: SOP reviewed and updated to improve user access management and system security controls.\n\nApproved By: USHA B\nDesignation: PROPRIETRIX\nLast Review Date: 01/01/2026 Next Review Date: 01/01/2027\nFor Any Query contact on followings:\nContact No: +91 8590274505\nMaild Id: qualityrubbers99@gmail.com"
+ },
+ "sops": [
+  {
+   "title": "RECRUITMENT PROCEDURE",
+   "code": "",
+   "catalogId": "recruitment",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "",
+   "sourceWords": 224,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure recruitment is conducted in a structured, fair, and legally compliant manner, with appropriate controls to verify identity, eligibility, and compliance with minimum age requirements."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Recruitment Process and Procedure",
+     "steps": [
+      {
+       "heading": "Advertising approved vacancies",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved vacancies are advertised through appropriate internal and external channels to attract a diverse and qualified candidate pool."
+        }
+       ]
+      },
+      {
+       "heading": "Screening applications",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Applications are screened based on objective, job-related criteria, including qualifications, experience, and role-specific competencies."
+        }
+       ]
+      },
+      {
+       "heading": "Anonymizing resumes",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where feasible, resumes may be anonymized during initial screening to minimize the risk of unconscious bias and promote fair evaluation."
+        }
+       ]
+      },
+      {
+       "heading": "Conducting structured interviews",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Structured interviews are conducted by Human Resources and relevant departmental representatives to assess technical skills, experience, and overall suitability for the role."
+        }
+       ],
+       "responsible": "Human Resources"
+      },
+      {
+       "heading": "Making selection decisions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Selection decisions are based on a consolidated assessment of candidate performance, evaluation scores, and panel feedback to ensure objectivity."
+        }
+       ]
+      },
+      {
+       "heading": "Informing candidates of outcome",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Candidates are informed of the outcome of their application in a timely manner, and feedback may be provided where appropriate."
+        }
+       ]
+      },
+      {
+       "heading": "Verifying identity and date of birth",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "As part of the recruitment and onboarding process, verification of identity and date of birth is conducted to ensure compliance with applicable legal requirements, including minimum working age. Candidates are required to submit valid government-issued identity documents (such as Aadhaar Card, PAN Card, Birth Certificate, or School Leaving Certificate), which are verified prior to finalization of employment."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Legal and Ethical Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All recruitment activities are carried out in accordance with applicable legal, ethical, and labour standards, ensuring equal opportunity and non-discriminatory practices throughout the process."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Approval Procedure for Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "Compliance Officer",
+   "sourceWords": 448,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and representatives of Quality Rubbers who engage in transactions that may carry a real or perceived personal benefit alongside a business benefit. Such transactions are inherently higher risk for corruption and must be subject to prior written approval."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definition of Sensitive Transactions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Sensitive transactions are discretionary transactions where there is, or could be perceived to be, a personal benefit in addition to a business benefit. They commonly arise in the following contexts:"
+      },
+      {
+       "type": "bullets",
+       "text": "Hospitality — meals, entertainment, sporting events, or cultural events offered to or received from clients, suppliers, government officials, or other external stakeholders.\nBusiness gifts — physical gifts, gift cards, vouchers, or tokens of appreciation given or received in a professional capacity.\nTravel — business travel arrangements that include personal extensions, upgrades, or companion travel at company or client expense.\nSponsorships and charitable donations — contributions that could be perceived as a means to obtain a business advantage.\nFacilitation payments — any payment made to expedite a routine government action, regardless of amount."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Approval Thresholds & Requirements",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following thresholds apply. All values are per transaction and per recipient/donor within a 12-month rolling period:"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Transaction Threshold",
+        "Required Approval"
+       ],
+       "rows": [
+        [
+         "Below INR 500 (token gifts, refreshments)",
+         "Line Manager — verbal approval; log in team register"
+        ],
+        [
+         "INR 500 – INR 2,500",
+         "Line Manager — written approval via email; log in compliance register"
+        ],
+        [
+         "INR 2,500 – INR 10,000",
+         "Line Manager + Compliance Officer — written approval required before transaction"
+        ],
+        [
+         "Above INR 10,000",
+         "Senior Management + Compliance Officer + MD — formal approval memo required"
+        ],
+        [
+         "Any transaction involving government officials",
+         "Compliance Officer sign-off mandatory regardless of value"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Step-by-Step Approval Procedure",
+     "steps": [
+      {
+       "heading": "Employee identifies a potential sensitive transaction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee identifies a potential sensitive transaction (giving or receiving)."
+        }
+       ],
+       "responsible": "Employee"
+      },
+      {
+       "heading": "Employee completes the Sensitive Transaction Request Form",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee completes the Sensitive Transaction Request Form (Form QR-ETH-01) detailing: nature of transaction, estimated value, business justification, parties involved, and timing."
+        }
+       ],
+       "responsible": "Employee"
+      },
+      {
+       "heading": "Form is submitted to Line Manager for initial review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Form is submitted to Line Manager for initial review."
+        }
+       ],
+       "responsible": "Employee"
+      },
+      {
+       "heading": "Line Manager reviews for business necessity and proportionality",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Line Manager reviews for business necessity and proportionality. If approved, escalates to Compliance Officer if thresholds require."
+        }
+       ],
+       "responsible": "Line Manager"
+      },
+      {
+       "heading": "Compliance Officer reviews against Anti-Bribery Policy",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Compliance Officer reviews against Anti-Bribery Policy, applicable laws, and counterparty restrictions (e.g., government/public sector rules)."
+        }
+       ],
+       "responsible": "Compliance Officer"
+      },
+      {
+       "heading": "Decision is recorded in the Compliance Register",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Decision (approval or rejection) is recorded in the Compliance Register within 2 business days."
+        }
+       ],
+       "responsible": "Compliance Officer"
+      },
+      {
+       "heading": "Employee is notified and may proceed only upon written confirmation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee is notified and may proceed only upon written confirmation of approval."
+        }
+       ],
+       "responsible": "Compliance Officer"
+      },
+      {
+       "heading": "Post-transaction: Employee submits receipt/invoice and final value",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Post-transaction: Employee submits receipt/invoice and final value within 5 business days for record-keeping."
+        }
+       ],
+       "responsible": "Employee"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Submit Form QR-ETH-01 before any sensitive transaction"
+       ]
+      },
+      {
+       "role": "Line Manager",
+       "responsibilities": [
+        "First-level review and approval/escalation"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Policy review, register maintenance, annual audit"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Annual anti-bribery training for all staff"
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approval of high-value transactions; tone-setting"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Retrospective Approval",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "IMPORTANT: Retrospective approval is not permitted. Employees who engage in sensitive transactions without prior approval are subject to disciplinary action, up to and including termination of employment."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Protection of Third-Party Data from Unauthorized Access",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer",
+   "sourceWords": 433,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure governs the access, storage, handling, and disposal of all customer, client, supplier, and employee data held by Quality Rubbers. It applies to all digital and physical data assets across all departments and locations."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "DATA CLASSIFICATION",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All third-party data held by Quality Rubbers must be classified as follows before any access or handling:"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Data Class",
+        "Description & Examples"
+       ],
+       "rows": [
+        [
+         "Highly Confidential",
+         "Personal financial data, contract pricing, health records, government IDs, passwords"
+        ],
+        [
+         "Confidential",
+         "Business contact details, procurement terms, internal reports, HR records"
+        ],
+        [
+         "Internal",
+         "General operational data, non-sensitive internal communications"
+        ],
+        [
+         "Public",
+         "Marketing materials, published product catalogues, public financial disclosures"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "DIGITAL ACCESS CONTROLS",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All systems containing third-party data must implement Role-Based Access Control (RBAC). Access is granted on a strict need-to-know basis only.\nUnique user credentials are mandatory. Shared logins are strictly prohibited.\nMulti-factor authentication (MFA) must be enabled for all systems accessing Highly Confidential or Confidential data.\nAll data in transit must be encrypted using TLS 1.2 or higher. All data at rest must be encrypted using AES-256 or equivalent.\nRemote access to company systems must use an approved VPN. No data may be accessed via unsecured public networks without VPN.\nAll system access events (login, data export, failed login attempts) must be automatically logged and retained for a minimum of 12 months."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PHYSICAL DATA CONTROLS",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Physical documents containing Confidential or Highly Confidential data must be stored in locked filing cabinets with key access restricted to authorized personnel.\nPrinted sensitive documents must not be left unattended on desks or shared areas.\nSecure document disposal — all physical documents containing personal or confidential data must be shredded using a cross-cut shredder. Standard waste bins must not be used.\nVisitor access to areas where sensitive data is processed must be controlled and logged."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "ACCESS AUDITS & INCIDENT RESPONSE",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "A full access audit of all data systems must be conducted annually by the IT/Compliance team. Results must be reported to senior management.\nAccess rights must be reviewed and revoked immediately upon employee departure or role change.\nAny suspected unauthorized access, data breach, or loss of data must be reported to the Data Protection Officer (DPO) within 24 hours of discovery.\nThe DPO will initiate the Data Breach Response Protocol (QR-DPO-02), which includes root-cause analysis, stakeholder notification, regulatory reporting (if applicable), and remediation."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "RESPONSIBILITIES",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Responsible Party",
+        "Key Responsibility",
+        "Frequency"
+       ],
+       "rows": [
+        [
+         "IT Department",
+         "Implement and maintain technical access controls, encryption, and audit logs",
+         "Ongoing"
+        ],
+        [
+         "Data Protection Officer",
+         "Policy oversight, breach response, regulatory compliance",
+         "Ongoing"
+        ],
+        [
+         "All Employees",
+         "Handle data per classification; report any breach immediately",
+         "Daily"
+        ],
+        [
+         "HR Department",
+         "Ensure access revocation upon staff departure",
+         "Per occurrence"
+        ],
+        [
+         "Compliance Team",
+         "Annual access audit and policy review",
+         "Annual"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "WASTE REUSE & RECYCLING",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "",
+   "owner": "Facilities Manager",
+   "sourceWords": 310,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all waste generated from office operations and production activities at Quality Rubbers facilities. It establishes the operational framework for waste identification, segregation, collection, and recycling to minimize landfill disposal."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "WASTE STREAM IDENTIFICATION",
+     "steps": [
+      {
+       "heading": "WASTE STREAM IDENTIFICATION",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Before recycling can be operationalized, all major waste streams must be identified and quantified. Department heads are responsible for conducting a waste audit within their areas of responsibility every 12 months. Waste streams to be catalogued include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Paper and cardboard (office and packaging)\nPlastics (packaging films, bottles, containers — segregated by resin code where feasible)\nMetals and aluminum (cans, scrap from operations)\nGlass (bottles, laboratory glassware)\nElectronic waste / e-waste (computers, cables, batteries, toner cartridges)\nRubber off-cuts and production scrap (specific to manufacturing operations)\nOrganic / food waste (from canteen and kitchen areas)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "RECYCLING PROCEDURE",
+     "steps": [
+      {
+       "heading": "Waste generated at source",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste generated at source (desk, workstation, production line) must be deposited into the correctly labelled bin for that waste stream."
+        }
+       ]
+      },
+      {
+       "heading": "Facilities staff collect and consolidate waste",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Facilities staff collect and consolidate segregated waste from all areas daily and transfer to the designated waste holding area."
+        }
+       ],
+       "responsible": "Facilities staff"
+      },
+      {
+       "heading": "Waste holding area",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste holding area must be clearly marked, covered, and separate from general storage. Access is restricted to authorized personnel."
+        }
+       ]
+      },
+      {
+       "heading": "Certified recycling vendor collection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Certified recycling vendor collects recyclable materials on a scheduled basis (minimum weekly). Vendor must hold valid environmental permits."
+        }
+       ],
+       "responsible": "Certified recycling vendor"
+      },
+      {
+       "heading": "Waste transfer documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste transfer documentation (consignment notes/manifests) must be signed and retained for a minimum of 3 years."
+        }
+       ]
+      },
+      {
+       "heading": "Waste quantities recorded monthly",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste quantities (by stream) must be recorded monthly in the Waste Management Register (QR-WM-01)."
+        }
+       ]
+      },
+      {
+       "heading": "Annual recycling rate",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Annual recycling rate (% of total waste recycled vs. disposed to landfill) must be calculated and reported to management."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "RESPONSIBILITIES",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Responsible Party",
+        "Key Responsibility",
+        "Frequency"
+       ],
+       "rows": [
+        [
+         "All Employees",
+         "Deposit waste in correct labelled bins at point of generation",
+         "Daily"
+        ],
+        [
+         "Facilities Manager",
+         "Manage waste holding area, vendor liaison, maintain waste register",
+         "Weekly / Monthly"
+        ],
+        [
+         "Department Heads",
+         "Annual waste audit within their area; target ownership",
+         "Annual"
+        ],
+        [
+         "Sustainability Officer",
+         "Report waste metrics to management; drive improvement",
+         "Quarterly"
+        ],
+        [
+         "Procurement Team",
+         "Ensure recycling vendor holds valid permits; contract renewal",
+         "Annual"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Reduction of Paper Consumption",
+   "code": "",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Officer",
+   "sourceWords": 237,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose & Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To systematically reduce paper consumption across all Quality Rubbers operations through policy, technology, and behavioral change — reducing both environmental impact and operational cost."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Mandatory Paper-Saving Measures",
+     "steps": [
+      {
+       "heading": "Default duplex printing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Default duplex (double-sided) printing must be enabled on all networked printers and copiers. Single-sided printing requires manual override and should be used only when strictly necessary (e.g., legal originals, client-facing documents)."
+        }
+       ]
+      },
+      {
+       "heading": "Digital distribution and approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All internal reports, memos, approvals, and meeting materials must be distributed and approved digitally. Printing for internal circulation is not permitted unless requested by a Head of Department in writing."
+        }
+       ]
+      },
+      {
+       "heading": "Electronic signatures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Electronic signatures (via approved platforms) must be used for all internal document approvals and contracts wherever legally permissible."
+        }
+       ]
+      },
+      {
+       "heading": "Annual form review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All forms currently issued in paper format must be reviewed annually by the respective department. Forms that can be completed digitally must transition to digital within 6 months of identification."
+        }
+       ]
+      },
+      {
+       "heading": "Primary document storage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Shared network drives and document management systems must be the primary location for all document storage. Personal local drives and physical files must not be used as primary storage."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Print Management Controls",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Secure print release (PIN or swipe card at printer) must be implemented on all office printers to reduce uncollected print jobs.\nMonthly paper consumption data (reams purchased/used per department) must be tracked and reported by the Facilities team.\nDepartments exceeding their paper budget must provide a written justification to the Sustainability Officer."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Paper-saving tips to be included in new employee onboarding.\nQuarterly reminders to be issued via internal communications (email, notice boards, intranet)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Sorting and Disposal",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "",
+   "owner": "Facilities Manager",
+   "sourceWords": 272,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure all operational waste is correctly segregated at source into defined waste streams prior to disposal, enabling compliant treatment, recycling, and recovery of materials."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "WASTE SEGREGATION INFRASTRUCTURE",
+     "steps": [
+      {
+       "heading": "WASTE SEGREGATION INFRASTRUCTURE",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following bin/container infrastructure must be maintained at all Quality Rubbers locations:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Bin Color / Label",
+          "Waste Stream"
+         ],
+         "rows": [
+          [
+           "Blue — Paper & Cardboard",
+           "Paper waste"
+          ],
+          [
+           "Green — Organic",
+           "Biodegradable / food waste"
+          ],
+          [
+           "Yellow — Plastics",
+           "Plastic waste"
+          ],
+          [
+           "Grey — General Waste",
+           "Non-recyclable residual waste"
+          ],
+          [
+           "Red — Hazardous",
+           "Hazardous waste"
+          ],
+          [
+           "Orange — E-Waste",
+           "Electronic waste"
+          ],
+          [
+           "Black — Metals",
+           "Metal waste"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "Waste bins must be placed at all points of significant waste generation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste bins must be placed at all points of significant waste generation — each workstation, kitchen area, print station, reception, and production floor section."
+        }
+       ]
+      },
+      {
+       "heading": "All bins must be clearly and permanently labelled",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All bins must be clearly and permanently labelled with the waste category name, accepted items, and items NOT accepted. Visual symbols (icons) should supplement text labelling."
+        }
+       ]
+      },
+      {
+       "heading": "Employees are responsible for placing waste in the correct bin",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees are responsible for placing waste in the correct bin. If unsure, employees must consult the Waste Sorting Guide posted in each area or contact the Facilities team."
+        }
+       ],
+       "responsible": "Employees"
+      },
+      {
+       "heading": "Bins must not be allowed to overflow",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Bins must not be allowed to overflow. Facilities staff must empty bins at a frequency that prevents overflow — no less than once per working day for high-use areas."
+        }
+       ],
+       "responsible": "Facilities staff"
+      },
+      {
+       "heading": "Hazardous waste (red bins) must be collected by a licensed hazardous waste contractor",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous waste (red bins) must be collected by a licensed hazardous waste contractor and must not be mixed with general or recyclable waste under any circumstances."
+        }
+       ],
+       "responsible": "Licensed hazardous waste contractor"
+      },
+      {
+       "heading": "Contaminated recyclables must be placed in the general waste stream",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Contaminated recyclables (e.g. food-soiled paper) must be placed in the general waste stream, not the recycling stream."
+        }
+       ]
+      },
+      {
+       "heading": "Waste sorting compliance audits must be conducted quarterly",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste sorting compliance audits must be conducted quarterly by the Facilities Manager. Non-compliance must be reported and corrective action taken within 5 business days."
+        }
+       ],
+       "responsible": "Facilities Manager"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "NOTE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Incorrect waste sorting undermines recycling rates and may result in regulatory penalties. Persistent non-compliance by employees will be addressed through the company performance management process."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "WATER USE & CONSERVATION PRACTICES",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "Environmental Officer",
+   "sourceWords": 215,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure responsible use of water resources in rubber cleaning and upgrading operations, minimize wastage, and comply with environmental regulations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "WATER MANAGEMENT INFRASTRUCTURE",
+     "steps": [
+      {
+       "heading": "WATER MANAGEMENT INFRASTRUCTURE",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following infrastructure and practices are maintained at Quality Rubbers:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Resource / System",
+          "Requirement"
+         ],
+         "rows": [
+          [
+           "Drainage Systems",
+           "Must remain clear and functional, especially during monsoon season"
+          ],
+          [
+           "Water Fixtures",
+           "Low-flow taps and automatic shut-off valves installed in cleaning areas"
+          ],
+          [
+           "Storage Tanks",
+           "Maintained to prevent leakage and contamination"
+          ],
+          [
+           "Wastewater Treatment",
+           "All wastewater treated before discharge as per Pollution Control Board norms"
+          ],
+          [
+           "Rainwater Harvesting",
+           "Adoption is recommended where feasible, subject to site conditions and economic viability"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "Conduct annual water usage reviews",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Conduct annual water usage reviews to identify areas of high consumption."
+        }
+       ]
+      },
+      {
+       "heading": "Ensure cleaning processes use only the required quantity of water",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Ensure cleaning processes use only the required quantity of water, avoiding unnecessary wastage."
+        }
+       ]
+      },
+      {
+       "heading": "Maintain drainage systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintain drainage systems to prevent blockages and waterlogging during monsoon season."
+        }
+       ]
+      },
+      {
+       "heading": "Reuse water where feasible",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reuse water where feasible for non-critical cleaning activities."
+        }
+       ]
+      },
+      {
+       "heading": "Ensure wastewater is disposed of in compliance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Ensure wastewater is disposed of in compliance with local Pollution Control Board requirements."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "RESPONSIBILITIES",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Provide direction, allocate resources, and review water-related risks."
+       ]
+      },
+      {
+       "role": "Environmental Officer",
+       "responsibilities": [
+        "Implement and monitor water conservation practices, ensure compliance."
+       ]
+      },
+      {
+       "role": "Sustainability & Compliance Officer",
+       "responsibilities": [
+        "Conduct audits, maintain records, and recommend improvements."
+       ]
+      },
+      {
+       "role": "Operations Management",
+       "responsibilities": [
+        "Apply controls to minimize water use and maintain infrastructure."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Use water responsibly and report issues promptly."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "REVIEW",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Annual review of water conservation practices by the Environmental Officer. Updates made based on audit findings and regulatory changes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Efficiency Through Technology and Equipment Upgrades",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Engineering/Facilities",
+   "owner": "Engineering/Facilities team",
+   "sourceWords": 301,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To reduce the company's total energy consumption and operational costs by systematically replacing energy-intensive equipment and processes with more efficient alternatives."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "ENERGY AUDIT & BASELINE",
+     "steps": [
+      {
+       "heading": "Annual energy audit",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A comprehensive energy audit of all facilities must be conducted annually by a qualified energy auditor (internal or external)."
+        }
+       ]
+      },
+      {
+       "heading": "Identify significant energy-consuming assets",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The audit must identify all significant energy-consuming assets (SECAs) — typically assets consuming more than 5% of total facility energy."
+        }
+       ]
+      },
+      {
+       "heading": "Establish baseline energy consumption",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Baseline energy consumption data (kWh per unit of output and per employee) must be established and maintained in the Energy Register (QR-EN-01)."
+        }
+       ]
+      },
+      {
+       "heading": "Annual benchmarking against industry peers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Benchmarking against industry peers must be conducted annually to identify areas where the company's energy intensity is above sector average."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "EQUIPMENT UPGRADE PROCEDURE",
+     "steps": [
+      {
+       "heading": "Identify upgrade candidates",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identify upgrade candidates from the annual energy audit. Prioritize assets with high energy intensity, age above useful life, or below 4-star energy rating."
+        }
+       ]
+      },
+      {
+       "heading": "Prepare Technology Upgrade Proposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Engineering/Facilities team prepares a Technology Upgrade Proposal (Form QR-EN-02) for each candidate, including: current consumption data, proposed replacement specification, expected energy savings, capital cost, and payback period."
+        }
+       ],
+       "responsible": "Engineering/Facilities team"
+      },
+      {
+       "heading": "Approval of proposals",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Proposals with a payback period of 5 years or less are automatically approved for budget submission. Longer payback periods require MD sign-off with sustainability justification."
+        }
+       ],
+       "responsible": "MD"
+      },
+      {
+       "heading": "Procurement of approved upgrades",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved upgrades are scheduled and procured via the standard procurement process, with energy efficiency as a mandatory evaluation criterion (minimum weighted score: 25%)."
+        }
+       ]
+      },
+      {
+       "heading": "Post-installation measurement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Post-installation energy consumption is measured and compared to baseline for 6 months. Results are documented and shared with senior management."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PRIORITY TECHNOLOGY AREAS",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Lighting: LED lighting across the facility. Motion-sensor controls in low-occupancy areas (storerooms, corridors, restrooms).\nHVAC: Replace units below ISEER 3.5 with inverter-based systems. Install programmable thermostats with occupancy scheduling.\nCompressed Air Systems: Fix all air leaks identified in quarterly leak surveys. Upgrade to variable-speed drive (VSD) compressors.\nProduction Machinery: Procure only IE3 / IE4 rated electric motors for all new and replacement installations.\nIT Equipment: Enforce power management settings on all computers. Replace desktops with energy-efficient laptops where operationally feasible."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Reduction of Emissions from Transportation and Fleet",
+   "code": "",
+   "catalogId": "transport-emissions",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 206,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To reduce Scope 1 and Scope 3 GHG emissions associated with company-owned fleet operations, employee commuting, and logistics transportation."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "FLEET MANAGEMENT PROCEDURE",
+     "steps": [
+      {
+       "heading": "All company vehicles must be registered in the Fleet Management System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All company vehicles must be registered in the Fleet Management System (FMS) with fuel type, mileage, and emission factor recorded."
+        }
+       ]
+      },
+      {
+       "heading": "Route optimization software must be used for all scheduled deliveries and collections",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Route optimization software must be used for all scheduled deliveries and collections. Routes must be reviewed monthly to identify consolidation opportunities."
+        }
+       ]
+      },
+      {
+       "heading": "Driver behavior monitoring (telematics) must be active on all vehicles",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Driver behavior monitoring (telematics) must be active on all vehicles. Harsh braking, excessive idling (>3 minutes), and speeding events must be reviewed with drivers monthly."
+        }
+       ]
+      },
+      {
+       "heading": "Vehicle maintenance schedules must be strictly observed",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Vehicle maintenance schedules must be strictly observed. Out-of-service vehicles must not be used. Tyre pressures must be checked weekly — under-inflated tyres increase fuel consumption by up to 3%."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "EMPLOYEE COMMUTE & BUSINESS TRAVEL",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Car-sharing and carpooling scheme must be actively promoted. A dedicated car-sharing platform (app or noticeboard) must be maintained at each facility."
+      },
+      {
+       "type": "paragraph",
+       "text": "Video/teleconference must be the default for all internal meetings. Travel to in-person meetings requires manager approval if a VC option is available."
+      },
+      {
+       "type": "paragraph",
+       "text": "Rail must be the preferred mode for all domestic business travel under 500 km. Air travel for short-haul journeys must be justified in writing."
+      },
+      {
+       "type": "paragraph",
+       "text": "A public transport subsidy or electric vehicle charging allowance may be offered to employees as part of the Green Commute Incentive Program."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Awareness and Training",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 123,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To build company-wide awareness, knowledge, and behavioral change around energy conservation and climate action, making every employee an active participant in the company's GHG reduction goals."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "MANDATORY TRAINING REQUIREMENTS",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Training Module",
+        "Target Audience"
+       ],
+       "rows": [
+        [
+         "Energy Conservation Basics",
+         "All employees"
+        ],
+        [
+         "Climate Action & Net Zero Goals",
+         "All employees"
+        ],
+        [
+         "Energy Management for Facilities",
+         "Facilities & Engineering staff"
+        ],
+        [
+         "Fleet & Transport Emissions",
+         "Drivers, logistics staff"
+        ],
+        [
+         "Sustainability for Procurement",
+         "Procurement & Finance"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "AWARENESS CAMPAIGN PROGRAMME",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Monthly Green Tips to be distributed via email and posted on the intranet and physical notice boards.\nAnnual 'Energy Challenge' — inter-departmental competition to reduce energy consumption over a 4-week period.\nEarth Hour (last Saturday of March) and World Environment Day (5 June) to be marked with company-wide awareness activities.\nEnergy dashboards displaying real-time consumption data to be installed in common areas at facility."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "USE OF RENEWABLE ENERGY",
+   "code": "",
+   "catalogId": "renewable-energy",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 188,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To promote the consideration and gradual adoption of cleaner and more sustainable energy sources, where feasible, in order to reduce reliance on conventional grid electricity and support environmental sustainability objectives."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "ON-SITE RENEWABLE ENERGY GENERATION",
+     "steps": [
+      {
+       "heading": "The feasibility of on-site renewable energy solutions such as rooftop solar may be evaluated based on technical suitability, space availability, and economic viability.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The feasibility of on-site renewable energy solutions such as rooftop solar may be evaluated based on technical suitability, space availability, and economic viability."
+        }
+       ]
+      },
+      {
+       "heading": "Any installation of renewable energy systems shall be considered on a case-by-case basis depending on operational requirements and management approval.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any installation of renewable energy systems shall be considered on a case-by-case basis depending on operational requirements and management approval."
+        }
+       ]
+      },
+      {
+       "heading": "Where installed, energy generation shall be monitored through available metering systems and recorded for internal tracking purposes. All on-site generation must be metered separately and reported monthly as part of the Energy Register.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where installed, energy generation shall be monitored through available metering systems and recorded for internal tracking purposes. All on-site generation must be metered separately and reported monthly as part of the Energy Register."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "OFF-SITE RENEWABLE ENERGY",
+     "steps": [
+      {
+       "heading": "Where on-site renewable energy is not feasible or is insufficient, the organization may explore external renewable energy options, subject to business needs and feasibility.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where on-site renewable energy is not feasible or is insufficient, the organization may explore external renewable energy options, subject to business needs and feasibility."
+        }
+       ]
+      },
+      {
+       "heading": "Such options may include procurement of renewable energy from authorized suppliers or other available market-based mechanisms, where appropriate.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Such options may include procurement of renewable energy from authorized suppliers or other available market-based mechanisms, where appropriate."
+        }
+       ]
+      },
+      {
+       "heading": "Any procurement of renewable energy attributes shall be documented and retained for reference, where applicable.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any procurement of renewable energy attributes shall be documented and retained for reference, where applicable."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "CONTINUOUS IMPROVEMENT",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The organization may periodically review opportunities to improve energy efficiency and increase the use of cleaner energy sources as part of its continuous improvement approach."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Product Life Cycle and End-of-Life Environmental Management",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 357,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that Quality Rubbers manages environmental aspects associated with the life cycle stages of its operations, including sourcing, processing, handling, storage, dispatch, and end-of-life management, through responsible and efficient operational practices."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PRODUCT LIFE CYCLE ENVIRONMENTAL ASSESSMENT",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "An internal environmental impact review shall be performed across all key stages of operations.\nThe lifecycle stages shall include raw material procurement, transportation, cleaning, processing, grading, storage, and dispatch activities.\nEnvironmental aspects including resource consumption, energy usage, material loss, and waste generation shall be monitored at each stage.\nFindings from the review shall be used to identify opportunities for environmental improvement and process optimization."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "ENVIRONMENTALLY RESPONSIBLE PROCESSING AND HANDLING",
+     "steps": [
+      {
+       "heading": "Raw materials must be sourced only from approved farmers or verified collection centers with proper traceability.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Raw materials must be sourced only from approved farmers or verified collection centers with proper traceability."
+        }
+       ]
+      },
+      {
+       "heading": "Processing activities must be carried out in a manner that minimizes water and energy consumption.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Processing activities must be carried out in a manner that minimizes water and energy consumption."
+        }
+       ]
+      },
+      {
+       "heading": "Non-usable impurities must be segregated during processing and managed as per applicable waste handling procedures.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Non-usable impurities must be segregated during processing and managed as per applicable waste handling procedures."
+        }
+       ]
+      },
+      {
+       "heading": "Processing waste and rejects must be handled through reuse, recycling, or environmentally safe disposal methods wherever applicable.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Processing waste and rejects must be handled through reuse, recycling, or environmentally safe disposal methods wherever applicable."
+        }
+       ]
+      },
+      {
+       "heading": "No hazardous or environmentally harmful chemicals must be used at any stage of processing.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "No hazardous or environmentally harmful chemicals must be used at any stage of processing."
+        }
+       ]
+      },
+      {
+       "heading": "Proper storage conditions must be maintained to prevent contamination or deterioration of materials.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Proper storage conditions must be maintained to prevent contamination or deterioration of materials."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "END-OF-LIFE AND WASTE MANAGEMENT APPROACH",
+     "steps": [
+      {
+       "heading": "All processing waste, rejects, and non-conforming materials must be segregated at source.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All processing waste, rejects, and non-conforming materials must be segregated at source."
+        }
+       ]
+      },
+      {
+       "heading": "Waste materials must be directed towards reuse, recycling, or authorized disposal channels wherever feasible.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste materials must be directed towards reuse, recycling, or authorized disposal channels wherever feasible."
+        }
+       ]
+      },
+      {
+       "heading": "Disposal of non-recyclable materials must be carried out in compliance with applicable environmental regulations.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Disposal of non-recyclable materials must be carried out in compliance with applicable environmental regulations."
+        }
+       ]
+      },
+      {
+       "heading": "Opportunities for material recovery and circular utilization of waste must be identified and implemented wherever technically feasible.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Opportunities for material recovery and circular utilization of waste must be identified and implemented wherever technically feasible."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "SUPPLIER AND MATERIAL SOURCING REQUIREMENTS",
+     "steps": [
+      {
+       "heading": "Raw materials must be procured only from approved and verified sources.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Raw materials must be procured only from approved and verified sources."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier environmental screening must be conducted as per Supplier Assessment Procedure (SOP 6.1).",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Supplier environmental screening must be conducted as per Supplier Assessment Procedure (SOP 6.1)."
+        }
+       ]
+      },
+      {
+       "heading": "Preference must be given to suppliers following responsible sourcing and handling practices.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Preference must be given to suppliers following responsible sourcing and handling practices."
+        }
+       ]
+      },
+      {
+       "heading": "Traceability of all incoming material batches must be maintained at all times.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Traceability of all incoming material batches must be maintained at all times."
+        }
+       ]
+      },
+      {
+       "heading": "Annual review of sourcing practices must be conducted to identify environmental improvement opportunities.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Annual review of sourcing practices must be conducted to identify environmental improvement opportunities."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "CUSTOMER SUPPORT AND ENVIRONMENTAL COMMUNICATION",
+     "steps": [
+      {
+       "heading": "Customers must be provided with relevant information regarding sourcing, processing, and handling practices upon request.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customers must be provided with relevant information regarding sourcing, processing, and handling practices upon request."
+        }
+       ]
+      },
+      {
+       "heading": "Transparency regarding material origin and processing methods must be maintained where applicable.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Transparency regarding material origin and processing methods must be maintained where applicable."
+        }
+       ]
+      },
+      {
+       "heading": "Awareness of responsible material use and environmental handling practices must be promoted within the supply chain.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Awareness of responsible material use and environmental handling practices must be promoted within the supply chain."
+        }
+       ]
+      },
+      {
+       "heading": "Customer feedback must be recorded and used for continuous improvement.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customer feedback must be recorded and used for continuous improvement."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Customer Communication on Environmental and Social Impacts",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 259,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that customers are provided with clear and accurate information regarding environmental and social aspects of operations, enabling responsible decision-making and use."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "ENVIRONMENTAL AND SOCIAL INFORMATION DISCLOSURE",
+     "steps": [
+      {
+       "heading": "Relevant information regarding sourcing, processing, and handling practices shall be provided to customers upon request.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Relevant information regarding sourcing, processing, and handling practices shall be provided to customers upon request."
+        }
+       ]
+      },
+      {
+       "heading": "Information shared with customers must be accurate, clear, and based on actual operational practices.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Information shared with customers must be accurate, clear, and based on actual operational practices."
+        }
+       ]
+      },
+      {
+       "heading": "Any environmental or social claims made in communication materials shall be specific, factual, and capable of being supported with internal records where applicable.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any environmental or social claims made in communication materials shall be specific, factual, and capable of being supported with internal records where applicable."
+        }
+       ]
+      },
+      {
+       "heading": "Misleading or vague claims such as “eco-friendly” or “green” without supporting context shall be avoided.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Misleading or vague claims such as “eco-friendly” or “green” without supporting context shall be avoided."
+        }
+       ]
+      },
+      {
+       "heading": "All external communication related to environmental and social aspects shall be reviewed internally prior to sharing, where applicable.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All external communication related to environmental and social aspects shall be reviewed internally prior to sharing, where applicable."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PRODUCT HANDLING AND END-OF-LIFE INFORMATION",
+     "steps": [
+      {
+       "heading": "Customers shall be provided with general guidance on proper handling, storage, and usage of materials, where applicable.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customers shall be provided with general guidance on proper handling, storage, and usage of materials, where applicable."
+        }
+       ]
+      },
+      {
+       "heading": "Information on disposal or recycling of waste materials shall be shared upon request, in line with applicable regulations and practical feasibility.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Information on disposal or recycling of waste materials shall be shared upon request, in line with applicable regulations and practical feasibility."
+        }
+       ]
+      },
+      {
+       "heading": "Where relevant, customers shall be encouraged to follow responsible disposal and recycling practices.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where relevant, customers shall be encouraged to follow responsible disposal and recycling practices."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "RESPONSIBLE COMMUNICATION PRACTICES",
+     "steps": [
+      {
+       "heading": "Environmental and social information shared with customers must reflect actual practices and capabilities.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Environmental and social information shared with customers must reflect actual practices and capabilities."
+        }
+       ]
+      },
+      {
+       "heading": "No unsupported, exaggerated, or misleading claims shall be made in any form of communication.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "No unsupported, exaggerated, or misleading claims shall be made in any form of communication."
+        }
+       ]
+      },
+      {
+       "heading": "Any identified incorrect or unclear communication shall be reviewed and corrected in a timely manner.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any identified incorrect or unclear communication shall be reviewed and corrected in a timely manner."
+        }
+       ]
+      },
+      {
+       "heading": "Personnel involved in customer communication shall be made aware of responsible communication practices.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Personnel involved in customer communication shall be made aware of responsible communication practices."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Note",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Greenwashing, i.e., making misleading or unsubstantiated environmental claims, may result in reputational, legal, and regulatory risks and shall be avoided.\nAll environmental claims shall be accurate, clear, and supported by available information.\nEnvironmental claims should be reviewed internally prior to external communication, where applicable."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Regular Assessment of Individual Employee Performance",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 265,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured, fair, and consistent process for evaluating employee performance that supports individual development, organizational alignment, and recognition of top contributors."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "PERFORMANCE REVIEW CYCLE",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Review Type",
+        "Timing"
+       ],
+       "rows": [
+        [
+         "Probation Review",
+         "End of 3-month probation period"
+        ],
+        [
+         "Mid-Year Check-In",
+         "June / July each year"
+        ],
+        [
+         "Annual Performance Appraisal",
+         "November – December each year"
+        ],
+        [
+         "Project / Milestone Review",
+         "Upon completion of major projects"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "ASSESSMENT FRAMEWORK",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Each annual appraisal must evaluate the employee against the following dimensions, with a rating of 1 (Below Expectations) to 5 (Exceptional):"
+      },
+      {
+       "type": "bullets",
+       "text": "Goal Achievement — assessment against goals set at the previous appraisal or onboarding.\nTechnical Competency — proficiency in the skills, knowledge, and tools required for the role.\nBehavioral Competencies — alignment with Quality Rubbers values (Integrity, Innovation, Sustainability, Collaboration, Customer Focus).\nSustainability Contribution — specific contribution to the company's sustainability, safety, or ethical objectives.\nProfessional Development — progress against personal development goals and training completed."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "By end of October, HR distributes the Annual Appraisal Form and instructions to all line managers.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "By end of October, HR distributes the Annual Appraisal Form and instructions to all line managers."
+        }
+       ],
+       "responsible": "HR"
+      },
+      {
+       "heading": "Employee completes a self-assessment section of the form and submits to their line manager by 10 November.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee completes a self-assessment section of the form and submits to their line manager by 10 November."
+        }
+       ],
+       "responsible": "Employee"
+      },
+      {
+       "heading": "Line Manager completes their assessment section, reviews the self-assessment, and schedules a 1:1 appraisal meeting within 5 business days.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Line Manager completes their assessment section, reviews the self-assessment, and schedules a 1:1 appraisal meeting within 5 business days."
+        }
+       ],
+       "responsible": "Line Manager"
+      },
+      {
+       "heading": "Appraisal meeting is conducted: goals reviewed, ratings discussed, development plan agreed, and new goals set for the coming year.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Appraisal meeting is conducted: goals reviewed, ratings discussed, development plan agreed, and new goals set for the coming year."
+        }
+       ]
+      },
+      {
+       "heading": "Completed form is countersigned by both employee and line manager and submitted to HR by 15 December.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Completed form is countersigned by both employee and line manager and submitted to HR by 15 December."
+        }
+       ]
+      },
+      {
+       "heading": "HR reviews all appraisals for consistency, flags any concerns to senior management, and consolidates data for the annual talent review.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "HR reviews all appraisals for consistency, flags any concerns to senior management, and consolidates data for the annual talent review."
+        }
+       ],
+       "responsible": "HR"
+      },
+      {
+       "heading": "Employees rated 1 (Below Expectations) must be placed on a structured Performance Improvement Plan (PIP) within 10 business days of appraisal completion.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees rated 1 (Below Expectations) must be placed on a structured Performance Improvement Plan (PIP) within 10 business days of appraisal completion."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Health and Safety Risk Assessment",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Health & Safety Officer (HSO)",
+   "sourceWords": 262,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To systematically identify, evaluate, and control hazards that could cause harm to employees, contractors, visitors, or other affected parties at Quality Rubbers facilities and across its supply chain operations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "RISK ASSESSMENT FRAMEWORK",
+     "steps": [
+      {
+       "heading": "RISK ASSESSMENT FRAMEWORK",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All risk assessments must address all three of the following elements:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hazard Identification: A systematic description of all hazards and risk factors present in the workplace or operational context with the potential to cause harm. Hazards must be categorized as: Physical, Chemical, Biological, Ergonomic, Psychosocial, Environmental, Supply Chain/ESG, Information Security, or Governance/Compliance.\nPeriodic Review of Risks: The risk register must be formally reviewed at least annually, and immediately following any workplace incident, near-miss, significant process change, or new regulatory requirement.\nPreventive and Corrective Action Plan: A documented set of control measures (eliminate, substitute, engineer, administrate, PPE — in order of hierarchy) and remediation steps for each identified risk."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "RISK ASSESSMENT PROCEDURE",
+     "steps": [
+      {
+       "heading": "Health & Safety Officer (HSO) schedules annual risk assessment for each facility area and work function.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Health & Safety Officer (HSO) schedules annual risk assessment for each facility area and work function."
+        }
+       ],
+       "responsible": "Health & Safety Officer (HSO)"
+      },
+      {
+       "heading": "Assessment team (HSO + department representative + employee representative) conducts physical walkthrough and hazard identification.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assessment team (HSO + department representative + employee representative) conducts physical walkthrough and hazard identification."
+        }
+       ],
+       "responsible": "Assessment team (HSO + department representative + employee representative)"
+      },
+      {
+       "heading": "Each hazard is assessed for Probability of Occurrence (1–5) × Impact Level (1–5) = Risk Rating (1–25). Risk ratings are categorized as: Low (1–8), Medium (9–16), High (17–25).",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Each hazard is assessed for Probability of Occurrence (1–5) × Impact Level (1–5) = Risk Rating (1–25). Risk ratings are categorized as: Low (1–8), Medium (9–16), High (17–25)."
+        }
+       ]
+      },
+      {
+       "heading": "All hazards with a Risk Rating of 17 or above require immediate escalation to senior management and a documented action plan within 5 business days.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All hazards with a Risk Rating of 17 or above require immediate escalation to senior management and a documented action plan within 5 business days."
+        }
+       ]
+      },
+      {
+       "heading": "Control measures are assigned to responsible individuals with deadlines. Progress is tracked in the Risk Register (DOC-QR-RA series) and reviewed monthly by the HSO.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Control measures are assigned to responsible individuals with deadlines. Progress is tracked in the Risk Register (DOC-QR-RA series) and reviewed monthly by the HSO."
+        }
+       ],
+       "responsible": "Health & Safety Officer (HSO)"
+      },
+      {
+       "heading": "Completed risk assessments must be signed by the HSO, Department Head, and a worker representative, and retained for a minimum of 5 years.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Completed risk assessments must be signed by the HSO, Department Head, and a worker representative, and retained for a minimum of 5 years."
+        }
+       ],
+       "responsible": "Health & Safety Officer (HSO), Department Head, worker representative"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "EMPLOYEE WELL-BEING AND SUPPORT",
+   "code": "",
+   "catalogId": "employee-wellbeing",
+   "pillar": "S",
+   "department": "HR Department",
+   "owner": "HR Department",
+   "sourceWords": 165,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To promote a safe, fair, and supportive workplace that enhances employee health, morale, and productivity."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "WORKPLACE WELL-BEING SYSTEMS",
+     "steps": [
+      {
+       "heading": "WORKPLACE WELL-BEING SYSTEMS",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following facilities and practices are provided at Quality Rubbers:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Resource / System",
+          "What is Provided"
+         ],
+         "rows": [
+          [
+           "Drinking Water",
+           "Purified, filtered drinking water stations maintained daily"
+          ],
+          [
+           "Canteen Facilities",
+           "Hygienic canteen serving fresh meals and snacks, inspected regularly"
+          ],
+          [
+           "Rest Areas",
+           "Shaded and ventilated rest spaces near processing halls"
+          ],
+          [
+           "Medical Support",
+           "First aid kits at key locations and annual health check-ups"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "PROCEDURE",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Provide clean drinking water and hygienic canteen services.\nConduct annual medical check-ups and awareness sessions.\nOffer counselling and stress management workshops.\nMaintain grievance mechanism with timely resolution.\nConduct employee satisfaction surveys and implement corrective actions."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "RESPONSIBILITIES",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Annual review of employee well-being programs by HR and Safety Committee. Updates made based on survey results and feedback."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Role",
+        "Responsibilities"
+       ],
+       "rows": [
+        [
+         "Senior Management",
+         "Provide direction and resources for well‑being programs."
+        ],
+        [
+         "HR Department",
+         "Implement programs and grievance mechanisms."
+        ],
+        [
+         "Operations Management",
+         "Ensure safe and supportive working conditions."
+        ],
+        [
+         "Employee Representatives",
+         "Promote awareness and communicate feedback."
+        ],
+        [
+         "Employees",
+         "Participate in programs and report concerns responsibly."
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "SECURITY CONDUCT AND USE-OF-FORCE PREVENTION",
+   "code": "",
+   "catalogId": "security-conduct",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 187,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish clear standards for security personnel conduct, ensuring safety of employees and visitors while preventing misuse of authority or excessive force."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "SECURITY SYSTEMS",
+     "steps": [
+      {
+       "heading": "SECURITY SYSTEMS",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following systems and practices are provided at Quality Rubbers:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Resource / System",
+          "What is Provided"
+         ],
+         "rows": [
+          [
+           "Security Training",
+           "Annual training on conflict resolution, de-escalation, and respectful conduct"
+          ],
+          [
+           "Incident Register",
+           "Documentation of all incidents within 24 hours"
+          ],
+          [
+           "Access Control",
+           "Professional and respectful handling of employee and visitor entry"
+          ],
+          [
+           "Oversight",
+           "Quarterly audits of security conduct by HR and Compliance"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "PROCEDURE",
+     "steps": [
+      {
+       "heading": "PROCEDURE",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Treat all employees, farmers, and visitors with respect and professionalism.\nUse of force permitted only in self-defense or to prevent immediate harm.\nRecord all incidents involving force in the Security Incident Register.\nConduct annual training on conflict resolution and communication.\nEnsure employees’ movement is not restricted except during emergencies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "RESPONSIBILITIES",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Provide oversight of security practices."
+       ]
+      },
+      {
+       "role": "Security Manager",
+       "responsibilities": [
+        "Implement training and maintain incident records."
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Investigate grievances and ensure compliance."
+       ]
+      },
+      {
+       "role": "Operations Management",
+       "responsibilities": [
+        "Support safe access and coordinate with security staff."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Cooperate with security protocols and report concerns."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "REVIEW",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Annual review of security conduct by HR and Senior Management. Corrective actions taken based on audit findings and incident reports."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Health and Safety Emergency Action Plan",
+   "code": "",
+   "catalogId": "emergency-equipment",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 199,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure all employees, contractors, and visitors at Quality Rubbers facilities are protected in the event of an emergency through clearly defined, well-practiced emergency procedures."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Covered Emergency Scenarios",
+     "steps": [
+      {
+       "heading": "Covered Emergency Scenarios",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Emergency Type",
+          "Primary Response Lead"
+         ],
+         "rows": [
+          [
+           "Fire / Explosion",
+           "Fire Warden (by zone)"
+          ],
+          [
+           "Medical Emergency / Injury",
+           "First Aider"
+          ],
+          [
+           "Chemical Spill / Hazardous Material",
+           "Safety Officer + trained spill response team"
+          ],
+          [
+           "Structural Incident / Collapse",
+           "Safety Officer + Facilities Manager"
+          ],
+          [
+           "Natural Disaster (flood, earthquake)",
+           "Safety Officer + Senior Management"
+          ],
+          [
+           "Power Failure",
+           "Facilities Manager"
+          ],
+          [
+           "Vehicle Accident",
+           "Incident Controller + Security Personnel"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Equipment Requirements",
+     "steps": [
+      {
+       "heading": "First aid kits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Minimum one per floor. Inspected monthly, records retained for 3 years."
+        }
+       ]
+      },
+      {
+       "heading": "Fire extinguishers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Installed per fire safety code. Monthly visual inspection by Facilities staff, annual professional servicing mandatory."
+        }
+       ],
+       "responsible": "Facilities staff"
+      },
+      {
+       "heading": "Emergency eyewash stations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Required in all chemical handling areas. Flushed weekly, inspected monthly."
+        }
+       ]
+      },
+      {
+       "heading": "Chemical spill kits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Present in all chemical storage and handling areas. Restocked after each use."
+        }
+       ]
+      },
+      {
+       "heading": "AEDs (if available)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Minimum one per facility. Location signposted, battery/pad expiry checked quarterly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Drill Schedule",
+     "steps": [
+      {
+       "heading": "Fire evacuation drill",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Twice per year per facility (varying times)."
+        }
+       ]
+      },
+      {
+       "heading": "First aid scenario exercise",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Once per year."
+        }
+       ]
+      },
+      {
+       "heading": "Chemical spill response drill",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Once per year for all staff in applicable areas."
+        }
+       ]
+      },
+      {
+       "heading": "Flood / monsoon preparedness briefing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Annually before monsoon season."
+        }
+       ]
+      },
+      {
+       "heading": "Drill conduct and corrective action",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All drills must be timed, observed, documented, and shortcomings corrected within 30 days."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Actions to Promote Equal Opportunity for All Employees",
+   "code": "",
+   "catalogId": "equal-opportunity",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 278,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To foster a diverse, equitable, and inclusive (DEI) workplace at Quality Rubbers where every employee has an equal opportunity to contribute, grow, and succeed, free from discrimination of any kind."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "ANTI-DISCRIMINATION",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Quality Rubbers strictly prohibits discrimination, harassment, or unfair treatment on the basis of: gender, gender identity, age, race, ethnicity, caste, religion, disability, sexual orientation, marital status, pregnancy, national origin, or any other characteristic protected by applicable law. This applies to recruitment, promotion, training, compensation, and all other employment decisions."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "INCLUSIVE PROGRAMMES & INITIATIVES",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Employee Resource Groups (ERGs): Quality Rubbers supports formally recognized ERGs (e.g., Women in Manufacturing, Young Professionals Network, Differently-Abled Allies). ERGs must have a senior sponsor and access to a modest annual budget.\nMentoring Programme: A structured mentoring scheme pairing senior and junior employees across different functions and backgrounds. Participation is voluntary but actively encouraged. Minimum 6-month pairing duration.\nLeadership Pipeline: At least 30% of internal promotion candidates at managerial level and above must be from underrepresented groups (defined annually by the DEI Committee).\nAccessibility: All facilities to be assessed for accessibility compliance annually. Reasonable adjustments must be made for employees with disabilities within 30 days of request.\nInclusive Recruitment: All job postings must use inclusive language (reviewed by HR). Interview panels must include at least one gender-diverse member. Structured interview scoring matrices must be used."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "REPORTING & ACCOUNTABILITY",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Annual DEI Report (internal) to be prepared by HR and submitted to the Board, covering: workforce diversity data, pay equity analysis, inclusion survey results, and progress against DEI targets.\nAll employees must complete annual unconscious bias and inclusion training.\nA confidential grievance mechanism (hotline or online portal) must be available for reporting discrimination or harassment. All reports must be investigated within 15 business days."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Supplier Evaluation and Approval",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Procurement Management",
+   "owner": "Procurement team",
+   "sourceWords": 354,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that all suppliers providing goods and services to Quality Rubbers are assessed against defined sustainability criteria, and that supply chain risks related to environmental harm, labor violations, and governance failures are identified and managed."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Supplier Segmentation",
+     "steps": [
+      {
+       "heading": "Supplier Segmentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Not all suppliers carry the same level of sustainability risk. Suppliers must be segmented annually as follows to ensure proportionate assessment:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Tier",
+          "Criteria"
+         ],
+         "rows": [
+          [
+           "Tier 1 — High Risk",
+           "High spend, direct material suppliers, suppliers in sensitive geographies or industries"
+          ],
+          [
+           "Tier 2 — Medium Risk",
+           "Indirect material suppliers, services suppliers, moderate spend"
+          ],
+          [
+           "Tier 3 — Low Risk",
+           "Low-value, low-risk suppliers (e.g. stationery, hospitality)"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sustainability Assessment Criteria",
+     "steps": [
+      {
+       "heading": "Sustainability Assessment Criteria",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Supplier Sustainability Assessment (Form QR-PR-01) must cover the following domains:"
+        },
+        {
+         "type": "bullets",
+         "text": "Environmental Management: Does the supplier have an environmental policy? Do they track and report energy, water, and waste data? Do they hold ISO 14001 or equivalent?\nLabor Standards: Are wages at or above legal minimum? Are working hours compliant with local law? Is there a zero-tolerance policy for child and forced labor? Are there safe working conditions?\nHealth & Safety: Does the supplier have an H&S management system? What is their recordable incident rate?\nBusiness Ethics & Governance: Does the supplier have an anti-bribery policy? Is there a grievance mechanism for workers? Have there been any regulatory violations in the past 3 years?\nProduct Sustainability: Does the supplier use certified or sustainable materials? Do they have a product take-back or circular economy program?"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Assessment Procedure",
+     "steps": [
+      {
+       "heading": "Identify and segment active suppliers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Procurement team identifies all active suppliers and segments them by risk tier annually (by 31 January each year)."
+        }
+       ],
+       "responsible": "Procurement team"
+      },
+      {
+       "heading": "Issue assessment forms",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assessment forms are issued to suppliers by 28 February. Suppliers have 30 days to complete and return."
+        }
+       ]
+      },
+      {
+       "heading": "Review assessments and assign scores",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Procurement team reviews completed assessments and assigns a Sustainability Score (0–100) to each supplier."
+        }
+       ],
+       "responsible": "Procurement team"
+      },
+      {
+       "heading": "Categorise scores",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Scores are categorized: Preferred (80–100), Acceptable (60–79), Requires Improvement (40–59), At Risk (<40)."
+        }
+       ]
+      },
+      {
+       "heading": "Manage at-risk suppliers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Suppliers scoring 'At Risk' must be placed on a formal Supplier Improvement Plan with a 6-month review. Failure to improve results in removal from the approved supplier list."
+        }
+       ]
+      },
+      {
+       "heading": "Schedule on-site audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "On-site audits (for Tier 1 suppliers) must be scheduled and conducted with at least 48 hours notice (unannounced for high-risk cases)."
+        }
+       ]
+      },
+      {
+       "heading": "Store and share results",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assessment results must be stored in the Supplier Register and shared with the Sustainability Committee quarterly."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Purchasing Controls and Requirements",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "",
+   "sourceWords": 235,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To embed sustainability criteria into the day-to-day purchasing decisions of Quality Rubbers buyers, ensuring that environmental and social considerations are systematically weighed alongside price, quality, and delivery in all procurement activities."
+      },
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all procurement activities, with specific mandatory requirements for the following high-impact product and service categories:"
+      },
+      {
+       "type": "bullets",
+       "text": "Office supplies and stationery\nPaper and printing materials\nIT equipment and data hosting services\nOffice furniture and fittings\nPackaging materials\nCleaning products and facility management services\nLogistics and transportation services"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Mandatory Sustainability Evaluation",
+     "steps": [
+      {
+       "heading": "For all purchases above INR 50,000, a Sustainable Procurement Checklist (Form QR-PR-02) must be completed by the buyer and attached to the purchase order.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For all purchases above INR 50,000, a Sustainable Procurement Checklist (Form QR-PR-02) must be completed by the buyer and attached to the purchase order."
+        }
+       ],
+       "responsible": "Buyer"
+      },
+      {
+       "heading": "The checklist must evaluate: eco-certifications, recycled content, energy efficiency rating, supplier sustainability score, packaging minimization, and end-of-life recyclability.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The checklist must evaluate: eco-certifications, recycled content, energy efficiency rating, supplier sustainability score, packaging minimization, and end-of-life recyclability."
+        }
+       ]
+      },
+      {
+       "heading": "Sustainability criteria must carry a minimum weighting of 20% in any formal supplier evaluation or tender scoring exercise.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Sustainability criteria must carry a minimum weighting of 20% in any formal supplier evaluation or tender scoring exercise."
+        }
+       ]
+      },
+      {
+       "heading": "For IT and data hosting services: energy efficiency (PUE rating for data centres) and renewable energy use by the provider must be evaluated.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For IT and data hosting services: energy efficiency (PUE rating for data centres) and renewable energy use by the provider must be evaluated."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Preferred Purchasing Standards",
+     "steps": [
+      {
+       "heading": "Preferred Purchasing Standards",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Product Category",
+          "Preferred Standard Certifications"
+         ],
+         "rows": [
+          [
+           "Office Paper",
+           "FSC or PEFC certified; minimum 30% recycled content"
+          ],
+          [
+           "Stationery",
+           "Recycled content; refillable options preferred; no single-use plastics"
+          ],
+          [
+           "IT Equipment",
+           "EPEAT registered; ENERGY STAR rated; RoHS compliant"
+          ],
+          [
+           "Data Hosting",
+           "Provider uses renewable energy; PUE rating below 1.5"
+          ],
+          [
+           "Office Furniture",
+           "FSC certified wood; GREENGUARD certified; minimum 30% recycled materials"
+          ],
+          [
+           "Cleaning Products",
+           "Biodegradable formulations; certified by recognized eco-label"
+          ],
+          [
+           "Packaging Materials",
+           "100% recyclable or compostable; minimum 30% recycled content"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Supplier Selection and Sourcing Practices",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "",
+   "sourceWords": 242,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "PURPOSE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that Quality Rubbers's supplier selection and procurement processes are free from discrimination and provide equal opportunity to all eligible suppliers regardless of size, geography, ownership, or background."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PRINCIPLES OF INCLUSIVE SOURCING",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Non-discrimination: Supplier selection must be based solely on objective performance criteria (quality, price, delivery, sustainability). No supplier may be excluded or disadvantaged on the basis of ownership demographics, size, geographic location, or association with any protected group.\nEqual access: All procurement opportunities above INR 100,000 must be advertised through at least two channels (e.g., company website, industry portal, direct outreach) to ensure broad market access.\nLocal sourcing preference: Where two or more suppliers are otherwise equivalent in quality and price, the supplier providing greater local economic benefit (employment, local materials, community investment) will be preferred. This preference shall not override significant quality or compliance differentials.\nSME and diverse supplier development: Quality Rubbers will set an annual target for the percentage of procurement spend with SMEs and diverse-owned businesses (women-owned, minority-owned, disability-owned)."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "PROCESS SAFEGUARDS",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All tender evaluation panels must include at least 3 members from different functions. No single individual may make a final supplier selection decision above INR 500,000.\nConflict of interest declarations must be completed by all panel members before each evaluation.\nUnsuccessful suppliers have the right to request a written debrief on the reasons for their non-selection. Debriefs must be provided within 10 business days of request.\nProcurement team must complete annual training on inclusive sourcing practices and unconscious bias in supplier evaluation."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

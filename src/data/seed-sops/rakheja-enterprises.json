@@ -1,0 +1,3003 @@
+{
+ "id": "rakheja-enterprises",
+ "company": "Rakheja Enterprises LLP",
+ "industry": "Garment manufacturing and export",
+ "industryTags": [
+  "manufacturing",
+  "textiles"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Rakheja Enterprises/SOP_Rakheja Enterprises LLP.docx",
+ "frontMatter": {
+  "introduction": "At Rakheja Enterprises LLP, we are committed to responsible manufacturing built on safety, quality, integrity, and sustainability. As a garment manufacturing and export organization, our operations are guided by a strong focus on protecting people, conserving resources, maintaining ethical business practices, and safeguarding information.\n\nThis Standard Operating Procedure (SOP) Manual serves as the unified operational framework for Rakheja Enterprises LLP. It defines consistent practices across health and safety, environmental management, energy and water stewardship, governance, and information security. Through this integrated approach, we ensure that our day-to-day operations meet applicable legal requirements, buyer expectations, and recognized ESG standards.\n\nThis manual reflects our belief that disciplined processes, shared responsibility, and continuous improvement are essential to building resilient operations, delivering responsible products, and sustaining long-term value for our employees, customers, partners, and communities.",
+  "objective": "This SOP Manual has been developed to:\nEstablish standardized, consistent, and efficient operating procedures across all manufacturing, quality, compliance, and support functions.\nEnsure compliance with applicable labor laws, health and safety regulations, environmental requirements, buyer codes of conduct, and export standards.\nImprove productivity and operational efficiency while minimizing risks related to occupational health, safety, environmental impact, and product quality.\nPromote responsible use of energy, water, materials, and other resources across all operations.\nFoster a workplace culture founded on integrity, accountability, ethical conduct, and continuous improvement.\nEnable employees and contract workers to perform their duties confidently, safely, and in alignment with company standards and customer expectations.",
+  "scope": "This SOP Manual applies to all our manufacturing facilities and encompasses all employees, stakeholders, partners, contractors, customers, suppliers, and any other individuals or entities acting on behalf of Rakheja Enterprises LLP.\n\nThis SOP encompasses processes and procedures across health and safety management, emergency preparedness, equipment safety, contractor and non-employee safety, employee support initiatives, energy and climate management, water stewardship, environmental resource efficiency, and other related operational and compliance areas.",
+  "reviewMechanism": ""
+ },
+ "sops": [
+  {
+   "title": "Emergency Preparedness and Health & Safety Response Plan",
+   "code": "",
+   "catalogId": "emergency-equipment",
+   "pillar": "S",
+   "department": "Occupational Health and Safety",
+   "owner": "Safety Officer / Compliance Officer",
+   "sourceWords": 400,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured Emergency Action Plan (EAP) and define procedures for the provision, maintenance, and use of emergency equipment in order to protect employees, contract workers, visitors, and property during emergency situations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing units, offices, warehouses, and common areas of Rakheja Enterprises LLP and covers all employees, contract workers, visitors, and other persons present on company premises."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Approves the Emergency Action Plan",
+        "Ensures availability of adequate emergency equipment"
+       ]
+      },
+      {
+       "role": "Safety Officer / Compliance Officer",
+       "responsibilities": [
+        "Develops and updates the Emergency Action Plan",
+        "Conducts emergency drills and training",
+        "Ensures inspection and maintenance of emergency equipment"
+       ]
+      },
+      {
+       "role": "Department Heads / Supervisors",
+       "responsibilities": [
+        "Ensure employees are aware of emergency procedures",
+        "Support evacuation and headcount during emergencies"
+       ]
+      },
+      {
+       "role": "Employees & Contract Workers",
+       "responsibilities": [
+        "Follow emergency instructions",
+        "Use emergency equipment only if trained",
+        "Report hazards or equipment damage immediately"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Emergency Equipment Provision",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following emergency equipment shall be provided and maintained, as applicable:"
+      },
+      {
+       "type": "paragraph",
+       "text": "All emergency exits must remain clearly marked, illuminated, and unobstructed at all times."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Response Procedure",
+     "steps": [
+      {
+       "heading": "Identify and report the emergency immediately.",
+       "body": []
+      },
+      {
+       "heading": "Activate the alarm or alert system, if applicable.",
+       "body": []
+      },
+      {
+       "heading": "Follow evacuation routes and proceed to the designated assembly point.",
+       "body": []
+      },
+      {
+       "heading": "Do not use lifts during evacuation.",
+       "body": []
+      },
+      {
+       "heading": "Supervisors conduct headcount at the assembly point.",
+       "body": [],
+       "responsible": "Supervisors"
+      },
+      {
+       "heading": "Provide first aid where trained personnel are available.",
+       "body": []
+      },
+      {
+       "heading": "Resume work only after official clearance from authorized personnel.",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained to demonstrate preparedness and effective management of emergency situations:"
+      },
+      {
+       "type": "paragraph",
+       "text": "All records shall be maintained systematically and retained in accordance with the company’s document control and retention procedures."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Safety Procedures for Contract and Non-Employee Personnel",
+   "code": "",
+   "catalogId": "contractor-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 245,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure the health and safety of non-employee workers, including contractors, temporary workers, service providers, and visitors, while they are present on company premises."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all non-employee personnel working or visiting Rakheja Enterprises LLP premises for operational, maintenance, service, or support activities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensures implementation of contractor safety controls"
+       ]
+      },
+      {
+       "role": "Safety Officer / HR",
+       "responsibilities": [
+        "Conducts safety induction and awareness programs",
+        "Maintains contractor safety records"
+       ]
+      },
+      {
+       "role": "Department Heads / Supervisors",
+       "responsibilities": [
+        "Supervise contract workers during activities",
+        "Ensure compliance with safety rules"
+       ]
+      },
+      {
+       "role": "Contractors / Non-Employee Workers",
+       "responsibilities": [
+        "Follow company safety procedures",
+        "Use required PPE and comply with instructions"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Onboarding & Safety Induction",
+     "steps": [
+      {
+       "heading": "Onboarding & Safety Induction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All contract workers must undergo mandatory safety induction before starting work."
+        },
+        {
+         "type": "paragraph",
+         "text": "Induction shall cover:"
+        },
+        {
+         "type": "bullets",
+         "text": "Site-specific hazards\nEmergency procedures\nPPE requirements\nSafe work practices"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Supervision & Safe Work Practices",
+     "steps": [
+      {
+       "heading": "Supervision & Safe Work Practices",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Contract workers shall work only under authorized supervision.\nHigh-risk activities require prior approval and monitoring.\nUnsafe acts or conditions must be reported immediately."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Access Control",
+     "steps": [
+      {
+       "heading": "Access Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Entry of non-employees shall be regulated through gate passes or visitor logs.\nAccess shall be limited to authorized areas only.\nVisitors must be escorted when required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Personal Protective Equipment (PPE)",
+     "steps": [
+      {
+       "heading": "Personal Protective Equipment (PPE)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Contract workers must wear appropriate PPE as defined for their tasks.\nPPE non-compliance may result in work stoppage."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained to ensure effective control and monitoring of non-employee and contract worker safety:"
+      },
+      {
+       "type": "bullets",
+       "text": "Contractor and visitor safety induction records\nEntry, exit, and access control logs including gate passes\nIncident, accident, and near-miss reporting records"
+      },
+      {
+       "type": "paragraph",
+       "text": "These records shall be reviewed periodically and retained in line with the company’s record retention requirements."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Machinery and Equipment Safety Management System",
+   "code": "",
+   "catalogId": "equipment-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Safety Officer / Maintenance Head",
+   "sourceWords": 284,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure safe operation, inspection, and maintenance of all machinery and equipment in order to prevent accidents, injuries, equipment damage, and unplanned downtime."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all machinery, tools, utilities, and equipment used across manufacturing units, warehouses, and support areas, including equipment operated by employees and authorized contract workers."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensures provision of safe equipment and resources",
+        "Approves inspection and maintenance plans"
+       ]
+      },
+      {
+       "role": "Safety Officer / Maintenance Head",
+       "responsibilities": [
+        "Conducts equipment safety inspections and audits",
+        "Ensures corrective actions are implemented"
+       ]
+      },
+      {
+       "role": "Supervisors",
+       "responsibilities": [
+        "Ensure operators follow work instructions",
+        "Report unsafe conditions immediately"
+       ]
+      },
+      {
+       "role": "Operators / Users",
+       "responsibilities": [
+        "Operate equipment only after training",
+        "Follow safety instructions and use PPE"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Equipment Safety Inspections & Audits",
+     "steps": [
+      {
+       "heading": "Equipment Safety Inspections & Audits",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All equipment shall undergo regular safety inspections as per defined schedules.\nInspections shall check:\nPeriodic internal safety audits shall be conducted to verify compliance.\nIdentified hazards must be rectified before continued operation."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Guards and safety devices"
+        },
+        {
+         "text": "Electrical connections and controls"
+        },
+        {
+         "text": "Emergency stop functionality"
+        },
+        {
+         "text": "Signs of wear, damage, or leakage"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Work Instructions for Safe Operation",
+     "steps": [
+      {
+       "heading": "Work Instructions for Safe Operation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Approved work instructions shall be available at or near equipment.\nInstructions shall include:\nUnauthorized modification of equipment is strictly prohibited."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Start-up and shutdown procedures"
+        },
+        {
+         "text": "Safe operating limits"
+        },
+        {
+         "text": "Required PPE"
+        },
+        {
+         "text": "Emergency response steps"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Preventive Maintenance",
+     "steps": [
+      {
+       "heading": "Preventive Maintenance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Preventive maintenance schedules shall be defined and followed.\nMaintenance work must be performed by trained and authorized personnel.\nLock-out and tag-out practices shall be followed during maintenance activities."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Equipment operators shall receive task-specific safety training.\nRefresher training shall be provided periodically or after incidents."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following documents shall be maintained to demonstrate effective implementation of equipment safety controls:"
+      },
+      {
+       "type": "bullets",
+       "text": "Completed equipment inspection and safety checklists\nPreventive and corrective maintenance records\nInternal safety audit observations and reports\nEquipment operation and safety training attendance records"
+      },
+      {
+       "type": "paragraph",
+       "text": "All records shall be maintained in an organized manner and retained as per the company’s document control and retention requirements."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Transportation Emissions Reduction and Logistics Optimization",
+   "code": "",
+   "catalogId": "transport-emissions",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 291,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To reduce carbon emissions associated with transportation and logistics activities by optimizing routes, improving vehicle efficiency, and promoting environmentally responsible transport practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all inbound and outbound transportation activities, including raw material movement, finished goods dispatch, employee commuting (where applicable), and logistics managed by third-party transporters."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Supports initiatives aimed at reducing transportation-related emissions"
+       ]
+      },
+      {
+       "role": "Logistics / Dispatch Team",
+       "responsibilities": [
+        "Plans efficient routes and shipment schedules",
+        "Coordinates with transport service providers"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Engages transporters with compliance and efficiency expectations"
+       ]
+      },
+      {
+       "role": "Transport Partners",
+       "responsibilities": [
+        "Follow company requirements on safe and efficient transportation"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Transportation Emission Reduction Measures",
+     "steps": [
+      {
+       "heading": "Transportation Emission Reduction Measures",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Optimize delivery routes to minimize distance and fuel consumption"
+        },
+        {
+         "text": "Consolidate shipments to reduce the number of trips"
+        },
+        {
+         "text": "Avoid unnecessary idling during loading and unloading"
+        },
+        {
+         "text": "Encourage timely maintenance of transport vehicles"
+        }
+       ]
+      },
+      {
+       "heading": "Logistics Optimization Practices",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Plan dispatch schedules to prevent last-minute or urgent shipments"
+        },
+        {
+         "text": "Use appropriate vehicle sizes to match load capacity"
+        },
+        {
+         "text": "Promote local sourcing and service providers where feasible"
+        },
+        {
+         "text": "Encourage digital documentation to reduce paperwork and delays"
+        }
+       ]
+      },
+      {
+       "heading": "Engagement with Transport Service Providers",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Communicate expectations on fuel efficiency and emission reduction"
+        },
+        {
+         "text": "Prefer transport partners demonstrating responsible practices"
+        },
+        {
+         "text": "Monitor service performance and compliance"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Track transportation activities through dispatch records and invoices\nReview fuel consumption and logistics efficiency indicators where data is available\nIdentify opportunities for continuous improvement"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Logistics and dispatch personnel shall be sensitized to efficient transportation practices\nPeriodic awareness may be provided to transport partners"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained to support monitoring, verification, and continuous improvement of transportation and logistics activities:"
+      },
+      {
+       "type": "bullets",
+       "text": "Dispatch registers and shipment movement records\nTransporter invoices, delivery challans, and proof of delivery documents\nInternal logistics performance review notes and corrective action records"
+      },
+      {
+       "type": "paragraph",
+       "text": "All records shall be retained in accordance with the company’s document retention policy and made available for internal review or external audits when required."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cleaner Fuel Adoption and Emission Reduction",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Engineering / Maintenance",
+   "owner": "Management",
+   "sourceWords": 234,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To reduce environmental impact and improve energy efficiency by progressively transitioning from conventional fuels to cleaner and lower-emission fuel alternatives wherever operationally and economically feasible."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all fuel-consuming operations including boilers, generators, heating systems, and company-managed transportation activities, as applicable across Rakheja Enterprises LLP facilities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Approves fuel transition initiatives and resource allocation"
+       ]
+      },
+      {
+       "role": "Engineering / Maintenance Team",
+       "responsibilities": [
+        "Evaluates technical feasibility of alternative fuels",
+        "Implements approved fuel switching measures"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Sources compliant and approved fuel suppliers"
+       ]
+      },
+      {
+       "role": "Safety / Compliance Team",
+       "responsibilities": [
+        "Ensures safe handling and regulatory compliance"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Fuel Switching Initiatives",
+     "steps": [
+      {
+       "heading": "Periodic assessment of existing fuel types and consumption patterns",
+       "body": []
+      },
+      {
+       "heading": "Identification of cleaner fuel alternatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Lower-emission liquid or gaseous fuels\nEnergy-efficient fuel options approved by authorities"
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation of impacts on energy efficiency, emission intensity and equipment compatibility",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Energy efficiency\nEmission intensity\nEquipment compatibility"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Implementation Controls",
+     "steps": [
+      {
+       "heading": "Fuel switching shall be implemented only after technical evaluation and management approval",
+       "body": []
+      },
+      {
+       "heading": "Equipment modifications, if required, shall be carried out safely and documented",
+       "body": []
+      },
+      {
+       "heading": "Safety procedures for storage, handling, and use of new fuels shall be communicated to relevant personnel",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Fuel consumption and operational performance shall be monitored\nComparative assessments may be conducted to evaluate emission reduction and efficiency improvements\nFindings shall be reviewed periodically to identify further improvement opportunities"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Relevant personnel shall be trained on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Safe handling of alternative fuels\nOperational changes related to fuel switching"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Fuel consumption and procurement records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Technical evaluation and approval documents",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Maintenance and modification records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training and awareness records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Recovery and Combined Heat & Power Management",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 227,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To improve overall energy efficiency and reduce energy losses by identifying, evaluating, and implementing waste heat recovery and combined heat and power (CHP) systems wherever technically and operationally feasible."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing processes, utilities, and equipment that generate recoverable heat or consume significant energy across Rakheja Enterprises LLP facilities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Approves feasibility studies and capital investments related to energy recovery systems"
+       ]
+      },
+      {
+       "role": "Engineering / Maintenance Team",
+       "responsibilities": [
+        "Identifies opportunities for waste heat recovery and CHP",
+        "Ensures safe operation and maintenance of installed systems"
+       ]
+      },
+      {
+       "role": "Compliance / Safety Team",
+       "responsibilities": [
+        "Ensures compliance with applicable safety and environmental requirements"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Identification of Energy Recovery Opportunities",
+     "steps": [
+      {
+       "heading": "Identification of Energy Recovery Opportunities",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodic review of energy-intensive equipment and processes\nIdentification of sources of excess or waste heat\nAssessment of potential applications for recovered energy (e.g., pre-heating, utilities)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Feasibility Assessment & Implementation",
+     "steps": [
+      {
+       "heading": "Feasibility Assessment & Implementation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct technical and economic feasibility evaluations\nObtain management approval prior to implementation\nInstall systems in accordance with applicable engineering and safety standards\nEnsure integration with existing operations without compromising safety or quality"
+        }
+       ]
+      },
+      {
+       "heading": "Operation & Maintenance Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Operate systems as per approved operating procedures\nPerform routine inspections and preventive maintenance\nAddress abnormalities or inefficiencies promptly"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Monitor energy recovery performance and efficiency gains\nReview data periodically to identify improvement opportunities"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Relevant personnel shall be trained on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Safe operation of energy recovery or CHP systems\nBasic performance monitoring requirements"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Feasibility assessment and approval documents",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Operation and maintenance logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Energy performance and efficiency records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Efficiency Enhancement through Technology and Equipment Upgrades",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Engineering / Maintenance",
+   "owner": "Management",
+   "sourceWords": 204,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To reduce energy consumption and improve operational efficiency by adopting energy-efficient technologies, equipment upgrades, and process improvements across company operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all production machinery, utilities, lighting systems, HVAC, and support equipment used at Rakheja Enterprises LLP facilities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Approves technology upgrade initiatives and related investments"
+       ]
+      },
+      {
+       "role": "Engineering / Maintenance Team",
+       "responsibilities": [
+        "Identifies energy efficiency improvement opportunities",
+        "Implements and maintains upgraded systems"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure efficient use of upgraded equipment"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Operate equipment in accordance with energy-efficient practices"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Identification of Energy Efficiency Opportunities",
+     "steps": [
+      {
+       "heading": "Identification of Energy Efficiency Opportunities",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodic review of energy consumption patterns\nIdentification of high-energy-consuming equipment and processes\nEvaluation of potential energy-saving technologies and upgrades"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Technology and Equipment Upgrade Process",
+     "steps": [
+      {
+       "heading": "Technology and Equipment Upgrade Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct technical and cost-benefit analysis for proposed upgrades\nObtain management approval prior to implementation\nInstall and commission upgraded equipment as per manufacturer guidelines\nDecommission or phase out inefficient equipment where feasible"
+        }
+       ]
+      },
+      {
+       "heading": "Operation & Maintenance Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure proper operation of upgraded equipment\nPerform routine maintenance to sustain energy performance\nAddress deviations or inefficiencies promptly"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Track energy consumption before and after upgrades\nReview performance data periodically to assess improvement\nIdentify additional opportunities for energy optimization"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Provide training to relevant personnel on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Operation of new or upgraded equipment\nEnergy-efficient operating practices"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Equipment upgrade and commissioning records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Energy consumption and performance data",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Maintenance logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy and Carbon Performance Assessment",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Engineering / Utilities Team",
+   "owner": "Management",
+   "sourceWords": 217,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To systematically assess energy consumption and associated carbon emissions in order to identify inefficiencies, reduce environmental impact, and support continuous improvement in operational performance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing units, utilities, offices, and support functions where energy is consumed and carbon emissions may be generated."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensures energy and carbon audits are conducted at defined intervals"
+       ]
+      },
+      {
+       "role": "Engineering / Utilities Team",
+       "responsibilities": [
+        "Provides energy consumption data and operational support"
+       ]
+      },
+      {
+       "role": "Audit Team / External Consultants",
+       "responsibilities": [
+        "Conduct energy and carbon assessments and prepare reports"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Support implementation of audit recommendations"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Audit Planning",
+     "steps": [
+      {
+       "heading": "Audit Planning",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Define audit scope, frequency, and objectives\nIdentify major energy-consuming processes and emission sources\nAppoint internal auditors or qualified external agencies"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Audit Execution",
+     "steps": [
+      {
+       "heading": "Audit Execution",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Collect and review energy consumption and fuel usage data\nAssess equipment efficiency, operating practices, and losses\nEstimate carbon emissions associated with energy use\nIdentify opportunities for energy savings and emission reduction"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting & Action Planning",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Prepare audit reports outlining findings and recommendations\nDevelop action plans with defined responsibilities and timelines\nObtain management approval for implementation of improvement actions"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Follow-Up",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Track progress on implementation of audit recommendations\nReview improvements in energy performance and emission reduction\nUpdate action plans as required"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Share audit findings with relevant personnel\nPromote awareness on energy conservation and emission reduction practices"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Energy and carbon audit reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Energy consumption and fuel usage data",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Action plans and follow-up records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Renewable Energy Sourcing and Generation",
+   "code": "",
+   "catalogId": "renewable-energy",
+   "pillar": "E",
+   "department": "Administration / Utilities Team",
+   "owner": "Management",
+   "sourceWords": 217,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To promote the use of renewable power sources in company operations in order to reduce reliance on conventional energy, lower environmental impact, and support sustainable manufacturing practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing units, offices, warehouses, and support facilities where electricity or energy is consumed by Rakheja Enterprises LLP."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Approves renewable energy initiatives and investments"
+       ]
+      },
+      {
+       "role": "Administration / Utilities Team",
+       "responsibilities": [
+        "Identifies opportunities for renewable energy sourcing or generation",
+        "Coordinates with energy providers and service partners"
+       ]
+      },
+      {
+       "role": "Engineering / Maintenance Team",
+       "responsibilities": [
+        "Supports installation, operation, and maintenance of on-site renewable systems"
+       ]
+      },
+      {
+       "role": "Finance Team",
+       "responsibilities": [
+        "Monitors costs, savings, and financial feasibility"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Renewable Energy Sourcing",
+     "steps": [
+      {
+       "heading": "Assess availability of renewable power options",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assess availability of renewable power options from local utilities or suppliers"
+        }
+       ]
+      },
+      {
+       "heading": "Prefer renewable electricity tariffs",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prefer renewable electricity tariffs or green power options where feasible"
+        }
+       ]
+      },
+      {
+       "heading": "Verify documentation related to renewable energy procurement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Verify documentation related to renewable energy procurement"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "On-Site Renewable Energy Generation",
+     "steps": [
+      {
+       "heading": "Periodically evaluate feasibility of on-site systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Periodically evaluate feasibility of on-site renewable energy systems (e.g., rooftop solar)"
+        }
+       ]
+      },
+      {
+       "heading": "Consider factors for feasibility",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Consider factors such as energy demand, space availability, and technical viability"
+        }
+       ]
+      },
+      {
+       "heading": "Ensure systems are installed and operated to standards",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Ensure systems are installed and operated in accordance with applicable standards"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Track renewable energy usage through meter readings, bills, or system reports\nReview performance periodically to identify expansion or optimization opportunities"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Relevant personnel shall be informed about renewable energy initiatives\nAwareness may be provided to encourage responsible energy consumption"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Renewable energy purchase agreements and electricity bills",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "On-site renewable energy generation and performance records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Maintenance and inspection logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Wastewater Quality Monitoring and Rainwater Harvesting Management",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "Management",
+   "sourceWords": 298,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure effective monitoring of wastewater quality and compliance with applicable standards, and to promote the collection and utilization of rainwater in order to reduce freshwater consumption and support sustainable water management practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing units, utility areas, and support facilities of Rakheja Enterprises LLP where wastewater is generated and where rainwater harvesting systems are installed or planned."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Ensures compliance with wastewater regulations and supports water conservation initiatives"
+       ]
+      },
+      {
+       "role": "Utilities / Maintenance Team",
+       "responsibilities": [
+        "Monitors wastewater discharge and maintains rainwater harvesting systems"
+       ]
+      },
+      {
+       "role": "Compliance / EHS Team",
+       "responsibilities": [
+        "Oversees regulatory compliance and record maintenance"
+       ]
+      },
+      {
+       "role": "External Agencies",
+       "responsibilities": [
+        "Conduct wastewater testing and analysis"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Wastewater Quality Assessment",
+     "steps": [
+      {
+       "heading": "Wastewater Quality Assessment",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Wastewater generated from operations shall be monitored at defined intervals"
+        },
+        {
+         "text": "Effluent quality parameters shall be assessed through: Internal checks or Authorized external laboratories"
+        },
+        {
+         "text": "Monitoring shall ensure compliance with applicable environmental standards and discharge requirements"
+        },
+        {
+         "text": "Any deviations observed shall be reported and corrective actions initiated"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Effluent Monitoring and Compliance Controls",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Maintain proper functioning of wastewater treatment systems\nPrevent discharge of untreated or non-compliant effluent\nImplement corrective and preventive actions in case of non-compliance"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Rainwater Harvesting System",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Rainwater harvesting systems shall be installed where feasible\nRainwater shall be collected from rooftops or designated catchment areas\nCollected rainwater may be utilized for: Non-potable uses such as cleaning, gardening, or utilities\nSystems shall be maintained to prevent contamination and blockage"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Operation & Maintenance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Periodic inspection and cleaning of rainwater harvesting structures\nMaintenance of collection tanks, filters, and drainage systems\nPrompt repair of leaks or system damage"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Review wastewater quality reports and compliance status\nMonitor rainwater collection and utilization trends\nIdentify opportunities to improve water reuse and conservation"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Relevant personnel shall be trained on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Wastewater handling and compliance requirements\nProper operation of rainwater harvesting systems"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Wastewater test reports and analysis results",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Compliance and corrective action records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Rainwater harvesting system inspection and maintenance logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Water usage and conservation records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Consumption Reduction and Risk Assessment",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 291,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To minimize water consumption in washing and cleaning processes and to identify, assess, and mitigate water-related risks that may impact operational continuity and environmental compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all washing, cleaning, housekeeping, and utility operations, as well as facility-level water use and risk management activities at Rakheja Enterprises LLP."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Supports water conservation and risk mitigation initiatives"
+       ]
+      },
+      {
+       "role": "Utilities / Maintenance Team",
+       "responsibilities": [
+        "Implements process controls to reduce water usage",
+        "Conducts inspections and maintains water systems"
+       ]
+      },
+      {
+       "role": "Compliance / EHS Team",
+       "responsibilities": [
+        "Oversees water risk assessments and mitigation measures"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure adherence to water-efficient practices"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Reduction of Water Use in Washing & Cleaning",
+     "steps": [
+      {
+       "heading": "Establish standardized washing and cleaning procedures to control water use",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Establish standardized washing and cleaning procedures to control water use"
+        }
+       ]
+      },
+      {
+       "heading": "Use appropriate water pressure, flow controls, and shut-off mechanisms",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Use appropriate water pressure, flow controls, and shut-off mechanisms"
+        }
+       ]
+      },
+      {
+       "heading": "Avoid continuous or unattended water flow during cleaning activities",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Avoid continuous or unattended water flow during cleaning activities"
+        }
+       ]
+      },
+      {
+       "heading": "Encourage reuse of water for suitable non-critical cleaning purposes where feasible",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Encourage reuse of water for suitable non-critical cleaning purposes where feasible"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Process Controls and Operational Measures",
+     "steps": [
+      {
+       "heading": "Install and maintain water-efficient fixtures and equipment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Install and maintain water-efficient fixtures and equipment"
+        }
+       ]
+      },
+      {
+       "heading": "Monitor water consumption in high-use areas",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Monitor water consumption in high-use areas"
+        }
+       ]
+      },
+      {
+       "heading": "Repair leaks and faulty fittings promptly",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Repair leaks and faulty fittings promptly"
+        }
+       ]
+      },
+      {
+       "heading": "Schedule cleaning activities to prevent unnecessary water use",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Schedule cleaning activities to prevent unnecessary water use"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Water Risk Assessment",
+     "steps": [
+      {
+       "heading": "Periodically identify water-related risks, including",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodically identify water-related risks, including:\nWater scarcity or supply interruptions\nRegulatory and compliance risks\nOperational disruptions due to water availability"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Water scarcity or supply interruptions"
+        },
+        {
+         "text": "Regulatory and compliance risks"
+        },
+        {
+         "text": "Operational disruptions due to water availability"
+        }
+       ]
+      },
+      {
+       "heading": "Assess the potential impact of identified risks on operations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Assess the potential impact of identified risks on operations"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Risk Mitigation Measures",
+     "steps": [
+      {
+       "heading": "Develop and implement action plans to address identified risks",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Develop and implement action plans to address identified risks"
+        }
+       ]
+      },
+      {
+       "heading": "Promote water conservation and alternative water sources where feasible",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Promote water conservation and alternative water sources where feasible"
+        }
+       ]
+      },
+      {
+       "heading": "Maintain contingency measures for water supply disruptions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintain contingency measures for water supply disruptions"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Track water consumption trends and effectiveness of reduction measures\nReview water risk assessments and mitigation actions periodically\nUpdate control measures based on operational changes"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Train relevant personnel on water-efficient washing and cleaning practices\nRaise awareness on water risks and conservation responsibilities"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      },
+      {
+       "type": "bullets",
+       "text": "Water consumption logs and monitoring records\nWater risk assessment reports and action plans\nMaintenance and inspection records related to water systems\nTraining and awareness records"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Recycling, Audit, and Water-Efficient Processing",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 355,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To promote responsible water management by encouraging the recycling and reuse of treated water, conducting periodic water audits, and adopting water-efficient processing methods to reduce overall freshwater consumption."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing, washing, dyeing (where applicable), utility, and support operations where water is consumed, treated, reused, or monitored across company facilities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Supports water conservation initiatives and resource allocation"
+       ]
+      },
+      {
+       "role": "Utilities / Maintenance Team",
+       "responsibilities": [
+        "Operates and maintains water treatment and reuse systems",
+        "Collects water consumption data"
+       ]
+      },
+      {
+       "role": "Compliance / EHS Team",
+       "responsibilities": [
+        "Oversees water audits and compliance monitoring"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure implementation of water-efficient practices within their areas"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Water Recycling and Reuse Practices",
+     "steps": [
+      {
+       "heading": "Water Recycling and Reuse Practices",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Treated wastewater shall be reused wherever operationally feasible and permitted\nReused water may be applied for:\nReuse practices shall ensure no compromise to hygiene, safety, or product quality"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Cleaning and washing activities"
+        },
+        {
+         "text": "Gardening and landscaping"
+        },
+        {
+         "text": "Utility applications such as flushing or cooling"
+        }
+       ]
+      },
+      {
+       "heading": "Controls for Treated Water Reuse",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Ensure treated water meets applicable quality requirements for intended reuse\nClearly identify and segregate reuse water pipelines or storage tanks\nPrevent cross-contamination with potable water systems"
+        }
+       ]
+      },
+      {
+       "heading": "Water Audit",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodic water audits shall be conducted to:\nAudits may be conducted internally or by qualified external agencies\nFindings shall be documented and reviewed by management"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Monitor water consumption across processes"
+        },
+        {
+         "text": "Identify high water-use areas and inefficiencies"
+        }
+       ]
+      },
+      {
+       "heading": "Water Audit Outcomes and Action Planning",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Develop action plans based on audit findings\nImplement corrective or improvement measures to reduce water consumption\nTrack progress against identified actions"
+        }
+       ]
+      },
+      {
+       "heading": "Water-Saving Dyeing and Processing Methods",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Where dyeing or wet processing is applicable, water-efficient methods shall be encouraged\nAdoption of low-water or optimized processes shall be evaluated based on:\nProcess controls shall be applied to minimize unnecessary water use"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Technical feasibility"
+        },
+        {
+         "text": "Quality requirements"
+        },
+        {
+         "text": "Resource efficiency"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Monitor total water consumption and reuse volumes\nReview audit results and conservation performance periodically\nIdentify opportunities for further reduction and reuse"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Relevant personnel shall be trained on:\nAwareness programs may be conducted to promote responsible water use"
+      },
+      {
+       "type": "bullets",
+       "text": "Water reuse practices\nEfficient water usage and conservation measures"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Water consumption and reuse logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Water audit reports and action plans",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Maintenance and inspection records of treatment systems",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training and awareness records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "PRODUCT & PACKAGING RESPONSIBILITY",
+   "code": "",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Management",
+   "sourceWords": 302,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To promote responsible product design and packaging practices that reduce resource consumption, improve product durability, and minimize environmental impact across the product lifecycle."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This section applies to product development, sourcing, manufacturing, finishing, and packaging activities for all garment categories produced by Rakheja Enterprises LLP."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Supports sustainable product and packaging initiatives"
+       ]
+      },
+      {
+       "role": "Product Development / Merchandising",
+       "responsibilities": [
+        "Incorporates material efficiency and durability considerations into designs"
+       ]
+      },
+      {
+       "role": "Production & Quality Teams",
+       "responsibilities": [
+        "Ensure process controls that support product performance and durability"
+       ]
+      },
+      {
+       "role": "Packaging & Dispatch Team",
+       "responsibilities": [
+        "Implements optimized packaging solutions"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Design for Reduced Resource Use",
+     "steps": [
+      {
+       "heading": "Design for Reduced Resource Use",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Product designs shall aim to minimize material consumption without compromising quality or performance"
+        },
+        {
+         "text": "Fabric utilization efficiency shall be optimized through effective pattern making and cutting practices"
+        },
+        {
+         "text": "Design choices shall consider the full product lifecycle, including durability and end-use performance"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Minimizing Microfiber Shedding and Tearing",
+     "steps": [
+      {
+       "heading": "Minimizing Microfiber Shedding and Tearing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Fabric selection shall prioritize durability and structural integrity"
+        },
+        {
+         "text": "Sewing, finishing, and washing processes shall be controlled to reduce fabric stress and fiber release"
+        },
+        {
+         "text": "Quality checks shall include assessment of fabric strength and seam performance"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Fabric and Process Controls",
+     "steps": [
+      {
+       "heading": "Fabric and Process Controls",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Use appropriate stitch density, seam construction, and reinforcement techniques"
+        },
+        {
+         "text": "Avoid over-processing during washing or finishing"
+        },
+        {
+         "text": "Monitor and address defects that may contribute to tearing or excessive fiber loss"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sustainable Packaging Optimization",
+     "steps": [
+      {
+       "heading": "Sustainable Packaging Optimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Packaging size and weight shall be optimized to suit product requirements"
+        },
+        {
+         "text": "Use of unnecessary or excessive packaging materials shall be avoided"
+        },
+        {
+         "text": "Packaging designs shall aim to simplify material composition where feasible"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Packaging Material Management",
+     "steps": [
+      {
+       "heading": "Packaging Material Management",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Select packaging materials that meet buyer and regulatory requirements"
+        },
+        {
+         "text": "Encourage efficient packing methods to reduce material use and transportation impact"
+        },
+        {
+         "text": "Ensure packaging maintains product protection during handling and transit"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Review material utilization efficiency and packaging consumption periodically\nIdentify opportunities to improve durability and reduce packaging waste"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Relevant personnel shall be trained on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Resource-efficient design principles\nPackaging optimization practices"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Product design and specification documents",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Fabric and quality inspection records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Packaging specifications and consumption records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "EMPLOYEE ENGAGEMENT AND WELL-BEING",
+   "code": "",
+   "catalogId": "employee-wellbeing",
+   "pillar": "S",
+   "department": "HR Department",
+   "owner": "HR Department",
+   "sourceWords": 235,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To foster an inclusive, supportive, and engaging work environment by providing employees access to resource and support groups that promote well-being, professional growth, and a sense of belonging."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees of Rakheja Enterprises LLP across all locations and departments."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Establishment of Groups",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "HR shall establish Employee Resource and Support Groups (ERSGs) based on common interests, professional development goals, or shared experiences.\nGroups shall be inclusive and open to all employees, regardless of role, department, or tenure."
+        }
+       ],
+       "responsible": "HR"
+      },
+      {
+       "heading": "Objectives of ERSGs",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Promote diversity, equity, and inclusion within the workplace.\nProvide peer support, mentorship, and networking opportunities.\nOrganize awareness programs, workshops, and knowledge-sharing sessions to enhance employee well-being and professional growth."
+        }
+       ]
+      },
+      {
+       "heading": "Participation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees are encouraged to voluntarily join one or more groups based on interest.\nParticipation is confidential and free from any form of discrimination or bias.\nEmployees may propose new groups to HR if there is a demonstrable need or interest."
+        }
+       ],
+       "responsible": "Employees"
+      },
+      {
+       "heading": "Examples of Support Groups",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Diversity & Inclusion Circle\nMental Health & Wellness Forum\nWomen in Leadership Network\nYoung Professionals / Early Career Employee Group"
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring & Feedback",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "HR shall monitor participation levels and effectiveness of groups annually.\nFeedback from participants will be collected to improve programs and align them with employee needs and organizational objectives."
+        }
+       ],
+       "responsible": "HR"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Coordinate, monitor, and support ERSGs; ensure inclusivity; gather feedback for improvements."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Actively participate, contribute constructively, and respect the values of inclusivity and confidentiality."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "MATERIALS, HAZARDOUS SUBSTANCE, AND WASTE MANAGEMENT",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS Team",
+   "owner": "EHS Team",
+   "sourceWords": 321,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure safe, efficient, and environmentally responsible handling of materials, hazardous substances, and waste through recovery, reuse, proper handling, and authorized disposal."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP aims to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Minimize waste generation and optimize resource utilization.\nProtect employee health, safety, and the environment.\nEnsure compliance with regulatory and internal standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, operations, production, storage, and transport activities involving materials, hazardous substances, and waste at all Rakheja Enterprises LLP facilities."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "3.1 Recovery and Reuse of Materials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identification of Materials: Determine scrap, defective items, and packaging waste suitable for reuse or recycling.\nSegregation & Collection: Separate reusable, recyclable, and non-recyclable materials at the source.\nReuse & Recycling:\nRecord-Keeping: Maintain documentation of all materials recovered, reused, or recycled.\nContinuous Improvement: Periodically review processes to enhance scrap reduction and material recovery."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Reuse materials internally wherever feasible."
+        },
+        {
+         "text": "Send non-reusable materials to authorized recycling vendors."
+        }
+       ]
+      },
+      {
+       "heading": "3.2 Hazardous Substance Handling",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Labeling: All hazardous substances must be clearly labeled with chemical identity, hazard symbols, and handling instructions as per regulatory standards.\nStorage:\nHandling:\nTransportation:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Store substances in designated, secure, ventilated areas."
+        },
+        {
+         "text": "Segregate incompatible chemicals."
+        },
+        {
+         "text": "Employees must use appropriate PPE."
+        },
+        {
+         "text": "Only trained and authorized personnel are allowed to handle hazardous substances."
+        },
+        {
+         "text": "Follow legal and internal guidelines for transporting hazardous substances."
+        },
+        {
+         "text": "Ensure proper containment, labeling, and documentation during transit."
+        }
+       ]
+      },
+      {
+       "heading": "3.3 Hazardous Waste Treatment & Disposal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Segregation: Separate hazardous waste from general waste at the point of generation.\nStorage: Store hazardous waste in approved containers with proper labeling.\nTreatment & Disposal:\nDocumentation: Maintain complete records of hazardous waste generation, treatment, and disposal.\nAudit & Compliance: Conduct periodic audits to ensure adherence to SOP and regulatory requirements."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Treat waste internally if authorized, or hand over to certified, authorized disposal vendors."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Operations/Production Teams",
+       "responsibilities": [
+        "Segregate and collect reusable/recyclable materials."
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Monitor compliance, coordinate recycling, hazardous substance handling, and waste disposal; maintain documentation."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure team compliance and report any incidents promptly."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Follow protocols for handling materials and hazardous substances, and report unsafe conditions immediately."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Incident Response & Confidential Data Management",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 261,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured process for managing confidential data breaches, minimizing impact, and ensuring timely reporting and resolution in compliance with organizational policies and regulatory requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, departments, and business units handling confidential or sensitive data, including internal, third-party, and stakeholder information."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Detection and Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Incident Identification: Promptly identify any suspected or actual breach of confidential data.\nImmediate Reporting: Report the incident to the IT/Security Team and Compliance Team as soon as it is detected."
+        }
+       ]
+      },
+      {
+       "heading": "Assessment and Containment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Initial Assessment: Evaluate the scope, severity, and potential impact of the breach.\nContainment Measures: Take immediate action to contain the breach, including restricting system access, isolating affected devices, or suspending compromised accounts."
+        }
+       ]
+      },
+      {
+       "heading": "Investigation and Analysis",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Root Cause Analysis: Determine the cause of the breach and affected data categories.\nImpact Assessment: Identify affected stakeholders, systems, and potential regulatory obligations."
+        }
+       ]
+      },
+      {
+       "heading": "Notification and Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal Communication: Inform senior management, legal, and compliance teams.\nExternal Notification: Notify affected stakeholders and regulatory authorities as required by law or policy."
+        }
+       ]
+      },
+      {
+       "heading": "Remediation and Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Corrective Actions: Implement measures to prevent recurrence, such as system patches, process changes, or employee retraining.\nData Restoration: Restore affected data from backups where possible and verify integrity."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation and Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintain a complete record of the incident, actions taken, lessons learned, and recommendations for process improvements."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "IT/Security Team",
+       "responsibilities": [
+        "Detect, contain, and remediate breaches; implement technical measures."
+       ]
+      },
+      {
+       "role": "Compliance/Legal Team",
+       "responsibilities": [
+        "Ensure regulatory compliance and manage stakeholder notifications."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Support incident investigation and enforce corrective actions."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Report suspected breaches immediately and cooperate with investigations."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Records Retention & Management",
+   "code": "",
+   "catalogId": "consent-retention",
+   "pillar": "G",
+   "department": "",
+   "owner": "Records Management Team / Compliance",
+   "sourceWords": 222,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that organizational records are retained securely for the required period and disposed of safely, in compliance with regulatory, legal, and internal requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, departments, and business units responsible for creating, handling, storing, and disposing of company records, including physical and digital formats."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Records Retention",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Classification: Identify types of records and categorize them according to retention requirements (e.g., financial, HR, compliance, operational).\nRetention Periods: Retain records for the duration mandated by regulatory requirements or internal policies, whichever is longer.\nSecure Storage: Store physical records in locked cabinets and digital records in secure, access-controlled systems."
+        }
+       ]
+      },
+      {
+       "heading": "Records Disposal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Authorized Disposal: Dispose of records only after the retention period has expired and in accordance with internal approval procedures.\nSecure Methods:\nPhysical records: Shredding or incineration.\nDigital records: Secure deletion, wiping, or destruction of media.\nDocumentation: Maintain logs of disposed records, including type, date, method of disposal, and approving authority."
+        }
+       ]
+      },
+      {
+       "heading": "Review and Monitoring",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct periodic audits to ensure adherence to retention and disposal schedules.\nUpdate retention schedules in line with changes in legal, regulatory, or organizational requirements."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure their teams follow retention and disposal procedures."
+       ]
+      },
+      {
+       "role": "Records Management Team / Compliance",
+       "responsibilities": [
+        "Oversee adherence to retention schedules, maintain logs, and conduct audits."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Properly handle, store, and submit records for retention or disposal in accordance with SOP."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Third-Party Risk Management & Compliance",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Compliance & Legal",
+   "owner": "Compliance & Legal Teams",
+   "sourceWords": 281,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that all third-party engagements, sensitive transactions, and data-handling partnerships are conducted with integrity, compliance, and minimal risk exposure to Rakheja Enterprises LLP. This SOP provides a structured approach for anti-corruption, approvals, and information security due diligence."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees involved in engaging vendors, partners, or service providers, and to all business units processing sensitive transactions or sharing organizational data with third parties."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "3.1 Anti-Corruption Due Diligence on Third Parties",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Screening of Vendors and Partners: Conduct background checks on all potential vendors and partners for anti-corruption compliance, legal history, and reputation."
+        },
+        {
+         "text": "Evaluation: Assess third-party risk based on business nature, transaction value, geographic location, and regulatory exposure."
+        },
+        {
+         "text": "Documentation: Maintain records of due diligence assessments, approvals, and risk ratings."
+        }
+       ]
+      },
+      {
+       "heading": "3.2 Approval Process for Sensitive Transactions",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Defined Authorization Controls: Identify transaction types that require higher-level approvals (e.g., large payments, high-risk contracts)."
+        },
+        {
+         "text": "Escalation Protocols: Establish a clear escalation path to ensure that sensitive transactions are reviewed and authorized by designated personnel."
+        },
+        {
+         "text": "Record-Keeping: Document approvals, justifications, and related correspondence for audit and compliance purposes."
+        }
+       ]
+      },
+      {
+       "heading": "3.3 Information Security Due Diligence on Third Parties",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Risk Assessment: Evaluate third-party data-handling practices to ensure compliance with organizational information security policies and applicable laws."
+        },
+        {
+         "text": "Data Protection Measures: Verify security controls, encryption, access management, and incident response capabilities of third-party partners."
+        },
+        {
+         "text": "Ongoing Monitoring: Periodically review third-party compliance and address gaps through remediation plans or contractual updates."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement/Business Units",
+       "responsibilities": [
+        "Initiate due diligence and provide required documentation for approvals."
+       ]
+      },
+      {
+       "role": "Compliance & Legal Teams",
+       "responsibilities": [
+        "Conduct anti-corruption checks, review sensitive transaction approvals, and oversee third-party risk assessment."
+       ]
+      },
+      {
+       "role": "IT/Security Team",
+       "responsibilities": [
+        "Assess information security practices of third-party partners and provide recommendations."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Follow SOPs when engaging with vendors, approving transactions, or sharing data externally."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Privacy and Third-Party Information Management",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "Data Privacy/Compliance",
+   "owner": "Data Privacy/Compliance Team",
+   "sourceWords": 313,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure the protection of third-party data and compliance with privacy regulations by implementing proper controls for access, disclosure, and consent management. This SOP establishes processes to safeguard sensitive information and respect the rights of stakeholders."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, departments, and business units handling third-party data, including vendors, partners, customers, and other external stakeholders."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Protection of Third-Party Data",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Access Controls: Implement role-based access to ensure only authorized personnel can view or process third-party data.\nData Security Measures: Use encryption, secure storage, and network protections to prevent unauthorized access or data breaches.\nMonitoring & Audit: Regularly monitor data access logs and conduct audits to detect and respond to unauthorized activities.\nIncident Management: Follow defined procedures for reporting and addressing data breaches or unauthorized disclosures."
+        }
+       ]
+      },
+      {
+       "heading": "Stakeholder Consent Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Consent Collection: Obtain explicit consent from stakeholders for processing, sharing, or retaining their personal data.\nDocumentation: Maintain accurate records of consents, including date, scope, and purpose of data usage.\nConsent Updates: Regularly review and update consent records to ensure they remain valid and compliant with applicable laws.\nWithdrawal of Consent: Provide stakeholders with a clear process to withdraw consent and ensure data handling practices are updated accordingly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Data Privacy/Compliance Team",
+       "responsibilities": [
+        "Oversee consent management, data protection measures, and regulatory compliance."
+       ]
+      },
+      {
+       "role": "IT/Security Team",
+       "responsibilities": [
+        "Implement technical controls for data protection and monitor access."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Handle third-party data responsibly, follow access controls, and report any incidents immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP Manual will be reviewed annually to ensure its effectiveness, relevance, and compliance with applicable regulations and organizational requirements. Feedback from safety inspections, audits, operational experience, and stakeholder inputs will be considered during the review process. Necessary updates will be incorporated to improve procedures. All revisions will be documented and communicated to ensure continuous improvement and effective implementation."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Rakheja Enterprises LLP",
+        "Designation",
+        "Last Review Date",
+        "Signature"
+       ],
+       "rows": [
+        [
+         "Prepared by:",
+         "General Manager",
+         "01-01-2025",
+         ""
+        ],
+        [
+         "Approved by:",
+         "CEO",
+         "01-01-2025",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

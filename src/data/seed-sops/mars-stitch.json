@@ -1,0 +1,1822 @@
+{
+ "id": "mars-stitch",
+ "company": "Mars Stitch Ltd.",
+ "industry": "Children's and ladies' woven garment manufacturing and export",
+ "industryTags": [
+  "manufacturing",
+  "textiles"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Mars Stitch/SOP Manual.docx",
+ "frontMatter": {
+  "introduction": "Mars Stitch Ltd. is a leading manufacturer and exporter of children's and ladies' woven garments, committed to quality, innovation, and sustainability. Established in Tongi, Gazipur, Bangladesh, our company has over 10+ years of industry experience, serving international markets in the USA, Europe, and beyond.\n\nWe operate with a strong focus on operational excellence, employee well-being, environmental responsibility, and ethical business practices. Our mission is to create high-quality, sustainable apparel while ensuring compliance with global labor, environmental, and workplace safety standards.",
+  "objective": "",
+  "scope": "This Standard Operating Procedure (SOP) Manual applies to all employees, contractors, and stakeholders involved in Mars Stitch Ltd.'s operations.\n\nIt serves as a guideline for best practices, compliance measures, and operational processes in various aspects, including:\nWorkplace Safety & Health Standards\nProduction & Process Optimization\nEnvironmental & Sustainability Practices\nEmployee Conduct & Ethical Guidelines\nSupply Chain & Vendor Management\nData Security & Confidentiality\nInternal Audits & Compliance Monitoring\nThis SOP Manual must be strictly followed by all employees and is subject to periodic updates based on legal regulations, industry best practices, and company policies.",
+  "reviewMechanism": "To maintain efficiency, compliance, and continuous improvement, this SOP Manual will be reviewed annually by the Compliance & Operations Team in collaboration with the HR, Safety, and Environmental Management Teams.\n\nThe review process includes:\n1. Annual SOP Review Meeting – To assess effectiveness and identify necessary revisions.\n2. Employee & Stakeholder Feedback – Suggestions from employees, auditors, and external stakeholders.\n3. Regulatory Compliance Check – Ensuring alignment with Bangladesh labor laws, industry standards, and buyer requirements.\n4. Implementation of Changes – Updates communicated through training sessions and official company notifications."
+ },
+ "sops": [
+  {
+   "title": "Workplace Health, Safety & Security Measures",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "HR & Compliance Department",
+   "sourceWords": 664,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines preventive measures and control actions to ensure a safe, healthy, and secure workplace for all employees at Mars Stitch Ltd. It covers ergonomic safety, hazardous substance exposure, climatic conditions, machine safety, fire prevention, and security force conduct to maintain compliance with Bangladesh labor laws and global workplace safety standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and security personnel working at Mars Stitch Ltd. facilities, including production areas, office environments, and outdoor workspaces."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Ergonomic Safety & Injury Prevention",
+     "steps": [
+      {
+       "heading": "Risk Factors for Work-Related Musculoskeletal Disorders (MSDs)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prolonged standing, repetitive movements, poor posture, and improper workstation setup can lead to musculoskeletal disorders (MSDs) affecting muscles, tendons, and nerves."
+        }
+       ]
+      },
+      {
+       "heading": "Preventive Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Workstation Ergonomics: Adjustable seating, anti-fatigue mats, and proper desk height.\nTask Rotation: Employees performing repetitive motions must rotate tasks every two hours to reduce strain.\nErgonomic Training: Monthly training sessions on proper posture and movement.\nBreak Schedules: Mandatory 5-minute micro-breaks every hour for employees performing repetitive tasks.\nMedical Screening: Periodic health checks for early detection of ergonomic-related symptoms."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Machine Safety & Accident Prevention",
+     "steps": [
+      {
+       "heading": "Identifying Machine Hazards",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Unsecured moving parts, improper use of equipment, and lack of safety training can result in workplace injuries."
+        }
+       ]
+      },
+      {
+       "heading": "Safety Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Machine Guarding: All hazardous machinery must have protective barriers.\nLockout/Tagout (LOTO) Procedures: Machines must be powered down and locked before maintenance.\nMandatory PPE: Employees operating machinery must wear appropriate protective gear.\nOperator Training: Only trained personnel are allowed to operate industrial machines.\nRegular Safety Inspections: Equipment must be inspected monthly for defects."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Safety Protocols for Handling Hazardous Substances",
+     "steps": [
+      {
+       "heading": "Identifying Hazardous Substances",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous substances may include chemical solvents, dyes, adhesives, and industrial cleaning agents."
+        }
+       ]
+      },
+      {
+       "heading": "Control Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Proper Storage & Labeling: All chemicals must be stored in ventilated, locked cabinets with clear labeling.\nPPE Requirements: Employees must wear gloves, masks, goggles, and protective clothing when handling chemicals.\nVentilation Systems: Factory areas with hazardous chemicals must have exhaust fans and air purification units.\nEmergency Spill Response: Clearly marked spill kits available in all work areas.\nEmployee Training: Annual training on chemical handling and safety procedures."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Measures for Employee Protection in Extreme Weather Conditions",
+     "steps": [
+      {
+       "heading": "Risks Due to Extreme Climate",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees working in outdoor environments may be exposed to high temperatures, humidity, and heat stress."
+        }
+       ]
+      },
+      {
+       "heading": "Control Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Hydration Stations: Drinking water stations must be available every 50 meters in outdoor work areas.\nProtective Clothing: Employees working under direct sunlight must wear light-colored, breathable clothing.\nCooling Breaks: Outdoor workers must be provided with 10-minute cooling breaks every hour.\nHeat Stress Monitoring: Supervisors must monitor temperature levels and report heat warnings.\nFirst-Aid Support: Trained personnel must be available to handle heat exhaustion and dehydration cases."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Security Conduct & Use of Force Policy",
+     "steps": [
+      {
+       "heading": "Defining Acceptable Security Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Security personnel are responsible for protecting company assets and ensuring workplace safety but must operate within legal and ethical guidelines."
+        }
+       ]
+      },
+      {
+       "heading": "Preventive Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Training on Conflict Resolution: Security officers must complete quarterly training on de-escalation tactics.\nClear Use of Force Policy: Security teams are strictly prohibited from using physical force unless in self-defense or legal enforcement situations.\nIncident Reporting Protocol: Any use of force must be reported within 24 hours and reviewed by senior management.\nFreedom of Movement Protection: Employees must not be unlawfully detained, searched, or restricted from movement.\nRegular Security Audits: Compliance teams must conduct monthly assessments on security force conduct."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Fire Safety & Emergency Preparedness",
+     "steps": [
+      {
+       "heading": "Fire Hazard Risks",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Flammable materials, electrical faults, and improper storage can lead to fire hazards."
+        }
+       ]
+      },
+      {
+       "heading": "Preventive Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Fire Drills & Evacuation Training: Mandatory quarterly fire drills for all employees.\nFire Extinguisher Availability: Fire extinguishers must be placed every 30 meters in all workspaces.\nSmoke & Heat Detectors: Installed in all factory sections for early detection.\nFire Exit Routes: Clearly marked and free from obstruction.\nEmergency Response Team (ERT): A designated team responsible for leading evacuations and first-aid response."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance & Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mars Stitch Ltd. will conduct annual audits to ensure compliance with ergonomic safety, hazardous substance controls, climate safety, security regulations, machine safety, and fire prevention measures. Employees are encouraged to report any violations or concerns to the HR & Compliance Department."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Energy Management & Carbon Reduction",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability & Compliance Division",
+   "sourceWords": 422,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the sustainable energy management and carbon reduction initiatives at Mars Stitch Ltd. The purpose is to enhance energy efficiency, optimize resource utilization, and reduce greenhouse gas (GHG) emissions across our production, logistics, and office operations. These initiatives align with our commitment to environmental responsibility, regulatory compliance, and long-term sustainability goals."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operational units, production facilities, transportation networks, and administrative offices within Mars Stitch Ltd. It covers energy consumption across manufacturing plants, warehouses, logistics, and corporate premises."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Energy Efficiency & Smart Technology Integration",
+     "steps": [
+      {
+       "heading": "Implementing Advanced Energy Conservation Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "LED Lighting Optimization: Transitioning to high-efficiency LED lighting across all facilities, reducing electricity usage.\nSmart Motor Technology: Implementing Variable Frequency Drive (VFD) motors, which adapt speed dynamically to demand, cutting energy waste.\nAutomated Power Management: Utilizing smart sensors and automated shutdown protocols to minimize idle energy consumption.\nAnnual Energy Performance Review: Conducting regular audits to identify and implement further energy-saving innovations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Heat Recovery & Combined Energy Systems",
+     "steps": [
+      {
+       "heading": "Utilizing Waste Heat for Sustainability",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Industrial Heat Recovery: Installing waste heat recovery units to capture excess thermal energy for reuse in production processes.\nExhaust Heat Reutilization: Diverting heat from machinery and generators to power secondary operations.\nIntegrated CHP Solutions: Deploying Combined Heat and Power (CHP) systems that generate both electricity and thermal energy, enhancing efficiency.\nSteam & Hot Water Recycling: Reusing waste steam from textile processing to reduce energy reliance."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Transitioning to Low-Carbon Energy Sources",
+     "steps": [
+      {
+       "heading": "Adopting Renewable & Clean Energy Solutions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Natural Gas Implementation: Replacing coal and diesel with clean-burning natural gas to lower emissions.\nOnsite Solar Power Generation: Installing solar panels across factory rooftops to harness renewable energy.\nBiomass & Alternative Fuels: Exploring bio-waste energy utilization to reduce fossil fuel dependency.\nReal-Time Energy Monitoring: Deploying fuel tracking systems to ensure energy optimization and emission reduction.\nWorkforce Training on Green Energy: Conducting training programs to promote energy-saving behaviors among employees."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sustainable Transport & Emissions Reduction",
+     "steps": [
+      {
+       "heading": "Enhancing Eco-Friendly Mobility",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Fleet Electrification & Hybrid Adoption: Transitioning to electric and hybrid vehicles for logistics operations.\nEmployee Carpool & Shuttle System: Encouraging ride-sharing, company buses, and public transit incentives.\nAlternative Fuel Adoption: Implementing biofuel and compressed natural gas (CNG) solutions for transport.\nEco-Driving Certification: Training drivers on fuel-efficient driving techniques to cut emissions."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Energy Optimization in Office & Facility Operations",
+     "steps": [
+      {
+       "heading": "Sustainable Workplace Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Green IT & Energy-Saving Electronics: Implementing power-saving settings on all workstations.\nSmart Energy Management: Utilizing motion-sensor lighting to eliminate energy waste.\nSustainable Procurement Strategies: Acquiring eco-friendly office equipment and supplies.\nEmployee Sustainability Engagement: Hosting workshops and awareness sessions on energy conservation."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mars Stitch Ltd. will conduct annual sustainability audits and carbon impact assessments to ensure compliance with environmental standards. Employees are encouraged to report any energy-related concerns to the Sustainability & Compliance Division."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Management & Conservation",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "Environmental & Compliance Department",
+   "owner": "Environmental & Compliance Department",
+   "sourceWords": 663,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines Mars Stitch Ltd.'s commitment to efficient water management, minimizing water consumption, and implementing sustainable practices in production and facility operations. It aims to reduce environmental impact through technological advancements and operational improvements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and stakeholders at Mars Stitch Ltd., including manufacturing units, office spaces, and other operational facilities where water usage is a key factor."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sustainable Water Recycling & Reuse Practices",
+     "steps": [
+      {
+       "heading": "Implementation of Water Reclamation Systems",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Mars Stitch Ltd. employs advanced water recycling technologies to reclaim and reuse water in various operational processes, such as production cooling, irrigation, and cleaning."
+        },
+        {
+         "text": "All reclaimed water undergoes necessary treatment before reuse, ensuring compliance with environmental standards."
+        },
+        {
+         "text": "IoT-based water sensors have been implemented to monitor and optimize water usage in real time."
+        }
+       ]
+      },
+      {
+       "heading": "Closed-Loop Water Recycling in Production",
+       "body": [],
+       "substeps": [
+        {
+         "text": "The company utilizes closed-loop water systems to reduce overall water consumption."
+        },
+        {
+         "text": "Counter current washing techniques are adopted to maximize efficiency in fabric processing."
+        },
+        {
+         "text": "Automated tracking systems measure water savings and efficiency improvements per unit of fabric processed."
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Water-Efficient Dyeing Technologies",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Mars Stitch Ltd. integrates water-efficient dyeing machines that minimize water consumption per fabric unit."
+        },
+        {
+         "text": "Heat recovery systems in dyeing processes help reduce the need for excessive water heating."
+        },
+        {
+         "text": "Waterless dyeing technology is being tested for large-scale implementation to further reduce water dependency."
+        }
+       ]
+      },
+      {
+       "heading": "Transition to Waterless Dyeing Methods",
+       "body": [],
+       "substeps": [
+        {
+         "text": "The company is gradually transitioning to air dye technology and supercritical CO2 dyeing, which eliminate water usage in fabric dyeing."
+        },
+        {
+         "text": "Staff is trained to optimize dye use and prevent unnecessary water wastage."
+        }
+       ]
+      },
+      {
+       "heading": "Efficient Water Use in Industrial Cleaning",
+       "body": [],
+       "substeps": [
+        {
+         "text": "The company has installed water-efficient washers and flow control systems to minimize water usage in garment cleaning."
+        },
+        {
+         "text": "Regular process optimization is carried out to reduce water dependency in washing operations."
+        },
+        {
+         "text": "Smart water meters are used to track and regulate water usage per production cycle."
+        }
+       ]
+      },
+      {
+       "heading": "Reuse of Process Water for Cleaning",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Wastewater from washing units is treated and reused for non-critical cleaning processes."
+        },
+        {
+         "text": "Pre-rinsing and optimized detergent application ensure minimum water use while maintaining quality standards."
+        },
+        {
+         "text": "Employee training includes water-efficient cleaning techniques to minimize waste."
+        }
+       ]
+      },
+      {
+       "heading": "Capturing & Storing Rainwater",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Mars Stitch Ltd. has implemented a rainwater harvesting system across all production units to collect and store rainwater for operational use."
+        },
+        {
+         "text": "Collected rainwater is used for cooling systems, irrigation, and general facility cleaning."
+        },
+        {
+         "text": "Rainwater harvesting contributes to reducing dependency on groundwater sources."
+        }
+       ]
+      },
+      {
+       "heading": "Rainwater Filtration & Treatment",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Rainwater undergoes filtration to remove contaminants before being directed to utility applications."
+        },
+        {
+         "text": "The system reduces dependence on municipal water supplies and mitigates groundwater depletion."
+        },
+        {
+         "text": "All rainwater harvesting processes adhere to environmental regulations set by the Bangladesh Environmental Conservation Act (BECA)."
+        }
+       ]
+      },
+      {
+       "heading": "Annual Water Risk Evaluation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "The company conducts annual water risk assessments to evaluate potential shortages, contamination risks, and usage inefficiencies."
+        },
+        {
+         "text": "Risk mitigation plans are formulated based on assessment outcomes."
+        },
+        {
+         "text": "Independent third-party audits are conducted to validate assessment results."
+        }
+       ]
+      },
+      {
+       "heading": "Continuous Monitoring & Compliance",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Wastewater discharge is monitored to ensure compliance with environmental regulations."
+        },
+        {
+         "text": "Treatment plants are regularly maintained to uphold water quality and sustainability goals."
+        },
+        {
+         "text": "The company aims for zero liquid discharge by improving wastewater recycling efficiency."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Awareness & Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "8.1 Water Conservation Training Programs\n\nAll employees undergo periodic training on sustainable water management practices.\n\nBest practices in water conservation, waste reduction, and process optimization are shared through workshops and digital learning platforms.\n\nTraining includes modules on emergency response procedures for water contamination incidents.\n\n8.2 Incentives for Water-Saving Initiatives\n\nEmployees contributing to water-saving innovations are recognized through an internal reward program.\n\nDepartments achieving significant water savings are provided additional resources for continuous improvements.\n\nA suggestion program is in place for employees to propose water-saving solutions."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance & Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mars Stitch Ltd. commits to maintaining industry best practices in water conservation. This SOP will be reviewed annually to incorporate the latest sustainable water management techniques and regulatory changes. The Environmental & Compliance Department is responsible for overseeing the implementation and tracking of all water conservation measures."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Material Management & Hazardous Substance Control",
+   "code": "",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 595,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines Mars Stitch Ltd.'s approach to sustainable material management, efficient resource utilization, and safe handling of hazardous substances. By optimizing material consumption, adopting eco-friendly alternatives, and implementing stringent hazardous material controls, we aim to reduce environmental impact and improve operational efficiency."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and supply chain partners involved in material procurement, production, storage, transportation, and disposal at Mars Stitch Ltd."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Resource Efficiency & Process Optimization",
+     "steps": [
+      {
+       "heading": "Smart Material Utilization & Waste Reduction",
+       "body": []
+      },
+      {
+       "heading": "Circular Material Recovery & Reuse",
+       "body": []
+      },
+      {
+       "heading": "Adoption of Eco-Friendly & Sustainable Materials",
+       "body": []
+      },
+      {
+       "heading": "Transition to Bio-Based & Biodegradable Inputs",
+       "body": []
+      },
+      {
+       "heading": "Sustainable Sourcing & Certification Compliance",
+       "body": []
+      },
+      {
+       "heading": "Safe Handling & Transportation of Hazardous Materials",
+       "body": []
+      },
+      {
+       "heading": "Labeling & Storage Compliance",
+       "body": []
+      },
+      {
+       "heading": "Controlled Transportation & Handling Procedures",
+       "body": []
+      },
+      {
+       "heading": "Specialized Treatment & Safe Disposal of Hazardous Waste",
+       "body": []
+      },
+      {
+       "heading": "On-Site & Off-Site Hazardous Waste Management",
+       "body": []
+      },
+      {
+       "heading": "Emergency Response & Spill Control",
+       "body": []
+      },
+      {
+       "heading": "Transitioning to Safer Chemical Alternatives",
+       "body": []
+      },
+      {
+       "heading": "Reduction of Hazardous Chemicals in Production",
+       "body": []
+      },
+      {
+       "heading": "Continuous R&D for Greener Solutions",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance, Training & Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "8.1 Employee Training & Awareness Programs"
+      },
+      {
+       "type": "bullets",
+       "text": "Regular training sessions are conducted for employees handling hazardous substances and sustainable materials.\nAwareness campaigns promote responsible material usage and waste reduction across all departments."
+      },
+      {
+       "type": "paragraph",
+       "text": "8.2 Regulatory Compliance & Periodic Audits"
+      },
+      {
+       "type": "bullets",
+       "text": "Mars Stitch Ltd. adheres to national and international environmental and safety regulations regarding material handling and waste disposal.\nAnnual audits are conducted to assess process efficiency and ensure compliance with sustainability standards."
+      },
+      {
+       "type": "paragraph",
+       "text": "8.3 Continuous Improvement & Policy Updates"
+      },
+      {
+       "type": "bullets",
+       "text": "This SOP will be reviewed annually to incorporate emerging best practices, regulatory changes, and technological advancements.\nEmployee feedback and industry benchmarks will be used to refine and enhance material management strategies."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Product Design & Lifecycle Management",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 460,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes guidelines for Mars Stitch Ltd. to enhance product sustainability through efficient resource use, extended product lifespan, and environmental impact reduction. The objective is to develop products that require fewer resources, generate less waste, and contribute to circular economy initiatives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all product design, development, and production teams at Mars Stitch Ltd., including supply chain partners involved in raw material selection, product testing, and distribution."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Optimized Product Usage & Maintenance Guidelines",
+     "steps": [
+      {
+       "heading": "3.1 Best Practices for Efficient Product Use & Maintenance",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Provide clear instructions on reducing resource consumption during product use, including energy, water, and chemical efficiency."
+        },
+        {
+         "text": "Implement training programs for consumers and retailers on proper product handling to maximize durability."
+        },
+        {
+         "text": "Develop easy-to-understand care labels for all products, outlining optimal washing, drying, and storage techniques."
+        }
+       ]
+      },
+      {
+       "heading": "3.2 Proper Storage & Handling of Chemical-Based Products",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Ensure safe storage guidelines for chemical-based products to prevent leaks, emissions, and hazardous exposure."
+        },
+        {
+         "text": "Provide step-by-step guides on chemical application to minimize environmental impact and reduce waste."
+        },
+        {
+         "text": "Offer refillable packaging options to encourage responsible consumption."
+        }
+       ]
+      },
+      {
+       "heading": "4. Resource-Efficient Product Design & Development",
+       "body": []
+      },
+      {
+       "heading": "4.1 Designing for Minimal Resource Consumption",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Develop garments that require less water, energy, and chemical inputs during their use phase."
+        },
+        {
+         "text": "Utilize advanced dyeing and finishing techniques that reduce chemical dependency."
+        },
+        {
+         "text": "Integrate energy-efficient components into production machinery to decrease electricity and water demand."
+        }
+       ]
+      },
+      {
+       "heading": "4.2 Smart Material Selection & Processing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Prioritize eco-friendly and biodegradable materials to lessen the environmental footprint."
+        },
+        {
+         "text": "Enhance durability through fiber strengthening techniques to reduce premature product disposal."
+        },
+        {
+         "text": "Utilize digital prototyping to optimize fabric consumption and minimize production waste."
+        }
+       ]
+      },
+      {
+       "heading": "5. Innovations for Microfiber Shedding & Wear Reduction",
+       "body": []
+      },
+      {
+       "heading": "5.1 Reducing Microfiber Release in Textile Processing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Apply advanced finishing treatments to fabrics that reduce shedding during washing."
+        },
+        {
+         "text": "Partner with research institutions to develop alternative yarns and coatings that minimize microfiber pollution."
+        },
+        {
+         "text": "Conduct periodic testing of fabric samples to assess microfiber retention effectiveness."
+        }
+       ]
+      },
+      {
+       "heading": "5.2 Wear & Tear Prevention Strategies",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Enhance fabric tensile strength by incorporating reinforced stitching techniques."
+        },
+        {
+         "text": "Provide after-sales repair and maintenance services to encourage long-term product use."
+        },
+        {
+         "text": "Introduce take-back programs where consumers can return worn products for refurbishment or recycling."
+        }
+       ]
+      },
+      {
+       "heading": "6. Sustainable Packaging & Consumer Awareness",
+       "body": []
+      },
+      {
+       "heading": "6.1 Eco-Friendly Packaging Solutions",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Transition to biodegradable, recyclable, or reusable packaging for all products."
+        },
+        {
+         "text": "Minimize plastic use by adopting paper-based alternatives or compostable materials."
+        },
+        {
+         "text": "Encourage suppliers and logistics partners to align with Mars Stitch Ltd.'s sustainable packaging policy."
+        }
+       ]
+      },
+      {
+       "heading": "6.2 Consumer Education & Awareness",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Develop digital and printed materials to educate customers on sustainable product care."
+        },
+        {
+         "text": "Engage in sustainability awareness campaigns that promote responsible consumer habits."
+        },
+        {
+         "text": "Offer incentives for consumers who participate in recycling or upcycling initiatives."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Compliance & Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mars Stitch Ltd. commits to regularly reviewing and updating this SOP to align with evolving sustainability standards and environmental regulations. A cross-functional sustainability team will conduct annual audits to ensure compliance with best practices and continuous improvement in sustainable product design and lifecycle management."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Circular Product Lifecycle & Sustainable Disposal",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Manager",
+   "sourceWords": 466,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines Mars Stitch Ltd.'s commitment to minimizing product waste and promoting circular material flow through optimized product disposal, packaging, and sustainable end-of-life solutions. It ensures environmentally responsible practices that enhance product recyclability, remanufacturing potential, and safe disposal."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all products designed, manufactured, and distributed by Mars Stitch Ltd. It includes guidelines for packaging optimization, product take-back programs, recycling, and disposal methods to minimize environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Responsible Product Disposal & Circular Flow",
+     "steps": [
+      {
+       "heading": "Providing Information on Proper Disposal & Recycling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Contact for Disposal & Recycling Inquiries:\n\nLocation: Mars Stitch Ltd. Recycling & Disposal Unit, 1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.\nEmail: sustainability@marsstitch.com\nResponsible Person: Sustainability Manager – Mr. Rahim Khan"
+        }
+       ],
+       "responsible": "Sustainability Manager"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sustainable Packaging Optimization",
+     "steps": [
+      {
+       "heading": "Reducing Primary Packaging Footprint",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Implementation of lightweighting techniques to reduce material consumption.\nAdoption of mono-material packaging to improve recyclability.\nElimination of unnecessary plastic coatings and excessive wrapping materials."
+        }
+       ]
+      },
+      {
+       "heading": "User-Friendly Sustainable Packaging",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All packaging is clearly labeled with disposal and recycling instructions.\nMars Stitch Ltd. prioritizes biodegradable and compostable materials for packaging.\nCustomers are encouraged to return packaging materials at designated collection points for reuse or recycling."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Design for Disassembly & Recycling",
+     "steps": [
+      {
+       "heading": "Easy-to-Dismantle Products",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Products are designed with modular components for easier repair and replacement.\nMinimal use of glue, screws, and pivots to facilitate end-of-life disassembly."
+        }
+       ]
+      },
+      {
+       "heading": "Compatibility with Recycling & Remanufacturing",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Standardized materials and components improve recycling efficiency.\nProducts are labeled with material composition to guide recycling facilities."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Handling & Sorting Guidelines",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Mars Stitch Ltd. provides guidance for sorting product components before disposal.\nCustomers are encouraged to disassemble products before returning them to recycling centers."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Take-Back & Buy-Back Programs",
+     "steps": [
+      {
+       "heading": "Collection & Remanufacturing Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Customers can return used products through free take-back programs at Mars Stitch Ltd. locations.\nRecovered materials are remanufactured into new products or broken down for recycling."
+        }
+       ]
+      },
+      {
+       "heading": "Buy-Back Initiative",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Customers can sell back used garments in exchange for discounts on new purchases.\nCollected items are refurbished, repurposed, or responsibly recycled."
+        },
+        {
+         "type": "paragraph",
+         "text": "Collection Center & Contact Information:\n\nLocation: Mars Stitch Ltd. Collection & Processing Center, 1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.\nEmail: recycling@marsstitch.com\nResponsible Person: Circular Economy Coordinator – Ms. Ayesha Rahman"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee & Customer Awareness Initiatives",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "7.1 Training & Awareness Programs\n\nInternal training for employees on sustainable product disposal methods.\nCustomer awareness campaigns on responsible disposal and product take-back benefits.\n\n7.2 Incentive Programs for Circular Economy Practices\n\nEmployees are rewarded for sustainable product design innovations.\nCustomers receive incentives for returning used products through take-back and buy-back programs."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Compliance & Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mars Stitch Ltd. will conduct annual reviews of this SOP to integrate improvements in circular product lifecycle management. Feedback from employees, customers, and sustainability audits will be used to enhance product disposal methods, recycling strategies, and material efficiency."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Performance Evaluation",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Department",
+   "sourceWords": 375,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the standardized process for evaluating both employee and buyer performance at Mars Stitch Ltd. It ensures systematic assessment, continuous improvement, and alignment with organizational goals."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees and buyers associated with Mars Stitch Ltd. The process ensures fair, objective, and consistent evaluation to enhance productivity, maintain quality standards, and foster business relationships."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of the employee performance evaluation is to assess individual contributions, identify areas for improvement, and establish a structured approach for professional growth."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Evaluation Criteria",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Employees will be evaluated based on the following key performance indicators (KPIs):"
+      },
+      {
+       "type": "bullets",
+       "text": "Job Knowledge & Skills\nWork Quality & Accuracy\nProductivity & Efficiency\nCommunication & Teamwork\nInitiative & Problem-Solving\nAdherence to Company Policies\nPunctuality & Attendance"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Evaluation Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Evaluations will be conducted annually (Year-End)."
+        }
+       ]
+      },
+      {
+       "heading": "Methods",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The evaluation process includes self-assessment, supervisor review, and 360-degree feedback from peers and subordinates where applicable."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Review Meeting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees will participate in one-on-one discussions with their supervisors to receive feedback and set performance goals."
+        }
+       ]
+      },
+      {
+       "heading": "Rating System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees are rated on a 5-point scale (Excellent, Good, Satisfactory, Needs Improvement, Unsatisfactory)."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Improvement Plan (PIP)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees with a rating of \"Needs Improvement\" or below will be placed under a structured PIP to address deficiencies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Records",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All performance evaluation records are maintained by the HR Department.\nThe Employee Performance Evaluation Form must be completed and signed by both the employee and the supervisor."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The buyer performance evaluation ensures that our business partners meet our quality, compliance, and delivery standards, fostering long-term collaborations."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Evaluation Criteria",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Buyers will be assessed based on the following key metrics:"
+      },
+      {
+       "type": "bullets",
+       "text": "Order Accuracy & Quality Compliance\nTimely Payments\nBusiness Relationship & Communication\nEthical Sourcing & Compliance\nSustainability Practices\nOverall Satisfaction Level"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Evaluation Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Evaluations will be conducted annually."
+        }
+       ]
+      },
+      {
+       "heading": "Methods",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Data will be gathered through order tracking systems, supplier feedback, and compliance audits."
+        }
+       ]
+      },
+      {
+       "heading": "Scoring System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Buyers will be categorized based on a scoring matrix as Preferred, Acceptable, or Under Review."
+        }
+       ]
+      },
+      {
+       "heading": "Corrective Actions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "If a buyer is rated as Under Review, corrective measures will be implemented, including warning notices or reconsideration of business agreements."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Records",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All buyer evaluation forms are maintained by the Procurement & Compliance Departments.\nThe Buyer Performance Evaluation Form must be reviewed and signed by the Procurement Manager."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance & Review",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The HR and Procurement teams are responsible for ensuring adherence to this SOP.\nThis SOP will be reviewed annually to incorporate process improvements."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Approval of Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "Finance & Compliance",
+   "owner": "Compliance Officer",
+   "sourceWords": 407,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes clear guidelines and approval procedures for sensitive transactions such as gifts, travel, entertainment, and other expenses that involve external stakeholders. The aim is to ensure transparency, compliance with ethical standards, and prevent conflicts of interest within Mars Stitch Ltd."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, management, and stakeholders involved in financial transactions, business dealings, or any engagement that includes gifts, sponsored travel, entertainment, hospitality, or donations."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definition of Sensitive Transactions",
+     "rows": [
+      {
+       "term": "Gifts & Hospitality",
+       "definition": "Any monetary or non-monetary gift, item, or favor received from or offered to external stakeholders."
+      },
+      {
+       "term": "Travel & Accommodation",
+       "definition": "Business-related travel funded by external parties."
+      },
+      {
+       "term": "Entertainment & Events",
+       "definition": "Invitations to corporate events, dinners, or recreational activities provided by business partners."
+      },
+      {
+       "term": "Sponsorships & Donations",
+       "definition": "Contributions made to individuals, organizations, or charities on behalf of the company."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definition of Sensitive Transactions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Sensitive transactions refer to business-related activities that may be perceived as influencing decision-making or compromising ethical integrity. These include:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Approval Process for Sensitive Transactions",
+     "steps": [
+      {
+       "heading": "Gifts & Hospitality",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Employees must not accept or offer gifts exceeding BDT 5,000 without prior approval."
+        },
+        {
+         "text": "Gifts above this threshold require approval from the Department Head and Compliance Officer."
+        },
+        {
+         "text": "Employees must declare all received gifts in the Gift Declaration Form (GDF-01) within 5 working days."
+        },
+        {
+         "text": "Promotional items of nominal value (e.g., calendars, pens) are exempt from approval."
+        }
+       ]
+      },
+      {
+       "heading": "Travel & Accommodation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Travel expenses sponsored by vendors, suppliers, or third parties must be pre-approved by the HR & Compliance Department.",
+         "responsible": "HR & Compliance Department"
+        },
+        {
+         "text": "Employees must submit a Travel Approval Request (TAR-02) at least 10 working days before the trip.",
+         "responsible": "Employees"
+        },
+        {
+         "text": "All travel-related reimbursements must include valid receipts and an Expense Report (ER-03)."
+        }
+       ]
+      },
+      {
+       "heading": "Entertainment & Events",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Employees must obtain written approval before attending any externally sponsored entertainment event.",
+         "responsible": "Employees"
+        },
+        {
+         "text": "Invitations from suppliers, customers, or third parties must be declared using the Event Approval Form (EAF-04)."
+        },
+        {
+         "text": "Any entertainment exceeding BDT 15,000 per event requires CEO approval.",
+         "responsible": "CEO"
+        }
+       ]
+      },
+      {
+       "heading": "Sponsorships & Donations",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Employees are prohibited from making donations or sponsorship commitments on behalf of the company without authorization.",
+         "responsible": "Employees"
+        },
+        {
+         "text": "Requests must be submitted via the Sponsorship & Donation Request Form (SDR-05) for review by the Corporate Affairs Department.",
+         "responsible": "Corporate Affairs Department"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Record-Keeping & Compliance",
+     "rows": [
+      {
+       "record": "All transactions",
+       "owner": "",
+       "retention": "At least 3 years",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Record-Keeping & Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All transactions must be documented and retained for at least 3 years.\nThe Finance & Compliance Team will conduct quarterly audits to ensure compliance with this SOP.\nNon-compliance may result in disciplinary action in accordance with company policy."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting Violations",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Any suspected violations must be reported via the Whistleblower Hotline or emailed to compliance@marsstitch.com.\nReports will be kept confidential, and no retaliatory action will be taken against whistleblowers."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Updates",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed annually by the Compliance Department to align with regulatory changes and company policies."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Incident Response to Confidential Information Breaches",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "IT Security & Compliance",
+   "owner": "IT Security & Compliance Department",
+   "sourceWords": 625,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured incident response procedure for detecting, containing, investigating, and mitigating breaches of confidential information at Mars Stitch Ltd. The objective is to minimize risk, protect company assets, ensure business continuity, and maintain compliance with relevant regulations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, third-party vendors, and any other personnel with access to Mars Stitch Ltd.'s confidential information, whether stored electronically or physically. It covers breaches affecting:"
+      },
+      {
+       "type": "bullets",
+       "text": "Employee Data (personal records, payroll details, performance reports)\nCustomer & Vendor Information (contracts, invoices, payment details)\nFinancial & Business Documents (budget reports, trade secrets, intellectual property)\nIT Systems & Digital Assets (company databases, cloud storage, internal communication channels)\nSensitive Operational Data (supply chain, production schedules, compliance reports)\nAny Other Proprietary or Classified Information essential to Mars Stitch Ltd.’s operations"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definition of a Confidential Information Breach",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "A confidential information breach is defined as unauthorized access, disclosure, modification, or destruction of sensitive company data, resulting in potential security risks. Examples include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Cybersecurity Incidents: Hacking, malware attacks, phishing scams, or ransomware attacks compromising confidential data.\nUnauthorized Access: Internal or external personnel accessing sensitive information without proper clearance.\nPhysical Document Exposure: Loss or theft of printed reports, contracts, or confidential files.\nDevice Theft or Loss: Company laptops, USB drives, or mobile devices containing sensitive data being lost or stolen.\nImproper Disposal: Insecure disposal of confidential paper documents or electronic files, leading to data exposure."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Procedure (IRP) for Confidential Information Breaches",
+     "steps": [
+      {
+       "heading": "Detection & Identification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees must report suspected data breaches immediately to the IT Security Team via:\nEmail: security@marsstitch.com\nPhone: +880-1827-753341\nThe IT team will monitor system logs, intrusion alerts, and suspicious activities to verify the breach.\nIf a breach is confirmed, the Incident Response Team (IRT) will be activated to assess the situation."
+        }
+       ]
+      },
+      {
+       "heading": "Containment & Mitigation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The IT Security Team will isolate compromised systems to prevent further unauthorized access.\nIf the breach involves third-party vendors, their access will be temporarily revoked until a full review is completed.\nIn cases of device theft/loss, remote locking and data-wiping mechanisms will be activated.\nLegal and compliance teams will determine regulatory notification requirements for affected individuals."
+        }
+       ]
+      },
+      {
+       "heading": "Investigation & Impact Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Cybersecurity & Compliance Team will conduct a root cause analysis to determine the origin and extent of the breach.\nThe financial, operational, and reputational impact will be assessed.\nEmployees involved in handling the compromised data will be interviewed for further insights."
+        }
+       ]
+      },
+      {
+       "heading": "Notification & Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Compliance Department will notify affected parties (employees, customers, vendors) within 72 hours, in line with legal requirements.\nLaw enforcement agencies and regulatory bodies will be informed, if necessary.\nAffected employees will receive guidance on security precautions to prevent future incidents."
+        }
+       ]
+      },
+      {
+       "heading": "Recovery & Remediation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The IT Team will apply necessary security patches, update firewall settings, and reset compromised credentials.\nAffected systems will be restored from secure backups to ensure minimal disruption to business operations.\nAll recovery actions will be documented in the Incident Report Form (IRF-07) for audit and compliance purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Post-Incident Review & Preventive Actions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A post-mortem analysis will be conducted to identify vulnerabilities and areas for improvement.\nEmployees involved in the incident will undergo additional security training to reinforce best practices.\nThe Incident Response Plan (IRP) will be updated with lessons learned and mitigation strategies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting & Record Keeping",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "All security incidents must be logged in the Confidential Information Breach Register (CIBR-08).\nReports must include:\nDate and time of the incident\nNature of the breach\nAffected systems and data\nActions taken\nPreventive measures recommended\nRecords will be retained for five years for legal and compliance review."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance & Disciplinary Actions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Employees responsible for negligence or misconduct leading to a data breach will face disciplinary action, up to and including termination.\nCompliance audits will be conducted quarterly to ensure all security protocols are followed."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Updates",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP will be reviewed annually by the IT Security & Compliance Department.\nUpdates will be made based on evolving security threats, regulatory changes, and industry best practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Protection & Records Management",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "Data Security & Compliance Department",
+   "owner": "Data Security & Compliance Department",
+   "sourceWords": 686,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes guidelines for the secure retention, access control, and stakeholder consent related to confidential information at Mars Stitch Ltd. The objective is to protect third-party data, ensure regulatory compliance, and promote transparent data management practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and third-party service providers handling sensitive company and client data, including but not limited to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Customer & Vendor Information (contracts, invoices, payment records)\nEmployee Records (personal details, performance reviews, payroll data)\nFinancial & Operational Documents (budget reports, supply chain records, regulatory filings)\nConfidential Business Data (trade secrets, intellectual property, business strategies)\nDigital & Physical Records stored in company systems or archives"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records Retention & Disposal Policy",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "3.1 Establishing Retention Periods for Data\n\nMars Stitch Ltd. follows a Records Retention Schedule (RRS) specifying the required retention period for various data types based on legal, operational, and compliance requirements.\n\nThe schedule includes the following categories:"
+      },
+      {
+       "type": "bullets",
+       "text": "Financial Records: Retained for 7 years (audit and tax compliance)\nEmployee Records: Retained for 5 years post-employment\nCustomer & Vendor Data: Retained for 5 years after the last transaction\nLegal Contracts: Retained for as long as the contract is valid + 5 years\nConfidential Business Documents: Retention period determined by management based on relevance"
+      },
+      {
+       "type": "paragraph",
+       "text": "3.2 Secure Disposal of Expired Records\n\nPhysical Documents: Must be shredded before disposal to prevent unauthorized retrieval.\n\nDigital Records: Must be permanently deleted from all storage locations, including backup servers.\n\nA Destruction Log must be maintained for tracking disposal actions."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Data Security & Unauthorized Access Prevention",
+     "steps": [
+      {
+       "heading": "Access Control Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "4.1 Access Control Measures\n\nAccess to third-party confidential data is restricted based on job roles and responsibilities.\n\nOnly authorized personnel (determined by department heads) can access sensitive records.\n\nMulti-Factor Authentication (MFA) is enforced for systems containing sensitive data.\n\nData Encryption: All confidential digital files must be encrypted using AES-256 encryption standards.\n\nPhysical Security Measures:"
+        },
+        {
+         "type": "bullets",
+         "text": "Confidential files stored in locked cabinets with limited access.\nSurveillance cameras monitor physical storage areas.\nBiometric authentication for server rooms and secure storage areas."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring & Audit of Access Logs",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "4.2 Monitoring & Audit of Access Logs\n\nAll access to sensitive information is logged and monitored using company IT systems.\n\nThe IT Security Team conducts quarterly audits to detect unauthorized access attempts.\n\nEmployees accessing high-risk data must receive security clearance from senior management."
+        }
+       ],
+       "responsible": "IT Security Team"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Stakeholder Consent & Data Processing Transparency",
+     "steps": [
+      {
+       "heading": "Obtaining Stakeholder Consent for Data Collection & Processing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "5.1 Obtaining Stakeholder Consent for Data Collection & Processing\n\nMars Stitch Ltd. follows a Transparent Data Collection Policy that requires obtaining explicit consent from stakeholders before gathering personal or business data.\n\nStakeholders must be informed about:"
+        },
+        {
+         "type": "bullets",
+         "text": "Purpose of data collection (e.g., contract fulfillment, compliance, marketing)\nTypes of data collected (name, contact details, financial records, etc.)\nDuration of retention as per the company’s Records Retention Schedule\nThird-party sharing policies, if applicable"
+        }
+       ]
+      },
+      {
+       "heading": "Data Processing & Sharing Guidelines",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "5.2 Data Processing & Sharing Guidelines\n\nCustomer & Vendor Agreements must include a Data Privacy Clause outlining:"
+        },
+        {
+         "type": "bullets",
+         "text": "How data will be processed, stored, and protected\nWho has access to their data\nHow they can request modification or deletion of their data"
+        },
+        {
+         "type": "paragraph",
+         "text": "Before sharing data with external service providers, a Data Processing Agreement (DPA) must be signed, ensuring compliance with privacy laws.\n\nCustomers must be given an opt-out option for non-essential data processing activities (e.g., marketing communications)."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Data Breach Response & Compliance Measures",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "6.1 Incident Reporting & Response Plan\n\nAny suspected unauthorized access, data leak, or breach must be reported immediately to the IT Security Team at:"
+      },
+      {
+       "type": "bullets",
+       "text": "Email: security@marsstitch.com\nPhone: +880-1827-753341"
+      },
+      {
+       "type": "paragraph",
+       "text": "The Incident Response Team (IRT) will:"
+      },
+      {
+       "type": "bullets",
+       "text": "Investigate the breach\nContain the security threat\nNotify affected stakeholders within 72 hours\nImplement remedial actions to prevent future incidents"
+      },
+      {
+       "type": "paragraph",
+       "text": "6.2 Compliance with Data Protection Regulations\n\nMars Stitch Ltd. ensures compliance with Bangladesh Data Protection Laws and international standards, including:"
+      },
+      {
+       "type": "bullets",
+       "text": "ISO 27001 (Information Security Management)\nGeneral Data Protection Regulation (GDPR) for clients in the EU\nLocal labor and commercial data retention policies"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Awareness & Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "7.1 Data Protection Training\n\nAll employees handling sensitive data must complete mandatory data security training every 6 months.\n\nTraining includes:"
+      },
+      {
+       "type": "bullets",
+       "text": "Best practices for handling confidential data\nRecognizing phishing and cybersecurity threats\nProper disposal of sensitive records"
+      },
+      {
+       "type": "paragraph",
+       "text": "7.2 Reporting Violations & Non-Compliance\n\nEmployees suspecting unauthorized data handling can report it to the Compliance Officer at:"
+      },
+      {
+       "type": "bullets",
+       "text": "Email: compliance@marsstitch.com\nConfidential Hotline: +880-1827-753341"
+      },
+      {
+       "type": "paragraph",
+       "text": "Reports will be investigated under the Whistleblower Protection Policy, ensuring confidentiality and non-retaliation."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Updates",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP will be reviewed annually by the Data Security & Compliance Department.\nChanges will be made based on technological advancements, regulatory updates, and internal audit findings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Internal Audits & Due Diligence",
+   "code": "",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance & Internal Audit",
+   "owner": "Head of Compliance",
+   "sourceWords": 493,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish a structured and standardized process for conducting internal audits and due diligence assessments at Mars Stitch Ltd. It aims to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure compliance with legal, regulatory, and company policies.\nIdentify and mitigate risks associated with third-party relationships, financial transactions, and corruption.\nImprove operational transparency and accountability.\nStrengthen internal controls to uphold ethical business practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all internal departments, employees, vendors, suppliers, contractors, and any third parties involved in the business operations of Mars Stitch Ltd. The audit process will be applicable to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Procurement & Vendor Selection\nSupply Chain Transparency\nCompliance with Anti-Corruption & Anti-Bribery Laws\nEmployee Awareness of Ethical Conduct\nFinancial Transactions & Sensitive Approvals\nOccupational Health & Safety Compliance\nData Protection & Information Security"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Audit Process",
+     "steps": [
+      {
+       "heading": "Planning & Scheduling",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal audits will be conducted semi-annually or as required based on risk assessments.\nThe Compliance & Internal Audit Team will determine the audit scope, objectives, and criteria.\nA detailed Audit Plan will be developed, outlining departments, processes, and third-party relationships to be reviewed."
+        }
+       ]
+      },
+      {
+       "heading": "Audit Execution",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The audit team will collect relevant documentation, including policies, reports, financial records, and employee statements.\nRandom and targeted site inspections will be conducted, particularly for high-risk areas such as procurement, financial transactions, and third-party engagements.\nEmployees and stakeholders will be interviewed to assess compliance with ethical and operational standards.\nData analytics tools may be used to review financial transactions and detect anomalies."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting & Findings",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A detailed audit report will be prepared, outlining:"
+        },
+        {
+         "type": "bullets",
+         "text": "Areas reviewed\nFindings and observations\nNon-compliance issues\nRisk level assessments (low, medium, high)\nRecommendations for corrective actions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Audit reports will be reviewed and signed by the Head of Compliance before being shared with management."
+        }
+       ],
+       "responsible": "Head of Compliance"
+      },
+      {
+       "heading": "Corrective & Preventive Actions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identified issues will be assigned to responsible departments with clear action plans and deadlines.\nThe Compliance Team will follow up within 30 days to ensure corrective measures have been implemented.\nPersistent non-compliance may result in disciplinary actions or process overhauls."
+        }
+       ],
+       "responsible": "Compliance Team"
+      },
+      {
+       "heading": "Due Diligence on Third Parties",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All vendors, suppliers, and business partners must undergo a risk-based due diligence assessment before engagement. High-risk vendors will be subjected to enhanced scrutiny, including background checks, financial reviews, and compliance history analysis."
+        }
+       ]
+      },
+      {
+       "heading": "Vendor Screening Criteria",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Business legitimacy verification (registration documents, tax compliance).\nPast involvement in corruption, fraud, or legal violations.\nCompliance with Mars Stitch Ltd.’s anti-bribery and anti-corruption policies.\nEthical labor practices, human rights adherence, and sustainability policies."
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Monitoring",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All third-party relationships will be periodically reassessed.\nAny red flags, complaints, or discrepancies will trigger an immediate review and possible termination of contracts."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Record-Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All audit reports, vendor due diligence documents, risk assessments, and corrective action plans will be securely stored for a minimum of five years.\nAccess to audit records will be restricted to authorized personnel only."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP will be reviewed annually by the Compliance Team and revised as needed to align with evolving regulatory requirements and business risks.\nLessons learned from past audits will be incorporated into future risk mitigation strategies."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}
