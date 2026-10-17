@@ -29,9 +29,9 @@
 #let rule = 0.6pt
 
 #set document(title: m.title, author: m.company.name)
-#set text(font: body-font, size: body-size, fill: ink, lang: "en", hyphenate: false,
+#set text(font: body-font, size: body-size, fill: ink, lang: "en", hyphenate: false, kerning: false,
   top-edge: 0.8em, bottom-edge: -0.2em)
-#set par(justify: true, linebreaks: "simple", leading: pitch(body-size) - body-size,
+#set par(justify: true, linebreaks: "optimized", justification-limits: (spacing: (min: 75%, max: 150%), tracking: (min: 0em, max: 0em)), leading: pitch(body-size) - body-size,
   spacing: pitch(body-size) - body-size + after, first-line-indent: 0pt)
 #set list(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
 #set enum(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
@@ -228,22 +228,22 @@
 // Visible heading of a section inside an SOP.
 #let section-title(s, color) = {
   if d.sectionHeading == "numbered-rule" {
-    block(above: after * 2, below: after, breakable: false, {
+    block(above: after * 2, below: after, breakable: false, sticky: true, {
       txt(font: head-font, size: sz.h2 * 1pt, weight: "bold", fill: primary, section-number-label(s))
       v(-3pt)
       line(length: 100%, stroke: (paint: line-color, thickness: rule))
     })
   } else if d.sectionHeading == "pillar-bar" {
-    block(above: after * 2, below: after, breakable: false,
+    block(above: after * 2, below: after, breakable: false, sticky: true,
       table(columns: (1fr,), stroke: (left: (paint: color, thickness: 3pt), rest: none), inset: (left: 7pt, y: 2pt),
         caps(section-number-label(s), size: sz.h2 * 1pt, fill: color)))
   } else if d.sectionHeading == "number-chip" {
-    block(above: after * 2, below: after, breakable: false,
+    block(above: after * 2, below: after, breakable: false, sticky: true,
       table(columns: (8mm, 1fr), stroke: none, inset: (x: 5pt, y: 3pt), align: (center + horizon, left + horizon),
         table.cell(fill: primary, txt(weight: "bold", fill: on-primary, size: sz.small * 1pt + 1pt, s.number.replace(".0", ""))),
         txt(font: head-font, weight: "bold", fill: primary-dark, size: sz.h2 * 1pt, s.title)))
   } else if d.sectionHeading == "label-chip" {
-    block(above: after * 2, below: after, breakable: false,
+    block(above: after * 2, below: after, breakable: false, sticky: true,
       table(columns: (auto,), stroke: none, fill: soft, inset: (x: 7pt, y: 3pt),
         caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))
   }
@@ -298,7 +298,7 @@
 
 #let steps-blocks(steps) = {
   for st in steps {
-    block(above: after * 1.2, below: after * 0.6, breakable: false, {
+    block(above: after * 1.2, below: after * 0.6, breakable: false, sticky: true, {
       txt(weight: "bold", fill: primary-dark, st.number + "  " + st.heading)
       if st.responsible != "" { linebreak(); txt(size: sz.small * 1pt, fill: muted, "Responsible: " + st.responsible) }
     })
