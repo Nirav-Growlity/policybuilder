@@ -1,0 +1,2872 @@
+{
+ "id": "b-r-agrotech",
+ "company": "B R AGROTECH LIMITED",
+ "industry": "Agrochemical manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "chemicals"
+ ],
+ "sourceFile": "SOP/SOP_Manual_BRAL.docx",
+ "frontMatter": {
+  "introduction": "Welcome to the Standard Operating Procedure (SOP) Manual for BR Agrotech Limited.\nThis document serves as a comprehensive guide for our employees and stakeholders, detailing the standardized processes and procedures essential for the efficient, safe, and consistent operation of our agrochemical production processes.\n\nAt BR Agrotech, we are dedicated to maintaining the highest standards of quality, environmental safety, and operational efficiency across all functions of our organization. This SOP manual provides clear, structured, and practical instructions for executing various tasks within the company, ensuring our operations remain streamlined, consistent, and fully compliant with applicable industry regulations, environmental standards, and safety protocols.\n\nThe procedures outlined herein are vital for preserving the integrity, safety, and effectiveness of our products, as well as fostering trustworthy business relationships with our partners, clients, and communities. We expect all employees to understand, follow, and uphold these procedures to build a culture of accountability, continuous improvement, and excellence.\n\nRooted in our mission to support sustainable agriculture, protect ecosystems, and promote ethical business conduct, this manual also serves as a framework for embedding responsible practices throughout every stage of our operations.\n\nBy doing so, BR Agrotech Limited reinforces its commitment to long-term agricultural innovation, environmental stewardship, and meaningful community impact.",
+  "objective": "",
+  "scope": "This SOP Manual applies to all operational areas of BR Agrotech Limited, including production, quality control, warehousing, administration, finance, employee management, health and safety, and environmental practices. It provides clear, standardized procedures to ensure efficiency, consistency, and compliance with all relevant regulatory and company requirements. The manual is applicable to all employees and stakeholders, serving as a reference for maintaining quality, safety, and ethical standards in the manufacturing of agrochemicals. Regular updates will be made to reflect changes in policies, regulations, and industry practices.",
+  "reviewMechanism": "Regular updates will be made to reflect changes in policies, regulations, and industry practices."
+ },
+ "sops": [
+  {
+   "title": "Sustainable Energy Practices",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1922,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Objective:\nWe at BR Agrotech Limited are committed to sustainable energy practices throughout our agrochemical production operations. This SOP outlines procedures for optimizing energy consumption, reducing greenhouse gas emissions, and enhancing operational efficiency across our manufacturing units. The focus remains on minimizing energy use, lowering carbon emissions, and ensuring full compliance with environmental regulations."
+      },
+      {
+       "type": "paragraph",
+       "text": "Scope:\nThis SOP applies to all operational functions within BR Agrotech Limited, including manufacturing, formulation, quality control, warehouse operations, and administrative areas. It covers all aspects of energy management, including energy procurement, usage monitoring, energy audits, efficiency improvements, renewable energy adoption, and carbon emissions reduction initiatives."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedures",
+     "steps": [
+      {
+       "heading": "Energy Efficiency Improvements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "BR Agrotech Limited has implemented several targeted initiatives to enhance energy efficiency across its agrochemical manufacturing operations. These efforts are aligned with our commitment to reducing energy consumption, lowering operational costs, and minimizing environmental impact:"
+        }
+       ]
+      },
+      {
+       "heading": "Installation of Compressors with Variable Frequency Drives (VFD)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To address the high energy demand of air compression, compressors equipped with Variable Frequency Drives (VFDs) has been installed. VFDs enable precise control over motor speed by adjusting the frequency and voltage supplied to the motor based on real-time air demand, significantly reducing power consumption during periods of low load. The result is improved efficiency, reduced wear on equipment, and energy savings of up to 30% compared to fixed-speed systems. It is applied to all primary air compressor units and regular performance audits are scheduled to monitor energy savings and maintain efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Upgradation to Energy Efficient Motors",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In line with international energy performance standards, All major motor-driven systems have been upgraded from IE2 (High Efficiency) to IE3 (Premium Efficiency) class motors. The transition has been applied across key manufacturing equipment such as pumps, agitators, and ventilation systems. IE3 motors offer higher energy efficiency and lower operating temperatures, leading to enhanced durability and reduced energy loss. This transition supports long-term performance reliability while contributing to overall reductions in electricity usage across production units."
+        }
+       ]
+      },
+      {
+       "heading": "LED Lighting Installation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Conventional lighting fixtures have been replaced with energy-efficient LED lights throughout all operational areas, including manufacturing floors, storage zones, and administrative offices. These lighting options significantly reduce electricity consumption compared to conventional lighting systems. With their longer lifespan, they help to reduce maintenance costs and the need for frequent replacements, contributing to both operational savings and enhanced sustainability efforts. This upgrade supports B R Agrotech’s commitment to improving energy efficiency and reducing environmental impact across all facilities."
+        }
+       ]
+      },
+      {
+       "heading": "Green Fuel Initiative",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "As part of its long-term sustainability commitments, BR Agrotech has undertaken a strategic transition toward cleaner-burning natural gas across several of its key operations. Recognizing the environmental and operational advantages of adopting a lower-carbon fuel, the company has shifted from diesel-fired air heating systems to natural gas-based systems for critical units such as the “Fluidized Bed Dryer” and “Spray Dryers”.\n\nThis shift has led to a significant reduction in greenhouse gas emissions and enhanced energy efficiency across the converted systems. The use of natural gas enhances combustion quality, reduces maintenance needs, and strengthens compliance with environmental regulations. BR Agrotech continues to assess and expand the transition wherever feasible, with the goal of minimizing its carbon footprint and supporting cleaner, more efficient production in the long term."
+        }
+       ]
+      },
+      {
+       "heading": "Zero Heat Generation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "BR Agrotech’s formulation process has a design that operates without generation of excess or waste heat, thereby eliminating the need for any waste heat recovery systems. The production setup emphasizes ambient-condition processing, efficient mechanical design, and low-energy operations that inherently prevent the release of residual thermal energy."
+        },
+        {
+         "type": "paragraph",
+         "text": "Key features of the zero heat generation approach include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Ambient Temperature Processing: All formulation activities—including blending, mixing, and homogenization—are conducted at room temperature or under minimal controlled conditions. This design ensures that no additional thermal energy is introduced into the system, effectively avoiding any waste heat buildup.\nEnergy-Efficient Equipment Design: Equipment such as agitators, mixers, and conveyors used in the formulation process are selected and calibrated for low-energy consumption and minimal friction. This significantly reduces incidental heat produced from mechanical operations.\nNo Combustion or High-Temperature Inputs: The process architecture avoids any use of high-temperature reactions, steam systems, or combustion-based heating. As a result, there are no hot exhausts or thermal discharges that would typically necessitate a heat recovery mechanism.\nThermal Equilibrium Maintenance: Process conditions are maintained in a thermally stable state, with temperature variations kept within tight tolerances. This ensures consistent product quality while also eliminating the generation of waste heat."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Consumption Monitoring and Optimization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Daily energy monitoring is conducted across all departments using strategically installed energy meters. These meters provide accurate readings of energy consumption at the equipment and departmental level, enabling close tracking of usage patterns. By analyzing daily data, the operations team identifies areas with higher-than-expected energy use and implements corrective actions promptly to maintain efficiency.\n\nThis hands-on approach supports effective energy management in both production and administrative areas. Additionally, monitoring results are reviewed regularly to inform decisions related to equipment optimization, load balancing, and scheduling, thereby contributing to reduced energy waste and improved operational performance."
+        }
+       ]
+      },
+      {
+       "heading": "Renewable Energy Installation and Utilization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following procedure has been defined that will be followed for the safe and efficient installation of a solar power plant at BR Agrotech."
+        },
+        {
+         "type": "bullets",
+         "text": "Evaluate available space, sunlight exposure, shading, structural integrity, and load requirements. Ensure compliance with applicable regulations and utility standards.\nPrepare panel layout, inverter capacity, cabling plan, and mounting structure specifications. Obtain internal approvals and required government or utility permits.\nSource approved solar modules, inverters, cables, structures, and monitoring tools. Inspect all materials on delivery for quality and conformity.\nSet up and align mounting structures securely. Install solar panels with appropriate spacing and ensure no shading or structural strain.\nConnect modules to inverters and inverters to the LT panel using approved DC/AC cabling. Install earthing and lightning protection systems.\nMount inverters in shaded, ventilated areas. Configure monitoring software to track performance and detect faults.\nCarry out electrical testing (insulation, polarity, continuity). Energize the system and verify performance. Document all test results.\nTrain the in-house team on system operations, safety measures, and fault reporting. Hand over user manuals, warranty cards, and maintenance schedules.\nFile net metering and regulatory documents. Record system details in the asset management system for future maintenance and audits."
+        }
+       ]
+      },
+      {
+       "heading": "Carbon Capture Technology Integration",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "BR Agrotech has adopted Post-Combustion Capture Technology to reduce CO₂ emissions from its manufacturing processes. Exhaust gases containing carbon dioxide are directed through amine-based absorption system, where CO₂ is effectively captured and separated from other gases. The captured CO₂ is then purified, compressed, and directed toward safe disposal or potential reuse, while the solvent used in the process is regenerated and recycled for continuous operation. The CCS system is supported by continuous monitoring and regular maintenance to ensure optimal efficiency and system reliability. Performance data is collected and reported to track CO2 capture rates and maintain compliance with environmental goals, helping BR Agrotech minimize its carbon footprint."
+        }
+       ]
+      },
+      {
+       "heading": "Carbon Audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Carbon Footprint Calculation:\n\nBR Agrotech undertakes comprehensive carbon footprint assessments to quantify and manage its greenhouse gas (GHG) emissions. The calculation process follows internationally recognized standards, primarily the Greenhouse Gas (GHG) Protocol, ensuring consistency, accuracy, and global comparability. Emissions are systematically categorized into:"
+        },
+        {
+         "type": "numbered",
+         "text": "Scope 1 – Direct emissions from sources owned or controlled by the company, such as emissions from boilers, generators, and manufacturing equipment.\nScope 2 – Indirect emissions from the consumption of purchased electricity, steam, or other forms of imported energy used in production and administrative operations.\nScope 3 – Other indirect emissions that occur in the value chain, including emissions from upstream activities (e.g., raw material transportation, supplier emissions) and downstream activities (e.g., product distribution, waste disposal, and employee commuting)."
+        },
+        {
+         "type": "paragraph",
+         "text": "To support this process, BR Agrotech maintains energy consumption data, production volumes, transport logs, and supplier information. These data points are used to calculate CO₂-equivalent emissions across all scopes. Regular third-party carbon audits are performed to monitor emissions trends over time, assess progress toward emission reduction targets, and identify opportunities for further energy efficiency or cleaner technologies. These audits also aid in maintaining regulatory compliance, improving environmental transparency, and guiding sustainability initiatives across operations.\n\nBy embedding carbon footprint calculations into its environmental management system, BR Agrotech strengthens its strategic approach to sustainability and reaffirms its commitment to mitigating climate change."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To systematically assess and enhance energy efficiency across all the operations regular energy audits are conducted, focusing on identifying conservation opportunities and improving system performance."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Planning and Preparation: The energy audit is scheduled annually, in coordination with an authorized third-party energy audit firm. Key energy systems and equipment, such as transformers, air compressors, chillers, pumps, motors, lighting, etc. are identified in advance for detailed evaluation. The operation and maintenance teams are notified about the schedule and their roles in supporting data sharing, equipment access, and on-ground coordination. Historical energy data, including electricity bills, operational logs, and equipment specifications, are compiled to establish baseline performance."
+        },
+        {
+         "text": "Data Collection and Measurement: Real-time parameters such as voltage, current, power factor, temperature, and load are measured using calibrated instruments. Energy consumption records are collected for a period of 12 months to analyze trends in demand, unit consumption, and billing charges. Details of equipment load, usage hours, operating efficiency, and power system layout are recorded across departments. Special focus is given to compressors, chillers, pumps, and motors, where potential inefficiencies or energy loss are commonly observed."
+        },
+        {
+         "text": "Performance Analysis: All measured and recorded data is analyzed to identify energy losses, low-efficiency equipment, and systems with potential for upgrades. Equipment such as air compressors, Chillers, pumps, motors and transformers are evaluated for loading efficiency and specific power consumption. Power quality assessments, such as harmonics analysis and power factor checks, are conducted to evaluate system stability and penalties."
+        },
+        {
+         "text": "Recommendation and Reporting: The audit findings are compiled into a detailed Energy Audit Report, which includes: Energy Conservation Measures (EnCon); Cost-benefit analysis; Estimated savings in kWh and ₹; Required investment and payback periods."
+        },
+        {
+         "text": "Implementation and Follow-up: All approved recommendations are scheduled for phased implementation. The plant team integrates energy-efficient solutions. Post-implementation monitoring is conducted to compare actual performance against projections. A summary of improvements is maintained for regulatory compliance and internal review."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Awareness and Training",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "BR Agrotech places a strong emphasis on educating its employees about the importance of energy efficiency and sustainability. Regular training programs and workshops are conducted to raise awareness and encourage employees to adopt energy-saving practices. Employees are also encouraged to report inefficiencies or suggest improvements in energy usage, which are reviewed and integrated into the company’s sustainability efforts."
+        }
+       ]
+      },
+      {
+       "heading": "Continuous Improvement and Innovation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The company is committed to continuous improvement in energy management. BR Agrotech regularly explores new energy-efficient technologies and process improvements to further reduce its environmental impact. Feedback from employees and energy audits helps identify new opportunities to optimize energy use and reduce carbon emissions. Innovations are tested and implemented in various production and support processes."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Leads all energy management efforts, audits, reporting, and compliance.",
+        "Ensure energy practices meet health, safety, and environmental norms."
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Implements energy-saving procedures during manufacturing."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Maintains energy-related systems and ensures operational efficiency."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Provides strategic direction and allocates resources for upgrades and innovation."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Monitoring and Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The EHS department conducts a biennial review of this SOP to assess its effectiveness and identify opportunities for improvement. Feedback from audits and employee engagement activities is used to adjust strategies and ensure that the company is continuously improving its energy performance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Resource Management and Efficiency procedures",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Department",
+   "sourceWords": 1506,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure efficient use and sustainable management of water resources at BR Agrotech by promoting water recycling and reuse, adopting water-efficient technologies, implementing rainwater harvesting, assessing wastewater quality, and preventing groundwater contamination."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operational units, utility systems, and support functions within BR Agrotech that use water or generate wastewater. It covers practices and procedures related to water conservation, recycling and reuse, rainwater harvesting, cooling system efficiency, water quality assessment, and groundwater protection."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedures",
+     "steps": [
+      {
+       "heading": "Water Resource Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "These practices are aimed at sustainably managing, replenishing, and protecting water resources within and around the facility by implementing following procedures:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Leak Identification and Corrective Action: Monthly visual inspections of water supply lines and bi-weekly checks for cooling systems are conducted."
+        },
+        {
+         "text": "Acoustic leak detection equipment and flow monitoring systems are utilized for identifying and locating leaks in water supply systems, ensuring timely repairs, and minimizing water loss."
+        },
+        {
+         "text": "Upon detecting a leak, the water supply is immediately shut off to prevent further damage. The situation is then evaluated by the maintenance team to determine the extent of the issue, followed by the performance of necessary repairs. After the repairs are completed, the area is monitored closely by the maintenance team to ensure no further leaks occur.",
+         "responsible": "Maintenance team"
+        },
+        {
+         "text": "Rainwater Harvesting: Gutters and downpipes have been installed on designated roof areas to efficiently channel rainwater into storage tanks."
+        },
+        {
+         "text": "A first flush system is in place to divert initial runoff, ensuring only cleaner rainwater enters the storage tanks."
+        },
+        {
+         "text": "Harvested rainwater is stored in covered tanks and used for non-potable applications such as gardening and cooling processes."
+        },
+        {
+         "text": "Regular inspections and cleaning of the collection system, filters, and tanks are conducted by the maintenance team to maintain system efficiency.",
+         "responsible": "Maintenance team"
+        },
+        {
+         "text": "Water levels and usage are continuously tracked, and data is recorded to measure water savings and system performance."
+        },
+        {
+         "text": "Groundwater Contamination Prevention: RCC flooring for the storage of hazardous chemicals storage and sand pits are implemented near the storage areas are constructed. These systems ensure that any accidental leaks or spills are contained within a defined perimeter, preventing any harmful substances from entering the ground."
+        },
+        {
+         "text": "Chemicals are securely stored in sealed drums, which are clearly labeled and placed in designated storage areas with proper containment measures. This storage method minimizes the risk of leaks or spills, thereby significantly reducing the potential for soil and groundwater contamination."
+        },
+        {
+         "text": "Regular training is conducted to ensure all employees are aware of safe handling procedures for chemicals and are equipped to follow the best practices in wastewater and environmental management, thereby reducing risks of groundwater contamination."
+        }
+       ]
+      },
+      {
+       "heading": "Water Audit Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To systematically assess and improve water usage efficiency across operations, regular water audits are conducted, focusing on identifying conservation opportunities, reducing losses, and enhancing water management systems."
+        }
+       ],
+       "responsible": "EHS Team",
+       "substeps": [
+        {
+         "text": "Water Audit Planning: The EHS Team, in coordination with the Maintenance and Operations teams, regularly conducts water audits by analysing historical consumption data and monitoring water meters installed at key usage points such as formulation areas, utility sections, and cleaning stations. Key parameters including water volume and flow rate to maintain accurate usage records.",
+         "responsible": "EHS Team"
+        },
+        {
+         "text": "Assessment & Identification of Inefficiencies: Collected data is reviewed to identify patterns of excessive usage, leakage points, or inefficient practices. Equipment and operational processes are assessed to detect areas where water-saving measures, such as high-efficiency washers or reuse of treated water can be implemented."
+        },
+        {
+         "text": "Reporting & Implementation of Improvements: A detailed report is prepared highlighting inefficiencies and recommended improvements, including process optimization, equipment upgrades, and recycling initiatives. Cost-benefit analyses guide decision-making, and responsible teams are assigned for implementation."
+        },
+        {
+         "text": "Continuous Monitoring & Compliance: Implemented water-saving strategies, such as leak repairs and process modifications, are continuously monitored for effectiveness. Regular audits ensure compliance with sustainability goals, and ongoing improvements are made to enhance water efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Water Recycling and Reuse Procedure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Sewage Treatment Plant (STP) has been installed with the primary objective of enabling water recycling and reuse. The treated wastewater is reused in various non-potable applications such as gardening and flushing, significantly reducing the demand for freshwater and supporting the company’s water conservation and sustainability goals. For the effective operation and maintenance of the Sewage Treatment Plant (STP), following procedures have been established, ensuring that the treatment of domestic wastewater complies with regulatory standards and significantly reduces the impact on the environment."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Pre-Operation Inspections: Daily visual inspections are conducted by the operations, maintenance, and EHS teams to ensure equipment, chemical dosing systems, safety equipment, and control panels are in proper working condition.",
+         "responsible": "Operations, maintenance, and EHS teams"
+        },
+        {
+         "text": "The operations team checks the chemical levels and replenishes them as needed, while the safety officers verify the functionality of safety equipment, such as fire extinguishers and eyewash stations.",
+         "responsible": "Operations team; safety officers"
+        },
+        {
+         "text": "Routine Operations: Monitoring: Flow meters measure incoming sewage flow. Parameters like pH, TSS, temperature, and BOD are recorded to assess incoming load."
+        },
+        {
+         "text": "Chemical Dosing: Based on influent characteristics, dosing pumps adjust the chemical concentrations. All dosages and any modifications are logged by the operators.",
+         "responsible": "Operators"
+        },
+        {
+         "text": "Process Monitoring: STP units including aeration tanks, clarifiers, and sludge pumps are checked regularly. Aeration levels are adjusted, and sludge volume is managed to maintain treatment efficiency."
+        },
+        {
+         "text": "Non-Compliance Response: In case of non-compliance, the EHS department investigates the issue and implements corrective measures such as adjusting chemical dosing, altering operational parameters, conducting equipment maintenance, retraining personnel, and increasing monitoring frequency. Incidents are logged, and additional sampling is conducted to ensure return to compliance.",
+         "responsible": "EHS department"
+        },
+        {
+         "text": "Routine Maintenance: The following maintenance schedule is followed to ensure optimal performance of critical equipment."
+        },
+        {
+         "text": "Emergency Procedures: If an equipment failure occurs, personnel immediately follow emergency shutdown procedures. The EHS department is notified to assess the situation and determine the required actions. The details are documented in the logbook, and corrective actions are taken to prevent recurrence.",
+         "responsible": "EHS department"
+        },
+        {
+         "text": "Emergency Repairs: A stock of essential spare parts, such as pumps, valves, filters, and other components, is maintained to reduce downtime during repairs. A list of trusted vendors is available for procurement if necessary. Repairs are logged with specific details, such as the nature of the issue, corrective actions, and parts replaced."
+        },
+        {
+         "text": "Recycled Water Usage: Usage of recycled water by area is set out in the table below."
+        }
+       ]
+      },
+      {
+       "heading": "Water Reuse",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approximately 75% of the reject water generated from the Reverse Osmosis (RO) system—commonly referred to as RO reject or hard water—is reused within the facility. This reclaimed water is directed to amenity blocks for non-critical applications such as toilet flushing and cleaning purposes. By repurposing RO reject water, the facility significantly reduces freshwater consumption and enhances overall water efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Reduced Water Consumption",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "An air-cooled chiller 28 TR has been installed to replace conventional water-based cooling systems, aiming to reduce water consumption and improve resource efficiency.\nTraditional chillers require large volumes of water for heat exchange through cooling towers or evaporative processes, leading to significant water usage and losses.\nThe air-cooled chiller utilizes ambient air for heat rejection, eliminating the need for freshwater in the cooling process.\nThis system helps reduce the facility’s overall water footprint and avoids the need for water treatment, chemicals and infrastructure.\nIt supports the company’s sustainability goals by lowering water consumption, reducing operational costs, and minimizing environmental impact.\nThe chiller has been seamlessly integrated into existing operations and configured to respond efficiently under various load conditions.\nRegular monitoring and maintenance are conducted to ensure optimal performance in terms of cooling efficiency, energy usage, and system reliability.\nThe adoption of this technology reflects a proactive approach toward environmental responsibility and sustainable resource management."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Routine Maintenance Schedule",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Equipment",
+        "Task",
+        "Frequency",
+        "Responsible Team",
+        "Remarks"
+       ],
+       "rows": [
+        [
+         "Pumps",
+         "Lubrication",
+         "Weekly",
+         "Maintenance Team",
+         "Check for leakage or unusual noise"
+        ],
+        [
+         "Blower Filters",
+         "Clean/Replace",
+         "Monthly",
+         "Maintenance Team",
+         "Inspect for clogging"
+        ],
+        [
+         "Blowers",
+         "Airflow Check",
+         "Daily",
+         "Operations Team",
+         "Adjust as needed"
+        ],
+        [
+         "Clarifiers",
+         "Sludge Control",
+         "Weekly",
+         "Operations Team",
+         "Maintain ideal sludge levels"
+        ],
+        [
+         "Dosing Pumps",
+         "Calibration",
+         "Quarterly",
+         "Maintenance Team",
+         "Ensure accurate dosing"
+        ],
+        [
+         "Sampling Points",
+         "Clean/Inspect",
+         "Weekly",
+         "Lab Technician",
+         "Ensure accurate sample collection"
+        ],
+        [
+         "Flow Meters",
+         "Calibration",
+         "Yearly",
+         "Maintenance Team",
+         "Validate flow rate measurements"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Recycled Water Usage",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Usage Area",
+        "% of Recycled Water Used",
+        "Purpose",
+        "Frequency",
+        "Remarks"
+       ],
+       "rows": [
+        [
+         "Gardening",
+         "80%",
+         "Landscape irrigation",
+         "Daily",
+         "Reduces use of freshwater"
+        ],
+        [
+         "Flushing",
+         "50%",
+         "Toilet flushing",
+         "Continuous",
+         "Direct STP connection"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Record Keeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Daily logs are maintained by the maintenance and laboratory teams, recording influent and effluent parameters, chemical dosing, and operational data. Sample analysis results, along with compliance reports, are securely stored for regulatory inspections."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "New employees are thoroughly trained on the SOPs, safety protocols, and emergency procedures. Regular refresher courses are conducted to ensure compliance with operational standards."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Oversees overall implementation, conducts audits, ensures compliance, and initiates corrective actions.",
+        "Conduct trainings, ensures safe handling of chemicals, and monitors environmental risks."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Performs inspections, repairs, and preventive maintenance of water systems and STP equipment."
+       ]
+      },
+      {
+       "role": "Operations Team",
+       "responsibilities": [
+        "Monitors daily water usage and STP performance; maintains logs and ensures process efficiency."
+       ]
+      },
+      {
+       "role": "Laboratory Technicians",
+       "responsibilities": [
+        "Analyze water quality samples and maintain records for regulatory compliance."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed biennially by the EHS Department to ensure its continued effectiveness and alignment with operational needs and regulatory requirements. The review includes evaluation of water consumption data, audit findings, STP performance records, and feedback from operations and maintenance teams. Any gaps or improvement areas identified are documented, and necessary revisions are proposed. The updated SOP is then submitted to senior management for review and approval before implementation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air pollution control and emission monitoring",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1399,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Objective:\nTo implement proactive and effective measures for controlling, reducing, and monitoring atmospheric emissions, particulate matter, Odors, and noise from manufacturing activities at BR Agrotech Limited. This SOP aims to support environmental compliance, workplace safety, and community well-being across all operational units, particularly those involving agrochemical formulations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all emission-generating activities and equipment at BR Agrotech. It covers the operation and maintenance of air pollution control systems, monitoring of emissions such as PM, VOCs, SOx, and NOx, and compliance with regulatory standards to minimize environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedures",
+     "steps": [
+      {
+       "heading": "Monitoring and Emission Control of Atmospheric Pollutants",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "BR Agrotech Limited has implemented a multi-layered approach to manage and minimize emissions, ensuring compliance with environmental regulations and supporting sustainable manufacturing practices. A range of preventive measures have been adopted to reduce the release of air pollutants. Our emission control and monitoring framework encompasses the following key actions and technologies such as installation of high-efficiency dust collection systems, proper enclosure of emission sources, scheduling of high-emission operations during low-impact hours, and regular maintenance of pollution control equipment."
+        },
+        {
+         "type": "paragraph",
+         "text": "Installation of Emission Control Systems:"
+        },
+        {
+         "type": "paragraph",
+         "text": "1. Particulate Matter Mitigation"
+        },
+        {
+         "type": "bullets",
+         "text": "A bag filter system with stack has been installed to capture particulate emissions from powder processing areas.\nThe stack is directly attached with the Pulse Jet Dust Collectors (PJDCs) of powder formulation blenders, Fluidized Bed Dryers (FBDs) drying chambers & spray dryer systems ensuring targeted extraction of airborne particulates during solid formulation operations.\nSpot extractors are installed in high-dust generation areas, further enhancing the localized capture of airborne particulates directly at their source.\nClosed-loop systems are implemented wherever possible to prevent the release of dust into the work environment.\nLocal exhaust ventilation systems are used during powder mixing and transfer processes to control fugitive emissions.\nA regular cleaning schedule is maintained to avoid dust buildup in operational zones.\nThese combined measures have significantly controlled particulate matter emissions, ensuring compliance with environmental standards and safer workplace air quality."
+        },
+        {
+         "type": "paragraph",
+         "text": "1. Gaseous Emission Mitigation"
+        },
+        {
+         "type": "bullets",
+         "text": "A wet scrubber system has been installed to effectively reduce sulphur oxides (SOx) and nitrogen oxides (NOx) emissions from process exhausts by scrubbing them with neutralizing agents.\nA carbon tower has been deployed to adsorb Volatile Organic Compounds (VOC) released during solvent handling and formulation processes.\nThe carbon tower is equipped with a stack attached directly to the carbon column, with a stack height of 9 meters, ensuring safe dispersion of the treated air into the atmosphere.\nBoth systems are integrated at emission points to treat exhaust gases at the source before atmospheric release.\nPeriodic maintenance, including carbon media replacement and system calibration, is conducted to maintain high operational efficiency.\nThese mitigation technologies have successfully controlled gaseous pollutants and help the facility remain compliant with applicable air quality norms."
+        },
+        {
+         "type": "paragraph",
+         "text": "1. Fugitive Emission Mitigation"
+        },
+        {
+         "type": "bullets",
+         "text": "A structured Leak Detection and Repair (LDAR) program has been implemented to effectively monitor and control fugitive emissions which cover critical equipment such as valves, pumps, compressors, and pipeline joints, which are prone to potential leaks.\nTo support continuous monitoring, a Natural Gas (NG) Detector has been installed, enabling early detection of gas leaks.\nThe detector provides real-time alerts, allowing for swift response and timely corrective action.\nAll detected leaks are systematically logged, categorized based on severity, and repaired within a clearly defined response timeline.\nPreventive maintenance activities include regular inspections of gas-handling equipment to ensure operational integrity. The NG detector undergoes routine calibration and functional testing to maintain accurate and reliable performance. Additionally, comprehensive records are maintained for all inspections, leak events, corrective actions, and detector calibrations to ensure regulatory compliance and facilitate internal reviews."
+        },
+        {
+         "type": "paragraph",
+         "text": "Inspection and Maintenance:"
+        },
+        {
+         "type": "bullets",
+         "text": "A structured inspection and maintenance program ensures reliable operation of all emission control systems.\nCritical equipment such as bag filters, scrubbers, carbon towers, and NG detectors are routinely checked for wear, blockages, and performance issues.\nFilter replacements, carbon media changes, and scrubber checks are conducted at defined intervals to maintain efficiency.\nGas detectors are calibrated regularly to ensure accurate leak detection.\nAll maintenance activities, including inspections and corrective actions, are documented to support compliance and internal audits.\nThis proactive approach minimizes equipment failure and ensures consistent control of air emissions."
+        },
+        {
+         "type": "paragraph",
+         "text": "External Air Quality Analysis:"
+        },
+        {
+         "type": "bullets",
+         "text": "Quarterly air sample analysis is conducted by accredited external laboratories to verify compliance with local and national air quality regulations. These analyses cover key pollutants such as particulate matter, SOx, NOx, and VOCs, ensuring that emission levels remain within permissible limits.\nThe results are thoroughly reviewed by the EHS department accredited external laboratories. Any deviations or emerging trends are analyzed, and necessary corrective or preventive measures are initiated promptly.\nAll test reports, analytical data, and related documentation are maintained for audit readiness and continuous improvement of emission control strategies."
+        },
+        {
+         "type": "paragraph",
+         "text": "B. Vehicular Emission Control"
+        },
+        {
+         "type": "bullets",
+         "text": "Company vehicles undergo regular maintenance to ensure efficient fuel use and reduced Vehicular emissions such as VOCs, PM, CO, SOx, NOx emissions.\nRegular emissions testing is performed on all vehicles, with non-compliant vehicles repaired or replaced.\nDrivers are trained in fuel-efficient driving techniques to minimize air pollution.\nAll vehicles possess valid Pollution Under Control (PUC) certificates."
+        },
+        {
+         "type": "paragraph",
+         "text": "C. Odor Mitigation"
+        },
+        {
+         "type": "paragraph",
+         "text": "To control and mitigate odor emissions during QC processes, 1800 mm fume hoods have been installed in laboratory areas handling volatile or odorous substances. The following measures are in place:"
+        },
+        {
+         "type": "bullets",
+         "text": "Fume Hood Installation: QC labs are equipped with fume hoods that capture and extract odors at the source, preventing indoor or environmental release.\nLocalized Containment: All testing involving volatile compounds is conducted inside the hoods to maintain odor-free conditions.\nAirflow Regulation: Hoods maintain proper face velocity to ensure effective containment.\nPreventive Maintenance: Regular checks and maintenance of filters, exhaust fans, and ducts ensure optimal performance.\nPerformance Monitoring: Airflow indicators and sash functions are routinely monitored.\nQC Chemist Training: Staff are trained in proper hood usage, sash height, and airflow safety practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "D. Noise Mitigation and Preventive Maintenance"
+        },
+        {
+         "type": "paragraph",
+         "text": "In agrochemical manufacturing, significant noise is generated by equipment such as formulation mixers, pulverisers, granulators, drying chambers, packaging lines, and ventilation systems. BR Agrotech has implemented the following procedures to minimize noise pollution and ensure the health and safety of its workforce:"
+        },
+        {
+         "type": "bullets",
+         "text": "Preventive Maintenance Measures: All equipment undergoes routine maintenance to maintain operation within regulated noise thresholds. A dedicated noise preventive maintenance plan ensures the early detection and rectification of noise-causing faults.\nNoise Monitoring Program: Sound levels during both day and night operations are periodically monitored. The collected data is analyzed by the management for compliance and noise abatement planning.\nUse of Personal Protective Equipment (PPE): Employees working in designated high-noise areas are provided with certified ear protection, and its use is strictly enforced.\nComplaint and Incident Handling: Any noise complaints or exceedances are logged, promptly investigated, and resolved by the Environmental Compliance Officer.\nEquipment-Specific Noise Control Matrix: The table below outlines the targeted noise control maintenance plan for key machinery and the teams responsible for their implementation:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment/Area",
+          "Potential Noise Source",
+          "Inspection Frequency",
+          "Maintenance Action",
+          "Responsible Team",
+          "Remarks"
+         ],
+         "rows": [
+          [
+           "Formulation Mixers",
+           "Motor vibrations, blade wear",
+           "Bi-monthly",
+           "Inspect motor; check and replace blades; tighten couplings",
+           "Operations & Maintenance",
+           "Ensure blade balance to avoid abnormal vibration"
+          ],
+          [
+           "Pulverizes",
+           "Worn bearings, unbalanced rotors",
+           "Monthly",
+           "Lubricate bearings; check for rotor alignment",
+           "Maintenance Team",
+           "Maintain precision alignment to minimize operational noise"
+          ],
+          [
+           "Granulators",
+           "Gear noise, structural vibration",
+           "Quarterly",
+           "Inspect gears; check structural integrity",
+           "Maintenance Team",
+           "Use vibration-damping mounts as needed"
+          ],
+          [
+           "Drying Chambers",
+           "Fan and exhaust noise",
+           "Bi-monthly",
+           "Inspect fans; clean ducts and exhausts; verify insulation",
+           "Maintenance Team",
+           "Maintain airflow efficiency for quieter operation"
+          ],
+          [
+           "Packaging Lines",
+           "Pneumatic noise, mechanical wear",
+           "Monthly",
+           "Inspect actuators and conveyors; lubricate moving parts",
+           "Operations & Maintenance",
+           "Ensure smooth mechanical operations to reduce noise"
+          ],
+          [
+           "Ventilation Systems",
+           "High-speed fans, duct resonance",
+           "Quarterly",
+           "Check fan balance; inspect ducts for loose fittings",
+           "Maintenance Team",
+           "Optimize duct design to control echo and noise amplification"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Ensures effective implementation and documentation of all emission, odor, and noise control measures."
+       ]
+      },
+      {
+       "role": "Operations & Maintenance Team",
+       "responsibilities": [
+        "Conducts inspections and maintains equipment to control emissions and noise."
+       ]
+      },
+      {
+       "role": "Quality Assurance Team",
+       "responsibilities": [
+        "Reviews air quality data and supports compliance with environmental standards."
+       ]
+      },
+      {
+       "role": "Lab Technicians & QC Staff",
+       "responsibilities": [
+        "Operate odor control systems and report any issues during lab activities."
+       ]
+      },
+      {
+       "role": "Vehicle Fleet Coordinator",
+       "responsibilities": [
+        "Manages vehicle emissions compliance and driver awareness programs."
+       ]
+      },
+      {
+       "role": "All Employees (Designated Areas)",
+       "responsibilities": [
+        "Follow safety protocols and report any emission or noise irregularities."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed biennially by the EHS Department with support from QA and Maintenance teams to assess effectiveness, ensure compliance, and incorporate findings from inspections and reports. Necessary updates are proposed to management and shared with relevant staff."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Managing Hazardous Substances",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 751,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish safe and compliant procedures for labelling, storing, handling, and transporting hazardous agrochemical substances at BR Agrotech Ltd., ensuring the protection of employee health, safety, and the environment."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "A. Unloading and Storage of Hazardous Substances",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Unload Material: Hazardous substances are carefully unloaded by first verifying shipping documents and inspecting the unloading area for safety. Personnel wear appropriate personal protective equipment (PPE), and a signal person is designated to coordinate movements. Proper manual handling techniques or mechanical aids, such as forklifts, are used for heavier loads while checking containers for damage and verifying received quantities. Once unloaded, the containers are transported to designated storage areas, maintaining cleanliness in the unloading zone. The shipping documents typically verified during the unloading of hazardous substances include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Bill of Lading (BOL)\nMaterial Safety Data Sheet (MSDS)\nPacking List\nHazardous Materials Declaration\nImport/Export Permits"
+        },
+        {
+         "type": "paragraph",
+         "text": "Verification: The quantity and type of hazardous substances are verified by cross-checking the bill of lading, Material Safety Data Sheets, and packing lists for accuracy, along with validating the Hazardous Materials Declaration and any required permits to ensure compliance with safety regulations, before moving them to designated storage areas."
+        }
+       ]
+      },
+      {
+       "heading": "B. Storage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Storage: Hazardous substances are stored in designated areas based on their specific classifications, ensuring that each container is clearly labelled with its contents and associated hazards. The storage area remains locked and secured to prevent unauthorized access, protecting personnel and maintaining safety protocols."
+        }
+       ]
+      },
+      {
+       "heading": "C. Labelling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All hazardous substances are labelled in accordance with the Globally Harmonized System (GHS). Below given table provides a clear overview of the labelling requirements based on the Globally Harmonized System (GHS)."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Label Element",
+          "Description",
+          "Example"
+         ],
+         "rows": [
+          [
+           "Product Identifier",
+           "Name or number used for the chemical",
+           "\"Acetic Acid\""
+          ],
+          [
+           "Signal Word",
+           "Indicates the level of hazard (Warning or Danger)",
+           "\"Danger\""
+          ],
+          [
+           "Hazard Statements",
+           "Describes the nature of the hazard",
+           "\"Causes severe skin burns\""
+          ],
+          [
+           "Precautionary Statements",
+           "Provides measures to minimize or prevent adverse effects",
+           "\"Wear protective gloves\""
+          ],
+          [
+           "Pictograms",
+           "Visual symbols that convey specific hazards",
+           "![Corrosive Pictogram]"
+          ],
+          [
+           "Supplier Information",
+           "Name, address, and phone number of the supplier",
+           "\"ABC Chemicals, 123 St.\""
+          ],
+          [
+           "Storage Requirements",
+           "Instructions for safe storage of the substance",
+           "\"Store in a cool, dry place\""
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "D. Handling of Hazardous Substances",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Preparation and Training: Staff undergo regular training sessions on the properties of hazardous substances, understanding safety data sheets (SDS), and familiarization with first aid measures related to potential exposures.\nSafe Handling Techniques: Employees utilize tools such as spill containment trays, tongs, and chemical transfer pumps, along with personal protective equipment (PPE) like gloves, goggles, and face shields to minimize direct contact with hazardous substances.\nSpill Response: In the event of a spill, employees immediately execute spill response procedures, including evacuating the area and employing absorbent materials for containment and cleanup. All spills are promptly reported to a supervisor, and incidents are documented according to company reporting guidelines."
+        }
+       ]
+      },
+      {
+       "heading": "E. Emergency Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "First aid kits and emergency response equipment including items such as:"
+        },
+        {
+         "type": "numbered",
+         "text": "Adhesive bandages\nAntiseptic wipes\nGauze pads\nScissors\nTweezers\nBurn cream\nEye wash solution\nChemical spill kits\nAbsorbent materials\nGloves\nFace shields"
+        },
+        {
+         "type": "bullets",
+         "text": "Emergency contact information is readily accessible in all areas where hazardous substances are handled.\nEmployees are familiarized with emergency contacts and evacuation procedures specific to hazardous substance incidents, ensuring readiness for any potential emergencies."
+        }
+       ]
+      },
+      {
+       "heading": "Transportation of Hazardous Substances",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All hazardous substances are securely packaged in compliance with applicable regulations to prevent leaks during transportation.\nPackaging includes appropriate labelling that adheres to the Globally Harmonized System (GHS) for safe handling.\nContainers specifically designed to contain hazardous substances are utilized to minimize the risk of spillage.\nVehicles used for transportation are equipped with necessary safety features, including secondary containment systems and spill kits.\nProper ventilation must be ensured within transport vehicles to handle hazardous materials safely.\nDrivers receive specialized training on the handling and transport of hazardous substances.\nTransport routes are pre-planned to avoid densely populated areas whenever possible.\nRegular inspections of both packaging and vehicles are conducted to ensure integrity and compliance with safety standards."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All employees involved in the handling, storage, and transportation of hazardous substances must receive training on this procedure and the hazards associated with the materials they work with."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The procedure will be reviewed biennially by the EHS Manager to ensure compliance with updated laws and operational needs. Any incident involving hazardous substances will trigger an immediate review. Quarterly internal audits will assess compliance, while employee feedback will be considered during the review process. All changes will be documented, and updated procedures will be communicated to relevant staff, with retraining conducted as needed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Department",
+   "sourceWords": 3441,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Effective waste management is a core component of BR Agrotech’s commitment to environmental responsibility and regulatory compliance. Robust systems have been successfully implemented to manage all types of waste generated from agrochemical formulation, packaging, cleaning, maintenance, and other operational activities."
+      },
+      {
+       "type": "paragraph",
+       "text": "Our waste management practices are designed to:"
+      },
+      {
+       "type": "numbered",
+       "text": "Waste Segregation to Prevent Contamination\nWaste Storage, Handling, and Transportation\nPromotion of Material Reuse and Recovery"
+      },
+      {
+       "type": "paragraph",
+       "text": "Through a structured Waste Stream Mapping approach, BR Agrotech has identified and categorized the various types of waste generated throughout its operations. This mapping defines clear protocols for their segregation, storage, handling, and disposal in accordance with legal and sustainability standards. The table below outlines key waste streams and the specific waste management practices implemented for each."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No",
+        "Description",
+        "Waste Category",
+        "Storage",
+        "Handling",
+        "Disposal",
+        "Notes",
+        "Responsible Person"
+       ],
+       "rows": [
+        [
+         "1",
+         "Residual agrochemical formulations (spillage, rejected batches)",
+         "Hazardous Waste",
+         "Sealed, labeled containers in designated area",
+         "Handled using chemical-resistant PPE; immediate cleanup of spills",
+         "Disposed through certified hazardous waste vendors",
+         "Routine checks for leaks and proper labeling",
+         "Environmental Manager"
+        ],
+        [
+         "2",
+         "Solvent waste (from equipment cleaning)",
+         "Hazardous Waste",
+         "Fireproof, sealed drums in ventilated areas",
+         "Use of spill kits and PPE; handled in fume hood or ventilated zones",
+         "Incineration / Pre-processing via authorized agency",
+         "Maintain solvent usage and disposal logs",
+         "Environmental Manager"
+        ],
+        [
+         "3",
+         "Filter cake/sludge (from filtration and formulation tanks)",
+         "Hazardous Waste",
+         "Leak-proof drums",
+         "Proper PPE; transfer using sealed equipment",
+         "Disposed through certified hazardous waste facilities",
+         "Avoid cross-contamination with non-hazardous waste",
+         "Production Manager"
+        ],
+        [
+         "4",
+         "Empty pesticide/chemical drums",
+         "Hazardous Waste",
+         "Triple-rinsed and stored in marked return zone",
+         "Handled with care; tamper-proof sealing",
+         "Returned to authorized recyclers or vendors",
+         "Rinsing records maintained as per CPCB guidelines",
+         "Logistics Supervisor"
+        ],
+        [
+         "5",
+         "Packaging waste (plastic, paper, metal)",
+         "Recyclable Waste",
+         "Segregated bins by material type",
+         "Compressed for transport; manual sorting",
+         "Recycled through approved third-party vendors",
+         "Periodic audits on recycling rates",
+         "Warehouse Supervisor"
+        ],
+        [
+         "6",
+         "General office waste",
+         "General Waste",
+         "Clearly labeled bins in all areas",
+         "Routine housekeeping; kept separate from recyclables",
+         "Recycled through approved third-party vendors",
+         "Segregation awareness among staff",
+         "Facility Manager"
+        ],
+        [
+         "7",
+         "Organic waste (canteen/kitchen waste)",
+         "Organic Waste",
+         "Compost bins or organic waste storage",
+         "Collected daily; kept separate from chemical zones",
+         "Sent to composting facility",
+         "Regular monitoring",
+         "Maintenance Supervisor"
+        ],
+        [
+         "8",
+         "Dust and residues (from grinding or blending powders)",
+         "Hazardous Waste",
+         "Covered containers to prevent dispersal",
+         "Swept using vacuum cleaners with HEPA filters",
+         "Disposed through solid waste contractor",
+         "Staff to wear respiratory protection",
+         "Production Supervisor"
+        ],
+        [
+         "9",
+         "Obsolete or expired raw materials",
+         "Hazardous Waste",
+         "Secure, locked hazardous storage with inventory log",
+         "Handled with gloves; monitored regularly",
+         "Disposal through certified hazardous agencies",
+         "FIFO and expiry tracking maintained",
+         "Procurement Manager"
+        ],
+        [
+         "10",
+         "Wastewater from plant cleaning operations",
+         "Hazardous (if contaminated)",
+         "Collection tanks",
+         "Stored in drums with labels",
+         "Disposed per PCB norms",
+         "Water quality tested before discharge",
+         "ETP/RO Supervisor"
+        ],
+        [
+         "12",
+         "Spent wash water from batch processes",
+         "Hazardous Waste (if contaminated)",
+         "Dedicated holding tanks",
+         "Reused",
+         "Reused in next similar production campaign",
+         "Check for chemical residues pre-discharge",
+         "ETP/RO Supervisor"
+        ],
+        [
+         "13",
+         "Catalyst residues or residues from reaction vessels",
+         "Hazardous Waste",
+         "Secure, chemical-resistant drums",
+         "Carefully handled with PPE",
+         "Disposed through authorized waste vendors",
+         "No storage beyond recommended time",
+         "Environmental Manager"
+        ],
+        [
+         "14",
+         "Contaminated PPE, gloves, or wipes",
+         "Hazardous Waste",
+         "Marked disposal bins for PPE waste",
+         "Collected regularly and stored safely",
+         "Incinerated or sent to authorized disposal service",
+         "Ensure segregation from recyclable waste",
+         "Facility Manager"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this Standard Operating Procedure (SOP) is to define a structured waste management system that ensures the appropriate segregation, classification, storage, handling, transportation, and disposal of waste generated at BR Agrotech. This SOP is developed to reduce environmental impact, ensure full compliance with relevant environmental regulations, and support sustainability by encouraging material reuse and recovery."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all waste generated during BR Agrotech’s agrochemical manufacturing operations, including formulation, packaging, maintenance, laboratory, and general facility activities. It covers all phases of waste management—from segregation and classification to storage, handling, transportation, disposal, and recycling."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Hazardous Waste",
+       "definition": "Any waste that poses a significant risk to human health or the environment due to its toxic, corrosive, flammable, or reactive properties, such as chemical residues, expired agrochemicals, and solvent waste."
+      },
+      {
+       "term": "Non-Hazardous Waste",
+       "definition": "Waste does not pose substantial risks, such as packaging materials, or office-generated waste."
+      },
+      {
+       "term": "Recyclable Waste",
+       "definition": "Waste materials like plastic drums, paper, cardboard, and metals that can be processed and reused through approved recycling facilities."
+      },
+      {
+       "term": "Organic Waste",
+       "definition": "Biodegradable materials such as food scraps and plant-based waste that can be composted or processed in organic waste treatment facilities."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Waste Segregation to Prevent Contamination",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification & Segregation of Waste Types\n\nWaste generated across BR Agrotech’s manufacturing and operational areas is systematically classified and segregated at the source into designated, color-coded containers to avoid cross-contamination. All employees receive training to correctly identify and dispose of waste based on its type."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Category",
+          "Description",
+          "Waste Included",
+          "Waste Bin Color-Coding"
+         ],
+         "rows": [
+          [
+           "Hazardous Waste",
+           "Waste poses significant risks to health or the environment, such as agrochemicals, solvents, or residues.",
+           "Expired chemicals, agrochemical residues, contaminated PPE, used solvents, waste from formulation units",
+           "Red"
+          ],
+          [
+           "Non-Hazardous Waste",
+           "General waste with no significant health or environmental risk.",
+           "Paper, plastic packaging, food waste, sweep dust, office waste",
+           "Green"
+          ],
+          [
+           "Recyclable Waste",
+           "Waste that can be recovered or reprocessed for reuse.",
+           "Empty HDPE drums, metal cans, cardboard boxes, shrink wrap, scrap metal",
+           "Separate area allocated"
+          ],
+          [
+           "Organic Waste",
+           "Biodegradable materials suitable for composting.",
+           "Canteen food waste, garden trimmings, biodegradable packaging",
+           "Black"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Minimizing Cross-Contamination\n\n- Separation of Hazardous Waste: Hazardous waste is segregated from non-hazardous and recyclable materials to prevent dangerous reactions or contamination.\n- Dedicated Containers for Special Waste: Used agrochemical containers, expired products, and contaminated items are placed in sealed, leak-proof, and clearly labeled containers.\n- Supervision and Monitoring: Supervisors regularly monitor waste segregation practices to ensure that employees are following the procedures and correct any deviations immediately.\n\nHandling Special Waste Streams\n\n- Expired or Off-Spec Agrochemicals: Collected and stored in approved hazardous waste containers pending authorized disposal.\n- Used Packaging with Residue: Rinsed and handled as hazardous waste unless completely decontaminated; triple-rinsing protocols are followed where applicable.\n- Electronic Waste (E-Waste): Faulty lab devices, batteries, and electronic components are collected and disposed of following the e-waste handling policy."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Storage, Handling, and Transportation",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Reporting",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Waste Records: Detailed records of waste generated, segregated, and disposed of are maintained. This includes:\nType and volume of waste generated.\nWaste stream classification.\nAny incidents of contamination and corrective actions taken.\nPeriodic Reporting: Reports are submitted to the Waste Management Team for review to ensure continued compliance with this SOP.\nRoutine Audits: The Waste Management Team conducts regular audits to verify proper segregation, monitor compliance, and identify areas for improvement."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Corrective Actions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "In cases of improper segregation or contamination, immediate corrective actions are taken, including re-segregating the waste and retraining staff where necessary.\nRoot Cause Analysis: The root cause of improper segregation is investigated, and steps are taken to address the issue, such as refining waste separation protocols or improving employee training."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Safety and Environmental Considerations",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Personal Protective Equipment (PPE): Employees handling hazardous waste wear appropriate PPE, including gloves, masks, and goggles, to prevent exposure to harmful materials.\nSpill Management: In case of spills, employees follow the spill response protocol to minimize environmental impact and ensure proper cleanup.\nRegulatory Compliance: Waste segregation practices align with environmental regulations, ensuring safe disposal and recycling of materials."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Oversees the entire waste management program, ensures compliance with statutory and regulatory requirements, and maintains updated waste stream mapping records."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure that departmental personnel comply with the defined waste segregation and disposal procedures and verify that proper waste handling practices are consistently followed."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Responsible for segregating waste correctly at the point of generation, using the designated, labeled, or color-coded containers for different waste categories."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Waste Management SOP is reviewed biennially by the EHS department to ensure regulatory compliance and assess waste reduction efforts. Feedback from staff and contractors is considered to improve efficiency. If gaps are identified, corrective actions such as SOP updates, staff retraining, or process adjustments are implemented. Review findings are documented, communicated, and audits are conducted to support ongoing improvement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Material Management",
+   "code": "",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS department",
+   "sourceWords": 1385,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to streamline material management practices across all formulation and processing units at BR Agrotech, promoting operational efficiency and environmental responsibility. It provides clear guidelines to reduce material wastage, enhance resource utilization, and minimize the environmental impact associated with material storage, handling, and disposal. The SOP also aims to strengthen internal controls and promote the use of eco-friendly and safer material alternatives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all stages of material management within BR Agrotech’s agrochemical production lifecycle. It includes the procurement, inventory control, storage, safe handling, usage, and potential reintegration or recycling of raw materials. Key substances covered include active technical, solvents, dispersants, adjuvants, emulsifiers, and inert ingredients used in the formulation of EC (Emulsifiable Concentrate), SC (Suspension Concentrate), and other product types. The SOP also governs practices for monitoring material consumption, managing formulation waste, and embedding sustainable approaches in line with BR Agrotech’s environmental and safety objectives."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Materials Integration",
+       "body": []
+      },
+      {
+       "heading": "Integration of Eco-Friendly Materials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Sustainable production at BR Agrotech emphasizes the use of environmentally responsible raw materials to reduce ecological impact and support long-term agricultural resilience.\nOver 40% of raw materials used in packaging of product formulations are eco-friendly, including water-based solvents, biodegradable surfactants, and naturally derived carriers such as vegetable oil esters and plant-based adjuvants. These materials replace petroleum-derived and synthetic components wherever feasible.\nThese substitutions not only support sustainability goals but also ensure full compliance with international agrochemical regulations. Supplier selection is based on stringent environmental criteria, with preference given to partners demonstrating transparent green manufacturing practices.\nPeriodic material audits and R&D reviews are conducted to explore new opportunities for integrating greener inputs, further minimizing our carbon footprint and enhancing sustainability across the supply chain."
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Safer Alternative Substances",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "In line with safety and environmental goals, BR Agrotech systematically replaces hazardous substances with safer, less toxic alternatives in its formulations. This includes replacing high-risk chemicals with less harmful options that still meet performance standards. Mercury and mercury-based compounds, along with other severely hazardous substances such as chlorinated solvents and organotin compounds, are strictly prohibited and excluded from all production processes.\nSafer input substitutes, including non-aromatic hydrocarbons (e.g., dearomatized aliphatic solvents), low-toxicity emulsifiers, and biodegradable antifoaming agents—are rigorously tested through internal quality protocols to ensure they meet BR Agrotech’s functional and efficacy standards without compromising product stability or shelf-life.\nIn order to opt for safer alternatives, no pesticides that have LD50 < 50 mg / Kg of body wight, which is falling under red category and considered extremely poisonous as per toxic categories defined in Insecticides Act are formulated.\nMaterial Safety Data Sheets (MSDS) for all ingredients are routinely reviewed, updated, and centrally archived by the EHS (Environment, Health & Safety) team. Any substance flagged by REACH, GHS, or the Indian Insecticides Act for high toxicity, persistence, or bioaccumulation is reviewed for substitution during the annual chemical review cycle.\nA structured monitoring framework, integrated with BR Agrotech’s quality assurance and EHS systems, tracks the performance, safety profile, and regulatory compliance of each adopted alternative. This mechanism ensures continuous improvement and supports our goal of maintaining a low-toxicity, regulation-compliant agrochemical manufacturing process."
+        }
+       ]
+      },
+      {
+       "heading": "Precision Dosing and Real-Time Process Optimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Material consumption is minimized using high precision automated filling machines. These machines ensure that filling of material is in the exact quantity required. This level of precision reduces material wastage.\nOnline monitoring systems are deployed across the formulation, mixing, and filling stages of production. These systems enable constant oversight of the manufacturing process, allowing for immediate adjustments to be made as necessary. This proactive monitoring ensures that material usage remains optimized throughout the production cycle and reduces inefficiencies caused by human error or process deviations.\nEfficiency data collected from various stages of production, including formulation and packing, is continuously analyzed to identify potential areas for improvement.\nThe process ensures that resource consumption aligns with regulatory standards, improving both efficiency and compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Reintegration of Residual Materials through Closed-Loop Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "To further optimize material usage, BR Agrotech has implemented a closed-loop recovery system within its manufacturing processes. This system focuses on recovering residual materials from various stages of production, including cleaning processes, intermediate containers, and equipment flushes. Residual materials, such as excess herbicides, solvents, and other agrochemical ingredients, are carefully collected, filtered, and tested for quality assurance before being reintegrated into future production batches.\nThe closed-loop recovery system reduces the need for virgin raw materials, helping to lower material consumption by up to 20%. This approach minimizes environmental impact by reducing waste and conserving resources, contributing to a more sustainable manufacturing process.\nThe reuse of recovered materials not only lowers the environmental impact but also leads to significant cost reductions in production. By incorporating residuals back into production, BR Agrotech reduces the dependency on new raw materials, helping to minimize both operational costs and waste generation.\nOngoing assessments ensure that reintegrated materials meet the necessary quality standards required for product performance."
+        }
+       ]
+      },
+      {
+       "heading": "Reducing Hazardous By-Product Formation and Toxicity",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "BR Agrotech has implemented advanced process controls and raw material substitutions to significantly limit the generation of hazardous by-products during agrochemical formulation. This includes minimizing volatile organic compounds (VOCs), heavy metals such as lead and cadmium, and Persistent Organic Pollutants (POPs) like dioxins, furans, and PCBs.\nReaction parameters are carefully optimized, including temperature control, catalyst selection, and mixing precision, to prevent unintentional formation of POPs during product synthesis and blending.\nEngineering controls such as sealed transfer lines, and closed loop mixing systems are in place to contain emissions at the source and prevent release into air or water streams.\nChlorinated solvents have been completely phased out in favor of water-based dispersants and emulsifiers, eliminating a major category of hazardous substances from production lines.\nAny hazardous waste generated is securely contained, treated, and disposed of through certified third-party facilities in compliance with Hazardous Waste Management Rules and aligned with international best practices.\nThe EHS team conducts regular audits, real-time emissions monitoring, and compliance checks to ensure the plant’s waste management practices contribute to overall toxicity reduction and environmental protection, in line with BR Agrotech’s commitment to sustainable agrochemical manufacturing."
+        }
+       ]
+      },
+      {
+       "heading": "Efficient Inventory Management and Material Tracking",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "At BR Agrotech, a robust inventory management system is in place to ensure optimal utilization of raw materials used in agrochemical manufacturing. Real-time tracking dashboards are designed to monitor the movement and consumption of inputs, enabling accurate forecasting, minimizing overstocking, and reducing material wastage. Just-in-time inventory practices have been adopted to align raw material supply with production schedules, ensuring efficiency across procurement, storage, and usage stages."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Awareness on Sustainable Material Practices",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Continuous training and awareness programs are conducted to enhance employee knowledge on sustainable material management. Staff across production, procurement, and warehousing departments regularly participate in workshops and seminars focused on material conservation, safe handling, recovery of usable residues, and the integration of safer, eco-friendly alternatives. These programs are tailored to reinforce BR Agrotech’s commitment to sustainability, safety, and operational excellence."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Stores team",
+       "responsibilities": [
+        "Overseeing the implementation of material control measures, including tracking raw material usage, reintegration of recovered chemicals, and minimizing wastage."
+       ]
+      },
+      {
+       "role": "Production Supervisors",
+       "responsibilities": [
+        "Ensure that dosing, mixing, and grinding of raw materials are carried out as per approved SOPs to maximize efficiency and prevent material loss."
+       ]
+      },
+      {
+       "role": "EHS department",
+       "responsibilities": [
+        "Monitors the integration of eco-friendly inputs, evaluates performance data related to material usage, and ensures all practices align with BR Agrotech’s sustainability commitments."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Material Management SOP is reviewed annually by the EHS department to ensure its continued alignment with BR Agrotech’s environmental and efficiency goals. This review includes an evaluation of material utilization rates, inventory discrepancies, adoption of safer substances, and recovery practices. A formal report summarizing key findings and recommendations is submitted to senior management for review and strategic decision-making."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Packaging Management and Optimization",
+   "code": "",
+   "catalogId": "sustainable-packaging",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 499,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the established procedures at BR Agrotech Ltd. to optimize primary packaging used for agrochemical products. The objective is to ensure packaging is not only compliant and protective but also designed to facilitate easy and safe disposal by end users (farmers, distributors), reduce material use, and minimize environmental impact through lightweighting and use of recyclable mono-materials."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to the primary packaging of all crop protection products, including pesticides, herbicides, insecticides, and fungicides manufactured at BR Agrotech’s facilities. It excludes secondary and tertiary packaging materials like crates, shrink wraps, and pallets."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Primary Packaging",
+       "definition": "The immediate container that holds the agrochemical product and comes into direct contact with it (e.g., HDPE bottles, jerry cans, laminated pouches, and fiber drums)."
+      },
+      {
+       "term": "Lightweighting",
+       "definition": "The reduction of plastic or composite material usage in packaging design without affecting durability or safety."
+      },
+      {
+       "term": "Mono-material Packaging",
+       "definition": "Packaging is composed of a single type of material (e.g., 100% HDPE), making it easier to recycle."
+      },
+      {
+       "term": "Facilitated Disposal",
+       "definition": "Packaging designed to help users understand and carry out environmentally responsible disposal, with guidance printed on the label."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Packaging Development Team",
+       "responsibilities": [
+        "Designs product-specific containers using mono-material structures and evaluates designs for durability and recyclability."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Sources recyclable HDPE resin and other approved mono-material substrates from certified vendors."
+       ]
+      },
+      {
+       "role": "QA and QC Teams",
+       "responsibilities": [
+        "Perform compatibility and leakage tests to ensure reduced-material packaging remains compliant with product safety and transport regulations."
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Ensures precise filling and sealing using automated machinery calibrated for lighter-weight containers."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Current Implementation and Practices",
+     "steps": [
+      {
+       "heading": "Packaging Material Optimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Almost 70% of liquid formulations are filled in HDPE bottles or jerry cans ranging from 50 mL to 20 L, made from high-grade virgin/recyclable HDPE."
+        },
+        {
+         "text": "Fiber drums (Biodegradable) for bulk formulations use recyclable liner bags and reduce fiber wall thickness, achieving material savings while maintaining stack strength."
+        },
+        {
+         "text": "Also, Fiber drums and HDPE are being reused multiple times for internal material movement to reduce the procurement of new fiber drums."
+        }
+       ]
+      },
+      {
+       "heading": "Use of Mono-materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Almost 70% of rigid containers (bottles, jerry cans) are produced using only HDPE with no metallic or multi-material parts, ensuring full recyclability."
+        },
+        {
+         "text": "Caps, seals, and liners are designed to match the base container material type to maintain homogeneity in recycling streams."
+        }
+       ]
+      },
+      {
+       "heading": "Consumer Disposal Facilitation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Every primary container carries clear disposal instructions in local language(s), including do’s and don’ts after product use."
+        },
+        {
+         "text": "Labels include recycling symbols, product batch details, and an advisory to return rinsed containers to approved collection points (if applicable)."
+        },
+        {
+         "text": "Packaging designs include triple-rinse-ready spouts and puncture guides to promote safe final disposal after product consumption."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Sustainable Packaging Management and Optimization SOP is reviewed biennially by the Packaging Material Quality Control Department to ensure regulatory compliance, assess sustainability performance, and incorporate improvements. Findings from audits, user feedback, and operational data guide updates, which are promptly communicated and implemented across relevant departments."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Supplier Engagement and Management",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Procurement Team",
+   "sourceWords": 510,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the set procedures for integrating sustainability into supplier management, covering selection, training, performance monitoring, audits, and incentives, to ensure responsible sourcing and continuous ESG improvement across the supply chain."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all suppliers and subcontractors engaged by the organization, ensuring alignment with sustainability objectives, risk mitigation, and continuous improvement in supplier performance."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Ensures sustainability clauses are embedded in all supplier contracts."
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Regularly assesses suppliers and implements capacity-building programs."
+       ]
+      },
+      {
+       "role": "Compliance Team",
+       "responsibilities": [
+        "Monitors supplier adherence to contractual sustainability requirements and enforces corrective actions when necessary."
+       ]
+      },
+      {
+       "role": "Suppliers",
+       "responsibilities": [
+        "Maintain compliance with sustainability requirements and participate in improvement initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Initial Screening of Potential Suppliers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prospective suppliers are required to complete a sustainability focused pre-assessment form or questionnaire. This helps evaluate their baseline practices related to:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Suppliers must meet defined minimum ESG benchmarks to proceed to the next stage."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Greenhouse gas emissions and energy efficiency."
+        },
+        {
+         "text": "Management of water usage and waste disposal."
+        },
+        {
+         "text": "Adherence to labor rights, workplace safety, and non-discrimination standards."
+        },
+        {
+         "text": "Ethical conduct, including anti-corruption safeguards."
+        },
+        {
+         "text": "Commitment to responsible sourcing and traceability of raw materials."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation and Final Selection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Shortlisted suppliers undergo further assessment based on historical performance and willingness to adopt continuous sustainability improvements. Their documented progress, certifications, and alignment with industry best practices are also considered before final approval."
+        }
+       ]
+      },
+      {
+       "heading": "Contractual Integration of Sustainability Expectations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved suppliers are engaged through contract and Code of Conduct that include enforceable clauses focused on:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Ethical and Transparent Business Practices"
+        },
+        {
+         "text": "Labor Rights and Fair Working Conditions"
+        },
+        {
+         "text": "Environmental Sustainability and Compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Training and Knowledge Sharing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To build supplier capabilities, training programs are conducted periodically, covering topics such as:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Suppliers are granted access to tools, guidelines, and participate in collaborative forums for exchanging sustainable practices."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Efficient use of energy and water resources."
+        },
+        {
+         "text": "Proper chemical handling and compliance with environmental regulations."
+        },
+        {
+         "text": "Implementation of social and ethical compliance systems and inclusive workplace practices."
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Monitoring and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Suppliers are required to submit regular updates on key sustainability indicators, including:"
+        },
+        {
+         "type": "paragraph",
+         "text": "On-site visits and inspections are performed annually to cross-verify submitted data and check compliance with contractual obligations. Deviations are addressed through structured corrective action plans."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Resource consumption and emission metrics."
+        },
+        {
+         "text": "Social compliance audits and labor certifications."
+        },
+        {
+         "text": "Any incidents, corrective actions, and progress on sustainability roadmaps."
+        }
+       ]
+      },
+      {
+       "heading": "Self-Assessment and Third-Party Verification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Each year, suppliers conduct a formal self-assessment evaluating performance in various ESG areas such as:"
+        },
+        {
+         "type": "paragraph",
+         "text": "To ensure objectivity, these assessments are supplemented by ESG audits conducted either internally or by accredited external parties."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Reduction of carbon footprint."
+        },
+        {
+         "text": "Efficiency in water and energy use."
+        },
+        {
+         "text": "Safe and fair labor practices."
+        },
+        {
+         "text": "Environmental compliance and responsible procurement."
+        }
+       ]
+      },
+      {
+       "heading": "Recognition and Reward Mechanisms",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To motivate continued improvement, top-performing suppliers are acknowledged through:"
+        },
+        {
+         "type": "paragraph",
+         "text": "These incentives, combined with regular feedback sessions, aim to foster lasting supplier relationships built on transparency and shared sustainability goals."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "An annual sustainability award based on KPI results."
+        },
+        {
+         "text": "Financial bonuses for exceeding targets."
+        },
+        {
+         "text": "Certificates and public recognition as sustainability leaders."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed biennially to integrate regulatory changes, emerging sustainability trends, and insights gained from supplier engagement. Supplier feedback is actively collected to refine sustainability practices and enhance collaboration."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Equipment Safety Inspections and Protective Equipment Management",
+   "code": "",
+   "catalogId": "equipment-safety",
+   "pillar": "S",
+   "department": "EHS",
+   "owner": "Safety Officer",
+   "sourceWords": 365,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured approach for conducting equipment safety inspections and audits while ensuring the provision of necessary protective equipment to employees exposed to occupational hazards at BR Agrotech Limited. This SOP ensures compliance with workplace safety regulations, minimizes operational risk, and enhances worker safety in an agrochemical manufacturing environment."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees and departments that:"
+      },
+      {
+       "type": "bullets",
+       "text": "Operate, maintain, or work in proximity to manufacturing machinery and process equipment\nHandle agrochemical products or hazardous substances during production, packaging, or waste handling\nAre exposed to physical, chemical, or mechanical occupational risks"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Safety Officer",
+       "responsibilities": [
+        "Implements inspection protocols and oversees PPE usage across departments"
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Conducts monthly equipment inspections and reports issues to safety committee"
+       ]
+      },
+      {
+       "role": "Supervisors/Managers",
+       "responsibilities": [
+        "Ensure that employees receive and correctly use proper PPE"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow equipment usage guidelines and wear issued PPE during all tasks"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Inspection Schedule",
+     "steps": [
+      {
+       "heading": "Inspection Schedule",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Monthly routine inspections for all critical machinery and tools\nAnnual comprehensive audits including documentation review and operational tests"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Inspection Criteria",
+     "steps": [
+      {
+       "heading": "Inspection Criteria",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Mechanical integrity and functional safety of equipment\nProper calibration of measuring and dosing systems\nCondition of safety guards, interlocks, and emergency stop mechanisms\nElectrical wiring, grounding, and leak detection systems\nCompliance with agrochemical production standards and statutory safety codes"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Corrective Actions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Non-conforming equipment is tagged and isolated until repairs are verified\nCorrective actions must be completed within 7 working days of identification\nMaintenance logs and safety reports are archived for audit readiness"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Protective Equipment Requirements",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "PPE provided to employees based on job-specific risk assessments"
+      },
+      {
+       "type": "paragraph",
+       "text": "Includes:"
+      },
+      {
+       "type": "bullets",
+       "text": "Safety helmets and chemical splash-resistant face shields\nImpact-resistant goggles\nOrganic vapor respirators and particulate masks\nNitrile or neoprene gloves depending on chemical compatibility\nFlame-resistant and anti-static coveralls (Tychem or equivalent)\nHigh-visibility safety vests and chemical-resistant boots"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Distribution and Maintenance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "PPE is distributed during onboarding and periodically replaced based on wear/use\nEach PPE item is logged and tracked in the Safety Management System (SMS)\nCleaning and disinfection protocols for reusable PPE are strictly followed"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Compliance Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Daily PPE checks by supervisors during shift changes\nRandom compliance audits by the Safety Officer\nRepeated non-compliance leads to retraining or disciplinary action"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP is reviewed biennially by the EHS Team\nEmployee feedback and incident reports are integrated to improve the SOP\nUpdates are documented and communicated through toolbox talks and safety boards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Evaluation Practices",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR",
+   "sourceWords": 501,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a consistent and transparent approach to evaluating employee performance at BR Agrotech Limited. It aims to support individual development, recognize high performance, identify areas of improvement, and ensure alignment between personal objectives and the company's strategic goals in agrochemical manufacturing."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all permanent and contract employees at BR Agrotech Limited, including roles across production, quality assurance, R&D, warehousing, maintenance, sales, procurement, EHS (Environment, Health & Safety), and administration."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Key Components of Evaluation",
+     "steps": [
+      {
+       "heading": "Key Components of Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The employee evaluation system includes the following elements:"
+        },
+        {
+         "type": "numbered",
+         "text": "Performance Evaluation Form: Assesses core competencies, job-specific responsibilities, and behavioural attributes.\nIndividual Career Development Plan (ICDP): Outlines employee growth goals, skill development needs, and long-term potential in alignment with organizational needs.\nProcurement/Stakeholder Performance Section (for roles involving suppliers, buyers, or partners): Evaluates vendor interaction efficiency, compliance awareness, and cost optimization outcomes."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Evaluation Criteria",
+     "steps": [
+      {
+       "heading": "Evaluation Criteria",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees are rated on a 5-point scale from 1 (Needs Improvement) to 5 (Outstanding) across the following areas:"
+        },
+        {
+         "type": "paragraph",
+         "text": "A. For All Employees"
+        },
+        {
+         "type": "bullets",
+         "text": "Job Knowledge & Technical Skills – Understanding of job responsibilities, agrochemical formulations, SOPs, and regulatory standards.\nWork Quality & Efficiency – Output accuracy, minimal rework, and timely task completion.\nSafety Compliance – Adherence to plant safety protocols, PPE usage, and chemical handling guidelines.\nCommunication & Teamwork – Collaboration within cross-functional teams, effective internal reporting, and respectful communication.\nProblem-Solving & Initiative – Ability to identify root causes, propose solutions, and take ownership.\nReliability & Discipline – Punctuality, attendance, and commitment to duties.\nAdaptability – Flexibility during production shifts, audits, or demand fluctuations.\nLeadership (if applicable) – Delegation, team supervision, and mentoring capabilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "B. For Procurement/Buyers Roles"
+        },
+        {
+         "type": "bullets",
+         "text": "Supplier/Buyer Communication – Professional, timely, and clear communication with third parties.\nOrder & Supply Chain Coordination – On-time procurement or delivery, coordination of samples, follow-ups.\nSustainability & Compliance Collaboration – Engagement with EcoVadis, GHS labelling compliance, or audit preparedness.\nCost Effectiveness – Achieving cost targets without compromising on quality or safety."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Individual Career Development Plan (ICDP)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Evaluation outcomes contribute to building the ICDP for each employee. These include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Short- and long-term career goals\nUpskilling needs (e.g., formulation science, supply chain tools, ISO/EcoVadis training)\nOpportunities for cross-department exposure or promotion readiness"
+      },
+      {
+       "type": "paragraph",
+       "text": "ICDPs are developed collaboratively between employees and supervisors, with support from HR."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Schedule",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Type of Review",
+        "Timeline"
+       ],
+       "rows": [
+        [
+         "Annual Performance Review",
+         "Every April"
+        ],
+        [
+         "Stakeholder/Procurement Input",
+         "During Annual Review"
+        ],
+        [
+         "ICDP Review",
+         "Every year or role change"
+        ],
+        [
+         "Mid-Year Check-In (Optional)",
+         "As needed"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Recordkeeping",
+     "rows": [
+      {
+       "record": "Completed Performance Evaluation Form",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "ICDP Form (signed by employee and supervisor)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Stakeholder Input (where applicable)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Comments and feedback documentation",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Each review must be accompanied by:"
+      },
+      {
+       "type": "bullets",
+       "text": "Completed Performance Evaluation Form\nICDP Form (signed by employee and supervisor)\nStakeholder Input (where applicable)\nComments and feedback documentation"
+      },
+      {
+       "type": "paragraph",
+       "text": "HR is responsible for securely storing records and ensuring restricted access. Records are retained for a minimum of 5 years as per company data policies."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Outcomes & Action Plan",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Rating",
+        "Action Plan"
+       ],
+       "rows": [
+        [
+         "1–2 (Needs Work)",
+         "Create a Performance Improvement Plan (PIP) with training goals, follow-up in 3–6 months, and increased supervision."
+        ],
+        [
+         "3 (Meets Expectations)",
+         "Continue current responsibilities with opportunities for job enrichment or cross-training."
+        ],
+        [
+         "4–5 (Exceeds/Outstanding)",
+         "Eligible for bonuses, promotions, or leadership programs. May be nominated for external training or cross-functional project involvement."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The SOP is reviewed biennially by the HR department in consultation with department heads and senior management. Employee feedback on the appraisal process is collected to ensure continuous improvement and alignment with company goals."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Approving Sensitive Transactions Compliance",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "HR department",
+   "owner": "HR department",
+   "sourceWords": 285,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define a structured procedure for the approval and oversight of high-risk or sensitive transactions, such as donations, sponsorships, procurement, travel, and gifts, ensuring these align with BR Agrotech’s ethical guidelines, regulatory obligations, and internal compliance standards."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Procedure",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Sr. No.",
+          "Step",
+          "Action",
+          "Details",
+          "Responsible Department",
+          "Status/Notes"
+         ],
+         "rows": [
+          [
+           "1",
+           "Identify Transaction",
+           "Determine whether the transaction qualifies as sensitive.",
+           "Sensitive transactions include: gifts, travel, entertainment, charitable donations, political contributions, and high-value procurements.",
+           "Initiating Department/Employee",
+           "Validate by reviewing transaction details, consulting the reporting manager, and if needed, the Compliance Officer. Record observations."
+          ],
+          [
+           "2",
+           "Seek Approval",
+           "Submit for approval to the HR department via email at: hr.panoli@bharatgroup.co.in",
+           "Clearly state the purpose, value, and context. For high-value or high-risk items, submit a formal request with supporting documents.",
+           "HR department",
+           "Approval is recorded and documented in the transaction file."
+          ],
+          [
+           "3",
+           "Recordkeeping",
+           "Maintain a detailed record of the approved transaction.",
+           "Include purpose, stakeholders involved, financials, and documented approvals. Attach records to any related expense reports.",
+           "Account Department",
+           "Ensure proper filing and retention of all documents."
+          ],
+          [
+           "4",
+           "Ethical Review",
+           "Evaluate the transaction for ethical soundness even after approval.",
+           "Confirm the transaction does not raise concerns of conflict of interest, bribery, or misuse of company resources.",
+           "HR department",
+           "Ethical review findings should be documented and kept on file."
+          ],
+          [
+           "5",
+           "Check Against Prohibited List",
+           "Ensure the transaction does not involve prohibited practices.",
+           "Transactions involving personal loans, cash gifts, political payments not approved, or any violation of law must be rejected.",
+           "HR department",
+           "Monitor for policy breaches and flag any red flags."
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The procedure will be reviewed biennially by the HR department to ensure its relevance and alignment with legal, ethical, and regulatory standards. Any necessary updates will be approved by senior management and communicated to relevant departments."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Confidential Data Handling and Breach Responses",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "IT Security Manager",
+   "sourceWords": 735,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Defines procedures for managing confidential information, including data breach responses and protecting third-party data from unauthorized access or disclosure."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Data Classification and Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Data Classification: Data must be classified into three categories:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Types of Data",
+          "Details"
+         ],
+         "rows": [
+          [
+           "Confidential",
+           "Highly sensitive data requiring strict access controls e.g., personal information, financial records"
+          ],
+          [
+           "Sensitive",
+           "Data that is important to the organization but not classified as confidential e.g., employee information, operational procedures"
+          ],
+          [
+           "Public",
+           "Information meant for public consumption e.g., marketing materials, press releases."
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Control:"
+        },
+        {
+         "type": "bullets",
+         "text": "Access rights are assigned based on the principle of least privilege. The Principle of Least Privilege (PoLP) refers to granting users only the access rights necessary to perform their job functions, minimizing the risk of unauthorized access or data breaches.\nRoles and responsibilities are defined, and access is granted accordingly.\nA quarterly review of access rights will be conducted by Data Protection Officer through automated access logs and reports, along with manual checks to ensure compliance with the established classifications. In case of non-compliance, access rights will be revoked, investigated, and corrective actions will be implemented, followed by a follow-up review to ensure compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Data Handling and Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Confidential information is stored in secure environments e.g., locked file cabinets and secure servers such as cloud-based servers to guarantee encryption and regulatory compliance.\nTransmission of confidential data is conducted via secure channels i.e. VPNs and encrypted emails.\nAll confidential data are encrypted both in transit and at rest, following industry-standard encryption protocols (e.g., AES-256).\nAccess to storage areas containing confidential data is restricted to authorized personnel.\nAccess control systems i.e. Lock & Keys are used to manage physical access."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Detection and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification:\n\nFor IT Department\n\nRegularly analyse system logs for unusual access patterns, failed login attempts, and other signs of data breaches. Logs provide a history of events, activities, and transactions across systems, applications, and network devices.\n\nFor Employee\n\nEmployees must monitor system logs for abnormal activities, alerting IT when suspicious patterns, such as failed logins or unauthorized access, are identified."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees must report any suspected data breaches immediately to their supervisor and the IT department.\nAn incident reporting form must be filled out and submitted to the IT department for documentation."
+        }
+       ]
+      },
+      {
+       "heading": "Escalation Protocol",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Depending on the severity, escalate incidents to management and legal counsel as necessary."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Response Plan (IRP)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Containment:\n\nThe IT Security manager will immediately isolate affected systems to prevent further unauthorized access. This team is responsible for implementing containment measures, which may include disconnecting the affected systems from the network, disabling user accounts, or restricting access until a thorough investigation is conducted and the issue is resolved.\n\nInvestigation:\n\nThe Incident Response Team (IRT) will conduct a thorough investigation to determine the cause and impact of the breach. They will collect relevant logs and evidence, analyse data to identify vulnerabilities, and assess the breach's extent. Interviews with personnel may be conducted for additional insights. The team will document findings and prepare an incident report with recommendations for remediation. This approach helps prevent similar incidents in the future.\n\nCommunication:\n\nAffected stakeholders will be notified via official email or in person, detailing the nature of the breach, affected data, and potential risks. Guidance will include recommended actions to protect their information, such as changing passwords and monitoring for suspicious activities. Regular updates will be provided as more information becomes available.\n\nInternal Communication:\n\nManagement and the legal team are kept informed through scheduled progress updates, including regular emails being sent on their respective official email-ids, meetings, and incident reports. All critical developments, decisions, and actions are documented and communicated in a timely manner to ensure alignment and compliance throughout the process."
+        }
+       ]
+      },
+      {
+       "heading": "Resolution and Follow-Up",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Remediation:\n\nCorrective actions including revising data access controls, enhancing encryption protocols, updating security policies, providing targeted employee retraining, and improving incident detection systems are taken. These measures are designed to address vulnerabilities identified during the investigation and prevent similar breaches in the future.\n\nPost-Incident Review:\n\nA review meeting is conducted by the Incident Response Team, led by the IT Security Manager to analyse response effectiveness and identify improvements by enhancing communication protocols, refining the incident response process and upgrading security monitoring tools."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Record Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Documentation Retention: Maintain detailed records of the incident, including timelines, actions taken, and any communications for at least three years.\nRegular Review: The IT Security Officer, will review and update the procedures biennially or following significant incidents to ensure their effectiveness and alignment with evolving security threats and legal requirements"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Securing Third-Party Data from Unauthorized Access",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Compliance Officer",
+   "sourceWords": 303,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that all third-party data shared with BR Agrotech is protected from unauthorized access through consistent implementation of security protocols, aligned with legal, ethical, and contractual standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, departments, external partners, and service providers who access, handle, or manage third-party data within BR Agrotech."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Implements and maintains technical safeguards, including encryption, firewalls, and access controls."
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Ensures regulatory compliance, conducts risk assessments, and oversees audits."
+       ]
+      },
+      {
+       "role": "Data Owner/Department Head",
+       "responsibilities": [
+        "Ensures data sharing is authorized, and usage is monitored."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Handle third-party data responsibly and report any unauthorized access incidents."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Access to third-party data was granted only after authorization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Access to third-party data was granted only after authorization from the designated Data Owner or Department Head."
+        }
+       ],
+       "responsible": "Data Owner/Department Head"
+      },
+      {
+       "heading": "Role-based access controls were applied",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Role-based access controls were applied to limit data availability strictly to relevant users based on operational necessity."
+        }
+       ]
+      },
+      {
+       "heading": "Prior to data exchange, NDAs or Data Protection Agreements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prior to data exchange, NDAs or Data Protection Agreements (DPAs) were executed with all relevant third parties."
+        }
+       ]
+      },
+      {
+       "heading": "All third-party data was stored on secure company servers",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All third-party data was stored on secure company servers protected with encryption both at rest and during transmission."
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Multi-factor authentication was enforced",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Multi-factor authentication was enforced for all systems that processed or stored third-party information."
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Physical access to servers and endpoints",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Physical access to servers and endpoints storing third-party data was restricted through biometric access and surveillance."
+        }
+       ]
+      },
+      {
+       "heading": "Logical access rights were reviewed quarterly",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Logical access rights were reviewed quarterly to ensure permissions were current and appropriate."
+        }
+       ]
+      },
+      {
+       "heading": "System usage logs were actively monitored",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "System usage logs were actively monitored by the IT security team to detect unauthorized access attempts."
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "The Compliance Officer and IT Department jointly conducted internal audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Compliance Officer and IT Department jointly conducted internal audits on data handling practices twice a year."
+        }
+       ],
+       "responsible": "Compliance Officer"
+      },
+      {
+       "heading": "In the event of any suspected or confirmed unauthorized access",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In the event of any suspected or confirmed unauthorized access, the incident was reported immediately, investigated promptly, and relevant third parties were notified within 48 hours when required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP has been reviewed biennially by the Compliance Officer in coordination with the IT Department. Revisions were made based on technological upgrades, regulatory developments, and internal audit findings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Stakeholder Consent and Data Processing Retention and Disposal",
+   "code": "",
+   "catalogId": "consent-retention",
+   "pillar": "G",
+   "department": "IT",
+   "owner": "IT Department",
+   "sourceWords": 497,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that data is handled in compliance with stakeholder permissions, maintaining appropriate data retention periods and secure disposal practices to uphold privacy standards and regulatory requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all BR Agrotech departments and personnel handling stakeholder data. It covers the collection, processing, retention, and disposal of personal, financial, communication, and employment data, including obtaining consent, defining retention timelines, ensuring secure disposal, and maintaining compliance with data protection laws."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Obtaining Consent",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Consent is obtained through formal mechanisms through signed consent form and digital agreements. These documents clearly outline the purpose of data collection, how the data will be used, and stakeholders’ rights. Additionally, a confirmation process through email verification and electronic signature is used to ensure stakeholders have fully understood the terms before granting their consent."
+        }
+       ]
+      },
+      {
+       "heading": "Transparency",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Stakeholders are provided with clear information which is communicated through a Privacy Notice which outlines how data will be used, the retention periods, and the stakeholders’ rights regarding their data, including access, correction, or deletion. These documents are provided at the point of data collection, either in print or digital form."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention and Secure Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Establishing Retention Timelines: Each type of data is categorized based on its sensitivity and relevance, with specific retention timelines defined according to legal requirements, business needs, or contractual obligations."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Data Type",
+          "Retention Period",
+          "Reason for Retention",
+          "Disposal Method"
+         ],
+         "rows": [
+          [
+           "Personal Identification Data",
+           "5 years after last interaction",
+           "Compliance with legal requirements and identity verification",
+           "Secure deletion (data wiping)"
+          ],
+          [
+           "Financial Records",
+           "7 years",
+           "Tax compliance and audit purposes",
+           "Secure shredding for physical records; cryptographic erasure for digital data"
+          ],
+          [
+           "Consent Records",
+           "Duration of relationship + 2 years",
+           "To demonstrate compliance with data protection laws",
+           "Secure deletion"
+          ],
+          [
+           "Communication Logs",
+           "3 years",
+           "Monitoring and improving service quality",
+           "Secure deletion"
+          ],
+          [
+           "Employment Records",
+           "Duration of employment + 7 years",
+           "Compliance with labour laws and future reference",
+           "Secure shredding for physical records; cryptographic erasure for digital data"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Tracking Retention Periods: Automated systems i.e. Microsoft SQL Server is utilized to track the retention period of stored data, ensuring that data is flagged for review or deletion once the retention period expires."
+        },
+        {
+         "type": "paragraph",
+         "text": "Secure Disposal: Once data is no longer required, it is securely deleted using methods appropriate to its sensitivity. For digital data, secure deletion methods such as data wiping or cryptographic erasure are used. For physical data, documents are shredded or incinerated in a controlled environment."
+        },
+        {
+         "type": "paragraph",
+         "text": "Compliance Checks: Regular audits are conducted to ensure that data is retained or disposed of in accordance with the established policies and legal requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Audit Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Regular Audits: The IT Department will conduct the audits of data access and handling practices. The audit will be conducted through a systematic review process, including examining access logs, evaluating data handling procedures, interviewing relevant personnel, and assessing compliance with established policies. Additionally, random sampling of data access and handling activities may be performed to ensure adherence to standards."
+        },
+        {
+         "type": "paragraph",
+         "text": "Continuous Monitoring: Automated monitoring tool i.e Intrusion Detection System (IDS) to detect unauthorized access and anomalies in data access patterns."
+        }
+       ],
+       "responsible": "IT Department"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Employee Compliance and Awareness",
+   "code": "",
+   "catalogId": "employee-compliance",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 345,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that all employees at B R Agrotech are well-informed, understand, and comply with company policies, fostering a culture of accountability and awareness of relevant regulations and ethical standards."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Mandatory Training Programs",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees must complete mandatory training on data protection, confidentiality, and security protocols during onboarding and annually thereafter.\nTopics include company data protection policies and identifying security threats like phishing."
+        }
+       ]
+      },
+      {
+       "heading": "Training Materials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees are provided with updated handbook containing all relevant policies, which are reviewed regularly to reflect current laws and best practices.\nTraining covers immediate actions to report data breaches and the steps for containment."
+        }
+       ]
+      },
+      {
+       "heading": "Awareness Campaigns",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodic campaigns reinforce the importance of data protection using newsletters, posters, and meetings.\nSimulated phishing exercises assess employee awareness, with feedback provided for improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting Mechanisms",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A non-retaliatory environment encourages employees to report compliance concerns or suspicious activities.\nClear reporting channels, including the email id: hr.panoli@bharatgroup.co.in, are communicated to all employees."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employee participation and training completion records are maintained.\nRegular assessments evaluate the effectiveness of these programs, with modifications made based on feedback."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Complete mandatory training on data protection and compliance procedures.",
+        "Report any data breaches or compliance issues via the designated channels."
+       ]
+      },
+      {
+       "role": "Managers",
+       "responsibilities": [
+        "Ensure team members understand and follow the policies and procedures.",
+        "Regularly review compliance with training and reporting requirements."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Implement safeguards to protect data security.",
+        "Monitor systems for breaches and assist in root cause analysis.",
+        "Oversee policy implementation and enforce data protection standards.",
+        "Conduct audits and serve as the contact point for data protection issues."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Compliance and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "The IT Department conducts regular audits to monitor adherence and identify areas for improvement.\nParticipation in training is tracked by the IT Department, with annual completion required."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Enforcement and Penalties",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Non-compliance may lead to disciplinary actions as determined by the HR Department, including warnings, suspension, or termination depending on the severity."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Update Procedures",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The Governance Practices SOP is reviewed biennially by the DPO (Data Protection Officer) to ensure compliance with current laws.\nChanges in regulations prompt emergency reviews, and revisions are communicated to all employees for acknowledgment."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

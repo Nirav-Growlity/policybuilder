@@ -1,0 +1,5067 @@
+{
+ "id": "novopor-advanced-science",
+ "company": "Novopor Advanced Science Private Limited",
+ "industry": "Performance chemicals and agrochemical intermediates manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "chemicals"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Novopor/SOP Manual.docx",
+ "frontMatter": {
+  "introduction": "At Novopor Advanced Science Private Limited, we are committed to advancing innovation in performance chemicals, material science, and agrochemical intermediates. Our integrated approach emphasizes precision, sustainability, and scientific excellence across all domains—from advanced polymer technologies to high-performance chemistry.\n\nThis SOP Manual outlines the standardized operational protocols governing our manufacturing, R&D, and support functions. It reflects our dedication to quality, safety, environmental stewardship, and regulatory compliance. Designed for company-wide alignment, this manual ensures that every action taken within our facilities supports our vision of responsible and transformative chemistry.",
+  "objective": "This SOP Manual has been developed to:\n\nEstablish standardized and efficient procedures across all operational functions.\nMaintain compliance with national and international chemical manufacturing regulations.\nOptimize productivity while reducing risks related to health, safety, and the environment.\nCultivate a workplace culture driven by integrity, innovation, and continuous improvement.\nEmpower employees to execute tasks with confidence, purpose, and responsibility.",
+  "scope": "This manual is applicable to all internal teams, external partners, and service providers involved in operations at Novopor Advanced Science Private Limited. It covers processes and procedures across: R&D, manufacturing, quality assurance and control, EHSS (Environment, Health, Safety & Sustainability), supply chain, packaging, maintenance, and warehousing.",
+  "reviewMechanism": "Novopor has implemented a dedicated annual review mechanism to keep this SOP aligned with evolving legal, ethical, and operational expectations.\n\nFrequency\nThis SOP is reviewed once every 12 months, or immediately after any critical breach, regulatory update, or major infrastructure change."
+ },
+ "sops": [
+  {
+   "title": "SOP for Effluent Treatment, Water Recycling, and Conservation",
+   "code": "NAS-EH-018",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Team",
+   "sourceWords": 1474,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, responsible water management is a core pillar of our sustainability and environmental compliance strategy. As a specialty chemical and material science organization with significant water consumption across processes, we commit to reducing freshwater withdrawal, reclaiming and recycling treated water, and integrating eco-efficient water management technologies across our operations. This SOP provides the structured operational, technical, and monitoring framework for optimizing water use, deploying recycling technologies, and maintaining regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the Standard Operating Procedure (SOP) for effective operation and maintenance of the Effluent Treatment Plant (ETP) and to guide water recycling, conservation, and optimization practices in alignment with Novopor’s sustainability objectives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to all water management activities including collection, treatment, reuse, and recycling of wastewater at Novopor Advanced Sciences Private Limited’s ETP and associated infrastructure. It covers all manufacturing units and utility blocks generating High Total Dissolved Solids (HTDS) and Low Total Dissolved Solids (LTDS) wastewater streams."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Reclaimed Water",
+       "definition": "Water recycled from processes for reuse in operations"
+      },
+      {
+       "term": "Closed-Loop Cooling System",
+       "definition": "A system where cooling water is continuously circulated without discharging or replenishing from freshwater sources"
+      },
+      {
+       "term": "Dry/Hybrid Cooling",
+       "definition": "Cooling systems using minimal or no water"
+      },
+      {
+       "term": "Water Footprint",
+       "definition": "The volume of freshwater used directly and indirectly"
+      },
+      {
+       "term": "HTDS",
+       "definition": "High Total Dissolved Solids"
+      },
+      {
+       "term": "LTDS",
+       "definition": "Low Total Dissolved Solids"
+      },
+      {
+       "term": "CETP",
+       "definition": "Common Effluent Treatment Plant"
+      },
+      {
+       "term": "APPCB",
+       "definition": "Andhra Pradesh Pollution Control Board"
+      },
+      {
+       "term": "MEE",
+       "definition": "Multiple Effective Evaporator"
+      },
+      {
+       "term": "ETP",
+       "definition": "Effluent Treatment Plant"
+      },
+      {
+       "term": "APEMCL",
+       "definition": "Andhra Pradesh Environmental"
+      },
+      {
+       "term": "MS",
+       "definition": "Mild Steel"
+      },
+      {
+       "term": "VAT",
+       "definition": "Vertical Aeration Tank"
+      },
+      {
+       "term": "FORM-9",
+       "definition": "Transport Emergency (TREM) Card generated through APEMCL portal"
+      },
+      {
+       "term": "pH",
+       "definition": "Potential of Hydrogen"
+      },
+      {
+       "term": "TDS",
+       "definition": "Total dissolved solids"
+      },
+      {
+       "term": "NH3-N",
+       "definition": "Ammoniacal nitrogen"
+      },
+      {
+       "term": "TSS",
+       "definition": "Total Suspended Solids"
+      },
+      {
+       "term": "FORM-10",
+       "definition": "Manifest generated through APEMCL portal"
+      },
+      {
+       "term": "NA",
+       "definition": "Not Applicable"
+      },
+      {
+       "term": "HDPE",
+       "definition": "High Density polyethylene"
+      },
+      {
+       "term": "C.S. Lye",
+       "definition": "Caustic Soda Lye"
+      },
+      {
+       "term": "HCL",
+       "definition": "Hydro Chloric Acid"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Utilities Engineer",
+       "responsibilities": [
+        "Monitor and operate water-saving systems and flow meters"
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Ensure environmental compliance and maintain water reuse documentation"
+       ]
+      },
+      {
+       "role": "Operations Supervisor",
+       "responsibilities": [
+        "Oversee daily ETP operations and ensure process control"
+       ]
+      },
+      {
+       "role": "Maintenance Lead",
+       "responsibilities": [
+        "Maintain and repair ETP and water recycling systems"
+       ]
+      },
+      {
+       "role": "Procurement Head",
+       "responsibilities": [
+        "Procure approved water-efficient equipment and materials"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following detailed steps outline the standard operation of the Effluent Treatment Plant (ETP) at Novopor Advanced Sciences Pvt. Ltd., incorporating effective effluent management practices and integrated water conservation technologies within our operations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Effluent Collection and Classification",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Collect the HTDS effluent from various blocks or locations and transfer it to ETP storage tanks using calibrated flow meters. Record the Daily Flow Meter Reading in the format NAS-EH-018-F-07."
+        },
+        {
+         "text": "The acid effluent is acidic in nature and is collected from A-Block Part-2, C2 Block, E Block (M243 stage-1 and stage-3), and from M346 Acid and MMBC."
+        },
+        {
+         "text": "The base effluent is basic in nature and is collected from A-Block Part-1, C2 Block, E Block (M243 stage-2 and stage-5), and from Scrubber, M346 Base, and MMBC."
+        },
+        {
+         "text": "These effluents are distributed across designated tanks based on source type and volume. Treated water streams and segregated collection methods help optimize neutralization and filtration flow."
+        }
+       ]
+      },
+      {
+       "heading": "SRS-2 Stream Treatment",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "S.No",
+          "Tank No",
+          "Effluent Collection Stream"
+         ],
+         "rows": [
+          [
+           "",
+           "Tank No:01 / Capacity: 160KL",
+           "A-Block (PPP-BP) Part-II Acid, SRS-1, C2-Block Acid, E-Block M243 Stage-1, Stage-3, M346 Acid, MMBC Acid."
+          ],
+          [
+           "",
+           "Tank No:02 / Capacity: 200KL",
+           "C2-Block Base, E-Block-M243 Stage-2, Stage-5, Scrubber water and M346 Base."
+          ],
+          [
+           "",
+           "Tank No:03 / Capacity: 200KL",
+           "A-Block (PPP-BP) Part-II Acid, SRS-1, C2-Block Acid, E-Block M243 Stage-1, Stage-3, M346 Acid, MMBC Acid."
+          ],
+          [
+           "",
+           "Tank No:04 / Capacity: 200KL",
+           "Treated effluent water collected from MS Storage tank No:1, 2, 3 & 4(this is used as additional storage tank."
+          ],
+          [
+           "",
+           "Tank No:05 / Capacity: 150KL",
+           "A-Block (PPP-BP) Part-1 Base, M243 Stage-4, MMBC Base."
+          ],
+          [
+           "",
+           "Tank No:06 / Capacity: 300KL",
+           "A-Block (PPP-BP) Part-1 Base, M243 Stage-4, MMBC Base."
+          ],
+          [
+           "",
+           "Tank No:07 / Capacity: 60KL",
+           "Treated water from SRS-2 through mixer-6."
+          ]
+         ]
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Collect SRS-2 effluent and transfer it to Mixer-06 for neutralization."
+        },
+        {
+         "text": "Transfer the neutralized SRS-2 effluent to Filter Press-2."
+        },
+        {
+         "text": "Collect Filter Press-2 outlet water into a Nutch Filter."
+        },
+        {
+         "text": "Pump the SRS-2 treated water to Tank-07 or MS Tank-01 and 02."
+        },
+        {
+         "text": "Depending on requirement, pump the SRS-2 treated water from Tank-07 or MS Tank-01 and 02 to CETP or MEE."
+        }
+       ]
+      },
+      {
+       "heading": "PPP-BP (Part-1) Treatment Process",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Execute regular treatment procedures for HTDS effluent."
+        },
+        {
+         "text": "Take base effluent and neutralize it with acid effluent or HCL in the mixers."
+        },
+        {
+         "text": "Take acid effluent and neutralize it using CS Lye solution."
+        },
+        {
+         "text": "Collect PPP-BP (Part-1) base effluent in Tank-05. Similarly, collect M243 Stage-4 acid effluent in Tank-05 and send samples to QC to test Aniline content."
+        },
+        {
+         "text": "Pump the effluent from Tank-05 to Mixer-03 for neutralization."
+        },
+        {
+         "text": "Transfer the neutralized effluent from Mixer-03 to Filter Press 08 and 09."
+        },
+        {
+         "text": "Collect the filtered effluent into a 10KL HDPE Storage Tank."
+        },
+        {
+         "text": "Transfer the filtered effluent to MS Tanks 03 and 04."
+        },
+        {
+         "text": "If needed, pump the treated effluent from MS Tanks 01, 02, 03, and 04 to RCC Tank-04 for additional storage."
+        },
+        {
+         "text": "Pump the effluent from RCC Tank-04 to CETP or MEE."
+        }
+       ]
+      },
+      {
+       "heading": "Filter Press Operation and Handling of Spent Salt",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Transfer the neutralized effluent through Filter Press into MS Treated Effluent Storage Tanks 01 to 04. Stop feeding neutralized effluent if inlet pressure exceeds 3.5 kg/cm². Apply 4 kg/cm² air pressure during drying."
+        },
+        {
+         "text": "Stop air supply to Filter Press and remove plates for unloading spent salt."
+        },
+        {
+         "text": "Remove moisture content from the spent salt."
+        },
+        {
+         "text": "Provide 20 minutes of rest for operators involved in salt removal after every 15 minutes of work."
+        },
+        {
+         "text": "Provide jaggery to all ETP staff at the end of each shift."
+        },
+        {
+         "text": "Ensure PPEs such as full body suits, organic cartridge face masks, gum shoes, and gloves are worn during salt unloading."
+        },
+        {
+         "text": "Dispose of the spent salt to authorized co-processors."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Documentation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Record daily ETP operations in the log sheet – format NAS-EH-018-F-01."
+        },
+        {
+         "text": "Perform pump inspection using \"Look, Listen & Feel\" checklist – format NAS-EH-018-F-02."
+        },
+        {
+         "text": "Fill daily scrubber checklist – format NAS-EH-018-F-03."
+        },
+        {
+         "text": "Check scrubber blower efficiency monthly with anemometer – format NAS-EH-018-F-08."
+        },
+        {
+         "text": "Conduct quarterly fugitive emission monitoring via third-party."
+        },
+        {
+         "text": "Record effluent received from each block – format NAS-EH-018-F-04."
+        }
+       ]
+      },
+      {
+       "heading": "LTDS and Special Wastewater Treatment",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Collect LTDS effluents as follows:"
+        },
+        {
+         "text": "Collect domestic sewage from septic tank sumps and QC/R&D wash water to VAT-01."
+        },
+        {
+         "text": "Transfer the sewage water into VAT-01."
+        },
+        {
+         "text": "Pass the sewage through Filter Press-10 and transfer the treated sewage to CETP."
+        },
+        {
+         "text": "Collect first rainwater into VAT-02. Treat through Filter Press-10 and send it to CETP."
+        },
+        {
+         "text": "Analyze LTDS for pH, COD, TDS, and NH3."
+        },
+        {
+         "text": "If parameters exceed PCB limits (pH: 6.5–8.5, COD < 8000 ppm, TDS < 12000 ppm, NH3 < 50 ppm), reclassify as HTDS and treat accordingly."
+        },
+        {
+         "text": "Record daily HTDS/LTDS disposal in format NAS-EH-018-F-05."
+        },
+        {
+         "text": "Record rainwater transferred to ETP in format NAS-EH-018-F-06."
+        }
+       ]
+      },
+      {
+       "heading": "Water Recycling and Reuse Practices",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Treated effluent from ETP is reused for non-contact purposes such as floor washing, cooling tower makeup, and gardening where applicable."
+        },
+        {
+         "text": "Closed-loop circulation systems are installed in cooling operations to minimize fresh water consumption."
+        },
+        {
+         "text": "Backwash water is filtered and reused where permissible under regulatory limits."
+        },
+        {
+         "text": "Rainwater collected in harvesting pits is treated and reused during non-monsoon periods."
+        }
+       ]
+      },
+      {
+       "heading": "Cooling System Optimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Novopor utilizes a combination of air-cooled chillers and hybrid cooling towers to reduce dependence on water-intensive systems."
+        },
+        {
+         "text": "Cooling towers have been upgraded with water flow meters and cycle of concentration controls to ensure water efficiency."
+        },
+        {
+         "text": "Drift eliminators and automatic blowdown systems are in place to minimize losses."
+        }
+       ]
+      },
+      {
+       "heading": "Water-Efficient Technologies",
+       "body": [],
+       "substeps": [
+        {
+         "text": "High-efficiency valves, spray nozzles, and water-saving taps are installed in utility and process blocks."
+        },
+        {
+         "text": "Online monitoring of flow meters and usage dashboards ensure accountability across departments."
+        },
+        {
+         "text": "Procurement to verify every equipment order meets minimum 3-star water rating."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Performance Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "Percentage of Recycled Water in Operations",
+       "target": "≥ 20%",
+       "frequency": "Quarterly",
+       "owner": ""
+      },
+      {
+       "indicator": "Specific Water Consumption (m³/MT)",
+       "target": "≤ 30 m³/MT of product output",
+       "frequency": "Monthly",
+       "owner": ""
+      },
+      {
+       "indicator": "Cooling System Water Consumption Reduction",
+       "target": "≥ 15% from baseline after retrofitting",
+       "frequency": "Bi-annually",
+       "owner": ""
+      },
+      {
+       "indicator": "Number of Closed-loop Cooling Systems",
+       "target": "Minimum 1 system per plant",
+       "frequency": "Annual Review",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "appendix",
+     "title": "ANNEXURES",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Annexure No.",
+        "Annexure Title"
+       ],
+       "rows": [
+        [
+         "Annexure-1",
+         "Process flow diagram"
+        ],
+        [
+         "Annexure-2",
+         "Do's and Don’ts at the ETP"
+        ],
+        [
+         "Annexure-3",
+         "Daily Check points for the ETP Team"
+        ],
+        [
+         "Annexure-4",
+         "Tanker loading instruction at the ETP"
+        ],
+        [
+         "Annexure-5",
+         "Shut down procedure for the ETP"
+        ],
+        [
+         "Annexure-6",
+         "Emergency management activities to be carried out for the ETP"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "DOCUMENTS/FORMS",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Form No.",
+        "Form Title"
+       ],
+       "rows": [
+        [
+         "NAS-EH-018-F-01",
+         "Daily ETP Log sheet"
+        ],
+        [
+         "NAS-EH-018-F-02",
+         "Look, Listen and Feel check list for the pumps at the ETP"
+        ],
+        [
+         "NAS-EH-018-F-03",
+         "Scrubber Check list for the ETP"
+        ],
+        [
+         "NAS-EH-018-F-04",
+         "Receiving the Effluents from the blocks"
+        ],
+        [
+         "NAS-EH-018-F-05",
+         "Log sheet for the Daily Disposal of HTDS/LTDS to the CETP"
+        ],
+        [
+         "NAS-EH-018-F-06",
+         "Rain harvesting pit water transferred to the ETP"
+        ],
+        [
+         "NAS-EH-018-F-07",
+         "Daily Flow meter reading check list"
+        ],
+        [
+         "NAS-EH-018-F-08",
+         "Scrubber blower efficiency check list"
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Groundwater Contamination Control and Monitoring",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 518,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, protecting groundwater is a critical part of our environmental sustainability commitments. This SOP outlines all preventive and control measures in place to avoid groundwater contamination due to site operations, storage, or handling of effluents, oils, or chemicals. It ensures compliance with the APPCB and national water protection norms."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish standard operating procedures to monitor, prevent, and respond to potential groundwater contamination from site activities, with a focus on early detection and control."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Novopor locations where any chemicals, effluents, fuels, or hazardous materials are handled or stored. It includes areas such as:"
+      },
+      {
+       "type": "bullets",
+       "text": "Bulk chemical storage yards\nEffluent treatment areas\nStormwater drains and groundwater monitoring wells\nUtilities and loading/unloading zones"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Oversee implementation of groundwater monitoring and reporting."
+       ]
+      },
+      {
+       "role": "Utilities Engineer",
+       "responsibilities": [
+        "Conduct weekly inspections and maintain stormwater drains and dykes."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Maintain RCC flooring, dyke walls, and secondary containment."
+       ]
+      },
+      {
+       "role": "Security & Housekeeping",
+       "responsibilities": [
+        "Report any observed spillage or effluent pooling immediately."
+       ]
+      },
+      {
+       "role": "Third-Party Lab",
+       "responsibilities": [
+        "Conduct monthly groundwater testing and analysis."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "General Groundwater Protection Measures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "No treated or untreated effluent is permitted to be discharged into the ground.\nThe treated water from ETP/MEE is discharged only through approved pipelines to CETP.\nRCC flooring is provided in all areas where chemicals or solvents are stored or handled.\nDyke walls are constructed for all underground and above-ground storage tanks to contain any accidental leakage.\nRainwater harvesting structures are kept isolated from process discharge lines to prevent cross-contamination."
+        }
+       ]
+      },
+      {
+       "heading": "Stormwater and Containment Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All stormwater drains are visually inspected weekly for any signs of contamination or discoloration.\nSecondary containment systems are inspected weekly and after each rainfall event.\nRainwater collected is tested before usage or discharge, especially from catchment areas close to chemical handling zones."
+        }
+       ]
+      },
+      {
+       "heading": "Prohibited Practices",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Reuse of treated effluent water for gardening, flushing, or cleaning is strictly prohibited unless approved by APPCB.\nNo underground injection of waste streams is allowed.\nEffluent holding tanks are checked daily for leakage or seepage."
+        }
+       ]
+      },
+      {
+       "heading": "Spillage and Emergency Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Oil, diesel, or solvent spills are immediately covered using absorbent material and cleaned using approved procedure.\nDrip trays are used under all temporary drums and unloading areas.\nDamaged chemical bags or containers are isolated and disposed through authorized agencies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Annual Monitoring & Third-Party Assessments",
+     "kpis": [
+      {
+       "indicator": "pH of Groundwater",
+       "target": "6.5 – 8.5",
+       "frequency": "Monthly",
+       "owner": "Third-party Lab"
+      },
+      {
+       "indicator": "TDS / Conductivity",
+       "target": "As per APPCB norms",
+       "frequency": "Monthly",
+       "owner": "EHS Officer"
+      },
+      {
+       "indicator": "BOD / COD",
+       "target": "Regulatory threshold (APPCB)",
+       "frequency": "Monthly",
+       "owner": "Third-party Lab"
+      },
+      {
+       "indicator": "Visual Inspection (smell/color)",
+       "target": "No abnormality",
+       "frequency": "Weekly",
+       "owner": "Utilities Engineer"
+      },
+      {
+       "indicator": "Leak or Seepage Reports",
+       "target": "Zero tolerance",
+       "frequency": "Daily checks",
+       "owner": "Maintenance"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Verification & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Groundwater samples are collected monthly and tested via NABL-accredited third-party lab.\nSite groundwater balance is updated yearly to assess trends.\nThird-party environmental audits on water use and discharge are conducted every 3 years.\nIn case of any non-conformance, a Root Cause Analysis (RCA) and CAPA report is submitted within 48 hours.\nCorrective measures may include sealing of dykes, tank replacement, or process redesign.\nQuarterly training is given to relevant staff on groundwater protection awareness and emergency actions."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Document Review",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP shall be reviewed annually.\nAll monitoring and audit reports are retained for a minimum of 5 years."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Emission Control and Environmental Nuisance Mitigation",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 776,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, we are committed to mitigating our environmental footprint by systematically controlling emissions of pollutants and nuisances generated from manufacturing, processing, and ancillary activities. We recognize our responsibility in preserving local air quality, minimizing nuisance emissions (including noise and odour), and aligning our actions with best available techniques (BAT), sustainable development, and regulatory obligations. This SOP further supports our ESG (Environmental, Social, Governance) strategy and promotes transparency in emission controls."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To outline structured measures and technologies implemented to reduce the environmental impact of Novopor's operations, including controlling the emission of pollutants such as PM, VOCs, NOx, and SO2, minimizing nuisances like noise, odour, and light pollution, installing pollution abatement systems, and conducting third-party assessments to verify data accuracy and compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing units, R&D laboratories, utilities, and warehousing facilities operated by Novopor in Andhra Pradesh and Telangana. It covers engineering teams, EHS staff, external contractors, third-party environmental auditors, and process leads responsible for emissions control."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "VOCs",
+       "definition": "Volatile Organic Compounds – emitted as gases from certain solids/liquids."
+      },
+      {
+       "term": "NOx / SOx",
+       "definition": "Oxides of nitrogen/sulfur – primary air pollutants from combustion."
+      },
+      {
+       "term": "PM (Particulate Matter)",
+       "definition": "Solid/liquid particles in air, affecting respiratory health and visibility."
+      },
+      {
+       "term": "Nuisance Emissions",
+       "definition": "Environmental disturbances including noise, odour, and light."
+      },
+      {
+       "term": "Abatement Systems",
+       "definition": "Equipment that reduces pollutant output from a specific source."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Oversee all emissions control programs and audits."
+       ]
+      },
+      {
+       "role": "Utility & Engineering Team",
+       "responsibilities": [
+        "Install, maintain and monitor abatement equipment."
+       ]
+      },
+      {
+       "role": "Production Head",
+       "responsibilities": [
+        "Ensure process compliance and trigger action in case of abnormal emissions."
+       ]
+      },
+      {
+       "role": "External Environment Auditors",
+       "responsibilities": [
+        "Perform annual measurement and certification of air and nuisance emissions."
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Report statutory findings to Pollution Control Boards and maintain documentation."
+       ]
+      },
+      {
+       "role": "ESG Committee",
+       "responsibilities": [
+        "Review emission KPIs, validate environmental initiatives, and support sustainability decisions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emissions Control Strategy",
+     "steps": [
+      {
+       "heading": "Prevention and Source Reduction",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Modify production lines to reduce emissions at the source."
+        },
+        {
+         "text": "Use closed-loop material transfer systems to minimize VOC exposure."
+        },
+        {
+         "text": "Substitute high-emission raw materials with environmentally friendly alternatives."
+        },
+        {
+         "text": "Conduct energy audits to identify emission hotspots and propose design optimizations."
+        }
+       ]
+      },
+      {
+       "heading": "Control of Particulate Matter (PM)",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Deploy dust collection hoods and central extraction systems."
+        },
+        {
+         "text": "Install bag filters and cartridge-based filtration in drying, crushing, and material handling."
+        },
+        {
+         "text": "Periodic sweeping, road wetting, and vehicular movement restrictions in dusty areas."
+        },
+        {
+         "text": "Install ESPs (Electrostatic Precipitators) for PM10 and PM2.5 mitigation."
+        }
+       ]
+      },
+      {
+       "heading": "Control of VOCs, NOx, SOx, and Heavy Metals",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Use of activated carbon filters and chemical scrubbers in reactor vent lines."
+        },
+        {
+         "text": "Install thermal oxidizers for VOC-rich off-gas treatment."
+        },
+        {
+         "text": "Maintain burner calibration and use low NOx burners for combustion zones."
+        },
+        {
+         "text": "Integrate automatic dampers and sensors for NOx control."
+        },
+        {
+         "text": "Ventilation zones fitted with gas detection systems for continuous leak monitoring."
+        }
+       ]
+      },
+      {
+       "heading": "Noise Emissions Management",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Installation of sound insulation panels around compressors, blowers, and pumps"
+        },
+        {
+         "text": "Use of acoustic enclosures, silencers, and anti-vibration mounts"
+        },
+        {
+         "text": "Zoning and layout planning to separate high-noise and low-noise areas"
+        },
+        {
+         "text": "Deployment of real-time noise monitoring systems with alert thresholds"
+        },
+        {
+         "text": "Development of greenbelt buffers and vegetative barriers at plant boundaries"
+        },
+        {
+         "text": "Mandatory use of earplugs and earmuffs in high-noise zones"
+        },
+        {
+         "text": "Implementation of Noise Preventive Maintenance Program: Quarterly inspection of noise-prone machinery; Replacement of worn parts such as bearings, belts, and gaskets; Routine lubrication, tightening, and alignment checks; Post-maintenance noise audits using calibrated dB meters; Maintenance logs integrated into EHS system and reviewed quarterly"
+        },
+        {
+         "text": "Compliance ensured with CPCB, ISO 14001, and Factories Act standards."
+        }
+       ]
+      },
+      {
+       "heading": "Odour Management",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Implement localized ventilation and vapour collection systems."
+        },
+        {
+         "text": "Store raw materials and solvents in closed drums or vented tanks with activated carbon covers."
+        },
+        {
+         "text": "Deploy odour-neutralizing mist sprayers in high-risk zones."
+        },
+        {
+         "text": "Use negative pressure containment in odour-prone process rooms."
+        }
+       ]
+      },
+      {
+       "heading": "Annual Monitoring & Third-Party Assessments",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Novopor commissions certified third-party environmental agencies to perform annual on-site assessments across all manufacturing locations to verify:"
+        },
+        {
+         "type": "bullets",
+         "text": "VOC levels from reactors, solvent tanks, and process vents.\nNOx and SOx levels from combustion sources and flue gas stacks.\nParticulate emissions in areas with mechanical agitation or bulk powder handling.\nNoise levels at sensitive boundary locations and within process areas.\nOdour measurement via olfactometric or detection panel methods."
+        },
+        {
+         "type": "paragraph",
+         "text": "All instruments are calibrated before use and test protocols comply with CPCB, ISO 14001, and state PCB norms. Reports are submitted to Pollution Control Boards and retained in the EMS system."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Key Performance Indicators (KPIs)",
+     "kpis": [
+      {
+       "indicator": "Ambient VOC Levels (ppm)",
+       "target": "< 50% of statutory limits",
+       "frequency": "Quarterly + Annual Audit",
+       "owner": ""
+      },
+      {
+       "indicator": "Particulate Matter (mg/Nm³)",
+       "target": "Below 150 mg/Nm³",
+       "frequency": "Monthly Stack Monitoring",
+       "owner": ""
+      },
+      {
+       "indicator": "Stack NOx/SOx Emissions",
+       "target": "< 80% of regulatory threshold",
+       "frequency": "Monthly",
+       "owner": ""
+      },
+      {
+       "indicator": "Noise at Factory Boundary (dB)",
+       "target": "< 65 dB (day), < 55 dB (night)",
+       "frequency": "Quarterly",
+       "owner": ""
+      },
+      {
+       "indicator": "Odour Complaints / Year",
+       "target": "Zero tolerance (Corrective within 48h)",
+       "frequency": "Ongoing (Reactive + Proactive)",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Document Review",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Reviewed annually by the EHS Committee.\nSOP updates triggered post equipment installation or revised regulatory norms.\nAll emission reports retained for minimum 5 years under EMS documentation.\nReview minutes documented with follow-up actions assigned to team leads."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Efficiency and Carbon Management",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Energy Performance Officer",
+   "sourceWords": 599,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, optimizing energy consumption is fundamental to our operational integrity and environmental stewardship. As an advanced materials and chemical manufacturing company, our focus lies in reducing carbon emissions, improving process efficiency, and deploying responsible technologies that contribute to climate resilience. This SOP provides a holistic framework to standardize and elevate energy performance through innovation, regulatory alignment, and clean energy transitions."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured energy management approach that improves energy efficiency, integrates waste heat and co-generation technologies, transitions to cleaner fuels, and supports long-term carbon capture practices—ensuring conformance with ISO 50001 and national sustainability targets."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All energy-intensive operations across manufacturing, utilities, and laboratories.\nDepartments engaged in engineering, utilities management, procurement, and sustainability.\nVendors and contractors providing energy-saving technologies or performing audits.\nAll facilities located at Visakhapatnam and relevant corporate offices supporting energy governance."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Energy Optimization",
+       "definition": "Process of enhancing efficiency while minimizing energy usage."
+      },
+      {
+       "term": "Combined Heat and Power (CHP)",
+       "definition": "System that simultaneously produces heat and power from the same source."
+      },
+      {
+       "term": "WHR (Waste Heat Recovery)",
+       "definition": "Reusing excess heat from industrial operations."
+      },
+      {
+       "term": "CCS",
+       "definition": "Technology to capture and store CO2 emissions from industrial sources."
+      },
+      {
+       "term": "Fuel Transition",
+       "definition": "Switching from high-emission fuels to lower-carbon or renewable options."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Energy Optimization",
+         "Process of enhancing efficiency while minimizing energy usage."
+        ],
+        [
+         "Combined Heat and Power (CHP)",
+         "System that simultaneously produces heat and power from the same source."
+        ],
+        [
+         "WHR (Waste Heat Recovery)",
+         "Reusing excess heat from industrial operations."
+        ],
+        [
+         "CCS",
+         "Technology to capture and store CO2 emissions from industrial sources."
+        ],
+        [
+         "Fuel Transition",
+         "Switching from high-emission fuels to lower-carbon or renewable options."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Energy Performance Officer",
+       "responsibilities": [
+        "Lead implementation, track energy KPIs, and oversee site energy plans."
+       ]
+      },
+      {
+       "role": "Engineering Department",
+       "responsibilities": [
+        "Execute upgrades, ensure WHR/CHP integration, and validate system performance."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source compliant energy-efficient and low-carbon technologies."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Perform condition monitoring and service of critical energy systems."
+       ]
+      },
+      {
+       "role": "Sustainability Lead",
+       "responsibilities": [
+        "Drive CCS adoption, fuel transitions, and GHG emission reporting."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Core Energy Management Strategies",
+     "steps": [
+      {
+       "heading": "Advanced Equipment and Technology Integration",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Replace conventional motors, compressors, and pumps with IE3/IE4 rated alternatives.\nAutomate systems using smart sensors, SCADA, and AI-driven consumption forecasting.\nUse motion-sensor-based lighting and HVAC automation"
+        }
+       ]
+      },
+      {
+       "heading": "Waste Heat and Cogeneration Deployment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Install Waste Heat Recovery Boilers (WHRBs) at high-temperature exhaust points.\nCommission CHP units for integrated heating and electricity generation.\nMaintain operational efficiency logs for WHR and CHP uptime"
+        }
+       ]
+      },
+      {
+       "heading": "Fuel Diversification and Emission Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Implement a phased transition from coal/diesel to:"
+        },
+        {
+         "type": "bullets",
+         "text": "PNG (Piped Natural Gas)\nBiomass-based briquettes\nGreen hydrogen trials (pilot basis)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Track carbon emission differentials between current and substituted fuels."
+        }
+       ]
+      },
+      {
+       "heading": "Fuel Diversification and Emission Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Implement a phased transition from coal/diesel to:"
+        },
+        {
+         "type": "bullets",
+         "text": "PNG (Piped Natural Gas)\nBiomass-based briquettes\nGreen hydrogen trials (pilot basis)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Track carbon emission differentials between current and substituted fuels."
+        }
+       ]
+      },
+      {
+       "heading": "Carbon Capture and Emissions Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify viable CO2-heavy operations for pilot CCS installation.\nEngage licensed vendors for modular capture and geological storage setups.\nRecord tonnes of CO2 captured and stored annually."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Implementation Tools & Example Systems",
+     "steps": [
+      {
+       "heading": "Implementation Tools & Example Systems",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Area",
+          "Example Technology / System",
+          "Outcome"
+         ],
+         "rows": [
+          [
+           "Process Heating",
+           "WHR Boiler + Economizer",
+           "Steam reuse + 10–15% energy recovery"
+          ],
+          [
+           "Utility Optimization",
+           "VFD-controlled pumps, IoT Load Analyzers",
+           "Reduced energy spikes and load balancing"
+          ],
+          [
+           "Fuel Management",
+           "Biomass-fed burner in thermal unit",
+           "emission reduction over furnace oil"
+          ],
+          [
+           "CCS Pilot Unit",
+           "Membrane-based post-combustion CO2 capture",
+           "15% capture rate (pilot scale, 5 TPD capacity)"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Performance Monitoring & Evaluation",
+     "kpis": [
+      {
+       "indicator": "Energy Consumption per Production Unit",
+       "target": "-15 % from 2022 baseline",
+       "frequency": "Quarterly",
+       "owner": ""
+      },
+      {
+       "indicator": "Percentage of Upgraded Equipment",
+       "target": "≥ 80% of legacy equipment by FY2028",
+       "frequency": "Bi-annual audit",
+       "owner": ""
+      },
+      {
+       "indicator": "CHP / WHR System Uptime",
+       "target": "≥ 65%",
+       "frequency": "Monthly check",
+       "owner": ""
+      },
+      {
+       "indicator": "Clean Fuel Share in Total Energy Mix",
+       "target": "≥ 15% by FY2028",
+       "frequency": "Annual performance report",
+       "owner": ""
+      },
+      {
+       "indicator": "Carbon Capture via CCS",
+       "target": "Pilot deployment with 50 T/year target",
+       "frequency": "Annual monitoring",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Verification and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Conduct third-party energy audits every 2 years.\nMaintain energy baseline logs and operational efficiency records.\nRegular training for operators on energy awareness.\nUse audit findings to update SOP revisions."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Document Review",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP is to be reviewed annually or post new installations/upgrades.\nAmendment proposals to be submitted by Energy Officer and approved by Sustainability Head.\nAll performance records and system logs to be archived for 5 years."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Use and Management of Hazardous Substances and Materials",
+   "code": "",
+   "catalogId": "hazardous-substitution",
+   "pillar": "E",
+   "department": "",
+   "owner": "EHS Manager",
+   "sourceWords": 833,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, we are committed to reducing the environmental impact of our operations by optimizing raw material consumption, substituting hazardous inputs, and implementing best practices for the safe handling, reuse, and disposal of hazardous substances. This SOP outlines our sustainability-driven approach to managing material flows, especially hazardous chemicals and related inputs, across all manufacturing and R&D operations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define a structured approach for minimizing hazardous material usage, adopting safer alternatives, and optimizing processes to reduce environmental risk, in alignment with global sustainability frameworks including EcoVadis and Indian regulatory norms."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operational units, laboratories, and warehouses handling hazardous materials or waste. It includes:"
+      },
+      {
+       "type": "bullets",
+       "text": "Process material optimization and recovery\nUse of bio-based or alternative raw materials\nSafe handling, labeling, and storage of hazardous materials\nSubstitution of hazardous chemicals with less toxic alternatives\nMinimization and safe treatment of hazardous waste generation."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Bio-based Inputs",
+       "definition": "Materials derived from renewable biological sources (e.g., corn-based solvents)"
+      },
+      {
+       "term": "Co-processing",
+       "definition": "Use of waste materials in industrial processes as fuel or raw material substitute"
+      },
+      {
+       "term": "Green Chemistry",
+       "definition": "Design of products and processes that minimize hazardous substances"
+      },
+      {
+       "term": "Recovery",
+       "definition": "Reclaiming materials from waste streams for reuse in processes"
+      },
+      {
+       "term": "Substitution",
+       "definition": "Replacing hazardous substances with safer or more eco-friendly alternatives"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Oversee material substitution initiatives, monitor KPIs, and report improvements"
+       ]
+      },
+      {
+       "role": "R&D Head",
+       "responsibilities": [
+        "Evaluate and propose safer alternatives to current hazardous inputs"
+       ]
+      },
+      {
+       "role": "Procurement",
+       "responsibilities": [
+        "Source bio-based, low-toxicity, or recovered raw materials"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Implement process changes to optimize material usage and reduce waste"
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Ensure equipment used for hazardous substances complies with safety standards"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following procedures represent Novopor’s comprehensive strategy to manage hazardous materials in a sustainable manner. These initiatives support reduction, substitution, reuse, and safe disposal — aligning with internal goals and external standards."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure Overview",
+     "steps": [
+      {
+       "heading": "Process Improvements for Reducing Raw Material Use",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Novopor applies lean manufacturing and green chemistry principles to reduce the consumption of solvents, acids, and bases by:"
+        },
+        {
+         "type": "bullets",
+         "text": "Enhancing process yields and reaction efficiencies\nUsing high-purity reagents to minimize excess use\nAutomating dosing systems to control feedstock use\nAdopting energy-efficient equipment that consumes fewer process materials."
+        }
+       ]
+      },
+      {
+       "heading": "Reuse of Recovered and Secondary Input Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The company recovers and reuses:"
+        },
+        {
+         "type": "bullets",
+         "text": "Packaging drums and containers (after decontamination)\nSpent solvents via in-house distillation\nFiltered salts and byproducts for use in secondary processes\nScrap materials from maintenance and fabrication operations"
+        },
+        {
+         "type": "paragraph",
+         "text": "To track what materials are recovered and how they are reused:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Material Recovered",
+          "Source of Recovery",
+          "Reuse Application",
+          "Frequency of Use"
+         ],
+         "rows": [
+          [
+           "Spent Solvents",
+           "Manufacturing Lines",
+           "Distilled & reused in cleaning",
+           "Weekly"
+          ],
+          [
+           "HDPE Drums",
+           "Raw Material Receipts",
+           "Reused for non-hazardous storage",
+           "Monthly"
+          ],
+          [
+           "Metal Scrap",
+           "Fabrication/Utilities",
+           "Sent to authorized recyclers",
+           "Quarterly"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Bio-Based and Low-Impact Raw Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Novopor progressively substitutes fossil-derived or toxic raw materials with:"
+        },
+        {
+         "type": "bullets",
+         "text": "Plant-derived surfactants and biodegradable dispersants\nAqueous solutions in place of volatile organic compounds (VOCs)\nRenewable solvents and green sealants in maintenance applications"
+        }
+       ]
+      },
+      {
+       "heading": "Replacement of High-Hazard Inputs with Safer Alternatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Our R&D and Process Engineering teams actively substitute:"
+        },
+        {
+         "type": "bullets",
+         "text": "Acids with buffered aqueous alternatives\nStrong oxidizers with milder chemical equivalents\nFossil-based fuels with biomass-derived or hydrogen-based reducers"
+        }
+       ]
+      },
+      {
+       "heading": "Minimization of Hazardous Waste Volume and Toxicity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To reduce toxicity at source, Novopor has:"
+        },
+        {
+         "type": "bullets",
+         "text": "Adopted closed-loop reaction setups to limit vapors\nUsed scrubbers and filters for fume extraction\nInstalled mixing systems to eliminate splashing and manual handling\nIntroduced neutralization tanks to treat residues before disposal"
+        }
+       ]
+      },
+      {
+       "heading": "Protocols for Safe Handling, Identification, and Logistics",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All hazardous substances are:"
+        },
+        {
+         "type": "bullets",
+         "text": "Labeled as per GHS and APPCB norms\nStored with MSDSs, secondary containment, and leak detection systems\nHandled using PPE and mechanized transfer systems\nTransported using approved vendors with emergency kits and TREM Cards"
+        }
+       ]
+      },
+      {
+       "heading": "Treatment and Responsible Disposal of Hazardous Waste",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous waste is:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of MEE, ATFD, and scrubbers for in-house treatment\nDisposal through authorized TSDF or co-processing partners\nCompliance with all documentation: Form-3 Register, Form-10 Manifest, etc."
+        }
+       ]
+      },
+      {
+       "heading": "Use of Less Hazardous Alternatives in Manufacturing",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Adoption of water-based chemicals in coating and blending\nUse of alternative feedstocks such as biomass-based raw materials\nUse of nano-filtration or enzyme-based catalysts for chemical efficiency"
+        }
+       ]
+      },
+      {
+       "heading": "Reduction of Hazardous Substances at Source",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Mapping and analysis of high-toxicity streams\nProcess redesign to reduce hazardous by-product formation\nSubstitution and process optimization to reduce classification from Schedule-I to lower categories"
+        },
+        {
+         "type": "paragraph",
+         "text": "This would give a quick visual summary of the sustainability strategy:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Sustainability Focus Area",
+          "Technique Implemented",
+          "Outcome Achieved"
+         ],
+         "rows": [
+          [
+           "Raw Material Reduction",
+           "Process Optimization",
+           "Reduced chemical consumption"
+          ],
+          [
+           "Safer Alternatives",
+           "Green sealants & bio-based solvents",
+           "Lower toxicity in operations"
+          ],
+          [
+           "Waste Recovery",
+           "Solvent distillation",
+           "Resource circularity"
+          ],
+          [
+           "Risk Reduction",
+           "MSDS-based storage + neutralization",
+           "Safer work environment"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Performance Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "Reduction in hazardous input consumption",
+       "target": "≥10% YoY",
+       "frequency": "Annually",
+       "owner": ""
+      },
+      {
+       "indicator": "% of recovered materials reused",
+       "target": "≥25%",
+       "frequency": "Quarterly",
+       "owner": ""
+      },
+      {
+       "indicator": "Number of substitution initiatives",
+       "target": "≥2 new per year",
+       "frequency": "Yearly",
+       "owner": ""
+      },
+      {
+       "indicator": "% of bio-based materials in operations",
+       "target": "≥15%",
+       "frequency": "Half-Yearly",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP will be reviewed annually or after significant regulatory updates.\nMaterial substitution performance will be reviewed in quarterly EHS meetings.\nSuggestions from R&D, suppliers, or employees are encouraged and tracked in the Improvement Log"
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Related Documents",
+     "items": [
+      "SOP: Hazardous Waste Handling & Disposal",
+      "SOP: Water Recycling and ETP Operations",
+      "SOP: MEE and ATFD Operations",
+      "SOP: Internal Waste Minimization and Segregation",
+      "MSDS Master List"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hazardous Waste Handling and Disposal",
+   "code": "",
+   "catalogId": "hazardous-waste",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 760,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, the safe handling, storage, transportation, and disposal of hazardous waste is a critical part of our Environmental, Health & Safety (EHS) strategy. This SOP provides structured guidance on managing hazardous and other wastes generated from our manufacturing and research operations, ensuring full compliance with national regulations and internal sustainability policies."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the systematic procedure for identifying, handling, storing, transporting, and disposing of hazardous and other regulated waste streams in compliance with the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016, and applicable APPCB/CPCB guidelines."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to all departments, processes, and operations at Novopor that generate hazardous waste, including production units, utilities, quality control, R&D labs, warehouses, and ETP/MEE operations."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "TSDF",
+       "definition": "Treatment, Storage, and Disposal Facility"
+      },
+      {
+       "term": "HW",
+       "definition": "Hazardous Waste"
+      },
+      {
+       "term": "ETP",
+       "definition": "Effluent Treatment Plant"
+      },
+      {
+       "term": "MEE",
+       "definition": "Multiple Effect Evaporator"
+      },
+      {
+       "term": "Co-processing",
+       "definition": "Use of hazardous waste as alternate fuel or raw material in cement kilns or other facilities"
+      },
+      {
+       "term": "Form-3",
+       "definition": "Hazardous waste register format as per MoEFCC regulations"
+      },
+      {
+       "term": "FM",
+       "definition": "Format"
+      },
+      {
+       "term": "HOD",
+       "definition": "Head of the Department"
+      },
+      {
+       "term": "MSDS",
+       "definition": "Material Safety Data Sheet"
+      },
+      {
+       "term": "M & TBM",
+       "definition": "Management and Transboundary Movement"
+      },
+      {
+       "term": "HAOW",
+       "definition": "Hazardous and Other Waste"
+      },
+      {
+       "term": "APEMCL",
+       "definition": "Andhra Pradesh Environment Management Corporation Ltd"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "HODs of Departments",
+       "responsibilities": [
+        "Responsible for prevention, minimization, reuse, recycling, recovery wherever possible and safe disposal of hazardous wastes and other wastes"
+       ]
+      },
+      {
+       "role": "Executives/Designers in Departments",
+       "responsibilities": [
+        "Responsible for collection and transfer of hazardous and other wastes to designated areas"
+       ]
+      },
+      {
+       "role": "Executive/Designer, Environment",
+       "responsibilities": [
+        "Responsible for storage, handling and disposal of hazardous and other wastes from the Unit"
+       ]
+      },
+      {
+       "role": "Unit Operations Head",
+       "responsibilities": [
+        "Responsible for implementation of the procedure in line with the rules"
+       ]
+      },
+      {
+       "role": "EHS Officer",
+       "responsibilities": [
+        "Ensure hazardous waste is stored, labeled, manifested, and disposed as per legal norms"
+       ]
+      },
+      {
+       "role": "Transport Vendor",
+       "responsibilities": [
+        "Must be authorized, trained, and equipped for manifest-based movement to TSDF/co-processing site"
+       ]
+      },
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Approve annual waste inventory and coordinate with APPCB for authorization and renewal"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Description of Hazardous and Other Wastes",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous and other wastes are categorized as per HAOW (Management and Transboundary Movement) Rules, 2016. The waste categories, their codes, and permitted quantities are maintained in a master waste inventory (Refer Format NAS-EH-020-F-01)."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Name of Waste",
+          "Category No.",
+          "Permitted Qty"
+         ],
+         "rows": [
+          [
+           "Process Organic Residues and Distillation Bottom Residue",
+           "28.1",
+           "38.8 TPD"
+          ],
+          [
+           "Spent carbon",
+           "28.3",
+           "3.7 TPD"
+          ],
+          [
+           "Spent salts from neutralization tanks",
+           "35.3",
+           "60.0 TPD"
+          ],
+          [
+           "Evaporation salts from MEE",
+           "35.3",
+           "45.0 TPD"
+          ],
+          [
+           "ETP Sludge",
+           "35.3",
+           "3.0 TPD"
+          ],
+          [
+           "Process Inorganic Waste",
+           "28.1",
+           "1.1 TPD"
+          ],
+          [
+           "Insulation waste",
+           "33.2",
+           "200 Kg/Annum"
+          ],
+          [
+           "HAZARDOUS WASTES WITH RECYCLING OPTION",
+           "",
+           ""
+          ],
+          [
+           "Detoxified Containers & Container Liners",
+           "33.1",
+           "3000 No/Month"
+          ],
+          [
+           "HDPE Carboys",
+           "",
+           "3000 No/Month"
+          ],
+          [
+           "Fiber drums",
+           "",
+           "1000 No/Month"
+          ],
+          [
+           "PP Bags",
+           "",
+           "9000 No/Month"
+          ],
+          [
+           "HDPE Drums",
+           "",
+           "1000 No/Month"
+          ],
+          [
+           "MS Drums",
+           "",
+           "500 No/Month"
+          ],
+          [
+           "Contaminated Glass Bottles / Scrap",
+           "---",
+           "100 Kg/month"
+          ],
+          [
+           "Waste oil & grease",
+           "5.1",
+           "400 LPM"
+          ],
+          [
+           "Used Oil",
+           "5.1",
+           "600 LPM"
+          ],
+          [
+           "Spent solvents",
+           "28.6",
+           "380 KLD"
+          ],
+          [
+           "Organic waste / Low boils from MEE Stripper",
+           "28.6",
+           "15 TPD"
+          ],
+          [
+           "Mixed Spent Solvents",
+           "28.6",
+           "250 TPD"
+          ],
+          [
+           "PPFRP Waste",
+           "33.2",
+           "200 Kg/ Annum"
+          ],
+          [
+           "Thermocol Waste",
+           "33.2",
+           "200 Kg/ Annum"
+          ],
+          [
+           "NON-HAZARDOUS / OTHER WASTES WITH DISPOSAL OPTION",
+           "",
+           ""
+          ],
+          [
+           "Lead acid batteries",
+           "",
+           "50 Nos./ Annum"
+          ],
+          [
+           "Boiler Ash",
+           "",
+           "92.00 TPD"
+          ],
+          [
+           "Biomedical waste, Yellow soiled waste from OHC / (Cotton, dressing, soiled plaster casts other material)",
+           "",
+           "0.5 Kg/day"
+          ],
+          [
+           "E-Waste",
+           "",
+           "g/day"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Identification of Waste Streams",
+       "body": []
+      },
+      {
+       "heading": "Collection, Transfer, and Storage",
+       "body": []
+      },
+      {
+       "heading": "Monitoring",
+       "body": []
+      },
+      {
+       "heading": "Transportation and Disposal",
+       "body": []
+      },
+      {
+       "heading": "Container Decontamination and Return",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Performance Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "% of total waste from company operations diverted from landfills",
+       "target": "100%",
+       "frequency": "Monthly reconciliation",
+       "owner": ""
+      },
+      {
+       "indicator": "Manifest compliance rate",
+       "target": "100%",
+       "frequency": "Each dispatch",
+       "owner": ""
+      },
+      {
+       "indicator": "Non-compliance incident count",
+       "target": "0",
+       "frequency": "Quarterly review",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "references",
+     "title": "Related Documents",
+     "items": [
+      "SOP: Internal Waste Minimization and Segregation",
+      "SOP: Effluent Treatment Plant Operation",
+      "SOP: MEE and ATFD Procedures",
+      "Form-3 and Form-10 formats"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee and Buyer Performance Review Procedure",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Department",
+   "sourceWords": 556,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Science Private Limited, continuous performance evaluation of both employees and suppliers is essential to driving excellence across our operations in specialty chemicals and advanced materials. This SOP defines a structured and transparent framework for assessing internal staff performance and evaluating external partners to ensure alignment with our standards of quality, compliance, and innovation."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To implement a clear, structured, and role-specific performance review system for employees, including Buyers (procurement staff), aligned with business goals and ethical sourcing."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All Novopor employees, including procurement staff.\nBuyers (internal staff involved in raw material sourcing and vendor engagement)."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To assess and document employee performance consistently and objectively.\nTo evaluate buyer/vendor performance based on delivery, compliance, and sustainability criteria.\nTo provide actionable feedback for development, planning, or contractual decisions.\nTo support decisions related to promotions, training, succession planning, or vendor status."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "KRA",
+       "definition": "Key Result Area – Critical goals or deliverables associated with a job role"
+      },
+      {
+       "term": "KPI",
+       "definition": "Key Performance Indicator – Quantitative measures of performance"
+      },
+      {
+       "term": "Appraisal",
+       "definition": "Formal employee performance assessment, conducted Annually."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Manage employee appraisal process, maintain documentation, and track IDPs"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Conduct performance reviews and suggest developmental actions for team members"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Assess procurement-specific KPIs for Buyers"
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Validate decisions on promotions, PIPs, or awards"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Employee Performance Review Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted annually: Annual Review Cycles\nUtilizes the “Novopor Employee Performance Evaluation Form”"
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation Parameters",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Achievement of assigned KRAs and KPIs\nQuality, innovation, productivity, and knowledge application\nAdherence to safety, EHS, and company values\nCommunication, leadership potential, and team collaboration\nPunctuality, behavior, and compliance\nWeighted scoring (optional): 60% Performance, 20% Collaboration, 20% Learning"
+        }
+       ]
+      },
+      {
+       "heading": "Process Flow",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Self-evaluation by employee\nPeer feedback (for project teams)\nManager assessment and discussion\nHR review and score finalization\nRecommendations: IDP, promotion, training plan, or PIP (Performance Improvement Plan)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Buyer/Vendor Performance Review Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted annually or aligned with specific project life cycles"
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation Tool",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Buyer Performance Evaluation Form used to assess procurement staff"
+        }
+       ]
+      },
+      {
+       "heading": "Key Performance Areas for Buyers",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Criteria",
+          "Assessment Focus"
+         ],
+         "rows": [
+          [
+           "Cost Savings Execution",
+           "Achievement of sourcing cost reduction targets"
+          ],
+          [
+           "Supplier & Vendor Coordination",
+           "Relationship quality, onboarding, and issue resolution"
+          ],
+          [
+           "PO Timeliness & Accuracy",
+           "Timely generation and correctness of Purchase Orders"
+          ],
+          [
+           "Inventory Alignment",
+           "Coordination to avoid understock/overstock"
+          ],
+          [
+           "Documentation Accuracy",
+           "Proper filing of purchase records, quotes, etc."
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Rating Scale",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "5 – Outstanding\n4 – Exceeds Expectations\n3 – Meets Expectations\n2 – Needs Improvement\n1 – Unsatisfactory"
+        }
+       ]
+      },
+      {
+       "heading": "Scoring Outcome",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Avg Score",
+          "Performance Category",
+          "Action"
+         ],
+         "rows": [
+          [
+           "4.5–5.0",
+           "Outstanding Buyer",
+           "Promotion/Incentive Consideration"
+          ],
+          [
+           "3.5–4.4",
+           "Effective Buyer",
+           "Development Plan & Recognition"
+          ],
+          [
+           "2.5–3.4",
+           "Average Buyer",
+           "Mentoring, Watch Status"
+          ],
+          [
+           "<2.5",
+           "Underperforming Buyer",
+           "Trigger PIP or reassignment"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Record-Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All forms and review outcomes are digitally stored in HRIS (for employees).\nIndividual reports are shared with the respective parties.\nSummary evaluations are presented during quarterly performance reviews and strategic planning meetings."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Integration with Career Development & Growth",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Performance reviews feed into IDPs, including mentorship and learning support.\nHigh-performers are considered for Internal Job Postings (IJPs) and leadership roles.\nExceptional performance may qualify for mid-cycle promotions and onboarding into the Career Partner Program."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Performance Improvement Plan (PIP)",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Triggered for employees rated “D” in performance cycles\nIncludes SMART goals, scheduled mentoring, targeted training\n90-day review cycle with progress check-ins and feedback\nOutcomes: recovery and retention, reassignment, or separation"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Regular analysis of low-performing individuals.\nCorrective actions: training, IDP update, vendor audits, or disengagement\nIntegration of 360-degree feedback and employee engagement reviews"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Cycle",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP to be reviewed annually\nUpdates made based on regulatory changes, audit feedback, or organizational strategy\nFinal approval by Head – HR and Head – Procurement"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Governance of Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "Compliance Officer",
+   "sourceWords": 473,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, upholding the highest ethical standards when engaging with external stakeholders is vital to our values of integrity, responsibility, and transparency. This Standard Operating Procedure (SOP) establishes guidelines for sensitive transactions such as gifts, hospitality, sponsored travel, entertainment, and donations to ensure compliance, prevent conflicts of interest, and promote ethical behavior."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define a transparent, structured approval process for sensitive transactions that maintains ethical standards and mitigates risks related to conflicts of interest or regulatory non-compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Novopor employees, senior management, and external stakeholders involved in financial transactions or engagements related to gifts, entertainment, travel sponsorships, or donations."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Sensitive Transaction",
+       "definition": "A transaction with external parties that may influence decisions or create perceived conflicts of interest"
+      },
+      {
+       "term": "GDF-01",
+       "definition": "Gift Declaration Form"
+      },
+      {
+       "term": "TAR-02",
+       "definition": "Travel Approval Request Form"
+      },
+      {
+       "term": "EAF-04",
+       "definition": "Event Approval Form"
+      },
+      {
+       "term": "SDR-05",
+       "definition": "Sponsorship & Donation Request Form"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definition of Sensitive Transactions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Sensitive transactions include:\nGifts & Hospitality: Monetary or non-monetary items offered or received.\nTravel & Accommodation: Any travel arrangements sponsored by suppliers, vendors, or partners.\nEntertainment & Events: Invitations to third-party-hosted events or celebrations.\nSponsorships & Donations: Any monetary or in-kind contribution made by Novopor."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Disclose sensitive transactions and obtain prior approval before proceeding."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Review and approve declared transactions; escalate concerns to Compliance."
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Oversee compliance processes, conduct reviews, and ensure adherence to this SOP."
+       ]
+      },
+      {
+       "role": "Finance Team",
+       "responsibilities": [
+        "Record and audit sensitive transaction entries; support in reporting."
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Conduct training and ensure all employees are informed of their responsibilities."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Approval Process for Sensitive Transactions",
+     "steps": [
+      {
+       "heading": "Gifts & Hospitality",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Gifts exceeding ₹4,000 require prior approval from the Department Head and Compliance Officer.\nDeclare using Gift Declaration Form (GDF-01) within 5 working days.\nPromotional materials (e.g., calendars, pens) are excluded from approval requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Travel & Accommodation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Sponsored travel must be pre-approved by HR and Compliance.\nSubmit Travel Approval Request Form (TAR-02) at least 10 working days in advance.\nReimbursement requests require valid receipts and completion of Expense Report (ER-03)."
+        }
+       ]
+      },
+      {
+       "heading": "Entertainment & Events",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Submit Event Approval Form (EAF-04) before attending external events.\nEvents exceeding ₹12,000 require prior approval from the CEO."
+        }
+       ]
+      },
+      {
+       "heading": "Sponsorships & Donations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All sponsorships or charitable donations require prior approval.\nSubmit Sponsorship & Donation Request Form (SDR-05) to Corporate Affairs."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Record-Keeping & Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All sensitive transaction documentation must be retained for a minimum of three (3) years.\nFinance and Compliance teams shall conduct quarterly audits of declarations and approvals.\nViolations of this SOP may result in disciplinary actions per Novopor's ethics policy."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting Violations",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Suspected non-compliance must be reported via the Whistle-blower Hotline or compliance@novopor.com.\nConfidentiality and non-retaliation principles will be strictly upheld."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Number of Declarations Submitted",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Compliance Team"
+      },
+      {
+       "indicator": "Audit Findings on Sensitive Transactions",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Finance & Compliance"
+      },
+      {
+       "indicator": "Whistleblower Reports Investigated",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Compliance Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review and Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP shall be reviewed annually, or\nAfter any regulatory change relevant to the scope of this SOP, or\nFollowing recommendations from internal/external audits.\nFinal approval of amendments rests with the Compliance Officer and Managing Director."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Access Control and Consent Management Procedure",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer (DPO)",
+   "sourceWords": 601,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Novopor Advanced Sciences Private Limited recognizes that safeguarding third-party confidential information — including customer, vendor, partner, or client data — is critical to maintaining stakeholder trust, ensuring regulatory compliance, and securing business integrity. This SOP outlines structured mechanisms for access control, consent management, and data retention as part of our ethical and legal obligations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Establish formal internal controls to prevent unauthorized access or disclosure of third-party data.\nDefine procedures for obtaining and managing informed stakeholder consent.\nImplement a data retention framework aligned with regulatory, contractual, and business requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All departments handling confidential third-party data (clients, suppliers, customers).\nAll employees, contract staff, and third-party service providers with system or physical access to personal data.\nAll IT systems (cloud, on-premises, SaaS platforms) and physical records handling such data."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Third-Party Data",
+       "definition": "Information provided by external individuals or organizations (e.g., names, contact details, contracts, product specs, pricing, etc.)"
+      },
+      {
+       "term": "Consent",
+       "definition": "Freely given, specific, informed and unambiguous indication of data subject's agreement to process their personal data"
+      },
+      {
+       "term": "Role-Based Access Control (RBAC)",
+       "definition": "Restriction of system access to authorized users based on their roles in the organization"
+      },
+      {
+       "term": "Consent Management System (CMS)",
+       "definition": "A secure digital tool used to manage and document consents from stakeholders"
+      },
+      {
+       "term": "MFA",
+       "definition": "Multi-Factor Authentication; a security mechanism requiring two or more methods of identity verification"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Third-Party Data",
+         "Information provided by external individuals or organizations (e.g., names, contact details, contracts, product specs, pricing, etc.)"
+        ],
+        [
+         "Consent",
+         "Freely given, specific, informed and unambiguous indication of data subject's agreement to process their personal data"
+        ],
+        [
+         "Role-Based Access Control (RBAC)",
+         "Restriction of system access to authorized users based on their roles in the organization"
+        ],
+        [
+         "Consent Management System (CMS)",
+         "A secure digital tool used to manage and document consents from stakeholders"
+        ],
+        [
+         "MFA",
+         "Multi-Factor Authentication; a security mechanism requiring two or more methods of identity verification"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "Oversees overall data protection strategy, manages consents, reports incidents"
+       ]
+      },
+      {
+       "role": "IT Security Team",
+       "responsibilities": [
+        "Manages access control, system permissions, and breach detection tools"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure access control and consent protocols are implemented by their teams"
+       ]
+      },
+      {
+       "role": "Employees Handling Data",
+       "responsibilities": [
+        "Collect, process, and secure third-party data per this SOP"
+       ]
+      },
+      {
+       "role": "Vendors",
+       "responsibilities": [
+        "Abide by Novopor’s contractual data privacy clauses and inform of incidents within 24 hours"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Access Control Measures",
+     "steps": [
+      {
+       "heading": "Physical Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Locked cabinets or file rooms for hard copies\nVisitor logbooks and access badges for archive rooms\nSurveillance (CCTV) for restricted areas."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Role-Based Access Control (RBAC) implemented via central directory (e.g., Active Directory)\nMFA enabled for access to any cloud or internal application containing third-party data\nUse of encrypted drives, VPNs, and secure firewalls\nRegular patching and vulnerability scanning\nAudit logs maintained and reviewed quarterly for anomalies."
+        }
+       ]
+      },
+      {
+       "heading": "Least Privilege Principle",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Users are granted access to the minimum data necessary for their role\nTemporary elevated access must be logged and time-bound"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Consent Management Protocol",
+     "steps": [
+      {
+       "heading": "Pre-Collection Notification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Provide a Privacy Notice to all stakeholders (clients, vendors, etc.) prior to data collection.\nNotice to include:\nType of data collected\nPurpose of collection\nRetention timelines\nDetails of data sharing with third parties (if any)\nData subject rights"
+        }
+       ]
+      },
+      {
+       "heading": "Consent Collection",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Obtain stakeholder signature (digital or physical) on pre-approved Consent Form\nStore signed consents in CMS with:\nDate & time stamp\nScope of consent\nAny restrictions or conditions"
+        }
+       ]
+      },
+      {
+       "heading": "Withdrawal of Consent",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Consent withdrawal requests to be accepted via official email or customer portal\nRequests to be logged, acknowledged within 5 business days, and processed within 30 working days."
+        }
+       ]
+      },
+      {
+       "heading": "Change Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "If purpose of data processing changes, stakeholders must be re-informed and new consent collected."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Compliance",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Area",
+        "Action"
+       ],
+       "rows": [
+        [
+         "Access Control",
+         "Quarterly access audits for all high-risk data storage systems."
+        ],
+        [
+         "Consent Tracking",
+         "Bi-annual review of CMS logs to ensure all records are traceable and valid."
+        ],
+        [
+         "Retention Review",
+         "Annual validation of the retention schedule compliance by DPO."
+        ],
+        [
+         "Incident Response",
+         "Breaches or unauthorized access to be investigated and reported within 48 hours."
+        ],
+        [
+         "Stakeholder Requests",
+         "Must be logged, assigned a ticket, and closed with documentation."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Key Performance Indicators (KPIs)",
+     "kpis": [
+      {
+       "indicator": "Unauthorized Access Incidents",
+       "target": "Zero reported breaches annually",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Consent Compliance Rate",
+       "target": "100% consent collected before processing",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review and Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To be reviewed annually by the DPO.\nAmendments shall be incorporated following:\nRegulatory updates\nInternal audits\nNotified data breaches or consent violations"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Retention and Disposal Procedure",
+   "code": "",
+   "catalogId": "consent-retention",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer (DPO)",
+   "sourceWords": 543,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, proper data lifecycle management is essential for regulatory compliance, operational efficiency, and risk mitigation. This SOP outlines the standards, responsibilities, and procedures related to the retention and secure disposal of physical and electronic data generated or acquired during business operations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To outline the standardized procedures for:\n\nEstablish a formal Data Retention Schedule.\nEnsure timely and secure disposal of obsolete or redundant data.\nPromote legal and regulatory compliance with applicable data protection laws (e.g., IT Act etc.).\nPrevent unauthorized access to sensitive and confidential data."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP applies to all:\n\nAll business units and departments of Novopor that collect, store, process, or manage data.\nAll types of data formats: electronic records, emails, contracts, customer records, employee records, and physical documents.\nAll employees, contractors, interns, and third-party service providers who access company-managed data."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Data Retention Schedule",
+       "definition": "Predefined duration for which specific categories of data are retained."
+      },
+      {
+       "term": "Archival",
+       "definition": "Secure storage of data that is no longer in active use but must be retained."
+      },
+      {
+       "term": "Disposal",
+       "definition": "Permanent deletion or destruction of data following the retention period."
+      },
+      {
+       "term": "Confidential Data",
+       "definition": "Sensitive information not intended for public access, including personal, financial, legal, or health-related data."
+      },
+      {
+       "term": "Data Retention Schedule",
+       "definition": "Predefined duration for which specific categories of data are retained."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "Defines and reviews the retention schedule; authorizes exceptions."
+       ]
+      },
+      {
+       "role": "IT Team",
+       "responsibilities": [
+        "Implements system-level retention and deletion rules; ensures secure deletion of digital data."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Identify and classify data under their control; coordinate retention and disposal actions."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Follow departmental data handling protocols and report deviations."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Data Retention Schedule Implementation",
+     "steps": [
+      {
+       "heading": "Data Retention Schedule Implementation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A centralized Data Retention Matrix must be maintained detailing:\n\nType of data (e.g., financial, legal, HR, operational)\nRetention period (e.g., 3 years, 7 years, as per law)\nResponsible department/owner\nArchival requirements\nExamples"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Data Type",
+          "Retention Period",
+          "Owner",
+          "Disposal Mode"
+         ],
+         "rows": [
+          [
+           "Employee Records",
+           "7 Years after separation",
+           "HR",
+           "Shredding / Digital purge"
+          ],
+          [
+           "Financial Reports",
+           "8 Years",
+           "Finance",
+           "Secure disposal (incineration/digital wipe)"
+          ],
+          [
+           "Contracts",
+           "10 Years post-expiry",
+           "Legal",
+           "Legal review + destruction approval"
+          ],
+          [
+           "CCTV Footage",
+           "30 Days",
+           "Admin/Security",
+           "Auto-overwrite"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Annual review of this matrix is mandatory."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Secure Data Disposal Procedures",
+     "steps": [
+      {
+       "heading": "Physical Documents",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Use locked shredding bins.\nDestruction to be witnessed by at least one senior employee.\nDisposal log must be maintained."
+        }
+       ]
+      },
+      {
+       "heading": "Electronic Data",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Use certified data deletion tools to overwrite data.\nDeleted files should not be recoverable.\nDispose storage devices (HDDs, USBs) using degaussing or destruction."
+        }
+       ]
+      },
+      {
+       "heading": "Special Considerations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Disposal of legally restricted data requires clearance from Legal.\nData related to litigation or audit holds must not be deleted until formally released."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Compliance",
+     "kpis": [
+      {
+       "indicator": "Data Access Reviews",
+       "target": "Conduct quarterly audits on all digital systems storing high-risk or confidential data.",
+       "frequency": "Quarterly",
+       "owner": ""
+      },
+      {
+       "indicator": "Consent Verification",
+       "target": "Bi-annual verification of Consent Management System (CMS) entries and consent log accuracy.",
+       "frequency": "Bi-annual",
+       "owner": ""
+      },
+      {
+       "indicator": "Retention Compliance",
+       "target": "Annual validation of retention schedule execution by the DPO and Department Heads.",
+       "frequency": "Annual",
+       "owner": "DPO and Department Heads"
+      },
+      {
+       "indicator": "Incident Management",
+       "target": "All data breaches or unauthorized access events must be logged, investigated, and resolved within 48 hours.",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Stakeholder Data Requests",
+       "target": "Must be formally documented, assigned a unique ticket number, and responded to with closure documentation.",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "monitoring",
+     "title": "Key Performance Indicators (KPIs)",
+     "kpis": [
+      {
+       "indicator": "Data Retention Accuracy",
+       "target": "≥95%",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Disposal Event Documentation",
+       "target": "100% completion rate",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Policy Compliance Rate",
+       "target": "100% across departments",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Data Retention Accuracy",
+       "target": "≥95%",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review and Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To be reviewed annually by the DPO and Internal Audit Team.\nAmendments shall be incorporated following:\n\nRegulatory updates\nInternal process changes\nIncident or audit findings"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Information Security Incident Response & Breach Management",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "IT",
+   "owner": "Incident Response Lead (IT Head)",
+   "sourceWords": 574,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, safeguarding confidential and sensitive information—including employee records, R&D data, financial reports, and third-party information—is vital to our operations, reputation, and legal compliance. This SOP establishes a structured plan to detect, report, contain, and recover from any security incident or data breach, thereby protecting stakeholder interests and ensuring business continuity."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the systematic process for:"
+      },
+      {
+       "type": "bullets",
+       "text": "Detecting security incidents or data breaches,\nReporting and responding to such events in a timely manner,\nMitigating risks and preventing recurrence,\nEnsuring compliance with regulatory obligations under Indian and international data protection laws."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments, personnel (including contractors and vendors), locations, and systems that handle or store:"
+      },
+      {
+       "type": "bullets",
+       "text": "Store or process personal, confidential, or proprietary information.\nAre part of internal IT infrastructure, cloud-based applications, or physical data storage systems"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Confidential Information",
+       "definition": "Any non-public data that may impact privacy, compliance, or business continuity"
+      },
+      {
+       "term": "Security Incident",
+       "definition": "Attempted or actual unauthorized access, disclosure, alteration, or destruction of data"
+      },
+      {
+       "term": "Data Breach",
+       "definition": "Confirmed event where confidential information is lost, exposed, or accessed unlawfully"
+      },
+      {
+       "term": "Incident Response Team (IRT)",
+       "definition": "Cross-functional team activated during a breach to manage containment, analysis, and recovery"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Incident Response Lead (IT Head)",
+       "responsibilities": [
+        "Leads response efforts, including system isolation, forensics, and coordination"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Ensures legal reporting, documentation, and regulatory coordination"
+       ]
+      },
+      {
+       "role": "HR / Department Heads",
+       "responsibilities": [
+        "Communicate with affected teams, support remediation and awareness"
+       ]
+      },
+      {
+       "role": "Information Owner",
+       "responsibilities": [
+        "Evaluates the impact on their function/data and supports recovery procedures"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Lifecycle",
+     "steps": [
+      {
+       "heading": "Detection & Identification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees must report suspicious activity (e.g., phishing, device loss, unauthorized access) within 1 hour.\nIncidents may be flagged through security alerts, monitoring tools, or employee reports."
+        }
+       ]
+      },
+      {
+       "heading": "Containment & Eradication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Affected systems are isolated by the IT team.\nAccess rights revoked, malware cleaned, and firewall rules updated.\nEvidence logs collected and preserved."
+        }
+       ],
+       "responsible": "IT team"
+      },
+      {
+       "heading": "Impact Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify data categories impacted: personal identifiable info (PII), customer/vendor data, proprietary R&D.\nAssess system scope, record volume, and potential damage"
+        }
+       ]
+      },
+      {
+       "heading": "Notification & Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal communication via Department Heads and HR.\nLegal notification to authorities (CERT-In, Data Protection Authority) if required.\nExternal communication to clients or affected individuals must be reviewed by the Director – Information Security and Compliance Officer."
+        }
+       ],
+       "responsible": "Department Heads and HR"
+      },
+      {
+       "heading": "Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Restore systems from clean, verified backups.\nReset passwords, revalidate endpoint and server integrity.\nResume operations under heightened monitoring."
+        }
+       ]
+      },
+      {
+       "heading": "Root Cause Analysis (RCA)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted within 3 working days by the IT and Compliance team.\nRCA includes cause, exploited vulnerabilities, mitigation steps, and corrective action plan."
+        }
+       ],
+       "responsible": "IT and Compliance team"
+      },
+      {
+       "heading": "Post-Incident Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Held within 7 days post-incident.\nInvolves reviewing response efficiency, incorporating lessons learned, and updating policies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Prevention & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Quarterly mandatory employee training on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Phishing awareness\nSecure data handling\nIncident reporting procedures\nRole-based access controls (least privilege principle)\nExternal storage media and USB use is restricted\nMulti-Factor Authentication (MFA) enabled for cloud and email platforms"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Recordkeeping",
+     "rows": [
+      {
+       "record": "Information Security Incident Register",
+       "owner": "",
+       "retention": "Minimum of 7 years",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All incidents must be recorded in the Information Security Incident Register containing:"
+      },
+      {
+       "type": "bullets",
+       "text": "Unique Incident ID\nDate & time of detection\nReporter’s name\nSystems affected\nData categories breached\nSummary of corrective actions taken\nCommunication log\nLessons learned"
+      },
+      {
+       "type": "paragraph",
+       "text": "Retention Period: Minimum of 7 years"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Escalation Matrix",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Severity Level",
+        "Escalation Timeline",
+        "Action Owner"
+       ],
+       "rows": [
+        [
+         "Minor (limited impact)",
+         "Within 12 hours",
+         "IT Helpdesk + Dept. Supervisor"
+        ],
+        [
+         "Moderate (internal breach)",
+         "Within 4 hours",
+         "IT Manager + Compliance Officer"
+        ],
+        [
+         "Major (external breach or legal implication)",
+         "Within 1 hour",
+         "Director – Information Security + Top Management"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Incident Reporting Compliance",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "IT Security Team"
+      },
+      {
+       "indicator": "Root Cause Analysis Closure",
+       "target": "",
+       "frequency": "Per Incident",
+       "owner": "Compliance Officer"
+      },
+      {
+       "indicator": "Post-Incident Training Completion",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "HR & IT Department"
+      }
+     ],
+     "narrative": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Metric",
+        "Frequency",
+        "Responsible Team"
+       ],
+       "rows": [
+        [
+         "Incident Reporting Compliance",
+         "Annually",
+         "IT Security Team"
+        ],
+        [
+         "Root Cause Analysis Closure",
+         "Per Incident",
+         "Compliance Officer"
+        ],
+        [
+         "Post-Incident Training Completion",
+         "Annually",
+         "HR & IT Department"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed:"
+      },
+      {
+       "type": "bullets",
+       "text": "This SOP is reviewed annually\nImmediately after any major incident or regulatory change\nUpdates are coordinated by the IT Head and Compliance Officer"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Internal Audit Procedure for Ethics and Compliance Systems",
+   "code": "",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Lead",
+   "sourceWords": 437,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Pvt. Ltd., we are committed to upholding a workplace culture built on ethics, transparency, and regulatory compliance. This SOP outlines a structured internal audit process to evaluate the effectiveness of our ethics, anti-corruption, and compliance control systems. These audits serve as a vital tool to identify gaps, prevent misconduct, strengthen governance, and build stakeholder confidence."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP defines the methodology for conducting internal audits to assess the strength and integrity of Novopor’s ethics and compliance framework. It aims to detect non-compliance risks, support continuous improvement, and ensure adherence to both domestic and international legal and ethical standards across all operations and external engagements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The internal audit program applies to all departments and locations of Novopor and focuses on the following areas:"
+      },
+      {
+       "type": "bullets",
+       "text": "Procurement and supply chain integrity\nAnti-bribery and anti-corruption policy implementation\nEmployee training and ethical awareness\nCompliance with applicable laws and international standards\nWhistle-blower protection and non-retaliation mechanisms\nFinancial transparency and anti-fraud measures\nThird-party due diligence and risk screening\nInformation security and data protection protocols"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Audit",
+       "definition": "A formal and systematic review of internal controls and compliance"
+      },
+      {
+       "term": "Ethics Compliance",
+       "definition": "Conformity to ethical policies, laws, and standards"
+      },
+      {
+       "term": "Corrective Action Plan (CAP)",
+       "definition": "A structured plan to address and resolve identified audit findings"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology Overview",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Audit",
+         "A formal and systematic review of internal controls and compliance"
+        ],
+        [
+         "Ethics Compliance",
+         "Conformity to ethical policies, laws, and standards"
+        ],
+        [
+         "Corrective Action Plan (CAP)",
+         "A structured plan to address and resolve identified audit findings"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Accountable Entities",
+     "rows": [
+      {
+       "role": "Compliance Officer, Human Resources",
+       "responsibilities": [
+        "Ethics Culture & Policy Enforcement"
+       ]
+      },
+      {
+       "role": "Procurement Lead, Legal Advisor",
+       "responsibilities": [
+        "Third-Party Screening"
+       ]
+      },
+      {
+       "role": "Finance Manager",
+       "responsibilities": [
+        "Financial Controls & Fraud Risks"
+       ]
+      },
+      {
+       "role": "IT Manager, Data Protection Officer",
+       "responsibilities": [
+        "Information Security"
+       ]
+      },
+      {
+       "role": "Internal Audit Team (under Compliance Lead)",
+       "responsibilities": [
+        "Audit Planning & Execution"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Accountable Entities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Audit Focus Area",
+        "Responsible Entity"
+       ],
+       "rows": [
+        [
+         "Ethics Culture & Policy Enforcement",
+         "Compliance Officer, Human Resources"
+        ],
+        [
+         "Third-Party Screening",
+         "Procurement Lead, Legal Advisor"
+        ],
+        [
+         "Financial Controls & Fraud Risks",
+         "Finance Manager"
+        ],
+        [
+         "Information Security",
+         "IT Manager, Data Protection Officer"
+        ],
+        [
+         "Audit Planning & Execution",
+         "Internal Audit Team (under Compliance Lead)"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Audit Methodology & Tools",
+     "steps": [
+      {
+       "heading": "Audit Methodology & Tools",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Novopor uses a standardized audit approach that includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "A structured internal assessment checklist with 15+ control questions\nReview of relevant documents and system walkthroughs\nInterviews with key function heads and selected employees\nSample-based testing (vendor files, training logs, financial transactions, whistle-blower cases)\nRetrospective evaluation of past ethics violations and compliance actions\nAll employees involved in the audit are required to sign a declaration confirming the accuracy of their input"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Recordkeeping",
+     "rows": [
+      {
+       "record": "All audit reports, evidence, and CAP follow-ups",
+       "owner": "",
+       "retention": "7 years, aligned with Novopor’s recordkeeping policy",
+       "format": "Compliance Shared Repository"
+      },
+      {
+       "record": "Final audit results",
+       "owner": "Senior Management",
+       "retention": "7 years, aligned with Novopor’s recordkeeping policy",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All audit reports, evidence, and CAP follow-ups are stored in the Compliance Shared Repository\nFinal audit results are reviewed and signed by Senior Management\nRetention Period: 7 years, aligned with Novopor’s recordkeeping policy"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting & Corrective Action",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Audit findings are categorized as:\nObservations\nMinor Non-conformities\nMajor Non-conformities\nA Corrective Action Plan (CAP) must be submitted within 15 days of finding issuance\nSevere or recurring issues are escalated to the Ethics Committee and Board-level Compliance Representative\nVerification of CAP closure is conducted between 30 to 60 days post-implementation"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The internal audit checklist and assessment forms are reviewed and updated annually\nAudit trend analyses are used to revise training modules and risk control measures\nOpportunities for enhancing audit frequency, scope, or accountability structures are evaluated regularly"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Third-Party Due Diligence Program on ESG",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Procurement Head",
+   "sourceWords": 424,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, ethical integrity and sustainability are non-negotiable in our third-party relationships. This SOP establishes the framework for conducting due diligence on all suppliers, vendors, and business partners to assess their compliance with Environmental, Social, and Governance (ESG) standards and ethical practices."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure ethical business conduct across our supply chain.\nMinimize ESG-related risks arising from third-party relationships.\nIntegrate supplier screening into procurement decisions."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The internal audit program applies to all departments and locations of Novopor and focuses on the following areas:"
+      },
+      {
+       "type": "bullets",
+       "text": "All third parties including suppliers, contractors, service providers, and agents.\nAll business units engaging third parties for production, logistics, R&D, or commercial activities.\nPre-engagement and ongoing monitoring phases."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "ESG",
+       "definition": "Environmental, Social, and Governance principles in business ethics."
+      },
+      {
+       "term": "Third-Party",
+       "definition": "Any non-employee entity providing goods or services."
+      },
+      {
+       "term": "Due Diligence",
+       "definition": "Investigation and assessment of third-party risks."
+      },
+      {
+       "term": "On-Site Audit",
+       "definition": "Physical visit to supplier's premises to verify ESG practices."
+      },
+      {
+       "term": "ESG Self-Assessment",
+       "definition": "Questionnaire-based review completed by suppliers on their own ESG practices."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Accountable Entities",
+     "rows": [
+      {
+       "role": "Procurement Head",
+       "responsibilities": [
+        "Initiates due diligence process prior to onboarding third parties."
+       ]
+      },
+      {
+       "role": "Sustainability Team",
+       "responsibilities": [
+        "Designs ESG audit checklist and reviews audit results."
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Validates ethical risks and ensures follow-up on non-compliance."
+       ]
+      },
+      {
+       "role": "Third Party (Supplier/Vendor)",
+       "responsibilities": [
+        "Cooperates with audits and provides accurate self-assessment data."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Due Diligence Process",
+     "steps": [
+      {
+       "heading": "Pre-Engagement Screening",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conduct background checks (e.g., legal sanctions, human rights issues)."
+        },
+        {
+         "text": "Request completion of ESG Self-Assessment Form."
+        },
+        {
+         "text": "Evaluate based on defined scoring thresholds."
+        }
+       ]
+      },
+      {
+       "heading": "On-Site ESG Audits",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conducted for high-risk or strategic suppliers."
+        },
+        {
+         "text": "Includes verification of: Labor rights and working conditions; Environmental permits and waste management; Anti-corruption and fair competition practices; Health and safety systems"
+        },
+        {
+         "text": "Audit results documented in Supplier ESG Audit Report."
+        }
+       ]
+      },
+      {
+       "heading": "Risk Categorization",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Risk Level",
+          "Criteria"
+         ],
+         "rows": [
+          [
+           "Low",
+           ">85% ESG Score and no major concerns"
+          ],
+          [
+           "Medium",
+           "60–85% ESG Score or minor compliance gaps"
+          ],
+          [
+           "High",
+           "<60% ESG Score or major violations (child labor, fraud, etc.)"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Corrective Action Plan (CAP)",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Required for Medium and High-risk suppliers."
+        },
+        {
+         "text": "Must be submitted within 30 days of audit report."
+        },
+        {
+         "text": "Follow-up reviews within 90 days to verify progress."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Compliance",
+     "kpis": [
+      {
+       "indicator": "ESG Self-Assessment",
+       "target": "Mandatory for all suppliers annually.",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "On-Site ESG Audits",
+       "target": "Conducted at least once every 3 years or based on risk triggers.",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "CAP Compliance",
+       "target": "Tracked quarterly by Sustainability Team.",
+       "frequency": "Quarterly",
+       "owner": "Sustainability Team"
+      },
+      {
+       "indicator": "Supplier Blacklisting",
+       "target": "Non-compliant parties may be terminated and blacklisted.",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Records",
+     "rows": [
+      {
+       "record": "Signed Code of Conduct",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Completed ESG Self-Assessment",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Audit Reports & Corrective Action Plans",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Compliance Follow-Up Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Records",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Maintain the following for every third party:"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually by the Compliance Officer."
+      },
+      {
+       "type": "paragraph",
+       "text": "Updates may be made based on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Regulatory updates\nESG trends and stakeholder expectations\nAudit findings or partner complaints"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Emergency Incident Response & Product Recall Procedure",
+   "code": "",
+   "catalogId": "product-recall",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 641,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Novopor Advanced Sciences Private Limited prioritizes the health and safety of its stakeholders by ensuring readiness to manage emergencies, including contamination, illness outbreaks, or product quality failures. This SOP outlines our framework for preparing for, responding to, and recovering from such events, including recall protocols and customer communication."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define a systematic procedure to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Respond to emergencies affecting product safety or public health.\nExecute product recalls effectively and traceably.\nEnsure timely customer notification and regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All manufacturing units, QA/QC, logistics, and customer care teams.\nAll products under Novopor’s scope that may pose health/safety risks due to contamination, mislabeling, or regulatory non-compliance."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Product Recall",
+       "definition": "The process of retrieving defective or harmful products from customers"
+      },
+      {
+       "term": "Emergency",
+       "definition": "Unforeseen incident impacting health, safety, environment, or product integrity"
+      },
+      {
+       "term": "Incident Response Team (IRT)",
+       "definition": "Cross-functional team activated during emergencies or recalls"
+      },
+      {
+       "term": "Mock Drill",
+       "definition": "Simulated emergency response exercise"
+      },
+      {
+       "term": "Root Cause Analysis (RCA)",
+       "definition": "Investigation technique to determine underlying cause(s)"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Leads emergency drills and coordinates containment"
+       ]
+      },
+      {
+       "role": "QA/QC Head",
+       "responsibilities": [
+        "Leads product assessment and testing"
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Identifies affected batches and halts production if needed"
+       ]
+      },
+      {
+       "role": "Customer Care",
+       "responsibilities": [
+        "Communicates with affected clients and logs responses"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Reports to regulatory authorities as required"
+       ]
+      },
+      {
+       "role": "Incident Response Team",
+       "responsibilities": [
+        "Coordinates investigation, recall, and resolution"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Emergency Detection & Initial Response",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Any employee identifying a potential contamination or safety threat must immediately report to the QA Head and EHS Manager.\nAffected batch/line is quarantined.\nQA initiates preliminary testing within 2 hours of reporting."
+        }
+       ]
+      },
+      {
+       "heading": "Recall Risk Classification and Response Timeline",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To ensure effective, timely, and proportionate action, all product recalls shall be categorized based on the risk severity associated with the product health and safety hazard. The table below outlines Novopor’s standardized recall classification system:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Risk Level",
+          "Definition",
+          "Examples",
+          "Customer/Regulatory Notification Timeline"
+         ],
+         "rows": [
+          [
+           "Class I – High Risk",
+           "A situation where there is a reasonable probability that product use or exposure will cause serious adverse health consequences or death.",
+           "• Microbial contamination in chemical dispersants / • Mislabeling of hazardous ingredients / • Contamination by toxic impurities (e.g., heavy metals, solvents) / • Cross-contamination with incompatible substances",
+           "Notify within 12 hours / Initiate recall within 24 hours"
+          ],
+          [
+           "Class II – Moderate Risk",
+           "Use or exposure may cause temporary or medically reversible adverse effects, or the likelihood of serious health consequences is remote.",
+           "• Incorrect batch labeling (non-critical) / • Shelf-life exceeded but no stability issue / • Minor packaging integrity loss",
+           "Notify within 24 hours / Initiate recall within 48 hours"
+          ],
+          [
+           "Class III – Low Risk",
+           "Product use is unlikely to cause any adverse health consequences, but may affect regulatory compliance or customer satisfaction.",
+           "• Typographical error on label / • Cosmetic packaging defect / • Regulatory deviation not affecting product safety",
+           "Notify within 48 hours / Initiate recall within 72 hours"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Incident Response Activation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Incident Response Team (IRT) is formed within 4 hours.\nRoles are assigned and response is coordinated."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Notification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Draft official communication including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of issue\nProduct details (batch number, expiry, etc.)\nImmediate customer instructions (e.g., stop use)\nNotify impacted customers via email and phone within 24 hours."
+        }
+       ]
+      },
+      {
+       "heading": "Product Recall Execution",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Generate Product Recall Form (PRF) with traceability details.\nRetrieve affected products via reverse logistics with documented chain-of-custody.\nRecall tracking and customer response are updated in Recall Register."
+        }
+       ]
+      },
+      {
+       "heading": "Root Cause Analysis and Corrective Action",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct RCA using 5 Whys or Fishbone diagram.\nImplement CAPA (Corrective and Preventive Action).\nDocument in Incident Investigation Report (IIR)."
+        }
+       ]
+      },
+      {
+       "heading": "Regulatory Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "File mandatory reports with applicable authorities (e.g., APPCB, FDA).\nSubmit RCA and CAPA documentation within 7 days of incident closure."
+        }
+       ]
+      },
+      {
+       "heading": "Review and Close-Out",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Final IRT review to confirm containment and resolution.\nLessons learned recorded.\nSOP, training material, or process updated if required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Emergency Preparedness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Conduct at least 2 mock drills per year (1 for recall, 1 for contamination).\nTrain all employees annually on emergency communication and containment procedures.\nMaintain updated emergency contact list for regulatory bodies and clients."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP to be reviewed annually or post-incident.\nImprovement suggestions logged and tracked via Management Review Meetings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Customer Communication on Product Health Impacts",
+   "code": "",
+   "catalogId": "customer-health-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "",
+   "sourceWords": 478,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, we prioritize transparent communication with our customers regarding the health and safety aspects of our products. While our current product portfolio does not include nanotechnology-based or other high-risk emerging technologies, this SOP ensures that clear, accurate, and up-to-date information is provided to customers on the potential health impacts of our products — especially in industrial and chemical applications."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the process for:"
+      },
+      {
+       "type": "bullets",
+       "text": "Communicating product-related health and safety risks to customers.\nEnsuring compliance with national and international regulatory requirements.\nProactively managing customer awareness and risk prevention through Material Safety Data Sheets (MSDS), labeling, training support, and technical advisories."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All commercialized and sample-stage products manufactured by Novopor.\nAll departments involved in product stewardship, regulatory affairs, quality, customer service, and marketing."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "MSDS",
+       "definition": "Material Safety Data Sheet – provides safety handling instructions"
+      },
+      {
+       "term": "Labeling Compliance",
+       "definition": "Labeling in accordance with APPCB, GHS, REACH, etc."
+      },
+      {
+       "term": "Product Stewardship",
+       "definition": "Responsible management of health and safety impacts throughout a product’s lifecycle"
+      },
+      {
+       "term": "Customer Notification",
+       "definition": "Proactive communication to end users on potential risks and handling protocols"
+      },
+      {
+       "term": "Awareness Program",
+       "definition": "Formal sessions, newsletters, brochures, or training to educate customers on product risks"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "QA/QC Team",
+       "responsibilities": [
+        "Ensure MSDS and technical datasheets are up-to-date and distributed"
+       ]
+      },
+      {
+       "role": "EHS & Regulatory",
+       "responsibilities": [
+        "Evaluate regulatory risks and approve health communication"
+       ]
+      },
+      {
+       "role": "Sales and Customer Care",
+       "responsibilities": [
+        "Share product safety information and guide safe handling practices"
+       ]
+      },
+      {
+       "role": "R&D",
+       "responsibilities": [
+        "Support toxicology and hazard identification for new product formulations"
+       ]
+      },
+      {
+       "role": "Marketing",
+       "responsibilities": [
+        "Include accurate hazard icons and safety language in packaging and communication"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Provision of Health Impact Information to Customers",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Every product shipped includes:\nMSDS (Material Safety Data Sheet) with sections on health risks, first aid, and handling.\nLabeling in line with GHS and APPCB standards showing hazard pictograms and precautionary measures.\nQR code or digital download link to MSDS is available on product label and shipment documents.\nCustomer support team provides:\nOne-on-one guidance on chemical handling, storage, PPE, and first aid.\nProduct-specific training sessions/webinars on health and safety if requested.\nHigh-risk products (e.g., solvents, acids) are flagged in the ERP system to trigger mandatory safety document sharing with each order."
+        }
+       ]
+      },
+      {
+       "heading": "Communication Tools and Channels",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Printed and digital formats of MSDS available in English and local languages.\nA dedicated Product Safety Portal is hosted on Novopor’s website.\nCustomers are notified within 7 working days of any updates to health/safety data or classification."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Awareness and Training Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Organize annual customer webinars on:\nBest practices in handling and storing hazardous products.\nUpdates in product classification or regulatory changes.\nDevelop and circulate:\nSafety Bulletins\nVisual Posters on Do’s and Don’ts\nEmail campaigns on specific product risks."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Reviewed annually by QA/Regulatory teams or earlier upon: Product changes Or Regulatory changes Or Customer safety incident.\nUpdates logged via controlled document management system"
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Related Documents",
+     "items": [
+      "SOP: Hazardous Waste Handling",
+      "SOP: Emergency Recall & Incident Response",
+      "MSDS Library (Internal Document Portal)",
+      "Customer Technical Inquiry Log Sheet",
+      "Customer Training Material"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Product Disposal Guidance, Packaging Optimization & Demand Estimation",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 532,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, we are committed to promoting responsible product lifecycle management through sustainable disposal guidance, optimized packaging, and accurate demand forecasting. These measures align with our circular economy goals, reduce environmental impact, and ensure our chemical and advanced material products are handled responsibly throughout their lifecycle."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the process for:"
+      },
+      {
+       "type": "bullets",
+       "text": "Providing product users with information on safe end-of-life disposal methods.\nOptimizing product packaging to minimize material usage and improve recyclability.\nImplementing demand estimation models to prevent overproduction and minimize expired or surplus chemical inventories."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP applies to:\nAll commercialized and sample-stage products manufactured by Novopor.\nAll departments involved in product stewardship, regulatory affairs, quality, customer service, and marketing."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "End-of-Life (EOL)",
+       "definition": "Final stage of a product lifecycle where disposal or reuse occurs"
+      },
+      {
+       "term": "Monomaterial",
+       "definition": "Packaging made from a single recyclable material for easier recycling"
+      },
+      {
+       "term": "Lightweighting",
+       "definition": "Reducing packaging weight to use less material without compromising safety"
+      },
+      {
+       "term": "Circular Flow",
+       "definition": "System in which resources are reused, recycled, or recovered to reduce waste"
+      },
+      {
+       "term": "Demand Forecasting",
+       "definition": "Process of estimating future customer demand to optimize production planning"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology Overview",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "End-of-Life (EOL)",
+         "Final stage of a product lifecycle where disposal or reuse occurs"
+        ],
+        [
+         "Monomaterial",
+         "Packaging made from a single recyclable material for easier recycling"
+        ],
+        [
+         "Lightweighting",
+         "Reducing packaging weight to use less material without compromising safety"
+        ],
+        [
+         "Circular Flow",
+         "System in which resources are reused, recycled, or recovered to reduce waste"
+        ],
+        [
+         "Demand Forecasting",
+         "Process of estimating future customer demand to optimize production planning"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Packaging Engineer",
+       "responsibilities": [
+        "Design packaging with minimal materials and high recyclability"
+       ]
+      },
+      {
+       "role": "Marketing & Design",
+       "responsibilities": [
+        "Ensure disposal and recycling information is clearly printed or digitally linked"
+       ]
+      },
+      {
+       "role": "Logistics Head",
+       "responsibilities": [
+        "Coordinate reverse logistics or return programs where applicable"
+       ]
+      },
+      {
+       "role": "Sales & Distribution",
+       "responsibilities": [
+        "Provide accurate market data to forecasting team"
+       ]
+      },
+      {
+       "role": "Planning Manager",
+       "responsibilities": [
+        "Use historical sales, market inputs and trend models to estimate demand"
+       ]
+      },
+      {
+       "role": "Regulatory Affairs",
+       "responsibilities": [
+        "Ensure packaging and EOL guidance meet statutory disposal norms"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Roles & Responsibilities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Role",
+        "Responsibility"
+       ],
+       "rows": [
+        [
+         "Packaging Engineer",
+         "Design packaging with minimal materials and high recyclability"
+        ],
+        [
+         "Marketing & Design",
+         "Ensure disposal and recycling information is clearly printed or digitally linked"
+        ],
+        [
+         "Logistics Head",
+         "Coordinate reverse logistics or return programs where applicable"
+        ],
+        [
+         "Sales & Distribution",
+         "Provide accurate market data to forecasting team"
+        ],
+        [
+         "Planning Manager",
+         "Use historical sales, market inputs and trend models to estimate demand"
+        ],
+        [
+         "Regulatory Affairs",
+         "Ensure packaging and EOL guidance meet statutory disposal norms"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Provision of Product Disposal and Recycling Information",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All product labels or inserts include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Disposal instructions for chemical residues or packaging returns\nRecycling icons or QR codes linking to our Product Disposal Guidance portal\nLocal sanitary disposal guidelines compliant with APPCB or CPCB standards.\nHigh-volume clients (distributors, institutions) receive:\nTraining documents on reverse logistics programs\nSafe handling and disposal posters for internal awareness."
+        }
+       ]
+      },
+      {
+       "heading": "Circular Disposal Infrastructure and Take-Back Options",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For select industrial chemicals:"
+        },
+        {
+         "type": "bullets",
+         "text": "Empty drums/HDPE containers can be returned for authorized decontamination and reuse\nReverse logistics is offered under buy-back programs\nCustomer helpline supports return scheduling and proper documentation."
+        }
+       ]
+      },
+      {
+       "heading": "Optimization of Primary Packaging",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Packaging teams follow Novopor's Packaging Reduction Checklist:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of monomaterials (e.g., 100% HDPE bottles or cardboard sleeves)\nEliminate unnecessary inner wrappings or spacers\nReduce packaging wall thickness where safe to do so (lightweighting)\nSustainability review during every product launch:\nEvery new SKU must show reduction or improvement over legacy packaging."
+        }
+       ]
+      },
+      {
+       "heading": "Demand Forecasting to Reduce Overproduction and Waste in Chemical Inventory",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Forecasting is performed using:"
+        },
+        {
+         "type": "bullets",
+         "text": "Historical sales trends and seasonality\nClient-specific order cycles\nGlobal supply chain disruption buffers\nIntegration with ERP-based demand modules\nObjectives:\nAvoid chemical expiration, overstocking, and batch disposal\nAlign procurement and production to real market demand\nRegular cross-functional meetings between:\nSales, Planning, Procurement, and Operations teams"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The SOP shall be reviewed annually or upon any of the following: Significant product packaging revision Or Changes in regulatory disposal guidelines Or Customer feedback on packaging or disposal."
+      },
+      {
+       "type": "paragraph",
+       "text": "Innovations or best practices in material circularity shall be evaluated for adoption quarterly."
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Related Documents",
+     "items": [
+      "Product Disposal Guidance Templates (Doc No. NOV-GEN-045)",
+      "Packaging Optimization SOP (Doc No. NOV-PKG-011)",
+      "Forecasting Module User Manual (ERP Integration)",
+      "Regulatory Circulars – APPCB / CPCB",
+      "Customer Awareness Brochure: \"Safe Use & Disposal Practices\""
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Responsible Product Use, Targeted Agrochemical Development & Biopesticide Innovation",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "Product Stewardship",
+   "owner": "Product Stewardship Lead",
+   "sourceWords": 513,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, we are committed to ensuring that our products are used safely, efficiently, and with minimal impact on the environment. This SOP defines measures to educate users on optimal storage and handling practices, extend product life, and advance sustainable innovation in agrochemicals, including species-specific pesticide design and biopesticide development. These efforts are supported by our Life Cycle Assessment (LCA) and comprehensive product test reports."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the process for:"
+      },
+      {
+       "type": "bullets",
+       "text": "Educate users on best practices for safe, efficient product use and extended lifespan.\nGuide the design and development of pesticides that minimize ecosystem damage.\nSupport the development and application of biopesticides derived from natural compounds."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All products and product development activities at Novopor, particularly chemicals and agrochemical solutions.\nR&D, Regulatory, Marketing, and Product Stewardship teams.\nAll product end-users, including industrial, institutional, and agricultural clients."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Biopesticide",
+       "definition": "A pesticide derived from natural materials such as plants, animals, or minerals."
+      },
+      {
+       "term": "Selective Targeting",
+       "definition": "Designing chemical actions that only affect specific pests or species."
+      },
+      {
+       "term": "Product Stewardship",
+       "definition": "Responsibility taken by manufacturers for the entire lifecycle of the product."
+      },
+      {
+       "term": "Safe Use Guidelines",
+       "definition": "Documented instructions to minimize environmental or health impacts."
+      },
+      {
+       "term": "LCA",
+       "definition": "Life Cycle Assessment used to assess environmental impacts from cradle to grave."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Product Stewardship Lead",
+       "responsibilities": [
+        "Develops and disseminates product use and storage guidance materials."
+       ]
+      },
+      {
+       "role": "R&D Team",
+       "responsibilities": [
+        "Designs targeted agrochemicals and develops biopesticide formulations."
+       ]
+      },
+      {
+       "role": "Regulatory Affairs",
+       "responsibilities": [
+        "Ensures compliance of biopesticides and chemical products with national and international norms."
+       ]
+      },
+      {
+       "role": "Marketing Team",
+       "responsibilities": [
+        "Incorporates safe-use and application data in product literature and campaigns."
+       ]
+      },
+      {
+       "role": "QA/QC Team",
+       "responsibilities": [
+        "Validates safety claims and conducts stability and effectiveness testing."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Provision of Information for Efficient Product Use, Storage, and Maintenance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All product labels and inserts include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Safe storage conditions (temperature, humidity, light exposure)\nInstructions to avoid contamination or degradation\nTips for efficient application to avoid unnecessary waste or emissions.\nDigital access (QR codes, website) to:\nProduct Safety Data Sheets (SDS)\nUsage efficiency tips and lifecycle best practices"
+        }
+       ]
+      },
+      {
+       "heading": "Design of Pesticides or Agrochemical Products with Selective Targeting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "R&D follows a \"selective mode-of-action\" strategy to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Ensure chemical agents act only on intended pest species\nAvoid collateral damage to beneficial insects, flora, and fauna\nMode of action and targeted species are specified in:\nProduct technical dossiers\nLabel claims, marketing brochures, and LCA documents\nPesticide design is informed by:\nBioassay testing\nField trials\nEcotoxicological screening"
+        }
+       ],
+       "responsible": "R&D Team"
+      },
+      {
+       "heading": "Development of Biopesticides from Natural Compounds",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Biopesticide programs are focused on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Plant-derived oils and alkaloids\nBacterial and fungal strains (e.g., Bacillus thuringiensis)\nMineral-based formulas like sulfur or copper-based products\nLCA and product test reports support lower impact ratings versus synthetic alternatives\nRegistration dossiers include:\nToxicity profiles\nBiodegradability ratings\nField efficacy results"
+        }
+       ],
+       "responsible": "R&D Team"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP shall be reviewed annually or when: New biopesticides are launched or Regulatory guidelines are updated (e.g., CIB&RC, CPCB) or Significant new data from LCA or field studies becomes available.\nReview to be led by the Product Stewardship Committee with inputs from QA, R&D, and Compliance teams."
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Related Documents",
+     "items": [
+      "Product Stewardship Guidebook (Doc No. NOV-PSG-010)",
+      "Agrochemical Mode-of-Action Summary Sheets",
+      "LCA Reports and Product Test Files",
+      "Customer Training Modules on Safe Use & Application"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "External Feedback Mechanism for Product Health & Safety Issues",
+   "code": "",
+   "catalogId": "customer-health-safety",
+   "pillar": "S",
+   "department": "Product Stewardship",
+   "owner": "Customer Service Lead",
+   "sourceWords": 589,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Novopor Advanced Sciences Private Limited, maintaining the highest standards of product health and safety is a core responsibility. We recognize the importance of customer feedback in identifying potential or actual risks, improving our products, and fulfilling our regulatory and ethical obligations. This SOP outlines the structured systems and channels through which customers, distributors, and external partners can report health and safety concerns associated with our products—before, during, or after use."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a formal process for:"
+      },
+      {
+       "type": "bullets",
+       "text": "Capturing and responding to external feedback related to product health and safety.\nEnsuring timely escalation, investigation, and resolution of reported issues.\nEnhancing customer trust and strengthening continuous product improvement."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All products manufactured and distributed by Novopor.\nAll departments involved in product stewardship, QA/QC, customer service, sales, and regulatory affairs.\nAll customers, end-users, and authorized distributors providing feedback on product safety concerns."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Product Safety Feedback",
+       "definition": "Any concern or issue raised by an external party about the health/safety of a product."
+      },
+      {
+       "term": "Customer Service Portal",
+       "definition": "The official digital platform where users can submit feedback or complaints."
+      },
+      {
+       "term": "Escalation Matrix",
+       "definition": "Predefined process for routing and addressing critical feedback."
+      },
+      {
+       "term": "Corrective Action (CA)",
+       "definition": "Action taken to eliminate the cause of a detected non-conformity."
+      },
+      {
+       "term": "Preventive Action (PA)",
+       "definition": "Proactive measure to prevent potential non-conformities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Customer Service Lead",
+       "responsibilities": [
+        "Receive, record, and route feedback to relevant departments."
+       ]
+      },
+      {
+       "role": "QA/QC Head",
+       "responsibilities": [
+        "Investigate product complaints related to safety and initiate testing or verification."
+       ]
+      },
+      {
+       "role": "EHS & Compliance Team",
+       "responsibilities": [
+        "Determine regulatory reporting requirements and ensure safety logs are updated."
+       ]
+      },
+      {
+       "role": "Sales/Marketing Team",
+       "responsibilities": [
+        "Educate customers on feedback submission channels and forward received complaints."
+       ]
+      },
+      {
+       "role": "Product Stewardship",
+       "responsibilities": [
+        "Analyze trends in feedback to identify systemic issues or areas for design improvement."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Feedback Channel Setup",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following feedback channels are maintained:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Email Support – product safety concerns can be shared at productsafety@novopor.com, monitored daily."
+        },
+        {
+         "text": "Online Form – feedback form available 24/7 on novopor.com/feedback."
+        },
+        {
+         "text": "QR Code on Packaging – links users directly to the feedback portal."
+        },
+        {
+         "text": "Customer Care Line – Toll-free helpline 1800-123-NOVO (Mon–Sat, 9 AM–6 PM)."
+        },
+        {
+         "text": "Distributor Reports – monthly feedback collected."
+        },
+        {
+         "text": "Sales Team Escalation – field teams use mobile tools to report client concerns to QA"
+        }
+       ]
+      },
+      {
+       "heading": "Submission & Acknowledgment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All complaints/feedback related to product health and safety are"
+        }
+       ],
+       "responsible": "Customer Service",
+       "substeps": [
+        {
+         "text": "Logged into the Customer Complaint Register (CCR) within 24 hours",
+         "responsible": "Customer Service"
+        },
+        {
+         "text": "Automatically acknowledged with a unique reference ID",
+         "responsible": "Customer Service"
+        },
+        {
+         "text": "Categorized by severity (Low / Medium / High Risk) by Customer Service",
+         "responsible": "Customer Service"
+        }
+       ]
+      },
+      {
+       "heading": "Escalation and Investigation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For High Risk (e.g., illness, leakage, safety hazard):"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Immediate notification to QA, EHS, and Regulatory Head"
+        },
+        {
+         "text": "Product quarantine at client location may be recommended"
+        },
+        {
+         "text": "Field investigation or product testing initiated within 48 hours"
+        },
+        {
+         "text": "For Low/Medium Risk: Investigated within 5 working days"
+        },
+        {
+         "text": "RCA (Root Cause Analysis) performed where applicable"
+        }
+       ]
+      },
+      {
+       "heading": "Corrective and Preventive Action",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Post-verification, QA/QC and EHS teams:"
+        }
+       ],
+       "responsible": "QA/QC and EHS teams",
+       "substeps": [
+        {
+         "text": "Implement CAPA (Corrective & Preventive Action)",
+         "responsible": "QA/QC and EHS teams"
+        },
+        {
+         "text": "Update SOPs or product use instructions if needed",
+         "responsible": "QA/QC and EHS teams"
+        },
+        {
+         "text": "Communicate resolution steps to the customer within 7–10 days.",
+         "responsible": "QA/QC and EHS teams"
+        }
+       ]
+      },
+      {
+       "heading": "Customer Communication and Closure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Formal closure report shared with complainant"
+        }
+       ],
+       "responsible": "Compliance",
+       "substeps": [
+        {
+         "text": "If regulatory reporting is triggered, Compliance files report with authorities (APPCB, FDA, etc.)",
+         "responsible": "Compliance"
+        },
+        {
+         "text": "Records retained in the Safety Feedback Logbook for 5 years."
+        }
+       ]
+      },
+      {
+       "heading": "Trend Analysis and Review",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Bi-annual review of complaints to identify patterns"
+        },
+        {
+         "text": "Improvements or re-designs proposed for frequently reported issues"
+        },
+        {
+         "text": "Trends shared in Management Review Meetings"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP to be reviewed annually or after any significant product safety event.\nReview team includes Product Stewardship, QA/QC, and EHS leads.\nFeedback handling processes may be revised based on new regulatory norms, customer demands, or audit outcomes."
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Related Documents",
+     "items": [
+      "Customer Complaint Register (CCR)",
+      "Customer Feedback Form Template",
+      "CAPA Form Template (Doc No. NOV-CAPA-010)",
+      "Safety Feedback Trend Analysis Reports",
+      "APPCB/FDA Reporting Protocols",
+      "Product Stewardship Dashboard Reports"
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

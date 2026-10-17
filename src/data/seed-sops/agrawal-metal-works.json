@@ -1,0 +1,2136 @@
+{
+ "id": "agrawal-metal-works",
+ "company": "Agrawal Metal Works Pvt. Ltd.",
+ "industry": "Copper and copper alloy foils, strips, sheets, wires and brass ingot manufacturing",
+ "industryTags": [
+  "manufacturing"
+ ],
+ "sourceFile": "SOP/SOP Manual- AMWL.pdf",
+ "frontMatter": {
+  "introduction": "Welcome to the Environmental, Social, and Governance (ESG) Standard Operating Procedures (SOP) Manual for Agrawal Metal Works Pvt. Ltd. Since our establishment in 1945, Agrawal Metal Works has adhered to a philosophy of excellence, dedicated to being best-in-class for our customers. We take pride in our position as a leading manufacturer of Copper and Copper Alloy Foils, Strips, and Sheets, as well as Copper and Brass Round and Flatted Wires and Fine Grain Brass Ingots in India.\n\nAs we continue to expand our presence in the Indian and international markets, we recognize the importance of integrating sustainability into our core business practices. This manual serves as a comprehensive framework to guide our commitment to environmental stewardship, social responsibility, and robust governance.\n\nBy embedding ESG principles into our operations, we aim to minimize our environmental impact, enhance the welfare of our employees and communities, and uphold the highest standards of ethical conduct. Through this manual, we seek to promote a culture of sustainability, accountability, and transparency, ensuring that Agrawal Metal Works remains a trusted partner for our stakeholders and a leader in our industry.\n\nPromoting sustainability, enhancing community engagement, and ensuring ethical practices--this manual serves as a comprehensive guide for embedding Environmental, Social, and Governance (ESG) considerations into the core operations of Agrawal Metal Works Pvt. Ltd., supporting our mission for responsible business conduct.",
+  "objective": "",
+  "scope": "The ESG SOP Manual applies to all operations and activities related to environmental management, social responsibility, and governance practices and is applicable to all employees contractors, third-party vendors, and stakeholders involved in the operations of Agrawal Metal Works Pvt. Ltd. It includes guidelines for minimizing environmental impact, promoting employee welfare, ensuring ethical conduct, and engaging with stakeholders.",
+  "reviewMechanism": ""
+ },
+ "sops": [
+  {
+   "title": "Waste Management",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "Environmental Management",
+   "owner": "Waste Management Coordinator",
+   "sourceWords": 1604,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Systematic Waste Stream Segregation and Disposal Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure the efficient and responsible segregation and disposal of waste generated."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Systematic Waste Stream Segregation and Disposal Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Categorization of Waste",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A thorough assessment of all activities is conducted by the Waste Management Coordinator within the organization to identify the types of waste generated."
+        },
+        {
+         "type": "paragraph",
+         "text": "The waste is categorized into hazardous and non-hazardous streams, ensuring proper classification based on regulatory definitions and material characteristics."
+        },
+        {
+         "type": "bullets",
+         "text": "Hazardous Waste: Waste that poses a substantial or potential hazard to human health or the environment. Examples include chemicals, batteries, and certain electronic waste.\nNon-Hazardous Waste: Waste that does not pose a risk to human health or the environment. Examples include paper, cardboard, and food waste."
+        }
+       ],
+       "responsible": "Waste Management Coordinator"
+      },
+      {
+       "heading": "Waste Streams Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Utilize the table provided below to define specific waste streams associated with each category of waste identified."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Sr. No",
+          "Description",
+          "Storage",
+          "Handling",
+          "Disposal",
+          "Notes",
+          "Resp."
+         ],
+         "rows": [
+          [
+           "1",
+           "Waste Oil",
+           "Store used oil in plastic barrels in scrap yard",
+           "Use secondary containers for transfer; clean any drips immediately",
+           "Dispose off to government-approved scrap dealer; ensure valid authorization of waste recycler for every consignment; Maintain & upto date copy of the valid authorization of waste recycler",
+           "Maintain the inventory in Form-3; Ensure Form No. 13 manifest",
+           "Maintenance Incharge"
+          ],
+          [
+           "2",
+           "Paper, Cardboard, E-Waste, Mercury, Sludge, Cloth",
+           "Store in designated bins in scrap yard",
+           "Ensure segregation as per bin labels",
+           "Authorized scrap dealer is called for the disposal when bins are full",
+           "",
+           "Manager HR"
+          ],
+          [
+           "3",
+           "Leftover Foodstuff",
+           "Collected in crates in the pantry",
+           "Regularly inform food collector for pick-up; ensure cleanliness of crates",
+           "Given to local villagers or sweeper to avoid contamination & air pollution",
+           "Keep the records of waste food dispose off transactions on daily basis.",
+           "Manager HR"
+          ],
+          [
+           "4",
+           "Batteries",
+           "Old batteries stored temporarily in maintenance area",
+           "Use trays to avoid acid spillage; clean any drips immediately",
+           "Return to supplier for recharging or disposal",
+           "Ensure that no dripping of electrolyte takes place in the floor.",
+           "Maintenance Incharge"
+          ],
+          [
+           "5",
+           "Production Waste",
+           "Segregate and store in properly marked bags in scrap yard",
+           "Ensure proper stacking in designated areas",
+           "Transfer to scrap dealer; ensure proper segregation",
+           "Collect dust powder in bags with stitched and transfer to designated area.",
+           "Production/Store Incharge"
+          ],
+          [
+           "6",
+           "Shop Floor Waste",
+           "Store different waste types (oily cotton, packing, chemical drums) in designated trolleys",
+           "Use gloves during handling; segregate waste types",
+           "Dispose via scrap yard; ensure no mixing with other waste or contamination with rainwater",
+           "Train staff on waste segregation protocols; ensure trolleys are labeled.",
+           "Plant Head"
+          ],
+          [
+           "7",
+           "Used Lead-Acid Batteries",
+           "Store used lead-acid batteries in a designated area in the warehouse",
+           "Affix a sticker advising not to throw it outside but to sell back the old battery to our sales outlets at scrap value for scientific re-cycling",
+           "Collect and send batteries to manufacturers for lead recycling; ensure compliance with local regulations",
+           "Monitor battery collection and recycling process.",
+           "Maintenance Incharge"
+          ],
+          [
+           "8",
+           "Hazardous Chemicals & Lab Effluents",
+           "Store hazardous chemicals as per MSDS guidelines; empty containers sent to store after washing",
+           "Use PPE (gloves, goggles, masks) while handling; ensure proper labeling",
+           "Disposal of hazardous waste according to local authority regulations; neutralize effluents before disposal",
+           "Maintain an updated MSDS for all chemicals; document any spills or incidents.",
+           "HOD (HR & Admin.)"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure for Recovering Material from Dross",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Efficiently recovering and recycling valuable materials from dross generated during the metal production process, thereby minimizing waste and promoting resource sustainability."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure for Recovering Material from Dross",
+     "steps": [
+      {
+       "heading": "Collection of Dross",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste Management Team collects dross bins from all production lines and records the weight of each bin during collection."
+        }
+       ],
+       "responsible": "Waste Management Team"
+      },
+      {
+       "heading": "Cooling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The collected dross is allowed to cool down before further handling. safety measures are in place while handling hot materials must be ensured."
+        }
+       ]
+      },
+      {
+       "heading": "Segregation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "After cooling, larger metal lumps are segregated from the remaining fine dross. The large lumps are set aside for further processing which includes crushing or shredding, melting, fluxing, separation, cooling and solidifying, recycling."
+        }
+       ]
+      },
+      {
+       "heading": "Processing Fine Dross",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The remaining fine dross is collected and processed using a pulverizer. Safety protocols are followed during the operation must be ensured."
+        }
+       ]
+      },
+      {
+       "heading": "Charging the Pulverizer",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The fine segregated dross is charged into the pulverizer hopper, ensuring it is clear of obstructions."
+        }
+       ]
+      },
+      {
+       "heading": "Grinding Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The pulverizer grinds the dross. The grinding process is monitored for efficiency, ensuring that ash and dust are collected in the bag filter."
+        },
+        {
+         "type": "table",
+         "text": "Recovery of Materials",
+         "columns": [
+          "Recovery Percentage",
+          "Collection method"
+         ],
+         "rows": [
+          [
+           "25-30%",
+           "Collected separately for reuse"
+          ],
+          [
+           "70-75%",
+           "Collected in bags"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Use of Recovered Metal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The recovered metal particles are utilized in the casting process, ensuring to track the quantity used for inventory purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation of Losses",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any losses during the process, which are estimated to be between 0.5% to 0.9% are documented. This record will be useful for process evaluation and improvement."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure for Managing Hazardous Substances: Labeling, Storing, Handling, and Transporting",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish guidelines for the safe labeling, storing, handling, and transporting of hazardous substances to protect employee health, safety, and the environment."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure for Managing Hazardous Substances: Labeling, Storing, Handling, and Transporting",
+     "steps": [
+      {
+       "heading": "Unloading and Storage of Hazardous Substances",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Unload Material: Hazardous substances are carefully unloaded from trucks by first verifying shipping documents and inspecting the unloading area for safety. Personnel wear appropriate personal protective equipment (PPE), and a signal person is designated to coordinate movements. Proper manual handling techniques or mechanical aids, such as forklifts, are used for heavier loads while checking containers for damage and verifying received quantities. Once unloaded, the containers are transported to designated storage areas, maintaining cleanliness in the unloading zone. The shipping documents typically verified during the unloading of hazardous substances include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Bill of Lading (BOL)\nMaterial Safety Data Sheet (MSDS)\nPacking List\nHazardous Materials Declaration\nImport/Export Permits"
+        },
+        {
+         "type": "paragraph",
+         "text": "Verification: The quantity and type of hazardous substances are verified by cross-checking the bill of lading, Material Safety Data Sheets, and packing lists for accuracy, along with validating the Hazardous Materials Declaration and any required permits to ensure compliance with safety regulations, before moving them to designated storage areas."
+        }
+       ]
+      },
+      {
+       "heading": "Storage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous substances are stored in designated areas based on their specific classifications, ensuring that each container is clearly labeled with its contents and associated hazards. The storage area remains locked and secured to prevent unauthorized access, protecting personnel and maintaining safety protocols"
+        }
+       ]
+      },
+      {
+       "heading": "Labeling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All hazardous substances are labeled in accordance with the Globally Harmonized System (GHS). Below given table provides a clear overview of the labeling requirements based on the Globally Harmonized System (GHS)."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Label Element",
+          "Description",
+          "Example"
+         ],
+         "rows": [
+          [
+           "Product Identifier",
+           "Name or number used for the chemical",
+           "\"Acetic Acid\""
+          ],
+          [
+           "Signal Word",
+           "Indicates the level of hazard (Warning or Danger)",
+           "\"Danger\""
+          ],
+          [
+           "Hazard Statements",
+           "Describes the nature of the hazard",
+           "\"Causes severe skin burns\""
+          ],
+          [
+           "Precautionary Statements",
+           "Provides measures to minimize or prevent adverse effects",
+           "\"Wear protective gloves\""
+          ],
+          [
+           "Pictograms",
+           "Visual symbols that convey specific hazards",
+           "![Corrosive Pictogram]"
+          ],
+          [
+           "Supplier Information",
+           "Name, address, and phone number of the supplier",
+           "\"ABC Chemicals, 123 St.\""
+          ],
+          [
+           "Storage Requirements",
+           "Instructions for safe storage of the substance",
+           "\"Store in a cool, dry place\""
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Handling of Hazardous Substances",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Preparation and Training: Staff undergo regular training sessions on the properties of hazardous substances, understanding safety data sheets (SDS), and familiarization with first aid measures related to potential exposures.\nSafe Handling Techniques: Employees utilize tools such as spill containment trays, tongs, and chemical transfer pumps, along with personal protective equipment (PPE) like gloves, goggles, and face shields to minimize direct contact with hazardous substances.\nSpill Response: In the event of a spill, employees immediately execute spill response procedures, including evacuating the area and employing absorbent materials for containment and cleanup. All spills are promptly reported to a supervisor, and incidents are documented according to company reporting guidelines."
+        }
+       ]
+      },
+      {
+       "heading": "Emergency Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "First aid kits and emergency response equipment including items such as:"
+        },
+        {
+         "type": "numbered",
+         "text": "adhesive bandages\nantiseptic wipes\ngauze pads\nscissors\ntweezers\nburn cream\neye wash solution\nchemical spill kits\nabsorbent materials\ngloves\nface shields\nemergency contact information."
+        },
+        {
+         "type": "paragraph",
+         "text": "are readily accessible in all areas where hazardous substances are handled. Employees are familiarized with emergency contacts and evacuation procedures specific to hazardous substance incidents, ensuring readiness for any potential emergencies"
+        }
+       ]
+      },
+      {
+       "heading": "Hazardous Substances Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Hazardous waste is disposed of through licensed waste disposal contractors at approved facilities, ensuring compliance with local, state, and federal regulations. The responsibility for managing hazardous waste disposal lies with the Environmental Health and Safety Officer, who oversees the selection of contractors and ensures proper classification and packaging of the waste."
+        },
+        {
+         "type": "numbered",
+         "text": "Required documentation includes\nwaste manifests,\ntransport permits,\ndisposal certificates,"
+        },
+        {
+         "type": "paragraph",
+         "text": "Documents must be retained for record-keeping and regulatory compliance. The disposal methods employed may include incineration, treatment, or secure landfilling, depending on the type of hazardous waste."
+        }
+       ],
+       "responsible": "Environmental Health and Safety Officer"
+      },
+      {
+       "heading": "Transportation of Hazardous Substances",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All hazardous substances are securely packaged in compliance with applicable regulations to prevent leaks during transportation.\nPackaging includes appropriate labeling that adheres to the Globally Harmonized System (GHS) for safe handling.\nContainers specifically designed to contain hazardous substances are utilized to minimize the risk of spillage.\nVehicles used for transportation are equipped with necessary safety features, including secondary containment systems and spill kits.\nProper ventilation must be ensured within transport vehicles to handle hazardous materials safely.\nDrivers receive specialized training on the handling and transport of hazardous substances.\nTransport routes are pre-planned to avoid densely populated areas whenever possible.\nRegular inspections of both packaging and vehicles are conducted to ensure integrity and compliance with safety standards."
+        }
+       ]
+      },
+      {
+       "heading": "Training",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees involved in the handling, storage, and transportation of hazardous substances must receive training on this procedure and the hazards associated with the materials they work with."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Resource efficiency",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 212,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To implement measures that minimize the spill of oil and grease during operations, thereby reducing environmental impact and ensuring workplace safety."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure to minimize spill of oil and grease at various levels of work",
+     "steps": [
+      {
+       "heading": "Checking drum cap before transport",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Before transporting oil or grease from the stores to the user department, the store personnel checks that the cap of the drum is properly sealed to prevent any spillage during shifting."
+        }
+       ],
+       "responsible": "Store personnel"
+      },
+      {
+       "heading": "Shifting the drum",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The drum is shifted using a forklift or trolley by warehouse staff, as manual handling is prohibited to avoid injuries and spillage."
+        }
+       ],
+       "responsible": "Warehouse staff"
+      },
+      {
+       "heading": "Placing the drum in designated area",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Upon arrival, the drum is placed in the designated area, such as the Oil Room, by warehouse staff to ensure proper storage and access."
+        }
+       ],
+       "responsible": "Warehouse staff"
+      },
+      {
+       "heading": "Transferring oil into pouring pot",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Oil is transferred from the drum into a pouring pot by maintenance personnel using a hand-operated pump and funnel."
+        }
+       ],
+       "responsible": "Maintenance personnel"
+      },
+      {
+       "heading": "Collecting drained-out oil",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A tray or suitable vessel is used by maintenance personnel to collect any drained-out oil during the transfer process."
+        }
+       ],
+       "responsible": "Maintenance personnel"
+      },
+      {
+       "heading": "Topping up the gearbox",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "When topping up the gearbox with fresh oil, maintenance personnel utilize a funnel to minimize the risk of spillage."
+        }
+       ],
+       "responsible": "Maintenance personnel"
+      },
+      {
+       "heading": "Storing used oil",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Used oil is stored in a designated waste oil drum by maintenance personnel."
+        }
+       ],
+       "responsible": "Maintenance personnel"
+      },
+      {
+       "heading": "Returning the drum to stores",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The drum is returned to the stores department by warehouse staff with a completed return voucher to ensure proper tracking and disposal."
+        }
+       ],
+       "responsible": "Warehouse staff"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water management",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "Environmental Management",
+   "owner": "Environmental Compliance Officer",
+   "sourceWords": 1489,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "A. Procedure for ETP",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Purpose\nTo establish guidelines for the effective operation and maintenance of the Effluent Treatment Plant (ETP) to ensure the treatment of wastewater meets regulatory standards and minimizes environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "A. Procedure for ETP",
+     "steps": [
+      {
+       "heading": "Pre-Operation Checks",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All personnel including operations team, maintenance team, environmental compliance officer, safety officers conduct visual inspections of equipment and surrounding areas of their respective concern daily before starting operations.\nThe checks and replenishments of chemical levels are performed by the operations team, while the regular inspections of fire extinguishers, eyewash stations, and other safety equipment are conducted by safety officers."
+        }
+       ]
+      },
+      {
+       "heading": "Daily Operations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Influent Monitoring: The influent flow rate is measured using flow meters. Operators record parameters such as pH, temperature, total suspended solids (TSS), and biochemical oxygen demand (BOD) to ensure proper treatment.\nChemical Dosing: Based on the influent characteristics, dosing pumps are used to adjust the chemical dosage. Operators document the dosages and any adjustments made.\nProcess Monitoring: Regular inspections of treatment units are performed by the Operations Team to ensure optimal operation. The aeration levels in aeration tanks are monitored and adjusted as needed. Clarifiers are inspected for performance, and sludge levels are controlled regularly.\nEffluent Testing: Effluent samples are collected at designated points. Key parameters such as pH, TSS, BOD, chemical oxygen demand (COD), and other specific contaminants are tested by the laboratory technicians as per permit requirements. Results are recorded and compared with regulatory limits by the operations team. Below is a table summarizing the effluent testing parameters:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Parameter",
+          "Unit",
+          "Permissible",
+          "Testing Frequency",
+          "Test Method"
+         ],
+         "rows": [
+          [
+           "pH",
+           "-",
+           "6.5 - 8.5",
+           "Daily",
+           "pH Meter"
+          ],
+          [
+           "Total Suspended Solids (TSS)",
+           "mg/L",
+           "< 100",
+           "Daily",
+           "Gravimetric Analysis"
+          ],
+          [
+           "Biochemical Oxygen Demand (BOD)",
+           "mg/L",
+           "< 30",
+           "Daily",
+           "5-Day BOD Test"
+          ],
+          [
+           "Chemical Oxygen Demand (COD)",
+           "mg/L",
+           "< 250",
+           "Weekly",
+           "Potassium Dichromate Method"
+          ],
+          [
+           "Oil and Grease",
+           "mg/L",
+           "< 10",
+           "Weekly",
+           "Partition-Gravimetric Method"
+          ],
+          [
+           "Flow Rate (Influent)",
+           "m3/hr",
+           "Monitored for consistency",
+           "Monthly",
+           "Flow Meter"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Non Compliance Response Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In case of non-compliance, the laboratory technicians notify the Environmental Compliance Officer, who investigates and implements corrective actions such as adjusting chemical dosages, modifying operational parameters, conducting maintenance on equipment, retraining personnel on procedures, and increasing monitoring frequency to ensure compliance with regulatory standards. The incident is documented in the logbook, and additional monitoring is conducted to ensure compliance."
+        }
+       ],
+       "responsible": "Environmental Compliance Officer"
+      },
+      {
+       "heading": "Post-Operation Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Operators clean all equipment and work areas daily after operations.\nStandard shutdown procedures are followed to power down the plant equipment safely.\nAll daily data that includes daily operational data such as influent and effluent parameters, maintenance activities including dates and descriptions of work performed, sample analysis results, compliance reports, and any incidents or observations noted during the operations are logged accurately for future reference."
+        }
+       ],
+       "responsible": "Operators"
+      },
+      {
+       "heading": "Routine Maintenance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A maintenance schedule is being followed for all critical equipment. This includes lubrication, parts replacement, and calibration to ensure continuous operation. The table below outlines the routine maintenance schedule:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment",
+          "Task",
+          "Frequency",
+          "Responsible Personnel",
+          "Remarks"
+         ],
+         "rows": [
+          [
+           "Pumps",
+           "Lubrication",
+           "Weekly",
+           "Maintenance Team",
+           "Check for leaks or unusual noise"
+          ],
+          [
+           "Filters",
+           "Cleaning and replacement",
+           "Monthly",
+           "Maintenance Team",
+           "Replace if clogging is detected"
+          ],
+          [
+           "Aeration Blowers",
+           "Check for proper airflow",
+           "Daily",
+           "Operations Team",
+           "Adjust as needed"
+          ],
+          [
+           "Clarifiers",
+           "Sludge level monitoring and removal",
+           "Weekly",
+           "Operations Team",
+           "Maintain optimal levels"
+          ],
+          [
+           "Dosing Pumps",
+           "Calibration",
+           "Quarterly",
+           "Maintenance Team",
+           "Ensure accurate dosing"
+          ],
+          [
+           "Effluent Sampling Points",
+           "Clean and inspect",
+           "Weekly",
+           "Lab Technician",
+           "Ensure accurate sampling"
+          ],
+          [
+           "Flow Meters",
+           "Calibration",
+           "Annually",
+           "Maintenance Team",
+           "Verify flow rate accuracy"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Emergency Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In the event of equipment failure, personnel immediately initiate emergency shutdown procedures to ensure safety and minimize risk. The Environmental Compliance Officer is promptly notified to assess the situation and determine necessary actions. The incident details, including the nature of the failure and response steps taken, are documented in the logbook for record-keeping and compliance purposes. A thorough investigation is conducted to identify the cause of the failure, and corrective measures are implemented as needed. All relevant personnel are informed of the incident and any changes to operational protocols to prevent recurrence."
+        }
+       ],
+       "responsible": "Environmental Compliance Officer"
+      },
+      {
+       "heading": "Emergency Repairs",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A stock of critical spare parts such as pumps, valves, filters, gaskets, seals, motors, and instrumentation devices necessary for the operation of the effluent treatment plant is maintained to ensure repairs are completed without delay.\n\nA vendor contact list is readily available for the procurement of parts if necessary. Repairs are documented with details of the issue, corrective actions taken, and parts replaced."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "B. Recycled Water usage",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Purpose\nTo outline the guidelines for the safe and efficient use of recycled water within Agrawal Metal Works, promoting resource conservation and minimizing environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "B. Recycled Water usage - Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Below is a table summarizing the recycled water usage in various operations within the facility, including the percentage of recycled water used and other relevant details:"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Operation",
+        "Recycled Water Usage (%) out of total water used in the operation",
+        "Purpose",
+        "Frequency of Use",
+        "Remarks"
+       ],
+       "rows": [
+        [
+         "Cooling Systems",
+         "60%",
+         "Heat exchange and cooling",
+         "Continuous",
+         "Helps reduce overall water consumption significantly"
+        ],
+        [
+         "Equipment Cleaning",
+         "40%",
+         "Cleaning of machinery and equipment",
+         "Daily cleaning",
+         "Ensures sustainable practices"
+        ],
+        [
+         "Irrigation (Green Areas)",
+         "70%",
+         "Watering of landscaped areas",
+         "Weekly",
+         "Maintains facility aesthetics while conserving water"
+        ],
+        [
+         "Dust Suppression",
+         "50%",
+         "Controlling dust in the production areas",
+         "As needed / Daily / Weekly",
+         "Reduces dust without excessive water usage"
+        ],
+        [
+         "Pre-treatment Rinsing",
+         "30%",
+         "Rinsing materials before treatment",
+         "Not stated",
+         "Reduces the use of freshwater in initial processes"
+        ],
+        [
+         "Floor Washing",
+         "45%",
+         "General cleaning of operational floors",
+         "Not stated",
+         "Maintains hygiene while minimizing freshwater demand"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "B. Recycled Water usage - Procedure",
+     "steps": [
+      {
+       "heading": "Record Keeping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All record-keeping activities are conducted by the designated maintenance personnel and laboratory technicians.\nDaily logs are maintained for influent and effluent parameters, chemical dosing, and operational data.\nMaintenance activities, including dates and descriptions of work done, are recorded.\nSample analysis results and compliance reports are stored securely for future regulatory inspections."
+        }
+       ],
+       "responsible": "Maintenance personnel and laboratory technicians"
+      },
+      {
+       "heading": "Training",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All new employees receive comprehensive training on the SOPs, safety protocols, and emergency procedures.\nRefresher training is conducted regularly for all staff to ensure ongoing adherence to safety and operational standards."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "C. Procedures for the reduction in water consumption",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Purpose\nTo establish strategies and practices for reducing water consumption at Agrawal Metal Works, enhancing operational efficiency while promoting sustainability and environmental stewardship."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "C. Procedures for the reduction in water consumption - Procedure",
+     "steps": [
+      {
+       "heading": "Optimizing Water Usage and Wastewater Generation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regular assessments of water usage are conducted by the Maintenance Team and Environmental Compliance Officer to identify areas for improvement in maintenance, surface treatment, and equipment sanitation activities.\nHigh-pressure washing systems are utilized in processes such as equipment cleaning, surface preparation, vehicle washing, and industrial facility cleaning to minimize water consumption during cleaning operations. Also, In deburring processes, optimized water jets are employed that utilize less water while effectively removing burrs, ensuring minimal wastewater generation.\nOnly biodegradable cleaning agents, such as citrus-based cleaners, plant-based surfactants, vinegar and baking soda mixtures, that require less water for rinsing are employed. These agents effectively clean surfaces while minimizing environmental impact.\nClosed-loop systems are utilized in various manufacturing as well as finishing operations such as roller mills and deburring, electrolytic stripping and rinsing after coating, to recirculate water, hence minimizing wastewater generation and conserving resources. This system is regularly monitored to ensure its effectiveness and efficiency."
+        }
+       ],
+       "responsible": "Maintenance Team and Environmental Compliance Officer"
+      },
+      {
+       "heading": "Leak detection and repair",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Monthly visual inspections of water supply lines and bi-weekly checks for cooling systems are conducted\nAcoustic leak detection equipment and flow monitoring systems are utilized for identifying and locating leaks in water supply systems, ensuring timely repairs, and minimizing water loss.\nUpon detecting a leak, the water supply is immediately shut off to prevent further damage. The situation is then evaluated by the maintenance team to determine the extent of the issue, followed by the performance of necessary repairs. After the repairs are completed, the area is monitored closely by the maintenance team to ensure that no further leaks occur."
+        }
+       ],
+       "responsible": "Maintenance team"
+      },
+      {
+       "heading": "Rain Water Harvesting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Gutters and downpipes have been installed on designated roof areas to efficiently channel rainwater into storage tanks.\nA first flush system is in place to divert initial runoff, ensuring only cleaner rainwater enters the storage tanks.\nHarvested rainwater is stored in covered tanks and used for non-potable applications such as irrigation and cooling processes.\nRegular inspections and cleaning of the collection system, filters, and tanks are conducted by the maintainance team to maintain system efficiency.\nWater levels and usage are continuously tracked, and data is recorded to measure water savings and system performance."
+        }
+       ],
+       "responsible": "Maintenance team"
+      },
+      {
+       "heading": "Water Efficient cooling technologies",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The performance of water-efficient cooling towers is continuously monitored using flow meters and temperature sensors to ensure optimal operation.\nContinuous monitoring of cooling tower performance using flow meters and temperature sensors is conducted to ensure optimal operation.\nRoutine inspections and cleaning of cooling towers and associated systems are conducted to maintain efficiency and prevent buildup of contaminants.\nAcoustic leak detection equipment is utilized, and any identified leaks are immediately repaired to minimize water loss and ensure system integrity.\nDetailed records of water usage, maintenance activities, and performance metrics are regularly documented and reviewed for continuous improvement."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air pollution management",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "Environmental Management",
+   "owner": "Environmental Manager",
+   "sourceWords": 985,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To implement effective strategies and measures to monitor, control, and reduce air pollution emissions from Agrawal Metal Works, ensuring compliance with environmental regulations and promoting a healthier workplace and community."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Emissions Reductions and monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Installation of Control Technologies: Wet scrubbers are installed at furnance exhaust system and Solvent recovery system to capture and remove gaseous pollutants such as VOCs and SOx from exhaust streams before they are released into the atmosphere. Fixed bed adsorbers utilizing activated carbon are employed to trap VOCs and heavy metals from air emissions, ensuring their effective removal."
+        },
+        {
+         "type": "paragraph",
+         "text": "Regular Maintenance and Monitoring: The installed emission control equipment, including scrubbers and adsorption systems, undergoes regular inspections to ensure optimal performance and efficiency. Continuous Emissions Monitoring Systems (CEMS), including gas analyzers for SO, NOx, CO, and particulate matter (PM), are installed at emission points to track pollutants in real-time. These systems are maintained and calibrated regularly to ensure accurate readings. Air samples are collected quaterly by an external, approved laboratory for detailed analysis. The samples are tested for compliance with regulatory standards for air quality."
+        },
+        {
+         "type": "paragraph",
+         "text": "The air samples are tested for key parameters including"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Parameter",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Particulate Matter (PM10, PM2.5)",
+           "Fine particles that affect respiratory health"
+          ],
+          [
+           "Sulfur Dioxide (SO)",
+           "Gas contributing to acid rain and respiratory issues"
+          ],
+          [
+           "Nitrogen Oxides (NOx)",
+           "Major air pollutant from combustion processes"
+          ],
+          [
+           "Carbon Monoxide (CO)",
+           "Toxic gas produced by incomplete combustion"
+          ],
+          [
+           "Volatile Organic Compounds (VOCs)",
+           "Organic chemicals that contribute to smog formation"
+          ],
+          [
+           "Ozone (O)",
+           "Secondary pollutant that affects human health"
+          ],
+          [
+           "Lead (Pb)",
+           "Toxic heavy metal emitted from industrial sources"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Scheduled inspections and servicing of equipment are conducted to identify and rectify issues that may lead to inefficiencies or increased emissions, ensuring optimal performance and compliance with environmental standards."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment Type",
+          "Inspection Frequency",
+          "Responsible Personnel",
+          "Purpose of Inspection"
+         ],
+         "rows": [
+          [
+           "Boilers",
+           "Monthly",
+           "Maintenance Team",
+           "Inspection"
+          ],
+          [
+           "Air Compressors",
+           "Quarterly",
+           "Maintenance Team",
+           "Ensure optimal operation and efficiency"
+          ],
+          [
+           "Cooling Towers",
+           "Biannually",
+           "Maintenance Team",
+           "Identify leaks and improve efficiency"
+          ],
+          [
+           "Ventilation Systems",
+           "Annually",
+           "Maintenance Team",
+           "Check for scale build-up and operational efficiency"
+          ],
+          [
+           "Generators",
+           "Monthly",
+           "Environmental Compliance Officer",
+           "Assess air flow and contamination control"
+          ],
+          [
+           "",
+           "",
+           "Maintenance Team",
+           "Verify functionality and emissions compliance"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "All emissions data from CEMS and laboratory results are documented, and regularly reviewed by the Environmental Compliance Officer and the Quality Assurance Team to ensure accuracy and compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Dust Suppression",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Advanced electrostatic dust suppression technology is utilized in areas with high dust generation i.e. manufacturing plant and material handling facilities.\nWater sprays and dust suppressants are regularly applied during dust generating operations like grinding, Roll mill operations, surface preparation, material handling, cutting and slitting.\nDust levels are monitored regularly by environmental health and safety (EHS) personnel through continuous air quality monitoring systems (AQMS)\nEmployees receive training on best practices for dust control, including the use of personal protective equipment (PPE)."
+        }
+       ]
+      },
+      {
+       "heading": "Vehicular pollution control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All company vehicles are maintained regularly to ensure efficient operation and low emissions, reducing the generation of pollutants such as SOx and NOx.\nLow-emission vehicles, i.e. electric models, are integrated into the company fleet, significantly lowering Vehicular emissions.\nVehicle emissions are monitored regularly, and any non-compliant vehicles are repaired or replaced to maintain compliance with environmental standards.\nDriver training includes fuel-efficient driving practices to minimize environmental impact, focusing on techniques that reduce emissions and fuel consumption.\nAll vehicles belonging to the company and employees must carry a valid Pollution Under Control (PUC) certificate to ensure compliance with emissions standards."
+        }
+       ]
+      },
+      {
+       "heading": "Road Congestion Minimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employee transportation schedules are staggered by implementing varied start and end times for shifts, which helps spread out the flow of vehicles entering and exiting the facility. This approach minimizes the number of employees traveling during peak traffic hours, thereby reducing congestion and enhancing overall traffic management around the workplace\nCarpooling and public transportation options are encouraged and supported by the company.\nDelivery and logistics operations are planned by Logistics Manager in collaboration with the Operations Team to avoid rush hours, reducing the company's road congestion impact.\nCompany shuttle service is provided to further reduce the number of individual vehicles on the road."
+        }
+       ]
+      },
+      {
+       "heading": "Effective odour reduction",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Odour-generating processes such as chemical etching and electrolytic plating are enclosed, and Scubbers are installed to minimize emissions.\nActivated carbon filters are used in ventilation systems to absorb and neutralize odorous compounds.\nRegular maintenance of the odour control systems ensures they function optimally.\nOdour levels are monitored regularly, and complaints are investigated and addressed immediately.\nEmployees are trained on odour control measures and proper handling of odourous materials."
+        }
+       ]
+      },
+      {
+       "heading": "Noise control Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Significant noise is generated by equipment such as rolling mills, shear machines, extruders, furnaces, ventilation fans, and pumps. To mitigate this noise and enhance safety, foam acoustic panels are installed around these machines, effectively reducing sound levels and minimizing noise pollution.\nRegular maintenance ensures equipment operates within permissible noise levels.\nNoise monitoring is conducted at regular intervals, with results reviewed by management.\nEar protection is provided to employees in high-noise areas, and its usage is mandatory.\nNoise levels are documented, and any complaints or exceedances are investigated and rectified promptly by the Environmental Compliance Officer."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "ROLES AND RESPONSIBILITY",
+     "rows": [
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Establish and approve environmental objectives and commitments.",
+        "Allocate resources for implementation and maintenance of the policy."
+       ]
+      },
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversee execution of the policy and ensure compliance with environmental laws.",
+        "Conduct regular audits and assessments for continuous improvement."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Communicate and enforce the environmental policy within their departments.",
+        "Ensure staff training on environmental practices and procedures."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow environmental policies and procedures in daily operations.",
+        "Report any environmental concerns or violations to supervisors."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "REVIEW MECHANISM",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Environmental Manager every two years or following any significant environmental incident to ensure its ongoing relevance and effectiveness in achieving environmental management objectives."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Occupational Safety Risk and Incident Control Framework",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "OH&S Supervisor",
+   "sourceWords": 461,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish systematic procedures for identifying, assessing, and mitigating safety risks in the workplace, ensuring compliance with regulatory standards, and promoting a culture of safety to prevent incidents and protect the well-being of all employees."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Reporting Safety Incidents",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Immediate Reporting: Employees must report any workplace safety incident or near-miss to the OH&S Supervisor immediately. Examples include slips, trips, falls, equipment malfunctions, and exposure to hazardous materials. Use the designated reporting channels: Email: incident.report@amwl.com Contact Person: OH&S Supervisor"
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Documentation: The supervisor will document the incident using the Workplace Safety Incident Report Form, including details such as the date, time, location, persons involved, and a brief description of the incident."
+        },
+        {
+         "type": "paragraph",
+         "text": "Initial Response: The supervisor will take immediate steps to secure the area and prevent further incidents. This may include cordoning off the area, providing first aid, or shutting down equipment."
+        }
+       ],
+       "responsible": "OH&S Supervisor"
+      },
+      {
+       "heading": "Risk Assessment and Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Conducting Risk Assessments: Annual risk assessments are conducted in all work areas to identify potential hazards. This includes evaluating the safety of machinery, tools, materials, and working conditions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Register: All identified risks are recorded in a Risk Register, with details on the nature of the risk, the likelihood of occurrence, potential impact, and control measures in place."
+        },
+        {
+         "type": "paragraph",
+         "text": "Implementation of Control Measures: Appropriate control measures are implemented to mitigate identified risks. This can include engineering controls, administrative controls, and personal protective equipment (PPE)."
+        }
+       ]
+      },
+      {
+       "heading": "Investigating Workplace Safety Incidents",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incident Investigation Team: A team comprising members of the Safety Committee and relevant supervisors investigates all reported incidents."
+        },
+        {
+         "type": "paragraph",
+         "text": "Root Cause Analysis: The investigation team conducts a root cause analysis to identify underlying causes and contributing factors to the incident."
+        },
+        {
+         "type": "paragraph",
+         "text": "Corrective and Preventive Actions (CAPA): Based on the findings, the team recommends CAPAs to prevent recurrence. The implementation of these actions are tracked and documented."
+        }
+       ]
+      },
+      {
+       "heading": "Safety Training",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Mandatory Safety Training: All employees must undergo safety training during onboarding and receive regular refresher courses. Topics covered will include hazard identification, safe work practices, and emergency response procedures."
+        }
+       ]
+      },
+      {
+       "heading": "Roles and Responsibilities",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees: Report any safety incidents or concerns immediately to the supervisor or Safety Officer. Follow all safety procedures and participate in safety training."
+        },
+        {
+         "type": "paragraph",
+         "text": "Supervisors/Department Heads: Ensure safety procedures are followed and report incidents to the Safety Officer. Conduct regular safety inspections and address any safety concerns."
+        },
+        {
+         "type": "paragraph",
+         "text": "Safety Supervisor: Assess and respond to reported incidents. Conduct risk assessments and implement safety measures. Maintain incident and training records."
+        },
+        {
+         "type": "paragraph",
+         "text": "Management: Review and approve safety procedures and protocols. Provide resources and support for safety initiatives."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Health and Safety Manager Every Two year or following any significant incident to ensure its continued relevance and effectiveness in maintaining workplace safety standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Compliance Approval of Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "Compliance Department",
+   "owner": "Ethics Compliance Officer",
+   "sourceWords": 249,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Establishes guidelines for obtaining approval and reporting and managing high-risk transactions, such as Charitable donations and sponsorships, procurement of goods and services, gifts, travel."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identify Transaction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Sensitive transactions include: gifts, travel, entertainment, charitable donations, political contributions, and significant procurement activities. Determine if the type of transaction is sensitive. Confirm the type of transaction by reviewing the details, consulting with supervisor, seeking guidance from the Compliance Officer and hence document the findings."
+        }
+       ],
+       "responsible": "Employee/Department Initiator"
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Report to the Ethics Compliance officer for approval by meeting them in person or through email id: ethics.compliance@amwl.com. Provide context and purpose of the transaction. For transactions of significant value or risk, submit a formal request. On receival of approval document record the approval in the transaction file."
+        }
+       ],
+       "responsible": "Ethics Compliance officer"
+      },
+      {
+       "heading": "Documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintain thorough records of the approved transaction. Include purpose, participants, expenses, and approval documentation. All records must accompany expense reports. Ensure all documents are filed."
+        }
+       ],
+       "responsible": "Finance Department"
+      },
+      {
+       "heading": "Ethical Considerations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Review the transaction for ethical implications post-approval. Ensure that the transaction is documented clearly and cannot be perceived as undue influence or bribery."
+        }
+       ],
+       "responsible": "Compliance Department"
+      },
+      {
+       "heading": "Prohibited Transactions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Verify that the transaction complies with company policies. Confirm that the transaction does not involve prohibited items such as loans, cash, personal checks, or gifts breaching laws."
+        }
+       ],
+       "responsible": "Compliance Department"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Confidential Data Handling and Breach Responses",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "IT",
+   "owner": "Data Protection Officer",
+   "sourceWords": 808,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Defines procedures for managing confidential information, including data breach responses and protecting third-party data from unauthorized access or disclosure."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Data Classification and Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Data Classification: Data must be classified into three categories:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Types of Data",
+          "Details"
+         ],
+         "rows": [
+          [
+           "Confidential",
+           "Highly sensitive data requiring strict access controls e.g., personal information, financial records"
+          ],
+          [
+           "Sensitive",
+           "Data that is important to the organization but not classified as confidential e.g., employee information, operational procedures"
+          ],
+          [
+           "Public",
+           "Information meant for public consumption e.g., marketing materials, press releases."
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Control:"
+        },
+        {
+         "type": "bullets",
+         "text": "Access rights are assigned based on the principle of least privilege. The principle of least privilege (PoLP) refers to granting users only the access rights necessary to perform their job functions, minimizing the risk of unauthorized access or data breaches.\nRoles and responsibilities are defined, and access is granted accordingly.\nA quarterly review of access rights will be conducted by Data Protection Officer through automated access logs and reports, along with manual checks to ensure compliance with the established classifications. In case of non-compliance, access rights will be revoked, investigated, and corrective actions will be implemented, followed by a follow-up review to ensure compliance."
+        }
+       ],
+       "responsible": "Data Protection Officer"
+      },
+      {
+       "heading": "Data Handling and Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Confidential information are stored in secure environments e.g., locked file cabinets and secure servers such as cloud-based servers to guarantee encryption and regulatory compliance.\nTransmission of confidential data is conducted via secure channels i.e. VPNs and encrypted emails.\nAll confidential data are encrypted both in transit and at rest, following industry-standard encryption protocols (e.g., AES-256).\nAccess to storage areas containing confidential data is restricted to authorized personnel.\nAccess control systems i.e. keycards is used to manage physical access."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Detection and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification: For IT Department"
+        },
+        {
+         "type": "bullets",
+         "text": "System logs are records generated by operating systems, applications, or network devices that provide a detailed history of events, activities, and transactions occurring within a system\nRegularly analyze system logs for unusual access patterns and failed login attempts to monitor for signs of data breaches."
+        },
+        {
+         "type": "paragraph",
+         "text": "Identification: For Employee"
+        },
+        {
+         "type": "bullets",
+         "text": "System logs are records generated by operating systems, applications, or network devices that provide a detailed history of events, activities, and transactions occurring within a system\nRegularly analyze system logs for unusual access patterns and failed login attempts to monitor for signs of data breaches."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reporting:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employees must report any suspected data breaches immediately to their supervisor and the IT department.\nAn incident reporting form must be filled out and submitted to the IT department for documentation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Escalation Protocol:"
+        },
+        {
+         "type": "bullets",
+         "text": "Depending on the severity, escalate incidents to management and legal counsel as necessary."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Response Plan (IRP)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Containment: The IT Security manager will immediately isolate affected systems to prevent further unauthorized access. This team is responsible for implementing containment measures, which may include disconnecting the affected systems from the network, disabling user accounts, or restricting access until a thorough investigation is conducted and the issue is resolved."
+        },
+        {
+         "type": "paragraph",
+         "text": "Investigation: The Incident Response Team (IRT) will conduct a thorough investigation to determine the cause and impact of the breach. They will collect relevant logs and evidence, analyze data to identify vulnerabilities, and assess the breach's extent. Interviews with personnel may be conducted for additional insights. The team will document findings and prepare an incident report with recommendations for remediation. This approach helps prevent similar incidents in the future."
+        },
+        {
+         "type": "paragraph",
+         "text": "Communication: Affected stakeholders will be notified via email or formal communication channels, detailing the nature of the breach, affected data, and potential risks. Guidance will include recommended actions to protect their information, such as changing passwords and monitoring for suspicious activities. Regular updates will be provided as more information becomes available."
+        },
+        {
+         "type": "paragraph",
+         "text": "Internal Communication: Management and the legal team are kept informed through scheduled progress updates, including regular emails being sent on their respective official email-ids, meetings, and incident reports. All critical developments, decisions, and actions are documented and communicated in a timely manner to ensure alignment and compliance throughout the process."
+        }
+       ]
+      },
+      {
+       "heading": "Resolution and Follow-Up",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Remediation: Corrective actions including revising data access controls, enhancing encryption protocols, updating security policies, providing targeted employee retraining, and improving incident detection systems are take. These measures are designed to address vulnerabilities identified during the investigation and prevent similar breaches in the future."
+        },
+        {
+         "type": "paragraph",
+         "text": "Post-Incident Review: A review meeting is conducted by the Incident Response Team, led by the IT Security Manager to analyze response effectiveness and identify improvements by enhancing communication protocols, refining the incident response process and upgrading security monitoring tools."
+        }
+       ],
+       "responsible": "IT Security Manager"
+      },
+      {
+       "heading": "Compliance and Record Keeping",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Documentation Retention: Maintain detailed records of the incident, including timelines, actions taken, and any communications for at least three years."
+        },
+        {
+         "type": "paragraph",
+         "text": "Regular Review: The IT Security Officer, will review and update the procedures annually or following significant incidents to ensure their effectiveness and alignment with evolving security threats and legal requirements"
+        }
+       ],
+       "responsible": "IT Security Officer"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Securing Third-Party Data from Unauthorized Access",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 330,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To protect sensitive information shared with or received from third parties by implementing robust access controls, ensuring data privacy, and mitigating risks of unauthorized data exposure."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Data Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Access controls are implemented to ensure that only authorized personnel can access sensitive third-party data. Utilize Role-Based Access Control (RBAC) are considered to restrict access according to employees' job roles and responsibilities."
+        }
+       ]
+      },
+      {
+       "heading": "Data Encryption",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third-party data is encrypted during transmission using secure protocols like SSL and at rest with industry-standard encryption algorithms (e.g., AES-256). Encryption keys are stored securely, granting access based on the need-to-know principle."
+        }
+       ]
+      },
+      {
+       "heading": "Secure Data Storage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third-party data are stored on secure, access-controlled encrypted servers and regular reviews of access permissions to ensure compliance with data protection policies are conducted"
+        }
+       ]
+      },
+      {
+       "heading": "Data Sharing & Transmission",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third-party data are shared through secure methods such as encrypted email or secure file transfer protocols (SFTP). The identity and authorization of recipients are verified before sharing sensitive information, and maintain logs of all data-sharing activities, including recipient details and timestamps."
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Agreements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third parties handling or accessing sensitive data have signed a Data Protection Agreement (DPA), outlining their obligations for safeguarding information. Contracts include clauses that mandate the implementation of equivalent security measures and the prompt reporting of any data breaches."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Training & Awareness",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Regular training sessions are conducted for employees on data protection practices, including the proper handling and sharing of third-party data. Employees are aware of their responsibilities and the consequences of failing to protect third-party data."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring & Auditing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Monitoring systems are in place to detect any unauthorized access or attempts to access third-party data. Regular audits of data access logs, storage practices, and third-party compliance are conducted to identify and rectify potential security gaps."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Response",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In case of a data breach involving third-party information, the Incident Response Procedure is followed to contain and mitigate the breach. Affected third parties are promptly notified, provided with breach details, potential impacts, and the corrective actions taken."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Stakeholder Consent and Data Processing Retention and Disposal",
+   "code": "",
+   "catalogId": "consent-retention",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer (DPO)",
+   "sourceWords": 468,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that data is handled in compliance with stakeholder permissions, maintaining appropriate data retention periods and secure disposal practices to uphold privacy standards and regulatory requirements."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Obtaining Consent",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Consent is obtained through formal mechanisms through signed consent form and digital agreements. These documents clearly outline the purpose of data collection, how the data will be used, and stakeholders rights. Additionally, a confirmation process through email verification and electronic signature is used to ensure stakeholders have fully understood the terms before granting their consent."
+        }
+       ]
+      },
+      {
+       "heading": "Transparency",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Stakeholders are provided with clear information which is communicated through a Privacy Notice which outlines how data will be used, the retention periods, and the stakeholders rights regarding their data, including access, correction, or deletion. These documents are provided at the point of data collection, either in print or digital form."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention and Secure Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Establishing Retention Timelines: Each type of data is categorized based on its sensitivity and relevance, with specific retention timelines defined according to legal requirements, business needs, or contractual obligations."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Data Type",
+          "Retention Period",
+          "Reason for Retention",
+          "Disposal Method"
+         ],
+         "rows": [
+          [
+           "Personal Identification Data",
+           "5 years after last interaction",
+           "Compliance with legal requirements and identity verification",
+           "Secure deletion (data wiping); Secure shredding for physical records; cryptographic erasure for digital data"
+          ],
+          [
+           "Financial Records",
+           "7 years",
+           "Tax compliance and audit purposes",
+           "Secure deletion (data wiping); Secure shredding for physical records; cryptographic erasure for digital data"
+          ],
+          [
+           "Consent Records",
+           "Duration of relationship + 2 years",
+           "To demonstrate compliance with data protection laws",
+           "Secure deletion"
+          ],
+          [
+           "Communication Logs",
+           "3 years",
+           "Monitoring and improving service quality",
+           "Secure deletion"
+          ],
+          [
+           "Employment Records",
+           "Duration of employment + 7 years",
+           "Compliance with labor laws and future reference",
+           "Secure shredding for physical records; cryptographic erasure for digital data"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Tracking Retention Periods: Automated systems i.e. Microsoft SQL Server is utilized to track the retention period of stored data, ensuring that data is flagged for review or deletion once the retention period expires."
+        },
+        {
+         "type": "paragraph",
+         "text": "Secure Disposal: Once data is no longer required, it is securely deleted using methods appropriate to its sensitivity. For digital data, secure deletion methods such as data wiping or cryptographic erasure are used. For physical data, documents are shredded or incinerated in a controlled environment."
+        },
+        {
+         "type": "paragraph",
+         "text": "Compliance Checks: Regular audits are conducted to ensure that data is retained or disposed of in accordance with the established policies and legal requirements."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Audit Controls",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Audits: The Data Protection Officer (DPO) will conduct the annual audits of data access and handling practices. The audit will be conducted through a systematic review process, including examining access logs, evaluating data handling procedures, interviewing relevant personnel, and assessing compliance with established policies. Additionally, random sampling of data access and handling activities may be performed to ensure adherence to standards."
+      },
+      {
+       "type": "paragraph",
+       "text": "Continuous Monitoring: Automated monitoring tool i.e Intrusion Detection System (IDS) to detect unauthorized access and anomalies in data access patterns."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Ethical Compliance Due Diligence Program for Third Parties",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "",
+   "owner": "Compliance Officer",
+   "sourceWords": 462,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To assess and ensure that third-party entities adhere to ethical standards in areas such as anti-corruption, labor practices, environmental impact, and business integrity before and throughout their engagement with the organization."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Initial Screening",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Compliance Officer conducts initial background checks on potential third parties, identifying any immediate ethical concerns or risk indicators. Third parties are screened against industry watchlists to detect any history of violations, including bribery or unethical practices. Information about their data protection policies, security measures, and compliance with applicable ethics laws is gathered."
+        }
+       ],
+       "responsible": "Compliance Officer"
+      },
+      {
+       "heading": "Ethical Risk Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Compliance and Risk Management Team evaluates each third party's ethical practices across the following areas:"
+        },
+        {
+         "type": "bullets",
+         "text": "Anti-Corruption and Bribery: Policies are reviewed for compliance with anti-corruption regulations.\nLabor Practices: Adherence to fair labor standards, ensuring no child or forced labor, is verified.\nEnvironmental Responsibility: Environmental practices are evaluated for alignment with sustainability and protection standards.\nData Privacy and Information Security: Data handling policies are assessed to protect sensitive company and client information.\nHuman Rights and Fair Treatment: Commitment to human rights, diversity, equity, and inclusion is confirmed.\nHealth and Safety: Compliance with workplace safety and health protocols is ensured."
+        }
+       ],
+       "responsible": "Compliance and Risk Management Team"
+      },
+      {
+       "heading": "Documentation Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Relevant documentation is reviewed, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Data protection policies.\nSecurity certifications (e.g., ISO 27001).\nContracts detailing data handling, sharing, and protection measures."
+        }
+       ]
+      },
+      {
+       "heading": "Risk Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Potential risks are assessed based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "The nature of the data accessed or processed.\nThe third party's security posture and compliance track record.\nThe geographic location and applicable data protection laws."
+        }
+       ]
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Findings determine whether the third party meets the company's ethical standards.\nManagement approval is obtained from the senior management team, including the Data Protection Officer (DPO) based on the risk assessment findings before finalizing any contracts or agreements with the third party, requiring adherence to ethical standards with provisions for audits and penalties for violations\nThe approval process is documented for accountability."
+        }
+       ],
+       "responsible": "Senior management team; Data Protection Officer (DPO)"
+      },
+      {
+       "heading": "Ongoing Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The performance and compliance of third-party vendors are regularly monitored through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Scheduled audits and assessments.\nReview of incident reports or security breaches."
+        },
+        {
+         "type": "paragraph",
+         "text": "Open communication is maintained with third parties to address compliance concerns or changes in their operations that may impact data protection."
+        },
+        {
+         "type": "paragraph",
+         "text": "Periodic reviews are conducted by the Data compliance officer to ensure ongoing compliance with contractual obligations and applicable data protection laws."
+        }
+       ],
+       "responsible": "Data compliance officer"
+      },
+      {
+       "heading": "Incident Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Third parties are required to report any data breaches or security incidents promptly.\nA communication protocol for incident reporting and response is established.\nCollaboration with third parties is undertaken to develop an incident response plan outlining roles, responsibilities, and procedures in case of a data breach."
+        }
+       ]
+      },
+      {
+       "heading": "Record Keeping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Comprehensive records of all due diligence activities are maintained, including risk assessments, contracts, communication logs, and monitoring results.\nRecords are stored for a minimum of three years."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Audits of Control Procedure to ensure Ethical Compliance",
+   "code": "",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Audit Team",
+   "sourceWords": 450,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure Ethical Compliance is to regularly assess and verify that ethical standards and controls are effectively implemented across operations, preventing non-compliance and fostering a culture of integrity."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Audit Planning",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Audits are conducted bi-annually or after significant organizational changes.\nThe Audit Team schedules audits in advance and defines specific objectives and scope."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Audit",
+          "Department/Area",
+          "Specific Objectives",
+          "Scope of Audit",
+          "Responsible Person"
+         ],
+         "rows": [
+          [
+           "Financial Audit",
+           "Finance Department",
+           "Ensure accuracy of financial statements and compliance with accounting standards.",
+           "Review of financial records, transactions, and reporting practices.",
+           "Audit Team Lead"
+          ],
+          [
+           "Vendor Compliance Audit",
+           "Procurement Department",
+           "Verify adherence to procurement policies and ethical vendor selection.",
+           "Examination of vendor contracts, processes, and compliance documentation.",
+           "Procurement Manager"
+          ],
+          [
+           "HR Practices Audit",
+           "Human Resources Department",
+           "Assess compliance with labor laws and internal policies regarding employee treatment. Evaluate fairness in hiring and employee practices.",
+           "Review of HR records, hiring practices, and employee feedback.",
+           "HR Manager"
+          ],
+          [
+           "Marketing Practices Audit",
+           "Marketing Department",
+           "Evaluate truthfulness in advertising and compliance with marketing regulations.",
+           "Analysis of marketing materials and promotional activities.",
+           "Marketing Manager"
+          ],
+          [
+           "Operational Compliance Audit",
+           "Operations Department",
+           "Review adherence to internal policies and procedures across operations. Assess the effectiveness of operational processes.",
+           "Assessment of operational processes and compliance with standards.",
+           "Operations Manager"
+          ],
+          [
+           "IT Security Audit",
+           "IT Department",
+           "Assess information security measures and data protection.",
+           "Evaluation of IT systems, access controls, and data management practices.",
+           "IT Manager"
+          ],
+          [
+           "Corruption and Bribery Audit",
+           "Compliance Officer",
+           "Identify and mitigate risks associated with corrupt practices and bribery incidents.",
+           "Review of compliance policies, employee training, and incident reports.",
+           "Compliance Officer"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Control Procedure Evaluation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Audit Team reviews documentation and records related to the identified areas of ethics i.e. financial statements, vendor contracts, employee records.\nCompliance with established ethical guidelines, policies, and regulatory requirements is assessed.\nInterviews with key personnel are conducted to gain insights into ethical practices and any concerns."
+        }
+       ],
+       "responsible": "Audit Team"
+      },
+      {
+       "heading": "Data Analysis",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Audit Team analyzes collected data to identify trends, anomalies, and potential areas of ethical non-compliance.\nMetrics and benchmarks are utilized to assess performance against ethical standards."
+        }
+       ],
+       "responsible": "Audit Team"
+      },
+      {
+       "heading": "Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Audit findings are compiled into a detailed report that highlights compliance and non-compliance areas, along with recommendations for improvement.\nThe report is presented to management and relevant stakeholders for review."
+        }
+       ],
+       "responsible": "Audit Team"
+      },
+      {
+       "heading": "Follow-Up Actions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "An action plan is developed by the Audit Team in collaboration with relevant stakeholders, such as department heads and management representatives for addressing identified issues, detailing timelines and responsible parties.\nFollow-up audits are scheduled to verify the implementation of corrective actions and assess ongoing compliance."
+        }
+       ],
+       "responsible": "Audit Team"
+      },
+      {
+       "heading": "Documentation and Record Keeping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All audit records, including planning documents, evaluation results, reports, and follow-up actions, are maintained for a minimum of five years by the Audit Team in conjunction with the Compliance Department."
+        }
+       ],
+       "responsible": "Audit Team"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Employee Compliance and Awareness",
+   "code": "",
+   "catalogId": "employee-compliance",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer",
+   "sourceWords": 559,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that all employees are informed of, understand, and adhere to company policies and procedures, fostering a culture of compliance and accountability while promoting awareness of relevant regulations and ethical standards."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Mandatory Training Programs",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All employees are required to complete mandatory compliance training on data protection, confidentiality, and security protocols upon hiring and annually thereafter, covering topics like company data protection policies and recognizing phishing attacks."
+        }
+       ]
+      },
+      {
+       "heading": "Training Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Training materials, including handbooks are developed and distributed among the employes which contains all the relevant informations, ensuring they are regularly updated to reflect current laws and best practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees are trained on immediate reporting procedures, containment steps, and follow-up actions to take in the event of a data breach."
+        }
+       ]
+      },
+      {
+       "heading": "Awareness Campaigns",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Periodic campaigns are conducted to reinforce data protection importance, utilizing newsletters, posters, and team meetings to share tips. Simulated phishing exercises are implemented to test employee awareness, with feedback provided to those who need improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting Mechanisms",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A culture that encourages reporting compliance concerns or suspicious activities without fear of retaliation is fostered. Reporting steps are clearly communicated to the employees."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Records of training completion and participation in awareness programs are maintained. The effectiveness of these programs is regularly evaluated through surveys and assessments, with adjustments made as necessary."
+        }
+       ]
+      },
+      {
+       "heading": "Compliance Audits",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Regular audits are conducted by Data Protection Officer to assess adherence to data protection policies and employee training requirements. Findings are documented, and corrective actions are implemented as needed."
+        }
+       ],
+       "responsible": "Data Protection Officer"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Complete mandatory training on data protection and compliance procedures.",
+        "Report any suspected data breaches or compliance concerns promptly through the designated reporting channels such as: Email id : ethics.compliance@amwl.com; Contact Person : Data Protection officer"
+       ]
+      },
+      {
+       "role": "Managers",
+       "responsibilities": [
+        "Ensure that team members understand and adhere to the SOPs.",
+        "Conduct regular reviews of team compliance with training and reporting requirements."
+       ]
+      },
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "Oversee the implementation and enforcement of data protection policies.",
+        "Conduct regular audits and assessments of compliance with the SOPs.",
+        "Serve as the primary point of contact for data protection inquiries and incident reporting."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Implement and maintain technical safeguards for data security.",
+        "Monitor systems for unauthorized access and report incidents as per protocol.",
+        "Conduct root cause analyses of breaches to identify vulnerabilities and implement preventive measures to limit future occurrences."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Compliance and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Monitoring Compliance"
+      },
+      {
+       "type": "bullets",
+       "text": "Regular audits will be conducted by the Data Protection Officer to ensure adherence to the SOPs and identify areas for improvement.; Participation in training programs will be tracked by the IT Manager, and employees must complete annual training to remain compliant."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Enforcement and Penalties",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Non-Compliance Consequences: Failure to comply with the SOPs may result in disciplinary actions taken by Human Resources Department in collaboration with IT Managers, which can include verbal warnings, written reprimands, suspension, or termination of employment, depending on the severity of the violation."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Update Procedures",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The SOP Manual will be reviewed annually by the Data Protection Officer to ensure relevance and compliance with current laws and best practices. Significant changes in regulations or operational processes will prompt emergency reviews. All revisions will be documented, and updated versions will be circulated to employees for acknowledgment."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

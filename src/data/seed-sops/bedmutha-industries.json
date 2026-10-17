@@ -1,0 +1,3483 @@
+{
+ "id": "bedmutha-industries",
+ "company": "Bedmutha Industries Limited",
+ "industry": "Engineering and precision manufacturing",
+ "industryTags": [
+  "manufacturing"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Bedmutha/SOP Bedmutha.docx",
+ "frontMatter": {
+  "introduction": "At Bedmutha Industries, we are dedicated to delivering high-performance engineering and manufacturing solutions with a focus on precision, safety, and sustainable growth. This Standard Operating Procedure (SOP) Manual outlines the framework for standardized operations across our facilities. It serves as a reference for maintaining streamlined workflows, adhering to industry benchmarks, and ensuring every team member operates with clarity and purpose. This document reinforces our core philosophy—structured execution leads to consistent excellence.",
+  "objective": "This SOP Manual is developed with the following goals:\n\nTo provide a unified approach for operational procedures across all units.\nTo ensure strict adherence to national and international regulatory requirements.\nTo mitigate risks related to safety, quality, and operational disruptions.\nTo encourage a proactive and transparent work culture.\n\nThis manual is designed as a functional tool to support employees, supervisors, and stakeholders in aligning with Bedmutha Industries' principles. It also adapts to changes in regulations, technology, and market expectations, offering a flexible yet structured system for continuous growth and reliability.\n\nBelow are the key outcomes expected from SOP implementation:\n\nBenefit Areas | Description\nOperational Efficiency | Reduces Variability and streamlines Process.\nCompliance Management | Ensures Alignment with Regulatory and legal standards.\nQuality Assurance | Maintains Consistent Product and Service Quality.\nRisk Mitigation | Lowers the likelihood of errors and workplace incidents.\nStaff Empowerment | Equips employees with clear instructions and responsibilities.",
+  "scope": "This manual applies to all internal staff, external vendors, service providers, and affiliated teams working across Bedmutha Industries' operations. It encompasses activities related to manufacturing, quality control, equipment handling, logistics, maintenance, and health & safety protocols. The SOP Manual is a living document and will be updated periodically to remain aligned with technological advancements and organizational objectives.",
+  "reviewMechanism": "To ensure this SOP remains relevant, up-to-date, and aligned with evolving business practices and regulatory requirements, Bedmutha Industries Limited has established an Annual SOP Manual Review Process, governed by the Compliance & IT Governance Teams.\n\nFrequency:\nThis SOP is reviewed once every 12 months, or immediately after any critical breach, regulatory update, or major infrastructure change.\n\nReview Committee Composition:\n\nDesignation | Role in SOP Review\nIT Head / CISO | Technical accuracy and risk assessments\nCompliance Officer | Legal/regulatory compliance\nHR Representative (if applicable) | Data privacy and employee awareness\nSOP Document Controller | Version control and archival\n\nReview History\n\nVersion | Effective Date | Revision Date | Changes Made | Approved By\n00 | 01-01-2024 | – | Initial Release of Incident Response SOP | Plant Head\n01 | 01-01-2025 | 01-01-2025 | - Added some new SOP into SOP Manual / - Added Review History Table | Plant Head\n\nApproved By : Plant Head"
+ },
+ "sops": [
+  {
+   "title": "Energy Consumption and Greenhouse Gas",
+   "code": "ENR-GHG-001",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 1066,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Bedmutha Industries Limited, sustainability is not just a goal but a strategic business imperative. This Standard Operating Procedure (SOP) outlines our integrated approach to improving energy efficiency, optimizing resource utilization, and reducing greenhouse gas (GHG) emissions across all manufacturing and operational facilities. As a leading manufacturer of industrial wire products, we recognize our responsibility to mitigate environmental impact through proactive measures and sustainable innovations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The primary objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Standardize procedures to enhance energy efficiency and reduce GHG emissions.\nDrive adoption of low-carbon technologies and operational best practices.\nComply with national and international environmental regulations.\nEstablish performance benchmarks and foster a culture of sustainability."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all manufacturing units, warehouses, utilities, and administrative offices operated by Bedmutha Industries Limited. It is applicable to equipment operators, facility managers, engineering personnel, maintenance teams, procurement departments, and third-party contractors engaged in energy-related activities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "GHG",
+       "definition": "GHG is acronym for Greenhouse Gases. These are gases that trap heat in the atmosphere, contributing to global warming. Key GHGs include carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and fluorinated gases."
+      },
+      {
+       "term": "CCS",
+       "definition": "CCS is acronym for Carbon Capture & Storage which is a technology designed to capture carbon dioxide emissions from industrial sources and store it underground to prevent it from entering the atmosphere."
+      },
+      {
+       "term": "CHP",
+       "definition": "CHP means Combined Heat & Power. It is a system that simultaneously generates usable heat and electricity from a single energy source, increasing overall efficiency."
+      },
+      {
+       "term": "VFD",
+       "definition": "VFD is acronym for Variable frequency Drive. It is an electronic device that controls the speed and torque of electric motors by varying input frequency and voltage, leading to significant energy savings."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Energy Efficiency Improvement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct detailed energy monitoring to assess equipment performance.\nIdentify inefficient motors, compressors, HVAC systems, and lighting.\nReplace outdated systems with high-efficiency models.\nOptimize processes through automation and sensor integration.\nImplement energy management software for real-time monitoring and predictive maintenance.\nBenchmark results before and after equipment upgrades to validate efficiency gains."
+        },
+        {
+         "type": "paragraph",
+         "text": "Equipment Upgrade & Impact"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Area",
+          "Existing Equipment",
+          "Proposed Upgrade",
+          "Expected Energy Savings"
+         ],
+         "rows": [
+          [
+           "Lighting",
+           "Halogen Bulbs",
+           "LED Fixtures",
+           "40-60%"
+          ],
+          [
+           "Motors",
+           "IE1 Motors",
+           "IE4 Motors + VFD",
+           "15-20%"
+          ],
+          [
+           "Air Compression",
+           "Fixed-Speed Compressors",
+           "VFD Compressors",
+           "18-22%"
+          ],
+          [
+           "HVAC",
+           "Split AC Units",
+           "Inverter AC or Central HVAC",
+           "25-30%"
+          ],
+          [
+           "Pumps",
+           "Constant-Speed Pumps",
+           "VFD-Controlled Pumps",
+           "20%"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Waste Heat Recovery System",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify high-temperature exhaust systems (furnaces, boilers).\nInstall heat exchangers to capture waste heat.\nReuse captured heat for preheating feedwater or space heating.\nEvaluate feasibility of CHP units for facilities with thermal + electrical load.\nMonitor thermal efficiency post-installation using digital tools."
+        },
+        {
+         "type": "paragraph",
+         "text": "Flowchart: Waste Heat Recovery Process\n\n[Heat Source] → [Heat Exchanger] → [Steam/Hot Air Generation] → [Use in Boilers or Cleaning Systems]"
+        },
+        {
+         "type": "paragraph",
+         "text": "Benefits:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduces fuel consumption.\nLowers operational costs.\nMinimizes thermal losses.\nImproves system resilience and efficiency"
+        }
+       ]
+      },
+      {
+       "heading": "Carbon Reduction for Efficiency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Analyze current fuel usage patterns and carbon intensity.\nExplore cleaner alternatives like PNG, biomass briquettes, and solar energy.\nReplace diesel-based systems with hybrid or renewable-powered units.\nMonitor emissions post-implementation using calibrated gas analyzers.\nCollaborate with fuel suppliers for consistent supply of cleaner fuels."
+        },
+        {
+         "type": "paragraph",
+         "text": "Outcomes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Significant reduction in direct CO2 emissions.\nStrengthens compliance with long-term climate goals."
+        }
+       ]
+      },
+      {
+       "heading": "Technology & Equipment Selection Criteria",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The selection of technology and equipment plays a crucial role in the success of energy and GHG management strategies. Bedmutha Industries follows a rigorous evaluation approach to ensure only the most effective and sustainable options are adopted."
+        },
+        {
+         "type": "paragraph",
+         "text": "Selection Considerations Include:"
+        },
+        {
+         "type": "numbered",
+         "text": "Energy Efficiency:\nPreference is given to equipment with high energy performance ratings (e.g., IE3, IE4 motors, 5-star rated systems).\nEvaluation of Specific Energy Consumption (SEC) benchmarks.\nGHG Reduction Potential:\nFocus on technologies with measurable impact on carbon emissions.\nPreference for low-carbon alternatives such as electric vehicles and induction heating systems.\nCertifications and Standards:\nEquipment must meet or exceed ISO, BIS, CE, BEE, or equivalent standards.\nPreference for vendors offering certified Environmental Product Declarations (EPDs).\nDigital and Smart Integration:\nCompatibility with SCADA, EMS, IoT sensors, and AI forecasting tools.\nSupport for cloud-based monitoring, automation, and performance tracking.\nReliability and Maintenance:\nPreference for proven technologies with established track records.\nAvailability of local service centers and preventive maintenance plans.\nVendor Selection and Transparency:\nEvaluation of vendor reputation, technical expertise, and sustainability practices.\nPreference for vendors offering post-installation support, training, and documentation."
+        },
+        {
+         "type": "paragraph",
+         "text": "This structured selection process ensures that every investment contributes to long-term operational excellence and environmental sustainability."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Energy Manager",
+       "responsibilities": [
+        "Conduct periodic energy monitoring to identify areas of improvement.",
+        "Prepare and maintain detailed energy performance reports.",
+        "Recommend and support the implementation of efficiency improvement measures."
+       ]
+      },
+      {
+       "role": "Plant Head",
+       "responsibilities": [
+        "Approve capital investment for energy-saving technologies.",
+        "Allocate manpower and resources to sustainability initiatives.",
+        "Oversee the effectiveness of implemented measures and track progress."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Ensure timely maintenance of energy-related systems.",
+        "Calibrate instruments and systems for optimal energy performance.",
+        "Replace and upgrade inefficient components."
+       ]
+      },
+      {
+       "role": "HSE Officer",
+       "responsibilities": [
+        "Ensure adherence to environmental regulations and GHG guidelines.",
+        "Document emission data and report discrepancies.",
+        "Conduct internal audits and safety inspections linked to energy systems."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Manage contracts with a focus on sustainability and energy performance.",
+        "Source high-efficiency and certified energy equipment.",
+        "Evaluate vendors based on environmental criteria."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [
+      {
+       "indicator": "Energy Consumption",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Sustainability Team"
+      },
+      {
+       "indicator": "GHG Emissions",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "EHS & Sustainability Team"
+      },
+      {
+       "indicator": "Equipment Efficiency",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Maintenance Team"
+      },
+      {
+       "indicator": "Smart Meter Data Reporting",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Data Analytics Team"
+      },
+      {
+       "indicator": "KPI Scorecard Review",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Sustainability + HR"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "training",
+     "title": "Employee Engagement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To foster greater employee participation, the following initiatives have been introduced:"
+      },
+      {
+       "type": "numbered",
+       "text": "Awareness and Capacity Building\nTraining & Development: All new and existing employees undergo training sessions on energy-efficient practices, GHG reduction goals, and usage of smart systems.\nEnergy SOP Workshops: Special sessions are held annually to communicate changes or enhancements to the energy policy and SOP.\nOnboarding Briefings: Sustainability and energy-saving guidelines are introduced during induction for all new recruits.\nParticipation Programs\nGreen Suggestion Box: Staff can submit practical ideas for energy savings. Winning suggestions are evaluated for pilot implementation.\nRecognition and Motivation\nGamification and Rewards: Points-based systems encourage employees to take part in challenges like “Switch-Off Hours,” “Green Desk Week,” or “Low Carbon Commutes.” Winners receive certificates and recognition.\nSustainability Awards: Annual awards are presented to departments or individuals who significantly contribute to energy reduction efforts.\nEngagement Platforms\nSustainability Day: A dedicated day each year to celebrate green milestones, share project outcomes, and encourage open dialogue on improvements.\nAwareness Boards & Dashboards: Digital screens and noticeboards at plant locations display energy KPIs, live savings stats, and ongoing campaigns."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed:"
+      },
+      {
+       "type": "bullets",
+       "text": "Annually, or\nAfter any regulatory change, or\nIf there is a change in equipment, process, or plant layout."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Management",
+   "code": "WTR-MGT-001",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "Water Management Officer",
+   "sourceWords": 850,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Water is a foundational element of industrial operations. At Bedmutha Industries Limited, we recognize our responsibility to manage water efficiently and sustainably. This SOP provides a holistic roadmap for conserving water, promoting reuse, and integrating modern water management techniques across all operations. The initiative supports regulatory compliance and aligns with our commitment to ISO 14001, Zero Liquid Discharge (ZLD) standards and long-term sustainability objectives."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The primary objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Optimize water use efficiency through modern technological interventions.\nStrengthen recycling practices to reduce freshwater dependency.\nMinimize water pollution by implementing effective wastewater management.\nEncourage a culture of water conservation at all organizational levels.\nComply with national and international water regulations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to all departments, plants, facilities, and external service providers of Bedmutha Industries Limited that utilize water in their operations. It includes production lines, utilities, sanitation, HVAC systems, landscaping, and administrative areas."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Reference",
+     "rows": [
+      {
+       "term": "Recycled Water",
+       "definition": "Treated process water reused for secondary applications like cooling and cleaning."
+      },
+      {
+       "term": "Rainwater Harvesting",
+       "definition": "Collecting and storing rooftop rainwater for internal non-potable use."
+      },
+      {
+       "term": "Greywater",
+       "definition": "Lightly contaminated water from wash basins, cleaning, and rinsing that can be treated and reused."
+      },
+      {
+       "term": "Closed-loop Cooling",
+       "definition": "A cooling system that recirculates the same water, reducing fresh water intake."
+      },
+      {
+       "term": "Quenching",
+       "definition": "Rapid cooling of metal products using water to increase hardness."
+      },
+      {
+       "term": "Deburring",
+       "definition": "Process to remove sharp edges or burrs from metal parts, often using water jets or slurry-based systems."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Practices & Technologies",
+     "steps": [
+      {
+       "heading": "Water Recycling Technology",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Effluent Treatment Plant (ETP): Designed to treat and detoxify industrial effluent before reuse or discharge.\nReverse Osmosis (RO): Removes dissolved solids, ideal for reusing rinse and greywater.\nMembrane Bioreactor (MBR): Combines biological treatment and membrane filtration for high-quality treated water."
+        },
+        {
+         "type": "table",
+         "text": "Reuse Applications",
+         "columns": [
+          "Source",
+          "Technology Used",
+          "Application"
+         ],
+         "rows": [
+          [
+           "Rinse Water",
+           "RO",
+           "Cooling Towers, Gardening"
+          ],
+          [
+           "Greywater",
+           "MBR",
+           "Equipment Cleaning, Flushing"
+          ],
+          [
+           "Effluent",
+           "ETP + Sand Filter",
+           "Process Reuse, Floor Cleaning"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Efficient Cooling Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Efficient cooling mechanisms reduce water wastage and operating costs."
+        },
+        {
+         "type": "bullets",
+         "text": "Closed-loop systems recirculate cooling water to reduce evaporation losses.\nAir-cooled chillers are deployed where humidity and ambient conditions permit.\nAutomated controls (float valves, timers) prevent overflow and leaks."
+        },
+        {
+         "type": "paragraph",
+         "text": "Flowchart: Closed-Loop Cooling Water Flow\n\n[Chiller Unit] → [Distribution Line] → [Cooling Process] → [Return Pipe] → [Holding Tank] → [Reused]"
+        }
+       ]
+      },
+      {
+       "heading": "Optimisation in Cleaning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Surface preparation and cleaning processes are optimized by:"
+        },
+        {
+         "type": "bullets",
+         "text": "Implementing dry methods like air jet cleaning before water-based cleaning.\nUsing low-toxicity, biodegradable degreasers that need fewer rinse cycles.\nInstalling nozzles with flow restrictors to maintain pressure with less water."
+        },
+        {
+         "type": "paragraph",
+         "text": "Checklist for Opeartors:"
+        },
+        {
+         "type": "bullets",
+         "text": "Dry cleaning applied before rinsing.\nEco-friendly degreasing chemical used.\nFinal rinse water sourced from greywater treatment."
+        }
+       ]
+      },
+      {
+       "heading": "Rainwater Harvesting System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Rainwater is an excellent alternative to reduce dependence on groundwater."
+        },
+        {
+         "type": "bullets",
+         "text": "Collection from rooftop gutters into storage tanks.\nFirst flush systems prevent entry of dirt and debris.\nFiltered water is used for toilets, landscaping, or sent to ETP for processing."
+        },
+        {
+         "type": "paragraph",
+         "text": "Illustration: Rainwater Harvesting Process\n\n[Roof] → [Gutter] → [First Flush System] → [Storage Tank] → [Filtration] → [Non-potable Use]"
+        }
+       ]
+      },
+      {
+       "heading": "Control of Wastewater from Finishing Operations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Finishing activities like quenching and deburring produce water waste that must be treated."
+        },
+        {
+         "type": "bullets",
+         "text": "Oil-water separators extract oils from quenching fluids.\nSettling tanks allow removal of metallic particulates from deburring wastewater.\nReclaimed water is recycled after treatment for reuse in compatible processes."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Process",
+          "Contaminants",
+          "Treatment",
+          "Reuse Option"
+         ],
+         "rows": [
+          [
+           "Quenching",
+           "Oil & Grease",
+           "Separator",
+           "Floor Cleaning"
+          ],
+          [
+           "Deburring",
+           "Fine Metal Particles",
+           "Sedimentation + Filtration",
+           "Equipment Washing"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Technology & Equipment Selection Criteria",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The selection of water conservation technologies and equipment is pivotal to the success of sustainable water management strategies. Bedmutha Industries adopts a structured and performance-driven evaluation process to ensure the integration of solutions that maximize reuse, minimize consumption, and align with long-term environmental goals."
+        },
+        {
+         "type": "bullets",
+         "text": "Water Efficiency: Preference for systems with lower L/unit ratings.\nEase of Maintenance: Availability of spares and technical support.\nLifecycle Cost: CAPEX vs OPEX for optimal ROI.\nEnvironmental Compliance: Conformity with CGWA and CPCB norms.\nSmart Integration: IoT-enabled devices for monitoring and automation."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Water Management Officer",
+       "responsibilities": [
+        "Monitor water consumption trends and identify inefficiencies.",
+        "Coordinate implementation of reuse and recycling strategies",
+        "Maintain documentation for audits and ensure regulatory compliance."
+       ]
+      },
+      {
+       "role": "Engineering & Maintenance Team",
+       "responsibilities": [
+        "Inspect and maintain plumbing systems to prevent leakages.",
+        "Operate and service water treatment and recycling units.",
+        "Ensure automation systems (sensors, valves) are functional and calibrated"
+       ]
+      },
+      {
+       "role": "EHS Team",
+       "responsibilities": [
+        "Conduct awareness programs on water conservation.",
+        "Carry out internal water audits and inspections.",
+        "Recommend technical upgrades based on performance gaps."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source water-efficient fixtures and technologies.",
+        "Evaluate vendor performance based on water management criteria.",
+        "Ensure environmental compliance of outsourced services"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [
+      {
+       "indicator": "Water Use Intensity",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Sustainability Team"
+      },
+      {
+       "indicator": "% Recycled Water",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "EHS & Sustainability Team"
+      },
+      {
+       "indicator": "Leak Occurence",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Maintenance Team"
+      },
+      {
+       "indicator": "Rainwater Usage",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Data Analytics Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "training",
+     "title": "Employee Engagement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To foster greater employee participation, the following initiatives have been introduced:"
+      },
+      {
+       "type": "numbered",
+       "text": "Awareness and Empowerment Initiatives\n\nImmersive Training Modules: Mandatory training sessions are conducted for all employees to build awareness on water conservation goals, efficient cleaning practices, and appropriate responses to leakages or water-related incidents.\nInteractive SOP Briefings: Annually workshops are organized to familiarize teams with updates to the Water Management SOP, introduce new technologies like rainwater harvesting systems and filtration units, and address on-ground implementation challenges."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed:"
+      },
+      {
+       "type": "bullets",
+       "text": "Annually, or\nAfter any regulatory change, or\nIf there is a change in equipment, process, or plant layout."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air Pollution Prevention",
+   "code": "AP-PVT-001",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "",
+   "owner": "EHS Manager",
+   "sourceWords": 731,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Air pollution is one of the most critical environmental challenges faced by the manufacturing sector. At Bedmutha Industries Limited, we are committed to minimizing air pollutant emissions and ensuring compliance with national and international environmental regulations. This SOP outlines our approach to controlling, monitoring, and reducing air pollution from our operations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To establish a systematic approach for preventing and controlling air pollution.\nTo ensure compliance with the Air (Prevention and Control of Pollution) Act, 1981, CPCB guidelines, and MoEF&CC standards.\nTo implement best practices and innovative technologies to reduce emissions.\nTo safeguard the health of employees and surrounding communities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Particulate Matter",
+       "definition": "Microscopic solid or liquid particles suspended in air, such as dust, dirt, soot, or smoke."
+      },
+      {
+       "term": "VOC",
+       "definition": "Volatile Organic Compounds are organic chemicals that easily become vapors or gases. Common in solvents, paints, and fuels."
+      },
+      {
+       "term": "NOₓ / SO₂",
+       "definition": "Nitrogen Oxides (NOₓ) and Sulfur Dioxide (SO₂) are combustion-related gases that contribute to smog and acid rain."
+      },
+      {
+       "term": "ESP",
+       "definition": "ESP is acronym for Electrostatic Precipitator which is an equipment that uses electrical charge to remove fine particles from gas streams."
+      },
+      {
+       "term": "CEMS",
+       "definition": "Continuous Emissions Monitoring Systems are automated systems that monitor pollutant levels in stack emissions."
+      },
+      {
+       "term": "Fugitive Emissions",
+       "definition": "Emissions not released through a stack or vent, such as dust from handling materials or leaks from equipment."
+      },
+      {
+       "term": "Biofilter",
+       "definition": "A pollution control technique using living material to capture and biologically degrade pollutants."
+      },
+      {
+       "term": "Ambient Air Quality Monitoring",
+       "definition": "The assessment of outdoor air quality by measuring key pollutants at fixed locations over time."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Air Pollutants & Contribution",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Source",
+        "Pollutants"
+       ],
+       "rows": [
+        [
+         "Boilers & Furnaces",
+         "PM, SO₂, NOₓ, CO"
+        ],
+        [
+         "Material Handling & Conveying",
+         "PM₁₀, PM₂.₅"
+        ],
+        [
+         "Transportation & Internal Traffic",
+         "CO, NOₓ, Dust"
+        ],
+        [
+         "DG Sets & Utility Operations",
+         "CO, NOₓ, VOCs"
+        ],
+        [
+         "Chemical Handling / VOC Emissions",
+         "VOCs, Odor"
+        ],
+        [
+         "Waste & Wastewater Treatment Areas",
+         "VOCs, Odor"
+        ],
+        [
+         "Miscellaneous Fugitive Emissions",
+         "PM, VOCs, Metals"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibility",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "SOP implementation, monitoring & compliance"
+       ]
+      },
+      {
+       "role": "Maintenance Head",
+       "responsibilities": [
+        "Ensure upkeep of pollution control devices"
+       ]
+      },
+      {
+       "role": "Operations Supervisors",
+       "responsibilities": [
+        "Execution of preventive measures"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source eco-friendly equipment and materials"
+       ]
+      },
+      {
+       "role": "Plant Employees",
+       "responsibilities": [
+        "Report leaks, damages, or nuisances"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Control Measures",
+     "steps": [
+      {
+       "heading": "Process Emission Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Installation of Bag Filters: Captures fine particulate matter from furnaces and grinding operations."
+        },
+        {
+         "text": "Electrostatic Precipitators (ESP): Used in large-scale furnaces to remove PM from flue gases."
+        },
+        {
+         "text": "Wet Scrubbers: Installed for acid gas neutralization (SO₂, HCl)."
+        },
+        {
+         "text": "Low-NOx Burners: Installed in boilers to reduce NOx formation during combustion."
+        }
+       ]
+      },
+      {
+       "heading": "Fugitive Dust Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Water Sprinkling Systems: Regular sprinkling on roads and raw material stockyards."
+        },
+        {
+         "text": "Enclosed Conveyors: Material handling systems are enclosed to prevent dust escape."
+        },
+        {
+         "text": "Dust Extraction Systems: Provided at key locations like bagging and grinding units."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Additional Control Actions",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Action",
+        "Implementation"
+       ],
+       "rows": [
+        [
+         "Use of Clean Fuels",
+         "DG Sets & Boilers"
+        ],
+        [
+         "Covered Storage Area",
+         "Raw Material covered with Sheets"
+        ],
+        [
+         "Green Belt & Tree Buffer",
+         "Around the Site"
+        ],
+        [
+         "Real Time Emission Monitoring",
+         "CEMS Integrated"
+        ],
+        [
+         "Compliance Audits",
+         "Internal & External Audits"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Periodical Analysis",
+     "kpis": [
+      {
+       "indicator": "Stack Emission Monitoring",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Third-party NABL-accredited labs"
+      },
+      {
+       "indicator": "Ambient Air Quality Monitoring",
+       "target": "As per CPCB norms",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "custom",
+     "title": "Green Belt Development & Carbon Sequestration",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "As part of our commitment to environmental sustainability and long-term carbon management, Bedmutha Industries Limited has implemented a robust green belt and afforestation program within and around the plant premises."
+      },
+      {
+       "type": "numbered",
+       "text": "Initiative Highlights:"
+      },
+      {
+       "type": "numbered",
+       "text": "Environmental Benefits:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Workflow",
+     "steps": [
+      {
+       "heading": "Workflow",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Raw Material Handling\n↓\nPrimary Process (Melting, Annealing)\n↓\nFlue Gas Generation\n↓\nAir Pollution Control Devices (ESP, Bag Filter, Scrubber)\n↓\nCEMS Monitoring\n↓\nCompliance Reporting → EHS Dept. → SPCB/CPCB"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Reporting",
+     "rows": [
+      {
+       "record": "Stack Monitoring Report",
+       "owner": "EHS Officer",
+       "retention": "",
+       "format": "Monthly"
+      },
+      {
+       "record": "Noise Measurement Data",
+       "owner": "EHS Coordinator",
+       "retention": "",
+       "format": "Quarterly"
+      },
+      {
+       "record": "Odor/Complaint Logs",
+       "owner": "Plant Head",
+       "retention": "",
+       "format": "Ongoing"
+      },
+      {
+       "record": "Equipment Calibration",
+       "owner": "Maintenance Head",
+       "retention": "",
+       "format": "Monthly"
+      },
+      {
+       "record": "CEMS Data & Alerts",
+       "owner": "Control Room",
+       "retention": "",
+       "format": "Real-time"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Material & Chemicals Management",
+   "code": "MC-MGT-001",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "",
+   "owner": "",
+   "sourceWords": 493,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP provides a comprehensive framework for the management of materials and chemicals used in Bedmutha Industries’ operations. It ensures safe handling, storage, usage, and disposal of raw materials, hazardous substances, and chemicals, in compliance with environmental and safety standards. This includes sustainable practices like material consumption reduction, eco-friendly substitutions, and hazardous substance minimization."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all plant facilities, operational departments, warehouses, laboratories, and logistics chains at Bedmutha Industries involved in procurement, transport, storage, processing, and disposal of materials and chemicals."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definition",
+     "rows": [
+      {
+       "term": "Hazardous Chemical",
+       "definition": "Substances that pose a risk to health, safety, or environment due to flammability, toxicity, or reactivity."
+      },
+      {
+       "term": "MSDS",
+       "definition": "Material Safety Data Sheet, a document outlining safety, health, and environmental hazards associated with chemicals."
+      },
+      {
+       "term": "POPs",
+       "definition": "Persistent Organic Pollutants that resist degradation and accumulate in ecosystems."
+      },
+      {
+       "term": "Green Chemistry",
+       "definition": "Design of chemical products/processes that reduce or eliminate hazardous substances."
+      },
+      {
+       "term": "Process Optimization",
+       "definition": "Strategies to reduce material and energy use while improving output."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Reduction of Material Consumption",
+     "steps": [
+      {
+       "heading": "Reduction of Material Consumption",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Objective: Optimize processes to minimize the raw material input required per unit of production."
+        },
+        {
+         "type": "paragraph",
+         "text": "Measures:"
+        },
+        {
+         "type": "bullets",
+         "text": "Lean Manufacturing principles integrated in production lines.\nMaterial flow analysis using digital twin simulations.\nReal-time monitoring of raw material consumption via ERP."
+        },
+        {
+         "type": "paragraph",
+         "text": "Flowchart: Material Optimization Loop"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Recovered & Eco-Friendly Input Materials",
+     "steps": [
+      {
+       "heading": "Recovered & Eco-Friendly Input Materials",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Material",
+          "Source of Recovery",
+          "Reuse Method"
+         ],
+         "rows": [
+          [
+           "Copper Scrap",
+           "Drawing lines",
+           "Re-melted and reused"
+          ],
+          [
+           "Flux Residue",
+           "Annealing units",
+           "Filtered and re-circulated"
+          ],
+          [
+           "Spent Acid",
+           "Surface Treatment",
+           "Neutralized and regenerated"
+          ]
+         ]
+        },
+        {
+         "type": "bullets",
+         "text": "Use of biodegradable coolants and cutting fluids in machining.\nReplacement of solvent-based degreasers with water-based variants.\nPreference to suppliers offering REACH and RoHS certified chemicals.\nAcid Rinse Recovery System : Closed-loop reuse of phosphating rinse water reducing chemical load by 80%"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Handling Hazardous Substance",
+     "steps": [
+      {
+       "heading": "Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Corrosion-resistant racks and leak-proof containers.\nTemperature-controlled storage for flammable liquids.\nColor-coded segregation: Red (Flammable), Yellow (Reactive), Blue (Corrosive)"
+        }
+       ]
+      },
+      {
+       "heading": "Labeling",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "GHS-compliant labels with pictograms, hazard codes, and first aid."
+        }
+       ]
+      },
+      {
+       "heading": "Transport",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Use of certified containers with spill-proof lids.\nTransport documents include MSDS and emergency response guide."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Disposal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Neutralization Units: On-site units treat acidic and basic waste.\nIncineration: For non-recyclable toxic materials via authorized third parties.\nHeavy Metal Capture: Effluent treatment plant uses chelating agents."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Type",
+          "Treatment Method",
+          "Final Disposal"
+         ],
+         "rows": [
+          [
+           "Spent Solvents",
+           "Distillation",
+           "Off-site reuse"
+          ],
+          [
+           "Acidic Rinse Water",
+           "Neutralization",
+           "Treated water reused"
+          ],
+          [
+           "Sludge with metals",
+           "Solidification",
+           "TSDF facility"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Toxicity Reduction",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Substitution of lead-based solder with tin-silver alloys.\nLow-VOC paints and coatings in manufacturing.\nInert atmosphere in chemical processing to reduce secondary emissions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Old: Lead Solder (for PCB Assembly)\n\nNew: Tin-Silver Alloy → Reduction: 100%\n\nOld: VOC Paint (for coating processes)\n\nNew: Water-Based Paint → Reduction: 92%"
+        },
+        {
+         "type": "paragraph",
+         "text": "Actions to Eliminate Persistent Organic Pollutants (POPs)"
+        },
+        {
+         "type": "bullets",
+         "text": "No use of POPs listed under Stockholm Convention.\nProduct and raw material screening to detect POP traces.\nAudit suppliers for POP-free certification."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Audit Measures",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Digital inventory tools track chemical inflow/outflow.\nQR-coded containers for traceability.\nBi-annual third-party chemical management audits."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Feedback loop from floor operators to R&D.\nAnnual revision of SOP based on audit results.\nBenchmarking against global metal industry leaders."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed:"
+      },
+      {
+       "type": "bullets",
+       "text": "Annually, or\nAfter any regulatory change, or\nIf there is a change in equipment, process, or plant layout."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management",
+   "code": "WA-MGT-001",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 774,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a structured waste management system that ensures minimization, proper segregation, safe handling, recycling, and disposal of waste at Bedmutha Industries. The SOP also aligns with sustainability goals and compliance with environmental regulations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applicable across all operational departments, manufacturing units, warehouses, and administrative buildings of Bedmutha Industries where waste is generated, handled, or disposed."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Waste Streams",
+       "definition": "Categories of waste generated during operations – solid, liquid, hazardous, recyclable, organic, etc."
+      },
+      {
+       "term": "EPR",
+       "definition": "Extended Producer Responsibility."
+      },
+      {
+       "term": "Segregation",
+       "definition": "The separation of waste into predefined categories at the source."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Waste Generated",
+     "steps": [
+      {
+       "heading": "Waste Generated",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Type",
+          "Source",
+          "Example",
+          "Disposal Method"
+         ],
+         "rows": [
+          [
+           "Recyclable Waste",
+           "Packaging, Office",
+           "Paper, Plastic, Metal",
+           "Sent to certified recyclers"
+          ],
+          [
+           "Hazardous Waste",
+           "Manufacturing, Chemicals",
+           "Used oils, Solvents",
+           "Treated & sent to TSDF"
+          ],
+          [
+           "E-Waste",
+           "IT Department",
+           "Obsolete Computers",
+           "Handed over to authorized recycler"
+          ],
+          [
+           "Organic Waste",
+           "Canteen",
+           "Food waste",
+           "Composted or bio-digested"
+          ],
+          [
+           "Scrap Metal",
+           "Production",
+           "Copper, Aluminum",
+           "Reused or sold to scrap dealers"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Overall compliance, audits, and reporting"
+       ]
+      },
+      {
+       "role": "Unit Head",
+       "responsibilities": [
+        "Implementation at unit level, reporting deviations"
+       ]
+      },
+      {
+       "role": "Workers & Supervisors",
+       "responsibilities": [
+        "Proper segregation, following disposal practices"
+       ]
+      },
+      {
+       "role": "Waste Contractor",
+       "responsibilities": [
+        "Collection, transport, and processing as per norms"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Waste Reduction & Recovery Measures",
+     "steps": [
+      {
+       "heading": "Waste Reduction & Recovery Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Bedmutha Industries is committed to minimizing internal waste generation through the principles of source reduction, reuse, and resource recovery. These measures are integrated into operational workflows to promote a circular approach."
+        },
+        {
+         "type": "paragraph",
+         "text": "Key Strategies:"
+        },
+        {
+         "type": "bullets",
+         "text": "Process Optimization: Use of Lean Manufacturing tools (e.g., Kaizen, 5S) to reduce raw material wastage during production.\nMaterial Reuse: Return of offcuts, defective items, and packaging back into the production line where feasible."
+        },
+        {
+         "type": "paragraph",
+         "text": "Byproduct Recovery:"
+        },
+        {
+         "type": "bullets",
+         "text": "Metal scrap from wire manufacturing is collected and remelted.\nSludge from electroplating units is filtered and stored for recycling via authorized vendors."
+        },
+        {
+         "type": "paragraph",
+         "text": "Packaging Minimization: Replacing multi-layer packaging with recyclable mono-material alternatives."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Type",
+          "Treatment Method",
+          "Final Disposal"
+         ],
+         "rows": [
+          [
+           "Copper wire scrap",
+           "Manufacturing Unit",
+           "Sent for remelting and reuse"
+          ],
+          [
+           "Wooden pallets",
+           "Raw Material Stores",
+           "Repaired and reused for next shipments"
+          ],
+          [
+           "Plastic spools",
+           "Cable Production Line",
+           "Collected and returned to supplier"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Sorting & Disposal Protocol",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Waste Streams:"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Waste Stream",
+        "Description",
+        "Examples"
+       ],
+       "rows": [
+        [
+         "Hazardous Waste",
+         "Waste with flammable, toxic, reactive, or corrosive properties",
+         "Used machine oil, spent acid, contaminated rags, degreasing solvents"
+        ],
+        [
+         "Non-Hazardous Industrial Waste",
+         "Waste not posing direct health/environmental risk",
+         "Paper, cardboard, plastic packaging, rejected product parts"
+        ],
+        [
+         "Biodegradable Waste",
+         "Organic material from canteens or landscaping",
+         "Food scraps, tea waste, garden trimmings"
+        ],
+        [
+         "E-Waste",
+         "Obsolete electrical and electronic items",
+         "Old computers, printers, cables"
+        ],
+        [
+         "Recyclable Scrap Metal",
+         "Reusable metal remnants from production",
+         "Copper offcuts, rejected wires, aluminum trimmings"
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "Sorting and Disposal Steps:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sorting & Disposal Protocol",
+     "steps": [
+      {
+       "heading": "Source Segregation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Color-coded bins are placed at generation points (e.g., production floor, offices, canteen)\nLabels include waste type and disposal instructions\nExamples:\n🟥 Red bin – for hazardous waste like used oil containers\n🟩 Green bin – for organic canteen waste\n🟦 Blue bin – for paper and recyclable plastics"
+        }
+       ]
+      },
+      {
+       "heading": "Weighing & Logging",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Each shift supervisor logs waste quantity at the end of shift\nExample: 35 kg of copper scrap, 2 drums of spent acid."
+        }
+       ],
+       "responsible": "Shift supervisor"
+      },
+      {
+       "heading": "Internal Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Hazardous waste is stored in secondary containment tanks or spill-proof containers\nNon-hazardous materials are sorted in designated storage zones\nExample: Flammable liquids stored in ventilated, explosion-proof cabinets"
+        }
+       ]
+      },
+      {
+       "heading": "Dispatch & Disposal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Hazardous Waste → Sent to TSDF via authorized transporters with Form 10 manifest\nScrap Metal → Collected and sent to approved recyclers\nE-Waste → Handover to CPCB-authorized e-waste handlers\nCanteen Waste → Sent to in-house bio-compost unit or municipal disposal service"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Waste Stream Mapping",
+     "steps": [
+      {
+       "heading": "Traceability System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Bedmutha Industries has established a robust waste traceability framework to ensure end-to-end tracking of waste from generation to final disposal."
+        },
+        {
+         "type": "bullets",
+         "text": "Tracking Mechanism: A digital tracking system using barcode and RFID tagging is implemented for key waste streams such as metal scrap, lubricants, chemical containers, and packaging waste.\nWaste Mapping: Each generation point (e.g., wire drawing units, ETP, packaging stations) is mapped with corresponding waste streams, assigned unique IDs for traceability.\nCertified Partners: All disposal and recycling are carried out via authorized waste management partners, registered with the Pollution Control Boards (SPCB/CPCB).\nDocumentation: Movement of hazardous waste is recorded using Form 10 manifests under the Hazardous Waste Management Rules, 2016."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Monthly Reports: Waste movement, treatment, and disposal data are compiled into internal reports using ERP-based waste management software.\nCompliance Checks: Regular checks ensure that disposal aligns with SPCB/CPCB protocols.\nAudit Trail: A full audit trail is maintained for high-risk wastes (e.g., ETP sludge, used oils) including date, handler, vehicle details, and receiving party acknowledgments."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Safe & Responsible Disposal",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Certified Disposal Vendors: Only licensed recyclers, TSDF facilities, and hazardous waste handlers are partnered with for final disposal.\nCategorized Disposal: Waste is sorted into categories—hazardous, recyclable, biodegradable, and general industrial waste—and treated accordingly.\nStorage Protocols: Temporary waste storage is done in designated, labeled, and ventilated enclosures to prevent spills, contamination, or unauthorized access."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Frequency: Conduct annual reviews or upon any process/materials change\nReview Team: Includes Waste Management Team, Environmental Compliance Lead, and Operations Head"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Health & Safety",
+   "code": "E-H&S-001",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "EHS Manager",
+   "sourceWords": 492,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP defines the policies, procedures, and guidelines for ensuring the health, safety, and well-being of all employees at Bedmutha Industries Limited. It aims to prevent workplace injuries and illnesses through proactive planning, risk assessment, employee training, and wellness initiatives, while ensuring full compliance with legal and regulatory frameworks."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applies to all employees, contractors, and third-party personnel operating at or visiting Bedmutha Industries’ facilities, including administrative offices, manufacturing units, workshops, warehouses, and logistics areas."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "EHS",
+       "definition": "Environment, Health, and Safety"
+      },
+      {
+       "term": "PPE",
+       "definition": "Personal Protective Equipment"
+      },
+      {
+       "term": "RSI",
+       "definition": "Repetitive Strain Injury"
+      },
+      {
+       "term": "MSDS",
+       "definition": "Material Safety Data Sheet"
+      },
+      {
+       "term": "OSH",
+       "definition": "Occupational Safety and Health"
+      },
+      {
+       "term": "TWA",
+       "definition": "Time-Weighted Average for exposure limits to noise or substances"
+      },
+      {
+       "term": "LOTO",
+       "definition": "Lockout-Tagout – energy isolation safety system"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Policy implementation, risk assessments, and audits"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Oversee daily compliance and training enforcement"
+       ]
+      },
+      {
+       "role": "Safety Officers",
+       "responsibilities": [
+        "Conduct toolbox talks, monitor practices, report incidents"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Adhere to all safety procedures, wear PPE, report hazards"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Workplace Safety & Working Conditions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Bedmutha Industries is committed to ensuring all work areas are designed, operated, and maintained in ways that reduce risk and enhance employee well-being."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Workplace Safety & Working Conditions",
+     "steps": [
+      {
+       "heading": "Physical Safety",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Slip-resistant flooring and sufficient lighting throughout the facility"
+        },
+        {
+         "text": "Guardrails at elevated work zones, secured platforms for maintenance"
+        },
+        {
+         "text": "Fire safety systems including ABC extinguishers, alarms, and clearly marked evacuation routes"
+        },
+        {
+         "text": "Regular inspection and maintenance of safety-critical infrastructure."
+        },
+        {
+         "text": "Proper aisle marking, lighting, and emergency signage throughout the plant."
+        }
+       ]
+      },
+      {
+       "heading": "Chemical and Hazardous Substance Exposure Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "MSDS available at every chemical storage or use point"
+        },
+        {
+         "text": "Use of sealed containers, spillage trays, and chemical-resistant PPE"
+        },
+        {
+         "text": "Local fume extractors and general ventilation systems"
+        },
+        {
+         "text": "Substitution of hazardous materials with low-toxicity or water-based alternatives where feasible"
+        },
+        {
+         "text": "Real-time exposure monitoring in designated hazard zones"
+        }
+       ]
+      },
+      {
+       "heading": "Noise Exposure Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Noise mapping conducted for all high-noise operations"
+        },
+        {
+         "text": "Areas above 85 dB(A) marked as “Hearing Protection Zones”"
+        },
+        {
+         "text": "Use of earplugs or earmuffs is mandatory in these zones"
+        },
+        {
+         "text": "Acoustic enclosures installed on generators, blowers, and compressors"
+        },
+        {
+         "text": "Vibration dampeners and proper equipment maintenance reduce secondary sound hazards"
+        }
+       ]
+      },
+      {
+       "heading": "Repetitive Strain Injury (RSI) Prevention",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Ergonomic tools and adjustable workstations installed at high-risk areas."
+        },
+        {
+         "text": "Anti-fatigue mats provided for prolonged standing operations."
+        },
+        {
+         "text": "Job rotation and micro-breaks implemented to reduce repetitive motion strain."
+        },
+        {
+         "text": "Posture awareness visuals and RSI prevention guidance displayed at workstations."
+        },
+        {
+         "text": "RSI cases tracked and reviewed for early intervention."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Occupational Health and Wellness Initiatives",
+     "steps": [
+      {
+       "heading": "Occupational Health and Wellness Initiatives",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Annual health check-ups including vision, hearing, and respiratory tests."
+        },
+        {
+         "text": "Tie-ups with local hospitals for emergency care."
+        },
+        {
+         "text": "Onsite medical room with first-aid trained personnel."
+        },
+        {
+         "text": "Weekly yoga and mental wellness programs."
+        },
+        {
+         "text": "Nutrition counseling and clean drinking water stations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Emergency Preparedness and Response",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Flowchart: Emergency Response Protocol"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Preparedness and Response",
+     "steps": [
+      {
+       "heading": "Emergency Preparedness and Response",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Fire evacuation drills every 6 months."
+        },
+        {
+         "text": "Emergency Response Team (ERT) in each department."
+        },
+        {
+         "text": "Clearly marked muster points and evacuation maps."
+        },
+        {
+         "text": "Training on CPR, first aid, and fire extinguisher use."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Audit, Monitoring, and Compliance",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Daily safety inspections by line supervisors.\nMonthly internal audits using standardized checklists.\nNon-compliance is escalated to the Operations Head.\nIntegration with ISO 45001:2018 for occupational health & safety management."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP is reviewed annually or post any major incident.\nReview board includes EHS Head, Operations Manager, and an external safety consultant.\nEmployee feedback is used for continual refinement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Career Management & Training",
+   "code": "CMT-001",
+   "catalogId": "training-development",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Head",
+   "sourceWords": 585,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish a robust and structured system for career management and training to support employee growth, increase job satisfaction, and ensure the strategic development of skills aligned with the business goals of Bedmutha Industries Ltd. The SOP outlines the processes to identify employee potential, build competencies, and provide opportunities for career advancement while fostering a culture of continuous learning."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All full-time and part-time employees at all hierarchical levels.\nAll departments and functional areas across Bedmutha's manufacturing and corporate units.\nAll stages of employment, from onboarding to leadership roles."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To systematically develop and upgrade employee skills.\nTo align individual goals with organizational growth and performance.\nTo identify and nurture high-potential talent for future leadership roles.\nTo create structured career paths and individual development plans (IDPs).\nTo ensure employees are equipped with current and future-ready competencies."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Individual Development Plan (IDP)",
+       "definition": "A tailored career and skills development plan."
+      },
+      {
+       "term": "Training Need Identification (TNI)",
+       "definition": "Process of identifying skill gaps."
+      },
+      {
+       "term": "L&D",
+       "definition": "Learning and Development department overseeing employee training."
+      },
+      {
+       "term": "HiPo",
+       "definition": "High Potential employee identified for future leadership roles."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Maintain training records, monitor career development programs, ensure SOP implementation."
+       ]
+      },
+      {
+       "role": "L&D Manager",
+       "responsibilities": [
+        "Design training modules, coordinate programs, evaluate training outcomes."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Identify team training needs, mentor team members, support IDPs."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Participate actively in training and development programs."
+       ]
+      },
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approve strategic plans, support talent identification and leadership development."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Career Management Framework",
+     "steps": [
+      {
+       "heading": "Career Planning and IDPs",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Career planning sessions to be held annually.\nEach employee create an Individual Development Plan (IDP) with their manager.\nIDPs include:\nShort- and long-term career goals.\nCompetency development roadmap.\nTraining and certification requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Talent Assessment and Mapping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Annual Talent Review Process using performance and potential matrix (9-box grid).\nIdentify HiPos for succession planning and fast-track programs.\nEmployees will be mapped against potential roles and development readiness."
+        }
+       ]
+      },
+      {
+       "heading": "Succession Planning",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify critical roles across departments.\nMaintain a succession chart with at least two potential successors per role.\nDesign specialized grooming and mentoring for successors."
+        }
+       ]
+      },
+      {
+       "heading": "Mentorship Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Assign experienced mentors to newly hired or promoted employees.\nQuarterly mentorship sessions tracked through feedback and HR systems.\nFocus on leadership, decision-making, and problem-solving skills."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Development Framework",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Training Needs Identification (TNI)"
+      },
+      {
+       "type": "bullets",
+       "text": "Conduct annual TNI survey through feedback, appraisals, audits.\nIdentify gaps in:\nTechnical skills\nSoft skills\nCompliance and safety\nManagerial competencies"
+      },
+      {
+       "type": "paragraph",
+       "text": "Types of Training"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Category",
+        "Description",
+        "Frequency"
+       ],
+       "rows": [
+        [
+         "Induction",
+         "Orientation, safety protocols, company policies",
+         "On joining"
+        ],
+        [
+         "Technical Skills",
+         "Machines, tools, production processes",
+         "Quarterly"
+        ],
+        [
+         "Soft Skills",
+         "Communication, time management, conflict resolution",
+         "Bi-annually"
+        ],
+        [
+         "Compliance",
+         "ESG, safety, labor law, ethical conduct",
+         "Annually or as needed"
+        ],
+        [
+         "Leadership",
+         "Strategic thinking, team management",
+         "Annually (HiPo focused)"
+        ],
+        [
+         "E-learning",
+         "Online self-paced learning modules",
+         "Ongoing"
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "Training Methods"
+      },
+      {
+       "type": "bullets",
+       "text": "Classroom training by internal/external experts.\nOn-the-job training under supervisors.\nDigital platforms and LMS (Learning Management System).\nExternal seminars and workshops.\nJob rotations and stretch assignments."
+      },
+      {
+       "type": "paragraph",
+       "text": "Evaluation of Training"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "numbered",
+       "text": "Monitoring Metrics\nMonthly review of training participation.\nQuarterly IDP tracking review.\nAnnual career progression analysis.\nAudit and Reporting\nInternal audits by HR every six months.\nExternal audits (if required by certification bodies).\nReports presented to senior leadership annually."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Flowchart – Career Management and Training Process",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "[New Employee]\n↓\n[Induction Training]\n↓\n[Skill Assessment & IDP Formulation]\n↓\n[Training Need Identification]\n↓\n[Training Delivery – Tech/Soft/Compliance]\n↓\n[Assessment and Feedback]\n↓\n[Performance Review & Career Discussion]\n↓\n[Update IDP / Recommend Promotion / Identify HiPo]\n↓\n[Succession Planning / Leadership Training]"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement & Review",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual benchmarking of training programs against industry standards.\nContinuous feedback loop from employees and trainers.\nIntroduce new training modules based on evolving technology, sustainability goals, and market trends.\nThis SOP is reviewed annually or earlier if needed.\nAll changes are approved by the HR Head and Top Management."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee and Buyer Performance Review",
+   "code": "CMT-002",
+   "catalogId": "performance-evaluation",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 440,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured framework for reviewing employee and buyer performance to ensure continuous improvement, accountability, and alignment with organizational goals. The aim is to identify high-performing talent and strategic supplier partners while providing constructive feedback and action plans for development."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees (staff, line workers, managers) across departments.\nAll buyers/vendors/suppliers engaged in procurement or business partnerships."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To evaluate and document employee performance consistently and fairly.\nTo assess supplier/buyer performance against quality, delivery, and compliance expectations.\nTo provide structured feedback for improvement and future planning.\nTo link performance evaluation to career progression, training needs, or contract continuation."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "KRA",
+       "definition": "Key Result Area – Targeted outcome for a role or responsibility"
+      },
+      {
+       "term": "KPI",
+       "definition": "Key Performance Indicator – Measurable metrics to evaluate performance"
+      },
+      {
+       "term": "Appraisal",
+       "definition": "Annual or biannual performance assessment of employees"
+      },
+      {
+       "term": "Vendor Scorecard",
+       "definition": "A quantitative review of supplier/buyer performance"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Oversee employee appraisal cycles and maintain records"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Evaluate team members and support IDP updates"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Manage buyer evaluations, documentation, and performance tracking"
+       ]
+      },
+      {
+       "role": "Quality & Compliance",
+       "responsibilities": [
+        "Provide feedback on vendor quality and sustainability adherence"
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve results of performance reviews and recommend promotions or vendor contracts"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Employee Performance Review Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted biannually (Mid-Year & Annual Review)\nForms used: “Employee Performance Evaluation Form” covering KRA, punctuality, teamwork, initiative, communication, etc."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation Parameters",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "KRA achievement (target vs. actual performance)\nQuality of work, productivity, and innovation\nDiscipline, behavior, punctuality\nTeamwork and leadership potential\nCompliance with safety, EHS, and company policies."
+        }
+       ]
+      },
+      {
+       "heading": "Process Flow",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Self-evaluation by employee\nManager evaluation and discussion\nReview by HR\nPerformance score finalization\nRecommendations: IDP update, promotion, training need, or PIP (Performance Improvement Plan)."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Buyer/Vendor Performance Review Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted annually or as required by project cycles."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation Form",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Buyer Performance Evaluation Form includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Quality of material supplied\nOn-time delivery\nCommercial terms compliance\nResponsiveness and communication\nLegal and ethical compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Review Criteria & Scoring",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Criteria",
+          "Weightage (%)",
+          "Minimum Acceptable Score"
+         ],
+         "rows": [
+          [
+           "Product/Service Quality",
+           "25%",
+           "≥70%"
+          ],
+          [
+           "Delivery Timeliness",
+           "20%",
+           "≥80%"
+          ],
+          [
+           "Communication",
+           "15%",
+           "≥70%"
+          ],
+          [
+           "Pricing/Cost Effectiveness",
+           "20%",
+           "As per agreed terms"
+          ],
+          [
+           "Ethical & ESG Compliance",
+           "20%",
+           "100% mandatory"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Action Based on Score",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "≥85%: Preferred Vendor\n70–84%: Approved Vendor with improvement areas\n<70%: Put on Watchlist / Not Considered for New Contracts"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Record-Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All appraisal and vendor review forms will be stored digitally via the HRMS and Vendor Management System.\nA copy will be shared with the respective employee/buyer.\nSummary reports to be reviewed in quarterly HR or procurement reviews."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Trends in low-scoring employees or vendors will be analyzed.\nCorrective actions include training plans, contract renegotiation, or disengagement.\nContinuous feedback mechanisms (360°, customer satisfaction, etc.) will support improvements."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Cycle",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP to be reviewed annually.\nChanges based on company policies, strategic direction, or audit recommendations.\nAmendments approved by HR Director and Procurement Head."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Anti-Corruption",
+   "code": "AC-001",
+   "catalogId": "anti-corruption",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Department",
+   "sourceWords": 883,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines Bedmutha Industries Ltd.'s commitment to operating with integrity, transparency, and in compliance with anti-corruption laws. It defines procedures and responsibilities to prevent, detect, and respond to any form of corruption, bribery, or unethical behavior in our business operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This policy is applicable to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees, including full-time, part-time, contract, and temporary staff.\nMembers of the Board of Directors and executive management.\nExternal stakeholders such as contractors, vendors, agents, consultants, and third-party intermediaries representing the company in any capacity."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Bribery",
+       "definition": "Offering, promising, giving, accepting, or soliciting an undue advantage or anything of value with the intent to influence the actions of a person in a position of trust."
+      },
+      {
+       "term": "Corruption",
+       "definition": "Abuse of entrusted power for private gain, including bribery, embezzlement, kickbacks, favoritism, and nepotism."
+      },
+      {
+       "term": "Facilitation Payments",
+       "definition": "Small, unofficial payments made to expedite routine actions by officials. These are considered illegal and are strictly prohibited."
+      },
+      {
+       "term": "Kickbacks",
+       "definition": "The return of a portion of money received, often secretly or illegally, in exchange for favorable treatment."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Must comply with all anti-corruption policies and laws.",
+        "Must report any suspected instances of corruption or unethical behavior.",
+        "Must not accept or offer bribes in any form."
+       ]
+      },
+      {
+       "role": "Managers/Supervisors",
+       "responsibilities": [
+        "Must set an example of ethical conduct.",
+        "Must ensure employees under their supervision understand and follow this SOP.",
+        "Must support investigations into policy breaches."
+       ]
+      },
+      {
+       "role": "Compliance Department",
+       "responsibilities": [
+        "Responsible for policy implementation, updates, and training.",
+        "Investigates all reported incidents and recommends action.",
+        "Maintains logs of complaints, investigations, and actions taken."
+       ]
+      },
+      {
+       "role": "Third Parties",
+       "responsibilities": [
+        "Must sign an agreement to follow this policy before commencing any work.",
+        "Must not engage in any corrupt practices while working with the company.",
+        "Subject to audits and monitoring for compliance."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Operational Guidelines",
+     "steps": [
+      {
+       "heading": "Gifts, Hospitality, and Entertainment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Permissible only if:\nOf nominal value.\nGiven transparently and occasionally.\nNot intended to influence business decisions.\nNot permissible if:\nGiven in exchange for favorable treatment.\nExcessive, frequent, or in the form of cash/gift cards.\nUndocumented or intended to bypass company policies."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Area",
+          "Clarification / Threshold"
+         ],
+         "rows": [
+          [
+           "Gifts & Hospitality",
+           "Any gift above ₹5,000 in value (per instance or cumulative in one calendar year) is not permitted. Gifts below this value may be accepted only with prior written approval from HR."
+          ],
+          [
+           "Meals and Entertainment",
+           "Occasional business meals are acceptable if under ₹2,000 per person and not frequent. Lavish entertainment, personal trips, or expensive event tickets are prohibited."
+          ],
+          [
+           "Vendor Relations",
+           "Accepting personal favors, travel, or sponsorship from vendors under consideration for contracts is strictly prohibited, regardless of value."
+          ],
+          [
+           "Conflict of Interest",
+           "Example: An employee working in procurement must disclose if a family member owns or works in a supplier company — even if that company is not currently active."
+          ],
+          [
+           "Cash Gifts / Vouchers",
+           "Cash gifts, vouchers, or gift cards of any amount are not allowed. Even festive vouchers are treated as improper unless issued officially by the company."
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Public Officials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "No bribes, unofficial payments, or gifts may be offered to officials.\nAll interactions with officials must be recorded and approved by senior management."
+        }
+       ]
+      },
+      {
+       "heading": "Charitable and Political Contributions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Must be transparent, legal, and approved by senior management.\nCannot be used as a cover for bribery or to gain any improper advantage."
+        }
+       ]
+      },
+      {
+       "heading": "Vendor and Agent Due Diligence",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Before engaging a vendor/agent, Bedmutha perform due diligence to verify their integrity.\nAnti-corruption clauses must be included in all third-party agreements.\nPeriodic monitoring and audits are mandatory."
+        }
+       ]
+      },
+      {
+       "heading": "Recordkeeping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All financial transactions must be recorded accurately and transparently.\nNo use of off-the-books accounts or falsified records.\nAll expenses, including gifts and hospitality, must be properly documented and approved."
+        }
+       ]
+      },
+      {
+       "heading": "Handling Transactions - Step 1: Initiation of Transaction",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A transaction request must be initiated by an authorized employee.\nFor purchases, a Purchase Requisition (PR) must be submitted via the internal procurement system, citing proper justification and budget approval."
+        }
+       ],
+       "responsible": "Authorized employee"
+      },
+      {
+       "heading": "Step 2: Approval Workflow",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The transaction go through multi-level approval:\nDepartment Head approval\nBudgetary control check\nFinance Department vetting"
+        }
+       ],
+       "responsible": "Department Head; Finance Department"
+      },
+      {
+       "heading": "Step 3: Vendor Verification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Perform due diligence for all third parties involved:\nLegal identity verification\nBackground checks for corruption or fraud history\nSigned declaration of compliance with the Anti-Corruption SOP\nEnsure the vendor/client is onboarded in the official ERP system."
+        }
+       ]
+      },
+      {
+       "heading": "Step 4: Execution and Delivery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Work only proceeds after formal approval and documentation.\nMonitor progress, delivery, and billing based on agreed milestones."
+        }
+       ]
+      },
+      {
+       "heading": "Step 5: Payment Authorization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All payments must be:\nMatched against purchase orders, invoices, and delivery receipts\nReviewed and verified by Accounts Payable and Finance\nMade through traceable banking channels—no cash transactions"
+        }
+       ],
+       "responsible": "Accounts Payable; Finance"
+      },
+      {
+       "heading": "Step 6: Recordkeeping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Maintain digital and physical copies of:\nInvoices\nContracts\nApprovals\nAudit trails\nRecords are stored securely for at least 7 years for audit purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Step 7: Post-Transaction Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Finance and Internal Audit teams conduct random transaction audits annually.\nAny red flags or irregularities are reported immediately to the Compliance Officer."
+        }
+       ],
+       "responsible": "Finance; Internal Audit; Compliance Officer"
+      },
+      {
+       "heading": "Disciplinary Action",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Violations of this SOP result in:\nDisciplinary actions up to and including dismissal.\nTermination of business relationships with vendors/agents.\nLegal reporting to enforcement authorities.\nFinancial penalties or reputational consequences."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Audits and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Internal audits are conducted at least once a year.\nSurprise audits and forensic reviews are done in high-risk areas.\nExternal audits are conducted by third parties when necessary.\nAll audit findings are reviewed by the Audit Committee and senior management."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually or when:"
+      },
+      {
+       "type": "bullets",
+       "text": "Legal/regulatory changes occur.\nThere are operational changes in business processes.\nAudit findings or incidents require policy revision."
+      },
+      {
+       "type": "paragraph",
+       "text": "Amendments are communicated to all stakeholders via emails, meetings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Third-Party Ethics & Integrity Due Diligence Program",
+   "code": "AC-001",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 412,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP defines a structured and risk-based framework to assess and monitor the ethical integrity of third parties associated with Bedmutha Industries Ltd. It aims to proactively prevent risks such as corruption, bribery, money laundering, information security breaches, and human rights violations through robust due diligence, audit mechanisms, and continuous monitoring."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applies to all third parties including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Raw material suppliers\nVendors and service contractors\nCommission-based agents and consultants\nDistributors, brokers, customs agents\nOutsourced processing partners."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Key Ethics Risks Covered",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Category",
+        "Examples of Risk"
+       ],
+       "rows": [
+        [
+         "Corruption & Bribery",
+         "Kickbacks, facilitation payments, gifts in exchange for business"
+        ],
+        [
+         "Information Security",
+         "Data breaches, unauthorized data sharing, lack of cyber hygiene"
+        ],
+        [
+         "Money Laundering",
+         "Suspicious payments, shell companies, offshore banking"
+        ],
+        [
+         "Fraud",
+         "Falsified documents, inflated invoices, forged quality certificates"
+        ],
+        [
+         "Conflict of Interest",
+         "Undisclosed ties between employee and vendor"
+        ],
+        [
+         "ESG Violations",
+         "Forced labor, discrimination, unsafe working conditions"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Risk-Based Approach",
+     "steps": [
+      {
+       "heading": "Risk-Based Approach",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "a. Classification of Risk Level"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Risk Tier",
+          "Examples"
+         ],
+         "rows": [
+          [
+           "High",
+           "Commission agents, customs brokers, third parties from high-risk countries"
+          ],
+          [
+           "Medium",
+           "Raw material suppliers, long-term contractors"
+          ],
+          [
+           "Low",
+           "Office supplies, one-time service providers"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "b. Risk-Specific Actions"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Risk Area",
+          "Trigger",
+          "Action"
+         ],
+         "rows": [
+          [
+           "Corruption",
+           "Commission-based or high-influence roles",
+           "Full anti-bribery screening and policy signature"
+          ],
+          [
+           "Money Laundering",
+           "Invoicing in foreign currencies or cash",
+           "Audit of payment chain + KYC documents"
+          ],
+          [
+           "Information Security",
+           "Access to shared data or portals",
+           "Cyber due diligence checklist + NDA"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Data Collection Requirements",
+     "steps": [
+      {
+       "heading": "Data Collection Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All medium- and high-risk third parties must provide:"
+        },
+        {
+         "type": "bullets",
+         "text": "Company registration documents\nOwnership structure and beneficial ownership declaration\nAnti-bribery and AML policy (if available)\nInformation Security controls (firewall, password policy, encryption practices)\nPAN, GST, bank account verification\nSigned Code of Ethics & Confidentiality Declaration"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Due Diligence Process",
+     "steps": [
+      {
+       "heading": "Due Diligence Process",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Step",
+          "Action"
+         ],
+         "rows": [
+          [
+           "1",
+           "Initial screening (company checks, blacklist screening, risk classification)"
+          ],
+          [
+           "2",
+           "Questionnaire: Anti-corruption, AML, data privacy, ESG compliance"
+          ],
+          [
+           "3",
+           "Documentation review by Compliance Team"
+          ],
+          [
+           "4",
+           "On-site audit on ESG"
+          ],
+          [
+           "5",
+           "Scoring, benchmarking, and onboarding recommendation"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "On-Site ESG",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Bedmutha conducts annual audits for high-risk suppliers, covering:"
+      },
+      {
+       "type": "bullets",
+       "text": "Code of Conduct adherence\nPayroll transparency, no forced labor, EHS conditions\nWhistleblower mechanism availability\nCyber hygiene (data access, password use, backup systems)\nEvidence of ethical awareness and anti-bribery training"
+      },
+      {
+       "type": "paragraph",
+       "text": "Audit outcomes are benchmarked across vendors in the same category."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Red Flags and Escalation Criteria",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Issue Detected",
+        "Escalation / Action"
+       ],
+       "rows": [
+        [
+         "Refusal to sign ethics declaration",
+         "Block onboarding"
+        ],
+        [
+         "Conflict of interest disclosure",
+         "Review by Legal and Compliance, potential recusal"
+        ],
+        [
+         "Information security non-compliance",
+         "30-day corrective action window, or disengagement"
+        ],
+        [
+         "Financial red flags (AML concern)",
+         "Alert to Finance & Compliance Head, KYC verification required"
+        ],
+        [
+         "Corruption risk or bribe offer",
+         "Immediate blacklisting and whistleblower case entry"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP is reviewed annually or after any ethics breach\nInternal audits ensure due diligence records are complete."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Incident Response Plan (IRP) – Confidential Information Breaches",
+   "code": "IS-IRP-001",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 488,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedure for detecting, reporting, responding to, and mitigating any breach or unauthorized access involving confidential information, including employee data, customer records, financial details, and proprietary operational data. The plan ensures quick containment and minimal impact, while protecting the interests of Bedmutha Industries Ltd and its stakeholders."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applies to all departments, locations, systems, and personnel (internal or external) who handle or access confidential and sensitive information, including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Employee records\nCustomer/vendor data\nFinancial and legal information\nProprietary process, product, or R&D information\nNetwork/system security credentials"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Key Definitions",
+     "rows": [
+      {
+       "term": "Confidential Information",
+       "definition": "Any non-public information that can impact privacy, operations, or compliance"
+      },
+      {
+       "term": "Security Incident",
+       "definition": "An attempted or successful unauthorized access, disclosure, or misuse of information"
+      },
+      {
+       "term": "Breach",
+       "definition": "A confirmed event in which confidential information is lost, stolen, or exposed"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Incident Response Lead (IT Head)",
+       "responsibilities": [
+        "Coordinates IRP activation, investigation, and technical response"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Ensures regulatory reporting, legal review, and records of actions taken"
+       ]
+      },
+      {
+       "role": "HR/Department Head",
+       "responsibilities": [
+        "Supports internal communication and corrective actions"
+       ]
+      },
+      {
+       "role": "Information Owner",
+       "responsibilities": [
+        "Identifies impact of breach and supports recovery"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Lifecycle",
+     "steps": [
+      {
+       "heading": "Detection & Identification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees must report suspicious activity or confirmed breach within 1 hour\nNotification to: incident@bedmutha.com\nExamples: unusual login alerts, unauthorized data transfer, lost devices, phishing attack"
+        }
+       ]
+      },
+      {
+       "heading": "Containment & Eradication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "IT isolates affected system/network/device\nAccess rights are revoked, and firewalls updated\nAny malware is removed and logs are captured for evidence"
+        }
+       ],
+       "responsible": "IT"
+      },
+      {
+       "heading": "Impact Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify type of data compromised (PII, business confidential, customer data)\nEvaluate scope: number of records, systems affected, potential harm"
+        }
+       ]
+      },
+      {
+       "heading": "Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Notify: Affected internal stakeholders (via email/memo); Regulatory bodies (if required by law – e.g., under IT Act or GDPR-like clauses); Customers/vendors (if relevant and under guidance of legal team)\nCommunication is approved by the Director – Information Security & Compliance Officer"
+        }
+       ],
+       "responsible": "Director – Information Security & Compliance Officer"
+      },
+      {
+       "heading": "Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Restore systems from clean backups\nChange access credentials across affected endpoints\nMonitor post-incident for anomalies"
+        }
+       ]
+      },
+      {
+       "heading": "Root Cause Analysis & Documentation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Root cause analysis performed by IT + Compliance within 3 working days\nReport includes: Timeline of incident; Actions taken; Weaknesses exploited; Corrective actions"
+        }
+       ],
+       "responsible": "IT + Compliance"
+      },
+      {
+       "heading": "Post-Incident Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal debrief session conducted within 7 days\nLessons learned are applied to update this SOP, training programs, or IT policy"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Prevention & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Quarterly employee training on data handling, phishing awareness, and reporting channels\nAccess to confidential data is based on job role (least privilege principle)\nAll USBs and external media are restricted\nMFA (Multi-Factor Authentication) is enabled across all cloud and email systems"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Recordkeeping",
+     "rows": [
+      {
+       "record": "Information Security Incident Register",
+       "owner": "",
+       "retention": "7 years",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All incident reports are logged in the Information Security Incident Register and include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident ID\nTime of detection\nReported by\nSystems affected\nType of data breached\nActions taken\nCommunication details\nLessons learned"
+      },
+      {
+       "type": "paragraph",
+       "text": "Retention period: 7 years"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Escalation Matrix",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Severity Level",
+        "Escalation Timeline",
+        "Action Owner"
+       ],
+       "rows": [
+        [
+         "Minor (limited impact)",
+         "Within 12 hours",
+         "IT Helpdesk + Dept. Supervisor"
+        ],
+        [
+         "Moderate (system/data exposure)",
+         "Within 4 hours",
+         "IT Manager + Compliance Officer"
+        ],
+        [
+         "Major (external breach or regulatory)",
+         "Immediate (1 hour)",
+         "Director – IS + Top Management"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This IRP SOP is reviewed annually or following any major breach\nPost-incident analysis directly informs: Firewall rule updates; Access control adjustments"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Responsible Information Management",
+   "code": "RIM-001",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 447,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to define the principles and procedures for managing information in a secure, ethical, and legally compliant manner. Information is a vital asset that, if mishandled, can lead to data breaches, financial loss, reputational damage, and legal implications."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, vendors, contractors, consultants, and temporary workers who handle company data."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Confidential Information",
+       "definition": "Non-public data including business strategies, employee records, customer/vendor information, R&D data, etc."
+      },
+      {
+       "term": "Personal Data",
+       "definition": "Any information related to an identified or identifiable individual."
+      },
+      {
+       "term": "Data Breach",
+       "definition": "Unauthorized access, disclosure, alteration, or destruction of information."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Information Classification",
+     "steps": [
+      {
+       "heading": "Information Classification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To manage data effectively, Bedmutha Industries classifies data into four primary categories."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Classification",
+          "Examples",
+          "Access Level",
+          "Control Measures"
+         ],
+         "rows": [
+          [
+           "Public",
+           "Press releases, marketing brochures",
+           "Everyone",
+           "No restrictions"
+          ],
+          [
+           "Internal Use Only",
+           "Internal newsletters, staff contact lists",
+           "All employees",
+           "Login-based access"
+          ],
+          [
+           "Confidential",
+           "Project files, client agreements",
+           "Managers & teams involved",
+           "Password protection, limited sharing permissions"
+          ],
+          [
+           "Highly Confidential",
+           "Financial reports, HR files, legal notices",
+           "Executive & authorized staff",
+           "Encryption, restricted access, audit trails"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Secure Storage Guidelines",
+     "steps": [
+      {
+       "heading": "Secure Storage Guidelines",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A. Physical Records"
+        },
+        {
+         "type": "bullets",
+         "text": "Use lockable cabinets.\nLimit key/card access to authorized personnel.\nAvoid storing important records near areas with fire or water risk."
+        },
+        {
+         "type": "paragraph",
+         "text": "B. Digital Records"
+        },
+        {
+         "type": "bullets",
+         "text": "Use encrypted servers and secure cloud services.\nBackup critical systems daily, store backups offsite or on a secure cloud.\nUse anti-virus software and firewalls to prevent unauthorized access."
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Control"
+        },
+        {
+         "type": "bullets",
+         "text": "Implement Role-Based Access Control (RBAC) and employees can only access what they need.\nEnable Multi-Factor Authentication (MFA) for sensitive systems.\nRegularly review and update access privileges, especially after role changes or exits.\nUse audit logs to track who accessed what data and when."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Sharing & Transfer Protocols"
+        },
+        {
+         "type": "paragraph",
+         "text": "Internal Sharing:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use approved platforms.\nUse read-only files where edits are not needed."
+        },
+        {
+         "type": "paragraph",
+         "text": "External Sharing:"
+        },
+        {
+         "type": "bullets",
+         "text": "Sign NDAs before sharing sensitive data with clients.\nTransfer files through encrypted links or VPN.\nDo not send business data through personal emails or apps."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Retention"
+        },
+        {
+         "type": "paragraph",
+         "text": "Each type of data must be retained for a specified time as per compliance."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Data Type",
+          "Retention Period",
+          "Responsible Dept."
+         ],
+         "rows": [
+          [
+           "Employee Records",
+           "7 years post separation",
+           "HR"
+          ],
+          [
+           "Financial Reports",
+           "8 years",
+           "Finance"
+          ],
+          [
+           "Legal Contracts",
+           "10 years or contract term",
+           "Legal"
+          ],
+          [
+           "CCTV Footage",
+           "30 days",
+           "Admin/Security"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Secure Disposal Methods"
+        },
+        {
+         "type": "paragraph",
+         "text": "Paper Records:"
+        },
+        {
+         "type": "bullets",
+         "text": "Shred documents using cross-cut shredders.\nKeep shredding logs."
+        },
+        {
+         "type": "paragraph",
+         "text": "Digital Files:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use data-wiping software to erase content.\nEnsure old laptops are degaussed or destroyed before disposal."
+        },
+        {
+         "type": "paragraph",
+         "text": "Disposal Authorization:"
+        },
+        {
+         "type": "bullets",
+         "text": "Must be approved by data owner + Compliance Officer.\nMaintain a Disposal Register for tracking."
+        },
+        {
+         "type": "paragraph",
+         "text": "Continuous Audits and Monitoring"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Audit Type",
+          "Frequency",
+          "Lead Dept."
+         ],
+         "rows": [
+          [
+           "System Security Audit",
+           "Quarterly",
+           "IT Department"
+          ],
+          [
+           "Access Rights Review",
+           "Bi-annually",
+           "HR + Department Heads"
+          ],
+          [
+           "Random Spot Checks",
+           "Monthly",
+           "Compliance"
+          ],
+          [
+           "Third-party Review",
+           "Annually",
+           "External Consultant"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "SOP Review",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Reviewed annually or when new data laws are introduced.\nChanges are reviewed by IT, Legal, and Compliance team."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Internal Audits of Ethics & Compliance Control Procedures",
+   "code": "ETH-AUD-001",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Officer",
+   "sourceWords": 330,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the methodology for conducting internal audits to evaluate the effectiveness of Bedmutha Industries’ ethics and compliance control systems. These audits are designed to detect potential gaps, ensure continuous improvement, and support legal compliance and ethical conduct across all functions and third-party relationships."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Audits are conducted to assess the following key areas"
+      },
+      {
+       "type": "bullets",
+       "text": "Procurement and supply chain integrity\nAnti-bribery and corruption policy implementation\nEmployee awareness and ethics training\nRegulatory compliance with national and global anti-corruption laws\nWhistleblower mechanism and non-retaliation practices\nFinancial transparency and fraud controls\nThird-party risk management and screening\nInformation security controls and data protection measures"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Accountable Entities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Audit Focus Area",
+        "Responsible Entity"
+       ],
+       "rows": [
+        [
+         "Policy Enforcement & Ethics Culture",
+         "Compliance Officer, HR Department"
+        ],
+        [
+         "Third-Party Due Diligence",
+         "Procurement Head, Legal Advisor"
+        ],
+        [
+         "Financial & Fraud Controls",
+         "Finance Controller"
+        ],
+        [
+         "Information Security",
+         "IT Head & Data Privacy Officer"
+        ],
+        [
+         "Audit Execution",
+         "Internal Audit Team (under Compliance Lead)"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Audit Methodology & Tools",
+     "steps": [
+      {
+       "heading": "Audit Methodology & Tools",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The audit uses a structured questionnaire-based assessment aligned with your Internal Assessment Form. This includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "15+ key control questions to be answered as Yes / No\nDocument review and system walkthroughs\nInterviews with department heads and key employees\nSample testing of procurement decisions, training records, financial entries, and whistleblower logs\nRetrospective review of ethics policy effectiveness and compliance incidents"
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees involved in the audit must sign an undertaking confirming accurate disclosure."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All completed forms, audit reports, and follow-up logs are stored in the Compliance Shared Drive\nCopies of final assessments are signed and acknowledged by Management\nRetention period: 7 years in line with audit and legal policy"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting & Corrective Action",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Findings are categorized as: Observations, Minor Non-conformities, or Major Non-conformities\nA Corrective Action Plan (CAP) must be developed within 15 days for each finding\nHigh-risk or repeated issues are escalated to the Ethics Committee and Board Compliance Officer\nFollow-up is conducted within 30 to 60 days to verify closure"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The Internal Assessment Form and audit checklist are updated annually\nCompliance team reviews trends from past audit cycles to inform training and policy updates\nAdjustments are made to improve scope, frequency, or accountability mechanisms"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

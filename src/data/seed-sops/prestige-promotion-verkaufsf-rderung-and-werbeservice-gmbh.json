@@ -1,0 +1,1937 @@
+{
+ "id": "prestige-promotion-verkaufsf-rderung-and-werbeservice-gmbh",
+ "company": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
+ "industry": "Sales promotion and advertising services",
+ "industryTags": [
+  "services"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Prestige Promotion/SOP Manual.docx",
+ "frontMatter": {
+  "introduction": "This SOP Manual has been developed to provide a structured framework for managing the operational, quality, environmental, social, health & safety, information security, and compliance practices of Prestige Promotion Verkaufsförderung & Werbeservice GmbH.\n\nThe manual establishes standardized procedures designed to support consistent operations, regulatory compliance, customer requirements, risk management, and continuous improvement throughout the organization. It serves as a practical guide for employees and relevant stakeholders to ensure that company activities are conducted in a controlled, responsible, and efficient manner.",
+  "objective": "The purpose of this manual is to:\n\nProvide a centralized reference document for operational, compliance, sustainability, quality, health & safety, and information security procedures.\nEstablish standardized practices to ensure consistency, efficiency, and compliance across all operational activities.\nSupport compliance with applicable legal requirements, customer expectations, industry standards, and internal company policies.\nReduce operational, environmental, social, quality, safety, and information security risks through clearly defined procedures and controls.\nPromote transparency, accountability, and continuous improvement throughout company operations.",
+  "scope": "This SOP Manual applies to:\n\nAll operational activities conducted by Prestige Promotion Verkaufsförderung & Werbeservice GmbH.\nAll employees, temporary personnel, contractors, service providers, consultants, and other relevant stakeholders engaged in company operations.\nAll Standard Operating Procedures included within this manual, including procedures relating to:\nEnvironmental management,\nResource efficiency,\nWaste management,\nEnergy management,\nHealth & safety,\nHuman rights,\nEmployee wellbeing,\nInformation security,\nData protection,\nCustomer satisfaction,\nProduct quality,\nEmergency preparedness,\nBusiness ethics, and\nCompliance management.",
+  "reviewMechanism": "The SOP Manual of Prestige Promotion Verkaufsförderung & Werbeservice GmbH shall be reviewed periodically to ensure that all procedures remain current, effective, practical, and aligned with applicable legal requirements, customer expectations, operational activities, quality standards, information security requirements, and sustainability commitments.\n\nThe review process is intended to support continuous improvement, operational excellence, regulatory compliance, and the effective implementation of management systems throughout the organization.\n\nThe SOP Manual shall be reviewed every two years or earlier if significant changes occur in operational processes, customer requirements, legal obligations, regulatory expectations, organizational structure, information security requirements, quality management systems, or sustainability commitments.\n\nReviews shall be coordinated by Management in consultation with responsible departments, including Operations, Quality, Human Resources, Compliance, Information Technology, Health & Safety, and other relevant functions where applicable.\n\nThe review shall evaluate:\nCompliance with applicable laws, regulations, customer requirements, and industry standards.\nEffectiveness, practicality, and implementation status of existing procedures.\nInternal audit findings, inspections, incident investigations, customer feedback, and corrective actions.\nChanges in operational activities, technologies, information security risks, and business processes.\nOpportunities for continual improvement and operational efficiency.\nAlignment with the company's environmental, social, governance (ESG), quality, and sustainability objectives.\n\nApproved revisions shall be documented through the company's document control process and communicated to relevant employees and stakeholders where appropriate.\n\nThe latest approved version of the SOP Manual shall be maintained as a controlled document and made available to applicable personnel through designated document management systems or controlled distribution channels.\n\nRegular reviews help ensure that company procedures remain effective, compliant, operationally relevant, and supportive of Prestige Promotion's commitment to quality, customer satisfaction, information security, employee wellbeing, regulatory compliance, and sustainable business practices."
+ },
+ "sops": [
+  {
+   "title": "Digital Infrastructure Energy Efficiency & Sustainable IT Management Procedure",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Managing Directors",
+   "sourceWords": 863,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the operational requirements and energy-efficiency measures implemented by Prestige Promotion Verkaufsförderung & Werbeservice GmbH to reduce energy consumption associated with information technology (IT) infrastructure and digital operations.\n\nThe procedure aims to improve energy efficiency, reduce greenhouse gas emissions, optimize resource utilization, support sustainable business practices, and contribute to the company’s overall environmental objectives. The SOP also supports continuous improvement initiatives and complements the company’s broader investments in energy-efficiency measures implemented at its operational facility."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, service providers, and third parties involved in the management, operation, maintenance, procurement, or use of IT equipment and digital systems at Prestige Promotion.\n\nThe procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Computers and workstations\nServers and server rooms\nNetwork infrastructure\nPrinters and multifunction devices\nData storage systems\nCommunication equipment\nCloud-based systems and digital platforms\nIT procurement activities"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Energy-Efficient IT Infrastructure Management Measures",
+     "steps": [
+      {
+       "heading": "Energy-Efficient Equipment Selection",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Energy-Efficient Procurement: Purchase energy-efficient IT equipment wherever operationally feasible, considering energy ratings, lifecycle performance, and operational requirements."
+        },
+        {
+         "text": "Sustainable Technology Evaluation: Evaluate energy performance during procurement decisions for computers, monitors, servers, printers, networking equipment, and digital infrastructure."
+        },
+        {
+         "text": "Equipment Standardization: Standardize IT equipment where practical to simplify maintenance, reduce resource consumption, and improve energy efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Workstation Energy Management",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Automatic Power Management: Configure computers, monitors, and peripherals to automatically enter sleep or power-saving mode after periods of inactivity."
+        },
+        {
+         "text": "End-of-Day Shutdown Procedures: Employees shall switch off computers, monitors, printers, and non-essential devices when not in use or at the end of the working day."
+        },
+        {
+         "text": "Energy-Efficient Display Settings: Use energy-saving display settings including screen timeout functions and reduced energy consumption configurations."
+        }
+       ]
+      },
+      {
+       "heading": "Server & Network Infrastructure Optimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Network Equipment Optimization: Configure networking devices to operate efficiently and deactivate unused ports, systems, or equipment whenever possible."
+        },
+        {
+         "text": "Cooling Efficiency Management: Maintain server and networking equipment in properly ventilated environments to optimize cooling efficiency and reduce unnecessary energy consumption."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Resource Optimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Cloud Resource Optimization: Periodically review cloud services and digital storage requirements to eliminate redundant systems and optimize resource utilization."
+        },
+        {
+         "text": "Data Storage Management: Remove obsolete files and unnecessary data storage where appropriate to improve system efficiency."
+        },
+        {
+         "text": "Digital Documentation Practices: Promote electronic records, digital approvals, and electronic communication to reduce reliance on paper-based processes."
+        }
+       ]
+      },
+      {
+       "heading": "Sustainable Printing & Office Technology Controls",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Print Reduction Initiatives: Encourage digital document management and reduce unnecessary printing activities."
+        },
+        {
+         "text": "Default Duplex Printing: Configure printers to use double-sided printing as the default setting where technically feasible."
+        },
+        {
+         "text": "Shared Printing Resources: Utilize centralized multifunction printers instead of multiple standalone devices wherever practical."
+        },
+        {
+         "text": "Toner and Cartridge Recycling: Recycle toner cartridges and printing consumables through approved recycling programs."
+        }
+       ]
+      },
+      {
+       "heading": "Equipment Lifecycle & Resource Management",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Preventive Maintenance: Perform regular maintenance to ensure efficient operation and prolong equipment life."
+        },
+        {
+         "text": "Responsible Disposal: Dispose of obsolete electronic equipment through approved e-waste recycling providers."
+        },
+        {
+         "text": "Equipment Reuse & Redeployment: Evaluate opportunities to refurbish, reuse, or redeploy equipment before replacement."
+        }
+       ]
+      },
+      {
+       "heading": "Refurbishment & Internal Reuse of IT Equipment",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Equipment Assessment Program: Periodically assess computers, monitors, printers, networking devices, servers, and other IT equipment to determine whether they can be refurbished, upgraded, repaired, or redeployed before replacement is considered."
+        },
+        {
+         "text": "Refurbishment Activities: Where technically and economically feasible, IT equipment may undergo refurbishment activities including: Cleaning and inspection of equipment; Repair or replacement of defective components; Hardware upgrades to improve performance and extend usability; Software updates and security patching; Performance testing and verification; and Reconfiguration for continued operational use."
+        },
+        {
+         "text": "Internal Reuse & Redeployment: Refurbished equipment may be reassigned to departments, workstations, or operational functions with lower technical requirements in order to maximize equipment utilization and extend its useful life."
+        },
+        {
+         "text": "IT Asset Life Extension Strategy: Prestige Promotion seeks to extend the operational lifespan of IT assets wherever practical in order to: Reduce electronic waste generation; Improve resource efficiency; Reduce the environmental impacts associated with manufacturing and purchasing new equipment; Optimize operational costs; and Support circular economy principles."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Awareness & Digital Sustainability",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Energy Awareness Training: Provide periodic awareness communication regarding energy-efficient IT practices and responsible use of digital resources."
+        },
+        {
+         "text": "Employee Engagement: Encourage employees to identify opportunities for reducing digital energy consumption and improving resource efficiency."
+        },
+        {
+         "text": "Sustainable Workplace Practices: Promote environmentally responsible digital working practices throughout daily operations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [
+      {
+       "indicator": "IT Energy Consumption Reviews: Periodically review energy consumption associated with IT equipment and infrastructure where feasible.",
+       "target": "",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Equipment Utilization Assessments: Evaluate utilization rates of servers, computers, printers, and network equipment.",
+       "target": "",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Internal Assessments: Conduct periodic reviews of compliance with sustainable IT practices and operational controls.",
+       "target": "",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Improvement Opportunities: Identify and implement opportunities for energy reduction, efficiency improvements, and resource optimization.",
+       "target": "",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Management Reporting: Prepare summaries of improvement initiatives and energy-efficiency projects for management review.",
+       "target": "",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Incident Reporting – System Inefficiencies: Report significant equipment inefficiencies, abnormal energy consumption, or operational issues.",
+       "target": "",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Directors",
+       "responsibilities": [
+        "Provide strategic oversight for energy-efficiency initiatives.",
+        "Support investments in sustainable technologies and infrastructure improvements.",
+        "Review performance and improvement opportunities."
+       ]
+      },
+      {
+       "role": "IT Service Provider / IT Responsible Person",
+       "responsibilities": [
+        "Implement energy-efficient IT configurations.",
+        "Maintain servers, workstations, and networking equipment.",
+        "Monitor equipment performance and optimization opportunities.",
+        "Support implementation of sustainable IT practices."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Ensure operational implementation of this SOP.",
+        "Support digitalization initiatives and resource optimization activities.",
+        "Coordinate improvement projects where necessary."
+       ]
+      },
+      {
+       "role": "Quality & Compliance Representative",
+       "responsibilities": [
+        "Conduct periodic compliance reviews.",
+        "Monitor implementation effectiveness.",
+        "Support corrective action management and continuous improvement."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow energy-efficient IT usage practices.",
+        "Switch off non-essential equipment when not in use.",
+        "Report opportunities for improvement and equipment inefficiencies.",
+        "Support sustainable workplace initiatives."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Resource Efficiency, Material Optimization & Internal Waste Reduction Procedure",
+   "code": "",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Managing Directors",
+   "sourceWords": 881,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the requirements and operational practices implemented by Prestige Promotion Verkaufsförderung & Werbeservice GmbH to reduce internal waste generation, optimize material consumption, promote reuse and recovery of resources, and encourage the use of environmentally responsible materials throughout its operations.\n\nThe procedure aims to improve resource efficiency, minimize environmental impacts, support circular economy principles, reduce waste disposal volumes, and strengthen sustainable operational practices within production, warehousing, packaging, logistics, and administrative activities."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Waste Reduction & Resource Recovery Measures",
+     "steps": [
+      {
+       "heading": "Waste Prevention & Circular Resource Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Material Reuse Initiatives: Where operationally feasible, packaging materials, storage containers, office supplies, pallets, transport materials, and other suitable resources shall be reused before disposal or replacement.\n\nInternal Resource Exchange System: Prestige Promotion maintains centralized office supply pools that allow unused or surplus office materials to be shared and reused across departments, reducing unnecessary purchases and preventing avoidable waste generation. This internal resource-sharing approach supports efficient resource utilization and waste reduction.\n\nWaste Segregation Practices: Separate collection systems shall be maintained for paper, cardboard, plastics, general waste, and other designated waste streams to maximize recycling and recovery opportunities.\n\nRecycling & Recovery Programs: Paper, cardboard, plastic films, and other recyclable materials shall be directed to approved recycling channels wherever practical.\n\nControlled Waste Management: Special waste streams, including pharmaceutical-related waste where applicable, shall be managed through approved collection, storage, and disposal procedures.\n\nMaterial Recovery Measures:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Resource Stream",
+          "Recovery Approach"
+         ],
+         "rows": [
+          [
+           "Paper & Cardboard",
+           "Recycling, compaction, and recovery"
+          ],
+          [
+           "Plastic Films",
+           "Segregation and recycling"
+          ],
+          [
+           "Office Supplies",
+           "Internal reuse and redistribution"
+          ],
+          [
+           "Pallets & Transport Materials",
+           "Reuse and repair where feasible"
+          ],
+          [
+           "Packaging Components",
+           "Recovery and reuse where operationally suitable"
+          ],
+          [
+           "IT Equipment",
+           "Refurbishment and redeployment where practical"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Process Optimization & Material Consumption Reduction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Digitalization & Paper Reduction: Electronic Documentation\nEmployees shall utilize electronic records, digital approvals, electronic archiving, and digital communication systems wherever practical to reduce paper consumption.\n\nPaperless Administrative Processes: Departments shall continuously identify opportunities to replace paper-based processes with digital alternatives.\n\nPrint Optimization Controls: Printing shall be minimized through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Electronic document sharing\nDuplex printing\nPrint-release controls where applicable\nDigital review and approval workflows"
+        },
+        {
+         "type": "paragraph",
+         "text": "Process Efficiency Measures\n\nMaterial Usage Reviews: Operational departments shall periodically review material consumption patterns to identify opportunities for waste reduction and process optimization.\n\nInventory Optimization: Inventory planning practices shall seek to reduce material obsolescence, excess stock, and unnecessary material consumption.\n\nPackaging Material Optimization: Packaging activities shall be reviewed periodically to identify opportunities for reducing excess packaging materials while maintaining product quality, regulatory compliance, and customer requirements.\n\nLean Operational Practices: Departments are encouraged to apply continuous improvement principles to reduce resource consumption and improve operational efficiency.\n\nMaterial Optimization Measures:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Optimization Area",
+          "Company Practice"
+         ],
+         "rows": [
+          [
+           "Documentation",
+           "Digital records and paper reduction"
+          ],
+          [
+           "Internal Communication",
+           "Electronic communication systems"
+          ],
+          [
+           "Packaging Activities",
+           "Material efficiency reviews"
+          ],
+          [
+           "Warehousing Operations",
+           "Inventory optimization"
+          ],
+          [
+           "Office Operations",
+           "Shared resources and reusable supplies"
+          ],
+          [
+           "Procurement Activities",
+           "Sustainable purchasing considerations"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Eco-Friendly & Environmentally Responsible Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Sustainable Cleaning & Facility Management:\n\nEnvironmentally Responsible Cleaning Products: Where technically feasible and operationally suitable, preference shall be given to cleaning agents, detergents, and sanitation products with lower environmental impact, biodegradable characteristics, or recognized environmental certifications.\n\nLow-Toxicity Facility Products: The company seeks to reduce the use of unnecessarily hazardous substances in routine cleaning, maintenance, and facility management activities wherever practical.\n\nSustainable Logistics & Material Handling: Reusable Material Handling Equipment\nReusable crates, containers, pallets, and transport materials shall be utilized wherever operationally feasible.\n\nSustainable Pallet Management: Wooden pallets sourced from responsible suppliers and maintained for multiple-use cycles shall be preferred where practical.\n\nInternal Packaging Recovery: Packaging and transport materials suitable for reuse shall be evaluated before disposal.\n\nEco-Friendly Material Selection:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Material Category",
+          "Sustainable Practice"
+         ],
+         "rows": [
+          [
+           "Cleaning Products",
+           "Low-toxicity and biodegradable alternatives"
+          ],
+          [
+           "Pallets",
+           "Reusable and responsibly sourced pallets"
+          ],
+          [
+           "Storage Containers",
+           "Reusable containers where feasible"
+          ],
+          [
+           "Office Materials",
+           "Recycled-content and reusable supplies"
+          ],
+          [
+           "Packaging Support Materials",
+           "Recovery and reuse opportunities"
+          ],
+          [
+           "Material Handling Equipment",
+           "Long-life and reusable assets"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Repair, Refurbishment & Asset Life Extension",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Office Equipment Reuse: Office furniture, storage systems, and operational equipment shall be repaired, reused, or reassigned where practical before replacement.\n\nRefurbishment of IT Equipment: Computers, monitors, printers, networking devices, and related equipment may be inspected, cleaned, repaired, upgraded, and redeployed where technically feasible in order to extend useful life and reduce electronic waste.\n\nInternal Redeployment: Assets no longer required by one department may be reassigned to other operational functions where suitable.\n\nCircular Economy Approach: The company promotes asset life extension, resource recovery, refurbishment, reuse, and responsible disposal practices to reduce environmental impacts and waste generation."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring & Evaluation\n\nWaste Generation Reviews: Conduct periodic reviews of waste streams and recycling performance.\n\nMaterial Consumption Monitoring: Monitor material usage trends and identify opportunities for reduction.\n\nInternal Assessments: Conduct periodic assessments of waste reduction, resource efficiency, and recycling initiatives.\n\nResource Recovery Tracking: Review effectiveness of reuse, refurbishment, and recycling programs.\n\nContinuous Improvement Reviews: Identify improvement opportunities and implement corrective measures where appropriate.\n\nIncident Reporting & Corrective Actions\n\nWaste Management Issues: Report significant waste management, recycling, or resource inefficiency concerns."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Directors",
+       "responsibilities": [
+        "Provide strategic oversight for resource efficiency initiatives.",
+        "Support sustainability investments and continuous improvement programs.",
+        "Review environmental performance and resource reduction opportunities."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implement waste reduction and material optimization measures.",
+        "Monitor operational resource consumption.",
+        "Coordinate improvement initiatives."
+       ]
+      },
+      {
+       "role": "Quality & Compliance Representative",
+       "responsibilities": [
+        "Conduct internal reviews and compliance assessments.",
+        "Monitor implementation effectiveness.",
+        "Support corrective action management."
+       ]
+      },
+      {
+       "role": "Procurement Representative",
+       "responsibilities": [
+        "Support environmentally responsible purchasing practices.",
+        "Consider reusable, recycled-content, and environmentally preferable materials where feasible."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow waste segregation requirements.",
+        "Support reuse and recycling initiatives.",
+        "Minimize unnecessary material consumption.",
+        "Report opportunities for improvement."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Emergency Preparedness, Incident Response & Product Recall Management Procedure",
+   "code": "",
+   "catalogId": "emergency-equipment",
+   "pillar": "S",
+   "department": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
+   "owner": "Managing Directors",
+   "sourceWords": 794,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the requirements for emergency preparedness, incident response, crisis management, product safety communication, and product recall activities at Prestige Promotion Verkaufsförderung & Werbeservice GmbH.\n\nThe procedure aims to ensure rapid and effective response to workplace emergencies, operational disruptions, product quality concerns, customer safety risks, and regulatory compliance obligations. It further establishes a structured process for identifying, managing, communicating, and resolving product-related incidents that may affect customer health, safety, product integrity, or regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, temporary personnel, service providers, visitors, and business partners involved in operations conducted by Prestige Promotion.\n\nThe procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Production and packaging operations\nWarehousing and storage activities\nMaterial handling activities\nProduct quality management\nCustomer communication activities\nLogistics and distribution operations\nEmergency response activities"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Preparedness & Risk Management Measures",
+     "steps": [
+      {
+       "heading": "Emergency Planning & Prevention",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Risk Identification: Periodic assessments shall be conducted to identify potential emergency situations, operational disruptions, safety incidents, product quality issues, and environmental risks.\n\nEmergency Response Planning: Documented emergency response procedures shall be maintained for identified emergency scenarios.\n\nEmergency Equipment: Emergency equipment including fire extinguishers, first-aid supplies, emergency exits, evacuation plans, and emergency communication systems shall be maintained and periodically inspected.\n\nEmployee Awareness: Employees shall receive training and awareness regarding emergency response procedures, evacuation routes, incident reporting, and workplace safety responsibilities.\n\nEmergency Contact Information: Emergency contact lists and relevant response information shall be maintained and accessible where appropriate."
+        }
+       ]
+      },
+      {
+       "heading": "Emergency Situations Covered",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Emergency Type",
+          "Examples"
+         ],
+         "rows": [
+          [
+           "Fire & Explosion",
+           "Fire incidents, electrical faults, smoke events"
+          ],
+          [
+           "Medical Emergencies",
+           "Injury, illness, first-aid situations"
+          ],
+          [
+           "Chemical or Material Incidents",
+           "Leaks, spills, accidental releases"
+          ],
+          [
+           "Utility Disruptions",
+           "Power failures, IT failures, equipment breakdowns"
+          ],
+          [
+           "Environmental Incidents",
+           "Waste-related incidents, accidental releases"
+          ],
+          [
+           "Product Quality Incidents",
+           "Product contamination, labeling errors, packaging defects"
+          ],
+          [
+           "Product Safety Events",
+           "Customer complaints involving potential health or safety concerns"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Product Safety Incident Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification of Product Safety Risks\n\nProduct Complaint Monitoring: Customer complaints, product quality concerns, adverse events, packaging issues, or regulatory notifications shall be reviewed to identify potential product safety risks.\n\nEscalation Process Any issue that could affect product quality, patient safety, customer safety, product integrity, or regulatory compliance shall be immediately escalated to management and quality personnel.\n\nRisk Assessment: A documented risk assessment shall be conducted to determine the severity, scope, and potential impact of the identified issue."
+        },
+        {
+         "type": "table",
+         "text": "Product Safety Evaluation",
+         "columns": [
+          "Assessment Area",
+          "Evaluation Criteria"
+         ],
+         "rows": [
+          [
+           "Product Integrity",
+           "Potential contamination or damage"
+          ],
+          [
+           "Packaging Compliance",
+           "Labeling or packaging defects"
+          ],
+          [
+           "Regulatory Compliance",
+           "Regulatory requirements and obligations"
+          ],
+          [
+           "Customer Impact",
+           "Potential customer health and safety implications"
+          ],
+          [
+           "Distribution Scope",
+           "Extent of affected products in the market"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Product Recall & Customer Communication Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Recall Decision Process\n\nRecall Assessment Team: Management and responsible quality personnel shall evaluate incidents that may require product withdrawal, recall, quarantine, or customer notification.\n\nRecall Classification: Incidents shall be classified according to severity, customer risk, and regulatory requirements.\n\nProduct Traceability: Affected products shall be identified through batch records, packaging records, inventory records, and distribution documentation.\n\nCustomer Notification & Communication\n\nCustomer Notification: Where a product quality or safety concern is identified, affected customers shall be informed promptly and provided with appropriate instructions.\n\nRisk Communication: Customer communications may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Product identification details\nDescription of the issue\nPotential health or safety implications\nInstructions regarding product segregation, return, or disposal\nContact information for additional support"
+        },
+        {
+         "type": "paragraph",
+         "text": "Distribution Chain Notification: Where necessary, distributors, logistics providers, suppliers, and relevant stakeholders shall be informed regarding affected products."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Investigation & Corrective Actions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incident Investigation\n\nRoot Cause Analysis: All significant incidents, emergencies, product safety events, and recall situations shall be investigated to determine underlying causes.\n\nCorrective Action Plans: Corrective and preventive actions shall be developed and implemented to prevent recurrence.\n\nManagement Review: Major incidents and recall events shall be reviewed by management to evaluate effectiveness of response activities."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring & Evaluation\n\nEmergency Preparedness Reviews: Periodic reviews of emergency response arrangements shall be conducted.\n\nEmergency Drills: Emergency exercises or evacuation drills shall be conducted periodically where appropriate.\n\nComplaint Monitoring: Customer complaints and product quality concerns shall be monitored and analyzed.\n\nRecall Readiness Reviews: Periodic reviews of traceability, communication processes, and recall procedures shall be performed.\n\nIncident Reporting & Regulatory Communication\n\nIncident Documentation: All significant incidents shall be documented and retained in accordance with company requirements.\n\nRegulatory Notifications: Where required, relevant regulatory authorities shall be informed in accordance with applicable legal and customer requirements."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Directors",
+       "responsibilities": [
+        "Provide strategic oversight during emergency situations and product recalls.",
+        "Approve major response actions and resource allocation.",
+        "Review significant incidents and recall events."
+       ]
+      },
+      {
+       "role": "Quality Control / Quality Representative",
+       "responsibilities": [
+        "Lead product safety assessments and recall evaluations.",
+        "Coordinate customer communication relating to product quality concerns.",
+        "Monitor corrective actions and effectiveness reviews."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Coordinate operational emergency response activities.",
+        "Support containment and recovery measures.",
+        "Ensure implementation of corrective actions."
+       ]
+      },
+      {
+       "role": "Health & Safety Representative",
+       "responsibilities": [
+        "Coordinate workplace emergency preparedness activities.",
+        "Support emergency drills, training, and incident investigations."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow emergency response procedures.",
+        "Immediately report incidents, hazards, and product quality concerns.",
+        "Participate in emergency training and response activities."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Customer Health & Safety Feedback, Complaint Management & Response Procedure",
+   "code": "",
+   "catalogId": "customer-health-safety",
+   "pillar": "S",
+   "department": "Quality Control",
+   "owner": "Quality Control / Quality Representative",
+   "sourceWords": 807,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the processes and communication channels implemented by Prestige Promotion Verkaufsförderung & Werbeservice GmbH to collect, monitor, investigate, and respond to external feedback relating to product quality, product safety, customer health concerns, packaging issues, service quality, and regulatory compliance matters.\n\nThe procedure aims to ensure that customer concerns are managed promptly and effectively, enabling the company to identify potential risks, improve operational performance, strengthen customer satisfaction, and protect product integrity and consumer safety.\n\nThe SOP further supports continuous improvement, regulatory compliance, customer trust, and responsible product stewardship throughout the company's pharmaceutical packaging, warehousing, logistics, and rework operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, temporary personnel, customer service personnel, quality representatives, and management personnel involved in customer communication, complaint handling, product quality management, and corrective action activities.\n\nThe procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Product quality complaints\nProduct safety concerns\nPackaging defects\nLabeling concerns\nCustomer health and safety issues\nProduct handling concerns\nDistribution and logistics complaints\nService-related feedback"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Customer Feedback Collection System",
+     "steps": [
+      {
+       "heading": "Customer Feedback Collection System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "External Feedback Channels: Prestige Promotion maintains multiple communication channels to enable customers and external stakeholders to report product quality, health, safety, and service-related concerns.\n\nCustomer feedback may be received through:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Feedback Channel",
+          "Description"
+         ],
+         "rows": [
+          [
+           "E-Mail Communication",
+           "Customer service and quality-related communication"
+          ],
+          [
+           "Telephone Contact",
+           "Direct reporting of concerns and complaints"
+          ],
+          [
+           "Customer Meetings",
+           "Feedback during business reviews and operational discussions"
+          ],
+          [
+           "Customer Audits",
+           "Feedback obtained during audits and assessments"
+          ],
+          [
+           "Website Contact Channels",
+           "Customer inquiries and feedback submissions"
+          ],
+          [
+           "Written Communication",
+           "Letters, complaint forms, and documented correspondence"
+          ],
+          [
+           "Regulatory Notifications",
+           "Feedback received through regulatory authorities or business partners"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Customer Complaint & Health & Safety Issue Management",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Complaint Registration"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Customer Complaint & Health & Safety Issue Management",
+     "steps": [
+      {
+       "heading": "Complaint Logging",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All customer complaints and health & safety concerns shall be documented and assigned a unique reference number."
+        }
+       ]
+      },
+      {
+       "heading": "Initial Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The responsible department shall perform an initial review to assess urgency, severity, and potential customer impact."
+        }
+       ]
+      },
+      {
+       "heading": "Escalation Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Complaints involving potential health, safety, regulatory, or product quality risks shall be immediately escalated to Quality Management and Senior Management."
+        }
+       ]
+      },
+      {
+       "heading": "Complaint Classification",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Classification",
+          "Examples"
+         ],
+         "rows": [
+          [
+           "Critical",
+           "Potential customer health or safety risk"
+          ],
+          [
+           "Major",
+           "Product quality or compliance concern"
+          ],
+          [
+           "Minor",
+           "Administrative or service-related issue"
+          ],
+          [
+           "Observation",
+           "Improvement suggestion or general feedback"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Investigation & Assessment",
+     "steps": [
+      {
+       "heading": "Root Cause Investigation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Appropriate investigations shall be conducted to identify the underlying cause of the reported concern."
+        }
+       ]
+      },
+      {
+       "heading": "Product Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Affected products, packaging records, batch documentation, and operational records may be reviewed where necessary."
+        }
+       ]
+      },
+      {
+       "heading": "Risk Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Potential impacts on product quality, customer safety, regulatory compliance, and business operations shall be assessed."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Communication",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customers shall be informed regarding investigation status and corrective actions where appropriate."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Customer Communication & Response Process",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Customer Response Activities"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Customer Communication & Response Process",
+     "steps": [
+      {
+       "heading": "Acknowledgement of Feedback",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customer complaints and safety concerns shall be acknowledged within a reasonable timeframe."
+        }
+       ]
+      },
+      {
+       "heading": "Investigation Updates",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where applicable, customers shall receive updates regarding ongoing investigations."
+        }
+       ]
+      },
+      {
+       "heading": "Recall & Product Safety Escalation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where customer health or safety risks are identified, the matter shall be managed in accordance with the company's Emergency Preparedness, Incident Response & Product Recall Management Procedure."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Corrective Actions & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Corrective Action Process"
+      },
+      {
+       "type": "bullets",
+       "text": "Corrective Action Implementation: Appropriate corrective actions shall be implemented to address identified issues.\nPreventive Action Measures: Preventive measures shall be established to minimize recurrence.\nTrend Monitoring: Customer complaints and safety concerns shall be periodically analyzed to identify recurring issues and improvement opportunities.\nContinuous Improvement: Customer feedback shall be incorporated into operational improvement initiatives, training programs, and quality management activities."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring & Evaluation"
+      },
+      {
+       "type": "bullets",
+       "text": "Complaint Trend Analysis: Periodic review of customer complaint trends and recurring concerns.\nHealth & Safety Feedback Review: Analysis of customer safety-related concerns and product integrity issues.\nCorrective Action Monitoring: Review effectiveness of corrective and preventive actions.\nInternal Assessments: Periodic assessments of complaint handling effectiveness and customer satisfaction performance.\nManagement Review: Summary reports shall be provided to management for review and decision-making."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Directors",
+       "responsibilities": [
+        "Review significant customer health and safety concerns.",
+        "Approve major corrective action initiatives.",
+        "Support continuous improvement activities."
+       ]
+      },
+      {
+       "role": "Quality Control / Quality Representative",
+       "responsibilities": [
+        "Coordinate complaint investigations.",
+        "Evaluate health and safety concerns.",
+        "Maintain complaint records.",
+        "Monitor corrective actions."
+       ]
+      },
+      {
+       "role": "Customer Service Representative",
+       "responsibilities": [
+        "Receive customer feedback and complaints.",
+        "Ensure proper documentation and communication.",
+        "Coordinate responses with relevant departments."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Support investigations and corrective actions.",
+        "Implement operational improvements where required."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Report customer concerns received during business activities.",
+        "Support investigations and corrective action activities."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "ANNEXURE – A",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "CUSTOMER HEALTH & SAFETY FEEDBACK / COMPLAINT FORM\n\nCustomer Information"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Information",
+        "Details"
+       ],
+       "rows": [
+        [
+         "Customer Name",
+         ""
+        ],
+        [
+         "Company Name",
+         ""
+        ],
+        [
+         "Contact Person",
+         ""
+        ],
+        [
+         "Telephone Number",
+         ""
+        ],
+        [
+         "E-Mail Address",
+         ""
+        ],
+        [
+         "Date of Submission",
+         ""
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "Product / Service Information"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Information",
+        "Details"
+       ],
+       "rows": [
+        [
+         "Product Name",
+         ""
+        ],
+        [
+         "Product / Batch Number",
+         ""
+        ],
+        [
+         "Date Received",
+         ""
+        ],
+        [
+         "Purchase Order / Reference Number",
+         ""
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "Type of Feedback\n\n☐ Product Quality Issue\n☐ Product Safety Concern\n☐ Packaging Defect\n☐ Labeling Issue\n☐ Storage / Transportation Concern\n☐ Service Complaint\n☐ Regulatory Concern\n☐ Suggestion for Improvement\n☐ Other\n\nDescription of Concern\n\nPlease provide detailed information regarding the issue, including the date, location, circumstances, and any observed impact:\n\nHas this issue affected health or safety?\n\n☐ Yes\n☐ No\n\nIf yes, please provide details:\n\nSupporting Information\n\n☐ Photographs Attached\n☐ Product Samples Available\n☐ Additional Documents Attached\n\nCustomer Signature\n\nCustomer Name: ______________________\nSignature: __________________________\nDate: ______________________________\n\nInternal Use Only"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Information",
+        "Details"
+       ],
+       "rows": [
+        [
+         "Complaint Reference No.",
+         ""
+        ],
+        [
+         "Date Received",
+         ""
+        ],
+        [
+         "Complaint Category",
+         ""
+        ],
+        [
+         "Assigned To",
+         ""
+        ],
+        [
+         "Investigation Required",
+         "Yes / No"
+        ],
+        [
+         "Root Cause Identified",
+         ""
+        ],
+        [
+         "Corrective Action Implemented",
+         ""
+        ],
+        [
+         "Closure Date",
+         ""
+        ],
+        [
+         "Verified By",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Information Security Incident Response & Confidential Information Breach Management Procedure",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "Managing Directors",
+   "sourceWords": 891,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the requirements and response processes implemented by Prestige Promotion Verkaufsförderung & Werbeservice GmbH to detect, report, investigate, contain, and respond to information security incidents and breaches involving confidential, sensitive, personal, operational, customer, supplier, or business information."
+      },
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to minimize the impact of information security incidents, prevent unauthorized access to confidential information, protect company assets, support regulatory compliance, maintain business continuity, and ensure appropriate communication and corrective actions following an incident."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP further aims to reduce the risk of operational disruption, financial loss, reputational damage, legal exposure, and unauthorized disclosure of sensitive information."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, consultants, temporary personnel, service providers, third-party service providers, and individuals with access to company information, systems, networks, records, or digital assets."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Customer information\nEmployee information\nSupplier information\nBusiness records\nFinancial information\nConfidential business documents\nQuality and operational records\nInformation systems\nE-mail communications\nDigital storage systems\nIT infrastructure and network resources"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Information Security Incident Identification & Detection",
+     "steps": [
+      {
+       "heading": "Information Security Incident Identification & Detection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Information Security Incidents"
+        },
+        {
+         "type": "paragraph",
+         "text": "Information security incidents may include, but are not limited to:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Incident Type",
+          "Examples"
+         ],
+         "rows": [
+          [
+           "Unauthorized Access",
+           "Unauthorized access to systems, files, or databases"
+          ],
+          [
+           "Data Breach",
+           "Accidental or intentional disclosure of confidential information"
+          ],
+          [
+           "Lost or Stolen Devices",
+           "Laptops, mobile phones, storage devices, or documents"
+          ],
+          [
+           "Malware & cyberattacks",
+           "Viruses, ransomware, phishing attacks"
+          ],
+          [
+           "E-Mail Security Incidents",
+           "Misdirected confidential emails or unauthorized sharing"
+          ],
+          [
+           "System Compromise",
+           "Unauthorized modification or deletion of information"
+          ],
+          [
+           "Third-Party Security Issues",
+           "Supplier or service provider security incidents"
+          ],
+          [
+           "Physical Information Security Breaches",
+           "Unauthorized access to confidential records or archives"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Detection Measures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Employee Awareness: Employees shall immediately report suspected information security incidents, unusual system behavior, unauthorized access attempts, or potential data breaches."
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Monitoring: Authorized personnel may review system access logs, user activity records, and security alerts where applicable."
+        },
+        {
+         "type": "paragraph",
+         "text": "Security Monitoring: The company may utilize monitoring tools, security software, antivirus protection, firewalls, and system controls to identify potential threats."
+        },
+        {
+         "type": "paragraph",
+         "text": "Third-Party Notifications: Information security incidents reported by customers, suppliers, regulators, or service providers shall be treated as potential security events and reviewed promptly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Information Security Incident Response Process",
+     "steps": [
+      {
+       "heading": "Information Security Incident Response Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incident Response Stages"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Stage",
+          "Activity"
+         ],
+         "rows": [
+          [
+           "Identification",
+           "Detect and report the incident"
+          ],
+          [
+           "Assessment",
+           "Evaluate severity and impact"
+          ],
+          [
+           "Containment",
+           "Prevent further damage or unauthorized access"
+          ],
+          [
+           "Investigation",
+           "Determine cause and scope"
+          ],
+          [
+           "Recovery",
+           "Restore systems and operations"
+          ],
+          [
+           "Communication",
+           "Notify affected parties where necessary"
+          ],
+          [
+           "Corrective Action",
+           "Implement preventive improvements"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Reporting"
+        },
+        {
+         "type": "paragraph",
+         "text": "Immediate Reporting: Employees shall immediately report suspected information security incidents to management, the designated IT service provider, or responsible personnel."
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Documentation: All incidents shall be documented and assigned a unique incident reference number."
+        },
+        {
+         "type": "paragraph",
+         "text": "Initial Assessment: An initial assessment shall determine:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of the incident\nInformation affected\nSystems involved\nPotential business impact\nRegulatory implications\nRequired response actions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Containment & Damage Limitation Measures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Containment Activities"
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Restriction: Compromised user accounts, systems, devices, or applications may be temporarily restricted, disabled, or isolated."
+        },
+        {
+         "type": "paragraph",
+         "text": "System Isolation: Affected systems may be disconnected from networks where necessary to prevent further spread or unauthorized access."
+        },
+        {
+         "type": "paragraph",
+         "text": "Password Reset Measures: User credentials may be reset where unauthorized access is suspected."
+        },
+        {
+         "type": "paragraph",
+         "text": "Preservation of Evidence: Relevant records, logs, communications, and system information shall be preserved to support investigation activities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Containment Measures"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Risk Area",
+          "Response Action"
+         ],
+         "rows": [
+          [
+           "Unauthorized Access",
+           "Disable access and review permissions"
+          ],
+          [
+           "Malware Infection",
+           "Isolate affected devices"
+          ],
+          [
+           "Lost Devices",
+           "Block access and initiate security review"
+          ],
+          [
+           "Data Leakage",
+           "Restrict distribution and recover information where possible"
+          ],
+          [
+           "Third-Party Incidents",
+           "Coordinate with affected providers"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Investigation & Impact Assessment"
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident Investigation"
+        },
+        {
+         "type": "paragraph",
+         "text": "Root Cause Analysis: Investigations shall determine how the incident occurred and identify contributing factors."
+        },
+        {
+         "type": "paragraph",
+         "text": "Scope Assessment: The company shall evaluate:"
+        },
+        {
+         "type": "bullets",
+         "text": "Information affected\nNumber of affected records\nIndividuals impacted\nOperational consequences\nRegulatory obligations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Evaluation: Potential legal, operational, financial, quality, customer, and reputational impacts shall be assessed."
+        },
+        {
+         "type": "paragraph",
+         "text": "Communication & Notification Process"
+        },
+        {
+         "type": "paragraph",
+         "text": "Internal Communication"
+        },
+        {
+         "type": "paragraph",
+         "text": "Management Notification: Significant incidents shall be escalated to management immediately."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employee Communication: Affected personnel shall receive guidance regarding required response actions."
+        },
+        {
+         "type": "paragraph",
+         "text": "External Communication"
+        },
+        {
+         "type": "paragraph",
+         "text": "Customer Notification: Where customer information may be affected, impacted customers may be informed in accordance with applicable legal, contractual, or operational requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Supplier Communication: Relevant suppliers or service providers may be contacted where necessary."
+        },
+        {
+         "type": "paragraph",
+         "text": "Regulatory Notification: Where required by applicable laws or regulations, competent authorities shall be informed within applicable reporting timeframes."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recovery & Corrective Actions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Recovery Activities"
+        },
+        {
+         "type": "paragraph",
+         "text": "System Restoration: Affected systems shall be restored and verified before returning to normal operation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Security Verification: Appropriate testing shall be conducted to confirm incident resolution."
+        },
+        {
+         "type": "paragraph",
+         "text": "Data Recovery: Where necessary, information shall be restored from secure backups."
+        },
+        {
+         "type": "paragraph",
+         "text": "Corrective & Preventive Measures: Corrective Action Plans\nActions shall be developed to address identified weaknesses."
+        },
+        {
+         "type": "paragraph",
+         "text": "Security Improvements: Technical and organizational controls shall be strengthened where necessary."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employee Awareness Training: Additional training may be conducted following significant incidents."
+        },
+        {
+         "type": "paragraph",
+         "text": "Policy & Procedure Updates: Relevant procedures may be updated based on investigation findings."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring & Evaluation"
+      },
+      {
+       "type": "paragraph",
+       "text": "Security Reviews: Periodic reviews of information security controls and access permissions."
+      },
+      {
+       "type": "paragraph",
+       "text": "Access Control Monitoring: Review user access rights and authorization levels."
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Trend Analysis: Monitor recurring incidents and emerging threats."
+      },
+      {
+       "type": "paragraph",
+       "text": "Internal Assessments: Conduct periodic information security assessments."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Directors",
+       "responsibilities": [
+        "Provide strategic oversight for information security matters.",
+        "Approve significant response measures and resource allocation.",
+        "Review major incidents and corrective actions."
+       ]
+      },
+      {
+       "role": "IT Service Provider / IT Responsible Person",
+       "responsibilities": [
+        "Lead technical investigations and containment activities.",
+        "Restore affected systems and implement corrective measures.",
+        "Monitor information security controls."
+       ]
+      },
+      {
+       "role": "Quality & Compliance Representative",
+       "responsibilities": [
+        "Coordinate incident documentation and compliance activities.",
+        "Support investigations and corrective action monitoring."
+       ]
+      },
+      {
+       "role": "Department Managers",
+       "responsibilities": [
+        "Ensure employees comply with information security requirements.",
+        "Escalate incidents promptly."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Protect confidential information.",
+        "Report suspected security incidents immediately.",
+        "Follow company information security requirements."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Third-Party Data Protection, Retention & Privacy Management Procedure",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 816,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the requirements and controls implemented by Prestige Promotion Verkaufsförderung & Werbeservice GmbH for the collection, processing, storage, retention, sharing, protection, and disposal of third-party information.\n\nThe purpose of this procedure is to ensure the responsible management of customer, supplier, contractor, service provider, and other stakeholder information while maintaining confidentiality, data integrity, privacy protection, regulatory compliance, and information security.\n\nThe procedure supports compliance with applicable data protection requirements, including the General Data Protection Regulation (GDPR), contractual obligations, customer requirements, and internal information security standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, consultants, temporary personnel, service providers, and third parties who collect, access, process, store, share, retain, or manage confidential or personal information on behalf of Prestige Promotion.\n\nThe procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Customer information\nSupplier information\nContractor information\nBusiness partner information\nPersonal information\nConfidential business records\nElectronic records\nPhysical records\nInformation systems and databases"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Third-Party Data Collection & Processing Principles",
+     "steps": [
+      {
+       "heading": "Lawful Collection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Lawful Collection: Information shall only be collected for legitimate business, contractual, regulatory, operational, or legal purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Data Minimization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Data Minimization: Only information necessary for the intended purpose shall be collected and processed."
+        }
+       ]
+      },
+      {
+       "heading": "Accuracy & Integrity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Accuracy & Integrity: Reasonable measures shall be implemented to maintain data accuracy and completeness."
+        }
+       ]
+      },
+      {
+       "heading": "Purpose Limitation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Purpose Limitation: Information shall only be used for authorized and disclosed purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Information Categories",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Information Type",
+          "Examples"
+         ],
+         "rows": [
+          [
+           "Customer Data",
+           "Contact details, orders, contracts"
+          ],
+          [
+           "Supplier Data",
+           "Supplier contacts, agreements"
+          ],
+          [
+           "Contractor Data",
+           "Service provider information"
+          ],
+          [
+           "Business Records",
+           "Commercial documentation"
+          ],
+          [
+           "Personal Information",
+           "Names, contact information, identifiers"
+          ],
+          [
+           "Confidential Information",
+           "Business-sensitive information"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Stakeholder Consent & Privacy Management",
+     "steps": [
+      {
+       "heading": "Consent & Transparency Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Privacy Information Notice: Customers, suppliers, contractors, and relevant stakeholders shall be informed regarding the collection, use, retention, processing, and protection of their information.\n\nTransparency Requirements: Where applicable, stakeholders shall be informed regarding:"
+        },
+        {
+         "type": "bullets",
+         "text": "Types of information collected\nPurpose of processing\nData retention periods\nSharing with authorized third parties\nApplicable legal requirements\nData protection rights"
+        },
+        {
+         "type": "paragraph",
+         "text": "Consent Management: Where consent is required under applicable regulations, appropriate consent shall be obtained and documented before processing personal information.\n\nData Subject Rights: Stakeholders may request access, correction, restriction, deletion, or other legally applicable rights concerning their personal information."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Information Provided",
+          "Purpose"
+         ],
+         "rows": [
+          [
+           "Data Collection Notice",
+           "Explain information collection"
+          ],
+          [
+           "Processing Purpose",
+           "Explain intended use"
+          ],
+          [
+           "Retention Information",
+           "Explain retention periods"
+          ],
+          [
+           "Third-Party Sharing Information",
+           "Explain authorized disclosures"
+          ],
+          [
+           "Rights Information",
+           "Inform stakeholders of applicable rights"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Protection of Third-Party Information",
+     "steps": [
+      {
+       "heading": "Access Control Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Need-to-Know Principle: Access to confidential information shall be restricted to personnel with legitimate business requirements.\n\nUser Authorization Controls: Access rights shall be assigned according to job responsibilities and operational needs.\n\nPassword & Authentication Controls: Information systems shall utilize password protection and appropriate authentication measures.\n\nAccess Reviews: Periodic reviews shall be conducted to verify the appropriateness of access permissions."
+        }
+       ]
+      },
+      {
+       "heading": "Physical Security Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Secure Document Storage: Confidential records shall be stored in secure cabinets, controlled-access areas, or designated storage locations.\n\nVisitor Controls: Visitors shall not access confidential information without authorization and supervision where required.\n\nControlled Disposal: Physical records shall be securely destroyed when retention requirements expire."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Security Controls",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Security Measure",
+          "Purpose"
+         ],
+         "rows": [
+          [
+           "Password Protection",
+           "Prevent unauthorized access"
+          ],
+          [
+           "User Access Controls",
+           "Restrict access permissions"
+          ],
+          [
+           "Secure Backups",
+           "Protect information availability"
+          ],
+          [
+           "Antivirus Protection",
+           "Reduce cybersecurity risks"
+          ],
+          [
+           "Network Security Controls",
+           "Protect electronic information"
+          ],
+          [
+           "Secure Disposal Procedures",
+           "Prevent unauthorized recovery of information"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records Retention & Information Lifecycle Management",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Retention Management Principles"
+      },
+      {
+       "type": "paragraph",
+       "text": "Retention Schedule: Information shall be retained only for periods necessary to satisfy legal, contractual, operational, customer, or regulatory requirements.\n\nPeriodic Review: Stored information shall be reviewed periodically to identify records eligible for disposal.\n\nSecure Disposal: Expired records shall be securely deleted, destroyed, or disposed of in accordance with approved procedures."
+      },
+      {
+       "type": "table",
+       "text": "Records Retention Schedule",
+       "columns": [
+        "Record Category",
+        "Minimum Retention Period*"
+       ],
+       "rows": [
+        [
+         "Customer Contracts & Agreements",
+         "10 Years"
+        ],
+        [
+         "Customer Orders & Transaction Records",
+         "10 Years"
+        ],
+        [
+         "Supplier Contracts & Agreements",
+         "10 Years"
+        ],
+        [
+         "Quality & Compliance Records",
+         "10 Years"
+        ],
+        [
+         "Complaint & Corrective Action Records",
+         "10 Years"
+        ],
+        [
+         "Training Records",
+         "Duration of Employment + 3 Years"
+        ],
+        [
+         "Visitor Records",
+         "2 Years"
+        ],
+        [
+         "IT Security Logs",
+         "1 Year"
+        ],
+        [
+         "Consent Records",
+         "Duration of Processing Activity + 3 Years"
+        ],
+        [
+         "Data Protection Requests",
+         "3 Years"
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "*Retention periods may be extended where required by applicable legal, contractual, customer, tax, pharmaceutical, or regulatory requirements.\n\nInformation Disposal Process\n\nPhysical Record Destruction: Paper records shall be shredded or securely destroyed.\n\nElectronic Data Deletion: Electronic records shall be securely deleted from storage systems where appropriate.\n\nDisposal Authorization: Disposal activities shall be performed only by authorized personnel."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring & Evaluation\n\nAccess Permission Reviews: Periodic verification of user access rights.\n\nData Protection Assessments: Periodic assessments of privacy and data protection controls.\n\nRetention Compliance Reviews: Monitoring compliance with retention schedules.\n\nInformation Security Monitoring: Review incidents relating to confidentiality and unauthorized access.\n\nInternal Audits: Periodic internal assessments of compliance with this SOP."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Directors",
+       "responsibilities": [
+        "Provide oversight of information governance and privacy compliance.",
+        "Review significant data protection risks and incidents."
+       ]
+      },
+      {
+       "role": "Quality & Compliance Representative",
+       "responsibilities": [
+        "Monitor compliance with retention and privacy requirements.",
+        "Coordinate assessments and corrective actions."
+       ]
+      },
+      {
+       "role": "IT Service Provider / IT Responsible Person",
+       "responsibilities": [
+        "Implement technical security controls.",
+        "Manage access controls and information security measures."
+       ]
+      },
+      {
+       "role": "Department Managers",
+       "responsibilities": [
+        "Ensure appropriate handling of confidential information.",
+        "Approve access requests where applicable."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Protect confidential information.",
+        "Follow retention and disposal requirements.",
+        "Report suspected privacy or security concerns."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}
