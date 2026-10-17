@@ -5,7 +5,9 @@
 //
 // Text metrics match Word "exact" line spacing: each line box is exactly 1em
 // (top-edge 0.8em, bottom-edge -0.2em) and the gap between baselines is
-// size x leading. Greedy line breaking matches Word's justification.
+// size x leading. Word draws unkerned text (the fonts only kern through GPOS),
+// breaks ragged text greedily and squeezes justified spaces, so kerning is off,
+// ragged text breaks "simple" and justified text "optimized" with room to shrink.
 
 #let m = json("/model.json")
 #let d = m.design
@@ -23,7 +25,10 @@
 #let body-font = d.fonts.body
 #let sz = d.sizes
 #let body-size = sz.body * 1pt
-#let pitch(size) = size * d.leading
+// Word stores exact line heights in twips (1/20 pt) and font sizes in half
+// points, so pitches and derived sizes are rounded the same way here.
+#let pitch(size) = calc.round(size / 1pt * d.leading * 20) / 20 * 1pt
+#let half(x) = calc.round(x * 2) / 2 * 1pt
 #let after = d.paragraphSpacing * 1pt
 #let cell-inset = (x: 5pt, y: 3.5pt)
 #let rule = 0.6pt
@@ -31,7 +36,7 @@
 #set document(title: m.title, author: m.company.name)
 #set text(font: body-font, size: body-size, fill: ink, lang: "en", hyphenate: false,
   top-edge: 0.8em, bottom-edge: -0.2em)
-#set par(justify: true, linebreaks: "simple", leading: pitch(body-size) - body-size,
+#set par(justify: true, linebreaks: auto, justification-limits: (spacing: (min: 75%, max: 150%), tracking: (min: 0em, max: 0em)), leading: pitch(body-size) - body-size,
   spacing: pitch(body-size) - body-size + after, first-line-indent: 0pt)
 #set list(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
 #set enum(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
@@ -211,10 +216,10 @@
   anchor(1, title, label-name)
   if d.sopOpener == "pillar-banner" or d.sopOpener == "title-banner" {
     table(columns: (1fr,), stroke: none, fill: if d.sopOpener == "title-banner" { primary-dark } else { primary }, inset: (x: 10pt, y: 8pt),
-      txt(font: head-font, size: sz.h1 * 1pt * 0.85, weight: "bold", fill: on-primary, title))
+      txt(font: head-font, size: half(sz.h1 * 0.85), weight: "bold", fill: on-primary, title))
   } else if d.sopOpener == "register-head" {
     table(columns: (5mm, 1fr), stroke: none, inset: (x: 6pt, y: 5pt),
-      table.cell(fill: primary, []), txt(font: head-font, size: sz.h1 * 1pt * 0.85, weight: "bold", fill: primary, title))
+      table.cell(fill: primary, []), txt(font: head-font, size: half(sz.h1 * 0.85), weight: "bold", fill: primary, title))
   } else {
     txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, title)
     v(-2pt)
@@ -228,22 +233,22 @@
 // Visible heading of a section inside an SOP.
 #let section-title(s, color) = {
   if d.sectionHeading == "numbered-rule" {
-    block(above: after * 2, below: after, breakable: false, {
+    block(above: after * 2, below: after, breakable: false, sticky: true, {
       txt(font: head-font, size: sz.h2 * 1pt, weight: "bold", fill: primary, section-number-label(s))
       v(-3pt)
       line(length: 100%, stroke: (paint: line-color, thickness: rule))
     })
   } else if d.sectionHeading == "pillar-bar" {
-    block(above: after * 2, below: after, breakable: false,
+    block(above: after * 2, below: after, breakable: false, sticky: true,
       table(columns: (1fr,), stroke: (left: (paint: color, thickness: 3pt), rest: none), inset: (left: 7pt, y: 2pt),
         caps(section-number-label(s), size: sz.h2 * 1pt, fill: color)))
   } else if d.sectionHeading == "number-chip" {
-    block(above: after * 2, below: after, breakable: false,
+    block(above: after * 2, below: after, breakable: false, sticky: true,
       table(columns: (8mm, 1fr), stroke: none, inset: (x: 5pt, y: 3pt), align: (center + horizon, left + horizon),
         table.cell(fill: primary, txt(weight: "bold", fill: on-primary, size: sz.small * 1pt + 1pt, s.number.replace(".0", ""))),
         txt(font: head-font, weight: "bold", fill: primary-dark, size: sz.h2 * 1pt, s.title)))
   } else if d.sectionHeading == "label-chip" {
-    block(above: after * 2, below: after, breakable: false,
+    block(above: after * 2, below: after, breakable: false, sticky: true,
       table(columns: (auto,), stroke: none, fill: soft, inset: (x: 7pt, y: 3pt),
         caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))
   }
@@ -298,7 +303,7 @@
 
 #let steps-blocks(steps) = {
   for st in steps {
-    block(above: after * 1.2, below: after * 0.6, breakable: false, {
+    block(above: after * 1.2, below: after * 0.6, breakable: false, sticky: true, {
       txt(weight: "bold", fill: primary-dark, st.number + "  " + st.heading)
       if st.responsible != "" { linebreak(); txt(size: sz.small * 1pt, fill: muted, "Responsible: " + st.responsible) }
     })
@@ -339,11 +344,18 @@
 
 #let render-section(s, color) = {
   if d.sectionHeading == "side-label" {
-    block(above: after * 1.6, below: after, table(
-      columns: (30mm, 1fr), stroke: (top: (paint: line-color, thickness: rule), rest: none), inset: (x: 0pt, top: 5pt, bottom: 2pt),
-      pad(right: 8pt, tight(sz.small * 1pt, par(justify: false, caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))),
-      section-body(s),
-    ))
+    // A rule, the label floating in the left column and the body padded beside
+    // it. Not a table row: a row would repeat its rule and inset on every page it
+    // breaks across, and Word only repeats header rows of top-level tables.
+    block(above: after * 1.6, below: after, {
+      block(spacing: 0pt, sticky: true, line(length: 100%, stroke: (paint: line-color, thickness: rule)))
+      v(5pt)
+      block(spacing: 0pt, {
+        place(top + left, box(width: 30mm - 8pt, tight(sz.small * 1pt, par(justify: false, caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))))
+        pad(left: 30mm, section-body(s))
+      })
+      v(2pt)
+    })
   } else {
     section-title(s, color)
     section-body(s)
@@ -367,7 +379,7 @@
     pagebreak(weak: true)
     anchor(1, ch.label, ch.anchor)
     table(columns: (1fr,), stroke: none, fill: color, inset: (x: 16pt, y: 18pt),
-      [#v(26mm) #caps("Chapter", fill: on-primary) \ #txt(font: head-font, size: sz.coverTitle * 1pt * 0.9, weight: "bold", fill: on-primary, ch.label) \ #v(4pt) #txt(fill: on-primary, ch.summary)])
+      [#v(26mm) #caps("Chapter", fill: on-primary) \ #txt(font: head-font, size: half(sz.coverTitle * 0.9), weight: "bold", fill: on-primary, ch.label) \ #v(4pt) #txt(fill: on-primary, ch.summary)])
     v(after * 2)
     for sop in ch.sops {
       grid(columns: (26mm, 1fr, auto), column-gutter: 6pt,
@@ -436,7 +448,7 @@
       // At a glance: three figures in a shaded band.
       table(columns: (1fr, 1fr, 1fr), stroke: none, fill: soft, inset: (x: 10pt, y: 9pt),
         ..((str(m.stats.sopCount), "Standard operating procedures"), (str(m.stats.departmentCount), "Departments covered"), (str(m.stats.siteCount), "Sites in scope")).map(((n, label)) =>
-          [#txt(font: head-font, size: sz.coverTitle * 1pt * 0.8, weight: "bold", fill: primary, n) \ #txt(size: sz.small * 1pt + 0.5pt, fill: muted, label)]))
+          [#txt(font: head-font, size: half(sz.coverTitle * 0.8), weight: "bold", fill: primary, n) \ #txt(size: sz.small * 1pt + 0.5pt, fill: muted, label)]))
       v(1fr)
       control-grid()
     })
@@ -447,7 +459,7 @@
     place(top + left, dy: 44mm, grid(columns: (w / 3, w / 3, w / 3),
       ..(("E", "Environmental"), ("S", "Social"), ("G", "Governance")).map(((k, label)) =>
         block(width: w / 3, height: band-h, fill: col(pal.pillars.at(k)), inset: (x: 8mm, y: 10mm), {
-          txt(font: head-font, size: sz.coverTitle * 1pt * 1.1, weight: "bold", fill: on-primary, str(count(k)))
+          txt(font: head-font, size: half(sz.coverTitle * 1.1), weight: "bold", fill: on-primary, str(count(k)))
           v(1fr)
           caps(label, fill: on-primary, size: sz.small * 1pt + 2pt)
           linebreak()
@@ -511,7 +523,8 @@
 #let contents-row(left-text, title, anchor-name, color: ink) = {
   let lead = if d.contents == "dotted-leaders" { 10mm } else { 30mm }
   let leader = if d.contents == "dotted-leaders" or d.contents == "pillar-index" {
-    box(width: 1fr, repeat(gap: 1.5pt, txt(fill: muted, ".")))
+    // Word's dot leader: periods back to back, on the baseline.
+    box(width: 1fr, baseline: 0.2em, repeat(txt(fill: muted, ".")))
   } else { h(1fr) }
   grid(columns: (lead, 1fr, 10mm), align: (left + bottom, left + bottom, right + bottom),
     txt(weight: "bold", fill: color, left-text),
