@@ -5,7 +5,9 @@
 //
 // Text metrics match Word "exact" line spacing: each line box is exactly 1em
 // (top-edge 0.8em, bottom-edge -0.2em) and the gap between baselines is
-// size x leading. Greedy line breaking matches Word's justification.
+// size x leading. Word draws unkerned text (the fonts only kern through GPOS),
+// breaks ragged text greedily and squeezes justified spaces, so kerning is off,
+// ragged text breaks "simple" and justified text "optimized" with room to shrink.
 
 #let m = json("/model.json")
 #let d = m.design
@@ -23,7 +25,10 @@
 #let body-font = d.fonts.body
 #let sz = d.sizes
 #let body-size = sz.body * 1pt
-#let pitch(size) = size * d.leading
+// Word stores exact line heights in twips (1/20 pt) and font sizes in half
+// points, so pitches and derived sizes are rounded the same way here.
+#let pitch(size) = calc.round(size / 1pt * d.leading * 20) / 20 * 1pt
+#let half(x) = calc.round(x * 2) / 2 * 1pt
 #let after = d.paragraphSpacing * 1pt
 #let cell-inset = (x: 5pt, y: 3.5pt)
 #let rule = 0.6pt
@@ -31,7 +36,7 @@
 #set document(title: m.title, author: m.company.name)
 #set text(font: body-font, size: body-size, fill: ink, lang: "en", hyphenate: false, kerning: false,
   top-edge: 0.8em, bottom-edge: -0.2em)
-#set par(justify: true, linebreaks: "optimized", justification-limits: (spacing: (min: 75%, max: 150%), tracking: (min: 0em, max: 0em)), leading: pitch(body-size) - body-size,
+#set par(justify: true, linebreaks: auto, justification-limits: (spacing: (min: 75%, max: 150%), tracking: (min: 0em, max: 0em)), leading: pitch(body-size) - body-size,
   spacing: pitch(body-size) - body-size + after, first-line-indent: 0pt)
 #set list(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
 #set enum(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
@@ -211,10 +216,10 @@
   anchor(1, title, label-name)
   if d.sopOpener == "pillar-banner" or d.sopOpener == "title-banner" {
     table(columns: (1fr,), stroke: none, fill: if d.sopOpener == "title-banner" { primary-dark } else { primary }, inset: (x: 10pt, y: 8pt),
-      txt(font: head-font, size: sz.h1 * 1pt * 0.85, weight: "bold", fill: on-primary, title))
+      txt(font: head-font, size: half(sz.h1 * 0.85), weight: "bold", fill: on-primary, title))
   } else if d.sopOpener == "register-head" {
     table(columns: (5mm, 1fr), stroke: none, inset: (x: 6pt, y: 5pt),
-      table.cell(fill: primary, []), txt(font: head-font, size: sz.h1 * 1pt * 0.85, weight: "bold", fill: primary, title))
+      table.cell(fill: primary, []), txt(font: head-font, size: half(sz.h1 * 0.85), weight: "bold", fill: primary, title))
   } else {
     txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, title)
     v(-2pt)
@@ -367,7 +372,7 @@
     pagebreak(weak: true)
     anchor(1, ch.label, ch.anchor)
     table(columns: (1fr,), stroke: none, fill: color, inset: (x: 16pt, y: 18pt),
-      [#v(26mm) #caps("Chapter", fill: on-primary) \ #txt(font: head-font, size: sz.coverTitle * 1pt * 0.9, weight: "bold", fill: on-primary, ch.label) \ #v(4pt) #txt(fill: on-primary, ch.summary)])
+      [#v(26mm) #caps("Chapter", fill: on-primary) \ #txt(font: head-font, size: half(sz.coverTitle * 0.9), weight: "bold", fill: on-primary, ch.label) \ #v(4pt) #txt(fill: on-primary, ch.summary)])
     v(after * 2)
     for sop in ch.sops {
       grid(columns: (26mm, 1fr, auto), column-gutter: 6pt,
@@ -436,7 +441,7 @@
       // At a glance: three figures in a shaded band.
       table(columns: (1fr, 1fr, 1fr), stroke: none, fill: soft, inset: (x: 10pt, y: 9pt),
         ..((str(m.stats.sopCount), "Standard operating procedures"), (str(m.stats.departmentCount), "Departments covered"), (str(m.stats.siteCount), "Sites in scope")).map(((n, label)) =>
-          [#txt(font: head-font, size: sz.coverTitle * 1pt * 0.8, weight: "bold", fill: primary, n) \ #txt(size: sz.small * 1pt + 0.5pt, fill: muted, label)]))
+          [#txt(font: head-font, size: half(sz.coverTitle * 0.8), weight: "bold", fill: primary, n) \ #txt(size: sz.small * 1pt + 0.5pt, fill: muted, label)]))
       v(1fr)
       control-grid()
     })
@@ -447,7 +452,7 @@
     place(top + left, dy: 44mm, grid(columns: (w / 3, w / 3, w / 3),
       ..(("E", "Environmental"), ("S", "Social"), ("G", "Governance")).map(((k, label)) =>
         block(width: w / 3, height: band-h, fill: col(pal.pillars.at(k)), inset: (x: 8mm, y: 10mm), {
-          txt(font: head-font, size: sz.coverTitle * 1pt * 1.1, weight: "bold", fill: on-primary, str(count(k)))
+          txt(font: head-font, size: half(sz.coverTitle * 1.1), weight: "bold", fill: on-primary, str(count(k)))
           v(1fr)
           caps(label, fill: on-primary, size: sz.small * 1pt + 2pt)
           linebreak()
