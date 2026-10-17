@@ -360,7 +360,9 @@ type ParItem = {
 
 type TableItem = {
   t: "table";
-  build: () => Table;
+  build: (extraIndent: number) => Table;
+  /** Added to the table indent (a flow shifted right, as beside a side label). */
+  extraIndent?: number;
   /** Word height minus Typst height at the top and bottom edge. */
   padTop: number;
   padBottom: number;
@@ -369,9 +371,24 @@ type TableItem = {
   /** Typst height (used for header/footer geometry and spacers). */
   height: number;
   bookmarkHost?: boolean;
+  /** A heading drawn as a table: keep it with what follows. */
+  keepNext?: boolean;
 };
 
-type RuleItem = { t: "rule"; color: string; thickness: number; left?: number; right?: number; above: number; below: number; keepNext?: boolean };
+type RuleItem = {
+  t: "rule";
+  color: string;
+  thickness: number;
+  left?: number;
+  right?: number;
+  above: number;
+  below: number;
+  keepNext?: boolean;
+  /** Sit this far above the Typst position (an anchor that must precede the next line's box). */
+  lift?: number;
+  /** Runs (a VML text box) carried by this hairline paragraph. */
+  anchor?: ParagraphChild[];
+};
 type VItem = { t: "v"; pt: number };
 /** A Typst block around items; `transparent` groups (lists) only bundle paragraphs. */
 type GroupItem = { t: "group"; items: FlowItem[]; above: number; below: number; keep?: boolean; transparent?: boolean };
@@ -449,13 +466,13 @@ const isPar = (atom: Atom) => atom.t === "par" && !atom.blockLike;
 
 function atomPadTop(atom: Atom) {
   if (atom.t === "par") return atom.box ? atom.box.padTop : 0.8 * atom.lead;
-  if (atom.t === "rule") return HAIR + atom.thickness / 2;
+  if (atom.t === "rule") return HAIR + atom.thickness / 2 + (atom.lift ?? 0);
   return atom.padTop;
 }
 
 function atomPadBottom(atom: Atom) {
   if (atom.t === "par") return atom.box ? atom.box.padBottom : 0.2 * atom.lead;
-  if (atom.t === "rule") return atom.thickness / 2;
+  if (atom.t === "rule") return atom.thickness / 2 - (atom.lift ?? 0);
   return atom.padBottom;
 }
 
@@ -488,8 +505,9 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
       // block the block's own above/below wins; two blocks take the larger.
       const prevBlock = closes.length > 0 || !isPar(prevAtom);
       const nextBlock = opens.length > 0 || !isPar(atom);
-      const below = closes.length ? closes[0] : prevAtom.below;
-      const above = opens.length ? opens[opens.length - 1] : atom.above;
+      // The sibling blocks at this boundary are the outermost groups closing and opening.
+      const below = closes.length ? closes[closes.length - 1] : prevAtom.below;
+      const above = opens.length ? opens[0] : atom.above;
       // Between two paragraphs Typst uses the spacing in effect for the second
       // (a list's item spacing applies before its first item).
       if (!prevBlock && !nextBlock) weak = (atom as ParItem).parSpacing;
@@ -544,12 +562,19 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
     const keepNext = entry.keep && index < placed.length - 1;
     if (entry.spacerBefore !== undefined) {
       const h = Math.max(HAIR, entry.spacerBefore);
-      children.push(spacer(h));
+      // A spacer after a heading must not break its keep-with-next chain.
+      const before = placed[index - 1];
+      const chained = Boolean(before && (before.keep || ("keepNext" in before.atom && before.atom.keepNext)));
+      // In body text Word drops a paragraph's space after at the foot of a page,
+      // as Typst drops spacing at a break; inside cells only line height can sit there.
+      children.push(extra.cell
+        ? new Paragraph({ keepNext: chained, spacing: { before: 0, after: 0, line: Math.max(1, tw(h)), lineRule: LineRuleType.EXACT }, children: [new TextRun({ text: "", size: 2 })] })
+        : new Paragraph({ keepNext: chained, spacing: { before: 0, after: tw(h - HAIR), line: 1, lineRule: LineRuleType.EXACT }, children: [new TextRun({ text: "", size: 2 })] }));
       height += h;
     }
     const atom = entry.atom;
     if (atom.t === "table") {
-      children.push(atom.build());
+      children.push(atom.build(atom.extraIndent ?? 0));
       height += atom.height + atom.padTop + atom.padBottom;
       return;
     }
@@ -559,7 +584,7 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
         indent: { left: tw(atom.left ?? 0), right: tw(atom.right ?? 0) },
         keepNext: keepNext || atom.keepNext,
         border: atom.thickness > 0 ? { bottom: { style: BorderStyle.SINGLE, size: Math.max(2, Math.round(atom.thickness * 8)), color: hex(atom.color), space: 0 } } : undefined,
-        children: [new TextRun({ text: "", size: 2 })],
+        children: [...(atom.anchor ?? []), new TextRun({ text: "", size: 2 })],
       }));
       height += entry.before + entry.after + HAIR + atom.thickness;
       return;
@@ -693,10 +718,15 @@ function table(ctx: Ctx, spec: TableSpec): TableItem {
     // Word gives every cell of a row the row's largest top and bottom margin, so
     // the row takes the smallest wanted margin and each top-aligned cell gets the
     // rest as spacing around its content.
-    const wanted = cells.map(({ ins, flow }) => ({
-      top: Math.max(0, ins.t - flow.padTop - (spec2.height !== undefined ? 0 : top) + (rowIndex === 0 ? shift : 0)),
-      bottom: Math.max(0, ins.b - flow.padBottom - (spec2.height !== undefined ? 0 : bottom) + (rowIndex === resolvedRows.length - 1 ? tail : 0)),
-    }));
+    const wanted = cells.map(({ ins, flow }) => {
+      let wantTop = ins.t - flow.padTop - (spec2.height !== undefined ? 0 : top) + (rowIndex === 0 ? shift : 0);
+      let wantBottom = ins.b - flow.padBottom - (spec2.height !== undefined ? 0 : bottom) + (rowIndex === resolvedRows.length - 1 ? tail : 0);
+      // With a large leading the room above Word's first line can exceed the inset;
+      // the other margin gives it back so the row keeps its Typst height.
+      if (wantTop < 0) { wantBottom += wantTop; wantTop = 0; }
+      if (wantBottom < 0) { wantTop = Math.max(0, wantTop + wantBottom); wantBottom = 0; }
+      return { top: wantTop, bottom: wantBottom };
+    });
     const rowMarginTop = Math.min(...wanted.map((margin) => margin.top));
     const rowMarginBottom = Math.min(...wanted.map((margin) => margin.bottom));
     return new TableRow({
@@ -722,12 +752,12 @@ function table(ctx: Ctx, spec: TableSpec): TableItem {
   });
   return {
     t: "table",
-    build: () => new Table({
+    build: (extraIndent: number) => new Table({
       rows,
       width: { size: tw(total), type: WidthType.DXA },
       columnWidths: spec.widths.map(tw),
       layout: TableLayoutType.FIXED,
-      indent: spec.indent ? { size: tw(spec.indent), type: WidthType.DXA } : undefined,
+      indent: (spec.indent ?? 0) + extraIndent ? { size: tw((spec.indent ?? 0) + extraIndent), type: WidthType.DXA } : undefined,
       borders: { top: NO_BORDER, bottom: NO_BORDER, left: NO_BORDER, right: NO_BORDER, insideHorizontal: NO_BORDER, insideVertical: NO_BORDER },
     }),
     padTop: shift,
@@ -903,25 +933,25 @@ function sectionTitle(ctx: Ctx, section: RenderSection, color: string, width: nu
     ])];
   }
   if (heading === "pillar-bar") {
-    return [group([box(ctx, width, [par(ctx, [caps(ctx, sectionLabel(section), { size: ctx.sz.h2, color })], { keepNext: true, outline: 2 })], {
+    return [group([{ ...box(ctx, width, [par(ctx, [caps(ctx, sectionLabel(section), { size: ctx.sz.h2, color })], { keepNext: true, outline: 2 })], {
       inset: { l: 7, r: 5, t: 2, b: 2 },
       borders: { left: { color, size: 3 } },
-    })])];
+    }), keepNext: true }])];
   }
   if (heading === "number-chip") {
     const chip = 8 * MM;
-    return [group([table(ctx, {
+    return [group([{ ...table(ctx, {
       widths: [chip, width - chip],
       rows: [{ cells: [
-        { fill: ctx.pal.primary, vAlign: "center", inset: inset(5, 3), items: [par(ctx, [txt(ctx, section.number.replace(".0", ""), { bold: true, color: ctx.pal.onPrimary, size: ctx.sz.small + 1 })], { align: "center" })] },
+        { fill: ctx.pal.primary, vAlign: "center", inset: inset(5, 3), items: [par(ctx, [txt(ctx, section.number.replace(".0", ""), { bold: true, color: ctx.pal.onPrimary, size: ctx.sz.small + 1 })], { align: "center", keepNext: true })] },
         { vAlign: "center", inset: inset(5, 3), items: [par(ctx, [txt(ctx, section.title, { font: "heading", bold: true, color: ctx.pal.primaryDark, size: ctx.sz.h2 })], { keepNext: true, outline: 2 })] },
       ] }],
-    })])];
+    }), keepNext: true }])];
   }
   // label-chip: a shaded chip as wide as its label.
   const label = caps(ctx, sectionLabel(section), { size: ctx.sz.small + 0.5, color: ctx.pal.primary });
   const chipWidth = Math.min(width, runsWidth(ctx, [label]) + 14 + 1);
-  return [group([box(ctx, chipWidth, [par(ctx, [label], { keepNext: true, outline: 2 })], { fill: ctx.pal.soft, inset: inset(7, 3) })])];
+  return [group([{ ...box(ctx, chipWidth, [par(ctx, [label], { keepNext: true, outline: 2 })], { fill: ctx.pal.soft, inset: inset(7, 3) }), keepNext: true }])];
 }
 
 // ---------------------------------------------------------------- SOP parts
@@ -1094,21 +1124,63 @@ function sectionBody(ctx: Ctx, section: RenderSection, width: number): FlowItem[
   return out.flatMap((item) => (item.t === "group" && item.above === 0 && item.below === 0 ? item.items : [item]));
 }
 
+/** Moves a flow right, as the body beside a side label. */
+function shiftItems(items: FlowItem[], dx: number): FlowItem[] {
+  return items.map((item): FlowItem => {
+    if (item.t === "par") return { ...item, indentLeft: (item.indentLeft ?? 0) + dx, tabs: item.tabs?.map((tab) => ({ ...tab, pos: tab.pos + dx })) };
+    if (item.t === "rule") return { ...item, left: (item.left ?? 0) + dx };
+    if (item.t === "table") return { ...item, extraIndent: (item.extraIndent ?? 0) + dx };
+    if (item.t === "group") return { ...item, items: shiftItems(item.items, dx) };
+    return item;
+  });
+}
+
+/** A floating, borderless VML text box: Word lays nothing out around it. */
+function labelTextBox(ctx: Ctx, runs: RunSpec[], lead: number, width: number, offsetY: number, id: string): ParagraphChild {
+  const size = lineSize(ctx, runs);
+  const lines = estimateLines(ctx, runs, width);
+  const lineHeight = size + lead;
+  const text = runs.map((spec) => {
+    if (!("text" in spec)) return "";
+    const value = spec.upper ? spec.text.toUpperCase() : spec.text;
+    return `<w:r>${runPropertiesXml(ctx, spec)}<w:t xml:space="preserve">${escapeXml(value)}</w:t></w:r>`;
+  }).join("");
+  const style = [
+    "position:absolute", "margin-left:0", `margin-top:${offsetY.toFixed(2)}pt`, `width:${width.toFixed(2)}pt`, `height:${(lines * lineHeight + 2).toFixed(2)}pt`,
+    "z-index:10", "mso-position-horizontal:absolute", "mso-position-horizontal-relative:margin",
+    "mso-position-vertical:absolute", "mso-position-vertical-relative:text", "mso-wrap-style:square",
+  ].join(";");
+  return importRun(`<w:r><w:pict><v:shape id="${id}" type="#_x0000_t202" filled="f" stroked="f" style="${style}"><v:textbox inset="0,0,0,0"><w:txbxContent><w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="${tw(lineHeight)}" w:lineRule="exact"/></w:pPr>${text}</w:p></w:txbxContent></v:textbox><w10:wrap type="none"/></v:shape></w:pict></w:r>`);
+}
+
+let labelCounter = 0;
+
 function renderSection(ctx: Ctx, section: RenderSection, color: string): FlowItem[] {
   if (ctx.d.sectionHeading === "side-label") {
+    // Typst: a two-column row (label, body) under a rule. In Word the body is
+    // ordinary indented flow, so its tables keep repeating their header rows
+    // across pages, and the label floats beside it in a text box.
     const labelWidth = 30 * MM;
     const bodyWidth = ctx.W - labelWidth;
-    const line = { color: ctx.pal.line, size: RULE };
-    const item = table(ctx, {
-      widths: [labelWidth, bodyWidth],
+    const body = shiftItems(sectionBody(ctx, section, bodyWidth), labelWidth);
+    const label = caps(ctx, sectionLabel(section), { size: ctx.sz.small + 0.5, color: ctx.pal.primary });
+    const labelLead = leadOf(ctx, ctx.sz.small);
+    // The anchor sits where Word's first body line box starts, 0.8 x leading above the
+    // Typst content top; the label's own box starts 0.8 x its leading above that top.
+    const lift = topShift(ctx);
+    const offsetY = lift + HAIR - 0.8 * labelLead;
+    return [{
+      t: "group",
       above: ctx.after * 1.6,
       below: ctx.after,
-      rows: [{ cells: [
-        { inset: { l: 0, r: 8, t: 5, b: 2 }, borders: { top: line }, items: [par(ctx, [caps(ctx, sectionLabel(section), { size: ctx.sz.small + 0.5, color: ctx.pal.primary })], { ...tightOptions(ctx, ctx.sz.small), outline: 2 })] },
-        { inset: { l: 0, r: 0, t: 5, b: 2 }, borders: { top: line }, items: sectionBody(ctx, section, bodyWidth) },
-      ] }],
-    });
-    return [item];
+      items: [
+        rule(ctx.pal.line, RULE, { above: 0, below: 0, keepNext: true }),
+        v(5),
+        { ...rule("FFFFFF", 0, { above: 0, below: 0, keepNext: true, lift }), anchor: [labelTextBox(ctx, [label], labelLead, labelWidth - 8, offsetY, `side-label-${++labelCounter}`)] },
+        { t: "group", above: 0, below: 0, items: body },
+        v(2),
+      ],
+    }];
   }
   return [...sectionTitle(ctx, section, color, ctx.W), ...sectionBody(ctx, section, ctx.W)];
 }

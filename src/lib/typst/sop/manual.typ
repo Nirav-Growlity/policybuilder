@@ -344,11 +344,18 @@
 
 #let render-section(s, color) = {
   if d.sectionHeading == "side-label" {
-    block(above: after * 1.6, below: after, table(
-      columns: (30mm, 1fr), stroke: (top: (paint: line-color, thickness: rule), rest: none), inset: (x: 0pt, top: 5pt, bottom: 2pt),
-      pad(right: 8pt, tight(sz.small * 1pt, par(justify: false, caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))),
-      section-body(s),
-    ))
+    // A rule, the label floating in the left column and the body padded beside
+    // it. Not a table row: a row would repeat its rule and inset on every page it
+    // breaks across, and Word only repeats header rows of top-level tables.
+    block(above: after * 1.6, below: after, {
+      block(spacing: 0pt, line(length: 100%, stroke: (paint: line-color, thickness: rule)))
+      v(5pt)
+      block(spacing: 0pt, {
+        place(top + left, box(width: 30mm - 8pt, tight(sz.small * 1pt, par(justify: false, caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))))
+        pad(left: 30mm, section-body(s))
+      })
+      v(2pt)
+    })
   } else {
     section-title(s, color)
     section-body(s)
