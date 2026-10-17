@@ -1,0 +1,60 @@
+/* SOP template sheet: cover and first SOP page on a soft board, like the policy contact sheet. */
+.sheet {
+  position: relative;
+  display: flex;
+  aspect-ratio: 16 / 8.7;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  border: 1px solid rgb(0 0 0 / 5%);
+  border-radius: 16px;
+  background: #eceae4;
+  padding: 10px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 75%);
+}
+.sheetCompact { gap: 8px; border-radius: 12px; padding: 8px; }
+.sheetPage {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 210 / 297;
+  flex: none;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 3px 10px rgb(25 32 28 / 12%), 0 1px 2px rgb(25 32 28 / 8%), 0 0 0 1px rgb(0 0 0 / 5%);
+}
+.sheetPage img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; pointer-events: none; user-select: none; }
+
+.templateGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+
+/* Accent swatches */
+.accent { display: flex; width: 100%; flex-direction: column; gap: 10px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch {
+  position: relative;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 180ms cubic-bezier(.22, 1, .36, 1);
+}
+.swatch > span { width: 28px; height: 28px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgb(0 0 0 / 14%); }
+.swatch:hover:not(:disabled) { transform: scale(1.06); }
+.swatch[data-selected] { box-shadow: 0 0 0 2px var(--pc-panel), 0 0 0 4px var(--pc-brand); }
+.swatch:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 3px; }
+.swatchCheck { position: absolute; color: #fff; filter: drop-shadow(0 1px 1px rgb(0 0 0 / 35%)); }
+.accentHint { margin: 0; color: var(--pc-muted); font-size: 12.5px; }
+
+/* Covers */
+.coverPhoto { position: relative; width: min(100%, 220px); aspect-ratio: 210 / 297; overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 10px; background: #fff; }
+.coverPhoto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.coverRemove { position: absolute; top: 8px; right: 8px; display: grid; width: 30px; height: 30px; place-items: center; border: 0; border-radius: 8px; background: rgb(15 23 42 / 70%); color: #fff; cursor: pointer; }
+.coverRemove:hover { background: var(--pc-error); }
+.soon { display: flex; align-items: flex-start; gap: 8px; margin: 0; border-radius: 10px; background: var(--pc-inset); padding: 12px 14px; color: var(--pc-muted); font-size: 13px; line-height: 1.5; }
+.soon svg { flex: none; margin-top: 2px; color: var(--pc-selection-text); }
+.error { margin: 0; color: var(--pc-error); font-size: 12.5px; }

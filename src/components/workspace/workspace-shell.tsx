@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
 import "@fontsource-variable/instrument-sans/wdth.css";
-import { Building2, ChevronDown, ClipboardList, FileText, LogOut, Menu, Settings2, Shield, Users, X } from "lucide-react";
+import { BookOpen, Building2, ChevronDown, ClipboardList, FileText, LogOut, Menu, Settings2, Shield, Users, X } from "lucide-react";
 import { signOut } from "@/lib/auth-client";
 import type { PolicyCraftAccess, PolicyCraftRole } from "@/lib/policycraft-access-types";
 import type { PolicyCraftManagerTaskCollection } from "@/lib/policycraft-task-types";
@@ -34,14 +34,19 @@ const NAVIGATION: Record<PolicyCraftRole, { href: string; label: string; icon: t
     { href: "/admin", label: "Managers", icon: Users },
     { href: "/admin/organizations", label: "Organizations", icon: Building2 },
     { href: "/admin/policies", label: "Policies", icon: FileText },
+    { href: "/documents", label: "Documents", icon: BookOpen },
     { href: "/admin/tasks", label: "Tasks", icon: ClipboardList },
     { href: "/admin/administration", label: "Administration", icon: Settings2 },
   ],
   manager: [
     { href: "/manager", label: "Organizations & policies", icon: FileText },
+    { href: "/documents", label: "Documents", icon: BookOpen },
     { href: "/manager/tasks", label: "Tasks", icon: ClipboardList },
   ],
-  user: [{ href: "/drafts", label: "Policies", icon: FileText }],
+  user: [
+    { href: "/drafts", label: "Policies", icon: FileText },
+    { href: "/documents", label: "Documents", icon: BookOpen },
+  ],
 };
 
 function BrandLink({ href, onClick }: { href: string; onClick?: () => void }) {

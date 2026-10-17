@@ -6,15 +6,27 @@ import { useBuilder } from "@/lib/store";
 import { getIndustryOptions, getSectorOptions, getSubsectorOptions, withCompanyClassification } from "@/lib/company-classification";
 import { Panel, Badge } from "@/components/ui/panel";
 import { Combobox, Field, Input } from "@/components/ui/input";
-import { getCompanySites } from "@/lib/types";
+import { getCompanySites, type Company } from "@/lib/types";
 import { extractLogoPalette } from "@/lib/logo-palette";
 import { coverAssetIdFromReference } from "@/lib/cover-composition";
 import { policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { Building2, MapPin, Plus, Trash2, Upload } from "lucide-react";
 
-export function CompanyInfoForm() {
+type CompanyInfoFormProps = {
+  /** Edits this company instead of the policy builder's (used by the Documents builders). */
+  company?: Company;
+  onCompanyChange?: (updater: (company: Company) => Company | undefined) => void;
+  /** Noun used in the site coverage hint; defaults to "policy". */
+  documentLabel?: string;
+};
+
+export function CompanyInfoForm({ company, onCompanyChange, documentLabel = "policy" }: CompanyInfoFormProps = {}) {
   const { policy, updatePolicy } = useBuilder();
-  const co = policy.company;
+  const co = company ?? policy.company;
+  const updateCompany = React.useCallback((updater: (current: Company) => Company | undefined) => {
+    if (onCompanyChange) onCompanyChange(updater);
+    else updatePolicy((p) => { const next = updater(p.company); return next ? { company: next } : undefined; });
+  }, [onCompanyChange, updatePolicy]);
   const workspaceScope = usePolicyCraftScope((state) => state.scope);
   const logoSource = React.useMemo(() => {
     const reference = co.companyLogo;
@@ -48,14 +60,14 @@ export function CompanyInfoForm() {
         return;
       }
       setLogoSampling("ready");
-      updatePolicy((p) => p.company.companyLogo === logo ? { company: { ...p.company, logoPalette } } : undefined);
+      updateCompany((c) => c.companyLogo === logo ? { ...c, logoPalette } : undefined);
     }).catch(() => {
       if (active) setLogoSampling("unsupported");
     });
     return () => {
       active = false;
     };
-  }, [co.companyLogo, co.logoPalette, logoSampleAttempt, logoSource, updatePolicy]);
+  }, [co.companyLogo, co.logoPalette, logoSampleAttempt, logoSource, updateCompany]);
 
   return (
     <Panel
@@ -69,7 +81,7 @@ export function CompanyInfoForm() {
         <Field label="Company name" required>
           <Input
             value={co.name || ""}
-            onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, name: e.target.value } }))}
+            onChange={(e) => updateCompany((c) => ({ ...c, name: e.target.value }))}
             placeholder="e.g. Acme Specialty Chemicals Pvt. Ltd."
           />
         </Field>
@@ -79,7 +91,7 @@ export function CompanyInfoForm() {
             id="company-sector"
             ariaLabel="Sector"
             value={co.industry || ""}
-            onValueChange={(industry) => updatePolicy((p) => ({ company: withCompanyClassification(p.company, "industry", industry) }))}
+            onValueChange={(industry) => updateCompany((c) => withCompanyClassification(c, "industry", industry))}
             placeholder="Select or type a sector"
             options={getSectorOptions()}
           />
@@ -90,7 +102,7 @@ export function CompanyInfoForm() {
             id="company-subsector"
             ariaLabel="Subsector"
             value={co.subCategory || ""}
-            onValueChange={(subCategory) => updatePolicy((p) => ({ company: withCompanyClassification(p.company, "subCategory", subCategory) }))}
+            onValueChange={(subCategory) => updateCompany((c) => withCompanyClassification(c, "subCategory", subCategory))}
             placeholder={co.industry ? "Select or type a subsector" : "Select a sector first"}
             options={getSubsectorOptions(co.industry)}
             disabled={!co.industry}
@@ -102,7 +114,7 @@ export function CompanyInfoForm() {
             id="company-industry-detail"
             ariaLabel="Industry"
             value={co.industryDetail || ""}
-            onValueChange={(industryDetail) => updatePolicy((p) => ({ company: withCompanyClassification(p.company, "industryDetail", industryDetail) }))}
+            onValueChange={(industryDetail) => updateCompany((c) => withCompanyClassification(c, "industryDetail", industryDetail))}
             placeholder={co.subCategory ? "Select or type an industry" : "Select a subsector first"}
             options={getIndustryOptions(co.industry, co.subCategory || "")}
             disabled={!co.industry || !co.subCategory}
@@ -111,7 +123,7 @@ export function CompanyInfoForm() {
         <Field label="Country">
           <Input
             value={co.country || ""}
-            onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, country: e.target.value } }))}
+            onChange={(e) => updateCompany((c) => ({ ...c, country: e.target.value }))}
             placeholder="e.g. India"
           />
         </Field>
@@ -119,7 +131,7 @@ export function CompanyInfoForm() {
           <Input
             type="url"
             value={co.websiteLink || ""}
-            onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, websiteLink: e.target.value } }))}
+            onChange={(e) => updateCompany((c) => ({ ...c, websiteLink: e.target.value }))}
             placeholder="https://www.company.com"
           />
         </Field>
@@ -129,7 +141,7 @@ export function CompanyInfoForm() {
               <button
                 key={period}
                 type="button"
-                onClick={() => updatePolicy((p) => ({ company: { ...p.company, reportingPeriod: period } }))}
+                onClick={() => updateCompany((c) => ({ ...c, reportingPeriod: period }))}
                 className={`flex-1 text-[12px] font-semibold transition-colors cursor-pointer ${
                   (co.reportingPeriod || "FY") === period
                     ? "bg-[var(--color-forest)] text-[var(--pc-primary-text)]"
@@ -162,7 +174,7 @@ export function CompanyInfoForm() {
                     // Store the logo immediately; color extraction is best-effort
                     // and must never make the upload appear to fail.
                     sampledLogoRef.current = "";
-                    updatePolicy((p) => ({ company: { ...p.company, companyLogo, logoPalette: undefined } }));
+                    updateCompany((c) => ({ ...c, companyLogo, logoPalette: undefined }));
                     setLogoSampling("sampling");
                   };
                   reader.onerror = () => setLogoSampling("unsupported");
@@ -171,7 +183,7 @@ export function CompanyInfoForm() {
                 }}
               />
             </label>
-            {co.companyLogo ? <button type="button" onClick={() => updatePolicy((p) => ({ company: { ...p.company, companyLogo: "", logoPalette: undefined } }))} className="text-[11px] text-red-600 cursor-pointer">Remove</button> : null}
+            {co.companyLogo ? <button type="button" onClick={() => updateCompany((c) => ({ ...c, companyLogo: "", logoPalette: undefined }))} className="text-[11px] text-red-600 cursor-pointer">Remove</button> : null}
             </div>
             {co.companyLogo && logoSampling === "sampling" ? <p className="text-[11px] text-[var(--color-muted)]">Reading logo colors…</p> : null}
             {co.companyLogo && logoSampling === "ready" ? <p className="text-[11px] text-[var(--color-forest)]">Logo colors detected and ready for the document theme.</p> : null}
@@ -192,7 +204,7 @@ export function CompanyInfoForm() {
               Site Coverage / Operating Sites
             </h4>
             <p className="text-[12px] text-[var(--color-muted)] mt-0.5">
-              Add all units, facilities, R&D centers, or operating sites covered by this policy.
+              Add all units, facilities, R&D centers, or operating sites covered by this {documentLabel}.
             </p>
           </div>
           <button
@@ -203,13 +215,7 @@ export function CompanyInfoForm() {
                 ...currentSites,
                 { location: "", address: "", primaryFunction: "" },
               ];
-              updatePolicy((p) => ({
-                company: {
-                  ...p.company,
-                  sites: updated,
-                  site: updated[0]?.address || "",
-                },
-              }));
+              updateCompany((c) => ({ ...c, sites: updated, site: updated[0]?.address || "" }));
             }}
             className="inline-flex items-center gap-1.5 h-8 px-3.5 rounded-lg bg-[var(--color-forest)] text-[var(--pc-primary-text)] text-[12px] font-medium hover:bg-[var(--color-forest-hover)] transition-colors shadow-sm self-start sm:self-auto cursor-pointer"
           >
@@ -248,13 +254,7 @@ export function CompanyInfoForm() {
                         const updated = sitesList.map((s, i) =>
                           i === idx ? { ...s, location: e.target.value } : s
                         );
-                        updatePolicy((p) => ({
-                          company: {
-                            ...p.company,
-                            sites: updated,
-                            site: updated[0]?.address || "",
-                          },
-                        }));
+                        updateCompany((c) => ({ ...c, sites: updated, site: updated[0]?.address || "" }));
                       }}
                       placeholder="e.g. Sachin Unit 1"
                       className="bg-[var(--pc-panel)] text-[12.5px]"
@@ -271,13 +271,7 @@ export function CompanyInfoForm() {
                         const updated = sitesList.map((s, i) =>
                           i === idx ? { ...s, address: e.target.value } : s
                         );
-                        updatePolicy((p) => ({
-                          company: {
-                            ...p.company,
-                            sites: updated,
-                            site: updated[0]?.address || "",
-                          },
-                        }));
+                        updateCompany((c) => ({ ...c, sites: updated, site: updated[0]?.address || "" }));
                       }}
                       placeholder="e.g. Plot No. 8109, GIDC Sachin, Surat, Gujarat"
                       className="bg-[var(--pc-panel)] text-[12.5px]"
@@ -294,13 +288,7 @@ export function CompanyInfoForm() {
                         const updated = sitesList.map((s, i) =>
                           i === idx ? { ...s, primaryFunction: e.target.value } : s
                         );
-                        updatePolicy((p) => ({
-                          company: {
-                            ...p.company,
-                            sites: updated,
-                            site: updated[0]?.address || "",
-                          },
-                        }));
+                        updateCompany((c) => ({ ...c, sites: updated, site: updated[0]?.address || "" }));
                       }}
                       placeholder="e.g. Manufacturing Site"
                       className="bg-[var(--pc-panel)] text-[12.5px]"
@@ -312,13 +300,7 @@ export function CompanyInfoForm() {
                       aria-label={`Delete operating site ${idx + 1}`}
                       onClick={() => {
                         const updated = sitesList.filter((_, i) => i !== idx);
-                        updatePolicy((p) => ({
-                          company: {
-                            ...p.company,
-                            sites: updated,
-                            site: updated[0]?.address || "",
-                          },
-                        }));
+                        updateCompany((c) => ({ ...c, sites: updated, site: updated[0]?.address || "" }));
                       }}
                       className="p-1.5 rounded-lg text-[var(--color-muted)] hover:text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200 transition-colors cursor-pointer"
                       title="Delete site"
