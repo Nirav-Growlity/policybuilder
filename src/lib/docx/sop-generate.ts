@@ -476,7 +476,7 @@ function atomPadBottom(atom: Atom) {
   return atom.padBottom;
 }
 
-type Placed = { atom: Atom; before: number; after: number; keep: boolean; spacerBefore?: number };
+type Placed = { atom: Atom; before: number; after: number; keep: boolean; spacerBefore?: number; spacerKeep?: boolean; spacerStrong?: boolean };
 type Resolved = { children: Array<Paragraph | Table>; padTop: number; padBottom: number; height: number };
 
 /**
@@ -530,7 +530,9 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
       if (atom.t !== "table") current.before = Math.max(0, gap);
       else if (gap > 0) current.spacerBefore = gap;
       startAbsorbed = Math.min(strong, atomPadTop(atom));
+      current.spacerStrong = true;
     }
+
     placed.push(current);
     previous = current;
     strong = 0;
@@ -564,7 +566,7 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
       const h = Math.max(HAIR, entry.spacerBefore);
       // A spacer after a heading must not break its keep-with-next chain.
       const before = placed[index - 1];
-      const chained = Boolean(before && (before.keep || ("keepNext" in before.atom && before.atom.keepNext)));
+      const chained = Boolean(entry.spacerKeep || (before && (before.keep || ("keepNext" in before.atom && before.atom.keepNext))));
       // In body text Word drops a paragraph's space after at the foot of a page,
       // as Typst drops spacing at a break; inside cells only line height can sit there.
       children.push(extra.cell
@@ -623,7 +625,7 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
   const lastAtom = placed[placed.length - 1]?.atom;
   return {
     children,
-    padTop: firstAtom && !placed[0].spacerBefore ? Math.max(0, atomPadTop(firstAtom) - startAbsorbed) : 0,
+    padTop: firstAtom && !placed[0].spacerStrong ? Math.max(0, atomPadTop(firstAtom) - startAbsorbed) : 0,
     padBottom: lastAtom ? Math.max(0, atomPadBottom(lastAtom) - endAbsorbed) : 0,
     height,
   };
@@ -672,8 +674,17 @@ function wordBorder(border: Border | null | undefined) {
  * cell margins take off the room Word adds around exact lines and the
  * thickness of horizontal borders.
  */
-function table(ctx: Ctx, spec: TableSpec): TableItem {
-  const total = spec.widths.reduce((sum, w) => sum + w, 0);
+function table(ctx: Ctx, input: TableSpec): TableItem {
+  const total = input.widths.reduce((sum, w) => sum + w, 0);
+  // Body text starts 0.8 x leading above its Typst box (see topShift); a table that
+  // starts a page needs the same room above its first row. Cell shading covers the
+  // margins, so a shaded first row gets it from an unshaded row of that height,
+  // repeated with the header on every page.
+  const shift = input.rows[0]?.height === undefined && !input.noShift ? topShift(ctx) : 0;
+  const shiftOutside = shift > 0 && input.rows[0].cells.some((cell) => cell.fill);
+  const spec: TableSpec = shiftOutside
+    ? { ...input, rows: [{ height: shift, exact: true, header: input.rows[0].header, cells: [{ items: [], span: input.widths.length, inset: inset(0, 0) }] }, ...input.rows] }
+    : input;
   // Columns still covered by a row span from a row above.
   const covered = spec.widths.map(() => 0);
   const resolvedRows = spec.rows.map((row) => {
@@ -697,15 +708,12 @@ function table(ctx: Ctx, spec: TableSpec): TableItem {
     return cells;
   });
   // Edge thickness between rows (Word stacks horizontal borders into the row height).
+  // Word adds a row's top border to its height; a bottom border takes space only
+  // at the foot of the table (between rows it is drawn over the next row's margin).
   const edge = (rowIndex: number) => {
-    const above = rowIndex > 0 ? resolvedRows[rowIndex - 1] : [];
-    const below = rowIndex < resolvedRows.length ? resolvedRows[rowIndex] : [];
-    const sizes = [...above.map((entry) => entry.cell.borders?.bottom?.size ?? 0), ...below.map((entry) => entry.cell.borders?.top?.size ?? 0)];
-    return Math.max(0, ...sizes);
+    if (rowIndex >= resolvedRows.length) return Math.max(0, ...resolvedRows[resolvedRows.length - 1].map((entry) => entry.cell.borders?.bottom?.size ?? 0));
+    return Math.max(0, ...resolvedRows[rowIndex].map((entry) => entry.cell.borders?.top?.size ?? 0));
   };
-  // Body text starts 0.8 x leading above its Typst box (see topShift); a table that
-  // starts a page gets the same room inside its first row so both line up.
-  const shift = spec.rows[0]?.height === undefined && !spec.noShift ? topShift(ctx) : 0;
   // Likewise a paragraph's box ends 0.2 x leading below Typst's; the last row matches it.
   const tail = spec.rows[spec.rows.length - 1]?.height === undefined && !spec.noShift ? 0.2 * ctx.lead : 0;
   let typstHeight = 0;
@@ -719,7 +727,7 @@ function table(ctx: Ctx, spec: TableSpec): TableItem {
     // the row takes the smallest wanted margin and each top-aligned cell gets the
     // rest as spacing around its content.
     const wanted = cells.map(({ ins, flow }) => {
-      let wantTop = ins.t - flow.padTop - (spec2.height !== undefined ? 0 : top) + (rowIndex === 0 ? shift : 0);
+      let wantTop = ins.t - flow.padTop - (spec2.height !== undefined ? 0 : top) + (rowIndex === 0 && !shiftOutside ? shift : 0);
       let wantBottom = ins.b - flow.padBottom - (spec2.height !== undefined ? 0 : bottom) + (rowIndex === resolvedRows.length - 1 ? tail : 0);
       // With a large leading the room above Word's first line can exceed the inset;
       // the other margin gives it back so the row keeps its Typst height.
@@ -764,7 +772,7 @@ function table(ctx: Ctx, spec: TableSpec): TableItem {
     padBottom: tail,
     above: spec.above ?? ctx.after,
     below: spec.below ?? ctx.after,
-    height: typstHeight,
+    height: typstHeight - (shiftOutside ? shift : 0),
   };
 }
 
@@ -1201,8 +1209,6 @@ function contentsRow(ctx: Ctx, lead: string, title: string, anchor: string, colo
     { tab: true },
     { pageRef: anchor, color: pageColor },
   ];
-  // Leader rows: the dot box sits on the baseline and reaches 1em above it.
-  const lineHeight = leader ? size * 1.25 : size + ctx.lead;
   const item = par(ctx, runs, {
     blockLike: true,
     indentLeft: leadWidth,
@@ -1211,9 +1217,6 @@ function contentsRow(ctx: Ctx, lead: string, title: string, anchor: string, colo
       ...(leader ? [{ type: "right" as const, pos: ctx.W - 10 * MM, leader: true }] : []),
       { type: "right", pos: ctx.W },
     ],
-    box: leader
-      ? { lineHeight, padTop: 0.8 * lineHeight - size, padBottom: 0.2 * lineHeight - 0.2 * size, typstHeight: size * 1.2 }
-      : { lineHeight, padTop: 0.8 * ctx.lead, padBottom: 0.2 * ctx.lead, typstHeight: size },
   });
   return [item, v(variant === "register-columns" ? 1 : 3)];
 }
@@ -1368,7 +1371,7 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
     return [table(ctx, {
       widths,
       rows: [
-        { height: rowOne, cells: [
+        { height: rowOne, exact: true, cells: [
           { rowSpan: 2, vAlign: "center", inset: ins, borders, items: [{ ...par(ctx, [nameRun], tight), align: "center" }] },
           { rowSpan: 2, vAlign: "center", inset: ins, borders, items: [titleLines] },
           { vAlign: "center", inset: ins, borders, items: [smallText(`Doc No: ${m.control.docNo}`)] },
@@ -1578,18 +1581,22 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     const pillars = [["E", "Environmental"], ["S", "Social"], ["G", "Governance"]] as const;
     const logo = par(ctx, [logoOrName(ctx, 12 * MM)], { blockLike: true, indentLeft: padX });
     const logoHeight = m.company.logo && ctx.images.get(m.company.logo) ? 12 * MM : ctx.sz.h3;
-    const halfBand = bandHeight / 2;
+    // The count sits at the top of each band and the label at the foot (Typst v(1fr)).
+    const numberSize = half(ctx.sz.coverTitle * 1.1);
+    const labelBox = half(ctx.sz.small + 2) + ctx.lead + half(ctx.sz.small + 0.5);
+    const between = bandHeight - 20 * MM - numberSize - labelBox - (ctx.lead + ctx.after);
     const bands = table(ctx, {
       widths: [w / 3, w / 3, w / 3],
       above: 0,
       below: 0,
-      rows: [
-        { height: halfBand, exact: true, cells: pillars.map(([key]) => ({ fill: ctx.pal.pillars[key], inset: { l: 8 * MM, r: 8 * MM, t: 10 * MM, b: 0 }, items: [par(ctx, [txt(ctx, String(pillarCount(key)), { font: "heading", size: ctx.sz.coverTitle * 1.1, bold: true, color: ctx.pal.onPrimary })])] })) },
-        { height: bandHeight - halfBand, exact: true, cells: pillars.map(([key, label]) => ({ fill: ctx.pal.pillars[key], vAlign: "bottom" as const, inset: { l: 8 * MM, r: 8 * MM, t: 0, b: 10 * MM }, items: [stack(ctx, [
+      rows: [{ height: bandHeight, exact: true, cells: pillars.map(([key, label]) => ({ fill: ctx.pal.pillars[key], inset: { l: 8 * MM, r: 8 * MM, t: 10 * MM, b: 10 * MM }, items: [
+        par(ctx, [txt(ctx, String(pillarCount(key)), { font: "heading", size: numberSize, bold: true, color: ctx.pal.onPrimary })]),
+        v(between),
+        stack(ctx, [
           [caps(ctx, label, { color: ctx.pal.onPrimary, size: ctx.sz.small + 2 })],
           [txt(ctx, pillarCount(key) === 1 ? "procedure" : "procedures", { size: ctx.sz.small + 0.5, color: ctx.pal.onPrimary })],
-        ])] })) },
-      ],
+        ]),
+      ] })) }],
     });
     const indent = { indentLeft: padX, indentRight: padX };
     return {
@@ -1882,7 +1889,7 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
         page: {
           size: pageSize,
           margin: {
-            top: tw(cover.margins.top),
+            top: tw(cover.margins.top ? cover.margins.top - topShift(ctx) : 0),
             bottom: tw(cover.margins.bottom),
             left: tw(cover.margins.left),
             right: tw(cover.margins.right),

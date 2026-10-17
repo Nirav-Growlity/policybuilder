@@ -34,7 +34,7 @@
 #let rule = 0.6pt
 
 #set document(title: m.title, author: m.company.name)
-#set text(font: body-font, size: body-size, fill: ink, lang: "en", hyphenate: false, kerning: false,
+#set text(font: body-font, size: body-size, fill: ink, lang: "en", hyphenate: false,
   top-edge: 0.8em, bottom-edge: -0.2em)
 #set par(justify: true, linebreaks: auto, justification-limits: (spacing: (min: 75%, max: 150%), tracking: (min: 0em, max: 0em)), leading: pitch(body-size) - body-size,
   spacing: pitch(body-size) - body-size + after, first-line-indent: 0pt)
@@ -348,7 +348,7 @@
     // it. Not a table row: a row would repeat its rule and inset on every page it
     // breaks across, and Word only repeats header rows of top-level tables.
     block(above: after * 1.6, below: after, {
-      block(spacing: 0pt, line(length: 100%, stroke: (paint: line-color, thickness: rule)))
+      block(spacing: 0pt, sticky: true, line(length: 100%, stroke: (paint: line-color, thickness: rule)))
       v(5pt)
       block(spacing: 0pt, {
         place(top + left, box(width: 30mm - 8pt, tight(sz.small * 1pt, par(justify: false, caps(section-number-label(s), size: sz.small * 1pt + 0.5pt, fill: primary)))))
@@ -523,7 +523,8 @@
 #let contents-row(left-text, title, anchor-name, color: ink) = {
   let lead = if d.contents == "dotted-leaders" { 10mm } else { 30mm }
   let leader = if d.contents == "dotted-leaders" or d.contents == "pillar-index" {
-    box(width: 1fr, repeat(gap: 1.5pt, txt(fill: muted, ".")))
+    // Word's dot leader: periods back to back, on the baseline.
+    box(width: 1fr, baseline: 0.2em, repeat(txt(fill: muted, ".")))
   } else { h(1fr) }
   grid(columns: (lead, 1fr, 10mm), align: (left + bottom, left + bottom, right + bottom),
     txt(weight: "bold", fill: color, left-text),
