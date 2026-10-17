@@ -126,7 +126,9 @@ export function NewManualWizard() {
   // Each step opens at the top, like a new page.
   React.useLayoutEffect(() => { window.scrollTo({ top: 0, behavior: "auto" }); }, [step]);
 
-  const industry = company.industryDetail || company.subCategory || company.industry;
+  // Some organization profiles store ISIC keys ("201_basic_chemicals"); show them as words.
+  const industry = (company.industryDetail || company.subCategory || company.industry || "")
+    .replace(/^\d+[_\s-]*/, "").replace(/_/g, " ").trim();
   // "Recommended for finishing of textiles" reads as a sentence; acronyms keep their capitals.
   const industryLabel = industry ? (/^[A-Z][a-z]/.test(industry) ? industry[0].toLowerCase() + industry.slice(1) : industry) : "your company";
   const recommendationKey = `${company.industry}|${company.subCategory}|${company.industryDetail}`;

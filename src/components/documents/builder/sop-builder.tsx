@@ -73,6 +73,9 @@ function SopBuilderWorkspace({ manualId, requestedOrgId }: { manualId: string; r
   // Load the manual and bind the organization scope (logo and cover URLs read it).
   React.useEffect(() => {
     let active = true;
+    // A fresh saver per mount: cleanup cancels the previous one for good, and
+    // React mounts effects twice in development.
+    autosave.current = createDraftAutosave<SavePayload>();
     const store = useSopBuilder.getState();
     store.reset();
     async function load() {
