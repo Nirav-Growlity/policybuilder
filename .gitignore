@@ -20,3 +20,6 @@ brag-output*/
 
 # Local preview server config
 .claude/launch.json
+
+# Policy PDF engine parity renders (regenerate with src/scripts/policy-typst-parity.ts)
+/.scratch/*/parity/

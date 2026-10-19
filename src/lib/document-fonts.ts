@@ -27,7 +27,7 @@ Object.assign(FACES, LIBRARY_FONT_FACES);
 // Sample documents and the font picker use Office-native families. Serve
 // them in preview/PDF from metric-compatible stand-ins so lines break where
 // Word breaks them, while DOCX keeps the familiar family names.
-for (const [alias, source] of Object.entries({
+export const DOCUMENT_FONT_ALIASES: Readonly<Record<string, string>> = {
   Aptos: "Public Sans",
   "Aptos Display": "Public Sans",
   Arial: "Arimo",
@@ -38,7 +38,8 @@ for (const [alias, source] of Object.entries({
   "Bell MT": "Cormorant Garamond",
   "Book Antiqua": "Libre Caslon Text",
   "Times New Roman": "Tinos",
-})) {
+};
+for (const [alias, source] of Object.entries(DOCUMENT_FONT_ALIASES)) {
   const css = FACES[source];
   if (css) FACES[alias] = css.replaceAll(source, alias);
 }
