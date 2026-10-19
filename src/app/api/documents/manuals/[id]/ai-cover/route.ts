@@ -6,7 +6,6 @@ import {
   AI_COVER_IMAGE_MODEL,
   AI_COVER_IMAGE_SIZE,
   buildAICoverDesignPrompt,
-  buildAICoverImagePrompt,
   buildAICoverLayoutPrompt,
   fallbackAICoverLayout,
   normalizeAICoverDesign,
@@ -14,7 +13,7 @@ import {
   type AICoverDesign,
   type AICoverLayoutSuggestion,
 } from "@/lib/ai/cover";
-import { buildSopCoverArtworkContext, createSopCoverComposition, fallbackSopCoverDesign, sopCoverLibraryName } from "@/lib/ai/sop-cover";
+import { buildSopCoverArtworkContext, buildSopCoverImagePrompt, createSopCoverComposition, fallbackSopCoverDesign, sopCoverLibraryName } from "@/lib/ai/sop-cover";
 import { createCoverAsset, createCoverTemplate } from "@/lib/cover-repository";
 import { getManual } from "@/lib/manual-repository";
 import { MAX_MANUAL_JSON_BYTES, resolveManualAuth } from "@/lib/manual-request";
@@ -118,7 +117,7 @@ export async function POST(request: Request, context: Context) {
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
         model: AI_COVER_IMAGE_MODEL,
-        prompt: buildAICoverImagePrompt(artworkContext),
+        prompt: buildSopCoverImagePrompt(artworkContext),
         n: 1,
         size: AI_COVER_IMAGE_SIZE,
         quality: "high",

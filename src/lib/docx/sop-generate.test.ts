@@ -76,7 +76,11 @@ test("contents page numbers come from the Typst PDF outline", async () => {
   const compiled = compileSopManual(compiler, template, model, assets, workspace);
   const pages = await sopPagesFromPdf(compiled.pdf, model);
   assert.equal(pages.total, compiled.pageCount);
-  for (const { anchor } of sopManualAnchors(model)) assert.ok(pages.anchors[anchor] > 0, `page for ${anchor}`);
+  for (const { anchor } of sopManualAnchors(model)) {
+    assert.ok(pages.anchors[anchor] > 0, `page for ${anchor}`);
+    // The export route reads the same pages straight from the Typst compile.
+    assert.equal(compiled.anchorPages[anchor], pages.anchors[anchor], `queried page for ${anchor}`);
+  }
   const sops = model.chapters.flatMap((chapter) => chapter.sops);
   assert.ok(sops.every((sop, index) => index === 0 || pages.anchors[sop.anchor] > pages.anchors[sops[index - 1].anchor]));
 

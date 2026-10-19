@@ -37,16 +37,15 @@ export function paletteFromPrimary(base: SopPalette, primary: string, accent?: s
 }
 
 export function resolveSopDesign(options: SopDesignOptions): ResolvedSopDesign {
-  const design = getSopDesign(options.templateId);
-  const pair = getSopFontPair(options.fontPair, design.fontPair);
-  let palette = design.palette;
+  const { fontPair: defaultPair, palette: basePalette, ...rest } = getSopDesign(options.templateId);
+  const pair = getSopFontPair(options.fontPair, defaultPair);
+  let palette = basePalette;
   if (options.accent === "brand") {
     const logo = normalizeLogoPalette(options.logoPalette);
     if (logo) palette = paletteFromPrimary(palette, logo.primary, logo.accent);
   } else if (options.accent && HEX.test(options.accent)) {
     palette = paletteFromPrimary(palette, options.accent.toUpperCase());
   }
-  const { fontPair: _fontPair, palette: _palette, ...rest } = design;
   return {
     ...rest,
     palette,

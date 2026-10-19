@@ -615,3 +615,5 @@
 
 // Read back by compile.ts so lists can show the page count without parsing the PDF.
 #context [#metadata(counter(page).final().first()) <sop-page-count>]
+// The physical page of every labelled heading, for the Word contents page.
+#context [#metadata(query(heading).filter(h => h.has("label")).map(h => (str(h.label), h.location().page()))) <sop-anchor-pages>]

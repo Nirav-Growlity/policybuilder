@@ -2,6 +2,7 @@ import sharp from "sharp";
 import { getCoverAsset } from "../cover-repository";
 import { coverAssetIdFromReference } from "../cover-composition";
 import { renderSopManual, type CompiledManual, type ManualAsset } from "../typst/engine";
+import { toCoverBand } from "./cover-band";
 import { coverArtSvg } from "./design/cover-art";
 import { getSopDesign } from "./design/templates";
 import { buildSopRenderModel, type SopRenderOptions } from "./render-model";
@@ -62,22 +63,18 @@ export async function prepareSopRender(manual: SopManual, orgId: number, options
     assets.push({ path: `assets/logo.${image.ext}`, content: image.content });
   }
 
-  let coverImagePath: string | null = null;
   const previewOnly = Boolean(options.onlySopIds);
-  if (!previewOnly) {
-    const reference = manual.cover.variant === "upload"
-      ? manual.cover.imageUrl
-      : manual.cover.variant === "ai" ? manual.cover.composition?.background.assetId : undefined;
-    const cover = await loadImage(orgId, reference).catch(() => null);
-    if (cover) {
-      const image = await toTypstImage(cover, 2000);
-      coverImagePath = `/assets/cover.${image.ext}`;
-      assets.push({ path: `assets/cover.${image.ext}`, content: image.content });
-    }
-  }
+  const reference = previewOnly ? undefined
+    : manual.cover.variant === "upload" ? manual.cover.imageUrl
+    : manual.cover.variant === "ai" ? manual.cover.composition?.background.assetId : undefined;
+  const cover = await loadImage(orgId, reference).catch(() => null);
 
-  const model = buildSopRenderModel(manual, { ...options, logoPath, coverImagePath });
-  if (!previewOnly && !coverImagePath && getSopDesign(manual.theme).cover === "image-banner") {
+  const model = buildSopRenderModel(manual, { ...options, logoPath });
+  if (cover) {
+    const image = await toCoverBand(cover, model.page, model.design.palette.soft);
+    model.cover.image = `/assets/cover.${image.ext}`;
+    assets.push({ path: `assets/cover.${image.ext}`, content: image.content });
+  } else if (!previewOnly && getSopDesign(manual.theme).cover === "image-banner") {
     model.cover.image = "/assets/cover-art.png";
     assets.push({ path: "assets/cover-art.png", content: await templateArt(model) });
   }

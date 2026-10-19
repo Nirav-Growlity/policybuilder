@@ -52,6 +52,7 @@ import {
 } from "docx";
 import { PDFArray, PDFDict, PDFDocument, PDFHexString, PDFName, PDFRef, PDFString } from "pdf-lib";
 import type { ManualAsset } from "../typst/compile";
+import { COVER_BAND } from "../sop/cover-band";
 import type { RenderBlock, RenderCell, RenderChapter, RenderSection, RenderSop, RenderStep, SopRenderModel } from "../sop/render-types";
 import { embedDocumentFontStyles, embeddedDocumentFonts } from "./document-fonts";
 
@@ -1199,7 +1200,6 @@ function contentsRow(ctx: Ctx, lead: string, title: string, anchor: string, colo
   const variant = ctx.d.contents;
   const leadWidth = variant === "dotted-leaders" ? 10 * MM : 30 * MM;
   const leader = variant === "dotted-leaders" || variant === "pillar-index";
-  const size = ctx.sz.body;
   const pageColor = variant === "dotted-leaders" ? ctx.pal.ink : ctx.pal.muted;
   const runs: RunSpec[] = [
     ...(lead ? [txt(ctx, lead, { bold: true, color })] : []),
@@ -1516,7 +1516,7 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
   const coverImage = m.cover.image ? ctx.images.get(m.cover.image) : undefined;
   const heading = (text: string, color: string, size = ctx.sz.coverTitle) => par(ctx, [txt(ctx, text, { font: "heading", size, bold: true, color })]);
   if (m.cover.image || d.cover === "image-banner") {
-    const imageHeight = h * 0.58;
+    const imageHeight = h * COVER_BAND;
     const pictures = [coverImage
       ? { image: await coverCrop(coverImage, w, imageHeight), x: 0, y: 0, width: w, height: imageHeight }
       : { image: await solidPng(ctx.pal.primary), x: 0, y: 0, width: w, height: imageHeight }];
@@ -1955,7 +1955,20 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     },
     sections,
   });
-  return embedDocumentFontStyles(await finishXml((await Packer.toBuffer(doc)) as Buffer), families);
+  return embedDocumentFontStyles(await finishXml(await unpackedDocx(doc)), families);
+}
+
+type DocxCompiler = { compile(file: Document, prettify: undefined, overrides: never[]): JSZip };
+
+/**
+ * The document's parts before they are zipped. Packer's own compiler skips a
+ * compress-then-inflate round trip (about a tenth of a second on a manual);
+ * if a docx upgrade hides it, the packed file is opened instead.
+ */
+async function unpackedDocx(doc: Document): Promise<JSZip> {
+  const compiler = (Packer as unknown as { compiler?: DocxCompiler }).compiler;
+  if (typeof compiler?.compile === "function") return compiler.compile(doc, undefined, []);
+  return JSZip.loadAsync(await Packer.toBuffer(doc));
 }
 
 /**
@@ -1963,10 +1976,9 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
  * Word only does when asked, through the Word 2010 run property set once in
  * the document defaults.
  */
-async function finishXml(buffer: Buffer) {
-  const zip = await JSZip.loadAsync(buffer);
+async function finishXml(zip: JSZip) {
   const file = zip.file("word/styles.xml");
-  if (!file) return buffer;
+  if (!file) return zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" });
   let styles = await file.async("string");
   if (!styles.includes('xmlns:w14="')) styles = styles.replace("<w:styles ", '<w:styles xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" ');
   styles = styles.replace(/(<w:rPrDefault><w:rPr>[\s\S]*?)(<\/w:rPr>)/, '$1<w14:ligatures w14:val="standard"/>$2');

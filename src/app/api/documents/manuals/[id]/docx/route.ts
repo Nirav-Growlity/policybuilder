@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { generateSopDocx, sopPagesFromPdf } from "@/lib/docx/sop-generate";
+import { generateSopDocx, type SopDocxOptions } from "@/lib/docx/sop-generate";
 import { getManual } from "@/lib/manual-repository";
 import { resolveManualAuth } from "@/lib/manual-request";
 import { prepareSopRender } from "@/lib/sop/render-service";
@@ -29,9 +29,10 @@ export async function GET(request: Request, context: Context) {
   if (!parsed.success) return NextResponse.json({ error: "This manual could not be read." }, { status: 422 });
   const { model, assets } = await prepareSopRender(parsed.data as SopManual, orgId);
   // The PDF layout (usually cached from the PDF route) gives the contents its page numbers.
-  let pages: Awaited<ReturnType<typeof sopPagesFromPdf>> | undefined;
+  let pages: SopDocxOptions["pages"];
   try {
-    pages = await sopPagesFromPdf(renderSopManual(model, assets).pdf, model);
+    const compiled = renderSopManual(model, assets);
+    pages = { anchors: compiled.anchorPages, total: compiled.pageCount };
   } catch (error) {
     if (error instanceof TypstCompileError) console.error("SOP manual layout failed", JSON.stringify(error.diagnostics).slice(0, 2000));
     else console.error("SOP manual page lookup failed", error);

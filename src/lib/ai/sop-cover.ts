@@ -77,9 +77,16 @@ export function buildSopCoverArtworkContext(manual: SopManual, instruction = "")
       paper: design.palette.paper,
     },
     ...(instruction ? { userArtDirection: text(instruction, 400) } : {}),
-    // The PDF templates crop the upper part of the artwork into a wide banner.
-    composition: "Keep the main motif in the upper half so it survives a wide crop.",
   });
+}
+
+/**
+ * The image prompt for SOP covers. Unlike policy covers, the manual sets its
+ * title on a solid band of its own and shows the artwork as a wide banner, so
+ * the artwork must be detailed edge to edge with no space left for text.
+ */
+export function buildSopCoverImagePrompt(artworkContext: string): string {
+  return `Create opaque, full-bleed decorative artwork for the cover of an SOP manual. The cover crops a wide banner from the middle of this portrait canvas and sets the title and company on a solid colour band of its own, so do not leave any blank, white, empty or low-detail region for text: fill the whole canvas edge to edge with colour, texture and detail, with the main subject centred vertically. Use the supplied sector, industry, topics, pillar emphasis, template look and palette to create one coherent visual direction; prioritise the most specific industry and never default to generic blue. Generate only decorative motifs, shapes, gradients, organic forms, architecture, equipment or environmental forms. Do not create visible text, pseudo-text, logos, watermarks, signage, labels, document details, borders, frames, panels or other document-like objects.\n\nSOP manual design brief: ${artworkContext}`;
 }
 
 export function fallbackSopCoverDesign(manual: SopManual): AICoverDesign {

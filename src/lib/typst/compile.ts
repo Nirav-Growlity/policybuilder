@@ -5,7 +5,8 @@ import type { SopRenderModel } from "../sop/render-types";
 /** A file the template reads (logo, cover image), mapped into the virtual workspace. */
 export type ManualAsset = { path: string; content: Buffer };
 
-export type CompiledManual = { pdf: Buffer; pageCount: number; svg?: string };
+/** `anchorPages` maps each heading label (render-model anchor) to its physical page. */
+export type CompiledManual = { pdf: Buffer; pageCount: number; anchorPages: Record<string, number>; svg?: string };
 
 export class TypstCompileError extends Error {
   constructor(readonly diagnostics: unknown) {
@@ -35,9 +36,11 @@ export function compileSopManual(
   const document = result.result!;
   const pdf = compiler.pdf(document);
   const pages = compiler.query(document, { selector: "<sop-page-count>", field: "value" }) as number[] | undefined;
+  const anchors = compiler.query(document, { selector: "<sop-anchor-pages>", field: "value" }) as Array<Array<[string, number]>> | undefined;
   return {
     pdf,
     pageCount: pages?.[0] ?? countPdfPages(pdf),
+    anchorPages: Object.fromEntries(anchors?.[0] ?? []),
     ...(options.svg ? { svg: compiler.svg(document) } : {}),
   };
 }
