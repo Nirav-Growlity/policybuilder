@@ -3,7 +3,7 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
-import { Plus, Search, Trash2, Undo2, X } from "lucide-react";
+import { AlertTriangle, BookOpen, ClipboardSignature, ListChecks, Plus, Search, Trash2, Undo2, X } from "lucide-react";
 import { Checkmark } from "@/components/builder/steps/authoring-ui";
 import { CompanyInfoForm } from "@/components/builder/company-info-form";
 import { Modal } from "@/components/ui/modal";
@@ -94,10 +94,16 @@ export function AddSopModal({ open, onClose, onAdd }: { open: boolean; onClose: 
   );
 }
 
-/** Company and manual control, the builder's equivalent of the policy "Company details" dialog. */
+/**
+ * Company and manual control, the builder's equivalent of the policy "Company details" dialog.
+ * Like the policy, it first says what editing does not change, then opens the form.
+ */
 export function ManualDetailsModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const manual = useSopBuilder((state) => state.manual);
   const setManual = useSopBuilder((state) => state.setManual);
+  const [confirmed, setConfirmed] = React.useState(false);
+  const [wasOpen, setWasOpen] = React.useState(open);
+  if (wasOpen !== open) { setWasOpen(open); if (open) setConfirmed(false); }
   const onCompanyChange = React.useCallback((updater: (company: Company) => Company | undefined) => {
     setManual((current) => {
       const company = updater(current.company);
@@ -107,16 +113,31 @@ export function ManualDetailsModal({ open, onClose }: { open: boolean; onClose: 
     });
   }, [setManual]);
   if (!manual) return null;
+  if (!confirmed) {
+    return (
+      <Modal
+        open={open}
+        onClose={onClose}
+        icon={<AlertTriangle size={18} aria-hidden="true" />}
+        title="Before you change company details"
+        description="Editing the company or document control does not rewrite SOPs that are already written."
+        width={540}
+        footer={<><Button variant="ghost" size="md" onClick={onClose}>Cancel</Button><Button variant="primary" size="md" onClick={() => setConfirmed(true)}>Continue to edit</Button></>}
+      >
+        <p className={styles.reviewLead}>Afterwards, check these still match the company:</p>
+        <ul className={styles.reviewList}>
+          <li><BookOpen size={15} aria-hidden="true" /><span><strong>Front matter</strong><span>Introduction, objective, sites and values</span></span></li>
+          <li><ListChecks size={15} aria-hidden="true" /><span><strong>Each SOP</strong><span>Scope, responsibilities and site references</span></span></li>
+          <li><ClipboardSignature size={15} aria-hidden="true" /><span><strong>Closing and approval</strong><span>Approvers, revision history and sign-off</span></span></li>
+        </ul>
+      </Modal>
+    );
+  }
   return (
-    <Modal open={open} onClose={onClose} title="Company and manual details" description="Changes save automatically. SOP text that mentions the company is not rewritten." width={980}>
-      <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-1" data-lenis-prevent="">
-        <div className="pc-builder-authoring flex flex-col gap-5">
-          <CompanyInfoForm company={manual.company} onCompanyChange={onCompanyChange} documentLabel="manual" />
-          <ManualDetailsPanel control={manual.control} onChange={(patch) => setManual((current) => ({ ...current, control: { ...current.control, ...patch } }))} showErrors />
-        </div>
-      </div>
-      <div className="mt-5 flex justify-end border-t border-[var(--color-line)] pt-4">
-        <Button variant="primary" size="md" onClick={onClose}>Done</Button>
+    <Modal open={open} onClose={onClose} title="Company and manual details" description="Changes save automatically. Review the SOPs after editing." width={980} footer={<Button variant="primary" size="md" onClick={onClose}>Done</Button>}>
+      <div className="pc-builder-authoring flex flex-col gap-5">
+        <CompanyInfoForm company={manual.company} onCompanyChange={onCompanyChange} documentLabel="manual" />
+        <ManualDetailsPanel control={manual.control} onChange={(patch) => setManual((current) => ({ ...current, control: { ...current.control, ...patch } }))} showErrors />
       </div>
     </Modal>
   );

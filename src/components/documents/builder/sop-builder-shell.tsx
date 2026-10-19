@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useSopBuilder } from "@/lib/sop/store";
 import { manualProgress } from "../manual-helpers";
 import { useSopBuilderActions, type BuilderMode } from "./builder-context";
-import { ManualRail, ManualRailMini } from "./manual-rail";
+import { ManualRail, ManualRailMini, ManualSummary } from "./manual-rail";
 import { ProgressPill } from "./progress-pill";
 import styles from "./builder.module.css";
 
@@ -115,11 +115,7 @@ export function SopBuilderShell({ mode, saveStatus, heading, children, preview, 
               <button type="button" onClick={toggleSidebar} title="Collapse sidebar (Ctrl+\)" aria-label="Collapse sidebar" className={clsx(shell.railButton, shell.wideOnly)}><PanelLeftClose size={16} aria-hidden="true" /></button>
               <button type="button" onClick={() => setWorkflowOpen(false)} aria-label="Close outline" className={clsx(shell.railButton, shell.narrowOnly)}><X size={16} aria-hidden="true" /></button>
             </div>
-            <div className={shell.policyMeta}><span className={shell.policyIcon}><ListChecks size={15} aria-hidden="true" /></span><span className="min-w-0"><span className={shell.metaEyebrow}>SOP manual</span><span className={shell.metaLabel}>{manual.company.name || title}</span></span></div>
-            <div className={shell.progress} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent} aria-valuetext={`${progress.written} of ${progress.total} SOPs written`} aria-label="Writing progress">
-              <div className={shell.progressLabels}><span>{progress.written} / {progress.total} written</span><span>{percent}%</span></div>
-              <div className={shell.progressTrack}><div className={shell.progressBar} style={{ width: `${percent}%` }} /></div>
-            </div>
+            <ManualSummary title={manual.company.name || title || "SOP manual"} />
             <ManualRail onAddSop={onAddSop} onDeleteSop={onDeleteSop} />
           </> : <>
             <div className={shell.collapsedBrand}><Link href="/" className={shell.brandMarkLink} aria-label="PolicyCraft home"><span className={shell.brandMark}><Leaf size={16} aria-hidden="true" /></span></Link></div>

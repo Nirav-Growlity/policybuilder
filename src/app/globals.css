@@ -420,6 +420,8 @@ html[data-pc-shell] div.pc-ui:has(> #workspace-main) { background: var(--pc-page
 .pc-modal-close { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; min-width: 32px; margin: -4px; border-radius: 8px; color: var(--pc-muted); cursor: pointer; }
 .pc-modal-close:hover { background: var(--pc-inset); color: var(--pc-text); }
 .pc-modal-body { padding: 20px 24px 24px; }
+.pc-modal-footer { display: flex; flex: none; justify-content: flex-end; gap: 8px; border-top: 1px solid var(--pc-divider); background: color-mix(in srgb, var(--pc-inset) 55%, var(--pc-panel)); padding: 14px 24px; }
+.pc-modal-icon { display: grid; width: 40px; height: 40px; flex: none; place-items: center; border: 1px solid color-mix(in srgb, var(--pc-warning) 30%, transparent); border-radius: 12px; background: var(--pc-warning-surface); color: var(--pc-warning); }
 /* Canvas descendants keep their actual coordinate plane during dialog entrance. */
 .pc-modal-panel:has(canvas), .pc-modal-panel:has([data-cover-editor]), .pc-modal-panel:has([data-pdf-page]), .pc-modal-panel:has([data-page-frame]) { transform: none !important; }
 

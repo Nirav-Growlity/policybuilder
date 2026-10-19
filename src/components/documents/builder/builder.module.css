@@ -2,18 +2,63 @@
    and the sheets from the write-mode steps (authoring.module.css). */
 
 /* ── Outline rail ─────────────────────────────────────── */
-.railGroup { margin-top: 12px; }
-.railGroupTitle { font-family: var(--pc-font); display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 0 0 4px; padding: 0 8px; color: var(--pc-text); font-size: 12.5px; font-weight: 650; }
-.railGroupCount { color: var(--pc-muted); font-size: 11.5px; font-weight: 500; font-variant-numeric: tabular-nums; }
-.railGroup > ul, .railClosing { grid-template-columns: minmax(0, 1fr); }
+/* Summary: the company, then how far the writing has got. */
+.railSummary { flex: none; display: grid; gap: 14px; border-bottom: 1px solid var(--pc-divider); padding: 14px 14px 16px; }
+.railIdentity { display: flex; min-width: 0; align-items: center; gap: 10px; }
+.railLogo { display: grid; width: 34px; height: 34px; flex: none; place-items: center; overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 9px; background: var(--pc-inset); color: var(--pc-text); font-size: 12px; font-weight: 650; letter-spacing: .02em; }
+.railLogo[data-logo] { background: #fff; padding: 3px; }
+.railLogo img { width: 100%; height: 100%; object-fit: contain; }
+.railSummaryTitle { display: block; overflow: hidden; color: var(--pc-text); font-size: 14px; font-weight: 600; line-height: 1.3; letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
+.railSummaryMeta { display: block; margin-top: 1px; color: var(--pc-muted); font-size: 12px; line-height: 1.4; }
+.railProgress { display: grid; gap: 7px; }
+.railProgressHead { display: flex; justify-content: space-between; gap: 8px; color: var(--pc-muted); font-size: 12px; line-height: 1; font-variant-numeric: tabular-nums; }
+.railProgressHead > span[data-tone="error"] { color: var(--pc-error); }
+.railProgressTrack { height: 4px; overflow: hidden; border-radius: 999px; background: var(--pc-inset); }
+.railProgressTrack > span { display: block; height: 100%; border-radius: inherit; background: var(--pc-primary); transition: width 400ms cubic-bezier(.2, .8, .2, 1); }
+.railProgressTrack > span[data-tone="error"] { background: var(--pc-error); }
+
+/* The outline scrolls on its own; Add SOP stays pinned under it. */
+.railNav.railNav { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.railScroll { min-height: 0; flex: 1 1 auto; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; padding: 8px 6px 12px 8px; scrollbar-width: thin; scrollbar-color: transparent transparent; scrollbar-gutter: stable; transition: scrollbar-color 200ms; }
+.railScroll:hover, .railScroll:focus-within { scrollbar-color: color-mix(in srgb, var(--pc-muted) 40%, transparent) transparent; }
+.railFoot { flex: none; border-top: 1px solid var(--pc-divider); padding: 8px; }
+
+.railOpening { grid-template-columns: minmax(0, 1fr); margin-bottom: 2px; }
+.railGroup { margin-top: 6px; }
+.railGroupHeading { position: sticky; top: -8px; z-index: 3; margin: 0; background: var(--pc-panel); padding: 4px 0 2px; }
+.railGroupTitle { font-family: var(--pc-font); display: flex; width: 100%; min-height: 30px; align-items: center; gap: 6px; border: 0; border-radius: 7px; background: transparent; padding: 0 8px 0 6px; color: var(--pc-muted); font-size: 12px; font-weight: 600; letter-spacing: .01em; text-align: left; cursor: pointer; transition: color 150ms ease, background-color 150ms ease; }
+.railGroupTitle:hover { background: color-mix(in srgb, var(--pc-inset) 70%, transparent); color: var(--pc-text); }
+.railGroupTitle:focus-visible { outline: 2px solid var(--pc-primary); outline-offset: -2px; }
+.railGroupChevron { flex: none; color: var(--pc-muted); transition: transform 200ms cubic-bezier(.22, 1, .36, 1); }
+.railGroupTitle[aria-expanded="true"] .railGroupChevron { transform: rotate(90deg); }
+/* A closed group that holds the open SOP says so. */
+.railGroupTitle[data-holds-current] { background: var(--pc-inset); color: var(--pc-text); box-shadow: inset 3px 0 0 var(--pc-primary); }
+.railGroupLabel { min-width: 0; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.railGroupCount { min-width: 20px; border-radius: 999px; background: var(--pc-inset); padding: 2px 6px; color: var(--pc-muted); font-size: 11px; font-weight: 500; line-height: 1.2; text-align: center; font-variant-numeric: tabular-nums; }
+.railGroupList.railGroupList, .railClosing { grid-template-columns: minmax(0, 1fr); }
 .railRow { position: relative; display: flex; min-width: 0; align-items: center; border-radius: 8px; }
+.railItem.railItem { min-height: 34px; align-items: flex-start; gap: 10px; border: 0; padding: 7px 10px; color: var(--pc-text); font-weight: 400; }
+.railItem.railItem:hover { background: color-mix(in srgb, var(--pc-inset) 70%, transparent); }
+.railItem.railItem[aria-current="step"] { background: var(--pc-inset); font-weight: 400; }
+@media (prefers-reduced-motion: reduce) { .railGroupChevron { transition: none; } }
+
+/* Status circle: dashed while empty, filled once written. */
+.railMark { display: grid; width: 16px; height: 16px; flex: none; place-items: center; margin-top: 1px; border: 1.5px solid var(--pc-control); border-radius: 999px; color: var(--pc-muted); }
+.railMark[data-state="empty"] { border-style: dashed; }
+.railMark[data-state="written"] { border-color: var(--pc-primary); background: var(--pc-primary); color: var(--pc-primary-text); }
+.railMark[data-state="busy"] { border-color: transparent; color: var(--pc-primary); }
+.railMark[data-state="failed"] { border-color: var(--pc-error); background: var(--pc-error); color: #fff; }
+.railMark[data-state="off"] { border-color: transparent; }
+.railTitle { display: -webkit-box; overflow: hidden; color: color-mix(in srgb, var(--pc-text) 82%, var(--pc-muted)); font-size: 13px; font-weight: 450; line-height: 18px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow-wrap: anywhere; }
+.railItem:hover .railTitle { color: var(--pc-text); }
+.railItem[aria-current="step"] .railTitle { color: var(--pc-text); font-weight: 560; }
 /* The open row menu sits above the rows after it. */
 .railRow:has(.railMenuButton[aria-expanded="true"]) { z-index: 20; }
 .railRow > button:first-child { flex: 1 1 auto; min-width: 0; padding-right: 30px; }
 .railRow[data-disabled] .railText { opacity: .55; }
 .railRow[data-dragging] { opacity: .45; }
 .railRow[data-drop-target] { box-shadow: inset 0 2px 0 var(--pc-brand); }
-.railText { display: flex; min-width: 0; flex: 1 1 auto; flex-direction: column; align-items: stretch; gap: 1px; overflow: hidden; text-align: left; }
+.railText { display: flex; min-width: 0; flex: 1 1 auto; flex-direction: column; align-items: stretch; gap: 2px; overflow: hidden; text-align: left; }
 .railCode { overflow: hidden; max-width: 100%; color: var(--pc-muted); font-size: 11px; font-variant-numeric: tabular-nums; text-overflow: ellipsis; white-space: nowrap; }
 .railGrip { position: absolute; top: 50%; left: -2px; display: none; color: var(--pc-control); transform: translateY(-50%); pointer-events: none; }
 .railRow:hover .railGrip { display: block; }
@@ -28,12 +73,20 @@
 .railMenu button:disabled { cursor: not-allowed; opacity: .4; }
 .railMenu button[data-tone="danger"] { color: var(--pc-error); }
 .railMenu button[data-tone="danger"]:hover { background: var(--pc-error-surface); }
-.railAdd { display: flex; width: 100%; min-height: 36px; align-items: center; gap: 8px; margin-top: 10px; border: 1px dashed var(--pc-control); border-radius: 8px; background: transparent; padding: 0 10px; color: var(--pc-muted); font: 600 13px/1 var(--pc-font); cursor: pointer; transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease; }
-.railAdd:hover { border-color: var(--pc-brand); background: var(--pc-selection); color: var(--pc-selection-text); }
-.railClosing { margin-top: 12px; border-top: 1px solid var(--pc-divider); padding-top: 10px; }
-.markBusy { border-color: var(--pc-brand); color: var(--pc-brand); }
-.markFailed { border-color: color-mix(in srgb, var(--pc-error) 55%, transparent); background: var(--pc-error-surface); color: var(--pc-error); }
+.railAdd { display: flex; width: 100%; min-height: 34px; align-items: center; gap: 10px; border: 0; border-radius: 8px; background: transparent; padding: 0 10px; color: var(--pc-muted); font: 500 13px/1 var(--pc-font); cursor: pointer; transition: color 150ms ease, background-color 150ms ease; }
+.railAdd > svg { width: 16px; }
+.railAdd:hover { background: var(--pc-inset); color: var(--pc-text); }
+.railClosing { margin-top: 10px; border-top: 1px solid var(--pc-divider); padding-top: 8px; }
 .miniOff { opacity: .45; }
+
+/* ── Details warning ──────────────────────────────────── */
+.reviewLead { margin: 0 0 10px; color: var(--pc-text); font-size: 13px; font-weight: 550; }
+.reviewList { display: grid; margin: 0; overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 12px; padding: 0; list-style: none; }
+.reviewList > li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; }
+.reviewList > li + li { border-top: 1px solid var(--pc-divider); }
+.reviewList > li > svg { flex: none; margin-top: 2px; color: var(--pc-muted); }
+.reviewList strong { display: block; color: var(--pc-text); font-size: 13px; font-weight: 600; line-height: 1.4; }
+.reviewList strong + span { display: block; margin-top: 1px; color: var(--pc-muted); font-size: 12.5px; line-height: 1.5; }
 
 /* ── Progress pill ────────────────────────────────────── */
 .pillWrap { position: relative; }

@@ -797,15 +797,9 @@ function BuilderClientWorkspace() {
         title="Edit company details"
         description="Changes are saved to this draft automatically. Review the policy sections after editing."
         width={980}
+        footer={<Button variant="primary" size="md" onClick={() => setShowCompanyEditor(false)}>Done</Button>}
       >
-        <div className="max-h-[calc(100vh-170px)] overflow-y-auto pr-1 scrollbar-thin">
-          <div className="pc-builder-authoring"><CompanyInfoForm /></div>
-        </div>
-        <div className="mt-5 flex justify-end border-t border-[var(--color-line)] pt-4">
-          <Button variant="primary" size="md" onClick={() => setShowCompanyEditor(false)}>
-            Done
-          </Button>
-        </div>
+        <div className="pc-builder-authoring"><CompanyInfoForm /></div>
       </Modal>
     </div>
   );

@@ -4,7 +4,7 @@
  * result into a SopManual. Shared by the route, the generation queue and the UI.
  */
 import type { RichTextBlock } from "../types";
-import type { SopAiResult } from "./ai-contract";
+import type { ManualAiField, SopAiResult } from "./ai-contract";
 import { createEmptySopSection, createSopId } from "./initial-manual";
 import type { GeneratedSopSection } from "./schema";
 import { sopSectionLabel, type Sop, type SopManual, type SopSection, type SopSectionKind } from "./types";
@@ -205,8 +205,32 @@ export function applySectionResult(manual: SopManual, sopId: string, sectionId: 
   });
 }
 
+/** Plain text of one manual field, paragraphs separated by a blank line (the text the editor shows). */
+export function manualFieldText(manual: SopManual, field: ManualAiField): string {
+  if (field === "approvalStatement") return manual.closing.approval.statement.trim();
+  const blocks = field === "reviewMechanism" ? manual.closing.reviewMechanism : manual.frontMatter[field];
+  return blocks.filter((block) => block.type !== "table").map((block) => block.text.trim()).filter(Boolean).join("\n\n");
+}
+
+/** Text of one manual field written so far, from a partial result keyed by field name (paragraphs or the statement). */
+export function partialManualText(partial: unknown, field: ManualAiField): string {
+  const value = partial && typeof partial === "object" ? (partial as Record<string, unknown>)[field] : undefined;
+  if (typeof value === "string") return value.trim();
+  if (!Array.isArray(value)) return "";
+  return value.filter((item): item is string => typeof item === "string").map((item) => item.trim()).filter(Boolean).join("\n\n");
+}
+
 export function applyFrontMatterResult(manual: SopManual, frontMatter: Extract<SopAiResult, { type: "front-matter" }>["frontMatter"]): SopManual {
   return { ...manual, frontMatter: { ...manual.frontMatter, ...frontMatter } };
+}
+
+/** Replaces one narrative field of the front matter or closing, or the approval statement. */
+export function applyManualFieldResult(manual: SopManual, result: Extract<SopAiResult, { type: "manual-field" }>): SopManual {
+  if (result.field === "approvalStatement") {
+    return { ...manual, closing: { ...manual.closing, approval: { ...manual.closing.approval, statement: result.statement } } };
+  }
+  if (result.field === "reviewMechanism") return { ...manual, closing: { ...manual.closing, reviewMechanism: result.blocks } };
+  return { ...manual, frontMatter: { ...manual.frontMatter, [result.field]: result.blocks } as SopManual["frontMatter"] };
 }
 
 export function applyClosingResult(manual: SopManual, result: Pick<Extract<SopAiResult, { type: "closing" }>, "reviewMechanism" | "approvalStatement">): SopManual {
@@ -232,6 +256,8 @@ export function applySopAiResult(manual: SopManual, target: { sopId?: string; se
       return applyFrontMatterResult(manual, result.frontMatter);
     case "closing":
       return applyClosingResult(manual, result);
+    case "manual-field":
+      return applyManualFieldResult(manual, result);
   }
 }
 

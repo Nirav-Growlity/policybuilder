@@ -10,7 +10,8 @@ import { z } from "zod";
 
 import { getCompanyClassificationContext } from "../company-classification";
 import { companyIndustryTags, getCatalogTopic } from "../sop/catalog";
-import { AI_WRITTEN_SECTION_KINDS, type SopAiRequest } from "../sop/ai-contract";
+import { AI_WRITTEN_SECTION_KINDS, MANUAL_AI_FIELDS, MANUAL_AI_FIELD_LABELS, type ManualAiField, type SopAiRequest } from "../sop/ai-contract";
+import { manualFieldText } from "../sop/apply-ai-result";
 import type { Sop, SopManual, SopSection, SopSectionKind } from "../sop/types";
 import { CONTEXT_TOKEN_CEILING, CONTEXT_TOKEN_TARGET, estimateTokens } from "./claude";
 import {
@@ -242,6 +243,19 @@ export const closingOutputSchema = z.object({
   approvalStatement: z.string(),
 });
 
+/** One manual field, keyed by its own name: paragraphs, or the approval statement as one string. */
+const MANUAL_FIELD_SCHEMAS = {
+  introduction: z.object({ introduction: z.array(z.string()) }),
+  objective: z.object({ objective: z.array(z.string()) }),
+  howToUse: z.object({ howToUse: z.array(z.string()) }),
+  reviewMechanism: z.object({ reviewMechanism: z.array(z.string()) }),
+  approvalStatement: z.object({ approvalStatement: z.string() }),
+} satisfies Record<ManualAiField, z.ZodType>;
+
+export function manualFieldOutputSchema(field: ManualAiField) {
+  return MANUAL_FIELD_SCHEMAS[field];
+}
+
 const SECTION_GUIDE: Record<SopSectionKind, string> = {
   purpose: "blocks (usually one paragraph)",
   scope: "blocks (usually one paragraph)",
@@ -341,6 +355,8 @@ export const SOP_MAX_TOKENS = {
   refine: 1_500,
   "front-matter": 2_500,
   closing: 1_200,
+  // One narrative field: two or three paragraphs, or a short approval statement.
+  "manual-field": 1_500,
 } as const;
 
 /** Reads references and imported text for a request. Touches the file system (seed corpus). */
@@ -367,6 +383,13 @@ export function collectSopPromptSources(request: SopAiRequest, importedContext: 
         references: buildSeedFrontMatterContext(industryTags, "reviewMechanism", { directory: options.directory }),
         imported: buildImportedManualSectionsContext(importedContext, "closing"),
       };
+    case "manual-field": {
+      const closing = request.field === "reviewMechanism" || request.field === "approvalStatement";
+      return {
+        references: buildSeedFrontMatterContext(industryTags, SEED_FIELD[request.field], { directory: options.directory }),
+        imported: buildImportedManualSectionsContext(importedContext, closing ? "closing" : "frontMatter"),
+      };
+    }
   }
 }
 
@@ -377,7 +400,35 @@ const REFINE_MODES = {
   custom: "Revise this section as the user instructs.",
 } as const;
 
-function taskFor(request: SopAiRequest): { task: string; maxTokens: number; schema: z.ZodType; excludeSopId?: string; includeSiblings: boolean } {
+/** What each front matter or closing field should say, for the single-field request. */
+const MANUAL_FIELD_GUIDE: Record<ManualAiField, string> = {
+  introduction: "Two or three paragraphs: who the company is, its sites and what they do, and what this manual covers.",
+  objective: "One paragraph on what following the procedures in this manual sets out to achieve.",
+  howToUse: "One or two paragraphs on how staff find, follow and request changes to SOPs, using the manual's document control data.",
+  reviewMechanism: "One to three paragraphs: scheduled review using the manual's review frequency, triggers for an earlier review (legal change, incident, audit finding, process change), who reviews, who approves, and how revisions are recorded and communicated.",
+  approvalStatement: "One or two sentences by which the approvers adopt the manual, and its effective date applies.",
+};
+
+/** Seed front-matter facts for each field: the closest seed field, or all of them. */
+const SEED_FIELD: Record<ManualAiField, "introduction" | "objective" | "reviewMechanism" | "all"> = {
+  introduction: "introduction",
+  objective: "objective",
+  howToUse: "all",
+  reviewMechanism: "reviewMechanism",
+  approvalStatement: "reviewMechanism",
+};
+
+/** The other front matter and closing text, so the part being written agrees with it. */
+function manualRestText(manual: SopManual, field: ManualAiField) {
+  const parts = MANUAL_AI_FIELDS.filter((other) => other !== field).flatMap((other) => {
+    const text = manualFieldText(manual, other);
+    return text ? [`${MANUAL_AI_FIELD_LABELS[other]}:\n${text}`] : [];
+  });
+  const text = cutText(parts.join("\n\n"), 8_000);
+  return text ? `THE REST OF THIS MANUAL (stay consistent with it; do not repeat it):\n${text}` : "";
+}
+
+function taskFor(request: SopAiRequest): { task: string; maxTokens: number; schema: z.ZodType; siblings: string } {
   const manual = request.manual;
   switch (request.type) {
     case "sop": {
@@ -396,8 +447,7 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
         ].filter(Boolean).join("\n"),
         maxTokens: SOP_MAX_TOKENS.sop,
         schema: sopOutputSchema(sections.map((section) => section.kind)),
-        excludeSopId: sop.id,
-        includeSiblings: true,
+        siblings: buildSiblingSummaries(manual, sop.id),
       };
     }
     case "sop-section": {
@@ -415,8 +465,7 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
         ].filter(Boolean).join("\n"),
         maxTokens: section.kind === "procedure" ? SOP_MAX_TOKENS.procedureSection : SOP_MAX_TOKENS["sop-section"],
         schema: sectionsOutputSchema([section.kind]),
-        excludeSopId: sop.id,
-        includeSiblings: false,
+        siblings: "",
       };
     }
     case "refine": {
@@ -436,8 +485,7 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
         ].filter(Boolean).join("\n"),
         maxTokens: Math.min(6_000, Math.max(SOP_MAX_TOKENS.refine, Math.ceil(currentTokens * growth) + 600)),
         schema: sectionsOutputSchema([section.kind]),
-        excludeSopId: sop.id,
-        includeSiblings: false,
+        siblings: "",
       };
     }
     case "front-matter":
@@ -453,7 +501,7 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
         ].filter(Boolean).join("\n"),
         maxTokens: SOP_MAX_TOKENS["front-matter"],
         schema: frontMatterOutputSchema,
-        includeSiblings: true,
+        siblings: buildSiblingSummaries(manual),
       };
     case "closing":
       return {
@@ -465,30 +513,48 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
         ].filter(Boolean).join("\n"),
         maxTokens: SOP_MAX_TOKENS.closing,
         schema: closingOutputSchema,
-        includeSiblings: false,
+        siblings: "",
       };
+    case "manual-field": {
+      const generate = request.mode === "generate";
+      const current = manualFieldText(manual, request.field);
+      const growth = request.mode === "shorten" ? 0.7 : 1.3;
+      return {
+        task: [
+          `TASK: ${generate ? "Write" : "Improve"} the ${MANUAL_AI_FIELD_LABELS[request.field].toLowerCase()} of this SOP manual.`,
+          MANUAL_FIELD_GUIDE[request.field],
+          request.mode === "generate" ? "" : REFINE_MODES[request.mode],
+          current ? `\nCURRENT TEXT (the user may have edited it; ${generate ? "keep their facts and rewrite the rest" : "keep the same facts"}):\n${current}` : "",
+          instructionLine(request.instruction),
+          `\nFill "${request.field}" with ${request.field === "approvalStatement" ? "the statement as one string" : "the paragraphs as a list of strings"}.`,
+        ].filter(Boolean).join("\n"),
+        maxTokens: generate ? SOP_MAX_TOKENS["manual-field"] : Math.min(3_000, Math.max(SOP_MAX_TOKENS["manual-field"], Math.ceil(estimateTokens(current) * growth) + 600)),
+        schema: manualFieldOutputSchema(request.field),
+        siblings: manualRestText(manual, request.field),
+      };
+    }
   }
 }
 
 /** Builds the full, budget-fitted prompt for one request. */
 export function buildSopPrompt(request: SopAiRequest, sources: SopPromptSources): SopPrompt {
-  const { task, maxTokens, schema, excludeSopId, includeSiblings } = taskFor(request);
+  const { task, maxTokens, schema, siblings } = taskFor(request);
   const fitted = fitSopPromptBudget({
     system: SOP_SYSTEM_PROMPT,
     cachedContext: buildSopManualContext(request.manual),
     task,
     references: sources.references,
-    siblings: includeSiblings ? buildSiblingSummaries(request.manual, excludeSopId) : "",
+    siblings,
     imported: sources.imported,
   });
   // Primary context first, task last: the model reads the task with everything else in view.
   const lead = [fitted.imported, fitted.references].filter(Boolean).join("\n\n");
   const rest = [fitted.siblings, fitted.task].filter(Boolean).join("\n\n");
-  // Regenerate, improve, shorten and custom edits of one section all send the
-  // same imported text and references, so a 5-minute cache entry serves the
-  // next edit. A whole SOP is written once; caching its sources would only add
-  // the write premium.
-  const reusable = request.type === "sop-section" || request.type === "refine";
+  // Regenerate, improve, shorten and custom edits of one section or field all
+  // send the same imported text and references, so a 5-minute cache entry serves
+  // the next edit. A whole SOP is written once; caching its sources would only
+  // add the write premium.
+  const reusable = request.type === "sop-section" || request.type === "refine" || request.type === "manual-field";
   return {
     system: fitted.system,
     cachedContext: fitted.cachedContext,

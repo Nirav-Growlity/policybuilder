@@ -16,6 +16,7 @@ import {
   SOP_MAX_TOKENS,
   SOP_SYSTEM_PROMPT,
 } from "./sop-prompts";
+import { parseSopAiRequest } from "./sop-generation";
 import { buildImportedSopContext, buildSopReferenceContext, clearSeedSopCache } from "./sop-template-context";
 
 function sampleManual(): SopManual {
@@ -224,4 +225,41 @@ test("an imported SOP with a matching title becomes PRIMARY context", () => {
   assert.doesNotMatch(text, /GRIEVANCE IMPORT SENTINEL/);
   assert.equal(buildImportedSopContext(imported, "Energy Conservation"), "");
   assert.equal(buildImportedSopContext(null, "Waste"), "");
+});
+
+test("a manual field prompt writes its own field, sees the rest of the manual, and caches its sources", () => {
+  const manual = sampleManual();
+  manual.frontMatter.introduction = [{ id: "i", type: "paragraph", text: "INTRO TEXT KEEP" }];
+  manual.closing.reviewMechanism = [{ id: "r", type: "paragraph", text: "REVIEW TEXT KEEP" }];
+  const prompt = buildSopPrompt({ type: "manual-field", manual, field: "objective", mode: "generate" }, { references: "REF TEXT", imported: "IMP TEXT" });
+  assert.match(prompt.user, /TASK: Write the objective of this SOP manual/);
+  assert.match(prompt.user, /THE REST OF THIS MANUAL[\s\S]*Introduction:\nINTRO TEXT KEEP/);
+  assert.match(prompt.user, /REVIEW TEXT KEEP/);
+  assert.doesNotMatch(prompt.user, /CURRENT TEXT/);
+  assert.match(prompt.reusableContext, /IMP TEXT[\s\S]*REF TEXT/);
+  assert.equal(prompt.maxTokens, SOP_MAX_TOKENS["manual-field"]);
+  assert.equal(prompt.schema.safeParse({ objective: ["One paragraph."] }).success, true);
+  assert.equal(prompt.schema.safeParse({ introduction: ["Wrong field."] }).success, false);
+
+  const approval = buildSopPrompt({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { references: "", imported: "" });
+  assert.equal(approval.schema.safeParse({ approvalStatement: "Approved." }).success, true);
+  assert.equal(approval.schema.safeParse({ approvalStatement: ["not", "a", "string"] }).success, false);
+
+  // Shortening sends the current text in the task, and not again in the rest of the manual.
+  const shorten = buildSopPrompt({ type: "manual-field", manual, field: "introduction", mode: "shorten" }, { references: "", imported: "" });
+  assert.match(shorten.user, /TASK: Improve the introduction of this SOP manual/);
+  assert.match(shorten.user, /CURRENT TEXT[\s\S]*INTRO TEXT KEEP/);
+  assert.doesNotMatch(shorten.user, /THE REST OF THIS MANUAL[\s\S]*Introduction:/);
+});
+
+test("manual field requests are validated before any prompt is built", () => {
+  const manual = sampleManual();
+  manual.frontMatter.introduction = [{ id: "i", type: "paragraph", text: "Written intro." }];
+  const field = (body: Record<string, unknown>) => parseSopAiRequest({ manual, ...body });
+  assert.equal(field({ type: "manual-field", field: "objective", mode: "generate" }).ok, true);
+  assert.equal(field({ type: "manual-field", field: "objective", mode: "shorten" }).ok, false, "nothing to shorten yet");
+  assert.equal(field({ type: "manual-field", field: "introduction", mode: "shorten" }).ok, true);
+  assert.equal(field({ type: "manual-field", field: "introduction", mode: "custom" }).ok, false, "custom needs an instruction");
+  assert.equal(field({ type: "manual-field", field: "introduction", mode: "custom", instruction: "Use bullets." }).ok, true);
+  assert.equal(field({ type: "manual-field", field: "purpose", mode: "generate" }).ok, false, "not a manual field");
 });

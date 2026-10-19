@@ -8,8 +8,8 @@ import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import type Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
 
-import { AI_WRITTEN_SECTION_KINDS, type SopAiRequest, type SopAiResult } from "../sop/ai-contract";
-import { wireSectionsToSop } from "../sop/apply-ai-result";
+import { AI_WRITTEN_SECTION_KINDS, MANUAL_AI_FIELDS, type ManualAiField, type SopAiRequest, type SopAiResult } from "../sop/ai-contract";
+import { manualFieldText, wireSectionsToSop } from "../sop/apply-ai-result";
 import { getCatalogTopic } from "../sop/catalog";
 import { createSopId } from "../sop/initial-manual";
 import { sopManualSchema, type GeneratedSopSection } from "../sop/schema";
@@ -21,6 +21,7 @@ import {
   closingOutputSchema,
   collectSopPromptSources,
   frontMatterOutputSchema,
+  manualFieldOutputSchema,
   sectionsOutputSchema,
   sectionsToWrite,
   sopOutputSchema,
@@ -46,6 +47,13 @@ const requestSchema = z.discriminatedUnion("type", [
   }),
   z.object({ type: z.literal("front-matter"), manual: sopManualSchema, instruction: instructionSchema }),
   z.object({ type: z.literal("closing"), manual: sopManualSchema, instruction: instructionSchema }),
+  z.object({
+    type: z.literal("manual-field"),
+    manual: sopManualSchema,
+    field: z.enum(MANUAL_AI_FIELDS),
+    mode: z.enum(["generate", "shorten", "custom"]),
+    instruction: instructionSchema,
+  }),
 ]);
 
 export function parseSopAiRequest(body: unknown): { ok: true; request: SopAiRequest } | { ok: false; error: string } {
@@ -55,6 +63,10 @@ export function parseSopAiRequest(body: unknown): { ok: true; request: SopAiRequ
     return { ok: false, error: `Invalid request${issue ? ` at ${issue.path.join(".") || "body"}: ${issue.message}` : "."}` };
   }
   const request = parsed.data as SopAiRequest;
+  if (request.type === "manual-field") {
+    if (request.mode !== "generate" && !manualFieldText(request.manual, request.field)) return { ok: false, error: "Write this part before refining it with AI." };
+    if (request.mode === "custom" && !request.instruction?.trim()) return { ok: false, error: "A custom refinement needs an instruction." };
+  }
   if (request.type === "sop" || request.type === "sop-section" || request.type === "refine") {
     const sop = request.manual.sops.find((candidate) => candidate.id === request.sopId);
     if (!sop) return { ok: false, error: "The SOP is not in this manual." };
@@ -94,6 +106,9 @@ function targetSection(request: Extract<SopAiRequest, { sectionId: string }>): S
 }
 
 const MIN_WORDS_PER_SECTION = 20;
+/** Caps on one written manual field; the model's answer is untrusted. */
+const MAX_FIELD_PARAGRAPHS = 8;
+const MAX_STATEMENT_CHARS = 1_200;
 
 /** Words of content, leaving out ids, kinds, block types and headings. */
 function countWords(value: unknown, key = ""): number {
@@ -153,6 +168,18 @@ export function finalizeSopOutput(request: SopAiRequest, value: unknown): SopAiR
       const parsed = closingOutputSchema.safeParse(value);
       if (!parsed.success) throw new SopOutputError("The AI response did not match the closing format.");
       return { type: "closing", reviewMechanism: paragraphs(parsed.data.reviewMechanism), approvalStatement: parsed.data.approvalStatement.trim() };
+    }
+    case "manual-field": {
+      const parsed = manualFieldOutputSchema(request.field).safeParse(value);
+      if (!parsed.success) throw new SopOutputError("The AI response did not match the field format.");
+      if (request.field === "approvalStatement") {
+        const statement = (parsed.data as { approvalStatement: string }).approvalStatement.trim().slice(0, MAX_STATEMENT_CHARS);
+        if (!statement) throw new SopOutputError("The AI response was empty. Try again.");
+        return { type: "manual-field", field: "approvalStatement", statement };
+      }
+      const blocks = paragraphs((parsed.data as Record<string, string[]>)[request.field].slice(0, MAX_FIELD_PARAGRAPHS));
+      if (!blocks.length) throw new SopOutputError("The AI response was empty. Try again.");
+      return { type: "manual-field", field: request.field, blocks };
     }
   }
 }
@@ -258,10 +285,31 @@ function toWire(sections: GeneratedSopSection[]): Record<string, unknown> {
   return wire;
 }
 
+/** Canned front matter and closing text for the offline mock. */
+function mockNarrative(manual: SopManual): Record<Exclude<ManualAiField, "approvalStatement">, string[]> & { approvalStatement: string } {
+  const company = manual.company.name || "The Company";
+  return {
+    introduction: [
+      `${company} operates in ${manual.company.industryDetail || manual.company.subCategory || manual.company.industry || "its sector"} at ${mockSites(manual)}.`,
+      "This manual brings together the standard operating procedures that govern its environmental, social and governance performance and its day-to-day operations.",
+    ],
+    objective: ["To establish consistent, documented and controlled procedures across every site, so that responsibilities are clear and performance can be measured and improved."],
+    howToUse: [`Each SOP has a code, an owner and a revision number. Follow the current controlled copy of manual ${manual.control.docNo || "[manual number]"} and raise change requests with the process owner.`],
+    reviewMechanism: [
+      `This manual is reviewed ${manual.control.reviewFrequency ? manual.control.reviewFrequency.toLowerCase() : "annually"}, and earlier after changes in law, significant incidents, audit findings or process changes. Process owners propose revisions, which are recorded in the revision history and communicated to all affected staff.`,
+    ],
+    approvalStatement: `This manual is approved by ${manual.control.approvedBy || "the undersigned"} and applies from its effective date.`,
+  };
+}
+
+/** The first `count` sentences of a text. */
+function firstSentences(text: string, count: number) {
+  return text.split(/(?<=[.!?])\s+/).slice(0, count).join(" ");
+}
+
 /** The answer the model would give, in its generated (id-less) shape, without calling it. */
 export function mockSopOutput(request: SopAiRequest): unknown {
   const manual = request.manual;
-  const company = manual.company.name || "The Company";
   switch (request.type) {
     case "sop": {
       const sop = manual.sops.find((candidate) => candidate.id === request.sopId)!;
@@ -279,28 +327,33 @@ export function mockSopOutput(request: SopAiRequest): unknown {
       const written = mockSection(manual, sop, section);
       return { sections: toWire([request.type === "refine" && request.mode === "expand" ? expandSection(written) : written]) };
     }
-    case "front-matter":
+    case "front-matter": {
+      const narrative = mockNarrative(manual);
       return {
-        introduction: [
-          `${company} operates in ${manual.company.industryDetail || manual.company.subCategory || manual.company.industry || "its sector"} at ${mockSites(manual)}.`,
-          "This manual brings together the standard operating procedures that govern its environmental, social and governance performance and its day-to-day operations.",
-        ],
-        objective: ["To establish consistent, documented and controlled procedures across every site, so that responsibilities are clear and performance can be measured and improved."],
+        introduction: narrative.introduction,
+        objective: narrative.objective,
         benefits: ["Clear ownership of each process", "Consistent practice across sites", "Evidence for audits and customers", "Faster induction of new staff"],
         coreValues: [
           { title: "Safety first", description: "No task is so urgent that it cannot be done safely." },
           { title: "Integrity", description: "Records are complete, accurate and honest." },
           { title: "Continual improvement", description: "Every deviation is a chance to improve the procedure." },
         ],
-        howToUse: [`Each SOP has a code, an owner and a revision number. Follow the current controlled copy of manual ${manual.control.docNo || "[manual number]"} and raise change requests with the process owner.`],
+        howToUse: narrative.howToUse,
       };
-    case "closing":
-      return {
-        reviewMechanism: [
-          `This manual is reviewed ${manual.control.reviewFrequency ? manual.control.reviewFrequency.toLowerCase() : "annually"}, and earlier after changes in law, significant incidents, audit findings or process changes. Process owners propose revisions, which are recorded in the revision history and communicated to all affected staff.`,
-        ],
-        approvalStatement: `This manual is approved by ${manual.control.approvedBy || "the undersigned"} and applies from its effective date.`,
-      };
+    }
+    case "closing": {
+      const narrative = mockNarrative(manual);
+      return { reviewMechanism: narrative.reviewMechanism, approvalStatement: narrative.approvalStatement };
+    }
+    case "manual-field": {
+      const narrative = mockNarrative(manual);
+      // A shortened answer keeps the first sentences of what is there; otherwise the canned text.
+      if (request.field === "approvalStatement") {
+        return { approvalStatement: request.mode === "shorten" ? firstSentences(manualFieldText(manual, request.field), 1) : narrative.approvalStatement };
+      }
+      const paragraphs = request.mode === "shorten" ? manualFieldText(manual, request.field).split("\n\n").map((text) => firstSentences(text, 2)) : narrative[request.field];
+      return { [request.field]: paragraphs };
+    }
   }
 }
 

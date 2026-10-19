@@ -5,10 +5,13 @@ import { finalizeSopOutput, mockSopOutput } from "../ai/sop-generation";
 import {
   applyClosingResult,
   applyFrontMatterResult,
+  applyManualFieldResult,
   applySectionResult,
   applySopAiResult,
   applySopResult,
   generatedSectionToSopSection,
+  manualFieldText,
+  partialManualText,
   partialSectionsFromGenerated,
 } from "./apply-ai-result";
 import { createEmptyManual, createEmptySop, createEmptySopSection } from "./initial-manual";
@@ -120,4 +123,37 @@ test("the offline mock answer round-trips through validation and applies to ever
   // A near-empty SOP is rejected so the queue retries it.
   const stub = JSON.parse(JSON.stringify(mockSopOutput({ type: "sop", manual, sopId: sop.id })), (key, value) => (typeof value === "string" && key !== "type" ? "Short." : value));
   assert.throws(() => finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, stub), /too short/);
+});
+
+test("a manual field result replaces only its own field, and the partial text matches the final text", () => {
+  const manual = manualWithOneSop();
+  manual.frontMatter.benefits = ["KEEP BENEFIT"];
+  manual.closing.approval.signatories = [{ role: "Approved by", name: "A. Rao", designation: "MD", date: "" }];
+  const intro = finalizeSopOutput({ type: "manual-field", manual, field: "introduction", mode: "generate" }, { introduction: ["First para.", "  ", "Second para."] });
+  assert.equal(intro.type, "manual-field");
+  const withIntro = applyManualFieldResult(manual, intro as Extract<typeof intro, { type: "manual-field" }>);
+  assert.equal(manualFieldText(withIntro, "introduction"), "First para.\n\nSecond para.");
+  assert.deepEqual(withIntro.frontMatter.benefits, ["KEEP BENEFIT"]);
+  assert.equal(withIntro.closing.approval.signatories.length, 1);
+
+  const statement = finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: "  Approved.  " });
+  const closed = applySopAiResult(withIntro, {}, statement);
+  assert.equal(closed.closing.approval.statement, "Approved.");
+  assert.equal(manualFieldText(closed, "introduction"), "First para.\n\nSecond para.");
+
+  // What streams in while the model writes matches what the field holds at the end.
+  assert.equal(partialManualText({ introduction: ["First para.", "Sec"] }, "introduction"), "First para.\n\nSec");
+  assert.equal(partialManualText({ approvalStatement: "Appr" }, "approvalStatement"), "Appr");
+  assert.equal(partialManualText({}, "objective"), "");
+});
+
+test("manual field output is validated and capped before it reaches the manual", () => {
+  const manual = manualWithOneSop();
+  assert.throws(() => finalizeSopOutput({ type: "manual-field", manual, field: "objective", mode: "generate" }, { introduction: [] }), /did not match/);
+  assert.throws(() => finalizeSopOutput({ type: "manual-field", manual, field: "objective", mode: "generate" }, { objective: ["  ", ""] }), /empty/);
+  assert.throws(() => finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: 3 }), /did not match/);
+  const many = finalizeSopOutput({ type: "manual-field", manual, field: "howToUse", mode: "generate" }, { howToUse: Array.from({ length: 20 }, (_, index) => `Para ${index}`) });
+  assert.equal(many.type === "manual-field" && "blocks" in many ? many.blocks.length : -1, 8);
+  const long = finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: "x".repeat(5_000) });
+  assert.equal(long.type === "manual-field" && "statement" in long ? long.statement.length : -1, 1_200);
 });

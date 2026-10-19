@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { AlertTriangle, ArrowDown, ArrowUp, BookOpen, Check, ClipboardSignature, Eye, EyeOff, GripVertical, Loader2, MoreHorizontal, Plus, Trash2 } from "lucide-react";
+import { AlertTriangle, ArrowDown, ArrowUp, BookOpen, Check, ChevronRight, ClipboardSignature, Eye, EyeOff, GripVertical, Loader2, MoreHorizontal, Plus, Trash2 } from "lucide-react";
 import { clsx } from "clsx";
 import shell from "@/components/builder/shell.module.css";
 import { useSopBuilder, type RailSelection } from "@/lib/sop/store";
@@ -16,14 +16,74 @@ export function selectionKey(selection: RailSelection): string {
   return selection.kind === "sop" ? `sop:${selection.sopId}` : selection.kind;
 }
 
-function SopMark({ sop, index }: { sop: Sop; index: number }) {
-  const generation = useSopBuilder((state) => state.generation[sop.id]);
-  if (!sop.enabled) return <span className={shell.stepNumber}><EyeOff size={11} aria-hidden="true" /></span>;
-  if (generation?.status === "writing" || generation?.status === "queued") return <span className={clsx(shell.stepNumber, styles.markBusy)}><Loader2 size={12} className="animate-spin" aria-hidden="true" /></span>;
-  if (generation?.status === "failed") return <span className={clsx(shell.stepNumber, styles.markFailed)}><AlertTriangle size={11} aria-hidden="true" /></span>;
-  if (isSopWritten(sop)) return <span className={clsx(shell.stepNumber, shell.stepDone)}><Check size={12} aria-hidden="true" /></span>;
-  return <span className={shell.stepNumber}>{String(index + 1).padStart(2, "0")}</span>;
+type SopState = "off" | "busy" | "failed" | "written" | "empty";
+
+function sopState(sop: Sop, status: string | undefined): SopState {
+  if (!sop.enabled) return "off";
+  if (status === "writing" || status === "queued") return "busy";
+  if (status === "failed") return "failed";
+  return isSopWritten(sop) ? "written" : "empty";
 }
+
+/** A status circle: dashed while empty, filled with a check once written. */
+function SopMark({ state }: { state: SopState }) {
+  return (
+    <span className={styles.railMark} data-state={state}>
+      {state === "off" ? <EyeOff size={10} aria-hidden="true" />
+        : state === "busy" ? <Loader2 size={12} className="animate-spin" aria-hidden="true" />
+          : state === "failed" ? <AlertTriangle size={9} strokeWidth={2.6} aria-hidden="true" />
+            : state === "written" ? <Check size={9} strokeWidth={3} aria-hidden="true" /> : null}
+    </span>
+  );
+}
+
+function initials(name: string) {
+  return name.split(/\s+/).filter(Boolean).slice(0, 2).map((word) => word[0]!.toUpperCase()).join("") || "S";
+}
+
+/** The manual's identity and how far the writing has got. */
+export function ManualSummary({ title }: { title: string }) {
+  const manual = useSopBuilder((state) => state.manual!);
+  const generation = useSopBuilder((state) => state.generation);
+  const states = manual.sops.filter((sop) => sop.enabled).map((sop) => sopState(sop, generation[sop.id]?.status));
+  const total = states.length;
+  const written = states.filter((state) => state === "written").length;
+  const failed = states.filter((state) => state === "failed").length;
+  const busy = states.filter((state) => state === "busy").length;
+  const percent = total ? Math.round((written / total) * 100) : 0;
+  const status = !total ? "No SOPs yet" : busy ? `Writing ${busy} of ${total}` : failed ? `${failed} not written` : written === total ? "All SOPs written" : `${written} of ${total} written`;
+  const logo = manual.company.companyLogo;
+  return (
+    <div className={styles.railSummary}>
+      <div className={styles.railIdentity}>
+        <span className={styles.railLogo} data-logo={logo ? true : undefined}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- a data URL or uploaded file */}
+          {logo ? <img src={logo} alt="" /> : initials(title)}
+        </span>
+        <span className="min-w-0">
+          <span className={styles.railSummaryTitle} title={title}>{title}</span>
+          <span className={styles.railSummaryMeta}>SOP manual, {total} {total === 1 ? "procedure" : "procedures"}</span>
+        </span>
+      </div>
+      <div className={styles.railProgress} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent} aria-valuetext={`${written} of ${total} SOPs written${failed ? `, ${failed} not written` : ""}`} aria-label="Writing progress">
+        <div className={styles.railProgressHead}>
+          <span data-tone={failed ? "error" : undefined}>{status}</span>
+          <span>{written}/{total}</span>
+        </div>
+        <div className={styles.railProgressTrack}><span style={{ width: `${percent}%` }} data-tone={failed ? "error" : undefined} /></div>
+      </div>
+    </div>
+  );
+}
+
+const COLLAPSED_KEY = "policycraft_sop_rail_collapsed";
+function readCollapsed(): Set<string> {
+  try { return new Set(JSON.parse(window.localStorage.getItem(COLLAPSED_KEY) ?? "[]") as string[]); } catch { return new Set(); }
+}
+function writeCollapsed(keys: Set<string>) {
+  try { window.localStorage.setItem(COLLAPSED_KEY, JSON.stringify([...keys])); } catch { /* optional */ }
+}
+const hasText = (blocks: readonly { text: string }[] | undefined) => Boolean(blocks?.some((block) => block.text.trim()));
 
 function statusText(sop: Sop, status: string | undefined) {
   if (!sop.enabled) return "turned off";
@@ -48,6 +108,20 @@ export function ManualRail({ onAddSop, onDeleteSop }: { onAddSop: () => void; on
   const groups = outlineGroups(manual);
   const order = groups.flatMap((group) => group.sops);
   const current = selectionKey(selection);
+  const [collapsed, setCollapsed] = React.useState<Set<string>>(readCollapsed);
+  const toggleGroup = (key: string) => setCollapsed((previous) => {
+    const next = new Set(previous);
+    if (next.has(key)) next.delete(key); else next.add(key);
+    writeCollapsed(next);
+    return next;
+  });
+  // Moving to an SOP (Next, Review, a search) opens the group it sits in.
+  const [seen, setSeen] = React.useState(current);
+  if (seen !== current) {
+    setSeen(current);
+    const owner = selection.kind === "sop" ? groups.find((group) => group.sops.some((sop) => sop.id === selection.sopId)) : undefined;
+    if (owner && collapsed.has(owner.key)) { const next = new Set(collapsed); next.delete(owner.key); writeCollapsed(next); setCollapsed(next); }
+  }
 
   React.useEffect(() => {
     if (!menuFor) return;
@@ -70,24 +144,45 @@ export function ManualRail({ onAddSop, onDeleteSop }: { onAddSop: () => void; on
     next?.click();
   };
 
-  const railButton = (key: string, label: string, icon: React.ReactNode, onSelect: () => void, title?: string) => (
-    <button type="button" data-rail-item={key} onClick={onSelect} aria-current={current === key ? "step" : undefined} className={shell.navButton} title={title}>
+  // Front matter and closing read like SOP rows: a status circle, the title, then what they hold.
+  const railButton = (key: string, label: string, written: boolean, onSelect: () => void, detail: string) => (
+    <button type="button" data-rail-item={key} onClick={onSelect} aria-current={current === key ? "step" : undefined} aria-label={`${label}, ${written ? "written" : "not written yet"}`} className={clsx(shell.navButton, styles.railItem)}>
       {current === key ? <motion.span layoutId="sop-rail-selection" aria-hidden="true" className={shell.workflowMarker} transition={markerTransition} /> : null}
-      <span className={shell.stepNumber}>{icon}</span>
-      <span className={shell.stepTitle}>{label}</span>
+      <SopMark state={written ? "written" : "empty"} />
+      <span className={styles.railText}>
+        <span className={styles.railTitle}>{label}</span>
+        <span className={styles.railCode}>{detail}</span>
+      </span>
     </button>
   );
+  const frontWritten = hasText(manual.frontMatter.introduction);
+  const closingWritten = hasText(manual.closing.reviewMechanism) && Boolean(manual.closing.approval.statement.trim());
 
   return (
-    <nav className={shell.nav} aria-label="Manual outline" onKeyDown={onKeyDown}>
-      <div ref={listRef}>
-        <ul className={shell.navList}>
-          <li>{railButton("front", "Front matter", <BookOpen size={11} aria-hidden="true" />, () => select({ kind: "front" }), "Introduction, objective, sites, values")}</li>
+    <nav className={clsx(shell.nav, styles.railNav)} aria-label="Manual outline" onKeyDown={onKeyDown}>
+      <div ref={listRef} className={styles.railScroll} data-lenis-prevent="">
+        <ul className={clsx(shell.navList, styles.railOpening)}>
+          <li>{railButton("front", "Front matter", frontWritten, () => select({ kind: "front" }), "Introduction, sites, values")}</li>
         </ul>
-        {groups.map((group) => (
+        {groups.map((group) => {
+          const open = !collapsed.has(group.key);
+          const included = group.sops.filter((sop) => sop.enabled);
+          const done = included.filter((sop) => sopState(sop, generation[sop.id]?.status) === "written").length;
+          const listId = `rail-group-${group.key}`;
+          return (
           <section key={group.key} className={styles.railGroup} aria-label={group.label}>
-            {manual.grouping !== "none" ? <h3 className={styles.railGroupTitle}><span>{group.label}</span><span className={styles.railGroupCount}>{group.sops.filter((sop) => sop.enabled).length}</span></h3> : null}
-            <ul className={shell.navList}>
+            {manual.grouping !== "none" ? (
+              <h3 className={styles.railGroupHeading}>
+                <button type="button" className={styles.railGroupTitle} aria-expanded={open} aria-controls={listId} data-holds-current={!open && selection.kind === "sop" && group.sops.some((sop) => sop.id === selection.sopId) || undefined} onClick={() => toggleGroup(group.key)}>
+                  <ChevronRight size={13} aria-hidden="true" className={styles.railGroupChevron} />
+                  <span className={styles.railGroupLabel}>{group.label}</span>
+                  <span className={styles.railGroupCount} title={`${done} of ${included.length} written`}>{done === included.length ? included.length : `${done}/${included.length}`}</span>
+                </button>
+              </h3>
+            ) : null}
+            <AnimatePresence initial={false}>
+            {open ? (
+            <motion.ul id={listId} className={clsx(shell.navList, styles.railGroupList)} initial={{ height: 0, opacity: 0, overflow: "hidden" }} animate={{ height: "auto", opacity: 1, transitionEnd: { overflow: "visible" } }} exit={{ height: 0, opacity: 0, overflow: "hidden" }} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}>
               {group.sops.map((sop) => {
                 const key = `sop:${sop.id}`;
                 const index = order.indexOf(sop);
@@ -105,11 +200,11 @@ export function ManualRail({ onAddSop, onDeleteSop }: { onAddSop: () => void; on
                     onDragOver={(event) => { if (!dragging) return; event.preventDefault(); setOver(sop.id); }}
                     onDrop={(event) => { event.preventDefault(); if (dragging) setSops(moveSopBefore(manual.sops, dragging, sop.id, manual.grouping)); setDragging(null); setOver(null); }}
                   >
-                    <button type="button" data-rail-item={key} onClick={() => select({ kind: "sop", sopId: sop.id })} aria-current={current === key ? "step" : undefined} aria-label={`${sop.code ? `${sop.code} ` : ""}${label}, ${statusText(sop, generation[sop.id]?.status)}`} className={shell.navButton}>
+                    <button type="button" data-rail-item={key} onClick={() => select({ kind: "sop", sopId: sop.id })} aria-current={current === key ? "step" : undefined} aria-label={`${sop.code ? `${sop.code} ` : ""}${label}, ${statusText(sop, generation[sop.id]?.status)}`} title={label} className={clsx(shell.navButton, styles.railItem)}>
                       {current === key ? <motion.span layoutId="sop-rail-selection" aria-hidden="true" className={shell.workflowMarker} transition={markerTransition} /> : null}
-                      <SopMark sop={sop} index={index} />
+                      <SopMark state={sopState(sop, generation[sop.id]?.status)} />
                       <span className={styles.railText}>
-                        <span className={shell.stepTitle}>{label}</span>
+                        <span className={styles.railTitle}>{label}</span>
                         {sop.code ? <span className={styles.railCode}>{sop.code}</span> : null}
                       </span>
                     </button>
@@ -130,13 +225,18 @@ export function ManualRail({ onAddSop, onDeleteSop }: { onAddSop: () => void; on
                   </li>
                 );
               })}
-            </ul>
+            </motion.ul>
+            ) : null}
+            </AnimatePresence>
           </section>
-        ))}
-        <button type="button" className={styles.railAdd} onClick={onAddSop}><Plus size={14} aria-hidden="true" />Add SOP</button>
+          );
+        })}
         <ul className={clsx(shell.navList, styles.railClosing)}>
-          <li>{railButton("closing", "Closing and approval", <ClipboardSignature size={11} aria-hidden="true" />, () => select({ kind: "closing" }), "Review mechanism, revisions, approval")}</li>
+          <li>{railButton("closing", "Closing and approval", closingWritten, () => select({ kind: "closing" }), "Review, revisions, sign-off")}</li>
         </ul>
+      </div>
+      <div className={styles.railFoot}>
+        <button type="button" className={styles.railAdd} onClick={onAddSop}><Plus size={14} aria-hidden="true" />Add SOP</button>
       </div>
     </nav>
   );

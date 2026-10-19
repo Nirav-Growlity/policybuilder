@@ -2,12 +2,14 @@
 
 import * as React from "react";
 import { useToast } from "@/components/ui/toast";
-import { useGenerationStreams } from "@/lib/ai/use-generation-streams";
+import { useGenerationStreams, type GenerationRun } from "@/lib/ai/use-generation-streams";
 import { streamSopAi } from "@/lib/sop/ai-client";
-import type { SopAiRequest, SopAiResult } from "@/lib/sop/ai-contract";
+import { MANUAL_AI_FIELD_LABELS, type ManualAiField, type SopAiRequest, type SopAiResult } from "@/lib/sop/ai-contract";
+import { applyManualFieldResult, applySopAiResult, partialManualText } from "@/lib/sop/apply-ai-result";
 import { useSopBuilder } from "@/lib/sop/store";
-import type { SopFrontMatter, SopSection } from "@/lib/sop/types";
+import type { SopManual, SopSection } from "@/lib/sop/types";
 import { sopSectionLabel } from "@/lib/sop/types";
+import { richTextToPlain } from "../manual-helpers";
 import { useSopBuilderActions } from "./builder-context";
 
 export type SectionAiAction = "generate" | "improve" | "shorten" | "grammar" | "custom";
@@ -22,6 +24,17 @@ export function sectionAiRequest(action: SectionAiAction, base: { manual: SopAiR
     case "improve": return { type: "refine", ...base, mode: "custom", instruction: IMPROVE };
     case "grammar": return { type: "refine", ...base, mode: "custom", instruction: GRAMMAR };
     case "custom": return { type: "refine", ...base, mode: "custom", instruction: instruction || IMPROVE };
+  }
+}
+
+/** The same five actions for a front matter or closing field; the server writes or refines that one field. */
+export function manualFieldRequest(action: SectionAiAction, manual: SopManual, field: ManualAiField, instruction?: string): SopAiRequest {
+  switch (action) {
+    case "generate": return { type: "manual-field", manual, field, mode: "generate", ...(instruction ? { instruction } : {}) };
+    case "shorten": return { type: "manual-field", manual, field, mode: "shorten" };
+    case "improve": return { type: "manual-field", manual, field, mode: "custom", instruction: IMPROVE };
+    case "grammar": return { type: "manual-field", manual, field, mode: "custom", instruction: GRAMMAR };
+    case "custom": return { type: "manual-field", manual, field, mode: "custom", instruction: instruction || IMPROVE };
   }
 }
 
@@ -82,41 +95,106 @@ export function useSectionAi() {
   };
 }
 
-/** Writes the front matter or the closing with AI. */
-export function useManualPartAi() {
+/** The two parts of the manual that the whole-part request writes, and the fields each one streams into. */
+export type ManualPart = "front-matter" | "closing";
+export const MANUAL_PART_FIELDS: Record<ManualPart, ManualAiField[]> = {
+  "front-matter": ["introduction", "objective", "howToUse"],
+  closing: ["reviewMechanism", "approvalStatement"],
+};
+const PART_TITLE: Record<ManualPart, string> = { "front-matter": "Front matter", closing: "Closing" };
+
+const notWired = (cause: unknown) => cause instanceof Error && /not wired up/i.test(cause.message);
+
+/** The text one field holds once a finished part is applied, as the editor shows it. */
+function partFieldText(result: SopAiResult, field: ManualAiField): string {
+  if (result.type === "closing") return field === "approvalStatement" ? result.approvalStatement : richTextToPlain(result.reviewMechanism);
+  if (result.type === "front-matter" && field !== "approvalStatement" && field !== "reviewMechanism") return richTextToPlain(result.frontMatter[field]);
+  return "";
+}
+
+export type ManualFieldAi = ReturnType<typeof useManualFieldAi>;
+
+/**
+ * AI for the front matter and closing, mirroring useSectionAi: one field at a
+ * time (write, improve, shorten, rewrite or a custom instruction), or a whole
+ * part at once. Text streams into each field while it is written, and each
+ * result is applied when its stream ends.
+ */
+export function useManualFieldAi() {
+  const streams = useGenerationStreams();
   const { push } = useToast();
   const { orgId, manualId } = useSopBuilderActions();
-  const [busy, setBusy] = React.useState<"front-matter" | "closing" | null>(null);
-  const controller = React.useRef<AbortController | null>(null);
+  const [writing, setWriting] = React.useState<ManualPart | null>(null);
+  const [failed, setFailed] = React.useState<Partial<Record<ManualPart, string>>>({});
 
-  const run = React.useCallback(async (type: "front-matter" | "closing", instruction?: string) => {
+  const run = React.useCallback(async (action: SectionAiAction, field: ManualAiField, instruction?: string) => {
     const manual = useSopBuilder.getState().manual;
     if (!manual) return;
-    controller.current?.abort();
-    const abort = new AbortController();
-    controller.current = abort;
-    setBusy(type);
+    const { reveal, signal } = streams.start(field);
+    const name = MANUAL_AI_FIELD_LABELS[field];
     try {
-      const result = await streamSopAi({ type, manual, ...(instruction ? { instruction } : {}) }, { orgId, manualId, signal: abort.signal });
-      if (abort.signal.aborted) return;
-      if (result.type === "front-matter") {
-        const frontMatter: Partial<SopFrontMatter> = result.frontMatter;
-        useSopBuilder.getState().setManual((current) => ({ ...current, frontMatter: { ...current.frontMatter, ...frontMatter } }));
-        push("Front matter written.", "success");
-      } else if (result.type === "closing") {
-        useSopBuilder.getState().setManual((current) => ({
-          ...current,
-          closing: { ...current.closing, reviewMechanism: result.reviewMechanism, approval: { ...current.closing.approval, statement: result.approvalStatement } },
-        }));
-        push("Closing written.", "success");
-      }
+      const result = await streamSopAi(manualFieldRequest(action, manual, field, instruction), {
+        orgId,
+        manualId,
+        signal,
+        onPartial: (partial) => reveal.set(partialManualText(partial, field)),
+      });
+      if (signal.aborted) { push(`${name} stopped. Nothing was changed.`, "info"); return; }
+      if (result.type !== "manual-field" || result.field !== field) throw new Error("Unexpected AI result.");
+      const text = "statement" in result ? result.statement : richTextToPlain(result.blocks);
+      if (text) await reveal.finish(text);
+      useSopBuilder.getState().setManual((current) => applyManualFieldResult(current, result));
+      push(`${name} ${ACTION_DONE[action]}.`, "success");
     } catch (cause) {
-      if (!abort.signal.aborted) push(cause instanceof Error && /not wired up/i.test(cause.message) ? "AI writing is not available yet. You can write this part yourself." : "Could not write this part. Try again.", "error");
+      if (signal.aborted) return;
+      push(notWired(cause) ? "AI writing is not available yet. You can write this part yourself." : `Could not update ${name}. Try again.`, "error");
     } finally {
-      if (controller.current === abort) { controller.current = null; setBusy(null); }
+      streams.end(field, reveal);
     }
-  }, [manualId, orgId, push]);
+  }, [manualId, orgId, push, streams]);
 
-  React.useEffect(() => () => controller.current?.abort(), []);
-  return { run, busy, stop: () => controller.current?.abort() };
+  /** Writes every field of a part in one request. Each field has its own stream, and stopping any of them stops the request. */
+  const writePart = React.useCallback(async (part: ManualPart) => {
+    const manual = useSopBuilder.getState().manual;
+    if (!manual) return;
+    const fields = MANUAL_PART_FIELDS[part];
+    const runs = Object.fromEntries(fields.map((field) => [field, streams.start(field)])) as Record<ManualAiField, GenerationRun>;
+    const abort = new AbortController();
+    fields.forEach((field) => runs[field].signal.addEventListener("abort", () => abort.abort(), { once: true }));
+    setWriting(part);
+    setFailed((current) => ({ ...current, [part]: undefined }));
+    try {
+      const result = await streamSopAi({ type: part, manual }, {
+        orgId,
+        manualId,
+        signal: abort.signal,
+        onPartial: (partial) => fields.forEach((field) => runs[field].reveal.set(partialManualText(partial, field))),
+      });
+      if (abort.signal.aborted) return;
+      if (result.type !== part) throw new Error("Unexpected AI result.");
+      await Promise.all(fields.map((field) => runs[field].reveal.finish(partFieldText(result, field))));
+      useSopBuilder.getState().setManual((current) => applySopAiResult(current, {}, result));
+      push(`${PART_TITLE[part]} written.`, "success");
+    } catch (cause) {
+      if (abort.signal.aborted) return;
+      const message = notWired(cause) ? "AI writing is not available yet. Write this part yourself, or retry later." : `The ${PART_TITLE[part].toLowerCase()} was not written. Try again.`;
+      setFailed((current) => ({ ...current, [part]: message }));
+      push(message, "error");
+    } finally {
+      fields.forEach((field) => streams.end(field, runs[field].reveal));
+      setWriting((current) => (current === part ? null : current));
+    }
+  }, [manualId, orgId, push, streams]);
+
+  return {
+    run,
+    writePart,
+    /** The part being written in one request, if any. */
+    writing,
+    /** Why the last whole-part request failed, until the next one starts. */
+    failed,
+    busy: (field: ManualAiField) => streams.busy(field),
+    reveal: (field: ManualAiField) => streams.reveal(field),
+    stop: (field: ManualAiField) => streams.stop(field),
+  };
 }
