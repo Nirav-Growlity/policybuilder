@@ -90,6 +90,23 @@ async function documentWords(pdf: Buffer): Promise<Map<string, number>> {
   return words;
 }
 
+/** The first body letters of every page: two engines break pages alike where these agree. */
+async function pageOpenings(pdf: Buffer): Promise<string[]> {
+  const doc = await getDocument({ data: new Uint8Array(pdf), verbosity: 0 }).promise;
+  const openings: string[] = [];
+  for (let n = 1; n <= doc.numPages; n++) {
+    const page = await doc.getPage(n);
+    const height = page.view[3];
+    const items = ((await page.getTextContent()).items as Array<{ str: string; transform: number[] }>).filter((item) => {
+      const fromTopMm = (height - item.transform[5]) * 25.4 / 72;
+      return item.str.trim() && fromTopMm >= BODY_TOP_MM && fromTopMm <= BODY_BOTTOM_MM;
+    });
+    openings.push(items.map((item) => item.str).join("").toLowerCase().replace(/[^\p{L}\p{N}]/gu, "").slice(0, 16));
+  }
+  await doc.destroy();
+  return openings;
+}
+
 async function pageCount(pdf: Buffer) {
   const doc = await getDocument({ data: new Uint8Array(pdf), verbosity: 0 }).promise;
   const pages = doc.numPages;
@@ -173,7 +190,7 @@ function wordDiff(a: Map<string, number>, b: Map<string, number>) {
   return [...a.keys()].filter((word) => !b.has(word)).sort();
 }
 
-type CaseResult = { item: PolicyQaCase; chromium: Rendered; typst: Rendered | null; chromiumPages: number; typstPages: number; missing: string[]; extra: string[]; pngs: string[] };
+type CaseResult = { item: PolicyQaCase; chromium: Rendered; typst: Rendered | null; chromiumPages: number; typstPages: number; missing: string[]; extra: string[]; pngs: string[]; breaks: string };
 
 function describe(result: Rendered | null) {
   if (!result) return "not ported yet";
@@ -218,6 +235,7 @@ async function main() {
     const files: Partial<Record<Engine, string>> = {};
     const pages: Record<Engine, number> = { chromium: 0, typst: 0 };
     const words: Partial<Record<Engine, Map<string, number>>> = {};
+    const openings: Partial<Record<Engine, string[]>> = {};
     for (const engine of ["chromium", "typst"] as const) {
       const result = rendered[engine];
       if (!result || "error" in result) continue;
@@ -225,6 +243,7 @@ async function main() {
       writeFileSync(files[engine]!, result.pdf);
       pages[engine] = await pageCount(result.pdf);
       words[engine] = await documentWords(result.pdf);
+      openings[engine] = await pageOpenings(result.pdf);
     }
     const missing = words.chromium && words.typst ? wordDiff(words.chromium, words.typst) : [];
     const extra = words.chromium && words.typst ? wordDiff(words.typst, words.chromium) : [];
@@ -241,22 +260,26 @@ async function main() {
       }
     }
 
+    const breaks = openings.chromium && openings.typst
+      ? `${openings.chromium.filter((opening, index) => opening && opening === openings.typst![index]).length}/${openings.chromium.length}`
+      : "";
     const lines = [
       `${item.label} (${item.name})`,
       `Chromium: ${pages.chromium} pages, ${describe(rendered.chromium)}`,
       `Typst:    ${pages.typst || "—"} pages, ${describe(rendered.typst)}`,
       ...(words.typst ? [
         `Page count difference: ${pages.typst - pages.chromium >= 0 ? "+" : ""}${pages.typst - pages.chromium}`,
+        `Pages starting with the same text: ${breaks}`,
         `Words only in Chromium (${missing.length}): ${missing.join(" ") || "none"}`,
         `Words only in Typst (${extra.length}): ${extra.join(" ") || "none"}`,
       ] : []),
     ];
     writeFileSync(join(dir, "report.txt"), lines.join("\n") + "\n");
     console.log(lines.join("\n  "));
-    results.push({ item, chromium: rendered.chromium!, typst: rendered.typst, chromiumPages: pages.chromium, typstPages: pages.typst, missing, extra, pngs });
+    results.push({ item, chromium: rendered.chromium!, typst: rendered.typst, chromiumPages: pages.chromium, typstPages: pages.typst, missing, extra, pngs, breaks });
   }
 
-  const summary = results.map((r) => `${r.item.name.padEnd(36)} chromium ${String(r.chromiumPages).padStart(2)}p ${describe(r.chromium).padStart(9)}   typst ${String(r.typstPages || "—").padStart(2)}p ${describe(r.typst).padStart(9)}${r.typst && !("error" in r.typst) ? `   missing ${r.missing.length} extra ${r.extra.length}` : ""}`);
+  const summary = results.map((r) => `${r.item.name.padEnd(36)} chromium ${String(r.chromiumPages).padStart(2)}p ${describe(r.chromium).padStart(9)}   typst ${String(r.typstPages || "—").padStart(2)}p ${describe(r.typst).padStart(9)}${r.typst && !("error" in r.typst) ? `   missing ${r.missing.length} extra ${r.extra.length}   same breaks ${r.breaks}` : ""}`);
   console.log("\n" + summary.join("\n"));
   // A single-case run refreshes only that case's folder, not the full contact sheet.
   if (!only && writePngs) {

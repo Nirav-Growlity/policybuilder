@@ -232,87 +232,240 @@
   }
 }
 
-// ---------------------------------------------------------------- body (refined in tickets 04 and 05)
+// ---------------------------------------------------------------- body
+//
+// Sizes below are the computed styles Chromium prints for the professional
+// templates (scripts/policy-css-probe.ts), in CSS px where the stylesheet uses
+// px. Margins follow CSS: they collapse between siblings (Typst block spacing
+// takes the larger of two neighbours), but stay inside a padded box, where
+// `kept` adds them back as strong spacing.
 
-#let section-heading(s) = block(width: 100%, below: 5mm, sticky: true,
-  stroke: (bottom: (paint: primary, thickness: px)), inset: (bottom: 2.5mm), {
-    let marker = css(size: heading-size, line-height: lh, weight: "extrabold", fill: primary, tracking: 0.12em, s.marker)
-    let title = css(family: head-font, size: heading-size, line-height: 1.14, weight: "semibold", fill: primary, par(justify: false, s.title))
-    grid(columns: (auto, 1fr), column-gutter: 4mm, align: (left + bottom, left + bottom), marker, title)
-  })
+#let frame = t.layout.pageFrame
+#let variant = t.variant
+// Headings inherit the body's alignment (a wrapped heading justifies) but never hyphenate.
+#let heading-par(body) = { set text(hyphenate: false); par(justify: justified, body) }
+#let subhead(body, fill: primary) = css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: fill, heading-par(body))
+#let kept(amount) = v(amount, weak: false)
 
-#let cell-text(body, alignment: content-align) = css(size: 9.5pt, line-height: 1.35, align(alignment, par(justify: false, body)))
-#let data-table(tbl) = table(
-  columns: tbl.headers.map(_ => 1fr),
-  stroke: (paint: line-color, thickness: px),
-  inset: (x: 2mm, y: 2.5mm),
-  fill: (x, y) => if y == 0 { soft } else { none },
-  table.header(..tbl.headers.map(h => cell-text(text(weight: "semibold", fill: primary, h), alignment: center))),
-  ..tbl.rows.map(row => row.enumerate().map(((i, c)) => cell-text(c, alignment: if i < row.len() - 1 { label-align } else { content-align }))).flatten(),
-)
-
-#let bullet-list(items, marker) = {
-  let lines = items.map(i => par(justify: justified, i))
-  if marker == "bullet" { list(indent: 0pt, body-indent: 6pt, spacing: 5 * px, ..lines) }
-  else { enum(indent: 0pt, body-indent: 6pt, spacing: 5 * px, ..lines) }
+// The first baseline of a CSS line box, for rows laid out with `align-items: baseline`.
+#let first-baseline(family, size, line-height) = {
+  let f = m.fonts.at(family, default: (ascent: 0.9, descent: 0.25))
+  (f.ascent + (line-height - f.ascent - f.descent) / 2) * size
+}
+// A flex row aligned on baselines: each item is (body, family, size, line-height, width).
+#let baseline-row(gap, items) = {
+  let base = calc.max(..items.map(i => first-baseline(i.family, i.size, i.lh)))
+  // Blocks fill their container by default here; an auto-width cell must shrink to its content.
+  grid(columns: items.map(i => i.width), column-gutter: gap,
+    ..items.map(i => {
+      set block(width: if i.width == auto { auto } else { 100% })
+      pad(top: base - first-baseline(i.family, i.size, i.lh), i.body)
+    }))
 }
 
-#let section-body(c) = {
-  if c.type == "narrative" {
-    for p in c.paragraphs { para(p) }
-    if c.sites != none { block(above: 17 * px, data-table(c.sites)) }
-  } else if c.type == "focus" {
-    for item in c.items { block(inset: (y: 2.5mm), grid(columns: (8mm, 1fr), column-gutter: 4mm, text(weight: "bold", fill: primary, item.marker), item.text)) }
-  } else if c.type == "qualitative" {
+// An outside CSS list marker ("•" or "1.") ends one space before the item text.
+#let css-list(items, style, indent: 19 * px, item-gap: 5 * px, size: body-size, line-height: lh, trailing: none) = {
+  for (index, item) in items.enumerate() {
+    let marker = if style == "bullet" { "•" } else { str(index + 1) + "." }
+    block(above: item-gap, below: item-gap, css(size: size, line-height: line-height, grid(columns: (indent, 1fr),
+      // A no-break space keeps "1. " together and copies as a space.
+      align(right, marker + "\u{00A0}"),
+      par(justify: justified, item))))
+  }
+  if trailing != none { kept(trailing) }
+}
+
+#let section-heading(s) = block(below: 5mm, sticky: true,
+  stroke: (bottom: (paint: primary, thickness: px)), inset: (bottom: 2.5mm), {
+    let marker-shown = frame != "numbered-rail" and frame != "editorial-margin"
+    let marker = css(size: heading-size, line-height: lh, weight: "extrabold", fill: primary, tracking: 0.12em, s.marker)
+    let title = css(family: head-font, size: heading-size, line-height: 1.14, weight: "semibold", fill: primary, tracking: -0.01em,
+      heading-par(s.title))
+    let items = (
+      (body: title, family: head-font, size: heading-size, lh: 1.14, width: 1fr),
+    )
+    if marker-shown { items.insert(0, (body: marker, family: body-font, size: heading-size, lh: lh, width: auto)) }
+    baseline-row(4mm, items)
+  })
+
+// ------------------------------------------------ tables
+
+#let institutional = variant == "institutional"
+#let cell(body, alignment: content-align, padding: (x: 2mm, y: 2.5mm)) = table.cell(inset: padding, align(alignment, body))
+#let cell-text(body, justify: justified) = css(size: 9.5pt, line-height: 1.35, par(justify: justify, body))
+#let header-text(body) = css(family: if institutional or variant == "editorial" { head-font } else { body-font },
+  size: 9.5pt, line-height: 1.35, weight: "semibold", fill: primary, { set text(hyphenate: false); par(justify: false, body) })
+#let zebra = t.layout.dataLayout == "target-bands"
+
+#let data-table(tbl, columns: none, cells: none, header-padding: (x: 2mm, y: 2.5mm), header-align: none) = block(above: 17 * px, {
+  let count = tbl.headers.len()
+  let head-align = if header-align != none { header-align } else if institutional { center } else { content-align }
+  table(
+    columns: if columns != none { columns } else { (1fr,) * count },
+    stroke: (paint: line-color, thickness: px),
+    inset: 0pt,
+    fill: (x, y) => if y == 0 { soft } else if zebra and calc.even(y) { soft } else { none },
+    table.header(..tbl.headers.map(h => cell(header-text(h), alignment: head-align + horizon, padding: header-padding))),
+    ..if cells != none { cells } else {
+      tbl.rows.map(row => row.enumerate().map(((i, c)) => {
+        let last = i == row.len() - 1
+        let alignment = if institutional { center } else if last { content-align } else { label-align }
+        cell(cell-text(c, justify: justified and last and not institutional), alignment: alignment + top)
+      })).flatten()
+    },
+  )
+})
+
+// ------------------------------------------------ content
+
+#let para(body) = block(below: 12 * px, par(justify: justified, body))
+
+#let target-list(targets, style, size: body-size, line-height: lh) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm)
+
+#let focus-list(c, recipe) = {
+  let marker-style = if recipe == "atlas-modules" { (size: 22 * px, weight: "medium", family: body-font) }
+    else if recipe == "journal-entries" { (size: 20 * px, weight: "regular", family: head-font) }
+    else { (size: body-size, weight: "bold", family: body-font) }
+  for item in c.items {
+    block(inset: (y: 2.5mm), {
+      let row = grid(columns: (auto, 1fr), column-gutter: 4mm, align: horizon,
+        box(width: 8mm, align(center, css(family: marker-style.family, size: marker-style.size, weight: marker-style.weight, fill: primary, item.marker))),
+        pad(x: 13 * px, y: 10 * px, par(justify: justified, item.text)))
+      if recipe == "atlas-modules" {
+        // min-height: 82px, content centred.
+        context {
+          let height = measure(row, width: 166mm).height
+          block(height: calc.max(height, 82 * px - 5mm), align(horizon, row))
+        }
+      } else { row }
+    })
+  }
+}
+
+#let qualitative-groups(c, recipe) = {
+  let marker = if recipe == "journal-entries" { (family: head-font, weight: "regular", fill: accent) }
+    else if recipe == "atlas-modules" { (family: body-font, weight: "medium", fill: primary) }
+    else { (family: body-font, weight: "bold", fill: primary) }
+  for g in c.groups {
+    // Padding, not inset: a broken Typst block repeats its inset on every page.
+    block(below: 6mm, {
+      kept(3mm)
+      block(below: 2mm, sticky: true, baseline-row(4mm, (
+        (body: css(family: marker.family, size: subheading-size, line-height: lh, weight: marker.weight, fill: marker.fill, g.marker), family: marker.family, size: subheading-size, lh: lh, width: auto),
+        (body: subhead(g.area), family: head-font, size: subheading-size, lh: 1.2, width: 1fr),
+      )))
+      block(above: 9 * px, css-list(g.items, c.itemMarker, trailing: 5 * px))
+      kept(3mm)
+    })
+  }
+}
+
+#let quantitative(c) = {
+  if c.treatment == "table" {
+    // Label cells never justify (tableLabelAlignment), so they skip `subhead`'s justified paragraph.
+    let marker-cell(body, alignment) = cell(css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: primary,
+      { set text(hyphenate: false); par(justify: false, body) }), alignment: alignment + top, padding: (x: 1.5mm, y: 2mm))
+    data-table((headers: (c.indexHeader, "Focus Area", "Targets"), rows: ()),
+      columns: (15.76%, 32.84%, 1fr), header-padding: (x: 1.5mm, y: 2mm),
+      cells: c.groups.map(g => (
+        marker-cell(g.marker, center),
+        marker-cell(g.area, label-align),
+        cell(target-list(g.targets, c.itemMarker, size: 9.5pt, line-height: 1.35), alignment: top, padding: (x: 1.5mm, y: 2mm)),
+      )).flatten())
+  } else if c.treatment == "bands" {
     for g in c.groups {
-      block(inset: (y: 3mm), below: 6mm, {
-        block(below: 2mm, grid(columns: (auto, 1fr), column-gutter: 4mm,
-          css(size: subheading-size, weight: "bold", fill: primary, g.marker),
-          css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: primary, g.area)))
-        bullet-list(g.items, c.itemMarker)
-      })
+      block(below: 8 * px, grid(columns: (52 * px, 1fr), fill: soft,
+        grid.cell(align(center + horizon, subhead(g.marker))),
+        grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px, y: 13 * px),
+          { subhead(g.area); target-list(g.targets, c.itemMarker) })))
     }
-  } else if c.type == "quantitative" {
-    if c.treatment == "table" {
-      data-table((headers: (c.indexHeader, "Focus Area", "Targets"), rows: c.groups.map(g => (g.marker, g.area, g.targets.join(" ")))))
-    } else {
-      for g in c.groups {
-        block(inset: (top: 10 * px), grid(columns: (42 * px, 1fr),
-          css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: primary, g.marker),
-          { css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: primary, g.area); bullet-list(g.targets, c.itemMarker) }))
-      }
+  } else if c.treatment == "journal" {
+    for g in c.groups {
+      block({ kept(14 * px); grid(columns: (150 * px, 1fr), subhead(g.area), target-list(g.targets, c.itemMarker)); kept(14 * px) })
     }
-  } else if c.type == "sdg" {
-    if c.display == "tiles" {
-      grid(columns: (100 * px,) * 5, gutter: 10 * px, ..c.goals.filter(g => g.icon != none).map(g => image(g.icon, width: 100 * px)))
-    } else {
-      for g in c.goals { block(below: 7 * px, stroke: (paint: col(g.color), thickness: px), grid(columns: (80 * px, 1fr),
-        block(fill: col(g.color), inset: 8 * px, width: 100%, css(size: 9 * px, fill: white, "SDG " + str(g.number))),
-        block(inset: (x: 11 * px, y: 8 * px), g.label))) }
-    }
-  } else if c.type == "responsibilities" {
-    if c.treatment == "table" { data-table((headers: ("Role / Department", "Responsibility"), rows: c.entries.map(e => (e.role, e.duty)))) }
-    else {
-      for e in c.entries { block(inset: (top: 10 * px), grid(columns: (42 * px, 1fr), text(fill: primary, e.marker),
-        { css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: primary, e.role); v(5 * px); par(justify: justified, e.duty) })) }
-    }
-  } else if c.type == "table" {
-    block(above: 17 * px, data-table(c.table))
-  } else if c.type == "custom" {
-    for b in c.blocks {
-      if b.type == "p" { for p in b.paragraphs { para(p) } }
-      else if b.type == "table" { block(above: 17 * px, data-table(b.table)) }
-      else { block(above: 12 * px, below: 12 * px, bullet-list(b.items, if b.type == "ul" { "bullet" } else { "number" })) }
+  } else {
+    for g in c.groups {
+      block(below: 9 * px, { kept(10 * px); grid(columns: (42 * px, 1fr), subhead(g.marker), { subhead(g.area); target-list(g.targets, c.itemMarker) }) })
     }
   }
 }
 
-#let render-section(s, first) = {
-  block(width: 100%, above: if first { 0pt } else { 45 * px * t.densityFactor }, [
-    #section-heading(s) #label("section-" + s.id)
-    #section-body(s.content)
-  ])
+#let sdg-goals(c) = {
+  if c.display == "tiles" {
+    let tile(g) = if c.mosaic {
+      box(width: 100 * px, fill: soft, {
+        image(g.icon, width: 100 * px, height: 100 * px)
+        block(inset: 7 * px, css(size: 8 * px, weight: "bold", { set text(hyphenate: false); par(justify: false, g.label) }))
+      })
+    } else { box(width: 100 * px, image(g.icon, width: 100 * px, height: 100 * px)) }
+    // flex-wrap with a 10px gap, tiles aligned to the top of each row.
+    block({
+      set par(justify: false, leading: 10 * px)
+      c.goals.filter(g => g.icon != none).map(g => box(tile(g))).join(h(10 * px))
+    })
+  } else {
+    for g in c.goals {
+      block(below: 7 * px, grid(columns: (80 * px, 1fr), stroke: (paint: col(g.color), thickness: px), inset: 0pt,
+        grid.cell(fill: col(g.color), inset: 8 * px, css(size: 9 * px, weight: "bold", fill: white, "SDG " + str(g.number))),
+        grid.cell(inset: (x: 11 * px, y: 8 * px), par(justify: justified, g.label))))
+    }
+  }
 }
+
+#let responsibilities(c, density) = {
+  if c.treatment == "table" {
+    data-table((headers: ("Role / Department", "Responsibility"), rows: c.entries.map(e => (e.role, e.duty))))
+    return
+  }
+  let card(e) = {
+    let marker = if frame == "editorial-margin" { css(family: head-font, size: 20 * px, line-height: 1.5, fill: accent, e.marker) }
+      else { css(weight: "bold", fill: primary, e.marker) }
+    grid(columns: (if frame == "editorial-margin" { 56 * px } else { 42 * px }, 1fr), marker,
+      { subhead(e.role); v(5 * px); par(justify: justified, e.duty) })
+  }
+  let two-up = (frame == "numbered-rail" or frame == "modular-grid") and density != "dense"
+  if two-up {
+    grid(columns: (1fr, 1fr), gutter: 9 * px, ..c.entries.map(e => {
+      if frame == "modular-grid" { block(fill: soft, inset: 15 * px, height: auto, context {
+        let body = card(e)
+        let height = measure(body, width: (166mm - 9 * px) / 2 - 30 * px).height
+        block(height: calc.max(height, 115 * px - 30 * px), body)
+      }) }
+      else { block(stroke: (paint: line-color, thickness: px), inset: 12 * px + px, card(e)) }
+    }))
+  } else {
+    for e in c.entries { block(below: 9 * px, { kept(10 * px); card(e) }) }
+  }
+}
+
+#let custom-blocks(c) = {
+  for b in c.blocks {
+    if b.type == "p" { for p in b.paragraphs { para(p) } }
+    else if b.type == "table" { data-table(b.table) }
+    else { block(above: 12 * px, below: 12 * px, css-list(b.items, if b.type == "ul" { "bullet" } else { "number" }, indent: 20 * px)) }
+  }
+}
+
+#let section-body(s) = {
+  let c = s.content
+  if c.type == "narrative" {
+    for p in c.paragraphs { para(p) }
+    if c.sites != none { data-table(c.sites) }
+  } else if c.type == "focus" { focus-list(c, s.recipe) }
+  else if c.type == "qualitative" { qualitative-groups(c, s.recipe) }
+  else if c.type == "quantitative" { quantitative(c) }
+  else if c.type == "sdg" { sdg-goals(c) }
+  else if c.type == "responsibilities" { responsibilities(c, s.density) }
+  else if c.type == "table" { data-table(c.table) }
+  else if c.type == "custom" { custom-blocks(c) }
+}
+
+// Code mode, not markup: whitespace between the heading and the body would
+// become a paragraph and break the heading's `sticky` keep-with-next.
+#let render-section(s, first) = block(above: if first { 0pt } else { 45 * px * t.densityFactor }, {
+  [#section-heading(s)#label("section-" + s.id)]
+  section-body(s)
+})
 
 #let acknowledgement() = {
   let a = m.acknowledgement

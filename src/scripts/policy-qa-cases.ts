@@ -1,11 +1,13 @@
 // Sample policies that exercise every document template and the design
 // options around it. Shared by the theme QA export and the PDF engine parity check.
 import { DOCUMENT_THEMES, getDocumentThemePatch } from "../lib/document-themes";
+import { normalizePolicyStructure } from "../lib/sections";
 import { makeSamplePolicy } from "../lib/store";
 import type { Policy } from "../lib/types";
 
 export type PolicyQaCase = { name: string; label: string; policy: Policy };
 
+const ONE_PIXEL_PNG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";
 const svgDataUrl = (svg: string) => `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
 
 /** Every template at three content lengths, plus custom colours and a cover feature image. */
@@ -57,7 +59,7 @@ export function themeQaCases(): PolicyQaCase[] {
         ...makeSamplePolicy(),
         documentTheme: "people-charter",
         featureImage: {
-          dataUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+          dataUrl: ONE_PIXEL_PNG,
           mimeType: "image/png",
           altText: "Abstract editorial feature image",
           placement: "cover",
@@ -104,7 +106,32 @@ export function extraParityCases(): PolicyQaCase[] {
   const bordered = withTheme("controlled-manual");
   bordered.documentThemeOverrides = { schemaVersion: 1, pageBorder: { enabled: true, scope: "all", widthPt: 1.5, insetMm: 8, color: "#26323D" } };
 
+  // The modern data treatments outside the framed templates, journal-style targets,
+  // custom blocks, bullet markers and a section feature image.
+  const modern = withTheme("standard-pack");
+  modern.visualStyle = "modern";
+  modern.sdgDisplay = "tiles";
+
+  const journal = withTheme("operations-guide");
+  journal.visualStyle = "modern";
+
+  const custom = normalizePolicyStructure(withTheme("governance-register"));
+  custom.listFormatting = { outline: "bullet", focusAreas: "bullet", qualitativeGroups: "bullet", qualitativeItems: "number", quantitativeGroups: "bullet", quantitativeItems: "number", responsibilities: "bullet" };
+  custom.featureImage = { dataUrl: ONE_PIXEL_PNG, mimeType: "image/png", altText: "Section artwork", placement: "section", focalPosition: { x: 50, y: 30 }, width: 1, height: 1 };
+  custom.sections!.push({
+    id: "qa-custom", kind: "custom", title: "Measurement Methodology", enabled: true,
+    blocks: [
+      { id: "qa-p", type: "paragraph", text: "Indicators are measured monthly at each site and consolidated quarterly.\nData owners confirm completeness before the quarterly review." },
+      { id: "qa-b", type: "bullets", text: "Energy meters are calibrated annually\nWater withdrawal is read from utility invoices\nWaste is weighed at the gate" },
+      { id: "qa-n", type: "numbered", text: "Collect site data\nReview anomalies\nApprove the consolidated report" },
+      { id: "qa-t", type: "table", text: "", columns: ["Indicator", "Unit", "Frequency", "Owner"], rows: [["Electricity use", "MWh", "Monthly", "Site Engineering"], ["Scope 1 emissions", "tCO2e", "Quarterly", "EHS Manager"], ["Hazardous waste", "t", "Monthly", "Plant Head"]] },
+    ],
+  });
+
   return [
+    { name: "modern-single-folio", label: "Modern treatments, plain frame", policy: modern },
+    { name: "modern-journal", label: "Modern treatments, journal targets", policy: journal },
+    { name: "custom-blocks", label: "Custom blocks, bullets, section image", policy: custom },
     { name: "logo-right", label: "Company logo, right aligned", policy: logoRight },
     { name: "ai-cover", label: "AI cover composition", policy: aiCover },
     { name: "toc-off", label: "Contents page off", policy: tocOff },
