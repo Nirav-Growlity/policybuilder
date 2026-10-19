@@ -16,9 +16,20 @@ export class TypstCompileError extends Error {
 }
 
 /**
- * Pure compile step, shared by the server engine and offline scripts. All
+ * Lays out `template` with `model` at /model.json and `assets` beside it. All
  * inputs are shadow files, so nothing is read from or written to disk.
  */
+export function compileTypstDocument(compiler: NodeCompiler, template: string, model: unknown, assets: ManualAsset[], workspace: string) {
+  compiler.resetShadow();
+  compiler.mapShadow(join(workspace, "model.json"), Buffer.from(JSON.stringify(model)));
+  for (const asset of assets) compiler.mapShadow(join(workspace, asset.path), asset.content);
+  const result = compiler.compile({ mainFileContent: template });
+  const error = result.takeError();
+  if (error) throw new TypstCompileError(compiler.fetchDiagnostics(error));
+  return result.result!;
+}
+
+/** Pure compile step, shared by the server engine and offline scripts. */
 export function compileSopManual(
   compiler: NodeCompiler,
   template: string,
@@ -27,13 +38,7 @@ export function compileSopManual(
   workspace: string,
   options: { svg?: boolean } = {},
 ): CompiledManual {
-  compiler.resetShadow();
-  compiler.mapShadow(join(workspace, "model.json"), Buffer.from(JSON.stringify(model)));
-  for (const asset of assets) compiler.mapShadow(join(workspace, asset.path), asset.content);
-  const result = compiler.compile({ mainFileContent: template });
-  const error = result.takeError();
-  if (error) throw new TypstCompileError(compiler.fetchDiagnostics(error));
-  const document = result.result!;
+  const document = compileTypstDocument(compiler, template, model, assets, workspace);
   const pdf = compiler.pdf(document);
   const pages = compiler.query(document, { selector: "<sop-page-count>", field: "value" }) as number[] | undefined;
   const anchors = compiler.query(document, { selector: "<sop-anchor-pages>", field: "value" }) as Array<Array<[string, number]>> | undefined;

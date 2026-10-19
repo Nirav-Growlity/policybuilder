@@ -116,6 +116,9 @@ export function extraParityCases(): PolicyQaCase[] {
 export function qaPolicy(themeId: (typeof DOCUMENT_THEMES)[number]["id"], sample: "concise" | "regular" | "dense"): Policy {
   const policy = structuredClone(makeSamplePolicy());
   Object.assign(policy, getDocumentThemePatch(themeId), { documentTheme: themeId });
+  // New policies start with both on (lib/initial-policy.ts); the sample has them off.
+  policy.showTableOfContents = true;
+  policy.showAcknowledgement = true;
   policy.company.name = sample === "dense" ? "Long-form Example Holdings, Manufacturing and Infrastructure Services Company Limited" : policy.company.name;
   if (sample === "concise") {
     policy.declaration.preface = "A concise statement of policy purpose and intent.";

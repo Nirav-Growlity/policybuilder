@@ -7,13 +7,13 @@ import { createCoverCompositionSvg, resolveCoverTextLayout } from "../../cover-r
 import { getPolicyProfile } from "../../constants";
 import { runningLogoFit, tableLabelAlignment } from "../../document-themes";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData, type DocumentRenderModel, type DocumentRenderSection } from "../../document-render-model";
-import { typesetProse } from "../../hyphenation";
+import { SOFT_HYPHEN, typesetProse } from "../../hyphenation";
 import { listMarkerText } from "../../list-formatting";
 import { pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "../../page-geometry";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets } from "../../quantitative";
 import type { CoverTextElement, ListMarkerStyle, Policy, RichTextBlock, ThemeBackground } from "../../types";
 import type { ManualAsset } from "../compile";
-import { typstFontFamily } from "../fonts";
+import { fontLineMetrics, typstFontFamily } from "../fonts";
 import { decodeDataUrl, toTypstImage, type LoadedImage } from "../images";
 
 // The JSON lib/typst/policy/policy.typ reads from /model.json. Every layout
@@ -49,6 +49,8 @@ type Brand = { kind: "logo"; image: string; widthMm: number; heightMm: number } 
 
 export type PolicyTypstModel = {
   meta: { title: string; author: string };
+  /** Ascent and descent (em) per family, so the template builds CSS-sized line boxes. */
+  fonts: Record<string, { ascent: number; descent: number }>;
   page: {
     widthMm: number; heightMm: number; marginTopMm: number; marginXMm: number; marginBottomMm: number;
     background: ThemeBackground;
@@ -127,6 +129,33 @@ function coverRaster(policy: Policy, composition: NonNullable<DocumentRenderMode
   return raster;
 }
 
+// The simplified cover's feature figure: full content width, 52 mm tall, the
+// photo cropped around its focal point, desaturated and faded into the paper
+// colour from the left, as the HTML cover draws it with CSS filters.
+const COVER_FEATURE_MM = { width: 210 - 2 * 22 - 2 * 12.7, height: 52 };
+const FEATURE_OPACITY: Record<string, number> = { "full-bleed-cover": 0.42, "section-led": 0.17 };
+async function coverFeatureImage(image: LoadedImage, focal: { x: number; y: number }, paper: string, treatment: string): Promise<Buffer> {
+  const width = Math.round(COVER_FEATURE_MM.width / 25.4 * 300);
+  const height = Math.round(COVER_FEATURE_MM.height / 25.4 * 300);
+  const source = sharp(image.content);
+  const { width: sourceWidth = 1, height: sourceHeight = 1 } = await source.metadata();
+  const scale = Math.max(width / sourceWidth, height / sourceHeight);
+  const scaledWidth = Math.max(width, Math.round(sourceWidth * scale));
+  const scaledHeight = Math.max(height, Math.round(sourceHeight * scale));
+  const left = Math.round((scaledWidth - width) * Math.min(100, Math.max(0, focal.x)) / 100);
+  const top = Math.round((scaledHeight - height) * Math.min(100, Math.max(0, focal.y)) / 100);
+  const rgba = await sharp(image.content).resize(scaledWidth, scaledHeight, { fit: "fill", kernel: "cubic" }).extract({ left, top, width, height })
+    .modulate({ saturation: 0.72 }).toColourspace("srgb").ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const opacity = FEATURE_OPACITY[treatment] ?? 0.22;
+  for (let index = 3; index < rgba.data.length; index += 4) rgba.data[index] = Math.round(rgba.data[index] * opacity);
+  const photo = await sharp(rgba.data, { raw: rgba.info }).png().toBuffer();
+  const fade = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><defs><linearGradient id="f" x1="0" x2="1" y1="0" y2="0"><stop offset=".1" stop-color="${paper}"/><stop offset=".54" stop-color="${paper}" stop-opacity=".58"/><stop offset="1" stop-color="${paper}" stop-opacity="0"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#f)"/></svg>`);
+  return sharp({ create: { width, height, channels: 3, background: paper } })
+    .composite([{ input: photo }, { input: fade }])
+    .png()
+    .toBuffer();
+}
+
 const paragraphs = (text: string) => text.split(/\r?\n+/).map((line) => line.trim()).filter(Boolean);
 const table = (headers: string[], rows: string[][]): Table => ({ headers, rows: rows.map((row) => headers.map((_, index) => row[index] || "")) });
 
@@ -192,6 +221,27 @@ function customBlock(block: RichTextBlock): Extract<TypstSectionContent, { type:
   return { type: block.type === "bullets" ? "ul" : "ol", items: paragraphs(block.text) };
 }
 
+/** Chromium sizes line boxes from the OS/2 typo metrics when a font asks for them, else from the Windows metrics. */
+function cssLineMetrics(family: string) {
+  const metrics = fontLineMetrics(family);
+  return metrics.useTypo ? { ascent: metrics.typoAscent, descent: metrics.typoDescent } : { ascent: metrics.winAscent, descent: metrics.winDescent };
+}
+
+/** Running header and footer furniture print in Arial, which Typst draws with its stand-in. */
+export const FURNITURE_FONT = "Arimo";
+
+/**
+ * Soft hyphens from typesetProse scramble the PDF text layer Typst writes
+ * (letters drop out on copy), so the template hyphenates with Typst's own
+ * English patterns instead, the same TeX patterns the soft hyphens came from.
+ */
+function withoutSoftHyphens<T>(value: T): T {
+  if (typeof value === "string") return value.replaceAll(SOFT_HYPHEN, "") as T;
+  if (Array.isArray(value)) return value.map(withoutSoftHyphens) as T;
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, withoutSoftHyphens(item)])) as T;
+  return value;
+}
+
 /**
  * Builds the Typst model and the workspace files it references (logo, cover,
  * feature image, SDG icons, signature). Expects the export payload, where
@@ -248,7 +298,10 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
       });
     cover = { kind: "composition", image, texts };
   } else {
-    const feature = model.featureImage?.placement === "cover" ? await addImage("cover-feature", await loadImage(model.featureImage.dataUrl), 2000) : null;
+    const featureSource = model.featureImage?.placement === "cover" ? await loadImage(model.featureImage.dataUrl) : null;
+    const feature = featureSource && model.featureImage
+      ? addBuffer("cover-feature.png", await coverFeatureImage(featureSource, model.featureImage.focalPosition, theme.colors.paper, theme.layout.imageTreatment))
+      : null;
     cover = {
       kind: "standard",
       brand,
@@ -277,10 +330,13 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
     ? [...model.tocEntries, { id: "acknowledgement", index: model.tocEntries.length + 1, title: acknowledgement.title }]
     : model.tocEntries;
 
+  const families = new Set([bodyFont, headingFont, FURNITURE_FONT, ...(cover.kind === "composition" ? cover.texts.map((text) => text.font) : [])]);
+
   return {
     assets,
-    model: {
+    model: withoutSoftHyphens<PolicyTypstModel>({
       meta: { title: getPolicyProfile(policy.policyType).label, author: policy.company.name || "" },
+      fonts: Object.fromEntries([...families].map((family) => [family, cssLineMetrics(family)])),
       page: {
         widthMm: 210, heightMm: 297, marginTopMm, marginXMm, marginBottomMm: marginXMm,
         background: theme.background,
@@ -323,6 +379,6 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
       acknowledgement: acknowledgement
         ? { title: acknowledgement.title, statement: acknowledgement.statement, fields: acknowledgement.fields.map((field) => ({ label: field.label, value: field.value ?? null })), signature }
         : null,
-    },
+    }),
   };
 }

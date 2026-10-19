@@ -46,28 +46,45 @@ async function timed(render: () => Promise<Buffer>): Promise<Rendered> {
     const pdf = await render();
     return { pdf: Buffer.from(pdf), ms: performance.now() - started };
   } catch (error) {
-    return { error: error instanceof Error ? error.message : String(error) };
+    // Typst diagnostics name the template line that failed.
+    const diagnostics = error && typeof error === "object" && "diagnostics" in error ? ` ${JSON.stringify(error.diagnostics).slice(0, 600)}` : "";
+    return { error: `${error instanceof Error ? error.message : String(error)}${diagnostics}` };
   }
 }
 
 // ---------------------------------------------------------------- text
 
-/** Words on all pages, with line-end hyphenation joined and punctuation removed. */
+// Header and footer bands. They repeat on every page and the engines write
+// them in a different order (Typst first, Chromium last), which would split a
+// word hyphenated across a page break, so only body text is compared.
+const BODY_TOP_MM = 20;
+const BODY_BOTTOM_MM = 278;
+
+/** Body words on all pages, with line-end hyphenation joined (across pages too) and punctuation removed. */
 async function documentWords(pdf: Buffer): Promise<Map<string, number>> {
   const doc = await getDocument({ data: new Uint8Array(pdf), verbosity: 0 }).promise;
   let text = "";
   for (let n = 1; n <= doc.numPages; n++) {
-    const content = await (await doc.getPage(n)).getTextContent();
-    for (const item of content.items as Array<{ str: string; hasEOL?: boolean }>) {
+    const page = await doc.getPage(n);
+    const height = page.view[3];
+    const content = await page.getTextContent();
+    const items = (content.items as Array<{ str: string; hasEOL?: boolean; transform: number[] }>).filter((item) => {
+      const fromTopMm = (height - item.transform[5]) * 25.4 / 72;
+      return item.str.length > 0 && fromTopMm >= BODY_TOP_MM && fromTopMm <= BODY_BOTTOM_MM;
+    });
+    items.forEach((item, index) => {
       const str = item.str.replaceAll("\u00AD", "");
-      text += /[-\u2010]$/.test(str) && item.hasEOL ? str.slice(0, -1) : `${str}${item.hasEOL ? " " : ""}`;
-    }
-    text += " ";
+      // A line ends where the next run starts lower; engines differ in marking it.
+      const next = items[index + 1];
+      const lineEnd = item.hasEOL || !next || Math.abs(next.transform[5] - item.transform[5]) > 1;
+      text += /[-\u2010]$/.test(str) && lineEnd ? str.slice(0, -1) : `${str}${lineEnd ? " " : ""}`;
+    });
   }
   await doc.destroy();
   const words = new Map<string, number>();
   for (const raw of text.toLowerCase().split(/\s+/)) {
-    const word = raw.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "");
+    // A real hyphen at a line end ("water-|quality") reads like a break hyphen, so hyphens never count.
+    const word = raw.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "").replace(/[-‐]/g, "");
     if (word) words.set(word, (words.get(word) ?? 0) + 1);
   }
   return words;
