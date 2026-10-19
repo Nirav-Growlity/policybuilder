@@ -17,14 +17,24 @@ test("uses Claude Haiku 5.5 at low effort by default", () => {
   assert.equal(params.thinking, undefined, "thinking stays on (adaptive) by leaving the parameter out");
 });
 
-test("puts the cache breakpoint on the reference context, after the stable system text", () => {
+test("caches the system text and the document context separately, for an hour each", () => {
   const params = buildClaudeParams({ system: "rules", cachedContext: "company and references", user: "task", maxTokens: 1_000 });
   const system = params.system as Array<{ text: string; cache_control?: unknown }>;
   assert.equal(system.length, 2);
   assert.equal(system[0].text, "rules");
-  assert.equal(system[0].cache_control, undefined);
+  // Its own breakpoint lets requests about other documents reuse the system text.
+  assert.deepEqual(system[0].cache_control, { type: "ephemeral", ttl: "1h" });
   assert.deepEqual(system[1].cache_control, { type: "ephemeral", ttl: "1h" });
   assert.equal(params.messages[0].content, "task");
+});
+
+test("opens the user turn with reusable context behind a 5-minute breakpoint", () => {
+  const params = buildClaudeParams({ system: "rules", cachedContext: "company", reusableContext: "references", user: "task", maxTokens: 1_000 });
+  const content = params.messages[0].content as Array<{ type: string; text: string; cache_control?: unknown }>;
+  assert.deepEqual(content.map((block) => block.text), ["references", "task"]);
+  // Default TTL (5 minutes); 1-hour entries must come before it, and they do.
+  assert.deepEqual(content[0].cache_control, { type: "ephemeral" });
+  assert.equal(content[1].cache_control, undefined);
 });
 
 test("caches the system text when there is no separate context", () => {

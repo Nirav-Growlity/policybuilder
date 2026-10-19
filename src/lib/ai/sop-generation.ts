@@ -369,6 +369,7 @@ export async function runSopGeneration(request: SopAiRequest, options: SopGenera
   const { text, stopReason, usage } = await streamClaudeText({
     system: prompt.system,
     cachedContext: prompt.cachedContext,
+    reusableContext: prompt.reusableContext,
     user: prompt.user,
     maxTokens: prompt.maxTokens,
     effort: "low",

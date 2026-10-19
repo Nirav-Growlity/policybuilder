@@ -94,6 +94,32 @@ test("manual context is identical for every SOP of a manual, so parallel calls s
   assert.notEqual(first.user, second.user);
 });
 
+test("owners filled in while SOPs are written do not change the cached manual context", () => {
+  const manual = sampleManual();
+  const before = buildSopPrompt({ type: "sop", manual, sopId: manual.sops[0].id }, { references: "", imported: "" });
+  const written = { ...manual, sops: manual.sops.map((sop, index) => (index === 1 ? { ...sop, owner: "Head of People" } : sop)) };
+  const after = buildSopPrompt({ type: "sop", manual: written, sopId: written.sops[0].id }, { references: "", imported: "" });
+  assert.equal(after.cachedContext, before.cachedContext);
+  // The SOP being written still names its owner, in the task.
+  assert.match(after.user, /owner: EHS Manager/);
+});
+
+test("section edits put their sources behind the reusable cache breakpoint; whole SOPs do not", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  const purpose = sop.sections.find((section) => section.kind === "purpose")!;
+  const sources = { references: "REFERENCE TEXT", imported: "IMPORTED TEXT" };
+  const regenerate = buildSopPrompt({ type: "sop-section", manual, sopId: sop.id, sectionId: purpose.id }, sources);
+  const shorten = buildSopPrompt({ type: "refine", manual, sopId: sop.id, sectionId: purpose.id, mode: "shorten" }, sources);
+  assert.equal(regenerate.reusableContext, "IMPORTED TEXT\n\nREFERENCE TEXT");
+  // Follow-up edits of the same section send the same cached prefix.
+  assert.equal(shorten.reusableContext, regenerate.reusableContext);
+  assert.doesNotMatch(regenerate.user, /REFERENCE TEXT/);
+  const whole = buildSopPrompt({ type: "sop", manual, sopId: sop.id }, sources);
+  assert.equal(whole.reusableContext, "");
+  assert.match(whole.user, /^IMPORTED TEXT\n\nREFERENCE TEXT/);
+});
+
 test("a whole-SOP prompt asks only for enabled AI sections", () => {
   const manual = sampleManual();
   const prompt = buildSopPrompt({ type: "sop", manual, sopId: manual.sops[0].id }, { references: "", imported: "" });

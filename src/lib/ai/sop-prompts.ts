@@ -85,8 +85,10 @@ export function buildSopManualContext(manual: SopManual): string {
     `Departments: ${unique(enabled.map((sop) => sop.department)).join(", ") || "not stated"}`,
     `Document control: manual no. ${clean(control.docNo) || "[manual number]"}, revision ${clean(control.revision) || "01"}, review frequency ${clean(control.reviewFrequency) || "annual"}, classification ${clean(control.classification) || "Internal"}.`,
     `Prepared by: ${clean(control.preparedBy) || "not stated"}; reviewed by: ${clean(control.reviewedBy) || "not stated"}; approved by: ${clean(control.approvedBy) || clean(company.approver) || "not stated"}.`,
-    "SOP register (code | title | pillar | department | owner):",
-    ...enabled.map((sop) => `- ${clean(sop.code) || "-"} | ${clean(sop.title)} | ${sop.pillar} | ${clean(sop.department) || "-"} | ${clean(sop.owner) || "-"}`),
+    "SOP register (code | title | pillar | department):",
+    // Owners are left out: they are often filled in while SOPs are written, and
+    // any change here misses the cache for every request about the manual.
+    ...enabled.map((sop) => `- ${clean(sop.code) || "-"} | ${clean(sop.title)} | ${sop.pillar} | ${clean(sop.department) || "-"}`),
   ];
   return lines.join("\n");
 }
@@ -322,6 +324,8 @@ export type SopPromptSources = {
 export type SopPrompt = {
   system: string;
   cachedContext: string;
+  /** Opens the user turn behind a short-lived cache breakpoint; empty when nothing is worth caching. */
+  reusableContext: string;
   user: string;
   maxTokens: number;
   schema: z.ZodType;
@@ -478,11 +482,18 @@ export function buildSopPrompt(request: SopAiRequest, sources: SopPromptSources)
     imported: sources.imported,
   });
   // Primary context first, task last: the model reads the task with everything else in view.
-  const user = [fitted.imported, fitted.references, fitted.siblings, fitted.task].filter(Boolean).join("\n\n");
+  const lead = [fitted.imported, fitted.references].filter(Boolean).join("\n\n");
+  const rest = [fitted.siblings, fitted.task].filter(Boolean).join("\n\n");
+  // Regenerate, improve, shorten and custom edits of one section all send the
+  // same imported text and references, so a 5-minute cache entry serves the
+  // next edit. A whole SOP is written once; caching its sources would only add
+  // the write premium.
+  const reusable = request.type === "sop-section" || request.type === "refine";
   return {
     system: fitted.system,
     cachedContext: fitted.cachedContext,
-    user,
+    reusableContext: reusable ? lead : "",
+    user: reusable ? rest : [lead, rest].filter(Boolean).join("\n\n"),
     maxTokens,
     schema,
     estimatedTokens: estimatePromptTokens(fitted),

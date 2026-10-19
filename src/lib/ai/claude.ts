@@ -44,14 +44,24 @@ export function getClaudeClient() {
   return cachedClient;
 }
 
+/**
+ * Cache layout (Haiku 5.5 caches any prefix of 512+ tokens). The structured
+ * output schema renders ahead of the system prompt, so a different schema is
+ * a different prefix: keep schemas stable per route.
+ * - `system`: 1-hour breakpoint, shared by every request on the route.
+ * - `cachedContext`: 1-hour breakpoint, shared by every request about one
+ *   document (company, sites, register).
+ * - `reusableContext`: 5-minute breakpoint at the start of the user turn, for
+ *   material that follow-up requests about the same item repeat (the reference
+ *   SOPs for one section). Longer TTLs must come first, so it is last.
+ */
 export interface ClaudeRequest {
   /** Stable instructions. Keep this byte-identical across requests so it caches. */
   system: string;
-  /**
-   * Large, reusable reference material (company profile, reference templates).
-   * It sits after the system text and carries the cache breakpoint.
-   */
+  /** Reference material shared by every request about one document. Keep it byte-stable while the document is edited. */
   cachedContext?: string;
+  /** Material that follow-up requests about the same item send again; it opens the user turn. */
+  reusableContext?: string;
   /** The volatile part: the task for this one request. */
   user: string;
   /** Images shown to the model before the task text, as base64 without a data: prefix. */
@@ -61,13 +71,14 @@ export interface ClaudeRequest {
   format?: Anthropic.Messages.JSONOutputFormat;
 }
 
+const HOUR = { type: "ephemeral", ttl: "1h" } as const;
+
 export function buildClaudeParams(request: ClaudeRequest): Anthropic.Messages.MessageCreateParamsNonStreaming {
-  const estimated = estimateTokens(request.system + (request.cachedContext ?? "") + request.user);
+  const estimated = estimateTokens(request.system + (request.cachedContext ?? "") + (request.reusableContext ?? "") + request.user);
   if (estimated > CONTEXT_TOKEN_CEILING) throw new ClaudeContextTooLargeError(estimated);
 
-  const system: Anthropic.Messages.TextBlockParam[] = [{ type: "text", text: request.system }];
-  if (request.cachedContext) system.push({ type: "text", text: request.cachedContext });
-  system[system.length - 1].cache_control = { type: "ephemeral", ttl: "1h" };
+  const system: Anthropic.Messages.TextBlockParam[] = [{ type: "text", text: request.system, cache_control: HOUR }];
+  if (request.cachedContext) system.push({ type: "text", text: request.cachedContext, cache_control: HOUR });
 
   return {
     model: CLAUDE_MODEL,
@@ -82,12 +93,13 @@ export function buildClaudeParams(request: ClaudeRequest): Anthropic.Messages.Me
 }
 
 function userContent(request: ClaudeRequest): Anthropic.Messages.MessageParam["content"] {
-  if (!request.images?.length) return request.user;
+  if (!request.images?.length && !request.reusableContext) return request.user;
   return [
-    ...request.images.map((image): Anthropic.Messages.ImageBlockParam => ({
+    ...(request.images ?? []).map((image): Anthropic.Messages.ImageBlockParam => ({
       type: "image",
       source: { type: "base64", media_type: image.mediaType, data: image.data },
     })),
+    ...(request.reusableContext ? [{ type: "text" as const, text: request.reusableContext, cache_control: { type: "ephemeral" as const } }] : []),
     { type: "text", text: request.user },
   ];
 }
