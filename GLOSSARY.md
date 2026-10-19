@@ -1,4 +1,4 @@
-# PolicyCraft vocabulary
+# PolicyCraft glossary
 
 - **Client organization**: a company whose policies are created in PolicyCraft. Each policy belongs to one client organization.
 - **ESG organization**: a client organization registered in the shared ESG platform. Its company details remain managed in that platform.
