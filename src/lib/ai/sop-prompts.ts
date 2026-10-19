@@ -395,10 +395,19 @@ export function collectSopPromptSources(request: SopAiRequest, importedContext: 
 
 const REFINE_MODES = {
   expand: "Expand this section by about half: add practical detail, checks and responsibilities that a real procedure would have. Keep every existing point.",
-  shorten: "Shorten this section to about half its length. Keep every obligation, role and record; remove repetition and filler.",
+  shorten: "Shorten this section: merge sentences that overlap, cut long lists to what matters and drop explanation. Keep the main obligations, roles and records.",
   formal: "Rewrite this section in a more formal, precise register. Keep the same content and roughly the same length.",
   custom: "Revise this section as the user instructs.",
 } as const;
+
+/** Shown above existing text that a rewrite replaces; without it the model hands the text back unchanged. */
+const REPLACED_TEXT = "being replaced: write a fresh draft with new wording and structure. Keep the facts, names and figures, but do not copy its sentences";
+
+/** A hard word limit for shortening; "about half" alone barely shortens long text. */
+function shortenTarget(text: string) {
+  const count = text.split(/\s+/).filter(Boolean).length;
+  return `The current text is ${count} words. Your answer must be ${Math.max(15, Math.round(count * 0.6))} words or fewer. This limit overrides the length guidance and the reference SOPs.`;
+}
 
 /** What each front matter or closing field should say, for the single-field request. */
 const MANUAL_FIELD_GUIDE: Record<ManualAiField, string> = {
@@ -459,7 +468,7 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
           `TASK: Rewrite one section of this SOP: kind "${section.kind}", title "${clean(section.title)}".`,
           sopHeader(manual, sop),
           others ? `\nTHE REST OF THIS SOP (stay consistent with its roles, steps and records):\n${others}` : "",
-          sectionHasContent(section) ? `\nCURRENT TEXT OF THE SECTION:\n${renderSopSection(section)}` : "",
+          sectionHasContent(section) ? `\nCURRENT TEXT OF THE SECTION (${REPLACED_TEXT}):\n${renderSopSection(section)}` : "",
           instructionLine(request.instruction),
           `\nFill "sections" with the single key:\n${sectionList([section])[0]}`,
         ].filter(Boolean).join("\n"),
@@ -479,6 +488,7 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
           `TASK: Improve one section of this SOP: kind "${section.kind}", title "${clean(section.title)}".`,
           sopHeader(manual, sop),
           REFINE_MODES[request.mode],
+          request.mode === "shorten" ? shortenTarget(current) : "",
           `\nCURRENT TEXT OF THE SECTION:\n${current}`,
           instructionLine(request.instruction),
           `\nFill "sections" with the single key:\n${sectionList([section])[0]}`,
@@ -518,13 +528,16 @@ function taskFor(request: SopAiRequest): { task: string; maxTokens: number; sche
     case "manual-field": {
       const generate = request.mode === "generate";
       const current = manualFieldText(manual, request.field);
-      const growth = request.mode === "shorten" ? 0.7 : 1.3;
+      const shorten = request.mode === "shorten";
+      const growth = shorten ? 0.7 : 1.3;
       return {
         task: [
           `TASK: ${generate ? "Write" : "Improve"} the ${MANUAL_AI_FIELD_LABELS[request.field].toLowerCase()} of this SOP manual.`,
-          MANUAL_FIELD_GUIDE[request.field],
+          // The field guide asks for full coverage, which works against a shorter answer.
+          shorten ? "" : MANUAL_FIELD_GUIDE[request.field],
           request.mode === "generate" ? "" : REFINE_MODES[request.mode],
-          current ? `\nCURRENT TEXT (the user may have edited it; ${generate ? "keep their facts and rewrite the rest" : "keep the same facts"}):\n${current}` : "",
+          shorten ? shortenTarget(current) : "",
+          current ? `\nCURRENT TEXT (${generate ? REPLACED_TEXT : "the user may have edited it; keep the same facts"}):\n${current}` : "",
           instructionLine(request.instruction),
           `\nFill "${request.field}" with ${request.field === "approvalStatement" ? "the statement as one string" : "the paragraphs as a list of strings"}.`,
         ].filter(Boolean).join("\n"),

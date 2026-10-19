@@ -109,6 +109,7 @@ test("section edits put their sources behind the reusable cache breakpoint; whol
   const manual = sampleManual();
   const sop = manual.sops[0];
   const purpose = sop.sections.find((section) => section.kind === "purpose")!;
+  if ("blocks" in purpose) purpose.blocks = [{ id: "p", type: "paragraph", text: "To control waste from generation to disposal at every site." }];
   const sources = { references: "REFERENCE TEXT", imported: "IMPORTED TEXT" };
   const regenerate = buildSopPrompt({ type: "sop-section", manual, sopId: sop.id, sectionId: purpose.id }, sources);
   const shorten = buildSopPrompt({ type: "refine", manual, sopId: sop.id, sectionId: purpose.id, mode: "shorten" }, sources);
@@ -116,6 +117,9 @@ test("section edits put their sources behind the reusable cache breakpoint; whol
   // Follow-up edits of the same section send the same cached prefix.
   assert.equal(shorten.reusableContext, regenerate.reusableContext);
   assert.doesNotMatch(regenerate.user, /REFERENCE TEXT/);
+  // A rewrite asks for a fresh draft; a shorten names its word limit.
+  assert.match(regenerate.user, /CURRENT TEXT OF THE SECTION \(being replaced: write a fresh draft/);
+  assert.match(shorten.user, /Your answer must be \d+ words or fewer\./);
   const whole = buildSopPrompt({ type: "sop", manual, sopId: sop.id }, sources);
   assert.equal(whole.reusableContext, "");
   assert.match(whole.user, /^IMPORTED TEXT\n\nREFERENCE TEXT/);
@@ -250,6 +254,13 @@ test("a manual field prompt writes its own field, sees the rest of the manual, a
   assert.match(shorten.user, /TASK: Improve the introduction of this SOP manual/);
   assert.match(shorten.user, /CURRENT TEXT[\s\S]*INTRO TEXT KEEP/);
   assert.doesNotMatch(shorten.user, /THE REST OF THIS MANUAL[\s\S]*Introduction:/);
+  // It sets a hard word limit and leaves out the field guide, which asks for full coverage.
+  assert.match(shorten.user, /The current text is 3 words\. Your answer must be 15 words or fewer\./);
+  assert.doesNotMatch(shorten.user, /who the company is/);
+
+  // Rewriting a written field asks for a fresh draft, not the same text back.
+  const rewrite = buildSopPrompt({ type: "manual-field", manual, field: "introduction", mode: "generate" }, { references: "", imported: "" });
+  assert.match(rewrite.user, /CURRENT TEXT \(being replaced: write a fresh draft[^)]*do not copy its sentences\):\nINTRO TEXT KEEP/);
 });
 
 test("manual field requests are validated before any prompt is built", () => {
