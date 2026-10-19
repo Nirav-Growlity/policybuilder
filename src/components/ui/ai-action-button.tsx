@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import { createPortal } from "react-dom";
-import { ArrowLeft, ChevronDown, PenLine, Sparkles, WandSparkles } from "lucide-react";
+import { ArrowLeft, ChevronDown, Minimize2, PenLine, RotateCcw, Sparkles, SpellCheck, WandSparkles } from "lucide-react";
 import { clsx } from "clsx";
 import { AnimatePresence, motion } from "motion/react";
 import { Textarea } from "./input";
 import { useApplicationSurface } from "./application-surface";
+import type { AIEditAction } from "@/lib/ai/prompts";
 import styles from "./ai-action-button.module.css";
 
 interface AIActionButtonProps {
@@ -19,7 +20,23 @@ interface AIActionButtonProps {
   placeholder?: string;
   /** While loading, turns the button into a Stop control for a streaming generation. */
   onStop?: () => void;
+  /**
+   * With text already written, the button becomes AI edit: improve, shorten,
+   * fix grammar, rewrite or a custom instruction, in the same order as the
+   * SOP builder. Without it, or while the field is empty, it writes.
+   */
+  onEdit?: (action: AIEditAction, instruction?: string) => Promise<void> | void;
+  hasContent?: boolean;
+  /** What is being edited, for the menu hints: "section", "objective", "target". */
+  subject?: string;
 }
+
+const EDIT_OPTIONS: { action: Exclude<AIEditAction, "custom">; title: string; hint: (subject: string) => string; icon: React.ReactNode }[] = [
+  { action: "improve", title: "Improve", hint: () => "Clearer and more complete, same facts.", icon: <Sparkles size={16} /> },
+  { action: "shorten", title: "Shorten", hint: () => "Tighter wording, nothing important lost.", icon: <Minimize2 size={16} /> },
+  { action: "grammar", title: "Fix grammar", hint: () => "Spelling and punctuation only.", icon: <SpellCheck size={16} /> },
+  { action: "rewrite", title: "Rewrite", hint: (subject) => `Replace this ${subject} with a fresh draft.`, icon: <RotateCcw size={16} /> },
+];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -32,6 +49,9 @@ export function AIActionButton({
   className = "",
   placeholder = "e.g. Focus on zero waste packaging, renewable energy targets for Gujarat units...",
   onStop,
+  onEdit,
+  hasContent = false,
+  subject = "section",
 }: AIActionButtonProps) {
   const application = useApplicationSurface();
   const popoverId = React.useId();
@@ -42,6 +62,7 @@ export function AIActionButton({
   const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
   const quiet = variant === "ghost";
   const stoppable = loading && Boolean(onStop);
+  const editing = Boolean(onEdit) && hasContent;
 
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
@@ -120,11 +141,19 @@ export function AIActionButton({
 
   const handleCustomSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const promptToSend = customPrompt.trim();
+    if (editing && !promptToSend) return;
     setOpen(false);
     setMode("menu");
-    const promptToSend = customPrompt.trim();
     setCustomPrompt("");
-    await onGenerate(promptToSend || undefined);
+    if (editing) await onEdit?.("custom", promptToSend);
+    else await onGenerate(promptToSend || undefined);
+  };
+
+  const handleEdit = async (action: AIEditAction) => {
+    setOpen(false);
+    setMode("menu");
+    await onEdit?.(action);
   };
 
   const iconSize = quiet ? 14 : size === "md" ? 16 : 15;
@@ -173,9 +202,9 @@ export function AIActionButton({
         ) : (
           <>
             <span className={styles.icon} aria-hidden="true">
-              {quiet ? <WandSparkles size={iconSize} /> : <Sparkles size={iconSize} />}
+              {quiet || editing ? <WandSparkles size={iconSize} /> : <Sparkles size={iconSize} />}
             </span>
-            <span>{label}</span>
+            <span>{editing ? "AI edit" : label}</span>
             {!quiet && <ChevronDown size={14} aria-hidden="true" className={styles.chevron} />}
           </>
         )}
@@ -190,7 +219,7 @@ export function AIActionButton({
                 ref={popoverRef}
                 id={popoverId}
                 role="dialog"
-                aria-label="Policy generation"
+                aria-label={editing ? "Edit with AI" : "Policy generation"}
                 style={{
                   position: "fixed",
                   top: `${coords.top}px`,
@@ -203,7 +232,26 @@ export function AIActionButton({
                 transition={{ duration: 0.18, ease }}
               >
                 <AnimatePresence mode="wait" initial={false}>
-                  {mode === "menu" ? (
+                  {mode === "menu" && editing ? (
+                    <motion.div key="edit-menu" className={styles.menu} {...contentMotion} transition={{ duration: 0.16, ease }}>
+                      {EDIT_OPTIONS.map((option) => (
+                        <button key={option.action} type="button" onClick={() => void handleEdit(option.action)} className={styles.option}>
+                          <span className={styles.optionIcon} aria-hidden="true">{option.icon}</span>
+                          <span className={styles.optionText}>
+                            <span className={styles.optionTitle}>{option.title}</span>
+                            <span className={styles.optionHint}>{option.hint(subject)}</span>
+                          </span>
+                        </button>
+                      ))}
+                      <button type="button" onClick={() => setMode("custom")} className={styles.option}>
+                        <span className={styles.optionIcon} aria-hidden="true"><PenLine size={16} /></span>
+                        <span className={styles.optionText}>
+                          <span className={styles.optionTitle}>Custom instruction</span>
+                          <span className={styles.optionHint}>Say how this {subject} should change.</span>
+                        </span>
+                      </button>
+                    </motion.div>
+                  ) : mode === "menu" ? (
                     <motion.div key="menu" className={styles.menu} {...contentMotion} transition={{ duration: 0.16, ease }}>
                       <button type="button" onClick={handleSuggest} className={styles.option}>
                         <span className={styles.optionIcon} aria-hidden="true"><Sparkles size={16} /></span>
@@ -226,21 +274,21 @@ export function AIActionButton({
                         <button
                           type="button"
                           onClick={() => setMode("menu")}
-                          aria-label="Back to generation options"
+                          aria-label={editing ? "Back to AI edits" : "Back to generation options"}
                           className={styles.back}
                         >
                           <ArrowLeft size={15} />
                         </button>
-                        <span className={styles.formTitle}>Custom instructions</span>
+                        <span className={styles.formTitle}>{editing ? "Custom instruction" : "Custom instructions"}</span>
                       </div>
 
                       <Textarea
                         autoFocus
-                        aria-label="Custom generation instructions"
-                        rows={4}
+                        aria-label={editing ? "Custom instruction" : "Custom generation instructions"}
+                        rows={editing ? 3 : 4}
                         value={customPrompt}
                         onChange={(e) => setCustomPrompt(e.target.value)}
-                        placeholder={placeholder}
+                        placeholder={editing ? `e.g. Make this ${subject} more specific to our operations` : placeholder}
                         className={styles.prompt}
                       />
 
@@ -248,8 +296,8 @@ export function AIActionButton({
                         <button type="button" onClick={() => setMode("menu")} className={styles.cancel}>
                           Back
                         </button>
-                        <button type="submit" className={styles.generate}>
-                          <Sparkles size={14} aria-hidden="true" /> Generate
+                        <button type="submit" className={styles.generate} disabled={editing && !customPrompt.trim()}>
+                          <Sparkles size={14} aria-hidden="true" /> {editing ? "Apply" : "Generate"}
                         </button>
                       </div>
                     </motion.form>

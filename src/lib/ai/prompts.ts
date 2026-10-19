@@ -14,6 +14,15 @@ export type AIRequestType =
   | "review"
   | "all";
 
+/** What the AI edit menu does to text that is already written, in menu order. */
+export type AIEditAction = "improve" | "shorten" | "grammar" | "rewrite" | "custom";
+
+export interface AIEdit {
+  action: AIEditAction;
+  /** The user's words for a custom edit, or extra direction for a rewrite. */
+  instruction?: string;
+}
+
 export interface AIContext {
   type: AIRequestType;
   policy: Policy;
@@ -22,6 +31,8 @@ export interface AIContext {
   areaName?: string;
   customPrompt?: string;
   existingContent?: unknown;
+  /** Edit the text in existingContent instead of writing new content. */
+  edit?: AIEdit;
 }
 
 export interface AIResponse {

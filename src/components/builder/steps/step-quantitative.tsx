@@ -12,7 +12,8 @@ import type { AIResponse } from "@/lib/ai/prompts";
 import { FIELD_BREAK, ITEM_BREAK, useGenerationStreams } from "@/lib/ai/use-generation-streams";
 import { Composing, StreamField, StreamingItems, StreamingProse } from "@/components/ui/ai-stream";
 import type { TextReveal } from "@/lib/ai/text-reveal";
-import { parseRequestedCount } from "@/lib/ai/prompts";
+import { parseRequestedCount, type AIEdit } from "@/lib/ai/prompts";
+import { EDIT_DONE } from "@/lib/ai/policy-edit";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD, validateQuantitativeTarget } from "@/lib/quantitative";
 import { Plus, Trash2, TriangleAlert } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -67,7 +68,7 @@ function StreamingTargetRows({ reveal, yearOptions }: { reveal: TextReveal; year
             <td>{cell(basis, basisKnown)}</td>
             <td>{annual ? <span className={ui.cellEmpty}>—</span> : cell(baseline, yearOptions.baseline.includes(baseline))}</td>
             <td>{annual ? <span className={ui.cellEmpty}>—</span> : cell(deadline, yearOptions.deadline.includes(deadline))}</td>
-            <td><div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true" inert><AIActionButton label="Refine" variant="ghost" onGenerate={() => undefined} /><span className={ui.iconButton}><Trash2 size={15} /></span></div></td>
+            <td><div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true" inert><AIActionButton label="AI edit" variant="ghost" onGenerate={() => undefined} /><span className={ui.iconButton}><Trash2 size={15} /></span></div></td>
           </tr>
         );
       }}
@@ -212,14 +213,14 @@ export function StepQuantitative() {
     }));
   };
 
-  const refineTarget = async (qi: number, ti: number, customPrompt?: string) => {
+  const refineTarget = async (qi: number, ti: number, customPrompt?: string, edit?: AIEdit) => {
     const area = policy.quantitative[qi]?.area;
     const target = policy.quantitative[qi]?.targets[ti];
     if (!area || !target) return;
     const busyKey = `target-${qi}-${ti}`;
     const { reveal, signal } = streams.start(busyKey);
     try {
-      const r = await streamAI({ type: "quantitative-refine", policy, areaIndex: qi, areaName: area, customPrompt, existingContent: target }, {
+      const r = await streamAI({ type: "quantitative-refine", policy, areaIndex: qi, areaName: area, customPrompt, existingContent: target, edit }, {
         signal,
         onPartial: (partial) => {
           const text = partial.targets?.[0]?.target;
@@ -230,7 +231,7 @@ export function StepQuantitative() {
       const refined = generated && typeof generated.target === "string" && !signal.aborted ? normalize(generated) : null;
       if (!refined) {
         // A stopped refinement is discarded: the years and basis may not have arrived yet.
-        push(signal.aborted ? "Refine stopped. The target was left unchanged." : "No refinement was generated", "info");
+        push(signal.aborted ? "AI edit stopped. The target was left unchanged." : "No refinement was generated", "info");
         return;
       }
       await reveal.finish(refined.target);
@@ -238,7 +239,7 @@ export function StepQuantitative() {
         quantitative: p.quantitative.map((q, i) => i === qi ? { ...q, targets: q.targets.map((t, j) => j === ti ? refined : t) } : q),
       }));
       if (validateQuantitativeTarget(refined).length) push("Review the refined target's percentage or year wording", "info");
-      push("Target refined", "success");
+      push(edit ? `Target ${EDIT_DONE[edit.action]}.` : "Target written", "success");
     } catch {
       push("AI generation failed", "error");
     } finally {
@@ -304,7 +305,7 @@ export function StepQuantitative() {
                   <td><SelectMenu size="compact" value={target.reportingFrequency || TARGET_PERIOD} onValueChange={(value) => updateReportingFrequency(qi, ti, value as typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD)} options={[{ value: TARGET_PERIOD, label: "Target period" }, { value: REPORTING_FREQUENCY, label: "Annually" }]} aria-label="Reporting target" className={ui.cellSelect} /></td>
                   <td>{target.reportingFrequency === REPORTING_FREQUENCY ? <span className={ui.cellEmpty}>—</span> : <SelectMenu size="compact" value={target.baseline} onValueChange={(value) => updateCell(qi, ti, "baseline", value)} options={yearOptions.baseline.map((year) => ({ value: year, label: year }))} placeholder="Year" searchable={false} aria-label="Baseline year" className={ui.cellSelect} />}</td>
                   <td>{target.reportingFrequency === REPORTING_FREQUENCY ? <span className={ui.cellEmpty}>—</span> : <SelectMenu size="compact" value={target.deadline} onValueChange={(value) => updateCell(qi, ti, "deadline", value)} options={yearOptions.deadline.map((year) => ({ value: year, label: year }))} placeholder="Year" searchable={false} aria-label="Deadline" className={ui.cellSelect} />}</td>
-                  <td><div className={ui.rowActions}><AIActionButton label="Refine" variant="ghost" loading={Boolean(refineStream)} onGenerate={(prompt) => refineTarget(qi, ti, prompt)} onStop={() => streams.stop(`target-${qi}-${ti}`)} /><button type="button" onClick={() => removeRow(qi, ti)} className={ui.iconButton} data-tone="danger" aria-label="Remove row"><Trash2 size={15} /></button></div></td>
+                  <td><div className={ui.rowActions}><AIActionButton label="AI Write" variant="ghost" loading={Boolean(refineStream)} onGenerate={(prompt) => refineTarget(qi, ti, prompt)} onStop={() => streams.stop(`target-${qi}-${ti}`)} hasContent={Boolean(target.target.trim())} subject="target" onEdit={(action, instruction) => refineTarget(qi, ti, undefined, { action, instruction })} /><button type="button" onClick={() => removeRow(qi, ti)} className={ui.iconButton} data-tone="danger" aria-label="Remove row"><Trash2 size={15} /></button></div></td>
                 </tr>
                 );
               })}

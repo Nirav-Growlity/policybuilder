@@ -3,6 +3,7 @@ import { mockGenerate } from "@/lib/ai/mock";
 import { parseRequestedCount, type AIContext } from "@/lib/ai/prompts";
 import { buildTemplateContext } from "@/lib/ai/template-context";
 import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
+import { editPromptBody, editSourceText, isEditableTextType, parseEdit, textSectionName } from "@/lib/ai/policy-edit";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
 import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
 import { getCompanyClassificationContext } from "@/lib/company-classification";
@@ -82,6 +83,37 @@ function buildPrompt(ctx: AIContext): { user: string; system: string; context: s
           : "Strictly follow the user directive for content, tone, and quantity."
       }`
     : "";
+
+  // An edit changes what is already written, so the "only new points" and quantity rules above do not apply.
+  const current = ctx.edit ? editSourceText(ctx.existingContent) : "";
+  if (ctx.edit && current) {
+    if (isEditableTextType(ctx.type)) {
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit the ${textSectionName(ctx.type)} section of a ${profile.label} of ${company}.\n\n${editPromptBody(ctx.edit, "section text", current)}\nReturn JSON: {"text": "..."}`,
+      };
+    }
+    if (ctx.type === "qualitative") {
+      const area = p.focusAreas[ctx.areaIndex ?? 0] || "this focus area";
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit one qualitative objective for "${area}" in a ${profile.label} of ${company}.\n\n${editPromptBody(ctx.edit, "objective", current)}\nReturn JSON with exactly one objective: {"objectives": ["..."]}`,
+      };
+    }
+    if (ctx.type === "quantitative-refine") {
+      const area = ctx.areaName || p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
+      const rules = ctx.edit.action === "grammar"
+        ? "Return the target's baseline, deadline and reportingFrequency exactly as they are."
+        : quantitativeRules;
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit one quantitative target for "${area}" in a ${profile.label} of ${company}. The full current target is ${JSON.stringify(ctx.existingContent)}.\n\n${editPromptBody(ctx.edit, "target sentence", current)}\n${rules}\nReturn JSON with exactly one target: {"targets": [${targetShape}]}`,
+      };
+    }
+  }
 
   switch (ctx.type) {
     case "preface":
@@ -199,6 +231,11 @@ export async function POST(req: NextRequest) {
   }
   if (!ctx?.policy || !Object.prototype.hasOwnProperty.call(POLICY_PROFILES, ctx.policy.policyType)) {
     return NextResponse.json({ error: "Unsupported policy type" }, { status: 400 });
+  }
+  if (ctx.edit !== undefined) {
+    const edit = parseEdit(ctx.edit);
+    if (!edit) return NextResponse.json({ error: "Unsupported AI edit." }, { status: 400 });
+    ctx = { ...ctx, edit };
   }
   const streaming = req.headers.get("accept")?.includes(NDJSON) ?? false;
 

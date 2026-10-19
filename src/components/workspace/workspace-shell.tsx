@@ -39,7 +39,8 @@ const NAVIGATION: Record<PolicyCraftRole, { href: string; label: string; icon: t
     { href: "/admin/administration", label: "Administration", icon: Settings2 },
   ],
   manager: [
-    { href: "/manager", label: "Organizations & policies", icon: FileText },
+    { href: "/manager", label: "Organizations", icon: Building2 },
+    { href: "/manager/policies", label: "Policies", icon: FileText },
     { href: "/documents", label: "Documents", icon: BookOpen },
     { href: "/manager/tasks", label: "Tasks", icon: ClipboardList },
   ],
@@ -288,7 +289,7 @@ export function WorkspaceShell({
     }
   }
 
-  const isActive = (href: string) => pathname === href || (href === "/manager" && pathname.startsWith("/manager/") && !pathname.startsWith("/manager/tasks")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
+  const isActive = (href: string) => pathname === href || (href === "/manager" && pathname.startsWith("/manager/organizations/")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
   const taskLabel = (href: string) => role === "manager" && href === "/manager/tasks" ? `Tasks${openTaskCount ? `, ${openTaskCount} open` : ""}` : undefined;
   const taskBadge = (href: string) => role === "manager" && href === "/manager/tasks" && openTaskCount > 0
     ? <motion.span key={openTaskCount} className={styles.taskBadge} aria-hidden="true" initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={WS_SPRING}>{openTaskCount > 99 ? "99+" : openTaskCount}</motion.span>

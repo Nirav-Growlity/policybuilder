@@ -8,6 +8,8 @@ import { DatePicker } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { streamAI } from "@/lib/ai/client";
+import type { AIEdit } from "@/lib/ai/prompts";
+import { EDIT_DONE } from "@/lib/ai/policy-edit";
 import { FIELD_BREAK, ITEM_BREAK, keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
 import { Composing, StreamField, StreamingItems } from "@/components/ui/ai-stream";
 import { parseRequestedCount } from "@/lib/ai/prompts";
@@ -110,20 +112,22 @@ export function StepResponsibilities() {
     }
   };
 
-  const generateText = async (key: "monitoring" | "review", customPrompt?: string) => {
+  const generateText = async (key: "monitoring" | "review", customPrompt?: string, edit?: AIEdit) => {
     const { reveal, signal } = streams.start(key);
     const field = key === "monitoring" ? "monitoring" : "reviewMechanism";
     const name = key === "monitoring" ? "Monitoring section" : "Review section";
     try {
-      const r = await streamAI({ type: key, policy, customPrompt, existingContent: policy[field] }, {
+      const r = await streamAI({ type: key, policy, customPrompt, existingContent: policy[field], edit }, {
         signal,
         onPartial: (partial) => reveal.set(partial.text ?? ""),
       });
+      // A stopped edit would cut the section short, so it changes nothing.
+      if (edit && signal.aborted) { push(`${name} stopped. Nothing was changed.`, "info"); return; }
       const text = signal.aborted ? keepFinishedSentences(r.text ?? "") : r.text;
       if (text) {
         await reveal.finish(text);
         updatePolicy(() => ({ [field]: text }));
-        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : `${name} generated`, signal.aborted ? "info" : "success");
+        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : edit ? `${name} ${EDIT_DONE[edit.action]}.` : `${name} generated`, signal.aborted ? "info" : "success");
       } else if (signal.aborted) {
         push(`${name} stopped before any text was written`, "info");
       }
@@ -230,6 +234,8 @@ export function StepResponsibilities() {
             loading={streams.busy("monitoring")}
             onGenerate={(prompt) => generateText("monitoring", prompt)}
             onStop={() => streams.stop("monitoring")}
+            hasContent={Boolean(policy.monitoring.trim())}
+            onEdit={(action, instruction) => generateText("monitoring", undefined, { action, instruction })}
           />
         }
       >
@@ -252,6 +258,8 @@ export function StepResponsibilities() {
             loading={streams.busy("review")}
             onGenerate={(prompt) => generateText("review", prompt)}
             onStop={() => streams.stop("review")}
+            hasContent={Boolean(policy.reviewMechanism.trim())}
+            onEdit={(action, instruction) => generateText("review", undefined, { action, instruction })}
           />
         }
       >

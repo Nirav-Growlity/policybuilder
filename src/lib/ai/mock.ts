@@ -3,6 +3,7 @@ import type { Policy } from "../types";
 import { normalizeQuantitativeTarget } from "../quantitative";
 import { getPolicyProfile } from "../constants";
 import { getCompanyClassificationContext } from "../company-classification";
+import { editSourceText, mockEdit } from "./policy-edit";
 
 function ctxText(p: Policy): string {
   const c = p.company;
@@ -11,6 +12,8 @@ function ctxText(p: Policy): string {
 }
 
 export function mockGenerate(ctx: AIContext): AIResponse {
+  const edit = ctx.edit;
+  if (edit && editSourceText(ctx.existingContent)) return mockEdit({ ...ctx, edit }, () => mockGenerate({ ...ctx, edit: undefined, existingContent: undefined }));
   const p = ctx.policy;
   const profile = getPolicyProfile(p.policyType);
   const t = ctx.type;

@@ -9,7 +9,8 @@ import { AIActionButton } from "@/components/ui/ai-action-button";
 import { correctGrammar, streamAI } from "@/lib/ai/client";
 import { ITEM_BREAK, keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
 import { Composing, StreamField, StreamingItems, StreamingProse } from "@/components/ui/ai-stream";
-import { parseRequestedCount } from "@/lib/ai/prompts";
+import { parseRequestedCount, type AIEdit } from "@/lib/ai/prompts";
+import { EDIT_DONE } from "@/lib/ai/policy-edit";
 import { Plus, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { AnimatePresence, motion } from "motion/react";
@@ -91,7 +92,7 @@ export function StepQualitative() {
     }
   };
 
-  const generateObjective = async (area: string, areaIndex: number, objectiveIndex: number, customPrompt?: string) => {
+  const generateObjective = async (area: string, areaIndex: number, objectiveIndex: number, edit: AIEdit) => {
     const current = policy.qualitative[area]?.[objectiveIndex];
     if (!current) return;
 
@@ -102,8 +103,8 @@ export function StepQualitative() {
         type: "qualitative",
         policy,
         areaIndex: policy.focusAreas.indexOf(area),
-        customPrompt: `Generate exactly 1 new objective to replace this objective: "${current}".${customPrompt ? ` ${customPrompt}` : ""}`,
-        existingContent: policy.qualitative[area] || [],
+        existingContent: current,
+        edit,
       }, {
         signal,
         onPartial: (partial) => reveal.set(typeof partial.objectives?.[0] === "string" ? partial.objectives[0] : ""),
@@ -111,12 +112,12 @@ export function StepQualitative() {
       const generated = r.objectives?.[0]?.trim();
       const replacement = signal.aborted && generated ? keepFinishedSentences(generated) : generated;
       if (!replacement || (signal.aborted && !/[.!?]$/.test(replacement))) {
-        push(signal.aborted ? "Refine stopped. The objective was left unchanged." : "No objective was generated", "info");
+        push(signal.aborted ? "AI edit stopped. The objective was left unchanged." : "No objective was generated", "info");
         return;
       }
       await reveal.finish(replacement);
       update(area, objectiveIndex, replacement);
-      push("Objective updated", "success");
+      push(`Objective ${EDIT_DONE[edit.action]}.`, "success");
     } catch {
       push("AI generation failed", "error");
     } finally {
@@ -207,12 +208,14 @@ export function StepQualitative() {
                       )}
                       <div className={ui.rowActions}>
                         <AIActionButton
-                          label="Refine"
+                          label="AI edit"
                           variant="ghost"
                           loading={Boolean(refineStream)}
-                          onGenerate={(prompt) => generateObjective(area, i, oi, prompt)}
+                          onGenerate={(prompt) => generateObjective(area, i, oi, { action: "rewrite", instruction: prompt })}
                           onStop={() => streams.stop(`objective-${i}-${oi}`)}
-                          placeholder="e.g. Make this more specific to our manufacturing operations..."
+                          hasContent={Boolean(obj.trim())}
+                          subject="objective"
+                          onEdit={(action, instruction) => generateObjective(area, i, oi, { action, instruction })}
                         />
                         <button
                           type="button"
@@ -236,7 +239,7 @@ export function StepQualitative() {
                       <li key={`streaming-${index}`} className={ui.objective} aria-busy={writing || undefined}>
                         <StreamField text={text ?? ""} writing={writing} className={`${ui.objectiveText} ${ui.streamCell}`} />
                         <div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true" inert>
-                          <AIActionButton label="Refine" variant="ghost" onGenerate={() => undefined} />
+                          <AIActionButton label="AI edit" variant="ghost" onGenerate={() => undefined} />
                           <span className={ui.iconButton}><X size={15} /></span>
                         </div>
                       </li>

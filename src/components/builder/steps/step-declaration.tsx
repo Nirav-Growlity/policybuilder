@@ -5,6 +5,8 @@ import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { streamAI } from "@/lib/ai/client";
+import type { AIEdit } from "@/lib/ai/prompts";
+import { EDIT_DONE } from "@/lib/ai/policy-edit";
 import { keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
 import { BookOpen, Flag, MapPin } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
@@ -42,20 +44,22 @@ export function StepDeclaration() {
   const { push } = useToast();
   const streams = useGenerationStreams();
 
-  const generate = async (key: "preface" | "declaration" | "scope", customPrompt?: string) => {
+  const generate = async (key: "preface" | "declaration" | "scope", customPrompt?: string, edit?: AIEdit) => {
     const { reveal, signal } = streams.start(key);
     const name = key[0].toUpperCase() + key.slice(1);
     try {
       const existing = policy.declaration[key];
-      const r = await streamAI({ type: key, policy, customPrompt, existingContent: existing }, {
+      const r = await streamAI({ type: key, policy, customPrompt, existingContent: existing, edit }, {
         signal,
         onPartial: (partial) => reveal.set(partial.text ?? ""),
       });
+      // A stopped edit would cut the section short, so it changes nothing.
+      if (edit && signal.aborted) { push(`${name} stopped. Nothing was changed.`, "info"); return; }
       const text = signal.aborted ? keepFinishedSentences(r.text ?? "") : r.text;
       if (text) {
         await reveal.finish(text);
         updatePolicy((p) => ({ declaration: { ...p.declaration, [key]: text } }));
-        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : `${name} generated`, signal.aborted ? "info" : "success");
+        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : edit ? `${name} ${EDIT_DONE[edit.action]}.` : `${name} generated`, signal.aborted ? "info" : "success");
       } else if (signal.aborted) {
         push(`${name} stopped before any text was written`, "info");
       }
@@ -83,6 +87,8 @@ export function StepDeclaration() {
                 loading={isBusy}
                 onGenerate={(prompt) => generate(s.key, prompt)}
                 onStop={() => streams.stop(s.key)}
+                hasContent={Boolean(value.trim())}
+                onEdit={(action, instruction) => generate(s.key, undefined, { action, instruction })}
               />
             }
           >
