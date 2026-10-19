@@ -91,13 +91,25 @@ export async function listManuals(orgId: number, options: { archived?: boolean; 
   const predicates = ["m.org_id = ?", `m.archived_at IS ${options.archived ? "NOT " : ""}NULL`];
   const values: (number | string)[] = [orgId];
   if (options.kind) { predicates.push("m.kind = ?"); values.push(options.kind); }
-  const [rows] = await policyCraftPool.execute<SummaryRow[]>(
-    `SELECT ${summarySelect} ${fromManuals}
+  // Sort lightweight IDs only: the summary reads manual_json, and sorting rows
+  // that carry whole manuals exhausts MySQL's sort buffer (ER_OUT_OF_SORTMEMORY).
+  const [orderedIds] = await policyCraftPool.execute<(RowDataPacket & { id: string })[]>(
+    `SELECT m.id FROM policycraft_manuals m
       WHERE ${predicates.join(" AND ")}
       ORDER BY m.updated_at DESC, m.id ASC`,
     values,
   );
-  return rows.map(toSummary);
+  if (orderedIds.length === 0) return [];
+  const [rows] = await policyCraftPool.execute<SummaryRow[]>(
+    `SELECT ${summarySelect} ${fromManuals}
+      WHERE m.org_id = ? AND m.id IN (${orderedIds.map(() => "?").join(", ")})`,
+    [orgId, ...orderedIds.map((row) => row.id)],
+  );
+  const byId = new Map(rows.map((row) => [row.id, row]));
+  return orderedIds.flatMap(({ id }) => {
+    const row = byId.get(id);
+    return row ? [toSummary(row)] : [];
+  });
 }
 
 export async function getManual<Manual, Imported = unknown>(
