@@ -49,6 +49,17 @@ Chromium's disc markers (painted shapes) and its running header on the cover (le
     - The three-line minimum comes from an empty, unbreakable, three-line block placed before the paragraph, which is then pulled up over it. Where the block doesn't fit, both move to the next page, and a sticky heading goes with them.
     - An earlier version read the room left from `here().position()`. That's circular (the position depends on whether the paragraph moved), and Typst's layout iterations flipped between the two answers.
 16. **SDG name rows.** The 1 px borders now sit inside the box, as in CSS, and the text starts 1 px further in (worst SDG page 1.34% → 0.85% of pixels).
+17. **Three lines at the top of a page too** (`widows: 3`). A paragraph of six lines or more is set as its first n - 3 lines (breakable) and its last three (unbreakable); a five-line one splits 3 + 2.
+    - Typst breaks lines greedily, so the first part is the longest run of words (or syllables, at a soft hyphen) that fills those lines. It's found by measuring prefixes, and its last line keeps its justification.
+    - A paragraph that ends a rail or modular box carries the box's bottom padding in its last part (`closes-box`).
+18. **Card grids (responsibilities on the rail and modular frames).**
+    - Dense layouts keep the card styling, in one column.
+    - On the modular frame, Chromium moves the whole grid to the next page when every row fits (its last cards' bottom padding may run past the page end) but the box's padding doesn't, and leaves the heading behind. It breaks between rows otherwise. The room is measured from a marker in the heading, which stays put either way.
+    - A first-row card's top padding stays behind when the row moves on.
+19. **Revision tables ending a modular box** move with the box's padding and leave the heading behind, as Chromium does.
+20. **Target bands:** the 1 px side borders of the text cell take space, as in CSS. Text had set 2 px wider and rewrapped.
+21. **Responsibility cards:** the role heading stays with its duty (`h3 { break-after: avoid }`).
+22. **Harness:** page openings are compared in reading order by position, not content-stream order. Chromium writes SDG tile labels last.
 
 ## What remains (accepted)
 
@@ -56,23 +67,25 @@ Chromium's disc markers (painted shapes) and its running header on the cover (le
 - **Width ties of about 0.1–0.3 pt** in narrow justified columns. One engine fits a word or hyphen fragment and the other doesn't, because of glyph-advance rounding.
 - **1 px border placement.** Typst centres a stroke on the box edge where CSS draws the border inside it. The boxes are the same size; the line sits half a pixel out.
 - **Chromium's text layer** drops "fi"/"ffi" ligatures ("speci c", "e iciency"). Typst's text is correct.
-- **Three lines kept at the top of the next page.** When it can, Chromium also keeps three lines on the next page. It split a six-line paragraph 3 + 3 where 5 + 1 would have broken that rule (metrics-ledger-concise). Typst can only keep two there without knowing where the break falls, and the case is a tie within a few pixels anyway.
+- **One near-tie page:** executive-brief-dense page 7. Chromium cuts the rail's bottom padding at the page end and keeps the last qualitative item. Elsewhere on the rail, the item goes with the padding (and making the rail never do this measured worse).
+- **The AI cover page** has no text in Chromium's PDF (it's a screenshot), while Typst's cover title is real text. This is intended.
 
-## Needs a decision
+## Decided
 
-**The responsibilities grid in the sustainability-charter template** (custom-solid, custom-gradient, feature-image-cover, sustainability-charter-dense and -concise). When the two-up grid doesn't fit whole, Chromium moves all of it to the next page and leaves the section box on the first page empty below its heading. Typst flows the cards across the break. This is the last cause of a page-count difference (Typst is one page shorter). Copying it would print a nearly empty box, so it's left like the three baseline quirks fixed on purpose, pending a decision.
+The responsibilities grid behaviour, where Chromium leaves an emptied box under its heading, is now copied rather than fixed (2026-10-20: "fix all").
 
 ## Answer
 
 **Steps (112 cases):**
-- lines more than 1 pt or 1.5% off: 1297 → 210;
-- lines that wrap differently: 699 → 96;
-- worst page pixel difference: 3.00% → 1.34% (an SDG page; most are under 0.5%).
+- lines more than 1 pt or 1.5% off: 1297 → 209;
+- lines that wrap differently: 699 → 91;
+- worst page pixel difference: 3.00% → 0.85% (an SDG page; most are under 0.5%);
+- warm renders after an edit: median 150 ms, worst 461 ms (141 / 376 before the widows split).
 
 **Whole documents (36 parity cases):**
-- pages opening with the same text: 309/341 → 322/341;
+- pages opening with the same text: 309/341 → 339/341;
 - no case got worse;
-- page counts now match everywhere except four sustainability-charter cases (custom-solid, custom-gradient, feature-image-cover, sustainability-charter-dense), from the grid quirk above.
+- page counts now match in all 36 cases.
 
 **Text:** no words are missing or added, apart from Chromium's own dropped ligatures.
 

@@ -346,7 +346,14 @@
 
 // The 1 px CSS border-bottom takes space; a Typst stroke is centred on the edge
 // and takes none, so half a pixel goes on each side of it.
-#let section-heading(s) = block(below: 5mm + 0.5 * px, sticky: true,
+// Responsibilities laid out as a card grid (rail and modular frames): two up,
+// or one up when dense, the cards styled the same either way.
+#let two-up-cards(s) = s.content.type == "responsibilities" and s.content.treatment != "table" and (frame == "numbered-rail" or frame == "modular-grid")
+
+// A heading stays with what follows, except a card grid or a table that ends a
+// modular box: Chromium moves those with the box's bottom padding and leaves the
+// heading behind (see `responsibilities`, `data-table`).
+#let section-heading(s) = block(below: 5mm + 0.5 * px, sticky: not (two-up-cards(s) or (frame == "modular-grid" and s.content.type == "table")),
   stroke: (bottom: (paint: primary, thickness: px)), inset: (bottom: 2.5mm + 0.5 * px), {
     let marker-shown = frame != "numbered-rail" and frame != "editorial-margin"
     // CSS letter-spacing also follows the last letter, so the gap to the title includes it.
@@ -358,6 +365,8 @@
     )
     if marker-shown { items.insert(0, (body: marker, family: body-font, size: heading-size, lh: lh, width: auto)) }
     baseline-row(4mm, items)
+    // Where a card grid follows, it measures its room from here (see `responsibilities`).
+    if two-up-cards(s) { [#metadata(none)#label("cards-" + s.id)] }
   })
 
 // ------------------------------------------------ tables
@@ -400,20 +409,61 @@
 
 // ------------------------------------------------ content
 
-// The print CSS sets `orphans: 3; widows: 3`. As Chromium prints, a paragraph
-// splits only with at least three lines at the foot of the page, and at least
-// two (Typst's own widow cost) at the top of the next: a five-line paragraph
-// may split 3 + 2, four lines or fewer move whole. For the three lines, an empty
-// unbreakable block that tall goes first and the paragraph is pulled up over it:
-// where it doesn't fit, both start on the next page (with a sticky heading).
-#let para(body) = block(below: 12 * px, layout(size => {
+// The print CSS sets `orphans: 3; widows: 3`, and Chromium keeps both where it
+// can: a paragraph splits only with three lines at the foot of the page and
+// three at the top of the next, except that a five-line one may split 3 + 2.
+// Four lines or fewer move whole.
+//
+// - The three at the foot: an empty unbreakable block three lines tall goes
+//   first and the paragraph is pulled up over it. Where it doesn't fit, both
+//   start on the next page (with a sticky heading).
+// - The three at the top: the paragraph is set as its first n - 3 lines,
+//   breakable, and its last three (two of five), unbreakable. Typst breaks lines
+//   greedily, so the first part is the longest run of words (or syllables, at a
+//   soft hyphen) that fills them; its last line keeps the justification it had.
+//
+// `tail`: the bottom padding of the box the paragraph ends (rail body, modular
+// box). Chromium never leaves it alone on a page, so it joins the last lines,
+// after the paragraph's own 12 px margin.
+#let shy = "\u{ad}"
+// The 12 px margin sits on a block outside `layout`, where it isn't dropped.
+#let para(body, tail: none) = block(below: if tail != none { 0pt } else { 12 * px }, layout(size => {
   let line = lh * body-size
-  let p = par(justify: justified, body)
-  let lines = calc.round(measure(block(width: size.width, p)).height / line)
-  if lines <= 4 { block(breakable: false, p) } else {
-    block(height: 3 * line, breakable: false)
-    v(-3 * line)
-    p
+  let shape(t) = par(justify: justified, t)
+  let count(t) = calc.round(measure(block(width: size.width, shape(t))).height / line)
+  let lines = count(body)
+  let closing = tail != none
+  let end = if closing { 12 * px + tail } else { 0pt }
+  let probe = { block(height: 3 * line, breakable: false); v(-3 * line) }
+  {
+    if lines <= 4 or type(body) != str {
+      block(breakable: lines > 4 and not closing, { shape(body); if closing { v(end) } })
+    } else {
+      // Five lines split 3 + 2, more keep three for the next page.
+      let last = if lines == 5 { 2 } else { 3 }
+      let tokens = ()
+      for (wi, word) in body.split(" ").enumerate() {
+        for (si, syllable) in word.split(shy).enumerate() {
+          tokens.push((text: syllable, glue: if si > 0 { shy } else if wi > 0 { " " } else { "" }))
+        }
+      }
+      let join(from, to) = tokens.slice(from, to).enumerate().map(((i, t)) => if i == 0 and from > 0 and t.glue == " " { t.text } else { t.glue + t.text }).join("")
+      // The first k tokens, with the hyphen a break inside a word would show.
+      let prefix(k) = join(0, k) + if k < tokens.len() and tokens.at(k).glue == shy { "-" } else { "" }
+      let low = 0
+      let high = tokens.len()
+      while low < high {
+        let mid = calc.ceil((low + high) / 2)
+        if count(prefix(mid)) <= lines - last { low = mid } else { high = mid - 1 }
+      }
+      probe
+      // A single line left of the first part is no widow: the rest follows it.
+      {
+        set text(costs: (widow: 0%))
+        par(justify: justified, { prefix(low); if justified { linebreak(justify: true) } })
+      }
+      block(breakable: false, { shape(join(low, tokens.len())); if closing { v(end) } })
+    }
   }
 }))
 
@@ -490,7 +540,8 @@
         grid.cell(align(center + horizon, subhead(g.marker))),
         // Vertical padding as spacing, not inset: Chromium slices a band at a page break,
         // where a cell inset would pad both fragments.
-        grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px),
+        // Its 1 px side borders take space in CSS, a Typst stroke takes none.
+        grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px + px),
           {
             // CSS can't break between a box's top padding and its first child, and a
             // heading stays with what follows, so a band opens with its first target.
@@ -537,7 +588,7 @@
   }
 }
 
-#let responsibilities(c, density) = {
+#let responsibilities(c, density, id: "") = {
   if c.treatment == "table" {
     data-table((headers: ("Role / Department", "Responsibility"), rows: c.entries.map(e => (e.role, e.duty))))
     return
@@ -545,22 +596,27 @@
   let card(e) = {
     let marker = if frame == "editorial-margin" { css(family: head-font, size: 20 * px, line-height: 1.5, fill: accent, e.marker) }
       else { css(weight: "bold", fill: primary, e.marker) }
+    // The role (an h3) stays with its duty, as `break-after: avoid` keeps it.
     grid(columns: (if frame == "editorial-margin" { 56 * px } else { 42 * px }, 1fr), marker,
-      { subhead(e.role); v(5 * px); par(justify: justified, e.duty) })
+      { block(sticky: true, subhead(e.role)); v(5 * px); par(justify: justified, e.duty) })
   }
-  let two-up = (frame == "numbered-rail" or frame == "modular-grid") and density != "dense"
-  if two-up {
+  let carded = frame == "numbered-rail" or frame == "modular-grid"
+  if carded {
     // A card's text never splits, but a card that does not fit leaves its top
     // padding on the page and continues flush at the top of the next one, as
     // Chromium fragments the grid row. min-height: 115px on soft cards.
     let soft-card = frame == "modular-grid"
     let pad = if soft-card { 15 * px } else { 12 * px + px }
-    grid(columns: (1fr, 1fr), gutter: 9 * px, ..c.entries.map(e => grid.cell(
+    let per-row = if density == "dense" { 1 } else { 2 }
+    // Soft cards in the first row take their top padding from before the grid
+    // (same fill as the box), so it stays behind when the row moves on.
+    let lead = soft-card
+    let cards = grid(columns: (1fr,) * per-row, gutter: 9 * px, ..c.entries.enumerate().map(((i, e)) => grid.cell(
       fill: if soft-card { soft } else { none },
       stroke: if soft-card { none } else { (paint: line-color, thickness: px) },
       inset: (x: pad),
       {
-        kept(pad)
+        if not (lead and i < per-row) { kept(pad) }
         layout(size => {
           let body = card(e)
           let height = measure(body, width: size.width).height
@@ -568,36 +624,67 @@
         })
         kept(pad)
       })))
+    // Chromium breaks a card grid between rows where a row doesn't fit. But when
+    // every row fits and only the modular box's bottom padding after them doesn't,
+    // it moves the whole grid to the next page and leaves the heading behind
+    // (measured: 12 pt short moved whole, 75 pt short split between rows).
+    // The room is measured from a marker in the heading, which stays put either
+    // way (a position that moved with the grid would never settle).
+    let anchor = label("cards-" + id)
+    if not soft-card { cards } else {
+      layout(size => context {
+        // The marker ends the heading's content: its bottom inset and the gap follow.
+        let room = m.page.heightMm * 1mm - mm(m.page.marginBottomMm) - locate(anchor).position().y - (2.5mm + 0.5 * px) - (5mm + 0.5 * px)
+        let height = measure(cards, width: size.width).height + pad
+        // The last row counts as fitting when only its cards' bottom padding runs
+        // past the page end (1 pt allowed for Chromium's pixel snapping).
+        let rows-fit = height - pad - 1pt <= room
+        let tail = 5mm + px
+        if rows-fit and height + tail > room {
+          // Unbreakable together with the box's bottom padding, which the frame
+          // adds after it: reserved here, then given back so the box keeps its size.
+          block(breakable: false, { kept(pad); cards; v(tail) })
+          v(-tail)
+        } else { kept(pad); cards }
+      })
+    }
   } else {
     for (i, e) in c.entries.enumerate() { block(above: if i > 0 { 9 * px } else { 0pt }, { kept(10 * px); card(e) }) }
   }
 }
 
-#let custom-blocks(c) = {
-  for b in c.blocks {
-    if b.type == "p" { for p in b.paragraphs { para(p) } }
+#let custom-blocks(c, tail: none) = {
+  for (bi, b) in c.blocks.enumerate() {
+    let last-block = bi == c.blocks.len() - 1
+    if b.type == "p" { for (i, p) in b.paragraphs.enumerate() { para(p, tail: if last-block and i == b.paragraphs.len() - 1 { tail } else { none }) } }
     else if b.type == "table" { data-table(b.table) }
     else { block(above: 12 * px, below: 12 * px, css-list(b.items, if b.type == "ul" { "bullet" } else { "number" }, indent: 20 * px)) }
   }
 }
 
-// Whether a boxed section's qualitative groups carry its bottom padding (see
-// `qualitative-groups`). Journal entries are left out: Chromium lets them run
-// into the page end instead.
-#let groups-close(s) = s.content.type == "qualitative" and s.recipe != "journal-entries"
+// Whether a boxed section's last content carries the box's bottom padding: its
+// qualitative groups (see `qualitative-groups`; journal entries are left out,
+// Chromium lets them run into the page end) or a closing paragraph (see `para`).
+#let closes-box(s) = {
+  let c = s.content
+  if c.type == "qualitative" { s.recipe != "journal-entries" }
+  else if c.type == "narrative" { c.sites == none and c.paragraphs.len() > 0 }
+  else if c.type == "custom" { c.blocks.len() > 0 and c.blocks.last().type == "p" and c.blocks.last().paragraphs.len() > 0 }
+  else { false }
+}
 
 #let section-body(s, tail: none) = {
   let c = s.content
   if c.type == "narrative" {
-    for p in c.paragraphs { para(p) }
+    for (i, p) in c.paragraphs.enumerate() { para(p, tail: if c.sites == none and i == c.paragraphs.len() - 1 { tail } else { none }) }
     if c.sites != none { data-table(c.sites, closing: frame == "modular-grid") }
   } else if c.type == "focus" { focus-list(c, s.recipe) }
   else if c.type == "qualitative" { qualitative-groups(c, s.recipe, tail: tail) }
   else if c.type == "quantitative" { quantitative(c) }
   else if c.type == "sdg" { sdg-goals(c) }
-  else if c.type == "responsibilities" { responsibilities(c, s.density) }
-  else if c.type == "table" { data-table(c.table) }
-  else if c.type == "custom" { custom-blocks(c) }
+  else if c.type == "responsibilities" { responsibilities(c, s.density, id: s.id) }
+  else if c.type == "table" { data-table(c.table, closing: frame == "modular-grid") }
+  else if c.type == "custom" { custom-blocks(c, tail: tail) }
 }
 
 // Code mode, not markup: whitespace between the heading and the body would
@@ -635,7 +722,7 @@
       kept(5mm + px)
       // The last child's own bottom spacing precedes the padding, as its CSS margin does.
       // Qualitative groups carry the bottom padding themselves (see `qualitative-groups`).
-      if groups-close(s) { section-content(s, tail: 5mm + px) }
+      if closes-box(s) { section-content(s, tail: 5mm + px) }
       else { section-content(s); end-pad(5mm + px) }
     })
   } else if frame == "numbered-rail" {
@@ -644,7 +731,7 @@
     block(above: above, below: 9mm, grid(columns: (18mm, 1fr), column-gutter: 7mm,
       grid.cell(fill: primary, { kept(28 * px); pad(x: 22 * px, css(size: 24 * px, line-height: 1.3, weight: "medium", fill: on-primary, s.marker)) }),
       layout(size => {
-        let body = if groups-close(s) {
+        let body = if closes-box(s) {
           kept(30 * px); pad(left: 38 * px, right: 50 * px, section-content(s, tail: 36 * px))
         } else { kept(30 * px); pad(left: 38 * px, right: 50 * px, section-content(s)); v(last-margin(s)); end-pad(36 * px) }
         // The rail is at least 190 px tall.

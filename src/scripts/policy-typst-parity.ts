@@ -107,10 +107,12 @@ async function pageOpenings(pdf: Buffer): Promise<string[]> {
     const height = page.view[3];
     // Artifacts count here: Typst marks a table header it repeats on a new page as
     // one, Chromium doesn't, and both pages still open with that header.
+    // In reading order by position: the engines write some runs (SDG tile labels)
+    // in a different order in the content stream.
     const items = (await textItems(page, { artifacts: true })).filter((item) => {
       const fromTopMm = (height - item.transform[5]) * 25.4 / 72;
       return item.str.trim() && fromTopMm >= BODY_TOP_MM && fromTopMm <= BODY_BOTTOM_MM;
-    });
+    }).sort((a, b) => Math.abs(a.transform[5] - b.transform[5]) > 1 ? b.transform[5] - a.transform[5] : a.transform[4] - b.transform[4]);
     openings.push(items.map((item) => item.str).join("").toLowerCase().replace(/[^\p{L}\p{N}]/gu, "").slice(0, 16));
   }
   await doc.destroy();
