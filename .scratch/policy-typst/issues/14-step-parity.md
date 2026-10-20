@@ -45,6 +45,10 @@ Chromium's disc markers (painted shapes) and its running header on the cover (le
     - Qualitative groups (except journal entries) carry the box's bottom padding in their last group's closing block, so the last item, the group's padding and the box's padding move together.
     - A sites table that ends a modular box sticks to its padding.
     - Result: executive-brief-dense, operations-guide-dense and sustainability-charter-concise now break like Chromium.
+15. **Paragraph breaks** (replaces ticket 12's rule). As Chromium prints, a paragraph splits only with at least three lines at the foot of a page and two at the top of the next, so a five-line paragraph may split 3 + 2 and one of four lines or fewer moves whole.
+    - The three-line minimum comes from an empty, unbreakable, three-line block placed before the paragraph, which is then pulled up over it. Where the block doesn't fit, both move to the next page, and a sticky heading goes with them.
+    - An earlier version read the room left from `here().position()`. That's circular (the position depends on whether the paragraph moved), and Typst's layout iterations flipped between the two answers.
+16. **SDG name rows.** The 1 px borders now sit inside the box, as in CSS, and the text starts 1 px further in (worst SDG page 1.34% → 0.85% of pixels).
 
 ## What remains (accepted)
 
@@ -52,7 +56,7 @@ Chromium's disc markers (painted shapes) and its running header on the cover (le
 - **Width ties of about 0.1–0.3 pt** in narrow justified columns. One engine fits a word or hyphen fragment and the other doesn't, because of glyph-advance rounding.
 - **1 px border placement.** Typst centres a stroke on the box edge where CSS draws the border inside it. The boxes are the same size; the line sits half a pixel out.
 - **Chromium's text layer** drops "fi"/"ffi" ligatures ("speci c", "e iciency"). Typst's text is correct.
-- **Paragraph split 3 + 1.** Chromium sometimes splits a four-line paragraph 3 + 1 (governance, metrics and people concise cases). Typst keeps paragraphs of five lines or fewer whole (ticket 12). A room-aware rule using `here().position()` measured worse, so it was dropped.
+- **Three lines kept at the top of the next page.** When it can, Chromium also keeps three lines on the next page. It split a six-line paragraph 3 + 3 where 5 + 1 would have broken that rule (metrics-ledger-concise). Typst can only keep two there without knowing where the break falls, and the case is a tie within a few pixels anyway.
 
 ## Needs a decision
 
@@ -66,7 +70,7 @@ Chromium's disc markers (painted shapes) and its running header on the cover (le
 - worst page pixel difference: 3.00% → 1.34% (an SDG page; most are under 0.5%).
 
 **Whole documents (36 parity cases):**
-- pages opening with the same text: 309/341 → 320/341;
+- pages opening with the same text: 309/341 → 322/341;
 - no case got worse;
 - page counts now match everywhere except four sustainability-charter cases (custom-solid, custom-gradient, feature-image-cover, sustainability-charter-dense), from the grid quirk above.
 

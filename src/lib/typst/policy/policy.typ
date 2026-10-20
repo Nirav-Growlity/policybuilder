@@ -400,14 +400,21 @@
 
 // ------------------------------------------------ content
 
-// Chromium prints paragraphs with `orphans: 3; widows: 3`, so one of five lines or
-// fewer never splits (no 3 + 3 split exists). Longer ones keep Typst's own costs,
-// which only avoid stranding a single line. (Chromium does sometimes carry a
-// single line over, 3 + 1, which this doesn't reproduce.)
+// The print CSS sets `orphans: 3; widows: 3`. As Chromium prints, a paragraph
+// splits only with at least three lines at the foot of the page, and at least
+// two (Typst's own widow cost) at the top of the next: a five-line paragraph
+// may split 3 + 2, four lines or fewer move whole. For the three lines, an empty
+// unbreakable block that tall goes first and the paragraph is pulled up over it:
+// where it doesn't fit, both start on the next page (with a sticky heading).
 #let para(body) = block(below: 12 * px, layout(size => {
+  let line = lh * body-size
   let p = par(justify: justified, body)
-  let lines = calc.round(measure(block(width: size.width, p)).height / (lh * body-size))
-  block(breakable: lines > 5, p)
+  let lines = calc.round(measure(block(width: size.width, p)).height / line)
+  if lines <= 4 { block(breakable: false, p) } else {
+    block(height: 3 * line, breakable: false)
+    v(-3 * line)
+    p
+  }
 }))
 
 #let target-list(targets, style, size: body-size, line-height: lh, leading: false, start: 0, close-box: false) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm, leading: leading, start: start, close-box: close-box)
@@ -520,10 +527,12 @@
     })
   } else {
     for (i, g) in c.goals.enumerate() {
-      block(above: if i > 0 { 7 * px } else { 0pt }, grid(columns: (80 * px, 1fr), stroke: (paint: col(g.color), thickness: px), inset: 0pt,
-        // The 1px CSS border adds to the row height; a Typst stroke does not.
-        grid.cell(fill: col(g.color), inset: (x: 8 * px, y: 8 * px + px), css(size: 9 * px, weight: "bold", fill: white, "SDG " + str(g.number))),
-        grid.cell(inset: (x: 11 * px, y: 8 * px + px), par(justify: justified, g.label))))
+      // A 1 px CSS border sits inside the box and takes space; a Typst stroke is
+      // centred on the edge and takes none. Inset by half a pixel, the stroke covers
+      // the border's pixel, and each inset adds the other half.
+      block(above: if i > 0 { 7 * px } else { 0pt }, pad(0.5 * px, grid(columns: (80.5 * px, 1fr), stroke: (paint: col(g.color), thickness: px), inset: 0pt,
+        grid.cell(fill: col(g.color), inset: (x: 8.5 * px, y: 8.5 * px), css(size: 9 * px, weight: "bold", fill: white, "SDG " + str(g.number))),
+        grid.cell(inset: (left: 11 * px, right: 11.5 * px, y: 8.5 * px), par(justify: justified, g.label)))))
     }
   }
 }
