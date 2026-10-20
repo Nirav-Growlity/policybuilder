@@ -3,10 +3,13 @@
 import { DOCUMENT_THEMES, getDocumentThemePatch } from "../lib/document-themes";
 import { normalizePolicyStructure } from "../lib/sections";
 import { makeSamplePolicy } from "../lib/store";
+import type { AuthorApprovalRenderData } from "../lib/document-render-model";
 import type { Policy } from "../lib/types";
 
-export type PolicyQaCase = { name: string; label: string; policy: Policy };
+export type PolicyQaCase = { name: string; label: string; policy: Policy; authorApproval?: AuthorApprovalRenderData };
 
+/** A 240 × 80 px pen stroke, standing in for an author signature. */
+const SIGNATURE_PNG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAABQCAMAAAAQlwhOAAAC01BMVEVMaXEAAFUzM2YfH18AAAAdKlscKloAAH8dKlsdKloTJ2IbKVscKVscKlocKlscKlseLVocKVsaKF0cKlocKlokJEgZM2YbK1oeLVocKlodKVodKVodKVsVKlUdKlscKloaKFkcKVodKFwdKVsdKloAPz8eKlsdKVoXLlwcKVsdKVoZJlkqKlUdKVocKlsdKVsXLlwdKlseKFscKlscKVodKlsdKlodK1kkJFseK1odKlocKVodKFwdKFseKVscKVocKlkcKVobKVkdKlkdKlscKVodKlsfL18dKVscKlwdKVocKVscKFsdKlscKVscKloeKlocKlscKlscKVscKlwdKVkcK1sYJFUdKVsiIlUdKVscKlUcKVsbK1wdKVsdKVsbK1wdKVoeKVodKVsdKVgcKVoeKVodKVocKVocKlocHFUcKlocKlsdKVsdKlscKFkdKlocKVsdKlsZKl0fKl8bKVkcKVodKlobLVsdKlseKlodKlodK1cfK10dKVocKlsdKVodKVocKlocKVobK1sdKVsdKlocKVwdKlsbLFgcKlsbKVodKVscJV4dKVoaK1ccKVoeKlocKlsdK1sfJ1cgKVofKVgdKlodKVscKlscKVocKlohLFgdKlodKlscKVocKlwdKlscKVsdKlodKlsdKlsdKlocKVocJ1oaKF0bKFscKlscKlodKVsaJ1scKlocKVsdJ1gcKFscKVodKVodKlodKVodKVsdKVodKVscKlscKlsdKVocKVscKVocKlwdKlocKVscKFsdKVscKVscK1kcKlkcKlscKlocKlocKlseKFsdKVscKVocKVsdLF0cKlodKlseJlwdKlsdKlseK1weKFocKVseKVofLFkdKVsaKlobKVweKlscKlocKFwcKFkcKVobK1ocKVsbKlocKlodKlodKlsdKlscKlseKlwcKlsdKlocKVocKlseKFsdKlvztNu8AAAA8HRSTlMAAwUIAfzxAv79DVz5+H2RItcT9+YHCkERzeH0uAy23jnvXvvsBCr1Fu6sFAbKWYwL2hmWmNLyTQ470z5FcEN2NuclPOvLnBCkSKaZZLWfhWbwosNhaTUVmg89EnUvyb5Tv0TiK7ldnnyhCYTge8A/r7L2HhhKseQcwXed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";
 const ONE_PIXEL_PNG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";
 const svgDataUrl = (svg: string) => `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
 
@@ -102,6 +105,8 @@ export function extraParityCases(): PolicyQaCase[] {
   const acknowledgement = withTheme("people-charter");
   acknowledgement.showAcknowledgement = true;
   acknowledgement.employeeAcknowledgement = { employeeName: "Asha Raman", employeeId: "E-10422", department: "Operations", date: "2026-10-19" };
+  const signed = withTheme("standard-pack");
+  signed.showAcknowledgement = true;
 
   const bordered = withTheme("controlled-manual");
   bordered.documentThemeOverrides = { schemaVersion: 1, pageBorder: { enabled: true, scope: "all", widthPt: 1.5, insetMm: 8, color: "#26323D" } };
@@ -136,6 +141,7 @@ export function extraParityCases(): PolicyQaCase[] {
     { name: "ai-cover", label: "AI cover composition", policy: aiCover },
     { name: "toc-off", label: "Contents page off", policy: tocOff },
     { name: "acknowledgement-filled", label: "Acknowledgement with filled fields", policy: acknowledgement },
+    { name: "acknowledgement-signed", label: "Acknowledgement signed by the author", policy: signed, authorApproval: { displayName: "Priya Shah", date: "2026-10-20", signatureDataUrl: SIGNATURE_PNG } },
     { name: "page-border", label: "Page border on every page", policy: bordered },
   ];
 }

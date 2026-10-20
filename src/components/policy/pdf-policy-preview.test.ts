@@ -93,3 +93,41 @@ test("signature-bearing previews are never cached", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("a superseded preview stops its fetch only once no preview waits for it", async () => {
+  const originalFetch = globalThis.fetch;
+  const originalScope = usePolicyCraftScope.getState().scope;
+  const workspace = scope("manager-abort", 43);
+  const signals: AbortSignal[] = [];
+  globalThis.fetch = async (_input, init) => {
+    signals.push(init!.signal!);
+    return await new Promise<Response>((_resolve, reject) => init!.signal!.addEventListener("abort", () => reject(init!.signal!.reason)));
+  };
+  const request = (signal: AbortSignal) => requestPolicyPreview({ key: "edited-document", body: "{}", includeAuthorSignature: false, scope: workspace, signal });
+  try {
+    clearPolicyPreviewCache();
+    usePolicyCraftScope.getState().setScope(workspace);
+    const pane = new AbortController();
+    const design = new AbortController();
+    const fromPane = request(pane.signal);
+    const fromDesign = request(design.signal);
+    assert.equal(signals.length, 1, "both previews share one fetch");
+
+    pane.abort();
+    await assert.rejects(fromPane, { name: "AbortError" });
+    assert.equal(signals[0].aborted, false, "the design preview still waits for the shared fetch");
+
+    design.abort();
+    await assert.rejects(fromDesign, { name: "AbortError" });
+    assert.equal(signals[0].aborted, true, "the fetch stops once nobody waits");
+
+    const again = new AbortController();
+    void request(again.signal).catch(() => undefined);
+    assert.equal(signals.length, 2, "an undo back to the same content starts a fresh request");
+    again.abort();
+  } finally {
+    clearPolicyPreviewCache();
+    usePolicyCraftScope.getState().setScope(originalScope);
+    globalThis.fetch = originalFetch;
+  }
+});

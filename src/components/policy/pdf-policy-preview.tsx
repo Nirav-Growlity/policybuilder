@@ -53,10 +53,12 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
     // A cached, already mounted result can paint without another request.
     if (active?.key === key && retryCount === 0) return;
     let disposed = false;
+    // A newer edit supersedes this request; its fetch stops unless another preview shares it.
+    const superseded = new AbortController();
     const timer = setTimeout(async () => {
       try {
         if (!scope) throw new Error("Select an organization to preview this policy.");
-        const bytes = await requestPolicyPreview({ key, body, includeAuthorSignature, scope });
+        const bytes = await requestPolicyPreview({ key, body, includeAuthorSignature, scope, signal: superseded.signal });
         if (disposed) return;
         setCandidate({ key, scopeKey, bytes, id: nextId.current++, includesAuthorSignature: includeAuthorSignature });
         setFailure(null);
@@ -64,7 +66,7 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
         if (!disposed) { setCandidate(current => current?.key === key ? null : current); setFailure({ key, message: error instanceof Error ? error.message : "Preview unavailable." }); }
       }
     }, 0);
-    return () => { disposed = true; clearTimeout(timer); };
+    return () => { disposed = true; clearTimeout(timer); superseded.abort(); };
     // active is deliberately read only when a key or retry changes; promoting
     // a painted candidate must not start the same request again.
     // eslint-disable-next-line react-hooks/exhaustive-deps

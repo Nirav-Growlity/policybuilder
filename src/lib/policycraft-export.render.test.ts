@@ -61,27 +61,29 @@ test("authorized private cover artwork and current actor signature reach PDF pre
   assert.equal(prepared.policy.coverComposition?.background.assetId, artworkDataUrl);
   assert.equal(prepared.authorApproval?.displayName, actor.user.name);
 
-  const pdfBytes = await generatePdf(prepared.policy, prepared.authorApproval, prepared.cacheScope);
-  assert.equal(pdfBytes.subarray(0, 5).toString("ascii"), "%PDF-");
-  const pdf = await getDocument({ data: new Uint8Array(pdfBytes), useSystemFonts: true }).promise;
-  const pdfImageDimensions: Array<[number, number]> = [];
-  try {
-    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
-      const page = await pdf.getPage(pageNumber);
-      const operatorList = await page.getOperatorList();
-      for (let index = 0; index < operatorList.fnArray.length; index++) {
-        if (operatorList.fnArray[index] === OPS.paintImageXObject) {
-          const args = operatorList.argsArray[index];
-          if (typeof args?.[1] === "number" && typeof args[2] === "number") {
-            pdfImageDimensions.push([args[1], args[2]]);
+  for (const engine of ["chromium", "typst"] as const) {
+    const pdfBytes = await generatePdf(prepared.policy, prepared.authorApproval, prepared.cacheScope, engine);
+    assert.equal(pdfBytes.subarray(0, 5).toString("ascii"), "%PDF-");
+    const pdf = await getDocument({ data: new Uint8Array(pdfBytes), useSystemFonts: true }).promise;
+    const pdfImageDimensions: Array<[number, number]> = [];
+    try {
+      for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+        const page = await pdf.getPage(pageNumber);
+        const operatorList = await page.getOperatorList();
+        for (let index = 0; index < operatorList.fnArray.length; index++) {
+          if (operatorList.fnArray[index] === OPS.paintImageXObject) {
+            const args = operatorList.argsArray[index];
+            if (typeof args?.[1] === "number" && typeof args[2] === "number") {
+              pdfImageDimensions.push([args[1], args[2]]);
+            }
           }
         }
       }
+      assert.ok(pdfImageDimensions.some(([width, height]) => width === 240 && height === 70), `${engine} PDF should embed the injected current actor signature image`);
+      assert.ok(pdfImageDimensions.some(([width, height]) => width >= 700 && height >= 1000), `${engine} PDF should embed the resolved full-page private cover artwork`);
+    } finally {
+      await pdf.destroy();
     }
-    assert.ok(pdfImageDimensions.some(([width, height]) => width === 240 && height === 70), "PDF should embed the injected current actor signature image");
-    assert.ok(pdfImageDimensions.some(([width, height]) => width >= 700 && height >= 1000), "PDF should embed the resolved full-page private cover artwork");
-  } finally {
-    await pdf.destroy();
   }
 
   const docx = await JSZip.loadAsync(await generateDocx(prepared.policy, prepared.authorApproval));

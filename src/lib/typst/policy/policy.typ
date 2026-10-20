@@ -139,6 +139,8 @@
   header: none, footer: none,
   background: page-background(),
 )
+#let outline-pass = m.at("outlinePass", default: false)
+#set page(margin: 0pt, fill: none, background: none) if outline-pass
 
 // ---------------------------------------------------------------- shared pieces
 
@@ -184,23 +186,37 @@
   })
 }
 
+// One cover text layer, placed against the page's top-left corner (`origin`
+// is that corner relative to the current position).
+#let cover-text(layer, origin, stroke: none) = {
+  let drawn = css(family: layer.font, size: layer.size * 1pt, line-height: layer.lineHeight, weight: if layer.bold { "bold" } else { "regular" },
+    fill: if stroke == none { col(layer.color).transparentize(100% - layer.opacity * 100%) } else { rgb(0, 0, 0, 0) },
+    tracking: layer.letterSpacing * 1pt, style: if layer.italic { "italic" } else { "normal" }, {
+      set text(stroke: stroke)
+      show: it => if layer.underline { underline(it) } else { it }
+      par(justify: false, layer.lines.join("
+"))
+    })
+  place(top + left, dx: mm(layer.x) + origin.x, dy: mm(layer.y) + origin.y,
+    rotate(layer.rotation * 1deg, origin: center + horizon, reflow: false,
+      box(width: mm(layer.width), height: mm(layer.height), clip: true, align(align-map.at(layer.align), drawn))))
+}
+
+// The AI cover's soft text shadow becomes a dark outline painted behind the
+// glyphs (SVG `paint-order: stroke fill`), as in the Word export. Typst strokes
+// on top of the fill, so the outlines are drawn on their own in a first pass
+// (`outlinePass`), exported as SVG and placed under the text: they are shapes,
+// not a second copy of the text, so copying the title gets it once.
+#let outline-stroke = (paint: rgb(0, 0, 0, 45%), thickness: 0.35mm)
+
 #let composition-cover() = {
   let c = m.cover
-  place(top + left, dx: -mm(m.page.marginXMm), dy: -mm(m.page.marginTopMm), image(c.image, width: 210mm, height: 297mm))
-  for layer in c.texts {
-    let size = layer.size * 1pt
-    let lines = layer.lines.join("\n")
-    let drawn = css(family: layer.font, size: size, line-height: layer.lineHeight, weight: if layer.bold { "bold" } else { "regular" },
-      fill: col(layer.color).transparentize(100% - layer.opacity * 100%), tracking: layer.letterSpacing * 1pt,
-      style: if layer.italic { "italic" } else { "normal" }, {
-        set text(stroke: if layer.outline { (paint: rgb(0, 0, 0, 45%), thickness: 0.35mm) } else { none })
-        show: it => if layer.underline { underline(it) } else { it }
-        par(justify: false, lines)
-      })
-    place(top + left, dx: mm(layer.x) - mm(m.page.marginXMm), dy: mm(layer.y) - mm(m.page.marginTopMm),
-      rotate(layer.rotation * 1deg, origin: center + horizon, reflow: false,
-        box(width: mm(layer.width), height: mm(layer.height), clip: true, align(align-map.at(layer.align), drawn))))
-  }
+  let origin = (x: -mm(m.page.marginXMm), y: -mm(m.page.marginTopMm))
+  place(top + left, dx: origin.x, dy: origin.y, image(c.image, width: 210mm, height: 297mm))
+  if c.outline != none { place(top + left, dx: origin.x, dy: origin.y, 
+    // Both sizes: a placed SVG with only a width lands off by the margin.
+    image(c.outline.image, width: c.outline.widthPt * 1pt, height: c.outline.heightPt * 1pt)) }
+  for layer in c.texts { cover-text(layer, origin) }
 }
 
 // ---------------------------------------------------------------- contents
@@ -547,26 +563,43 @@
   block(width: 100%, inset: (top: 27pt), [
     #block(below: 7pt, css(family: head-font, size: 18pt, line-height: 1.14, weight: "semibold", fill: primary, a.title)) #label("section-acknowledgement")
     #block(below: 14.1pt, css(line-height: lh * 1.22, par(justify: justified, a.statement)))
-    #grid(columns: (1fr, 1fr), row-gutter: 3.7pt, ..a.fields.map(f => block(inset: (x: 7pt, y: 6pt), {
-      css(size: 7pt, weight: "extrabold", fill: muted, tracking: 1.75pt, upper(f.label))
-      v(5pt)
-      let mark = if f.label == "Signature" and a.signature != none { image(a.signature, height: 44 * px, fit: "contain") }
-        else if f.value != none { css(line-height: 1, f.value) } else { [] }
-      block(width: 100%, height: if f.label == "Signature" and a.signature != none { 44 * px } else { 11pt }, stroke: (bottom: (paint: muted, thickness: 0.75pt)), align(left + bottom, mark))
+    // Each field: a 7 pt label, 5 pt gap, an underlined value line (11 pt, or the
+    // 44 px signature mark) and its 8.5 pt bottom margin (13 pt under the signature).
+    #grid(columns: (1fr, 1fr), row-gutter: 3.7pt, ..a.fields.map(f => block(inset: (x: 7pt), {
+      let signature = f.label == "Signature"
+      let rule = (bottom: (paint: muted, thickness: 0.75pt))
+      kept(6pt)
+      block(below: 5pt, css(size: 7pt, weight: "extrabold", fill: muted, tracking: 1.75pt, upper(f.label)))
+      if signature and a.signature != none {
+        block(height: 44 * px, stroke: rule, align(left + bottom, context {
+          // max-width 180 px, max-height 44 px, kept at the bottom left.
+          let natural = measure(image(a.signature))
+          if natural.width / natural.height > 180 / 44 { image(a.signature, width: 180 * px) } else { image(a.signature, height: 44 * px) }
+        }))
+      } else if f.value != none {
+        block(height: 11pt, stroke: rule, css(line-height: 1, f.value))
+      } else {
+        block(height: 11pt, stroke: rule)
+      }
+      kept(if signature { 13pt } else { 8.5pt } + 6pt)
     })))
   ])
 }
 
 // ---------------------------------------------------------------- document
 
-#if m.cover.kind == "composition" { composition-cover() } else { standard-cover() }
-#pagebreak()
-#if m.toc != none {
-  contents()
+#if outline-pass {
+  for layer in m.cover.texts.filter(layer => layer.outline) { cover-text(layer, (x: 0pt, y: 0pt), stroke: outline-stroke) }
+} else {
+  if m.cover.kind == "composition" { composition-cover() } else { standard-cover() }
   pagebreak()
+  if m.toc != none {
+    contents()
+    pagebreak()
+  }
+  if m.sectionFeature != none {
+    block(width: 100%, height: 250 * px, clip: true, stroke: (y: (paint: line-color, thickness: px)), image(m.sectionFeature.image, width: 100%, height: 250 * px, fit: "cover"))
+  }
+  for (i, s) in m.sections.enumerate() { render-section(s, i == 0, i == m.sections.len() - 1) }
+  if m.acknowledgement != none { acknowledgement() }
 }
-#if m.sectionFeature != none {
-  block(width: 100%, height: 250 * px, clip: true, stroke: (y: (paint: line-color, thickness: px)), image(m.sectionFeature.image, width: 100%, height: 250 * px, fit: "cover"))
-}
-#for (i, s) in m.sections.enumerate() { render-section(s, i == 0, i == m.sections.len() - 1) }
-#if m.acknowledgement != none { acknowledgement() }

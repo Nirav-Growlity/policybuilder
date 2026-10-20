@@ -3,36 +3,75 @@ import test from "node:test";
 import { PDFDict, PDFDocument, PDFName } from "pdf-lib";
 import sharp from "sharp";
 import { makeSamplePolicy } from "../store";
-import { generatePdf } from "./generate";
+import { generatePdf, type PolicyPdfEngine } from "./generate";
 import { applyCustomCoverPage } from "./print-document";
 
-test("generatePdf returns a non-empty PDF buffer", async () => {
-  const output = await generatePdf(makeSamplePolicy());
+const ENGINES: PolicyPdfEngine[] = ["chromium", "typst"];
 
-  assert.ok(Buffer.isBuffer(output));
-  assert.ok(output.length > 0);
-  assert.equal(output.subarray(0, 5).toString("ascii"), "%PDF-");
-  for (const page of (await PDFDocument.load(output)).getPages()) {
-    assert.ok(Math.abs(page.getWidth() - 595.28) < 1);
-    assert.ok(Math.abs(page.getHeight() - 841.89) < 1);
-  }
-});
+for (const engine of ENGINES) {
+  test(`${engine}: generatePdf returns a non-empty PDF buffer`, async () => {
+    const output = await generatePdf(makeSamplePolicy(), undefined, "test", engine);
 
-test("generatePdf renders a distinct author approval block on the acknowledgement page", async () => {
-  const policy = makeSamplePolicy();
-  policy.showAcknowledgement = true;
-  const signature = await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="240" height="70"><path d="M8 55 C40 4 62 68 95 30 S150 52 226 10" fill="none" stroke="#173F4B" stroke-width="5"/></svg>')).png().toBuffer();
-  const output = await generatePdf(policy, {
-    displayName: "Policy Author",
-    date: "2026-09-28",
-    signatureDataUrl: `data:image/png;base64,${signature.toString("base64")}`,
+    assert.ok(Buffer.isBuffer(output));
+    assert.ok(output.length > 0);
+    assert.equal(output.subarray(0, 5).toString("ascii"), "%PDF-");
+    for (const page of (await PDFDocument.load(output)).getPages()) {
+      assert.ok(Math.abs(page.getWidth() - 595.28) < 1);
+      assert.ok(Math.abs(page.getHeight() - 841.89) < 1);
+    }
   });
-  const pages = (await PDFDocument.load(output)).getPages();
-  assert.ok(pages.length > 0);
-  const finalPageResources = pages.at(-1)!.node.normalizedEntries().Resources;
-  const images = finalPageResources.lookupMaybe(PDFName.of("XObject"), PDFDict);
-  assert.ok(images && images.keys().length > 0, "the acknowledgement page should include signature artwork");
-});
+
+  test(`${engine}: generatePdf renders a distinct author approval block on the acknowledgement page`, async () => {
+    const policy = makeSamplePolicy();
+    policy.showAcknowledgement = true;
+    const signature = await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="240" height="70"><path d="M8 55 C40 4 62 68 95 30 S150 52 226 10" fill="none" stroke="#173F4B" stroke-width="5"/></svg>')).png().toBuffer();
+    const output = await generatePdf(policy, {
+      displayName: "Policy Author",
+      date: "2026-09-28",
+      signatureDataUrl: `data:image/png;base64,${signature.toString("base64")}`,
+    }, "test", engine);
+    const pages = (await PDFDocument.load(output)).getPages();
+    assert.ok(pages.length > 0);
+    const finalPageResources = pages.at(-1)!.node.normalizedEntries().Resources;
+    const images = finalPageResources.lookupMaybe(PDFName.of("XObject"), PDFDict);
+    assert.ok(images && images.keys().length > 0, "the acknowledgement page should include signature artwork");
+  });
+
+  test(`${engine}: generatePdf renders a custom gradient theme as A4`, async () => {
+    const policy = makeSamplePolicy();
+    policy.documentThemeOverrides = {
+      schemaVersion: 1,
+      colors: { primary: "#315C49", accent: "#B47B36" },
+      background: { kind: "gradient", from: "#FFFFFF", to: "#E7F0EA", direction: "vertical" },
+      density: "compact",
+      logoScale: "large",
+    };
+    const output = await generatePdf(policy, undefined, "test", engine);
+
+    assert.ok(output.length > 0);
+    assert.equal(output.subarray(0, 5).toString("ascii"), "%PDF-");
+    for (const page of (await PDFDocument.load(output)).getPages()) {
+      assert.ok(Math.abs(page.getWidth() - 595.28) < 1);
+      assert.ok(Math.abs(page.getHeight() - 841.89) < 1);
+    }
+  });
+
+  test(`${engine}: generatePdf renders custom cover compositions as A4`, async () => {
+    const policy = makeSamplePolicy();
+    policy.coverComposition = {
+      schemaVersion: 1,
+      sourceTemplateId: "standard-pack",
+      background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
+      elements: [{ id: "title", type: "text", x: 20, y: 20, width: 160, height: 20, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, content: { kind: "binding", binding: "policyTitle" }, fontFamily: "Arial", fontSize: 20, color: "#123456", bold: true, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 }],
+    };
+    const output = await generatePdf(policy, undefined, "test", engine);
+    const pages = (await PDFDocument.load(output)).getPages();
+    assert.ok(output.length > 0);
+    assert.ok(pages.length >= 1);
+    assert.ok(Math.abs(pages[0].getWidth() - 595.28) < 1);
+    assert.ok(Math.abs(pages[0].getHeight() - 841.89) < 1);
+  });
+}
 
 test("custom cover overlay is attached to the complete first page", async () => {
   const document = await PDFDocument.create();
@@ -43,39 +82,4 @@ test("custom cover overlay is attached to the complete first page", async () => 
   const { Resources } = page.node.normalizedEntries();
   const xObjects = Resources.lookupMaybe(PDFName.of("XObject"), PDFDict);
   assert.ok(xObjects && xObjects.keys().length > 0, "the first page should contain the full-page cover image");
-});
-
-test("generatePdf renders a custom gradient theme as A4", async () => {
-  const policy = makeSamplePolicy();
-  policy.documentThemeOverrides = {
-    schemaVersion: 1,
-    colors: { primary: "#315C49", accent: "#B47B36" },
-    background: { kind: "gradient", from: "#FFFFFF", to: "#E7F0EA", direction: "vertical" },
-    density: "compact",
-    logoScale: "large",
-  };
-  const output = await generatePdf(policy);
-
-  assert.ok(output.length > 0);
-  assert.equal(output.subarray(0, 5).toString("ascii"), "%PDF-");
-  for (const page of (await PDFDocument.load(output)).getPages()) {
-    assert.ok(Math.abs(page.getWidth() - 595.28) < 1);
-    assert.ok(Math.abs(page.getHeight() - 841.89) < 1);
-  }
-});
-
-test("generatePdf renders custom cover compositions as A4", async () => {
-  const policy = makeSamplePolicy();
-  policy.coverComposition = {
-    schemaVersion: 1,
-    sourceTemplateId: "standard-pack",
-    background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
-    elements: [{ id: "title", type: "text", x: 20, y: 20, width: 160, height: 20, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, content: { kind: "binding", binding: "policyTitle" }, fontFamily: "Arial", fontSize: 20, color: "#123456", bold: true, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 }],
-  };
-  const output = await generatePdf(policy);
-  const pages = (await PDFDocument.load(output)).getPages();
-  assert.ok(output.length > 0);
-  assert.ok(pages.length >= 1);
-  assert.ok(Math.abs(pages[0].getWidth() - 595.28) < 1);
-  assert.ok(Math.abs(pages[0].getHeight() - 841.89) < 1);
 });

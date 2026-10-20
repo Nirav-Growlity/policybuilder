@@ -6,9 +6,11 @@ import path from "node:path";
 import { DOCUMENT_THEMES } from "../document-themes";
 import { A4, pageFooterDistanceMm, pageFooterVerticalShiftMm } from "../page-geometry";
 import { templatePreviewPolicy } from "../sample-policies";
-import { generatePdf } from "./generate";
+import { generatePdf, type PolicyPdfEngine } from "./generate";
 import { PDFDocument, PDFDict, PDFArray, PDFName } from "pdf-lib";
-import { applyPageBackground, generatePreviewPdf } from "./print-document";
+import { applyPageBackground } from "./print-document";
+
+const ENGINES: PolicyPdfEngine[] = ["chromium", "typst"];
 
 for (const direction of ["vertical", "horizontal", "diagonal"] as const) {
   test(`${direction} gradient covers the complete page and repeats on every page`, async () => {
@@ -27,12 +29,12 @@ for (const direction of ["vertical", "horizontal", "diagonal"] as const) {
   });
 }
 
-test("bordered PDF footer stays above the rendered border stroke", async () => {
+for (const engine of ENGINES) test(`${engine}: bordered PDF footer stays above the rendered border stroke`, async () => {
   for (const { insetMm, widthPt } of [{ insetMm: 5, widthPt: .5 }, { insetMm: 10, widthPt: 1 }, { insetMm: 20, widthPt: 6 }]) {
     const policy = templatePreviewPolicy("standard-pack", "environmental");
     policy.company.docNum = "BORDER-FOOTER";
     policy.templateBrandOverrides = { schemaVersion: 1, pageBorder: { enabled: true, widthPt, insetMm, scope: "all" } };
-    const bytes = await generatePreviewPdf(policy);
+    const bytes = await generatePdf(policy, undefined, "test", engine);
     const pdf = await getDocument({ data: new Uint8Array(bytes), useSystemFonts: true }).promise;
     try {
       const page = await pdf.getPage(1);
@@ -48,8 +50,8 @@ test("bordered PDF footer stays above the rendered border stroke", async () => {
   assert.equal(pageFooterDistanceMm({ enabled: false, widthPt: 1, insetMm: 10, scope: "all" }), 12.5);
 });
 
-for (const { theme, withLogo } of DOCUMENT_THEMES.flatMap(theme => [false, true].map(withLogo => ({ theme, withLogo })))) {
-  test(`${theme.id}${withLogo ? " with large logo" : ""}: cover stays on page one and footer controls remain separated`, async () => {
+for (const { theme, withLogo, engine } of DOCUMENT_THEMES.flatMap(theme => [false, true].flatMap(withLogo => ENGINES.map(engine => ({ theme, withLogo, engine }))))) {
+  test(`${engine}: ${theme.id}${withLogo ? " with large logo" : ""}: cover stays on page one and footer controls remain separated`, async () => {
     const policy = templatePreviewPolicy(theme.id, "labour-human-rights");
     policy.company.docNum = "DOC-CHECK";
     policy.company.revNum = "REV-CHECK";
@@ -65,10 +67,10 @@ for (const { theme, withLogo } of DOCUMENT_THEMES.flatMap(theme => [false, true]
       policy.company.name = "International Sustainable Procurement and Responsible Operations Group Limited";
       policy.templateBrandOverrides.logoScale = 180;
     }
-    const bytes = await generatePdf(policy);
+    const bytes = await generatePdf(policy, undefined, "test", engine);
     if (process.env.POLICY_LAYOUT_QA_DIR) {
       await mkdir(process.env.POLICY_LAYOUT_QA_DIR, { recursive: true });
-      await writeFile(path.join(process.env.POLICY_LAYOUT_QA_DIR, `${theme.id}${withLogo ? "-logo" : ""}.pdf`), bytes);
+      await writeFile(path.join(process.env.POLICY_LAYOUT_QA_DIR, `${engine}-${theme.id}${withLogo ? "-logo" : ""}.pdf`), bytes);
     }
     const pdf = await getDocument({ data: new Uint8Array(bytes), useSystemFonts: true }).promise;
     try {

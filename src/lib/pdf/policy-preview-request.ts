@@ -6,10 +6,15 @@ type PreviewRequest = {
   body: string;
   includeAuthorSignature: boolean;
   scope: PolicyCraftWorkspaceScope;
+  /** Aborted when the caller no longer wants this preview (a newer edit superseded it). */
+  signal?: AbortSignal;
 };
 
+/** One fetch, shared by every caller asking for the same preview; aborted once none of them waits. */
+type PendingPreview = { key: string; promise: Promise<Uint8Array>; controller: AbortController; waiters: number };
+
 const previewCache = new Map<string, Uint8Array>();
-const previewRequests = new Map<string, Promise<Uint8Array>>();
+const previewRequests = new Map<string, PendingPreview>();
 const MAX_CACHED_PREVIEWS = 6;
 const PREVIEW_REQUEST_TIMEOUT_MS = 150_000;
 let cacheGeneration = 0;
@@ -35,7 +40,35 @@ function cachePreview(key: string, bytes: Uint8Array): void {
   while (previewCache.size > MAX_CACHED_PREVIEWS) previewCache.delete(previewCache.keys().next().value!);
 }
 
-export function requestPolicyPreview({ key, body, includeAuthorSignature, scope }: PreviewRequest): Promise<Uint8Array> {
+function abortError() {
+  return new DOMException("The preview was superseded.", "AbortError");
+}
+
+/** Resolves with the shared fetch, or rejects with an AbortError as soon as this caller's signal aborts. */
+function follow(pending: PendingPreview, signal: AbortSignal | undefined): Promise<Uint8Array> {
+  if (!signal) {
+    // A caller that cannot cancel keeps the fetch alive.
+    pending.waiters = Infinity;
+    return pending.promise;
+  }
+  if (signal.aborted) return Promise.reject(abortError());
+  pending.waiters += 1;
+  return new Promise<Uint8Array>((resolve, reject) => {
+    const leave = () => {
+      pending.waiters -= 1;
+      if (pending.waiters <= 0) {
+        // Nobody waits any more: stop the fetch and let the next request start afresh.
+        if (previewRequests.get(pending.key) === pending) previewRequests.delete(pending.key);
+        pending.controller.abort();
+      }
+      reject(abortError());
+    };
+    signal.addEventListener("abort", leave, { once: true });
+    pending.promise.then(resolve, reject).finally(() => signal.removeEventListener("abort", leave));
+  });
+}
+
+export function requestPolicyPreview({ key, body, includeAuthorSignature, scope, signal }: PreviewRequest): Promise<Uint8Array> {
   const scopedKey = JSON.stringify([policyCraftScopeKey(scope), key]);
   const cached = includeAuthorSignature ? undefined : previewCache.get(scopedKey);
   if (cached) {
@@ -43,16 +76,17 @@ export function requestPolicyPreview({ key, body, includeAuthorSignature, scope 
     previewCache.set(scopedKey, cached);
     return Promise.resolve(cached);
   }
-  const pending = includeAuthorSignature ? undefined : previewRequests.get(scopedKey);
-  if (pending) return pending;
+  const existing = includeAuthorSignature ? undefined : previewRequests.get(scopedKey);
+  if (existing) return follow(existing, signal);
 
   const generation = cacheGeneration;
-  const request = fetch("/api/export/pdf", {
+  const controller = new AbortController();
+  const promise = fetch("/api/export/pdf", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body,
     cache: "no-store",
-    signal: AbortSignal.timeout(PREVIEW_REQUEST_TIMEOUT_MS),
+    signal: AbortSignal.any([controller.signal, AbortSignal.timeout(PREVIEW_REQUEST_TIMEOUT_MS)]),
   }).then(async (response) => {
     if (!response.ok) throw new Error("The preview could not be generated.");
     const blob = await response.blob();
@@ -66,8 +100,11 @@ export function requestPolicyPreview({ key, body, includeAuthorSignature, scope 
     }
     throw error;
   }).finally(() => {
-    if (previewRequests.get(scopedKey) === request) previewRequests.delete(scopedKey);
+    if (previewRequests.get(scopedKey) === pending) previewRequests.delete(scopedKey);
   });
-  if (!includeAuthorSignature) previewRequests.set(scopedKey, request);
-  return request;
+  // Every follower handles the rejection; this keeps an abandoned fetch from reporting it unhandled.
+  promise.catch(() => undefined);
+  const pending: PendingPreview = { key: scopedKey, promise, controller, waiters: 0 };
+  if (!includeAuthorSignature) previewRequests.set(scopedKey, pending);
+  return follow(pending, signal);
 }

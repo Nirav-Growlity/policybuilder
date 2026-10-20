@@ -17,6 +17,7 @@ import { chromium, type Browser, type Page } from "playwright-core";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { generatePreviewPdf } from "../lib/pdf/print-document";
 import { normalizePolicyQuantitative } from "../lib/quantitative";
+import type { AuthorApprovalRenderData } from "../lib/document-render-model";
 import type { Policy } from "../lib/types";
 import { extraParityCases, themeQaCases, type PolicyQaCase } from "./policy-qa-cases";
 
@@ -33,9 +34,10 @@ const SCALE = 1.25;
 const PAGE = { width: Math.round(595 * SCALE), height: Math.round(842 * SCALE) };
 
 /** The Typst renderer the port adds (ticket 02 onwards). Until then the right column stays empty. */
-async function loadTypstRenderer(): Promise<((policy: Policy) => Promise<Buffer>) | null> {
+type TypstRenderer = (policy: Policy, authorApproval?: AuthorApprovalRenderData) => Promise<Buffer>;
+async function loadTypstRenderer(): Promise<TypstRenderer | null> {
   if (!existsSync(typstModule)) return null;
-  const loaded = await import(pathToFileURL(typstModule).href) as { renderPolicyTypstPdf?: (policy: Policy) => Promise<Buffer> };
+  const loaded = await import(pathToFileURL(typstModule).href) as { renderPolicyTypstPdf?: TypstRenderer };
   if (!loaded.renderPolicyTypstPdf) throw new Error(`${typstModule} must export renderPolicyTypstPdf(policy).`);
   return loaded.renderPolicyTypstPdf;
 }
@@ -67,8 +69,7 @@ async function documentWords(pdf: Buffer): Promise<Map<string, number>> {
   for (let n = 1; n <= doc.numPages; n++) {
     const page = await doc.getPage(n);
     const height = page.view[3];
-    const content = await page.getTextContent();
-    const items = (content.items as Array<{ str: string; hasEOL?: boolean; transform: number[] }>).filter((item) => {
+    const items = (await textItems(page)).filter((item) => {
       const fromTopMm = (height - item.transform[5]) * 25.4 / 72;
       return item.str.length > 0 && fromTopMm >= BODY_TOP_MM && fromTopMm <= BODY_BOTTOM_MM;
     });
@@ -97,7 +98,7 @@ async function pageOpenings(pdf: Buffer): Promise<string[]> {
   for (let n = 1; n <= doc.numPages; n++) {
     const page = await doc.getPage(n);
     const height = page.view[3];
-    const items = ((await page.getTextContent()).items as Array<{ str: string; transform: number[] }>).filter((item) => {
+    const items = (await textItems(page)).filter((item) => {
       const fromTopMm = (height - item.transform[5]) * 25.4 / 72;
       return item.str.trim() && fromTopMm >= BODY_TOP_MM && fromTopMm <= BODY_BOTTOM_MM;
     });
@@ -105,6 +106,28 @@ async function pageOpenings(pdf: Buffer): Promise<string[]> {
   }
   await doc.destroy();
   return openings;
+}
+
+type TextItem = { str: string; hasEOL?: boolean; transform: number[] };
+type MarkedItem = TextItem | { type: string; tag?: string };
+
+/** Text runs a reader copies: content marked as a PDF artifact (decoration) is left out. */
+async function textItems(page: { getTextContent(options: { includeMarkedContent: boolean }): Promise<{ items: unknown[] }> }) {
+  const items: TextItem[] = [];
+  let artifactDepth = 0;
+  const open: boolean[] = [];
+  for (const item of (await page.getTextContent({ includeMarkedContent: true })).items as MarkedItem[]) {
+    if ("str" in item) {
+      if (artifactDepth === 0) items.push(item);
+    } else if (item.type === "endMarkedContent") {
+      if (open.pop()) artifactDepth--;
+    } else {
+      const artifact = item.tag === "Artifact";
+      open.push(artifact);
+      if (artifact) artifactDepth++;
+    }
+  }
+  return items;
 }
 
 async function pageCount(pdf: Buffer) {
@@ -229,8 +252,8 @@ async function main() {
     mkdirSync(dir, { recursive: true });
     const policy = normalizePolicyQuantitative(item.policy);
     const rendered: Record<Engine, Rendered | null> = {
-      chromium: await timed(() => generatePreviewPdf(policy)),
-      typst: renderTypst ? await timed(() => renderTypst(policy)) : null,
+      chromium: await timed(() => generatePreviewPdf(policy, item.authorApproval)),
+      typst: renderTypst ? await timed(() => renderTypst(policy, item.authorApproval)) : null,
     };
     const files: Partial<Record<Engine, string>> = {};
     const pages: Record<Engine, number> = { chromium: 0, typst: 0 };

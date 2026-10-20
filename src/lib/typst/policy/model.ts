@@ -71,7 +71,11 @@ export type PolicyTypstModel = {
   typography: { body: string; heading: string; headingSize: number; subheadingSize: number; paragraphSize: number; lineSpacing: number };
   cover:
     | { kind: "standard"; brand: Brand; title: string; feature: { image: string; focal: { x: number; y: number }; treatment: string } | null }
-    | { kind: "composition"; image: string; texts: TypstCoverText[] };
+    | {
+      kind: "composition"; image: string; texts: TypstCoverText[];
+      /** Text outlines drawn as vector shapes under the text; render.ts fills this in with a first Typst pass. */
+      outline: { image: string; widthPt: number; heightPt: number } | null;
+    };
   toc: { marker: Marker; entries: { id: string; marker: string; title: string }[] } | null;
   sectionFeature: { image: string; focal: { x: number; y: number } } | null;
   sections: TypstSection[];
@@ -296,7 +300,7 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
           outline: Boolean(layout.presentation.textShadow),
         };
       });
-    cover = { kind: "composition", image, texts };
+    cover = { kind: "composition", image, texts, outline: null };
   } else {
     const featureSource = model.featureImage?.placement === "cover" ? await loadImage(model.featureImage.dataUrl) : null;
     const feature = featureSource && model.featureImage
