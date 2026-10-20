@@ -51,9 +51,10 @@
 
 #set document(title: m.meta.title, author: m.meta.author)
 // Justified text hyphenates, as the soft hyphens did in the HTML preview.
-#set text(font: body-font, size: body-size, fill: ink, lang: "en", region: "us", hyphenate: justified,
+// No hanging punctuation: Chromium never lets a comma or hyphen into the margin.
+#set text(font: body-font, size: body-size, fill: ink, lang: "en", region: "us", hyphenate: justified, overhang: false,
   top-edge: css-edges(body-font, lh).top, bottom-edge: css-edges(body-font, lh).bottom)
-#set par(justify: justified, linebreaks: "simple", leading: 0pt, spacing: 12 * px,
+#set par(justify: justified, linebreaks: "simple", leading: 0pt, spacing: 0pt,
   justification-limits: (spacing: (min: 100%, max: 1000%), tracking: (min: 0em, max: 0em)))
 // A CSS block fills its container; Typst's would shrink to its content.
 #set block(spacing: 0pt, width: 100%)
@@ -246,6 +247,10 @@
 #let heading-par(body) = { set text(hyphenate: false); par(justify: justified, body) }
 #let subhead(body, fill: primary) = css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: fill, heading-par(body))
 #let kept(amount) = v(amount, weak: false)
+// A box's bottom padding: Chromium moves it whole to the next page when it does
+// not fit, where Typst would drop spacing at a page end. Margins before it stay
+// weak, so they still vanish at a break as CSS margins do.
+#let pad-end(amount) = block(height: amount, breakable: false)
 
 // The first baseline of a CSS line box, for rows laid out with `align-items: baseline`.
 #let first-baseline(family, size, line-height) = {
@@ -264,7 +269,10 @@
 }
 
 // An outside CSS list marker ("•" or "1.") ends one space before the item text.
-#let css-list(items, style, indent: 19 * px, item-gap: 5 * px, size: body-size, line-height: lh, trailing: none) = {
+// `leading`: the list opens a table cell or grid item, where CSS keeps the first
+// item's top margin inside instead of collapsing it away.
+#let css-list(items, style, indent: 19 * px, item-gap: 5 * px, size: body-size, line-height: lh, trailing: none, leading: false) = {
+  if leading { kept(item-gap) }
   for (index, item) in items.enumerate() {
     let marker = if style == "bullet" { "•" } else { str(index + 1) + "." }
     block(above: item-gap, below: item-gap, css(size: size, line-height: line-height, grid(columns: (indent, 1fr),
@@ -300,6 +308,8 @@
 #let data-table(tbl, columns: none, cells: none, header-padding: (x: 2mm, y: 2.5mm), header-align: none) = block(above: 17 * px, {
   let count = tbl.headers.len()
   let head-align = if header-align != none { header-align } else if institutional { center } else { content-align }
+  // `tr { break-inside: avoid }`: a row that does not fit moves to the next page.
+  set table.cell(breakable: false)
   table(
     columns: if columns != none { columns } else { (1fr,) * count },
     stroke: (paint: line-color, thickness: px),
@@ -320,7 +330,7 @@
 
 #let para(body) = block(below: 12 * px, par(justify: justified, body))
 
-#let target-list(targets, style, size: body-size, line-height: lh) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm)
+#let target-list(targets, style, size: body-size, line-height: lh, leading: false) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm, leading: leading)
 
 #let focus-list(c, recipe) = {
   let marker-style = if recipe == "atlas-modules" { (size: 22 * px, weight: "medium", family: body-font) }
@@ -354,8 +364,9 @@
         (body: css(family: marker.family, size: subheading-size, line-height: lh, weight: marker.weight, fill: marker.fill, g.marker), family: marker.family, size: subheading-size, lh: lh, width: auto),
         (body: subhead(g.area), family: head-font, size: subheading-size, lh: 1.2, width: 1fr),
       )))
-      block(above: 9 * px, css-list(g.items, c.itemMarker, trailing: 5 * px))
-      kept(3mm)
+      block(above: 9 * px, css-list(g.items, c.itemMarker))
+      v(5 * px)
+      pad-end(3mm)
     })
   }
 }
@@ -370,22 +381,23 @@
       cells: c.groups.map(g => (
         marker-cell(g.marker, center),
         marker-cell(g.area, label-align),
-        cell(target-list(g.targets, c.itemMarker, size: 9.5pt, line-height: 1.35), alignment: top, padding: (x: 1.5mm, y: 2mm)),
+        cell(target-list(g.targets, c.itemMarker, size: 9.5pt, line-height: 1.35, leading: true), alignment: top, padding: (x: 1.5mm, y: 2mm)),
       )).flatten())
   } else if c.treatment == "bands" {
-    for g in c.groups {
-      block(below: 8 * px, grid(columns: (52 * px, 1fr), fill: soft,
+    // Grid gaps sit between items only, never after the last one.
+    for (i, g) in c.groups.enumerate() {
+      block(above: if i > 0 { 8 * px } else { 0pt }, grid(columns: (52 * px, 1fr), fill: soft,
         grid.cell(align(center + horizon, subhead(g.marker))),
         grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px, y: 13 * px),
           { subhead(g.area); target-list(g.targets, c.itemMarker) })))
     }
   } else if c.treatment == "journal" {
     for g in c.groups {
-      block({ kept(14 * px); grid(columns: (150 * px, 1fr), subhead(g.area), target-list(g.targets, c.itemMarker)); kept(14 * px) })
+      block({ kept(14 * px); grid(columns: (150 * px, 1fr), subhead(g.area), target-list(g.targets, c.itemMarker, leading: true)); kept(14 * px) })
     }
   } else {
-    for g in c.groups {
-      block(below: 9 * px, { kept(10 * px); grid(columns: (42 * px, 1fr), subhead(g.marker), { subhead(g.area); target-list(g.targets, c.itemMarker) }) })
+    for (i, g) in c.groups.enumerate() {
+      block(above: if i > 0 { 9 * px } else { 0pt }, { kept(10 * px); grid(columns: (42 * px, 1fr), subhead(g.marker), { subhead(g.area); target-list(g.targets, c.itemMarker) }) })
     }
   }
 }
@@ -404,10 +416,11 @@
       c.goals.filter(g => g.icon != none).map(g => box(tile(g))).join(h(10 * px))
     })
   } else {
-    for g in c.goals {
-      block(below: 7 * px, grid(columns: (80 * px, 1fr), stroke: (paint: col(g.color), thickness: px), inset: 0pt,
-        grid.cell(fill: col(g.color), inset: 8 * px, css(size: 9 * px, weight: "bold", fill: white, "SDG " + str(g.number))),
-        grid.cell(inset: (x: 11 * px, y: 8 * px), par(justify: justified, g.label))))
+    for (i, g) in c.goals.enumerate() {
+      block(above: if i > 0 { 7 * px } else { 0pt }, grid(columns: (80 * px, 1fr), stroke: (paint: col(g.color), thickness: px), inset: 0pt,
+        // The 1px CSS border adds to the row height; a Typst stroke does not.
+        grid.cell(fill: col(g.color), inset: (x: 8 * px, y: 8 * px + px), css(size: 9 * px, weight: "bold", fill: white, "SDG " + str(g.number))),
+        grid.cell(inset: (x: 11 * px, y: 8 * px + px), par(justify: justified, g.label))))
     }
   }
 }
@@ -425,16 +438,26 @@
   }
   let two-up = (frame == "numbered-rail" or frame == "modular-grid") and density != "dense"
   if two-up {
-    grid(columns: (1fr, 1fr), gutter: 9 * px, ..c.entries.map(e => {
-      if frame == "modular-grid" { block(fill: soft, inset: 15 * px, height: auto, context {
-        let body = card(e)
-        let height = measure(body, width: (166mm - 9 * px) / 2 - 30 * px).height
-        block(height: calc.max(height, 115 * px - 30 * px), body)
-      }) }
-      else { block(stroke: (paint: line-color, thickness: px), inset: 12 * px + px, card(e)) }
-    }))
+    // A card's text never splits, but a card that does not fit leaves its top
+    // padding on the page and continues flush at the top of the next one, as
+    // Chromium fragments the grid row. min-height: 115px on soft cards.
+    let soft-card = frame == "modular-grid"
+    let pad = if soft-card { 15 * px } else { 12 * px + px }
+    grid(columns: (1fr, 1fr), gutter: 9 * px, ..c.entries.map(e => grid.cell(
+      fill: if soft-card { soft } else { none },
+      stroke: if soft-card { none } else { (paint: line-color, thickness: px) },
+      inset: (x: pad),
+      {
+        kept(pad)
+        layout(size => {
+          let body = card(e)
+          let height = measure(body, width: size.width).height
+          block(breakable: false, height: if soft-card { calc.max(height, 115 * px - 2 * pad) } else { height }, body)
+        })
+        kept(pad)
+      })))
   } else {
-    for e in c.entries { block(below: 9 * px, { kept(10 * px); card(e) }) }
+    for (i, e) in c.entries.enumerate() { block(above: if i > 0 { 9 * px } else { 0pt }, { kept(10 * px); card(e) }) }
   }
 }
 
@@ -462,10 +485,61 @@
 
 // Code mode, not markup: whitespace between the heading and the body would
 // become a paragraph and break the heading's `sticky` keep-with-next.
-#let render-section(s, first) = block(above: if first { 0pt } else { 45 * px * t.densityFactor }, {
+// ------------------------------------------------ section frames
+
+// The bottom margin of a section's last child, for wrappers that would drop
+// it (the rail body's padding, the editorial grid cell). Grid gaps are not margins.
+#let last-margin(s) = {
+  let c = s.content
+  if c.type == "narrative" { if c.sites != none { 0pt } else { 12 * px } }
+  else if c.type == "qualitative" { 6mm }
+  else if c.type == "custom" and c.blocks.len() > 0 { if c.blocks.last().type == "table" { 0pt } else { 12 * px } }
+  else { 0pt }
+}
+
+#let section-content(s) = {
   [#section-heading(s)#label("section-" + s.id)]
   section-body(s)
-})
+}
+
+// A section is 9 mm from the next; unframed and editorial sections also keep
+// 45 px x density between them, the larger margin winning as in CSS.
+#let section-gap = if frame == "numbered-rail" or frame == "modular-grid" { 9mm } else { calc.max(9mm, 45 * px * t.densityFactor) }
+
+#let render-section(s, first, last) = {
+  // Before the acknowledgement's forced page break, a padding that does not fit
+  // is dropped, as Chromium does, instead of opening a blank page.
+  let end-pad(amount) = if last { v(amount, weak: true) } else { pad-end(amount) }
+  let above = if first { 0pt } else { section-gap }
+  if frame == "modular-grid" {
+    // A soft box, 5 mm padding inside a 1 px border (a CSS border adds to the box).
+    block(above: above, below: 9mm, fill: soft, stroke: (paint: line-color, thickness: px), inset: (x: 5mm + px), {
+      kept(5mm + px)
+      // The last child's own bottom spacing precedes the padding, as its CSS margin does.
+      section-content(s)
+      end-pad(5mm + px)
+    })
+  } else if frame == "numbered-rail" {
+    // The rail is the primary-filled 18 mm aside. Its number used to print in the
+    // primary colour on the primary rail; it now prints in the on-primary colour.
+    block(above: above, below: 9mm, grid(columns: (18mm, 1fr), column-gutter: 7mm,
+      grid.cell(fill: primary, { kept(28 * px); pad(x: 22 * px, css(size: 24 * px, line-height: 1.3, weight: "medium", fill: on-primary, s.marker)) }),
+      layout(size => {
+        let body = { kept(30 * px); pad(left: 38 * px, right: 50 * px, section-content(s)); v(last-margin(s)); end-pad(36 * px) }
+        // The rail is at least 190 px tall.
+        let height = measure(body, width: size.width).height
+        body
+        if height < 190 * px { kept(190 * px - height) }
+      })))
+  } else if frame == "editorial-margin" {
+    block(above: above, below: 9mm, grid(columns: (18mm, 1fr), column-gutter: 7mm,
+      { kept(4 * px); css(family: head-font, size: 24 * px, line-height: 1, fill: accent, s.marker) },
+      // A grid item: its last child's margin stays inside it.
+      { section-content(s); kept(last-margin(s)) }))
+  } else {
+    block(above: above, below: 9mm, section-content(s))
+  }
+}
 
 #let acknowledgement() = {
   let a = m.acknowledgement
@@ -494,5 +568,5 @@
 #if m.sectionFeature != none {
   block(width: 100%, height: 250 * px, clip: true, stroke: (y: (paint: line-color, thickness: px)), image(m.sectionFeature.image, width: 100%, height: 250 * px, fit: "cover"))
 }
-#for (i, s) in m.sections.enumerate() { render-section(s, i == 0) }
+#for (i, s) in m.sections.enumerate() { render-section(s, i == 0, i == m.sections.len() - 1) }
 #if m.acknowledgement != none { acknowledgement() }
