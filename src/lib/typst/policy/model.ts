@@ -14,6 +14,7 @@ import { formatQuantitativeTargetSentence, groupQuantitativeTargets } from "../.
 import type { CoverTextElement, ListMarkerStyle, Policy, RichTextBlock, ThemeBackground } from "../../types";
 import type { ManualAsset } from "../compile";
 import { fontLineMetrics, typstFontFamily } from "../fonts";
+import { TYPST_OPTICAL_SIZES } from "../typst-font-set";
 import { decodeDataUrl, toTypstImage, type LoadedImage } from "../images";
 
 // The JSON lib/typst/policy/policy.typ reads from /model.json. Every layout
@@ -51,6 +52,12 @@ export type PolicyTypstModel = {
   meta: { title: string; author: string };
   /** Ascent and descent (em) per family, so the template builds CSS-sized line boxes. */
   fonts: Record<string, { ascent: number; descent: number }>;
+  /**
+   * Chromium sets a variable font's opsz axis to the CSS px size. For those
+   * families, CSS weight -> the px sizes with a "<family> Opsz <size>" instance;
+   * the template draws each text with the nearest one for its weight.
+   */
+  opticalSizes: Record<string, Record<string, number[]>>;
   page: {
     widthMm: number; heightMm: number; marginTopMm: number; marginXMm: number; marginBottomMm: number;
     background: ThemeBackground;
@@ -341,6 +348,7 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
     model: withoutSoftHyphens<PolicyTypstModel>({
       meta: { title: getPolicyProfile(policy.policyType).label, author: policy.company.name || "" },
       fonts: Object.fromEntries([...families].map((family) => [family, cssLineMetrics(family)])),
+      opticalSizes: Object.fromEntries([...families].flatMap((family) => TYPST_OPTICAL_SIZES[family] ? [[family, TYPST_OPTICAL_SIZES[family]]] : [])),
       page: {
         widthMm: 210, heightMm: 297, marginTopMm, marginXMm, marginBottomMm: marginXMm,
         background: theme.background,

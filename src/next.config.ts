@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   // shell declares <ViewTransition> boundaries, so other pages are unaffected.
   experimental: { viewTransition: true },
   outputFileTracingIncludes: {
-    // Chromium prints today's PDF; the Typst engine (POLICY_PDF_ENGINE=typst) reads its template and the Word TTFs.
+    // Chromium prints today's PDF; the Typst engine (POLICY_PDF_ENGINE=typst) reads its template, the Word TTFs and public/fonts/typst.
     "/api/export/pdf": ["./public/fonts/**/*", "./lib/typst/policy/**/*", "./node_modules/playwright-core/browsers.json", "./node_modules/@sparticuz/chromium/bin/**/*"],
     "/api/export/docx": ["./public/fonts/**/*"],
     "/api/pdf-worker": ["./node_modules/pdfjs-dist/build/pdf.worker.min.mjs"],
@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
     "/api/documents/manuals/[id]/pdf": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
     "/api/documents/manuals/[id]/preview": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
     "/api/documents/manuals/[id]/docx": ["./public/fonts/word/**/*"],
+  },
+  // The extra weights and optical sizes in public/fonts/typst only serve the Typst policy PDF.
+  outputFileTracingExcludes: {
+    "/api/export/docx": ["./public/fonts/typst/**/*"],
   },
 };
 

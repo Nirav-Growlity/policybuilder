@@ -98,7 +98,9 @@ async function pageOpenings(pdf: Buffer): Promise<string[]> {
   for (let n = 1; n <= doc.numPages; n++) {
     const page = await doc.getPage(n);
     const height = page.view[3];
-    const items = (await textItems(page)).filter((item) => {
+    // Artifacts count here: Typst marks a table header it repeats on a new page as
+    // one, Chromium doesn't, and both pages still open with that header.
+    const items = (await textItems(page, { artifacts: true })).filter((item) => {
       const fromTopMm = (height - item.transform[5]) * 25.4 / 72;
       return item.str.trim() && fromTopMm >= BODY_TOP_MM && fromTopMm <= BODY_BOTTOM_MM;
     });
@@ -111,14 +113,14 @@ async function pageOpenings(pdf: Buffer): Promise<string[]> {
 type TextItem = { str: string; hasEOL?: boolean; transform: number[] };
 type MarkedItem = TextItem | { type: string; tag?: string };
 
-/** Text runs a reader copies: content marked as a PDF artifact (decoration) is left out. */
-async function textItems(page: { getTextContent(options: { includeMarkedContent: boolean }): Promise<{ items: unknown[] }> }) {
+/** Text runs a reader copies: content marked as a PDF artifact (decoration) is left out unless asked for. */
+async function textItems(page: { getTextContent(options: { includeMarkedContent: boolean }): Promise<{ items: unknown[] }> }, { artifacts = false } = {}) {
   const items: TextItem[] = [];
   let artifactDepth = 0;
   const open: boolean[] = [];
   for (const item of (await page.getTextContent({ includeMarkedContent: true })).items as MarkedItem[]) {
     if ("str" in item) {
-      if (artifactDepth === 0) items.push(item);
+      if (artifacts || artifactDepth === 0) items.push(item);
     } else if (item.type === "endMarkedContent") {
       if (open.pop()) artifactDepth--;
     } else {

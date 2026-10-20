@@ -42,9 +42,22 @@
   let half = (line-height - f.ascent - f.descent) / 2
   (top: (f.ascent + half) * 1em, bottom: -(f.descent + half) * 1em)
 }
+// Chromium draws variable fonts with opsz at the CSS px size (font-optical-sizing: auto).
+// Families with an opsz axis come as "<family> Opsz <size>" instances, built per weight;
+// upright text uses the nearest size built for its weight, anything else the base
+// family at its default opsz.
+#let weight-number = (thin: 100, extralight: 200, light: 300, regular: 400, medium: 500, semibold: 600, bold: 700, extrabold: 800, black: 900)
+#let face(family, size, weight: "regular", style: "normal") = {
+  let w = if type(weight) == str { weight-number.at(weight) } else { weight }
+  let sizes = m.opticalSizes.at(family, default: (:)).at(str(w), default: none)
+  if sizes == none or style != "normal" { return family }
+  let target = size / px
+  let nearest = sizes.sorted(key: s => calc.abs(s - target)).first()
+  (family + " Opsz " + str(nearest), family)
+}
 #let css(family: body-font, size: body-size, line-height: lh, weight: "regular", fill: ink, tracking: 0pt, style: "normal", body) = {
   let edges = css-edges(family, line-height)
-  set text(font: family, size: size, weight: weight, fill: fill, tracking: tracking, style: style, top-edge: edges.top, bottom-edge: edges.bottom)
+  set text(font: face(family, size, weight: weight, style: style), size: size, weight: weight, fill: fill, tracking: tracking, style: style, top-edge: edges.top, bottom-edge: edges.bottom)
   set par(leading: 0pt, spacing: 0pt)
   body
 }
@@ -52,7 +65,7 @@
 #set document(title: m.meta.title, author: m.meta.author)
 // Justified text hyphenates, as the soft hyphens did in the HTML preview.
 // No hanging punctuation: Chromium never lets a comma or hyphen into the margin.
-#set text(font: body-font, size: body-size, fill: ink, lang: "en", region: "us", hyphenate: justified, overhang: false,
+#set text(font: face(body-font, body-size), size: body-size, fill: ink, lang: "en", region: "us", hyphenate: justified, overhang: false,
   top-edge: css-edges(body-font, lh).top, bottom-edge: css-edges(body-font, lh).bottom)
 #set par(justify: justified, linebreaks: "simple", leading: 0pt, spacing: 0pt,
   justification-limits: (spacing: (min: 100%, max: 1000%), tracking: (min: 0em, max: 0em)))
@@ -404,8 +417,10 @@
     for (i, g) in c.groups.enumerate() {
       block(above: if i > 0 { 8 * px } else { 0pt }, grid(columns: (52 * px, 1fr), fill: soft,
         grid.cell(align(center + horizon, subhead(g.marker))),
-        grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px, y: 13 * px),
-          { subhead(g.area); target-list(g.targets, c.itemMarker) })))
+        // Vertical padding as spacing, not inset: Chromium slices a band at a page break,
+        // where a cell inset would pad both fragments.
+        grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px),
+          { kept(13 * px); subhead(g.area); target-list(g.targets, c.itemMarker); pad-end(13 * px) })))
     }
   } else if c.treatment == "journal" {
     for g in c.groups {

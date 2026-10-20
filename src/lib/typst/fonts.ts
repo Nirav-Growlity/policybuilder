@@ -2,10 +2,12 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { DOCUMENT_FONT_ALIASES } from "../document-fonts";
 import { SOP_FONT_FAMILIES } from "../sop/design/templates";
+import { TYPST_FONT_FAMILIES } from "./typst-font-set";
 
 const SLOTS = ["regular", "bold", "italic", "bold-italic"] as const;
 
 const wordFontDir = (root: string) => join(root, "public", "fonts", "word");
+const typstFontDir = (root: string) => join(root, "public", "fonts", "typst");
 const slug = (family: string) => family.toLowerCase().replaceAll(" ", "-");
 
 /**
@@ -16,9 +18,16 @@ export function sopFontFiles(root = process.cwd()): string[] {
   return SOP_FONT_FAMILIES.flatMap((family) => SLOTS.map((slot) => join(wordFontDir(root), `${slug(family)}-${slot}.ttf`)));
 }
 
-/** Policies can pick any family the font picker offers, so they load every face Word embeds. */
+/**
+ * Policies can pick any family the font picker offers, so they load every face
+ * Word embeds. Families Chromium draws at other weights or optical sizes than
+ * the Word faces (scripts/build-typst-fonts.py) load their Typst set instead.
+ */
 export function policyFontFiles(root = process.cwd()): string[] {
-  return readdirSync(wordFontDir(root)).filter((file) => file.endsWith(".ttf")).sort().map((file) => join(wordFontDir(root), file));
+  const replaced = new Set(TYPST_FONT_FAMILIES.flatMap((family) => SLOTS.map((slot) => `${slug(family)}-${slot}.ttf`)));
+  const word = readdirSync(wordFontDir(root)).filter((file) => file.endsWith(".ttf") && !replaced.has(file)).map((file) => join(wordFontDir(root), file));
+  const typst = readdirSync(typstFontDir(root)).filter((file) => file.endsWith(".ttf")).map((file) => join(typstFontDir(root), file));
+  return [...word, ...typst].sort();
 }
 
 /**

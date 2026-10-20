@@ -73,3 +73,12 @@ test("mapHyphenGlyphs rewrites only ToUnicode soft hyphen targets, in place", ()
   assert.equal(patched, "stream <00AD> endstream 2 beginbfchar <0009> <002D> <000A> <0070> endbfchar");
   assert.equal(patched.length, pdf.length);
 });
+
+test("Source Serif text draws with the optical size Chromium uses for its px size", async () => {
+  const policy = structuredClone(makeSamplePolicy());
+  Object.assign(policy, getDocumentThemePatch("people-charter"), { documentTheme: "people-charter" });
+  const fonts = new Set((await renderPolicyTypstPdf(policy)).toString("latin1").match(/\/BaseFont\s*\/[A-Z]{6}\+[\w.-]+/g)!.map((name) => name.split("+")[1]));
+  // Body at 11 pt is 14.67 CSS px; the cover title (17 pt x 2.65) clamps to the axis maximum, 60.
+  assert.ok(fonts.has("SourceSerif4Opsz14.67-Regular"), [...fonts].join(", "));
+  assert.ok(fonts.has("SourceSerif4Opsz60-Bold"), [...fonts].join(", "));
+});

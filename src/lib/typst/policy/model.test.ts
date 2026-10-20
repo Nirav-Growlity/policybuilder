@@ -5,7 +5,10 @@ import { DOCUMENT_FONT_ALIASES, DOCUMENT_FONT_FAMILIES } from "../../document-fo
 import { DOCUMENT_THEMES, getDocumentThemePatch } from "../../document-themes";
 import { makeSamplePolicy } from "../../store";
 import type { Policy } from "../../types";
-import { typstFontFamily } from "../fonts";
+import { existsSync } from "node:fs";
+import { basename, join } from "node:path";
+import { policyFontFiles, typstFontFamily } from "../fonts";
+import { TYPST_FONT_FAMILIES, TYPST_OPTICAL_SIZES } from "../typst-font-set";
 import { preparePolicyTypstRender, type PolicyTypstModel } from "./model";
 
 const ONE_PIXEL_PNG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=";
@@ -135,4 +138,18 @@ test("contents, acknowledgement and signature", async () => {
   assert.equal(unsigned.model.toc, null);
   assert.equal(unsigned.model.acknowledgement?.signature, null);
   assert.ok(!unsigned.assets.some((asset) => asset.path.startsWith("assets/signature.")));
+});
+
+test("the Typst font set replaces the Word faces it covers and has every optical size it lists", () => {
+  const slug = (family: string) => family.toLowerCase().replaceAll(" ", "-");
+  const files = policyFontFiles().map((file) => basename(file));
+  for (const family of TYPST_FONT_FAMILIES) {
+    for (const slot of ["regular", "bold", "italic", "bold-italic"]) assert.ok(!files.includes(`${slug(family)}-${slot}.ttf`), `${family}: Word ${slot} face must not load`);
+    assert.ok(existsSync(join("public", "fonts", "typst", `${slug(family)}-600.ttf`)), `${family}: Typst set missing`);
+  }
+  for (const [family, weights] of Object.entries(TYPST_OPTICAL_SIZES)) {
+    for (const sizes of Object.values(weights)) {
+      for (const size of sizes) assert.ok(files.some((file) => file.startsWith(`${slug(`${family} Opsz ${size}`)}-`)), `${family} at ${size}px`);
+    }
+  }
 });
