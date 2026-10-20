@@ -169,8 +169,6 @@
   block(width: high, body)
 }
 
-#let para(body) = block(below: 12 * px, par(justify: justified, body))
-
 // ---------------------------------------------------------------- cover
 
 #let standard-cover() = {
@@ -357,7 +355,14 @@
 
 // ------------------------------------------------ content
 
-#let para(body) = block(below: 12 * px, par(justify: justified, body))
+// Chromium prints paragraphs with `orphans: 3; widows: 3`, so one of five lines or
+// fewer never splits (no 3 + 3 split exists). Longer ones keep Typst's own costs,
+// which only avoid stranding a single line.
+#let para(body) = block(below: 12 * px, layout(size => {
+  let p = par(justify: justified, body)
+  let lines = calc.round(measure(block(width: size.width, p)).height / (lh * body-size))
+  block(breakable: lines > 5, p)
+}))
 
 #let target-list(targets, style, size: body-size, line-height: lh, leading: false) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm, leading: leading)
 
