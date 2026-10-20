@@ -19,3 +19,7 @@ Open `.scratch/policy-typst/parity/index.html` after a full harness run. For eac
 | Extras: custom solid, gradient, feature cover, logo right, AI cover, TOC off, acknowledgement | | | | |
 
 After all rows are signed off: make `typst` the default, then open a follow-up to delete the Chromium path, `@sparticuz/chromium` and the pdf-lib finishing step.
+
+## Comments
+
+- 2026-10-20 (agent): after tickets 11–13, 13 of the 36 harness cases match every page opening, and none got worse. The text diffs that remain ("speci c", "signi cant" in the concise cases) are Chromium's PDF dropping the "fi" ligature from its text layer. Typst's text ("specific") is correct, so those don't block sign-off. Remaining break differences are dense/concise cases where a table fits at a page foot in one engine and not the other by a few pixels, plus long paragraphs that Typst can split 2 + n where Chromium needs 3 + n (ticket 12).

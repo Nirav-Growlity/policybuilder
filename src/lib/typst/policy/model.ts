@@ -46,7 +46,8 @@ export type TypstCoverText = {
   outline: boolean;
 };
 
-type Brand = { kind: "logo"; image: string; widthMm: number; heightMm: number } | { kind: "name"; text: string };
+/** A logo, or the company name set in the same box (runningLogoFit). */
+type Brand = { kind: "logo"; image: string; widthMm: number; heightMm: number } | { kind: "name"; text: string; widthMm: number };
 
 export type PolicyTypstModel = {
   meta: { title: string; author: string };
@@ -284,7 +285,7 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
   const logo = brandSource.kind === "logo" ? await addImage("logo", await loadImage(brandSource.source), 800) : null;
   const brand: Brand = logo
     ? { kind: "logo", image: logo, widthMm: logoFit.widthMm, heightMm: logoFit.heightMm }
-    : { kind: "name", text: brandSource.kind === "name" ? brandSource.text : policy.company.name || "[Company Name]" };
+    : { kind: "name", text: brandSource.kind === "name" ? brandSource.text : policy.company.name || "[Company Name]", widthMm: logoFit.widthMm };
   const marginXMm = pageMarginMm(theme.pageBorder);
   const marginTopMm = logo ? pageHeaderMarginMm(theme.pageBorder, logoFit.heightMm) : marginXMm;
   const insetMm = pageBorderContentInsetMm(theme.pageBorder);

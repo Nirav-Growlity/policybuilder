@@ -99,7 +99,7 @@
 #let header-brand() = {
   let h = m.header
   let brand = h.brand
-  let box-width = if brand.kind == "logo" { mm(brand.widthMm) } else { 28mm * 1 }
+  let box-width = mm(brand.widthMm)
   let x = if h.position == "right" { 210mm - mm(h.insetMm) - box-width }
     else if h.position == "center" { 105mm - box-width / 2 }
     else { mm(h.insetMm) }
@@ -107,14 +107,18 @@
     place(top + left, dx: x, dy: mm(h.logoTopMm) + header-drop,
       box(width: box-width, height: mm(brand.heightMm), align(center + horizon, image(brand.image, width: box-width, height: mm(brand.heightMm), fit: "contain"))))
   } else {
-    // 8 px Arial; the first baseline sits 6.8 mm below the logo top.
-    let name = css(family: "Arimo", size: 6pt, line-height: 1.15, fill: ink, brand.text)
-    place(top + left, dx: x, dy: mm(h.logoTopMm) + 6.82mm - 6pt * 0.97,
-      context {
-        let natural = measure(name).width
-        if natural <= box-width { box(width: box-width, align(center, name)) }
+    // 8 px Arial, never hyphenated. Chromium centres the name block vertically (a flex
+    // item); a two-line name, as in the sample company, has its first baseline 6.8 mm
+    // below the logo top, and other line counts centre on the same middle.
+    let name = css(family: "Arimo", size: 6pt, line-height: 1.15, fill: ink, { set text(hyphenate: false); brand.text })
+    let line-box = 6pt * 1.15
+    context {
+      let natural = measure(name).width
+      let wrapped = if natural <= box-width { box(width: box-width, align(center, name)) }
         else { box(width: box-width, par(justify: false, name)) }
-      })
+      let lift = (measure(wrapped).height - 2 * line-box) / 2
+      place(top + left, dx: x, dy: mm(h.logoTopMm) + 6.82mm - 6pt * 0.97 - lift, wrapped)
+    }
   }
 }
 

@@ -58,7 +58,7 @@ test("every family the font picker offers has a TTF for Typst", () => {
 test("the page geometry follows the Chromium print margins", async () => {
   const plain = (await preparePolicyTypstRender(themedPolicy("standard-pack"))).model;
   assert.deepEqual([plain.page.marginTopMm, plain.page.marginXMm, plain.page.marginBottomMm], [22, 22, 22]);
-  assert.deepEqual(plain.header.brand, { kind: "name", text: plain.meta.author });
+  assert.deepEqual(plain.header.brand, { kind: "name", text: plain.meta.author, widthMm: 28 });
 
   const withLogo = themedPolicy("standard-pack");
   withLogo.company.companyLogo = ONE_PIXEL_PNG;
