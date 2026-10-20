@@ -68,9 +68,10 @@ test("the author signature is drawn in the acknowledgement", async () => {
 });
 
 test("mapHyphenGlyphs rewrites only ToUnicode soft hyphen targets, in place", () => {
-  const pdf = Buffer.from("stream <00AD> endstream 2 beginbfchar <0009> <00AD> <000A> <0070> endbfchar", "latin1");
+  // <0016> is an "n" that carried an unbroken soft hyphen into its cluster.
+  const pdf = Buffer.from("stream <00AD> endstream 2 beginbfchar <0009> <00AD> <000A> <0070> <0016> <006E00AD> endbfchar", "latin1");
   const patched = mapHyphenGlyphs(pdf).toString("latin1");
-  assert.equal(patched, "stream <00AD> endstream 2 beginbfchar <0009> <002D> <000A> <0070> endbfchar");
+  assert.equal(patched, "stream <00AD> endstream 2 beginbfchar <0009> <002D> <000A> <0070> <0016> <006E>     endbfchar");
   assert.equal(patched.length, pdf.length);
 });
 

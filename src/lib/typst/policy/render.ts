@@ -33,15 +33,27 @@ function getTemplate() {
  * Typst maps the hyphen glyph to U+00AD in its ToUnicode tables and marks
  * real hyphens with /ActualText, which pdf.js (the in-app viewer) ignores, so
  * "2022-23" would copy as "2022 23". Mapping the glyph to "-" makes every
- * hyphen, line-end ones included, copy as Chromium's PDF does. The tables are
- * uncompressed and the patch keeps their length, so no offset moves.
+ * hyphen, line-end ones included, copy as Chromium's PDF does.
+ *
+ * A soft hyphen that doesn't break joins the cluster of the letter before it,
+ * and the table has one entry per glyph, so that letter would copy as itself
+ * plus U+00AD everywhere in the document (pdf.js then drops both). Those
+ * targets lose the U+00AD, and likewise the zero-width space the model puts
+ * after a hyphen between digits so lines can break there as in Chromium. The
+ * tables are uncompressed and every patch keeps its length (spaces pad a
+ * shortened target), so no offset moves.
  */
 export function mapHyphenGlyphs(pdf: Buffer): Buffer {
   const text = pdf.toString("latin1");
   const out = Buffer.from(pdf);
   for (const table of text.matchAll(/beginbfchar[\s\S]*?endbfchar/g)) {
-    for (const entry of table[0].matchAll(/(<[0-9A-Fa-f]+>\s*)<00AD>/g)) {
-      out.write("<002D>", table.index! + entry.index! + entry[1].length, "latin1");
+    for (const entry of table[0].matchAll(/(<[0-9A-Fa-f]+>\s*)<([0-9A-Fa-f]+)>/g)) {
+      const target = entry[2];
+      const units = (target.match(/.{4}/g) ?? []).map((unit) => unit.toUpperCase());
+      if (!units.some((unit) => unit === "00AD" || unit === "200B")) continue;
+      const kept = units.filter((unit) => unit !== "00AD" && unit !== "200B").join("");
+      const replacement = kept ? `<${kept}>`.padEnd(target.length + 2, " ") : "<002D>";
+      out.write(replacement, table.index! + entry.index! + entry[1].length, "latin1");
     }
   }
   return out;

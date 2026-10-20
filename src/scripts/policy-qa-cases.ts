@@ -167,3 +167,45 @@ export function qaPolicy(themeId: (typeof DOCUMENT_THEMES)[number]["id"], sample
   }
   return policy;
 }
+
+const STEP_CUSTOM_BLOCKS: NonNullable<Policy["sections"]>[number]["blocks"] = [
+  { id: "step-p", type: "paragraph", text: "Indicators are measured monthly at each site and consolidated quarterly.\nData owners confirm completeness before the quarterly review." },
+  { id: "step-b", type: "bullets", text: "Energy meters are calibrated annually\nWater withdrawal is read from utility invoices\nWaste is weighed at the gate" },
+  { id: "step-n", type: "numbered", text: "Collect site data\nReview anomalies\nApprove the consolidated report" },
+  { id: "step-t", type: "table", text: "", columns: ["Indicator", "Unit", "Frequency", "Owner"], rows: [["Electricity use", "MWh", "Monthly", "Site Engineering"], ["Scope 1 emissions", "tCO2e", "Quarterly", "EHS Manager"]] },
+];
+
+/**
+ * The policy built up one element at a time, per template: the cover, then the
+ * contents, then each section on its own after the (required) preface, then
+ * the acknowledgement. One element per case keeps a discrepancy where it
+ * starts instead of shifting every later page.
+ */
+export function stepCases(): PolicyQaCase[] {
+  return DOCUMENT_THEMES.flatMap((theme) => {
+    const base = () => {
+      const policy = normalizePolicyStructure(qaPolicy(theme.id, "regular"));
+      policy.showTableOfContents = false;
+      policy.showAcknowledgement = false;
+      policy.sections = policy.sections!.map((section) => ({ ...section, enabled: section.kind === "preface" }));
+      return policy;
+    };
+    const step = (index: number, name: string, label: string, edit: (policy: Policy) => void): PolicyQaCase => {
+      const policy = base();
+      edit(policy);
+      return { name: `${theme.id}-s${String(index).padStart(2, "0")}-${name}`, label: `${theme.name} / ${label}`, policy };
+    };
+    const kinds = base().sections!.filter((section) => section.kind !== "preface").map((section) => section.kind);
+    return [
+      step(0, "cover", "cover and preface", () => undefined),
+      step(1, "toc", "contents", (policy) => { policy.showTableOfContents = true; }),
+      ...kinds.map((kind, index) => step(index + 2, kind, kind, (policy) => {
+        policy.sections = policy.sections!.map((section) => section.kind === kind ? { ...section, enabled: true } : section);
+      })),
+      step(kinds.length + 2, "custom", "custom blocks", (policy) => {
+        policy.sections!.push({ id: "step-custom", kind: "custom", title: "Measurement Methodology", enabled: true, blocks: STEP_CUSTOM_BLOCKS });
+      }),
+      step(kinds.length + 3, "acknowledgement", "acknowledgement", (policy) => { policy.showAcknowledgement = true; }),
+    ];
+  });
+}

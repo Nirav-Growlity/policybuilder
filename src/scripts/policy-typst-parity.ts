@@ -8,6 +8,12 @@
 //   summary.txt
 //
 // Run: npx tsx scripts/policy-typst-parity.ts [case|all] [--no-png]
+//
+// With --steps it runs the step cases instead (policy-qa-cases.ts stepCases:
+// each template built up one element at a time) into parity-steps/, and also
+// compares line geometry (position, width, size of every matched text line)
+// and pixels, adding a third "diff" panel. A case argument is then a name
+// prefix, e.g. `people-charter` or `people-charter-s06`.
 // Needs Chrome or Edge installed (it also drives today's Chromium export).
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -19,7 +25,7 @@ import { generatePreviewPdf } from "../lib/pdf/print-document";
 import { normalizePolicyQuantitative } from "../lib/quantitative";
 import type { AuthorApprovalRenderData } from "../lib/document-render-model";
 import type { Policy } from "../lib/types";
-import { extraParityCases, themeQaCases, type PolicyQaCase } from "./policy-qa-cases";
+import { extraParityCases, stepCases, themeQaCases, type PolicyQaCase } from "./policy-qa-cases";
 
 type Engine = "chromium" | "typst";
 type Rendered = { pdf: Buffer; ms: number } | { error: string };
@@ -28,7 +34,8 @@ const root = resolve(".");
 const args = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
 const only = args[0] && args[0] !== "all" ? args[0] : null;
 const writePngs = !process.argv.includes("--no-png");
-const outRoot = resolve(root, "..", ".scratch", "policy-typst", "parity");
+const steps = process.argv.includes("--steps");
+const outRoot = resolve(root, "..", ".scratch", "policy-typst", steps ? "parity-steps" : "parity");
 const typstModule = join(root, "lib", "typst", "policy", "render.ts");
 const SCALE = 1.25;
 const PAGE = { width: Math.round(595 * SCALE), height: Math.round(842 * SCALE) };
@@ -110,7 +117,7 @@ async function pageOpenings(pdf: Buffer): Promise<string[]> {
   return openings;
 }
 
-type TextItem = { str: string; hasEOL?: boolean; transform: number[] };
+type TextItem = { str: string; hasEOL?: boolean; transform: number[]; width?: number };
 type MarkedItem = TextItem | { type: string; tag?: string };
 
 /** Text runs a reader copies: content marked as a PDF artifact (decoration) is left out unless asked for. */
@@ -137,6 +144,117 @@ async function pageCount(pdf: Buffer) {
   const pages = doc.numPages;
   await doc.destroy();
   return pages;
+}
+
+// ---------------------------------------------------------------- geometry
+
+/** A run of text on one baseline, split where a gap wider than a column gutter opens. */
+type Line = { text: string; key: string; x: number; top: number; right: number; size: number };
+
+async function pageLines(pdf: Buffer): Promise<Line[][]> {
+  const doc = await getDocument({ data: new Uint8Array(pdf), verbosity: 0 }).promise;
+  const pages: Line[][] = [];
+  for (let n = 1; n <= doc.numPages; n++) {
+    const page = await doc.getPage(n);
+    const height = page.view[3];
+    // Chromium paints disc markers as shapes, outside the text layer, so the
+    // "•" Typst writes is left out (numbers are text in both).
+    const items = (await textItems(page, { artifacts: true }))
+      .filter((item) => item.str.trim() && !/^\s*•\s*$/.test(item.str))
+      // Chromium prints the running header on the cover too; Typst leaves it off on purpose.
+      .filter((item) => n > 1 || (height - item.transform[5]) * 25.4 / 72 >= BODY_TOP_MM)
+      .map((item) => ({ str: item.str, x: item.transform[4], top: height - item.transform[5], width: item.width ?? 0, size: Math.hypot(item.transform[2], item.transform[3]) }))
+      .sort((a, b) => a.top - b.top || a.x - b.x);
+    const lines: Line[] = [];
+    let current: Line | null = null;
+    for (const item of items) {
+      const sameLine = current !== null && Math.abs(item.top - current.top) < 1 && item.x - current.right < Math.max(6, item.size * 0.9);
+      if (current && sameLine) {
+        current.text += (item.x - current.right > item.size * 0.15 ? " " : "") + item.str;
+        current.right = Math.max(current.right, item.x + item.width);
+      } else {
+        current = { text: item.str, key: "", x: item.x, top: item.top, right: item.x + item.width, size: item.size };
+        lines.push(current);
+      }
+    }
+    for (const line of lines) line.key = line.text.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "");
+    pages.push(lines.filter((line) => line.key));
+  }
+  await doc.destroy();
+  return pages;
+}
+
+type LineIssue = { page: number; text: string; dx: number; dy: number; dw: number; dsize: number };
+type Geometry = { matched: number; onlyChromium: { page: number; text: string }[]; onlyTypst: { page: number; text: string }[]; issues: LineIssue[] };
+
+/** Lines matched by text page by page; offsets are Typst minus Chromium, in points. */
+function compareGeometry(chromium: Line[][], typst: Line[][]): Geometry {
+  const result: Geometry = { matched: 0, onlyChromium: [], onlyTypst: [], issues: [] };
+  for (let index = 0; index < Math.max(chromium.length, typst.length); index++) {
+    const left = chromium[index] ?? [];
+    const right = [...(typst[index] ?? [])];
+    for (const line of left) {
+      const match = right.filter((other) => other.key === line.key).sort((a, b) => Math.abs(a.top - line.top) - Math.abs(b.top - line.top))[0];
+      if (!match) { result.onlyChromium.push({ page: index + 1, text: line.text }); continue; }
+      right.splice(right.indexOf(match), 1);
+      result.matched++;
+      const width = line.right - line.x;
+      const issue = { page: index + 1, text: line.text, dx: match.x - line.x, dy: match.top - line.top, dw: (match.right - match.x) - width, dsize: match.size - line.size };
+      if (Math.abs(issue.dx) > 1 || Math.abs(issue.dy) > 1 || Math.abs(issue.dw) > Math.max(1.5, width * 0.015) || Math.abs(issue.dsize) > 0.25) result.issues.push(issue);
+    }
+    result.onlyTypst.push(...right.map((line) => ({ page: index + 1, text: line.text })));
+  }
+  return result;
+}
+
+const fmt = (value: number) => `${value >= 0 ? "+" : ""}${value.toFixed(1)}`;
+
+function geometryReport(geometry: Geometry) {
+  return [
+    `Lines matched: ${geometry.matched}, off by more than 1 pt / 1.5%: ${geometry.issues.length}`,
+    ...geometry.issues.map((i) => `  p${i.page} dx ${fmt(i.dx)} dy ${fmt(i.dy)} dw ${fmt(i.dw)} dsize ${fmt(i.dsize)}  ${i.text.slice(0, 80)}`),
+    `Lines only in Chromium (${geometry.onlyChromium.length}):`, ...geometry.onlyChromium.map((l) => `  p${l.page} ${l.text.slice(0, 90)}`),
+    `Lines only in Typst (${geometry.onlyTypst.length}):`, ...geometry.onlyTypst.map((l) => `  p${l.page} ${l.text.slice(0, 90)}`),
+  ];
+}
+
+/**
+ * Share of pixels that differ between the two rasters, and an overlay marking
+ * them red on a faded Chromium page. A pixel only counts when nothing within
+ * 2 px of it in the other raster is close, either way round, so anti-aliasing
+ * and sub-pixel glyph placement don't flag every line of text; anything moved
+ * by more than about 1.5 pt, recoloured or missing still shows.
+ */
+async function pixelDiff(left: Buffer, right: Buffer) {
+  const [a, b] = await Promise.all([left, right].map((png) => sharp(png).resize(PAGE.width, PAGE.height, { fit: "fill" }).removeAlpha().raw().toBuffer()));
+  const { width, height } = PAGE;
+  const RADIUS = 2;
+  const unmatched = (from: Buffer, to: Buffer, x: number, y: number) => {
+    const i = (y * width + x) * 3;
+    for (let dy = -RADIUS; dy <= RADIUS; dy++) {
+      const yy = y + dy;
+      if (yy < 0 || yy >= height) continue;
+      for (let dx = -RADIUS; dx <= RADIUS; dx++) {
+        const xx = x + dx;
+        if (xx < 0 || xx >= width) continue;
+        const j = (yy * width + xx) * 3;
+        if (Math.abs(from[i] - to[j]) <= 48 && Math.abs(from[i + 1] - to[j + 1]) <= 48 && Math.abs(from[i + 2] - to[j + 2]) <= 48) return false;
+      }
+    }
+    return true;
+  };
+  const overlay = Buffer.alloc(a.length);
+  let differing = 0;
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const i = (y * width + x) * 3;
+      const same = Math.abs(a[i] - b[i]) <= 48 && Math.abs(a[i + 1] - b[i + 1]) <= 48 && Math.abs(a[i + 2] - b[i + 2]) <= 48;
+      if (!same && (unmatched(a, b, x, y) || unmatched(b, a, x, y))) { differing++; overlay[i] = 230; overlay[i + 1] = 30; overlay[i + 2] = 30; }
+      else { const grey = 255 - Math.round((255 - (a[i] + a[i + 1] + a[i + 2]) / 3) * 0.25); overlay[i] = overlay[i + 1] = overlay[i + 2] = grey; }
+    }
+  }
+  const image = await sharp(overlay, { raw: { width: PAGE.width, height: PAGE.height, channels: 3 } }).png().toBuffer();
+  return { share: differing / (a.length / 3), image };
 }
 
 // ---------------------------------------------------------------- raster
@@ -192,18 +310,20 @@ function label(text: string, width: number) {
   return Buffer.from(svg);
 }
 
-async function sideBySide(left: Buffer, right: Buffer, leftLabel: string, rightLabel: string, file: string) {
+async function sideBySide(left: Buffer, right: Buffer, leftLabel: string, rightLabel: string, file: string, diff?: { image: Buffer; label: string }) {
   const [ml, mr] = await Promise.all([sharp(left).metadata(), sharp(right).metadata()]);
   const lw = ml.width ?? PAGE.width;
   const rw = mr.width ?? PAGE.width;
   const gap = 12;
   const height = 34 + Math.max(ml.height ?? 0, mr.height ?? 0);
-  await sharp({ create: { width: lw + gap + rw, height, channels: 3, background: "#7A7A7A" } })
+  const third = lw + gap + rw + gap;
+  await sharp({ create: { width: diff ? third + PAGE.width : lw + gap + rw, height, channels: 3, background: "#7A7A7A" } })
     .composite([
       { input: label(leftLabel, lw), left: 0, top: 0 },
       { input: label(rightLabel, rw), left: lw + gap, top: 0 },
       { input: left, left: 0, top: 34 },
       { input: right, left: lw + gap, top: 34 },
+      ...(diff ? [{ input: label(diff.label, PAGE.width), left: third, top: 0 }, { input: diff.image, left: third, top: 34 }] : []),
     ])
     .png()
     .toFile(file);
@@ -215,7 +335,7 @@ function wordDiff(a: Map<string, number>, b: Map<string, number>) {
   return [...a.keys()].filter((word) => !b.has(word)).sort();
 }
 
-type CaseResult = { item: PolicyQaCase; chromium: Rendered; typst: Rendered | null; chromiumPages: number; typstPages: number; missing: string[]; extra: string[]; pngs: string[]; breaks: string };
+type CaseResult = { item: PolicyQaCase; chromium: Rendered; typst: Rendered | null; chromiumPages: number; typstPages: number; missing: string[]; extra: string[]; pngs: string[]; breaks: string; geometry?: Geometry; pixels?: number[] };
 
 function describe(result: Rendered | null) {
   if (!result) return "not ported yet";
@@ -240,7 +360,8 @@ ${rows}
 }
 
 async function main() {
-  const cases = [...themeQaCases(), ...extraParityCases()].filter((item) => !only || item.name === only);
+  const all = steps ? stepCases() : [...themeQaCases(), ...extraParityCases()];
+  const cases = all.filter((item) => !only || (steps ? item.name.startsWith(only) : item.name === only));
   if (!cases.length) throw new Error(`No case named ${only}.`);
   mkdirSync(outRoot, { recursive: true });
   const renderTypst = await loadTypstRenderer();
@@ -274,13 +395,20 @@ async function main() {
     const extra = words.chromium && words.typst ? wordDiff(words.typst, words.chromium) : [];
 
     const pngs: string[] = [];
+    const pixels: number[] = [];
+    const pdfOf = (result: Rendered | null) => (result && "pdf" in result ? result.pdf : null);
+    const chromiumPdf = pdfOf(rendered.chromium);
+    const typstPdf = pdfOf(rendered.typst);
+    const geometry = steps && chromiumPdf && typstPdf ? compareGeometry(await pageLines(chromiumPdf), await pageLines(typstPdf)) : undefined;
     if (writePngs) {
       const typstNote = !rendered.typst ? "Not ported yet" : "error" in rendered.typst ? "Typst failed" : "No page";
       for (let n = 1; n <= Math.max(pages.chromium, pages.typst, 1); n++) {
         const left = files.chromium && n <= pages.chromium ? await renderPage(files.chromium, n) : await placeholder(files.chromium ? "No page" : "Chromium failed");
         const right = files.typst && n <= pages.typst ? await renderPage(files.typst, n) : await placeholder(typstNote);
         const png = `page-${String(n).padStart(2, "0")}.png`;
-        await sideBySide(left, right, `Chromium (today) · page ${n}`, `Typst · page ${n}`, join(dir, png));
+        const diff = steps && chromiumPdf && typstPdf && n <= pages.chromium && n <= pages.typst ? await pixelDiff(left, right) : undefined;
+        if (diff) pixels.push(diff.share);
+        await sideBySide(left, right, `Chromium (today) · page ${n}`, `Typst · page ${n}`, join(dir, png), diff && { image: diff.image, label: `Differs · ${(diff.share * 100).toFixed(2)}% of pixels` });
         pngs.push(png);
       }
     }
@@ -298,13 +426,15 @@ async function main() {
         `Words only in Chromium (${missing.length}): ${missing.join(" ") || "none"}`,
         `Words only in Typst (${extra.length}): ${extra.join(" ") || "none"}`,
       ] : []),
+      ...(pixels.length ? [`Pixels differing per page: ${pixels.map((share) => `${(share * 100).toFixed(2)}%`).join(" ")}`] : []),
+      ...(geometry ? geometryReport(geometry) : []),
     ];
     writeFileSync(join(dir, "report.txt"), lines.join("\n") + "\n");
-    console.log(lines.join("\n  "));
-    results.push({ item, chromium: rendered.chromium!, typst: rendered.typst, chromiumPages: pages.chromium, typstPages: pages.typst, missing, extra, pngs, breaks });
+    console.log((steps ? lines.slice(0, 9) : lines).join("\n  "));
+    results.push({ item, chromium: rendered.chromium!, typst: rendered.typst, chromiumPages: pages.chromium, typstPages: pages.typst, missing, extra, pngs, breaks, geometry, pixels });
   }
 
-  const summary = results.map((r) => `${r.item.name.padEnd(36)} chromium ${String(r.chromiumPages).padStart(2)}p ${describe(r.chromium).padStart(9)}   typst ${String(r.typstPages || "—").padStart(2)}p ${describe(r.typst).padStart(9)}${r.typst && !("error" in r.typst) ? `   missing ${r.missing.length} extra ${r.extra.length}   same breaks ${r.breaks}` : ""}`);
+  const summary = results.map((r) => `${r.item.name.padEnd(36)} chromium ${String(r.chromiumPages).padStart(2)}p ${describe(r.chromium).padStart(9)}   typst ${String(r.typstPages || "—").padStart(2)}p ${describe(r.typst).padStart(9)}${r.typst && !("error" in r.typst) ? `   missing ${r.missing.length} extra ${r.extra.length}   same breaks ${r.breaks}` : ""}${r.geometry ? `   lines off ${r.geometry.issues.length}/${r.geometry.matched} unmatched ${r.geometry.onlyChromium.length}+${r.geometry.onlyTypst.length}   max pixels ${(Math.max(0, ...(r.pixels ?? [])) * 100).toFixed(2)}%` : ""}`);
   console.log("\n" + summary.join("\n"));
   // A single-case run refreshes only that case's folder, not the full contact sheet.
   if (!only && writePngs) {

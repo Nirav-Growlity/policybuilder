@@ -11,9 +11,10 @@ import { chromium } from "playwright-core";
 import { PolicyPreview } from "../components/policy/policy-preview";
 import { createPrintDocument } from "../lib/pdf/print-document";
 import { normalizePolicyQuantitative } from "../lib/quantitative";
-import { extraParityCases, themeQaCases } from "./policy-qa-cases";
+import { extraParityCases, stepCases, themeQaCases } from "./policy-qa-cases";
 
 const SELECTORS = [
+  ".policy-cover-simplified", ".policy-cover-simplified h1", ".policy-cover h1",
   ".policy-section", ".policy-section + .policy-section", ".policy-section-heading", ".policy-section-heading > span", ".policy-section-heading h2", ".policy-section-heading > i",
   ".policy-section > aside", ".policy-section > aside b", ".policy-section-body", ".policy-section-body p",
   ".policy-table-wrap", ".policy-table", ".policy-table th", ".policy-table td:first-child", ".policy-table td:last-child",
@@ -33,11 +34,11 @@ const SELECTORS = [
 const PROPS = ["display", "fontFamily", "fontSize", "fontWeight", "fontStyle", "lineHeight", "letterSpacing", "textTransform", "textAlign", "color", "backgroundColor",
   "marginTop", "marginBottom", "marginLeft", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft",
   "borderTopWidth", "borderTopColor", "borderBottomWidth", "borderBottomColor", "borderLeftWidth", "borderLeftColor", "borderRightWidth",
-  "gap", "gridTemplateColumns", "width", "minHeight", "height", "listStyleType", "verticalAlign", "justifyContent", "alignItems"] as const;
+  "gap", "gridTemplateColumns", "width", "maxWidth", "minHeight", "height", "listStyleType", "textWrap", "verticalAlign", "justifyContent", "alignItems"] as const;
 
 async function main() {
   const only = process.argv[2]?.split(",");
-  const cases = [...themeQaCases(), ...extraParityCases()].filter((item) => !only || only.includes(item.name));
+  const cases = [...themeQaCases(), ...extraParityCases(), ...stepCases()].filter((item) => !only || only.includes(item.name));
   const executablePath = ["C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"].find((file) => existsSync(file));
   const browser = await chromium.launch({ executablePath, headless: true });
   const page = await browser.newPage();
@@ -48,6 +49,7 @@ async function main() {
     const policy = normalizePolicyQuantitative(item.policy);
     const markup = renderToStaticMarkup(createElement(PolicyPreview, { policy }));
     await page.setContent(createPrintDocument(markup, policy), { waitUntil: "load" });
+    await page.evaluate(() => document.fonts.ready);
     const report = await page.evaluate(({ selectors, props }) => {
       const out: Record<string, Record<string, string>> = {};
       for (const selector of selectors) {
@@ -68,6 +70,9 @@ async function main() {
           values[prop] = value;
         }
         values.box = `${rect.width.toFixed(1)}x${rect.height.toFixed(1)}`;
+        // Position inside its section, so engines can be compared box by box.
+        const section = element.closest(".policy-section")?.getBoundingClientRect();
+        if (section) values.at = `${(rect.left - section.left).toFixed(1)},${(rect.top - section.top).toFixed(1)}`;
         out[selector] = values;
       }
       return out;

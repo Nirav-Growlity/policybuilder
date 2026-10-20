@@ -7,7 +7,7 @@ import { createCoverCompositionSvg, resolveCoverTextLayout } from "../../cover-r
 import { getPolicyProfile } from "../../constants";
 import { runningLogoFit, tableLabelAlignment } from "../../document-themes";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData, type DocumentRenderModel, type DocumentRenderSection } from "../../document-render-model";
-import { SOFT_HYPHEN, typesetProse } from "../../hyphenation";
+import { typesetProse } from "../../hyphenation";
 import { listMarkerText } from "../../list-formatting";
 import { pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "../../page-geometry";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets } from "../../quantitative";
@@ -262,14 +262,15 @@ function cssLineMetrics(family: string) {
 export const FURNITURE_FONT = "Arimo";
 
 /**
- * Soft hyphens from typesetProse scramble the PDF text layer Typst writes
- * (letters drop out on copy), so the template hyphenates with Typst's own
- * English patterns instead, the same TeX patterns the soft hyphens came from.
+ * Chromium breaks a line after a hyphen between digits ("FY 2030-" / "31"),
+ * where Typst follows UAX #14 and keeps "2030-31" whole, which rewraps narrow
+ * justified columns. A zero-width space after the hyphen allows that break in
+ * every font (most have no U+2010 HYPHEN); render.ts keeps it out of the text layer.
  */
-function withoutSoftHyphens<T>(value: T): T {
-  if (typeof value === "string") return value.replaceAll(SOFT_HYPHEN, "") as T;
-  if (Array.isArray(value)) return value.map(withoutSoftHyphens) as T;
-  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, withoutSoftHyphens(item)])) as T;
+function breakableNumberHyphens<T>(value: T): T {
+  if (typeof value === "string") return value.replace(/(?<=\d)-(?=\d)/g, "-\u200b") as T;
+  if (Array.isArray(value)) return value.map(breakableNumberHyphens) as T;
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, breakableNumberHyphens(item)])) as T;
   return value;
 }
 
@@ -367,7 +368,9 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
 
   return {
     assets,
-    model: withoutSoftHyphens<PolicyTypstModel>({
+    // Prose keeps typesetProse's soft hyphens: the template breaks words only
+    // there, as Chromium does (render.ts keeps them out of the text layer).
+    model: {
       meta: { title: getPolicyProfile(policy.policyType).label, author: policy.company.name || "" },
       fonts: Object.fromEntries([...families].map((family) => [family, cssLineMetrics(family)])),
       opticalSizes: Object.fromEntries([...families].flatMap((family) => TYPST_OPTICAL_SIZES[family] ? [[family, TYPST_OPTICAL_SIZES[family]]] : [])),
@@ -406,13 +409,13 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
         : null,
       sectionFeature: sectionFeatureImage && model.featureImage ? { image: sectionFeatureImage, focal: model.featureImage.focalPosition } : null,
       sections: model.sections.map((section) => ({
-        id: section.id, kind: section.kind, title: section.title, density: section.density, recipe: section.recipe,
+        id: section.id, kind: section.kind, title: breakableNumberHyphens(section.title), density: section.density, recipe: section.recipe,
         marker: listMarkerText(model.listFormatting.outline, section.index),
-        content: sectionContent(section, model, policy, icons),
+        content: breakableNumberHyphens(sectionContent(section, model, policy, icons)),
       })),
       acknowledgement: acknowledgement
         ? { title: acknowledgement.title, statement: acknowledgement.statement, fields: acknowledgement.fields.map((field) => ({ label: field.label, value: field.value ?? null })), signature }
         : null,
-    }),
+    },
   };
 }

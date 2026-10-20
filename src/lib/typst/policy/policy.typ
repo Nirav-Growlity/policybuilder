@@ -63,9 +63,11 @@
 }
 
 #set document(title: m.meta.title, author: m.meta.author)
-// Justified text hyphenates, as the soft hyphens did in the HTML preview.
-// No hanging punctuation: Chromium never lets a comma or hyphen into the margin.
-#set text(font: face(body-font, body-size), size: body-size, fill: ink, lang: "en", region: "us", hyphenate: justified, overhang: false,
+// Words break only at the soft hyphens typesetProse put into justified prose,
+// as in Chromium, which has no hyphenation dictionaries; Typst's own patterns
+// would pick other points. No hanging punctuation: Chromium never lets a comma
+// or hyphen into the margin.
+#set text(font: face(body-font, body-size), size: body-size, fill: ink, lang: "en", region: "us", hyphenate: false, overhang: false,
   top-edge: css-edges(body-font, lh).top, bottom-edge: css-edges(body-font, lh).bottom)
 #set par(justify: justified, linebreaks: "simple", leading: 0pt, spacing: 0pt,
   justification-limits: (spacing: (min: 100%, max: 1000%), tracking: (min: 0em, max: 0em)))
@@ -197,7 +199,9 @@
       set text(hyphenate: false)
       par(justify: false, c.title)
     })
-    layout(size => balanced(size.width * 0.76, title))
+    // `.policy-cover h1 { max-width: 100% }` comes after the simplified cover's 76%
+    // in the stylesheet, so the title may use the full width; text-wrap: balance.
+    layout(size => balanced(size.width, title))
   })
 }
 
@@ -256,9 +260,11 @@
       for e in toc.entries { block(inset: (y: 3mm), entry(e)) }
     }
   }
-  // The rail is the contents section's own left border, padding included.
+  // The rail is the contents section's own 3 px left border, padding included.
+  // A Typst stroke is centred on the edge and takes no space, a CSS border
+  // fills its first 3 px: the block moves in by half and pads the other half.
   if t.layout.toc == "rail-index" {
-    block(stroke: (left: (paint: primary, thickness: 3 * px)), inset: (left: 10mm, y: 12mm), body)
+    pad(left: 1.5 * px, block(stroke: (left: (paint: primary, thickness: 3 * px)), inset: (left: 10mm + 1.5 * px, y: 12mm), body))
   } else {
     block(inset: (y: 12mm), body)
   }
@@ -299,25 +305,52 @@
     }))
 }
 
-// An outside CSS list marker ("•" or "1.") ends one space before the item text.
+// Chromium paints a `disc` list marker as a dot, not a glyph, sized and placed
+// from the font's ascent in whole CSS px (ListMarker in Blink): with a = the
+// rounded ascent and o = floor(2a/3), the dot is floor((o + 1) / 2) wide, its
+// left edge o + 7 px before the text and its top a - floor(3(a - o) / 2) px
+// above the first baseline. It isn't part of the text layer either.
+#let disc-marker(family, size, line-height) = {
+  let f = m.fonts.at(family, default: (ascent: 0.9, descent: 0.25))
+  let a = calc.round(f.ascent * size / px)
+  let o = calc.floor(a * 2 / 3)
+  let d = calc.floor((o + 1) / 2)
+  let rise = a - calc.floor(3 * (a - o) / 2)
+  context place(top + right, dx: -(o + 7 - d) * px, dy: first-baseline(family, size, line-height) - rise * px,
+    circle(width: d * px, fill: text.fill, stroke: none))
+}
+
+// An outside CSS list marker ends before the item text: a disc (see `disc-marker`),
+// or a number with one space after it.
 // `leading`: the list opens a table cell or grid item, where CSS keeps the first
 // item's top margin inside instead of collapsing it away.
-#let css-list(items, style, indent: 19 * px, item-gap: 5 * px, size: body-size, line-height: lh, trailing: none, leading: false) = {
+// `close-box`: the list ends a padded box. Chromium never leaves a box's bottom
+// padding alone on a page, so the last item goes with it (see `pad-end`).
+#let css-list(items, style, indent: 19 * px, item-gap: 5 * px, size: body-size, line-height: lh, trailing: none, leading: false, start: 0, close-box: false, first-above: none) = {
   if leading { kept(item-gap) }
   for (index, item) in items.enumerate() {
-    let marker = if style == "bullet" { "•" } else { str(index + 1) + "." }
-    block(above: item-gap, below: item-gap, css(size: size, line-height: line-height, grid(columns: (indent, 1fr),
+    let marker = if style == "bullet" { box(width: 100%, disc-marker(body-font, size, line-height)) }
       // A no-break space keeps "1. " together and copies as a space.
-      align(right, marker + "\u{00A0}"),
+      else { align(right, str(start + index + 1) + ".\u{00A0}") }
+    let last = index == items.len() - 1
+    // The closing margin (`trailing`, or the box's own spacing after a `close-box`
+    // list) replaces the last item's.
+    let below = if (trailing != none or close-box) and last { 0pt } else { item-gap }
+    let above = if index == 0 and first-above != none { first-above } else { item-gap }
+    block(above: above, below: below, sticky: close-box and last, css(size: size, line-height: line-height, grid(columns: (indent, 1fr),
+      marker,
       par(justify: justified, item))))
   }
   if trailing != none { kept(trailing) }
 }
 
-#let section-heading(s) = block(below: 5mm, sticky: true,
-  stroke: (bottom: (paint: primary, thickness: px)), inset: (bottom: 2.5mm), {
+// The 1 px CSS border-bottom takes space; a Typst stroke is centred on the edge
+// and takes none, so half a pixel goes on each side of it.
+#let section-heading(s) = block(below: 5mm + 0.5 * px, sticky: true,
+  stroke: (bottom: (paint: primary, thickness: px)), inset: (bottom: 2.5mm + 0.5 * px), {
     let marker-shown = frame != "numbered-rail" and frame != "editorial-margin"
-    let marker = css(size: heading-size, line-height: lh, weight: "extrabold", fill: primary, tracking: 0.12em, s.marker)
+    // CSS letter-spacing also follows the last letter, so the gap to the title includes it.
+    let marker = css(size: heading-size, line-height: lh, weight: "extrabold", fill: primary, tracking: 0.12em, { s.marker; h(0.12em) })
     let title = css(family: head-font, size: heading-size, line-height: 1.14, weight: "semibold", fill: primary, tracking: -0.01em,
       heading-par(s.title))
     let items = (
@@ -330,15 +363,23 @@
 // ------------------------------------------------ tables
 
 #let institutional = variant == "institutional"
-#let cell(body, alignment: content-align, padding: (x: 2mm, y: 2.5mm)) = table.cell(inset: padding, align(alignment, body))
+// Collapsed CSS borders (1 px) take space where a Typst stroke takes none: each
+// cell gives half a pixel to every border around it, and the table's outer
+// borders take half a pixel inside its box (see `data-table`).
+#let cell(body, alignment: content-align, padding: (x: 2mm, y: 2.5mm)) = table.cell(
+  inset: (x: padding.x + 0.5 * px, y: padding.y + 0.5 * px), align(alignment, body))
 #let cell-text(body, justify: justified) = css(size: 9.5pt, line-height: 1.35, par(justify: justify, body))
 #let header-text(body) = css(family: if institutional or variant == "editorial" { head-font } else { body-font },
   size: 9.5pt, line-height: 1.35, weight: "semibold", fill: primary, { set text(hyphenate: false); par(justify: false, body) })
 #let zebra = t.layout.dataLayout == "target-bands"
 
-#let data-table(tbl, columns: none, cells: none, header-padding: (x: 2mm, y: 2.5mm), header-align: none) = block(above: 17 * px, {
+// `header-align`: one alignment for every header, or one per column.
+// `closing`: the table ends a padded box, whose bottom padding can't be left alone
+// on a page (Chromium carries the last row with it), so the table sticks to it.
+#let data-table(tbl, columns: none, cells: none, header-padding: (x: 2mm, y: 2.5mm), header-align: none, closing: false) = block(above: 17 * px, inset: 0.5 * px, sticky: closing, {
   let count = tbl.headers.len()
   let head-align = if header-align != none { header-align } else if institutional { center } else { content-align }
+  let head-aligns = if type(head-align) == array { head-align } else { (head-align,) * count }
   // `tr { break-inside: avoid }`: a row that does not fit moves to the next page.
   set table.cell(breakable: false)
   table(
@@ -346,7 +387,7 @@
     stroke: (paint: line-color, thickness: px),
     inset: 0pt,
     fill: (x, y) => if y == 0 { soft } else if zebra and calc.even(y) { soft } else { none },
-    table.header(..tbl.headers.map(h => cell(header-text(h), alignment: head-align + horizon, padding: header-padding))),
+    table.header(..tbl.headers.enumerate().map(((i, h)) => cell(header-text(h), alignment: head-aligns.at(i) + horizon, padding: header-padding))),
     ..if cells != none { cells } else {
       tbl.rows.map(row => row.enumerate().map(((i, c)) => {
         let last = i == row.len() - 1
@@ -361,14 +402,15 @@
 
 // Chromium prints paragraphs with `orphans: 3; widows: 3`, so one of five lines or
 // fewer never splits (no 3 + 3 split exists). Longer ones keep Typst's own costs,
-// which only avoid stranding a single line.
+// which only avoid stranding a single line. (Chromium does sometimes carry a
+// single line over, 3 + 1, which this doesn't reproduce.)
 #let para(body) = block(below: 12 * px, layout(size => {
   let p = par(justify: justified, body)
   let lines = calc.round(measure(block(width: size.width, p)).height / (lh * body-size))
   block(breakable: lines > 5, p)
 }))
 
-#let target-list(targets, style, size: body-size, line-height: lh, leading: false) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm, leading: leading)
+#let target-list(targets, style, size: body-size, line-height: lh, leading: false, start: 0, close-box: false) = css-list(targets, style, indent: 5mm, item-gap: 1.5mm, size: size, line-height: line-height, trailing: 1.5mm, leading: leading, start: start, close-box: close-box)
 
 #let focus-list(c, recipe) = {
   let marker-style = if recipe == "atlas-modules" { (size: 22 * px, weight: "medium", family: body-font) }
@@ -390,21 +432,33 @@
   }
 }
 
-#let qualitative-groups(c, recipe) = {
+// `tail`: the bottom padding of the box the groups close (modular box, rail body).
+// Chromium never leaves a box's bottom padding alone on a page, so it joins the
+// last group's own, and the last item goes with both.
+#let qualitative-groups(c, recipe, tail: none) = {
   let marker = if recipe == "journal-entries" { (family: head-font, weight: "regular", fill: accent) }
     else if recipe == "atlas-modules" { (family: body-font, weight: "medium", fill: primary) }
     else { (family: body-font, weight: "bold", fill: primary) }
-  for g in c.groups {
+  for (i, g) in c.groups.enumerate() {
+    let closing = tail != none and i == c.groups.len() - 1
     // Padding, not inset: a broken Typst block repeats its inset on every page.
-    block(below: 6mm, {
+    block(below: if closing { 0pt } else { 6mm }, {
       kept(3mm)
       block(below: 2mm, sticky: true, baseline-row(4mm, (
         (body: css(family: marker.family, size: subheading-size, line-height: lh, weight: marker.weight, fill: marker.fill, g.marker), family: marker.family, size: subheading-size, lh: lh, width: auto),
         (body: subhead(g.area), family: head-font, size: subheading-size, lh: 1.2, width: 1fr),
       )))
-      block(above: 9 * px, css-list(g.items, c.itemMarker))
+      // In the group's own flow, so the last item can stick to the padding after it;
+      // the list's 9 px top margin collapses with the header's 2 mm.
+      css-list(g.items, c.itemMarker, close-box: true, first-above: 9 * px)
       v(5 * px)
-      pad-end(3mm)
+      if closing {
+        // The group's 6 mm margin may fall at the page end (CSS truncates it there);
+        // its padding and the box's padding go with the last item.
+        block(height: 3mm, breakable: false, sticky: true)
+        v(6mm, weak: true)
+        pad-end(tail)
+      } else { pad-end(3mm) }
     })
   }
 }
@@ -415,7 +469,8 @@
     let marker-cell(body, alignment) = cell(css(family: head-font, size: subheading-size, line-height: 1.2, weight: "bold", fill: primary,
       { set text(hyphenate: false); par(justify: false, body) }), alignment: alignment + top, padding: (x: 1.5mm, y: 2mm))
     data-table((headers: (c.indexHeader, "Focus Area", "Targets"), rows: ()),
-      columns: (15.76%, 32.84%, 1fr), header-padding: (x: 1.5mm, y: 2mm),
+      // `[data-target-table] th:first-child { text-align: center }`
+      columns: (15.76%, 32.84%, 1fr), header-padding: (x: 1.5mm, y: 2mm), header-align: if institutional { center } else { (center, content-align, content-align) },
       cells: c.groups.map(g => (
         marker-cell(g.marker, center),
         marker-cell(g.area, label-align),
@@ -429,7 +484,13 @@
         // Vertical padding as spacing, not inset: Chromium slices a band at a page break,
         // where a cell inset would pad both fragments.
         grid.cell(stroke: (x: (paint: line-color, thickness: px)), inset: (x: 15 * px),
-          { kept(13 * px); subhead(g.area); target-list(g.targets, c.itemMarker); pad-end(13 * px) })))
+          {
+            // CSS can't break between a box's top padding and its first child, and a
+            // heading stays with what follows, so a band opens with its first target.
+            block(breakable: false, { kept(13 * px); subhead(g.area); css-list(g.targets.slice(0, 1), c.itemMarker, indent: 5mm, item-gap: 1.5mm) })
+            if g.targets.len() > 1 { target-list(g.targets.slice(1), c.itemMarker, start: 1, close-box: true) } else { kept(1.5mm) }
+            pad-end(13 * px)
+          })))
     }
   } else if c.treatment == "journal" {
     for g in c.groups {
@@ -450,10 +511,12 @@
         block(inset: 7 * px, css(size: 8 * px, weight: "bold", { set text(hyphenate: false); par(justify: false, g.label) }))
       })
     } else { box(width: 100 * px, image(g.icon, width: 100 * px, height: 100 * px)) }
-    // flex-wrap with a 10px gap, tiles aligned to the top of each row.
-    block({
-      set par(justify: false, leading: 10 * px)
-      c.goals.filter(g => g.icon != none).map(g => box(tile(g))).join(h(10 * px))
+    // flex-wrap with a 10px gap, tiles aligned to the top of each row (inline
+    // boxes would align their bottoms, so a two-line label pushed its row-mates down).
+    layout(size => {
+      let per-row = calc.max(1, calc.floor((size.width + 10 * px) / (110 * px)))
+      grid(columns: (100 * px,) * per-row, column-gutter: 10 * px, row-gutter: 10 * px, align: top,
+        ..c.goals.filter(g => g.icon != none).map(tile))
     })
   } else {
     for (i, g) in c.goals.enumerate() {
@@ -509,13 +572,18 @@
   }
 }
 
-#let section-body(s) = {
+// Whether a boxed section's qualitative groups carry its bottom padding (see
+// `qualitative-groups`). Journal entries are left out: Chromium lets them run
+// into the page end instead.
+#let groups-close(s) = s.content.type == "qualitative" and s.recipe != "journal-entries"
+
+#let section-body(s, tail: none) = {
   let c = s.content
   if c.type == "narrative" {
     for p in c.paragraphs { para(p) }
-    if c.sites != none { data-table(c.sites) }
+    if c.sites != none { data-table(c.sites, closing: frame == "modular-grid") }
   } else if c.type == "focus" { focus-list(c, s.recipe) }
-  else if c.type == "qualitative" { qualitative-groups(c, s.recipe) }
+  else if c.type == "qualitative" { qualitative-groups(c, s.recipe, tail: tail) }
   else if c.type == "quantitative" { quantitative(c) }
   else if c.type == "sdg" { sdg-goals(c) }
   else if c.type == "responsibilities" { responsibilities(c, s.density) }
@@ -537,9 +605,9 @@
   else { 0pt }
 }
 
-#let section-content(s) = {
+#let section-content(s, tail: none) = {
   [#section-heading(s)#label("section-" + s.id)]
-  section-body(s)
+  section-body(s, tail: tail)
 }
 
 // A section is 9 mm from the next; unframed and editorial sections also keep
@@ -548,16 +616,18 @@
 
 #let render-section(s, first, last) = {
   // Before the acknowledgement's forced page break, a padding that does not fit
-  // is dropped, as Chromium does, instead of opening a blank page.
-  let end-pad(amount) = if last { v(amount, weak: true) } else { pad-end(amount) }
+  // is dropped, as Chromium does, instead of opening a blank page. At the end of
+  // the document it stays (weak spacing would vanish there), clipped at the page end.
+  let end-pad(amount) = if last and m.acknowledgement != none { v(amount, weak: true) } else if last { v(amount) } else { pad-end(amount) }
   let above = if first { 0pt } else { section-gap }
   if frame == "modular-grid" {
     // A soft box, 5 mm padding inside a 1 px border (a CSS border adds to the box).
     block(above: above, below: 9mm, fill: soft, stroke: (paint: line-color, thickness: px), inset: (x: 5mm + px), {
       kept(5mm + px)
       // The last child's own bottom spacing precedes the padding, as its CSS margin does.
-      section-content(s)
-      end-pad(5mm + px)
+      // Qualitative groups carry the bottom padding themselves (see `qualitative-groups`).
+      if groups-close(s) { section-content(s, tail: 5mm + px) }
+      else { section-content(s); end-pad(5mm + px) }
     })
   } else if frame == "numbered-rail" {
     // The rail is the primary-filled 18 mm aside. Its number used to print in the
@@ -565,7 +635,9 @@
     block(above: above, below: 9mm, grid(columns: (18mm, 1fr), column-gutter: 7mm,
       grid.cell(fill: primary, { kept(28 * px); pad(x: 22 * px, css(size: 24 * px, line-height: 1.3, weight: "medium", fill: on-primary, s.marker)) }),
       layout(size => {
-        let body = { kept(30 * px); pad(left: 38 * px, right: 50 * px, section-content(s)); v(last-margin(s)); end-pad(36 * px) }
+        let body = if groups-close(s) {
+          kept(30 * px); pad(left: 38 * px, right: 50 * px, section-content(s, tail: 36 * px))
+        } else { kept(30 * px); pad(left: 38 * px, right: 50 * px, section-content(s)); v(last-margin(s)); end-pad(36 * px) }
         // The rail is at least 190 px tall.
         let height = measure(body, width: size.width).height
         body
