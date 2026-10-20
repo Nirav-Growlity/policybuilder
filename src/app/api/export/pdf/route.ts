@@ -8,6 +8,7 @@ export const maxDuration = 120;
 
 export async function POST(req: NextRequest) {
   try {
+    const received = performance.now();
     const result = await preparePolicyCraftRequestExport(req);
     if (result.failure) return result.failure;
     const { policy, authorApproval, cacheScope } = result.prepared!;
@@ -20,7 +21,8 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/pdf",
         "Content-Disposition": `attachment; filename="${getPolicyProfile(policy.policyType).exportName}.pdf"`,
         "Cache-Control": "private, no-store",
-        "Server-Timing": `render;desc="${engine}";dur=${(performance.now() - started).toFixed(0)}`,
+        // prepare: session, organization and cover assets; render: the PDF itself.
+        "Server-Timing": `prepare;dur=${(started - received).toFixed(0)}, render;desc="${engine}";dur=${(performance.now() - started).toFixed(0)}`,
       },
     });
   } catch (error) {

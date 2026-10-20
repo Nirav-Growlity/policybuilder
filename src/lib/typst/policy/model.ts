@@ -118,6 +118,25 @@ function sdgIcon(goal: number): Promise<Buffer | null> {
   return icon;
 }
 
+// Logos and feature photos rarely change between live-preview edits, but
+// re-encoding them costs 10-100 ms each, so the prepared bytes are kept by
+// source hash and settings. The author signature never goes through here.
+const preparedImages = new Map<string, Promise<unknown>>();
+function preparedImage<T>(content: Buffer, settings: unknown, prepare: () => Promise<T>): Promise<T> {
+  const key = createHash("sha1").update(content).update(JSON.stringify(settings)).digest("hex");
+  let prepared = preparedImages.get(key) as Promise<T> | undefined;
+  if (!prepared) {
+    prepared = prepare();
+    prepared.catch(() => preparedImages.delete(key));
+    preparedImages.set(key, prepared);
+    while (preparedImages.size > 16) preparedImages.delete(preparedImages.keys().next().value!);
+  } else {
+    preparedImages.delete(key);
+    preparedImages.set(key, prepared);
+  }
+  return prepared;
+}
+
 // The cover raster depends only on the composition and the logo, so palette,
 // border or typography edits never redraw it.
 const coverCache = new Map<string, Promise<Buffer>>();
@@ -266,7 +285,8 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
   const assets: ManualAsset[] = [];
   const addImage = async (name: string, image: LoadedImage | null, maxWidth: number) => {
     if (!image) return null;
-    const converted = await toTypstImage(image, maxWidth).catch(() => null);
+    const convert = () => toTypstImage(image, maxWidth);
+    const converted = await (name === "signature" ? convert() : preparedImage(image.content, [image.mime, maxWidth], convert)).catch(() => null);
     if (!converted) return null;
     assets.push({ path: `assets/${name}.${converted.ext}`, content: converted.content });
     return `/assets/${name}.${converted.ext}`;
@@ -312,7 +332,8 @@ export async function preparePolicyTypstRender(policy: Policy, authorApproval?: 
   } else {
     const featureSource = model.featureImage?.placement === "cover" ? await loadImage(model.featureImage.dataUrl) : null;
     const feature = featureSource && model.featureImage
-      ? addBuffer("cover-feature.png", await coverFeatureImage(featureSource, model.featureImage.focalPosition, theme.colors.paper, theme.layout.imageTreatment))
+      ? addBuffer("cover-feature.png", await preparedImage(featureSource.content, [model.featureImage.focalPosition, theme.colors.paper, theme.layout.imageTreatment],
+        () => coverFeatureImage(featureSource, model.featureImage!.focalPosition, theme.colors.paper, theme.layout.imageTreatment)))
       : null;
     cover = {
       kind: "standard",

@@ -5,17 +5,23 @@ import type { AuthorApprovalRenderData } from "../../document-render-model";
 import type { Policy } from "../../types";
 import { compileTypstDocument, type ManualAsset } from "../compile";
 import { policyFontFiles } from "../fonts";
+import sharp from "sharp";
+import { initialPolicy } from "../../initial-policy";
 import { preparePolicyTypstRender, type PolicyTypstModel } from "./model";
 
 const root = process.cwd();
 const workspace = join(root, ".typst-workspace");
-let compiler: NodeCompiler | null = null;
 let template: string | null = null;
 let compilesSinceEvict = 0;
 
+// Next bundles instrumentation (which warms the compiler at start-up) apart from
+// the route handlers, and dev reloads re-evaluate this module, so the warm
+// compiler lives on globalThis to be one per process.
+const shared = globalThis as typeof globalThis & { policyTypstCompiler?: NodeCompiler };
+
 function getCompiler() {
-  compiler ??= NodeCompiler.create({ workspace, fontArgs: [{ fontPaths: policyFontFiles(root) }] });
-  return compiler;
+  shared.policyTypstCompiler ??= NodeCompiler.create({ workspace, fontArgs: [{ fontPaths: policyFontFiles(root) }] });
+  return shared.policyTypstCompiler;
 }
 
 function getTemplate() {
@@ -84,4 +90,14 @@ export async function renderPolicyTypstPdf(policy: Policy, authorApproval?: Auth
       compilesSinceEvict = 0;
     }
   }
+}
+
+/**
+ * Pays the one-off costs before the first preview asks: creating the compiler
+ * and loading its fonts, the first layout of the template, and loading sharp.
+ * Together they take a cold first render past a second.
+ */
+export async function warmPolicyTypst(): Promise<void> {
+  await sharp({ create: { width: 1, height: 1, channels: 3, background: "#ffffff" } }).png().toBuffer();
+  await renderPolicyTypstPdf({ ...initialPolicy(), showTableOfContents: true });
 }

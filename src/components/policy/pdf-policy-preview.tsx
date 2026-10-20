@@ -77,8 +77,10 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
   const currentFailure = failure?.key === key ? failure : null;
   const ready = hasPaintedActive && active?.key === key && retryCount === 0;
   const updating = !ready && !currentFailure;
-  // Every render, first or not, shows the rendering animation in place of the pages until it paints.
-  const visible = updating ? null : hasPaintedActive ? currentActive : currentCandidate || currentActive;
+  // As in the SOP preview, the last painted version stays on screen while the next
+  // one lays out and paints out of sight, then swaps in; the rendering animation
+  // only covers the first render.
+  const visible = hasPaintedActive ? currentActive : updating ? null : currentCandidate || currentActive;
   const status: PreviewStatus = currentFailure ? "failed" : updating ? "updating" : "ready";
   const failureMessage = currentFailure ? `${currentFailure.message}${hasPaintedActive && active?.key !== key ? " Showing the previous version." : ""}` : null;
   const results = [currentActive, currentCandidate].filter((result): result is PreviewResult => result !== null);
@@ -116,8 +118,8 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
           onError={() => onRenderError(result)}
         />
       </div>)}
-      {(updating || !visible) &&<div className={styles.loaderStage}>
-        <PdfRenderLoader updating={hasPaintedActive && updating} still={!!currentFailure} />
+      {!visible && <div className={styles.loaderStage}>
+        <PdfRenderLoader updating={false} still={!!currentFailure} />
         {currentFailure && <div className="-mt-4 flex flex-col items-center gap-3 px-6 pb-10 text-center">
           <p className="max-w-sm text-[12px] text-[var(--pc-error)]">{currentFailure.message}</p>
           <button type="button" className={styles.retryButton} onClick={retryPreview}><RotateCw size={14} aria-hidden="true" />Retry preview</button>
