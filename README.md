@@ -130,7 +130,7 @@ sequenceDiagram
     else no key, or the request fails
         API-->>U: built-in mock answer, streamed at a similar pace
     end
-    U->>U: text fills in live; Stop keeps what has arrived
+    U->>U: text fills in live, and Stop keeps what has arrived
 ```
 
 How the prompt is built:
