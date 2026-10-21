@@ -89,7 +89,9 @@ function SopBuilderWorkspace({ manualId, requestedOrgId }: { manualId: string; r
         setScope({ userId: access.actor.id, role: access.actor.role, organizationId, organizationName: organization.name, documentId: stored.id });
         setWorkspaceHref(`/documents?orgId=${organizationId}`);
         useSopBuilder.getState().load(stored, organizationId);
-        lastSaved.current = JSON.stringify({ manual: stored.manual, title: stored.title, stage: MODES.includes(stored.currentStage as BuilderMode) ? stored.currentStage : "write" });
+        // The opened copy (with any newer section kinds added, switched off) is the saved baseline,
+        // so opening an older manual does not save it.
+        lastSaved.current = JSON.stringify({ manual: useSopBuilder.getState().manual, title: stored.title, stage: MODES.includes(stored.currentStage as BuilderMode) ? stored.currentStage : "write" });
         setModeState(MODES.includes(stored.currentStage as BuilderMode) ? stored.currentStage as BuilderMode : "write");
         // The wizard asks for an AI cover with ?cover=ai; it is drawn once the builder is open.
         if (new URLSearchParams(window.location.search).get("cover") === "ai") setCoverRequested(true);

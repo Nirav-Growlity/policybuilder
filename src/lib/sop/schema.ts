@@ -5,7 +5,7 @@
 import { z } from "zod";
 import type { Company, CoverComposition } from "../types";
 import { SOP_TEMPLATE_IDS } from "./types";
-import type { Sop, SopManual, SopSection } from "./types";
+import type { Sop, SopManual, SopNarrativeKind, SopSection } from "./types";
 
 export const richTextBlockSchema = z.object({
   id: z.string(),
@@ -26,7 +26,7 @@ const sectionBase = {
   enabled: z.boolean(),
 };
 
-const narrative = <K extends "purpose" | "scope" | "training" | "review" | "custom">(kind: K) =>
+const narrative = <K extends SopNarrativeKind>(kind: K) =>
   z.object({ ...sectionBase, kind: z.literal(kind), blocks: z.array(richTextBlockSchema) });
 
 export const sopDefinitionRowSchema = z.object({ term: z.string(), definition: z.string() });
@@ -40,12 +40,15 @@ export const sopProcedureStepSchema = z.object({
   substeps: z.array(sopProcedureSubstepSchema).optional(),
 });
 export const sopKpiSchema = z.object({ indicator: z.string(), target: z.string(), frequency: z.string(), owner: z.string() });
-export const sopRecordRowSchema = z.object({ record: z.string(), owner: z.string(), retention: z.string(), format: z.string() });
+export const sopRecordRowSchema = z.object({ code: z.string().optional(), record: z.string(), owner: z.string(), retention: z.string(), format: z.string() });
 
 export const sopSectionSchema = z.discriminatedUnion("kind", [
+  narrative("introduction"),
   narrative("purpose"),
   narrative("scope"),
   narrative("training"),
+  narrative("compliance"),
+  narrative("corrective"),
   narrative("review"),
   narrative("custom"),
   z.object({ ...sectionBase, kind: z.literal("definitions"), rows: z.array(sopDefinitionRowSchema) }),
@@ -175,13 +178,16 @@ export const sopManualSchema = z.object({
 
 const generatedBlockSchema = richTextBlockSchema.omit({ id: true });
 
-const generatedNarrative = <K extends "purpose" | "scope" | "training" | "review" | "custom">(kind: K) =>
+const generatedNarrative = <K extends SopNarrativeKind>(kind: K) =>
   z.object({ kind: z.literal(kind), title: z.string(), blocks: z.array(generatedBlockSchema) });
 
 export const generatedSopSectionSchema = z.discriminatedUnion("kind", [
+  generatedNarrative("introduction"),
   generatedNarrative("purpose"),
   generatedNarrative("scope"),
   generatedNarrative("training"),
+  generatedNarrative("compliance"),
+  generatedNarrative("corrective"),
   generatedNarrative("review"),
   generatedNarrative("custom"),
   z.object({ kind: z.literal("definitions"), title: z.string(), rows: z.array(sopDefinitionRowSchema) }),

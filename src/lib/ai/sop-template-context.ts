@@ -9,6 +9,7 @@ import path from "node:path";
 
 import type { RichTextBlock } from "../types";
 import type { GeneratedSopSection } from "../sop/schema";
+import { narrativeKindForHeading } from "../sop/section-headings";
 import type { SeedSop, SeedSopManual } from "../sop/seed-types";
 import type { SopSectionKind } from "../sop/types";
 
@@ -124,7 +125,7 @@ export function renderGeneratedSection(section: GeneratedSopSection): string {
       lines.push(...renderBlocks(section.narrative));
       break;
     case "records":
-      lines.push(...section.rows.map((row) => `| ${squash(row.record)} | ${squash(row.owner)} | ${squash(row.retention)} | ${squash(row.format)} |`));
+      lines.push(...section.rows.map((row) => `| ${row.code?.trim() ? `${squash(row.code)} | ` : ""}${squash(row.record)} | ${squash(row.owner)} | ${squash(row.retention)} | ${squash(row.format)} |`));
       break;
     case "references":
       lines.push(...section.items.map((item) => `- ${squash(item)}`));
@@ -135,8 +136,22 @@ export function renderGeneratedSection(section: GeneratedSopSection): string {
   return lines.join("\n");
 }
 
-function renderSeedSop(sop: SeedSop, manual: SeedSopManual, index: number, sectionKind: SopSectionKind | undefined, maxChars: number) {
+/**
+ * A seed SOP's sections, with `custom` ones that an introduction, compliance
+ * or corrective-action kind now covers given that kind (the corpus was
+ * extracted before those kinds existed).
+ */
+export function seedSopSections(sop: SeedSop): GeneratedSopSection[] {
   const sections = Array.isArray(sop.sections) ? sop.sections : [];
+  return sections.map((section) => {
+    if (section?.kind !== "custom") return section;
+    const kind = narrativeKindForHeading(squash(section.title));
+    return kind ? { ...section, kind } : section;
+  });
+}
+
+function renderSeedSop(sop: SeedSop, manual: SeedSopManual, index: number, sectionKind: SopSectionKind | undefined, maxChars: number) {
+  const sections = seedSopSections(sop);
   // For a one-section request, show that section (plus purpose for orientation).
   const chosen = sectionKind
     ? sections.filter((section) => section.kind === sectionKind || section.kind === "purpose")
@@ -180,7 +195,7 @@ export function selectSeedSops(query: SopReferenceQuery, manuals: SeedSopManual[
     const industryMatch = (manual.industryTags ?? []).filter((tag) => tags.has(tag)).length;
     for (const sop of manual.sops ?? []) {
       if (!sop || typeof sop.title !== "string" || !Array.isArray(sop.sections) || sop.sections.length === 0) continue;
-      if (query.sectionKind && !sop.sections.some((section) => section.kind === query.sectionKind)) continue;
+      if (query.sectionKind && !seedSopSections(sop).some((section) => section.kind === query.sectionKind)) continue;
       const sameTopic = Boolean(query.catalogId && sop.catalogId === query.catalogId);
       const shared = overlap(titleWords, words(sop.title));
       if (!sameTopic && shared === 0) continue;

@@ -31,7 +31,15 @@ export type SopPageSize = "A4" | "Letter";
 /* Sections                                                            */
 /* ------------------------------------------------------------------ */
 
-export type SopNarrativeKind = "purpose" | "scope" | "training" | "review" | "custom";
+export type SopNarrativeKind =
+  | "introduction"
+  | "purpose"
+  | "scope"
+  | "training"
+  | "compliance"
+  | "corrective"
+  | "review"
+  | "custom";
 
 export type SopSectionKind =
   | SopNarrativeKind
@@ -92,7 +100,14 @@ export type SopMonitoringSection = SopSectionBase & {
   narrative: RichTextBlock[];
 };
 
-export type SopRecordRow = { record: string; owner: string; retention: string; format: string };
+export type SopRecordRow = {
+  /** Form / record number, e.g. "ABC/EHS/F-01". Optional: older manuals have none. */
+  code?: string;
+  record: string;
+  owner: string;
+  retention: string;
+  format: string;
+};
 
 export type SopRecordsSection = SopSectionBase & {
   kind: "records";
@@ -123,13 +138,15 @@ export type SopSectionOfKind<K extends SopSectionKind> = Extract<SopSection, { k
 
 /**
  * Canonical SOP skeleton, in document order. `custom` sections are not part of
- * the skeleton; users add them where they need them.
+ * the skeleton; users add them where they need them. An SOP may hold several
+ * appendices; they always sit after the canonical sections.
  */
 export const SOP_SECTION_KINDS: ReadonlyArray<{
   kind: Exclude<SopSectionKind, "custom">;
   label: string;
   defaultEnabled: boolean;
 }> = [
+  { kind: "introduction", label: "Introduction", defaultEnabled: false },
   { kind: "purpose", label: "Purpose", defaultEnabled: true },
   { kind: "scope", label: "Scope", defaultEnabled: true },
   { kind: "definitions", label: "Definitions", defaultEnabled: true },
@@ -139,6 +156,8 @@ export const SOP_SECTION_KINDS: ReadonlyArray<{
   { kind: "training", label: "Training & Awareness", defaultEnabled: true },
   { kind: "records", label: "Records", defaultEnabled: true },
   { kind: "references", label: "References", defaultEnabled: true },
+  { kind: "compliance", label: "Legal & Regulatory Compliance", defaultEnabled: true },
+  { kind: "corrective", label: "Non-compliance & Corrective Action", defaultEnabled: false },
   { kind: "review", label: "Review & Amendment", defaultEnabled: true },
   { kind: "appendix", label: "Appendix", defaultEnabled: false },
 ];

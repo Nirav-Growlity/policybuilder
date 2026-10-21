@@ -6,6 +6,7 @@
 import { create } from "zustand";
 import type { SopGenerationState } from "./ai-contract";
 import type { StoredSopManual } from "./client-api";
+import { withManualSkeleton } from "./initial-manual";
 import type { Sop, SopManual, SopSection } from "./types";
 
 export type RailSelection = { kind: "front" } | { kind: "closing" } | { kind: "sop"; sopId: string };
@@ -65,6 +66,8 @@ export const useSopBuilder = create<SopBuilderState>()((set, get) => {
     ...empty,
 
     load(stored, orgId) {
+      // Manuals saved before a section kind existed get it, switched off.
+      const manual = withManualSkeleton(stored.manual);
       set({
         ...empty,
         orgId,
@@ -72,8 +75,8 @@ export const useSopBuilder = create<SopBuilderState>()((set, get) => {
         title: stored.title,
         stage: stored.currentStage || "write",
         lockVersion: stored.lockVersion,
-        manual: stored.manual,
-        selection: firstSelection(stored.manual),
+        manual,
+        selection: firstSelection(manual),
       });
     },
     reset: () => set(empty),

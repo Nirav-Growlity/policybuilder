@@ -223,9 +223,12 @@ export function SectionBody({ section, onChange, sectionNumber, busy, stream }: 
   stream?: TextReveal;
 }) {
   switch (section.kind) {
+    case "introduction":
     case "purpose":
     case "scope":
     case "training":
+    case "compliance":
+    case "corrective":
     case "review":
     case "custom":
     case "appendix":
@@ -244,16 +247,19 @@ export function SectionBody({ section, onChange, sectionNumber, busy, stream }: 
         </div>
       );
     case "records":
-      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ record: "", owner: "", retention: "", format: "" })} addLabel="Add record" columns={[{ key: "record", label: "Record", width: "34%", placeholder: "e.g. Waste manifest register" }, { key: "owner", label: "Owner", width: "20%", placeholder: "Role" }, { key: "retention", label: "Retention", width: "18%", placeholder: "3 years" }, { key: "format", label: "Format", width: "auto", placeholder: "Electronic" }]} />;
+      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ code: "", record: "", owner: "", retention: "", format: "" })} addLabel="Add record" columns={[{ key: "code", label: "Form / record no.", width: "16%", placeholder: "Optional" }, { key: "record", label: "Record", width: "30%", placeholder: "e.g. Waste manifest register" }, { key: "owner", label: "Owner", width: "18%", placeholder: "Role" }, { key: "retention", label: "Retention", width: "14%", placeholder: "3 years" }, { key: "format", label: "Format", width: "auto", placeholder: "Electronic" }]} />;
     case "references":
       return <LinesField lines={section.items} onChange={(items) => onChange({ ...section, items })} label={section.title} placeholder={"One reference per line, e.g.\nISO 14001:2015 Clause 8.1\nHazardous Waste Rules, 2016"} className={clsx(ui.writing, styles.linesWriting)} />;
   }
 }
 
 const NARRATIVE_HINTS: Partial<Record<SopSection["kind"], string>> = {
+  introduction: "Why this procedure matters for the company and its sites, in two or three sentences.",
   purpose: "Why this SOP exists and what it controls.",
   scope: "Which sites, activities, people and contractors it covers, and what it excludes.",
   training: "Who is trained, how often, and how attendance is recorded.",
+  compliance: "The laws, regulator, permits, standards and buyer codes this SOP satisfies, and how compliance is shown (legal register, inspections, returns, audits).",
+  corrective: "How deviations are recorded and investigated, corrective action deadlines by severity, escalation, and disciplinary steps under the HR policy.",
   review: "When and by whom this SOP is reviewed, and what triggers an early review.",
   appendix: "Forms, checklists or reference tables that support this SOP.",
 };

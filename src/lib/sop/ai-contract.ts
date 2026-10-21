@@ -62,5 +62,6 @@ export type SopGenerationState = {
 
 /** Section kinds the AI fills; appendix and custom sections are left to the user. */
 export const AI_WRITTEN_SECTION_KINDS: readonly SopSectionKind[] = [
-  "purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references", "review",
+  "introduction", "purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references",
+  "compliance", "corrective", "review",
 ];

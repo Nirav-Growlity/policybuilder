@@ -1,13 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { AlertTriangle, EyeOff, Loader2, RefreshCw, Sparkles } from "lucide-react";
+import { AlertTriangle, EyeOff, Loader2, Plus, RefreshCw, Sparkles, Trash2 } from "lucide-react";
 import { clsx } from "clsx";
 import { StepRoot, authoring as ui } from "@/components/builder/steps/authoring-ui";
 import { Panel } from "@/components/ui/panel";
 import { Field, Input } from "@/components/ui/input";
 import { SelectMenu } from "@/components/ui/select-menu";
 import { Button } from "@/components/ui/button";
+import { addSopAppendix } from "@/lib/sop/initial-manual";
 import { useSopBuilder } from "@/lib/sop/store";
 import type { Sop, SopPillar, SopSection } from "@/lib/sop/types";
 import { PILLAR_LABELS, PILLAR_ORDER, sectionHasContent } from "../manual-helpers";
@@ -30,6 +31,8 @@ export function SopWriter({ sop }: { sop: Sop }) {
   const empty = !sop.sections.some((section) => section.enabled && sectionHasContent(section));
 
   const setSection = (next: SopSection) => updateSop(sop.id, (current) => ({ ...current, sections: current.sections.map((section) => (section.id === next.id ? next : section)) }));
+  const removeSection = (id: string) => updateSop(sop.id, (current) => ({ ...current, sections: current.sections.filter((section) => section.id !== id) }));
+  const appendixCount = sop.sections.filter((section) => section.kind === "appendix").length;
 
   return (
     <StepRoot>
@@ -89,6 +92,9 @@ export function SopWriter({ sop }: { sop: Sop }) {
             title={<span className={styles.sectionTitle}><span className={styles.sectionNumber}>{number}.0</span><input value={section.title} onChange={(event) => setSection({ ...section, title: event.target.value })} aria-label="Section heading" className={styles.sectionTitleInput} /></span>}
             actions={
               <>
+                {section.kind === "appendix" && appendixCount > 1 && !sectionHasContent(section) ? (
+                  <button type="button" className={ui.iconButton} data-tone="danger" aria-label={`Remove ${section.title}`} title="Remove this empty appendix" onClick={() => removeSection(section.id)}><Trash2 size={15} aria-hidden="true" /></button>
+                ) : null}
                 <button type="button" className={ui.iconButton} aria-label={`Leave ${section.title} out of the document`} title="Leave out of the document" onClick={() => setSection({ ...section, enabled: false })}><EyeOff size={15} aria-hidden="true" /></button>
                 <SectionAiActions hasContent={sectionHasContent(section)} busy={busy} onRun={(action, instruction) => void ai.run(action, sop.id, section, instruction)} onStop={() => ai.stop(sop.id, section.id)} />
               </>
@@ -98,6 +104,9 @@ export function SopWriter({ sop }: { sop: Sop }) {
           </Panel>
         );
       })}
+      <div className={styles.addRow}>
+        <Button variant="ghost" size="sm" icon={<Plus size={14} aria-hidden="true" />} onClick={() => updateSop(sop.id, addSopAppendix)}>Add appendix</Button>
+      </div>
     </StepRoot>
   );
 }

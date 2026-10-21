@@ -14,6 +14,7 @@
  * 5. Closing markers (Revision History, Review & Control Framework, Approved by)
  *    end the last SOP.
  */
+import { COMPLIANCE_HEADING, CORRECTIVE_HEADING, INTRODUCTION_HEADING } from "../sop/section-headings";
 import type { Company, RevisionEntry, RichTextBlock, Site } from "../types";
 import {
   readDocxModel,
@@ -29,6 +30,7 @@ import {
 /* ------------------------------------------------------------------ */
 
 export type ParsedSopSectionKind =
+  | "introduction"
   | "purpose"
   | "scope"
   | "definitions"
@@ -41,6 +43,7 @@ export type ParsedSopSectionKind =
   | "references"
   | "review"
   | "compliance"
+  | "corrective"
   | "appendix";
 
 export type ParsedSopSection = {
@@ -49,7 +52,11 @@ export type ParsedSopSection = {
   /** The kind was inferred from position (unlabelled steps between Purpose/Scope and the closing sections). */
   inferred?: boolean;
   blocks: RichTextBlock[];
+  /** Records sections: the first records table as rows, with any "Record No." / "Form No." column as the code. */
+  records?: ParsedRecordRow[];
 };
+
+export type ParsedRecordRow = { code?: string; record: string; owner: string; retention: string; format: string };
 
 export type ParsedSop = {
   title: string;
@@ -108,7 +115,8 @@ export async function parseSopDocx(buffer: Buffer | Uint8Array | ArrayBuffer): P
 /* ------------------------------------------------------------------ */
 
 const SECTION_LEXICON: Array<[ParsedSopSectionKind, RegExp]> = [
-  ["purpose", /\b(purpose|objectives?|summary|overview|introduction|background|aims?|intent)\b/],
+  ["introduction", INTRODUCTION_HEADING],
+  ["purpose", /\b(purpose|objectives?|aims?|intent)\b/],
   ["scope", /\b(scope|applicability|coverage)\b/],
   ["abbreviations", /\b(abbreviations?|acronyms)\b/],
   ["definitions", /\b(definitions?|terms|terminology|glossary)\b/],
@@ -117,8 +125,9 @@ const SECTION_LEXICON: Array<[ParsedSopSectionKind, RegExp]> = [
   ["training", /\b(training|awareness|engagement|capacity building|competenc\w*)\b/],
   ["records", /\b(records?|documentation|record[- ]keeping|evidence)\b/],
   ["references", /\b(references?|related documents|legal requirements|applicable (laws|standards|regulations))\b/],
-  ["review", /\b(review|amendments?|continuous improvement|revisions?|corrective actions?|verification|deviations?)\b/],
-  ["compliance", /\b(compliance|violations?|disciplinary)\b/],
+  ["review", /\b(review|amendments?|continuous improvement|revisions?|verification|deviations?)\b/],
+  ["corrective", CORRECTIVE_HEADING],
+  ["compliance", COMPLIANCE_HEADING],
   ["appendix", /\b(appendix|appendices|annexures?|annex|forms?|templates?|checklists?|formats?)\b/],
   ["procedure", /\b(procedures?|process(es)?|measures|methods?|methodology|implementation|steps|workflow|guidelines|practices|protocols?|controls?)\b/],
 ];
@@ -137,9 +146,9 @@ const SECTION_WORDS = new Set(
 
 const STOP_WORDS = new Set("and & of the to this sop its a an used in our updated general".split(" "));
 
-const START_KINDS = new Set<ParsedSopSectionKind>(["purpose", "scope"]);
-const HEAD_KINDS = new Set<ParsedSopSectionKind>(["purpose", "scope", "definitions", "abbreviations", "responsibilities"]);
-const TAIL_KINDS = new Set<ParsedSopSectionKind>(["monitoring", "training", "records", "references", "review", "compliance", "appendix"]);
+const START_KINDS = new Set<ParsedSopSectionKind>(["introduction", "purpose", "scope"]);
+const HEAD_KINDS = new Set<ParsedSopSectionKind>(["introduction", "purpose", "scope", "definitions", "abbreviations", "responsibilities"]);
+const TAIL_KINDS = new Set<ParsedSopSectionKind>(["monitoring", "training", "records", "references", "review", "compliance", "corrective", "appendix"]);
 
 const GROUP_LABEL =
   /^(environment(al)?|social|governance|ethics|economic|esg|e|s|g)(\s+(management|esg|related|pillar))?(\s+(procedures?|practices?|sops?|policies|pillar))?$/;
@@ -1137,7 +1146,48 @@ function buildSections(
       section.inferred = true;
     }
   }
+  for (const section of sections) {
+    if (section.kind !== "records") continue;
+    const rows = section.blocks.map((block) => (block.type === "table" ? recordRowsFromTable(block.columns ?? [], block.rows ?? []) : undefined)).find(Boolean);
+    if (rows?.length) section.records = rows;
+  }
   return sections.filter((section) => section.blocks.length > 0 || section.kind);
+}
+
+/** Records-table header patterns, tried in this order; a column takes the first field it matches. */
+const RECORD_COLUMNS: Array<[keyof ParsedRecordRow, RegExp]> = [
+  ["code", /\b(record|form|format|document|doc|ref(erence)?)\.?\s*(no|number|code|#|id)\b/],
+  ["retention", /\b(retention|retain(ed)?|period|duration|kept for)\b/],
+  ["owner", /\b(owner|responsib\w*|maintained by|custodian|kept by|department|person)\b/],
+  ["format", /\b(format|mode|medium|media|storage|location)\b/],
+  ["record", /\b(records?|documents?|forms?|registers?|name|title|description|particulars)\b/],
+];
+
+/**
+ * A records table as record rows: columns are matched by their headers
+ * ("Record No." / "Form No." / "Format No." become the code; "Sr. No." is a
+ * serial number and is ignored). Undefined when no column names the record.
+ */
+export function recordRowsFromTable(columns: readonly string[], rows: readonly (readonly string[])[]): ParsedRecordRow[] | undefined {
+  const fields = new Map<keyof ParsedRecordRow, number>();
+  columns.forEach((column, index) => {
+    const header = column.replace(/\s+/g, " ").trim().toLowerCase();
+    if (/^(s|sr|sl)\.?\s*(no|#)\.?$|^(serial|sr\.?) (no|number)\.?$|^#$/.test(header)) return;
+    const field = RECORD_COLUMNS.find(([name, pattern]) => !fields.has(name) && pattern.test(header))?.[0];
+    if (field) fields.set(field, index);
+  });
+  const recordAt = fields.get("record");
+  if (recordAt === undefined) return undefined;
+  const cell = (row: readonly string[], field: keyof ParsedRecordRow) => {
+    const at = fields.get(field);
+    return at === undefined ? "" : (row[at] ?? "").replace(/\s+/g, " ").trim();
+  };
+  return rows
+    .filter((row) => cell(row, "record"))
+    .map((row) => {
+      const code = cell(row, "code");
+      return { ...(code ? { code } : {}), record: cell(row, "record"), owner: cell(row, "owner"), retention: cell(row, "retention"), format: cell(row, "format") };
+    });
 }
 
 function buildManualSections(
