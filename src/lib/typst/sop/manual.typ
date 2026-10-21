@@ -127,6 +127,12 @@
 
 #let page-of() = [Page #counter(page).display() of #context counter(page).final().first()]
 
+// The classification stands in for the old fixed "Controlled copy" label.
+#let copy-label = if m.control.classification.trim() != "" { m.control.classification } else { "Controlled copy" }
+
+// Optional control fields, left out when empty so older manuals keep their layout.
+#let optional-control(pairs) = pairs.filter(((k, v)) => v.trim() != "")
+
 #let logo-or-name(height: 9mm) = {
   if m.company.logo != none { image(m.company.logo, height: height) }
   else { txt(weight: "bold", fill: primary, font: head-font, size: sz.h3 * 1pt, m.company.name) }
@@ -138,19 +144,26 @@
   let sop-color = if sop != none { col(sop.color) } else { primary }
   set par(justify: false)
   if d.runningHeader == "control-table" {
+    // Issue and last review dates share a row under the four fixed cells, and Supersedes
+    // (free text) gets a full-width row; a lone cell spans both columns.
+    let dates = optional-control((("Issue date", m.control.issueDate), ("Last review", m.control.lastReviewDate)))
+    let supersedes = optional-control((("Supersedes", m.control.supersedes),))
+    let extra-rows = (dates, supersedes).filter(r => r.len() > 0)
+    let rows = 2 + extra-rows.len()
     tight(sz.small * 1pt, table(
       columns: (24%, 1fr, 20%, 20%),
       stroke: (paint: line-color, thickness: rule),
       inset: (x: 5pt, y: 3pt),
       align: horizon,
-      table.cell(rowspan: 2, align: center + horizon,
+      table.cell(rowspan: rows, align: center + horizon,
         if m.company.logo != none { image(m.company.logo, height: 8mm) }
         else { txt(weight: "bold", fill: primary, font: head-font, size: sz.small * 1pt + 1pt, m.company.name) }),
-      table.cell(rowspan: 2, [#txt(size: sz.small * 1pt, weight: "bold", fill: primary, m.title) \ #txt(size: sz.small * 1pt, fill: muted, sop-title)]),
+      table.cell(rowspan: rows, [#txt(size: sz.small * 1pt, weight: "bold", fill: primary, m.title) \ #txt(size: sz.small * 1pt, fill: muted, sop-title)]),
       txt(size: sz.small * 1pt, [Doc No: #m.control.docNo]),
       txt(size: sz.small * 1pt, [Rev: #m.control.revision]),
       txt(size: sz.small * 1pt, [Effective: #m.control.effectiveDate]),
       txt(size: sz.small * 1pt, page-of()),
+      ..extra-rows.map(r => r.map(((k, v)) => table.cell(colspan: 3 - r.len(), txt(size: sz.small * 1pt, k + ": " + v)))).flatten(),
     ))
   } else if d.runningHeader == "pillar-rule" {
     grid(columns: (1fr, auto),
@@ -184,7 +197,7 @@
     grid(columns: (1fr, 1fr, auto), column-gutter: 8pt,
       txt(size: sz.small * 1pt, fill: muted, [Prepared by: #m.control.preparedBy]),
       txt(size: sz.small * 1pt, fill: muted, [Approved by: #m.control.approvedBy]),
-      txt(size: sz.small * 1pt, fill: muted, [Controlled copy | #page-of()]))
+      txt(size: sz.small * 1pt, fill: muted, [#copy-label | #page-of()]))
   } else if d.runningFooter == "outer-folio" {
     grid(columns: (1fr, auto),
       txt(size: sz.small * 1pt, fill: muted, m.company.name + "  |  " + m.title),
@@ -402,15 +415,23 @@
 // ---------------------------------------------------------------- cover
 
 #let control-rows() = (
-  ("Document No.", m.control.docNo), ("Revision", m.control.revision), ("Effective date", m.control.effectiveDate),
+  ("Document No.", m.control.docNo), ("Revision", m.control.revision),
+  ..optional-control((("Supersedes", m.control.supersedes), ("Issue date", m.control.issueDate))),
+  ("Effective date", m.control.effectiveDate),
+  ..optional-control((("Last review", m.control.lastReviewDate),)),
   ("Next review", m.control.nextReviewDate), ("Prepared by", m.control.preparedBy), ("Reviewed by", m.control.reviewedBy),
   ("Approved by", m.control.approvedBy), ("Classification", m.control.classification),
 )
 
-#let control-grid(columns: 4) = tight(sz.small * 1pt, table(
-  columns: range(columns).map(_ => 1fr), stroke: (paint: line-color, thickness: rule), inset: (x: 6pt, y: 5pt),
-  ..control-rows().map(((k, v)) => meta-pair(k, v)),
-))
+// Optional fields can leave the last row short; empty cells keep the grid square.
+#let control-grid(columns: 4) = {
+  let rows = control-rows()
+  let padded = rows + range(calc.rem(columns - calc.rem(rows.len(), columns), columns)).map(_ => ("", ""))
+  tight(sz.small * 1pt, table(
+    columns: range(columns).map(_ => 1fr), stroke: (paint: line-color, thickness: rule), inset: (x: 6pt, y: 5pt),
+    ..padded.map(((k, v)) => if k == "" { [] } else { meta-pair(k, v) }),
+  ))
+}
 
 #let cover-page() = {
   let w = m.page.widthMm * 1mm
@@ -435,7 +456,7 @@
       grid(columns: (1fr, 46mm), align: (left + horizon, right + horizon),
         logo-or-name(height: 16mm),
         tight(sz.small * 1pt, table(columns: (1fr,), stroke: (paint: primary, thickness: 1pt), inset: (x: 8pt, y: 5pt), align: center,
-          [#caps("Controlled copy", fill: primary) \ #txt(size: sz.small * 1pt, fill: muted, m.control.classification + "  |  Rev " + m.control.revision)])))
+          [#caps(copy-label, fill: primary) \ #txt(size: sz.small * 1pt, fill: muted, "Rev " + m.control.revision)])))
       v(46mm)
       caps(m.cover.eyebrow, fill: accent, size: sz.small * 1pt + 1.5pt)
       v(4pt)
@@ -607,7 +628,10 @@
     v(after)
   }
   part-title("Revision history", m.closing.anchors.revisions)
-  data-table(("Revision", "Date", "Description"), (0.8, 1, 3.2), m.closing.revisions.map(r => (r.revision, r.date, r.description)))
+  // Reviewed by / Approved by columns appear only when some revision names someone.
+  let extra = (("Reviewed by", "reviewedBy"), ("Approved by", "approvedBy")).filter(((_, key)) => m.closing.revisions.any(r => r.at(key, default: "") != ""))
+  data-table(("Revision", "Date", "Description") + extra.map(((label, _)) => label), (if extra.len() > 0 { (0.8, 1.2, 2.6) } else { (0.8, 1, 3.2) }) + extra.map(_ => 1.3),
+    m.closing.revisions.map(r => (r.revision, r.date, r.description) + extra.map(((_, key)) => r.at(key, default: ""))))
   v(after * 2)
   part-title("Approval", m.closing.anchors.approval)
   approval-block()

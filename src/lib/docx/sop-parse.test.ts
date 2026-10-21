@@ -3,7 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
 import { findSopReferenceRoot } from "../../scripts/sop-reference-files";
-import { classifySectionLabel, cleanLabel, parseSopDocx, type ParsedSopManual } from "./sop-parse";
+import { createEmptyManual } from "../sop/initial-manual";
+import { applyParsedControl, classifySectionLabel, cleanLabel, parseSopDocx, parsedControlPatch, parsedDateToIso, type ParsedSopManual } from "./sop-parse";
 
 // The reference manuals live outside the repository (read-only data next to the checkout).
 const ROOT = findSopReferenceRoot();
@@ -119,6 +120,38 @@ test("Skypass: sites table and footer control fields are extracted", { skip }, a
   assert.equal(manual.frontMatter.sites[0].location, "Bangalore, India");
   assert.equal(manual.control.revision, "1.0");
   assert.equal(manual.sops[12].title, "Supplier Evaluation Procedure");
+});
+
+test("Skypass: last review date and revision reviewers carry into the manual", { skip }, async () => {
+  const manual = await parseFixture(FIXTURES[2].file);
+  assert.equal(manual.control.lastReviewDate, "02.06.2025");
+  const control = applyParsedControl(createEmptyManual().control, manual.control);
+  assert.equal(control.lastReviewDate, "2025-06-02");
+  assert.equal(control.docNo, "STI-SOPM-01");
+  assert.equal(manual.closing.revisionHistory[0].reviewedBy, "Compliance Officer");
+});
+
+test("imported control keeps issue date, last review date and supersedes", () => {
+  const base = createEmptyManual().control;
+  const control = applyParsedControl(base, { docNo: " PLPL/SOPM/01 ", supersedes: "Nil", issueDate: "1st April 2024", effectiveDate: "01-09-2024", lastReviewDate: "01-Jan-2025", nextReviewDate: "To be decided" });
+  assert.equal(control.docNo, "PLPL/SOPM/01");
+  assert.equal(control.supersedes, "Nil");
+  assert.equal(control.issueDate, "2024-04-01");
+  assert.equal(control.effectiveDate, "2024-09-01");
+  assert.equal(control.lastReviewDate, "2025-01-01");
+  // Free text that is not a date is kept as written.
+  assert.equal(control.nextReviewDate, "To be decided");
+  assert.equal(control.approvedBy, base.approvedBy, "fields the import did not find stay as they were");
+  assert.deepEqual(parsedControlPatch({}), {});
+});
+
+test("header dates are read day first", () => {
+  assert.equal(parsedDateToIso("02.06.2025"), "2025-06-02");
+  assert.equal(parsedDateToIso("2/1/26"), "2026-01-02");
+  assert.equal(parsedDateToIso("2026-01-02"), "2026-01-02");
+  assert.equal(parsedDateToIso("03rd April 2023"), "2023-04-03");
+  assert.equal(parsedDateToIso("April 3, 2023"), "2023-04-03");
+  assert.equal(parsedDateToIso("31.02.2025"), "31.02.2025");
 });
 
 test("Somakanan: footer doc number and revision", { skip }, async () => {

@@ -54,9 +54,11 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
   const grouping = options.grouping ?? (design.chapterDivider === "none" ? "none" : "pillar");
   const pageSize = options.pageSize ?? "A4";
   const control = {
-    docNo: "MTPL/SOP/01", revision: "01", supersedes: "None", effectiveDate: "01 Nov 2026", nextReviewDate: "31 Oct 2027",
+    docNo: "MTPL/SOP/01", revision: "01", supersedes: "Rev 00 (01 Nov 2025)", effectiveDate: "01 Nov 2026", nextReviewDate: "31 Oct 2027",
     reviewFrequency: "Annual", preparedBy: "EHS Manager", reviewedBy: "Plant Head", approvedBy: "Managing Director", classification: "Internal",
+    issueDate: "28 Oct 2026", lastReviewDate: "20 Oct 2026",
   };
+  const title = "ESG SOP Manual";
   let position = 0;
   const toSop = (sop: SampleSop): RenderSop => {
     position += 1;
@@ -81,10 +83,10 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
     mode: "full",
     design,
     page: { size: pageSize, ...SOP_PAGE_SIZES[pageSize] },
-    title: "SOP Manual",
+    title,
     company: { name: "Meridian Textiles Pvt Ltd", logo: options.withLogo ? "/assets/logo.png" : null, industry: "Textile dyeing and finishing" },
     control,
-    cover: { image: options.coverImage ?? null, eyebrow: "Standard Operating Procedures", title: "SOP Manual", subtitle: "Meridian Textiles Pvt Ltd  |  Environmental, Social and Governance procedures" },
+    cover: { image: options.coverImage ?? null, eyebrow: "Standard Operating Procedures", title, subtitle: "Meridian Textiles Pvt Ltd  |  Environmental, Social and Governance procedures" },
     stats: { sopCount: sample.sops.length, departmentCount: new Set(sample.sops.map((sop) => sop.department)).size, siteCount: 3, chapterLabels: chapters.map((chapter) => chapter.label).filter(Boolean) },
     frontMatter: [
       { id: "introduction", anchor: "front-introduction", number: "", title: "Introduction", kind: "introduction", blocks: front.introduction.map(p) },
@@ -104,8 +106,8 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
     closing: {
       sections: [{ id: "review", anchor: "closing-review", number: "", title: "Review Mechanism", kind: "review", blocks: [p(front.reviewMechanism)] }],
       revisions: [
-        { revision: "00", date: "01 Nov 2025", description: "First issue of the SOP manual." },
-        { revision: "01", date: "01 Nov 2026", description: "Annual review; added supplier ESG due diligence and grievance handling." },
+        { revision: "00", date: "01 Nov 2025", description: "First issue of the SOP manual.", reviewedBy: "Plant Head", approvedBy: "Managing Director" },
+        { revision: "01", date: "01 Nov 2026", description: "Annual review; added supplier ESG due diligence and grievance handling.", reviewedBy: "S. Meena, Plant Head", approvedBy: "V. Raghavan, Managing Director" },
       ],
       approval: {
         statement: front.approvalStatement,

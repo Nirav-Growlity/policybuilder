@@ -84,7 +84,7 @@ export function buildSopManualContext(manual: SopManual): string {
       ? sites.map((site) => `- ${[clean(site.location), clean(site.address), clean(site.primaryFunction) && `function: ${clean(site.primaryFunction)}`].filter(Boolean).join("; ")}`)
       : ["- not stated"]),
     `Departments: ${unique(enabled.map((sop) => sop.department)).join(", ") || "not stated"}`,
-    `Document control: manual no. ${clean(control.docNo) || "[manual number]"}, revision ${clean(control.revision) || "01"}, review frequency ${clean(control.reviewFrequency) || "annual"}, classification ${clean(control.classification) || "Internal"}.`,
+    `Document control: manual no. ${clean(control.docNo) || "[manual number]"}, revision ${clean(control.revision) || "01"}, review frequency ${clean(control.reviewFrequency) || "annual"}, classification ${clean(control.classification) || "Internal"}${clean(control.issueDate) ? `, issued ${clean(control.issueDate)}` : ""}${clean(control.lastReviewDate) ? `, last reviewed ${clean(control.lastReviewDate)}` : ""}.`,
     `Prepared by: ${clean(control.preparedBy) || "not stated"}; reviewed by: ${clean(control.reviewedBy) || "not stated"}; approved by: ${clean(control.approvedBy) || clean(company.approver) || "not stated"}.`,
     "SOP register (code | title | pillar | department):",
     // Owners are left out: they are often filled in while SOPs are written, and

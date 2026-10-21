@@ -15,6 +15,7 @@
  *    end the last SOP.
  */
 import type { Company, RevisionEntry, RichTextBlock, Site } from "../types";
+import type { SopManualControl } from "../sop/types";
 import {
   readDocxModel,
   type DocBlock,
@@ -766,6 +767,52 @@ function toControl(values: KeyValues): ParsedSopControl {
   return control;
 }
 
+const MONTH_NAMES = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+
+/**
+ * A header date as ISO yyyy-mm-dd ("01.04.2024", "1/4/24", "1st April 2024",
+ * "April 1, 2024"). Numeric dates are read day first, as the reference
+ * manuals write them. Anything else is kept as written (it still prints).
+ */
+export function parsedDateToIso(value: string): string {
+  const text = value.trim();
+  const iso = (year: number, month: number, day: number) => {
+    const full = year < 100 ? 2000 + year : year;
+    const date = new Date(Date.UTC(full, month - 1, day));
+    if (month < 1 || month > 12 || date.getUTCDate() !== day) return text;
+    return `${String(full).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  };
+  let match = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(text);
+  if (match) return iso(Number(match[1]), Number(match[2]), Number(match[3]));
+  match = /^(\d{1,2})\s*[./-]\s*(\d{1,2})\s*[./-]\s*(\d{4}|\d{2})$/.exec(text);
+  if (match) return iso(Number(match[3]), Number(match[2]), Number(match[1]));
+  const monthOf = (name: string) => MONTH_NAMES.indexOf(name.slice(0, 3).toLowerCase()) + 1;
+  match = /^(\d{1,2})(?:st|nd|rd|th)?[\s.\-/]*([A-Za-z]{3,9})\.?[\s.\-/,]*(\d{4})$/.exec(text);
+  if (match && monthOf(match[2])) return iso(Number(match[3]), monthOf(match[2]), Number(match[1]));
+  match = /^([A-Za-z]{3,9})\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})$/.exec(text);
+  if (match && monthOf(match[1])) return iso(Number(match[3]), monthOf(match[1]), Number(match[2]));
+  return text;
+}
+
+/**
+ * Document control read from an imported manual, as a patch for
+ * `SopManual.control`. Dates become ISO where they can be read, and the
+ * supersedes, issue and last review values are kept (they print on the cover).
+ */
+export function parsedControlPatch(parsed: ParsedSopControl): Partial<SopManualControl> {
+  const patch: Partial<SopManualControl> = {};
+  const text = ["docNo", "revision", "supersedes", "reviewFrequency", "preparedBy", "reviewedBy", "approvedBy", "classification"] as const;
+  const dates = ["issueDate", "effectiveDate", "lastReviewDate", "nextReviewDate"] as const;
+  for (const key of text) if (parsed[key]?.trim()) patch[key] = parsed[key]!.trim();
+  for (const key of dates) if (parsed[key]?.trim()) patch[key] = parsedDateToIso(parsed[key]!);
+  return patch;
+}
+
+/** The manual's control data with whatever the import found laid over it. */
+export function applyParsedControl(control: SopManualControl, parsed: ParsedSopControl): SopManualControl {
+  return { ...control, ...parsedControlPatch(parsed) };
+}
+
 /* ------------------------------------------------------------------ */
 /* Sites and revision history tables                                   */
 /* ------------------------------------------------------------------ */
@@ -805,10 +852,16 @@ function readRevisionTable(table: DocTable): RevisionEntry[] | undefined {
   const dateCol = header.findIndex((cell) => /\bdate\b/.test(cell));
   const descCol = header.findIndex((cell, c) => c !== revCol && /\b(description|details|nature|change|summary|remarks|amendment)/.test(cell));
   if (revCol < 0 || dateCol < 0 || descCol < 0) return undefined;
+  // Separate "Reviewed by" / "Approved by" columns, when the table has them.
+  const used = [revCol, dateCol, descCol];
+  const reviewedCol = header.findIndex((cell, c) => !used.includes(c) && /\b(reviewed|checked|verified)\b/.test(cell) && !/\bapproved\b/.test(cell));
+  const approvedCol = header.findIndex((cell, c) => !used.includes(c) && /\b(approved|authori[sz]ed)\b/.test(cell) && !/\breviewed\b/.test(cell));
   return rows.slice(1).map((row) => ({
     revisionNo: row[revCol],
     date: row[dateCol],
     description: row[descCol],
+    ...(reviewedCol >= 0 && row[reviewedCol]?.trim() ? { reviewedBy: row[reviewedCol].trim() } : {}),
+    ...(approvedCol >= 0 && row[approvedCol]?.trim() ? { approvedBy: row[approvedCol].trim() } : {}),
     source: "custom" as const,
   }));
 }

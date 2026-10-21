@@ -34,6 +34,14 @@ export function ManualDetailsPanel({ control, onChange, showErrors }: { control:
   const approvedError = showErrors && !control.approvedBy.trim() ? "Enter who approves the manual." : undefined;
   return (
     <Panel title="Manual details" description="Document control printed on the cover and in every page header." icon={<FileBadge size={17} strokeWidth={1.8} />}>
+      <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <Field label="Manual title" hint="Printed on the cover and in page headers">
+          <Input value={control.title ?? ""} onChange={(event) => onChange({ title: event.target.value })} placeholder="SOP Manual" />
+        </Field>
+        <Field label="Subtitle" hint="Shown under the title on the cover">
+          <Input value={control.subtitle ?? ""} onChange={(event) => onChange({ subtitle: event.target.value })} placeholder="Environmental, Social and Governance procedures" />
+        </Field>
+      </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <Field label="Document number" hint="Suggested from your organization code">
           <Input value={control.docNo} onChange={(event) => onChange({ docNo: event.target.value })} placeholder="ACME/SOP/01" />
@@ -43,6 +51,17 @@ export function ManualDetailsPanel({ control, onChange, showErrors }: { control:
         </Field>
         <Field label="Classification">
           <SelectMenu size="compact" value={control.classification || "Internal"} onValueChange={(classification) => onChange({ classification })} options={["Internal", "Confidential", "Public", "Controlled copy"].map((value) => ({ value, label: value }))} aria-label="Classification" />
+        </Field>
+      </div>
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <Field label="Supersedes" hint="The issue this manual replaces">
+          <Input value={control.supersedes} onChange={(event) => onChange({ supersedes: event.target.value })} placeholder="Rev 00" />
+        </Field>
+        <Field label="Issue date">
+          <DatePicker value={control.issueDate ?? ""} onChange={(issueDate) => onChange({ issueDate })} placeholder="DD-MM-YYYY" ariaLabel="Issue date" />
+        </Field>
+        <Field label="Last review date">
+          <DatePicker value={control.lastReviewDate ?? ""} maxDate={control.nextReviewDate || undefined} onChange={(lastReviewDate) => onChange({ lastReviewDate })} placeholder="DD-MM-YYYY" ariaLabel="Last review date" />
         </Field>
       </div>
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">

@@ -10,6 +10,7 @@ import type { SeedSopManual } from "../sop/seed-types";
 import type { SopManual } from "../sop/types";
 import { estimateTokens } from "./claude";
 import {
+  buildSopManualContext,
   buildSopPrompt,
   collectSopPromptSources,
   fitSopPromptBudget,
@@ -273,4 +274,15 @@ test("manual field requests are validated before any prompt is built", () => {
   assert.equal(field({ type: "manual-field", field: "introduction", mode: "custom" }).ok, false, "custom needs an instruction");
   assert.equal(field({ type: "manual-field", field: "introduction", mode: "custom", instruction: "Use bullets." }).ok, true);
   assert.equal(field({ type: "manual-field", field: "purpose", mode: "generate" }).ok, false, "not a manual field");
+});
+
+test("the manual context names issue and last review dates only when they are set", () => {
+  const manual = sampleManual();
+  const before = buildSopManualContext(manual);
+  assert.doesNotMatch(before, /issued|last reviewed/);
+  manual.control.issueDate = "2026-10-28";
+  manual.control.lastReviewDate = "2026-10-20";
+  const line = buildSopManualContext(manual).split("\n").find((entry) => entry.startsWith("Document control:"))!;
+  assert.match(line, /, issued 2026-10-28, last reviewed 2026-10-20\.$/);
+  assert.equal(buildSopManualContext({ ...manual, control: { ...manual.control, issueDate: "", lastReviewDate: undefined } }), before);
 });
