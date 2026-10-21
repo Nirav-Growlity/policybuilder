@@ -11,6 +11,7 @@ import { useSopBuilder } from "@/lib/sop/store";
 import type { ManualAiField } from "@/lib/sop/ai-contract";
 import type { RevisionEntry, RichTextBlock } from "@/lib/types";
 import type { SopApproval, SopClosing, SopManual } from "@/lib/sop/types";
+import { companyFacts } from "@/lib/sop/company-facts";
 import { richTextToPlain } from "../manual-helpers";
 import { SectionAiActions } from "./section-ai-actions";
 import { LinesField, NarrativeField, RowsTable } from "./section-editors";
@@ -84,6 +85,8 @@ function PartNotice({ part, empty, ai, subject }: { part: ManualPart; empty: boo
 export function FrontMatterWriter() {
   const [front, update] = useManualPart("frontMatter");
   const company = useSopBuilder((state) => state.manual!.company);
+  const storedFacts = useSopBuilder((state) => state.manual!.facts);
+  const facts = companyFacts({ facts: storedFacts });
   const ai = useManualFieldAi();
   const { openDetails } = useSopBuilderActions();
   const empty = !hasText(front.introduction) && !hasText(front.objective) && !hasText(front.howToUse) && !front.benefits.length && !front.coreValues.length;
@@ -103,6 +106,14 @@ export function FrontMatterWriter() {
         {(company.sites ?? []).length ? (
           <ul className={styles.siteList}>{(company.sites ?? []).map((site, index) => <li key={index}><strong>{site.location || `Site ${index + 1}`}</strong><span>{[site.address, site.primaryFunction].filter(Boolean).join(" · ")}</span></li>)}</ul>
         ) : <p className="text-[13px] text-[var(--pc-muted)]">No sites yet. Add them in the company details.</p>}
+      </Panel>
+      <Panel title={heading("Contacts and certifications")} description="From the company details. Printed after Scope and Applicability." actions={<Button variant="ghost" size="sm" icon={<Pencil size={13} aria-hidden="true" />} onClick={openDetails}>Edit facts</Button>}>
+        {facts.contacts.length || facts.certifications.length ? (
+          <ul className={styles.siteList}>
+            {facts.contacts.map((contact, index) => <li key={`contact-${index}`}><strong>{contact.purpose || "Contact"}</strong><span>{[contact.name, contact.phone, contact.email].filter(Boolean).join(" · ")}</span></li>)}
+            {facts.certifications.length ? <li><strong>Certifications</strong><span>{facts.certifications.join(", ")}</span></li> : null}
+          </ul>
+        ) : <p className="text-[13px] text-[var(--pc-muted)]">No contacts or certifications yet. Add them in the company details to print Key Contacts and Certifications and Standards.</p>}
       </Panel>
       <Panel title={heading("Core values")}>
         <RowsTable caption="Core values" rows={front.coreValues} onChange={(coreValues) => update({ coreValues })} newRow={() => ({ title: "", description: "" })} addLabel="Add value" columns={[{ key: "title", label: "Value", width: "28%", placeholder: "Safety first" }, { key: "description", label: "What it means here", width: "auto" }]} />

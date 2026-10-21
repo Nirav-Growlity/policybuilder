@@ -12,9 +12,10 @@ import type { PolicyCraftOrganization } from "@/lib/policycraft-access-types";
 import type { CompanyMasterSnapshot } from "@/lib/policycraft-types";
 import type { Company } from "@/lib/types";
 import { SOP_CATALOG, recommendSops } from "@/lib/sop/catalog";
+import { createEmptyCompanyFacts } from "@/lib/sop/company-facts";
 import { createEmptySopCompany } from "@/lib/sop/initial-manual";
 import { createSopManual, fetchAccess, fetchCompanySnapshot, importSopDocx, isImportAvailable, saveSopManual } from "@/lib/sop/client-api";
-import { DEFAULT_SOP_TEMPLATE_ID, type SopCover, type SopManual, type SopManualControl, type SopTemplateId, type SopThemeOptions } from "@/lib/sop/types";
+import { DEFAULT_SOP_TEMPLATE_ID, type SopCompanyFacts, type SopCover, type SopManual, type SopManualControl, type SopTemplateId, type SopThemeOptions } from "@/lib/sop/types";
 import { buildNewManual, catalogTopicsById, manualTitle, suggestDocNo, withSuggestedCodes, type CustomSopDraft } from "../manual-helpers";
 import { ChooseSopsStep, type ImportState, type StartChoice } from "./choose-sops-step";
 import { DetailsStep, nextReviewDate } from "./details-step";
@@ -70,6 +71,7 @@ export function NewManualWizard() {
   const [organization, setOrganization] = React.useState<PolicyCraftOrganization | null>(null);
   const [company, setCompany] = React.useState<Company>(createEmptySopCompany);
   const [control, setControl] = React.useState<SopManualControl>(() => initialControl(createEmptySopCompany(), ""));
+  const [facts, setFacts] = React.useState<SopCompanyFacts>(createEmptyCompanyFacts);
   const [step, setStep] = React.useState<Step>(0);
   const [start, setStart] = React.useState<StartChoice>("recommended");
   const [selected, setSelected] = React.useState<Set<string>>(new Set());
@@ -167,7 +169,7 @@ export function NewManualWizard() {
     const orgId = organization.id;
     try {
       const topics = catalogTopicsById(selected);
-      const manual = buildNewManual({ company, control, topics, custom, theme, themeOptions, cover: cover.variant === "ai" ? { variant: "ai" } : cover });
+      const manual = buildNewManual({ company, control, facts, topics, custom, theme, themeOptions, cover: cover.variant === "ai" ? { variant: "ai" } : cover });
       let stored = await createSopManual(orgId, { title: manualTitle(manual), manual });
       const importFile = start === "import" && importState.status === "available" ? importState.file : null;
       if (importFile) {
@@ -216,6 +218,8 @@ export function NewManualWizard() {
             control={control}
             onCompanyChange={updateCompany}
             onControlChange={(patch) => setControl((current) => ({ ...current, ...patch }))}
+            facts={facts}
+            onFactsChange={(patch) => setFacts((current) => ({ ...current, ...patch }))}
             onContinue={goToSops}
           />
         ) : step === 1 ? (

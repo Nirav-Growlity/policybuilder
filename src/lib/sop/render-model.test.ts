@@ -8,6 +8,7 @@ import { sopFontFiles } from "../typst/fonts";
 import sample from "./fixtures/sample-manual.json";
 import { createEmptyManual, createEmptySop } from "./initial-manual";
 import { buildSopRenderModel, departmentCode, formatManualDate, suggestSopCodes } from "./render-model";
+import { sopManualSchema } from "./schema";
 import { SOP_TEMPLATE_IDS, type SopManual } from "./types";
 
 const p = (text: string) => ({ id: "b", type: "paragraph" as const, text });
@@ -87,4 +88,51 @@ test("lays out every template, and a single-SOP preview quickly", () => {
   const elapsed = performance.now() - started;
   assert.ok(one.pageCount >= 2 && one.pageCount <= 8, `preview has ${one.pageCount} pages`);
   assert.ok(elapsed < 1_500, `single-SOP preview took ${elapsed.toFixed(0)}ms`);
+});
+
+test("company facts add Key Contacts and Certifications after Scope, only when filled in", () => {
+  const manual = sampleManual();
+  const before = buildSopRenderModel(manual);
+  assert.deepEqual(before.frontMatter.map((section) => section.id), ["introduction", "scope"]);
+  // A manual saved before facts existed, and one with blank facts, render the same.
+  assert.deepEqual(buildSopRenderModel({ ...manual, facts: { profile: "", certifications: ["", "  "], regulations: [], contacts: [{ purpose: "", name: " ", phone: "", email: "" }] } }), before);
+  assert.deepEqual(buildSopRenderModel(manual, { includeEmptySections: true }).frontMatter.map((section) => section.id), ["introduction", "objective", "scope", "values", "how-to-use", "glossary"]);
+
+  const withFacts = buildSopRenderModel({
+    ...manual,
+    facts: {
+      profile: "Founded in 1998; about 1,200 employees.",
+      certifications: ["ISO 14001:2015", "", "- SA8000:2014", "ISO 14001:2015"],
+      regulations: ["Factories Act, 1948"],
+      contacts: [
+        { purpose: "Grievance", name: "HR Manager", phone: "", email: "grievance@meridian.in" },
+        { purpose: "", name: "", phone: "", email: "" },
+        { purpose: "EHS / emergency", name: "EHS Manager", phone: "+91 98430 21100", email: "" },
+      ],
+    },
+  });
+  assert.deepEqual(withFacts.frontMatter.map((section) => section.id), ["introduction", "scope", "contacts", "certifications"]);
+  const contacts = withFacts.frontMatter[2];
+  assert.equal(contacts.title, "Key Contacts");
+  assert.equal(contacts.anchor, "front-contacts");
+  const table = contacts.blocks.find((block) => block.type === "table");
+  assert.ok(table && table.type === "table");
+  assert.deepEqual(table.columns, ["Purpose", "Name", "Phone", "Email"]);
+  assert.deepEqual(table.rows, [["Grievance", "HR Manager", "", "grievance@meridian.in"], ["EHS / emergency", "EHS Manager", "+91 98430 21100", ""]]);
+  const certifications = withFacts.frontMatter[3];
+  assert.equal(certifications.title, "Certifications and Standards");
+  assert.deepEqual(certifications.blocks.at(-1), { type: "ul", items: ["ISO 14001:2015", "SA8000:2014"] });
+  // The profile and the laws feed the AI; they are not printed.
+  assert.doesNotMatch(JSON.stringify(withFacts), /Founded in 1998|Factories Act/);
+  // A single-SOP preview has no front matter at all.
+  assert.equal(buildSopRenderModel({ ...manual, facts: { profile: "", certifications: ["ISO 9001"], regulations: [], contacts: [] } }, { onlySopIds: [manual.sops[0].id] }).frontMatter.length, 0);
+});
+
+test("saved manuals with and without company facts pass validation", () => {
+  const manual = sampleManual();
+  assert.equal(sopManualSchema.safeParse(manual).success, true);
+  const facts = { profile: "Exporter of dyed fabric.", certifications: ["SA8000:2014"], regulations: [], contacts: [{ purpose: "Grievance", name: "HR", phone: "", email: "hr@x.in" }] };
+  const parsed = sopManualSchema.parse({ ...manual, facts });
+  assert.deepEqual(parsed.facts, facts);
+  assert.equal(sopManualSchema.safeParse({ ...manual, facts: { ...facts, contacts: [{ purpose: "Grievance" }] } }).success, false);
 });

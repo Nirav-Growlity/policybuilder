@@ -16,7 +16,7 @@ import {
   SOP_MAX_TOKENS,
   SOP_SYSTEM_PROMPT,
 } from "./sop-prompts";
-import { parseSopAiRequest } from "./sop-generation";
+import { mockSopOutput, parseSopAiRequest } from "./sop-generation";
 import { buildImportedSopContext, buildSopReferenceContext, clearSeedSopCache } from "./sop-template-context";
 
 function sampleManual(): SopManual {
@@ -273,4 +273,63 @@ test("manual field requests are validated before any prompt is built", () => {
   assert.equal(field({ type: "manual-field", field: "introduction", mode: "custom" }).ok, false, "custom needs an instruction");
   assert.equal(field({ type: "manual-field", field: "introduction", mode: "custom", instruction: "Use bullets." }).ok, true);
   assert.equal(field({ type: "manual-field", field: "purpose", mode: "generate" }).ok, false, "not a manual field");
+});
+
+const FACTS = {
+  profile: "Founded in 1998.\nMakes dyed cotton fabric for European brands; about 1,200 employees.",
+  certifications: ["ISO 14001:2015", "", "SA8000:2014"],
+  regulations: ["Tamil Nadu Pollution Control Board", "Factories Act, 1948"],
+  contacts: [
+    { purpose: "Grievance", name: "HR Manager", phone: "", email: "grievance@meridian.in" },
+    { purpose: "", name: "", phone: "", email: "" },
+    { purpose: "EHS / emergency", name: "R. Karthik", phone: "+91 98430 21100", email: "ehs@meridian.in" },
+  ],
+};
+
+test("company facts go into the cached manual context, the same for every request about the manual", () => {
+  const manual = { ...sampleManual(), facts: FACTS };
+  const sources = { references: "", imported: "" };
+  const prompts = [
+    buildSopPrompt({ type: "sop", manual, sopId: manual.sops[0].id }, sources),
+    buildSopPrompt({ type: "sop", manual, sopId: manual.sops[1].id }, sources),
+    buildSopPrompt({ type: "front-matter", manual }, sources),
+    buildSopPrompt({ type: "manual-field", manual, field: "introduction", mode: "generate" }, sources),
+  ];
+  const context = prompts[0].cachedContext;
+  for (const prompt of prompts) assert.equal(prompt.cachedContext, context);
+  assert.match(context, /Company profile \(use for the introduction and front matter\): Founded in 1998\. Makes dyed cotton fabric/);
+  assert.match(context, /Certifications and standards held:\n- ISO 14001:2015\n- SA8000:2014\n/);
+  assert.match(context, /Laws and regulators that apply \(given by the company\):\n- Tamil Nadu Pollution Control Board\n- Factories Act, 1948\n/);
+  assert.match(context, /Key contacts \(purpose \| name \| phone \| email; use these for reporting channels\):\n- Grievance \| HR Manager \| - \| grievance@meridian\.in\n- EHS \/ emergency \| R\. Karthik \| \+91 98430 21100 \| ehs@meridian\.in\n/);
+  // Facts sit with the company, before the SOP register.
+  assert.ok(context.indexOf("Key contacts") < context.indexOf("SOP register"));
+  // The introduction requests point the model at the profile.
+  assert.match(prompts[2].user, /introduction: .*company profile in the manual context/);
+  assert.match(prompts[3].user, /company profile in the manual context/);
+});
+
+test("manuals without company facts keep the exact cached context they had before", () => {
+  const manual = sampleManual();
+  const sources = { references: "", imported: "" };
+  const before = buildSopPrompt({ type: "sop", manual, sopId: manual.sops[0].id }, sources).cachedContext;
+  const empty = { ...manual, facts: { profile: "  ", certifications: [""], regulations: [], contacts: [{ purpose: "", name: "", phone: "", email: "" }] } };
+  assert.equal(buildSopPrompt({ type: "sop", manual: empty, sopId: manual.sops[0].id }, sources).cachedContext, before);
+  assert.doesNotMatch(before, /Company profile|Certifications and standards held|Key contacts|Laws and regulators/);
+});
+
+test("the facts rules use listed contacts, certifications, laws and the profile", () => {
+  assert.match(SOP_SYSTEM_PROMPT, /Reporting channels: .*name the listed contact whose purpose fits.*instead of a placeholder/);
+  assert.match(SOP_SYSTEM_PROMPT, /Certifications held: cite the ones that fit the topic in References and in any compliance text/);
+  assert.match(SOP_SYSTEM_PROMPT, /Never claim a certification, standard or buyer programme that is not listed/);
+  assert.match(SOP_SYSTEM_PROMPT, /Laws and regulators listed in the manual context may be named.*in addition to laws you are certain apply/);
+  assert.match(SOP_SYSTEM_PROMPT, /Company profile: use it for the Introduction and other front matter/);
+});
+
+test("the offline mock uses the profile and the certifications held", () => {
+  const manual = { ...sampleManual(), facts: FACTS };
+  const front = mockSopOutput({ type: "front-matter", manual }) as { introduction: string[] };
+  assert.match(front.introduction[0], /^Founded in 1998\. Makes dyed cotton fabric/);
+  const sop = mockSopOutput({ type: "sop", manual, sopId: manual.sops[1].id }) as { sections: { references: string[] } };
+  assert.deepEqual(sop.sections.references.slice(0, 2), ["ISO 14001:2015", "SA8000:2014"]);
+  assert.equal(new Set(sop.sections.references).size, sop.sections.references.length, "no repeated references");
 });

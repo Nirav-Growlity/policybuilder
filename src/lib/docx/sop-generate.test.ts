@@ -84,7 +84,12 @@ test("contents page numbers come from the Typst PDF outline", async () => {
   const sops = model.chapters.flatMap((chapter) => chapter.sops);
   assert.ok(sops.every((sop, index) => index === 0 || pages.anchors[sop.anchor] > pages.anchors[sops[index - 1].anchor]));
 
+  // Company facts sections sit after Scope in the PDF, in the same order as the model.
+  assert.ok(pages.anchors["front-scope"] <= pages.anchors["front-contacts"] && pages.anchors["front-contacts"] <= pages.anchors["front-certifications"]);
+
   const { document, settings } = await open(await generateSopDocx(model, assets, { pages }));
+  for (const text of ["Key Contacts", "Certifications and Standards", "grievance@meridiantextiles.in", "SA8000:2014 Social Accountability"]) assert.ok(document.includes(text), `Word has ${text}`);
+  assert.ok(document.indexOf("Key Contacts") < document.indexOf("Certifications and Standards"));
   const first = sops[0];
   assert.match(document, new RegExp(`PAGEREF ${bookmarkName(first.anchor)} \\\\h </w:instrText>[\\s\\S]*?<w:t>${pages.anchors[first.anchor]}</w:t>`));
   // Known page numbers need no field update prompt.

@@ -221,6 +221,25 @@ export interface SopThemeOptions {
   showSopHeaderCard: boolean;
 }
 
+/** A person or inbox staff and outsiders reach for one purpose, such as "Grievance" or "EHS / emergency". */
+export type SopContact = { purpose: string; name: string; phone: string; email: string };
+
+/**
+ * Facts the AI writes from instead of leaving placeholders. Contacts and
+ * certifications also print in the front matter; the profile and the laws
+ * only feed the AI. Lists may hold blank lines while a writer types; read
+ * them through `companyFacts()` (lib/sop/company-facts.ts).
+ */
+export interface SopCompanyFacts {
+  /** Founded, products and services, markets, headcount. */
+  profile: string;
+  /** Certifications and standards held, one per item (for example "ISO 14001:2015"). */
+  certifications: string[];
+  /** Laws and regulators that apply, one per item. */
+  regulations: string[];
+  contacts: SopContact[];
+}
+
 export type SopCoverVariant = "template" | "upload" | "ai";
 
 export interface SopCover {
@@ -244,4 +263,6 @@ export interface SopManual {
   theme: SopTemplateId;
   themeOptions: SopThemeOptions;
   cover: SopCover;
+  /** Optional: manuals saved before company facts existed have none. */
+  facts?: SopCompanyFacts;
 }

@@ -156,6 +156,15 @@ export const sopCoverSchema = z.object({
   libraryTemplateId: z.string().optional(),
 });
 
+export const sopContactSchema = z.object({ purpose: z.string(), name: z.string(), phone: z.string(), email: z.string() });
+
+export const sopCompanyFactsSchema = z.object({
+  profile: z.string(),
+  certifications: z.array(z.string()),
+  regulations: z.array(z.string()),
+  contacts: z.array(sopContactSchema),
+});
+
 export const sopManualSchema = z.object({
   id: z.string(),
   company: sopCompanySchema,
@@ -167,6 +176,7 @@ export const sopManualSchema = z.object({
   theme: sopTemplateIdSchema,
   themeOptions: sopThemeOptionsSchema,
   cover: sopCoverSchema,
+  facts: sopCompanyFactsSchema.optional(),
 });
 
 /* ------------------------------------------------------------------ */

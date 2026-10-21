@@ -77,13 +77,15 @@ export function LinesField({ lines, onChange, label, placeholder, className }: {
 export type ColumnSpec<Row> = { key: keyof Row & string; label: string; width: string; placeholder?: string; lines?: boolean };
 
 /** An editable table: inline cells, a remove action per row and "+ Add row" under it. */
-export function RowsTable<Row extends Record<string, unknown>>({ rows, columns, onChange, newRow, addLabel, caption }: {
+export function RowsTable<Row extends Record<string, unknown>>({ rows, columns, onChange, newRow, addLabel, caption, emptyText }: {
   rows: Row[];
   columns: ColumnSpec<Row>[];
   onChange: (rows: Row[]) => void;
   newRow: () => Row;
   addLabel: string;
   caption: string;
+  /** Shown while there are no rows; defaults to the SOP section wording. */
+  emptyText?: string;
 }) {
   const update = (index: number, patch: Partial<Row>) => onChange(rows.map((row, current) => (current === index ? { ...row, ...patch } : row)));
   return (
@@ -118,7 +120,7 @@ export function RowsTable<Row extends Record<string, unknown>>({ rows, columns, 
             </tbody>
           </table>
         </div>
-      ) : <p className={ui.empty}>Nothing here yet. Add a row, or let AI write this section.</p>}
+      ) : <p className={ui.empty}>{emptyText ?? "Nothing here yet. Add a row, or let AI write this section."}</p>}
       <div className={styles.addRow}>
         <Button variant="ghost" size="sm" icon={<Plus size={14} aria-hidden="true" />} onClick={() => onChange([...rows, newRow()])}>{addLabel}</Button>
       </div>
