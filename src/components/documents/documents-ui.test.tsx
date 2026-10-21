@@ -101,6 +101,34 @@ test("an empty SOP opens on its header facts, every section and a one-click Writ
   assert.match(markup, /Add KPI/);
 });
 
+test("narrative text and tables are edited in place, in block order, with an Add table action", () => {
+  const sop = createEmptySop({ title: "Waste Segregation", pillar: "E", department: "EHS", owner: "EHS Manager", code: "MT-EHS-001" });
+  const table = { id: "tbl", type: "table" as const, text: "", columns: ["Site", ""], rows: [["Unit 1", "Dyeing"]] };
+  sop.sections = sop.sections.map((section) => {
+    if (section.kind === "scope") return { ...section, blocks: [{ id: "p1", type: "paragraph" as const, text: "BEFORE TEXT" }, table, { id: "p2", type: "paragraph" as const, text: "AFTER TEXT" }] };
+    if (section.kind === "procedure") return { ...section, steps: [{ id: "s1", heading: "Segregate", body: [table], responsible: "Supervisor" }] };
+    return section;
+  });
+  const manual = loadManual([sop]);
+  const markup = inBuilder(React.createElement(SopWriter, { sop: manual.sops[0] }));
+  const before = markup.indexOf(">BEFORE TEXT</textarea>");
+  const grid = markup.indexOf('aria-label="Table 1 in Scope"');
+  const after = markup.indexOf(">AFTER TEXT</textarea>");
+  assert.ok(before > 0 && grid > before && after > grid, "text, table, text in stored order");
+  assert.match(markup, /placeholder="Column 1" aria-label="Table 1 in Scope, column 1 heading" value="Site"/);
+  assert.match(markup, /placeholder="Column 2" aria-label="Table 1 in Scope, column 2 heading" value=""/);
+  assert.match(markup, /aria-label="Table 1 in Scope, Column 2, row 1"[^>]*>Dyeing<\/textarea>/);
+  assert.match(markup, /aria-label="Table 1 in Scope, remove row 1"/);
+  assert.match(markup, />Add row</);
+  assert.match(markup, />Add column</);
+  assert.match(markup, /aria-label="Add table to Scope"/);
+  // The step's table stands alone, so it offers text above and below; the scope table already has text on both sides.
+  assert.match(markup, /aria-label="Table 1 in Step 1 description"/);
+  assert.equal((markup.match(/>Text above</g) ?? []).length, 1);
+  assert.equal((markup.match(/>Text below</g) ?? []).length, 1);
+  assert.match(markup, /aria-label="Add table to step 1"/);
+});
+
 test("a failed generation says so and offers Retry", () => {
   const manual = loadManual();
   useSopBuilder.getState().setGeneration({ sopId: manual.sops[0].id, status: "failed", error: "SOP AI is not wired up yet." });
@@ -118,6 +146,7 @@ test("review lists what is left with a Fix action for each open check", () => {
   assert.match(markup, /things to check/);
   assert.match(markup, /Company and approver/);
   assert.match(markup, /2 SOPs still to write/);
+  assert.match(markup, /Placeholders to fill/);
   assert.ok((markup.match(/>Fix</g) ?? []).length >= 3);
 });
 

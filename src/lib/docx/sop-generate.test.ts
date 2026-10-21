@@ -97,3 +97,19 @@ test("bookmark names are valid Word names and quotes match Typst's smart quotes"
   assert.ok(bookmarkName("x".repeat(60)).length <= 40);
   assert.equal(smartQuotes(`the company's "approved" list`), "the company\u2019s \u201Capproved\u201D list");
 });
+
+test("a table inside a procedure step prints in place, nested in the step table where the design uses one", async () => {
+  for (const templateId of ["controlled-manual", "sop-cards"]) {
+    const { model, assets } = await sample(templateId);
+    const { document } = await open(await generateSopDocx(model, assets));
+    const step = document.indexOf("Collection and dispatch");
+    const table = document.indexOf("Waste stream<", step);
+    const next = document.indexOf("Disposal documentation", step);
+    assert.ok(step > 0 && table > step && table < next, `${templateId}: the step's table sits inside its step`);
+    if (templateId === "sop-cards") {
+      // The step's cell holds a whole table of its own: one table deeper than the step heading.
+      const depth = (at: number) => (document.slice(0, at).match(/<w:tbl>/g) ?? []).length - (document.slice(0, at).match(/<\/w:tbl>/g) ?? []).length;
+      assert.equal(depth(table), depth(step) + 1, "nested table inside the action cell");
+    }
+  }
+});

@@ -148,6 +148,22 @@
 .addRow { display: flex; padding-top: 8px; }
 .rowsTable :global(.pc-authoring-panel-body) .addRow { margin-top: 2px; }
 
+/* Narrative text with tables in place: text runs, table blocks and the Add table row. */
+.narrative { display: flex; flex-direction: column; gap: 10px; }
+.narrativeFoot { display: flex; min-height: 28px; align-items: center; justify-content: space-between; gap: 12px; margin-top: -2px; }
+.narrativeWords { padding: 0 4px; color: var(--pc-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.blockTable { overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 12px; background: var(--pc-panel); }
+.blockTableScroll { overflow-x: auto; }
+.blockTable .blockTableGrid th { padding: 6px 4px 4px; vertical-align: top; }
+.blockTable .blockTableGrid th:first-child, .blockTable .blockTableGrid td:first-child { padding-left: 8px; }
+.blockTable .blockTableGrid td { padding: 4px; }
+.blockTableHead { display: flex; align-items: center; gap: 2px; }
+.blockTableHead > button { width: 28px; height: 28px; }
+.blockTable .blockTableHeading { height: 34px; min-width: 0; flex: 1 1 auto; padding: 0 8px; color: var(--pc-text); font-size: 12.5px; font-weight: 650; }
+.blockTableBar { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; border-top: 1px solid var(--pc-divider); background: color-mix(in srgb, var(--pc-inset) 35%, transparent); padding: 4px 6px; }
+.blockTableBar > .blockTableRemove { margin-left: auto; }
+.stepAdds { display: flex; flex-wrap: wrap; gap: 2px; }
+
 /* Procedure steps */
 .procedure { display: flex; flex-direction: column; }
 .steps { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }

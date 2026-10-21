@@ -5,6 +5,8 @@ import { createEmptyManual, createEmptySop, createEmptySopCompany, createEmptySo
 import type { Sop, SopProcedureSection } from "@/lib/sop/types";
 import {
   buildNewManual,
+  createTableBlock,
+  findPlaceholders,
   estimatePages,
   filterCatalog,
   groupCatalog,
@@ -14,6 +16,7 @@ import {
   mergeGeneratedSections,
   moveSopBefore,
   moveSopByOffset,
+  narrativeSegments,
   outlineGroups,
   outlineOrder,
   plainToRichText,
@@ -21,6 +24,7 @@ import {
   relativeTime,
   richTextToPlain,
   selectionSummary,
+  spliceBlocks,
   suggestDocNo,
 } from "./manual-helpers";
 
@@ -38,6 +42,68 @@ test("editing keeps block ids by position and keeps tables", () => {
   assert.equal(first[0].id, "keep-me");
   assert.equal(first.at(-1), table);
   assert.equal(richTextToPlain(first), "Hello");
+});
+
+test("editing text around a table in the middle keeps the table in place and every id", () => {
+  const table = { id: "t", type: "table" as const, text: "", columns: ["Severity", "Response"], rows: [["High", "1 h"]] };
+  const previous = [
+    { id: "a", type: "paragraph" as const, text: "Intro" },
+    table,
+    { id: "b", type: "bullets" as const, text: "one\ntwo" },
+  ];
+  const edited = plainToRichText("Intro, edited\n\n- one\n- two\n- three", previous);
+  assert.deepEqual(edited.map((block) => block.id), ["a", "t", "b"]);
+  assert.equal(edited[1], table);
+  assert.equal(edited[2].text, "- one\n- two\n- three");
+  // A table at the start stays first; when text blocks are removed, later tables close the list.
+  assert.deepEqual(plainToRichText("Only", [table, { id: "c", type: "paragraph", text: "x" }]).map((block) => block.id), ["t", "c"]);
+  assert.deepEqual(plainToRichText("", previous).map((block) => block.id), ["t"]);
+});
+
+test("a narrative field splits into text runs and tables, in order", () => {
+  const table = createTableBlock();
+  assert.equal(table.columns!.length, 2);
+  assert.deepEqual(table.rows, [["", ""], ["", ""]]);
+  const blocks = [
+    { id: "a", type: "paragraph" as const, text: "Intro" },
+    { id: "b", type: "bullets" as const, text: "x" },
+    table,
+    { id: "c", type: "paragraph" as const, text: "After" },
+  ];
+  const segments = narrativeSegments(blocks);
+  assert.deepEqual(segments.map((segment) => [segment.type, segment.start]), [["text", 0], ["table", 2], ["text", 3]]);
+  assert.deepEqual(narrativeSegments([]), [{ type: "text", start: 0, blocks: [] }]);
+  assert.deepEqual(narrativeSegments([table]).map((segment) => segment.type), ["table"]);
+  // Editing the run after the table replaces only that run.
+  const next = spliceBlocks(blocks, 3, 1, plainToRichText("After, edited", [blocks[3]]));
+  assert.deepEqual(next.map((block) => block.id), ["a", "b", table.id, "c"]);
+  assert.equal(next[3].text, "After, edited");
+});
+
+test("placeholders are bracketed words, not citations or empty brackets", () => {
+  assert.deepEqual(findPlaceholders("Keep below [consented discharge limit] and see [1], [2, 3], [4-6], [] and [x]."), ["[consented discharge limit]"]);
+  assert.deepEqual(findPlaceholders("[Plant Head] approves within [24 hours]"), ["[Plant Head]", "[24 hours]"]);
+});
+
+test("readiness counts placeholders everywhere and points at the first one", () => {
+  const manual = createEmptyManual({ sops: [sop("Energy", "E"), { ...sop("Water", "E"), code: "W-1" }] });
+  assert.equal(readinessChecks(manual).find((check) => check.id === "placeholders")!.ok, true);
+  const water = manual.sops[1];
+  water.sections = water.sections.map((section) => {
+    if (section.kind === "procedure") return { ...section, steps: [{ id: "s", heading: "Treat", body: [{ id: "t", type: "table", text: "", columns: ["Parameter", "Limit"], rows: [["COD", "[consented COD limit]"]] }], substeps: [{ id: "u", text: "Inform [Plant Head]" }] }] };
+    if (section.kind === "records") return { ...section, rows: [{ record: "Log", owner: "[owner]", retention: "3 years", format: "" }] };
+    if (section.kind === "appendix") return { ...section, blocks: [{ id: "x", type: "paragraph", text: "[ignored: section is off]" }] };
+    return section;
+  });
+  manual.closing.approval.statement = "Approved by [approver name].";
+  const check = readinessChecks(manual).find((item) => item.id === "placeholders")!;
+  assert.equal(check.ok, false);
+  assert.match(check.detail, /^4 placeholders still to replace\. First: \[consented COD limit\] in W-1 Water, Procedure\.$/);
+  assert.deepEqual(check.fix, { kind: "sop", sopId: water.id });
+  manual.frontMatter.objective = [{ id: "o", type: "paragraph", text: "Serve [number] sites." }];
+  const first = readinessChecks(manual).find((item) => item.id === "placeholders")!;
+  assert.match(first.detail, /^5 placeholders/);
+  assert.deepEqual(first.fix, { kind: "front" });
 });
 
 test("an SOP counts as written once the AI marks it or most sections have content", () => {

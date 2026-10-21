@@ -72,6 +72,26 @@ test("numbers SOPs in pillar order and drops empty sections", () => {
   assert.match(procedure.steps![0].number, /^\d+\.1$/);
 });
 
+test("narrative tables print where they stand, in sections and step bodies; blank tables print nothing", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  const table = { id: "t", type: "table" as const, text: "", columns: ["Stream", "Route", "Owner"], rows: [["Sludge", "TSDF", ""]] };
+  const blank = { id: "e", type: "table" as const, text: "", columns: ["", ""], rows: [["", ""]] };
+  sop.sections = sop.sections.map((section) => {
+    if (section.kind === "scope") return { ...section, blocks: [p("Before."), table, p("After."), blank] };
+    if (section.kind === "procedure") return { ...section, steps: section.steps.map((step, index) => (index === 0 ? { ...step, body: [table, p("Then.")] } : step)) };
+    if (section.kind === "training") return { ...section, enabled: true, blocks: [blank] };
+    return section;
+  });
+  const rendered = buildSopRenderModel(manual).chapters.flatMap((chapter) => chapter.sops).find((item) => item.title === sop.title)!;
+  const scope = rendered.sections.find((section) => section.kind === "scope")!;
+  assert.deepEqual(scope.blocks.map((block) => block.type), ["p", "table", "p"]);
+  assert.deepEqual(scope.blocks[1], { type: "table", columns: ["Stream", "Route", "Owner"], widths: [1, 1, 1], rows: [["Sludge", "TSDF", ""]] });
+  const step = rendered.sections.find((section) => section.kind === "procedure")!.steps![0];
+  assert.deepEqual(step.body.map((block) => block.type), ["table", "p"]);
+  assert.ok(!rendered.sections.some((section) => section.kind === "training"), "a section holding only a blank table is hidden");
+});
+
 test("lays out every template, and a single-SOP preview quickly", () => {
   const root = process.cwd();
   const workspace = join(root, ".typst-workspace");

@@ -221,7 +221,14 @@ function mockSection(manual: SopManual, sop: Sop, section: Pick<SopSection, "kin
         { heading: "Plan the activity", body: [{ type: "paragraph", text: `Identify the requirements for ${topic} and confirm resources, permits and responsibilities before work starts.` }], responsible: owner },
         { heading: "Carry out the activity", body: [{ type: "paragraph", text: "Perform the work as planned, following site work instructions and safety controls." }], responsible: "Section Supervisor", substeps: [{ text: "Brief the team before the shift." }, { text: "Record each completed task in the log." }] },
         { heading: "Check and record", body: [{ type: "paragraph", text: "Verify the result against the acceptance criteria and complete the record." }], responsible: "Section Supervisor" },
-        { heading: "Handle deviations", body: [{ type: "paragraph", text: "Report any deviation to the process owner, contain it and raise a corrective action." }], responsible: owner },
+        { heading: "Handle deviations", body: [
+          { type: "paragraph", text: "Report any deviation to the process owner, contain it and raise a corrective action. Escalate it as follows." },
+          { type: "table", text: "", columns: ["Severity", "Example", "Response time", "Escalate to"], rows: [
+            ["Minor", "Record incomplete or late", "[within 24 hours]", "Section Supervisor"],
+            ["Major", "Requirement of this SOP not met", "[same shift]", owner],
+            ["Critical", "Legal limit or safety control breached", "Immediately", "[Plant Head]"],
+          ] },
+        ], responsible: owner },
       ] };
     case "monitoring":
       return { kind: "monitoring", title, kpis: [
@@ -254,6 +261,11 @@ function expandSection(section: GeneratedSopSection): GeneratedSopSection {
   return section;
 }
 
+type GeneratedBlock = { type: string; text: string; columns?: string[]; rows?: string[][] };
+
+/** A block as the model writes it: every block carries columns and rows. */
+const wireBlocks = (blocks: GeneratedBlock[]) => blocks.map((block) => ({ type: block.type, text: block.text, columns: block.columns ?? [], rows: block.rows ?? [] }));
+
 /** Generated sections in the compact keyed shape the model writes. */
 function toWire(sections: GeneratedSopSection[]): Record<string, unknown> {
   const wire: Record<string, unknown> = {};
@@ -268,18 +280,18 @@ function toWire(sections: GeneratedSopSection[]): Record<string, unknown> {
         wire.procedure = section.steps.map((step) => ({
           heading: step.heading,
           responsible: step.responsible ?? "",
-          body: step.body,
+          body: wireBlocks(step.body),
           substeps: (step.substeps ?? []).map((substep) => ({ text: substep.text, responsible: substep.responsible ?? "" })),
         }));
         break;
       case "monitoring":
-        wire.monitoring = { kpis: section.kpis, narrative: section.narrative };
+        wire.monitoring = { kpis: section.kpis, narrative: wireBlocks(section.narrative) };
         break;
       case "references":
         wire.references = section.items;
         break;
       default:
-        wire[section.kind] = section.blocks;
+        wire[section.kind] = wireBlocks(section.blocks);
     }
   }
   return wire;

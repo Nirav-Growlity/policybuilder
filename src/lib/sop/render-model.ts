@@ -31,6 +31,11 @@ function lines(text: string) {
   return text.split(/\r?\n/).map((line) => line.replace(/^\s*(?:[-*•]|\d+[.)])\s+/, "").trim()).filter(Boolean);
 }
 
+/** A table the writer added but left blank prints nothing. */
+function tableHasText(block: RichTextBlock) {
+  return [...(block.columns ?? []), ...(block.rows ?? []).flat()].some((cell) => typeof cell === "string" && cell.trim());
+}
+
 export function toRenderBlocks(blocks: RichTextBlock[] | undefined): RenderBlock[] {
   const out: RenderBlock[] = [];
   for (const block of blocks ?? []) {
@@ -41,7 +46,7 @@ export function toRenderBlocks(blocks: RichTextBlock[] | undefined): RenderBlock
     } else if (block.type === "bullets" || block.type === "numbered") {
       const items = lines(block.text);
       if (items.length) out.push({ type: block.type === "bullets" ? "ul" : "ol", items });
-    } else if (block.type === "table" && block.columns?.length) {
+    } else if (block.type === "table" && block.columns?.length && tableHasText(block)) {
       out.push({
         type: "table",
         columns: block.columns,
@@ -112,7 +117,7 @@ function sectionHasContent(section: SopSection): boolean {
     case "references":
       return section.items.some((item) => item.trim());
     default:
-      return section.blocks.some((block) => block.text.trim() || (block.rows?.length ?? 0) > 0);
+      return section.blocks.some((block) => block.text.trim() || (block.type === "table" && tableHasText(block)));
   }
 }
 

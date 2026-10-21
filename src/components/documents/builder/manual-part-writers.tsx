@@ -11,7 +11,7 @@ import { useSopBuilder } from "@/lib/sop/store";
 import type { ManualAiField } from "@/lib/sop/ai-contract";
 import type { RevisionEntry, RichTextBlock } from "@/lib/types";
 import type { SopApproval, SopClosing, SopManual } from "@/lib/sop/types";
-import { richTextToPlain } from "../manual-helpers";
+import { isEmptyTable, richTextToPlain } from "../manual-helpers";
 import { SectionAiActions } from "./section-ai-actions";
 import { LinesField, NarrativeField, RowsTable } from "./section-editors";
 import { useManualFieldAi, type ManualFieldAi, type ManualPart } from "./use-section-ai";
@@ -25,7 +25,7 @@ function useManualPart<K extends "frontMatter" | "closing">(key: K): [SopManual[
   return [value, update];
 }
 
-const hasText = (blocks: RichTextBlock[]) => richTextToPlain(blocks).trim() !== "";
+const hasText = (blocks: RichTextBlock[]) => richTextToPlain(blocks).trim() !== "" || blocks.some((block) => block.type === "table" && !isEmptyTable(block));
 
 /** Panel heading, the same treatment as an SOP section's title (no icon). */
 const heading = (text: string) => <span className={styles.sectionTitle}>{text}</span>;
