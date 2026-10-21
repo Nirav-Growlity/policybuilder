@@ -3,7 +3,8 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { getCoverBindingValue } from "../../cover-composition";
-import { createCoverCompositionSvg, resolveCoverTextLayout } from "../../cover-renderer";
+import { resolveCoverTextLayout } from "../../cover-renderer";
+import { renderCoverRaster } from "../../cover-raster";
 import { getPolicyProfile } from "../../constants";
 import { runningLogoFit, tableLabelAlignment } from "../../document-themes";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData, type DocumentRenderModel, type DocumentRenderSection } from "../../document-render-model";
@@ -144,15 +145,8 @@ function coverRaster(policy: Policy, composition: NonNullable<DocumentRenderMode
   const key = createHash("sha1").update(JSON.stringify([composition, policy.company.companyLogo || ""])).digest("hex");
   let raster = coverCache.get(key);
   if (!raster) {
-    const svg = createCoverCompositionSvg(policy, composition, {
-      includeElements: true,
-      includeText: false,
-      width: 2480,
-      height: 3508,
-      resolveAsset: (source) => source?.startsWith("data:image/") ? source : undefined,
-    });
     // The page is opaque, so JPEG keeps a photo cover small without visible loss at print size.
-    raster = sharp(Buffer.from(svg)).jpeg({ quality: 90 }).toBuffer();
+    raster = renderCoverRaster(policy, composition, { includeElements: true, includeText: false }).then((cover) => cover.jpeg({ quality: 90 }).toBuffer());
     raster.catch(() => coverCache.delete(key));
     coverCache.set(key, raster);
     while (coverCache.size > 8) coverCache.delete(coverCache.keys().next().value!);
