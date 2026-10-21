@@ -3,8 +3,9 @@
 import * as React from "react";
 import { AlertCircle, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useSopBuilder } from "@/lib/sop/store";
-import { readinessChecks, type ReadinessTarget } from "../manual-helpers";
+import { readinessChecks, revealSection, type ReadinessTarget } from "../manual-helpers";
 import { useSopBuilderActions } from "./builder-context";
+import { PlaceholdersDialog } from "./placeholders-dialog";
 import { SopPdfPreview } from "./sop-pdf-preview";
 import styles from "./builder.module.css";
 
@@ -15,12 +16,15 @@ export function ReviewMode() {
   const { orgId, manualId, openDetails, setMode } = useSopBuilderActions();
   const checks = readinessChecks(manual);
   const open = checks.filter((check) => !check.ok);
+  const [placeholdersOpen, setPlaceholdersOpen] = React.useState(false);
 
-  const fix = (target: ReadinessTarget) => {
+  const fix = (target: ReadinessTarget, text?: string) => {
     if (target.kind === "details") { openDetails(); return; }
     if (target.kind === "design") { setMode("design"); return; }
+    if (target.kind === "placeholders") { setPlaceholdersOpen(true); return; }
     select(target.kind === "sop" ? { kind: "sop", sopId: target.sopId } : { kind: target.kind });
     setMode("write");
+    if (target.kind === "sop" && target.sectionId) revealSection(target.sectionId, text);
   };
 
   return (
@@ -46,6 +50,7 @@ export function ReviewMode() {
       <section className={styles.reviewPreview} aria-label="Full manual preview">
         <SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} surface="card" debounceMs={800} />
       </section>
+      <PlaceholdersDialog open={placeholdersOpen} onClose={() => setPlaceholdersOpen(false)} onGoTo={fix} />
     </div>
   );
 }

@@ -20,9 +20,11 @@ import {
   narrativeSegments,
   outlineGroups,
   outlineOrder,
+  placeholderGroups,
   plainToRichText,
   readinessChecks,
   relativeTime,
+  replacePlaceholder,
   richTextToPlain,
   selectionSummary,
   spliceBlocks,
@@ -100,11 +102,37 @@ test("readiness counts placeholders everywhere and points at the first one", () 
   const check = readinessChecks(manual).find((item) => item.id === "placeholders")!;
   assert.equal(check.ok, false);
   assert.match(check.detail, /^4 placeholders still to replace\. First: \[consented COD limit\] in W-1 Water, Procedure\.$/);
-  assert.deepEqual(check.fix, { kind: "sop", sopId: water.id });
+  assert.deepEqual(check.fix, { kind: "placeholders" });
   manual.frontMatter.objective = [{ id: "o", type: "paragraph", text: "Serve [number] sites." }];
   const first = readinessChecks(manual).find((item) => item.id === "placeholders")!;
   assert.match(first.detail, /^5 placeholders/);
-  assert.deepEqual(first.fix, { kind: "front" });
+  assert.deepEqual(first.fix, { kind: "placeholders" });
+});
+
+test("placeholders group by text and fill everywhere at once, leaving ids and kinds alone", () => {
+  const manual = createEmptyManual({ sops: [{ ...sop("Water", "E"), code: "W-1" }] });
+  const water = manual.sops[0];
+  water.sections = water.sections.map((section) => {
+    if (section.kind === "procedure") return { ...section, steps: [{ id: "s", heading: "Treat", body: [{ id: "t", type: "table", text: "", columns: ["Parameter", "Limit"], rows: [["COD", "[consent limit]"]] }], substeps: [{ id: "u", text: "Check against [consent limit]" }] }] };
+    if (section.kind === "records") return { ...section, rows: [{ record: "Log", owner: "[owner]", retention: "3 years", format: "" }] };
+    return section;
+  });
+  manual.closing.approval.statement = "Within [consent limit].";
+  const groups = placeholderGroups(manual);
+  assert.deepEqual(groups.map((group) => [group.text, group.count]), [["[consent limit]", 3], ["[owner]", 1]]);
+  assert.equal(groups[0].where, "W-1 Water, Procedure");
+  // "Go to" lands on the section, not just the SOP.
+  assert.deepEqual(groups[0].target, { kind: "sop", sopId: water.id, sectionId: water.sections.find((section) => section.kind === "procedure")!.id });
+
+  const filled = replacePlaceholder(manual, "[consent limit]", " 250 mg/l ");
+  assert.deepEqual(placeholderGroups(filled).map((group) => group.text), ["[owner]"]);
+  const procedure = filled.sops[0].sections.find((section) => section.kind === "procedure") as SopProcedureSection;
+  assert.deepEqual(procedure.steps[0].body[0].rows, [["COD", "250 mg/l"]]);
+  assert.equal(procedure.steps[0].substeps![0].text, "Check against 250 mg/l");
+  assert.equal(procedure.steps[0].id, "s");
+  assert.equal(filled.closing.approval.statement, "Within 250 mg/l.");
+  // An empty value changes nothing.
+  assert.equal(replacePlaceholder(manual, "[owner]", "  "), manual);
 });
 
 test("an SOP counts as written once the AI marks it or most sections have content", () => {

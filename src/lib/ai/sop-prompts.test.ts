@@ -449,3 +449,17 @@ test("reference SOPs offer their Compliance sections for a compliance rewrite, t
     assert.equal(buildSopReferenceContext({ catalogId: "waste-management", title: "Waste Segregation and Disposal", sectionKind: "introduction", industryTags: [] }, { directory }), "");
   });
 });
+
+test("AI Write fills one appendix on request; whole-SOP writing still leaves appendices alone", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  const appendix = { id: "appendix-a", kind: "appendix" as const, title: "Appendix A", enabled: true, blocks: [] };
+  sop.sections = [...sop.sections, appendix];
+  const parsed = parseSopAiRequest({ type: "sop-section", manual, sopId: sop.id, sectionId: appendix.id });
+  assert.equal(parsed.ok, true, "appendix requests are accepted");
+  const prompt = buildSopPrompt({ type: "sop-section", manual, sopId: sop.id, sectionId: appendix.id }, { references: "", imported: "" });
+  assert.match(prompt.user, /TASK: Rewrite one section of this SOP: kind "appendix", title "Appendix A"/);
+  assert.match(SOP_SYSTEM_PROMPT, /- Appendix \(written only when asked for one section\): one practical aid/);
+  const whole = buildSopPrompt({ type: "sop", manual, sopId: sop.id }, { references: "", imported: "" });
+  assert.doesNotMatch(whole.user, /- "appendix" \(heading/);
+});

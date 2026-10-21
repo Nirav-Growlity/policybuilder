@@ -75,7 +75,6 @@ export function parseSopAiRequest(body: unknown): { ok: true; request: SopAiRequ
     if (request.type !== "sop") {
       const section = sop.sections.find((candidate) => candidate.id === request.sectionId);
       if (!section) return { ok: false, error: "The section is not in this SOP." };
-      if (section.kind === "appendix") return { ok: false, error: "Appendix sections are written by hand." };
       if (request.type === "refine" && request.mode === "custom" && !request.instruction?.trim()) {
         return { ok: false, error: "A custom refinement needs an instruction." };
       }

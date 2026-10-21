@@ -370,7 +370,45 @@ export type ReadinessTarget =
   | { kind: "front" }
   | { kind: "closing" }
   | { kind: "design" }
-  | { kind: "sop"; sopId: string };
+  | { kind: "placeholders" }
+  | { kind: "sop"; sopId: string; sectionId?: string };
+
+/** DOM id of an SOP section's panel in the writer, for links that scroll to it. */
+export function sectionAnchorId(sectionId: string): string {
+  return `sop-section-${sectionId}`;
+}
+
+/**
+ * Scrolls to a section's panel once it is on screen (the writer may still be
+ * mounting after a mode switch). With `text`, the field holding it gets the
+ * cursor with the text selected, ready to type over; otherwise the first field.
+ */
+export function revealSection(sectionId: string, text?: string, tries = 40): void {
+  if (typeof window === "undefined") return;
+  const panel = document.getElementById(sectionAnchorId(sectionId));
+  if (!panel) {
+    if (tries > 0) window.setTimeout(() => revealSection(sectionId, text, tries - 1), 50);
+    return;
+  }
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  // The writer can re-render while the mode switch settles, replacing the panel,
+  // so look it up again on each try until the field really has focus.
+  const focusField = (attempt: number) => {
+    const current = document.getElementById(sectionAnchorId(sectionId));
+    const fields = Array.from(current?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("textarea, input:not([aria-label='Section heading'])") ?? []);
+    const field = (text && fields.find((item) => item.value.includes(text))) || fields[0];
+    // Sections fade in one after another when the writer opens; a field still
+    // hidden by that fade cannot take focus, so wait for it.
+    const shown = !field || typeof field.checkVisibility !== "function" || field.checkVisibility({ checkVisibilityCSS: true });
+    if (field && shown && document.activeElement !== field) {
+      field.focus({ preventScroll: true });
+      const at = text ? field.value.indexOf(text) : -1;
+      if (at >= 0) field.setSelectionRange(at, at + text!.length);
+    }
+    if (attempt < 20 && (!field || document.activeElement !== field)) window.setTimeout(() => focusField(attempt + 1), 150);
+  };
+  window.setTimeout(() => focusField(0), 150);
+}
 
 export type ReadinessCheck = { id: string; label: string; detail: string; ok: boolean; fix?: ReadinessTarget };
 
@@ -417,7 +455,7 @@ export function manualPlaceholders(manual: SopManual): PlaceholderHit[] {
   ], "Front matter", { kind: "front" });
   for (const sop of outlineOrder({ ...manual, sops: enabledSops(manual) })) {
     const name = [sop.code.trim(), sop.title.trim()].filter(Boolean).join(" ") || "Untitled SOP";
-    for (const section of sop.sections.filter((item) => item.enabled)) collect(sectionTexts(section), `${name}, ${section.title.trim() || "section"}`, { kind: "sop", sopId: sop.id });
+    for (const section of sop.sections.filter((item) => item.enabled)) collect(sectionTexts(section), `${name}, ${section.title.trim() || "section"}`, { kind: "sop", sopId: sop.id, sectionId: section.id });
   }
   const closing = manual.closing;
   collect([
@@ -425,6 +463,43 @@ export function manualPlaceholders(manual: SopManual): PlaceholderHit[] {
     closing.approval.statement, ...closing.approval.signatories.flatMap((signatory) => [signatory.role, signatory.name, signatory.designation]),
   ], "Closing", { kind: "closing" });
   return hits;
+}
+
+export type PlaceholderGroup = { text: string; count: number; where: string; target: ReadinessTarget };
+
+/** Placeholders grouped by their text, in reading order of first appearance, with how often each occurs. */
+export function placeholderGroups(manual: SopManual): PlaceholderGroup[] {
+  const groups = new Map<string, PlaceholderGroup>();
+  for (const hit of manualPlaceholders(manual)) {
+    const group = groups.get(hit.text);
+    if (group) group.count += 1;
+    else groups.set(hit.text, { text: hit.text, count: 1, where: hit.where, target: hit.target });
+  }
+  return [...groups.values()];
+}
+
+const STRUCTURAL_KEYS = new Set(["id", "kind", "type", "catalogId", "status", "source", "pillar"]);
+
+/** Every string under `value` with `placeholder` replaced; ids and kinds are left alone. */
+function replaceInTree<T>(value: T, placeholder: string, replacement: string): T {
+  if (typeof value === "string") return value.split(placeholder).join(replacement) as T;
+  if (Array.isArray(value)) return value.map((item) => replaceInTree(item, placeholder, replacement)) as T;
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, STRUCTURAL_KEYS.has(key) ? item : replaceInTree(item, placeholder, replacement)])) as T;
+  }
+  return value;
+}
+
+/** Fills one placeholder (for example "[consent number]") everywhere it appears in the manual's text. */
+export function replacePlaceholder(manual: SopManual, placeholder: string, value: string): SopManual {
+  const replacement = value.trim();
+  if (!placeholder || !replacement) return manual;
+  return {
+    ...manual,
+    frontMatter: { ...replaceInTree(manual.frontMatter, placeholder, replacement), sites: manual.frontMatter.sites },
+    sops: manual.sops.map((sop) => ({ ...sop, sections: replaceInTree(sop.sections, placeholder, replacement) })),
+    closing: replaceInTree(manual.closing, placeholder, replacement),
+  };
 }
 
 export function readinessChecks(manual: SopManual): ReadinessCheck[] {
@@ -449,7 +524,7 @@ export function readinessChecks(manual: SopManual): ReadinessCheck[] {
     { id: "procedure", label: "Every SOP has a procedure", ok: emptyProcedure.length === 0, detail: emptyProcedure.length ? `${plural(emptyProcedure.length, "SOP")} without procedure steps.` : "Each SOP lists its steps.", fix: emptyProcedure[0] ? { kind: "sop", sopId: emptyProcedure[0].id } : undefined },
     { id: "owners", label: "Owners and departments", ok: missingOwner.length === 0, detail: missingOwner.length ? `${plural(missingOwner.length, "SOP")} without an owner or department.` : "Every SOP has an owner.", fix: missingOwner[0] ? { kind: "sop", sopId: missingOwner[0].id } : undefined },
     { id: "codes", label: "Unique SOP codes", ok: duplicateCodes.length === 0 && codes.length === sops.length, detail: duplicateCodes.length ? `${duplicateCodes[0]} is used more than once.` : codes.length < sops.length ? "Some SOPs have no code." : "Codes are unique.", fix: (() => { const sop = sops.find((item) => !item.code.trim() || duplicateCodes.includes(item.code.trim())); return sop ? { kind: "sop" as const, sopId: sop.id } : undefined; })() },
-    { id: "placeholders", label: "Placeholders to fill", ok: placeholders.length === 0, detail: placeholders.length ? `${plural(placeholders.length, "placeholder")} still to replace. First: ${placeholders[0].text} in ${placeholders[0].where}.` : "No [bracketed] placeholders left.", fix: placeholders[0]?.target },
+    { id: "placeholders", label: "Placeholders to fill", ok: placeholders.length === 0, detail: placeholders.length ? `${plural(placeholders.length, "placeholder")} still to replace. First: ${placeholders[0].text} in ${placeholders[0].where}.` : "No [bracketed] placeholders left.", fix: placeholders.length ? { kind: "placeholders" } : undefined },
     { id: "front", label: "Introduction", ok: front.introduction.some((block) => block.text.trim()), detail: front.introduction.some((block) => block.text.trim()) ? "Introduction written." : "The manual has no introduction yet.", fix: { kind: "front" } },
     { id: "closing", label: "Approval statement", ok: Boolean(manual.closing.approval.statement.trim()), detail: manual.closing.approval.statement.trim() ? "Approval statement written." : "Add the approval statement for the closing page.", fix: { kind: "closing" } },
   ];

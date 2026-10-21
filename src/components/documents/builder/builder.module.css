@@ -240,3 +240,13 @@
   .step { grid-template-columns: minmax(0, 1fr); }
   .responsibleInput { width: 140px; }
 }
+
+/* Fill placeholders dialog: one row per distinct [placeholder]. */
+.placeholderList { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.placeholderRow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 220px) auto; align-items: center; gap: 12px; border-top: 1px solid var(--pc-divider); padding: 12px 0; }
+.placeholderRow:first-child { border-top: 0; padding-top: 0; }
+.placeholderText { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.placeholderName { color: var(--pc-text); font-size: 14px; font-weight: 600; line-height: 1.35; overflow-wrap: anywhere; }
+.placeholderWhere { color: var(--pc-muted); font-size: 12.5px; line-height: 1.4; }
+.placeholderEmpty { margin: 0; color: var(--pc-muted); font-size: 14px; }
+@media (max-width: 640px) { .placeholderRow { grid-template-columns: minmax(0, 1fr) auto; } .placeholderText { grid-column: 1 / -1; } }

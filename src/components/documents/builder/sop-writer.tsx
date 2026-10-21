@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { addSopAppendix } from "@/lib/sop/initial-manual";
 import { useSopBuilder } from "@/lib/sop/store";
 import type { Sop, SopPillar, SopSection } from "@/lib/sop/types";
-import { PILLAR_LABELS, PILLAR_ORDER, sectionHasContent } from "../manual-helpers";
+import { PILLAR_LABELS, PILLAR_ORDER, sectionAnchorId, sectionHasContent } from "../manual-helpers";
 import { useSopBuilderActions } from "./builder-context";
 import { SectionAiActions } from "./section-ai-actions";
 import { SectionBody } from "./section-editors";
@@ -88,6 +88,7 @@ export function SopWriter({ sop }: { sop: Sop }) {
         return (
           <Panel
             key={section.id}
+            id={sectionAnchorId(section.id)}
             className={clsx(writing && !shown && styles.sectionPending)}
             title={<span className={styles.sectionTitle}><span className={styles.sectionNumber}>{number}.0</span><input value={section.title} onChange={(event) => setSection({ ...section, title: event.target.value })} aria-label="Section heading" size={Math.max(6, section.title.length + 1)} className={styles.sectionTitleInput} /></span>}
             actions={
