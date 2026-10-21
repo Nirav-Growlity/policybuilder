@@ -80,6 +80,47 @@ test("system prompt states the house style and British English", () => {
   assert.match(SOP_SYSTEM_PROMPT, /Roles & Responsibilities/);
 });
 
+test("the prompt asks for one compact table where the topic needs a matrix, never a copy of the fixed tables", () => {
+  assert.match(SOP_SYSTEM_PROMPT, /TABLES\n/);
+  assert.match(SOP_SYSTEM_PROMPT, /ONE compact table block in the section or procedure step/);
+  for (const kind of ["escalation matrix", "approval limits", "retention schedule", "waste stream register", "monitoring parameters", "training matrix"]) assert.ok(SOP_SYSTEM_PROMPT.includes(kind), kind);
+  assert.match(SOP_SYSTEM_PROMPT, /3 to 6 short column headings/);
+  assert.match(SOP_SYSTEM_PROMPT, /\[placeholder\]/);
+  assert.match(SOP_SYSTEM_PROMPT, /Never repeat the Definitions, Roles & Responsibilities, Monitoring KPI or Records tables/);
+  assert.match(SOP_SYSTEM_PROMPT, /Text blocks use "columns": \[\] and "rows": \[\]/);
+});
+
+test("the output schema takes a table block in narrative sections, step bodies and monitoring notes", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  const prompt = buildSopPrompt({ type: "sop", manual, sopId: sop.id }, { references: "", imported: "" });
+  const text = (value: string) => ({ type: "paragraph", text: value, columns: [], rows: [] });
+  const table = { type: "table", text: "", columns: ["Severity", "Response time", "Escalate to"], rows: [["High", "[1 hour]", "Plant Head"]] };
+  const answer = {
+    sections: {
+      purpose: [text("To define.")], scope: [text("All sites."), table], definitions: [], responsibilities: [],
+      procedure: [{ heading: "Escalate", responsible: "Supervisor", body: [text("Escalate as follows."), table], substeps: [] }],
+      monitoring: { kpis: [], narrative: [table] }, records: [], references: [], compliance: [text("Consent conditions are met.")], review: [text("Yearly.")],
+    },
+    department: "EHS",
+    owner: "EHS Manager",
+  };
+  assert.equal(prompt.schema.safeParse(answer).success, true);
+  // Every block carries columns and rows (one flat shape, no union in the grammar).
+  const loose = structuredClone(answer);
+  loose.sections.purpose = [{ type: "paragraph", text: "To define." }] as never;
+  assert.equal(prompt.schema.safeParse(loose).success, false);
+});
+
+test("a section's current table is shown to the model marked as a table", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  const scope = sop.sections.find((section) => section.kind === "scope")!;
+  sop.sections = sop.sections.map((section) => (section.id === scope.id ? { ...section, blocks: [{ id: "p", type: "paragraph", text: "Applies to Unit 1." }, { id: "t", type: "table", text: "", columns: ["Site", "Activity"], rows: [["Unit 1", "Dyeing"]] }] } : section));
+  const prompt = buildSopPrompt({ type: "refine", manual, sopId: sop.id, sectionId: scope.id, mode: "shorten" }, { references: "", imported: "" });
+  assert.match(prompt.user, /Applies to Unit 1\.\n\[table\]\n\| Site \| Activity \|\n\| Unit 1 \| Dyeing \|/);
+});
+
 test("manual context is identical for every SOP of a manual, so parallel calls share the cache", () => {
   const manual = sampleManual();
   const sources = { references: "REFERENCE TEXT", imported: "" };

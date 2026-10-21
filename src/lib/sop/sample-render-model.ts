@@ -48,6 +48,20 @@ function recordsBlock(sop: SampleSop, index: number): RenderBlock {
   };
 }
 
+/** A table the writer put inside a procedure step (keyed by SOP code and step index), so previews show one in place. */
+const STEP_TABLES: Record<string, Record<number, RenderBlock>> = {
+  "MTPL-EHS-001": {
+    4: {
+      type: "table", columns: ["Waste stream", "Category", "Bin colour", "Disposal route"], widths: [1, 1, 1, 1],
+      rows: [
+        ["ETP sludge", "Hazardous (35.3)", "Yellow", "Authorised TSDF"],
+        ["Cotton waste and yarn ends", "Non-hazardous", "Blue", "Recycler"],
+        ["Used oil and grease", "Hazardous (5.1)", "Red", "Authorised re-refiner"],
+      ],
+    },
+  },
+};
+
 function sopSections(sop: SampleSop, sopIndex: number): RenderSection[] {
   const sections: Array<Omit<RenderSection, "number">> = [
     { id: "purpose", title: "Purpose", kind: "purpose", blocks: [p(sop.purpose)] },
@@ -71,7 +85,7 @@ function sopSections(sop: SampleSop, sopIndex: number): RenderSection[] {
       steps: sop.procedure.map((step, stepIndex) => ({
         number: `${index + 1}.${stepIndex + 1}`,
         heading: step.heading,
-        body: [p(step.body)],
+        body: [p(step.body), ...(STEP_TABLES[sop.code]?.[stepIndex] ? [STEP_TABLES[sop.code][stepIndex]] : [])],
         responsible: step.responsible,
         substeps: step.substeps.map((text, subIndex) => ({ number: `${index + 1}.${stepIndex + 1}.${subIndex + 1}`, text, responsible: "" })),
       })),

@@ -92,7 +92,8 @@ function renderBlocks(blocks: unknown, indent = ""): string[] {
     if (!block || typeof block !== "object") return [];
     if (block.type === "table" && Array.isArray(block.rows)) {
       const header = Array.isArray(block.columns) && block.columns.length ? [`${indent}| ${block.columns.map(squash).join(" | ")} |`] : [];
-      return [...header, ...block.rows.map((row) => `${indent}| ${(Array.isArray(row) ? row : []).map(squash).join(" | ")} |`)];
+      // Marked so the model can tell a table block from the fixed tables around it and keep it a table.
+      return [`${indent}[table]`, ...header, ...block.rows.map((row) => `${indent}| ${(Array.isArray(row) ? row : []).map(squash).join(" | ")} |`)];
     }
     const lines = String(block.text ?? "").split(/\n+/).map(squash).filter(Boolean);
     if (block.type === "bullets") return lines.map((line) => `${indent}- ${line}`);

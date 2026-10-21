@@ -46,6 +46,12 @@ HOUSE STYLE (learned from the reference manuals)
 - Review & Amendment: one paragraph with the review frequency from the manual control data, the triggers for an earlier review, and who approves changes.
 - Match the length and depth of the reference SOPs when references are given; otherwise write about 900 to 1,300 words for a whole SOP.
 
+TABLES
+- Where the topic needs a matrix, put ONE compact table block in the section or procedure step it belongs to, for example: an escalation matrix with severity, response time and who is informed; approval limits by value band; a record retention schedule; a waste stream register; monitoring parameters with limit, frequency and method; a training matrix by role. Most SOPs need one at most; never add a table only for decoration.
+- A table has 3 to 6 short column headings and short cells (a value, a role or a few words, never full sentences). Every row has one cell per column. Use a [placeholder] for any value that is not in the company facts, such as limits, amounts and response times.
+- Never repeat the Definitions, Roles & Responsibilities, Monitoring KPI or Records tables as a table block; those sections already print as tables.
+- When the current text of a section contains a table (marked [table]), keep it as a table block unless the instruction asks otherwise.
+
 FACTS
 - Use only the company facts provided: name, industry, sites, departments, roles and the SOP register. Never invent sites, headcounts, certifications, incidents, dates, budgets, legal section numbers or numeric legal limits.
 - The manual context may also give a company profile, certifications held, laws and regulators that apply, and key contacts. These are company facts too: use them exactly as given.
@@ -60,7 +66,8 @@ FACTS
 OUTPUT
 - Return only JSON that matches the required schema.
 - Text fields are plain text with no markdown symbols. Do not number headings, steps or substeps yourself; the template numbers them.
-- A "bullets" or "numbered" block holds one item per line in "text". Use an empty string or empty list for a field that does not apply.`;
+- A "bullets" or "numbered" block holds one item per line in "text". Use an empty string or empty list for a field that does not apply.
+- Every block has "columns" and "rows". Text blocks use "columns": [] and "rows": []. A "table" block puts its headings in "columns", one list of cells per row in "rows", and "text": "".`;
 
 /* ------------------------------------------------------------------ */
 /* Manual-wide context (cached)                                        */
@@ -220,7 +227,13 @@ function instructionLine(instruction: string | undefined) {
  * and the model cannot return sections that were not asked for.
  * lib/sop/apply-ai-result.ts maps it back to SopSection objects.
  */
-const wireBlock = z.object({ type: z.enum(["paragraph", "bullets", "numbered"]), text: z.string() });
+// One flat block shape (no union): text blocks send empty columns and rows, a table sends empty text.
+const wireBlock = z.object({
+  type: z.enum(["paragraph", "bullets", "numbered", "table"]),
+  text: z.string(),
+  columns: z.array(z.string()),
+  rows: z.array(z.array(z.string())),
+});
 const wireBlocks = z.array(wireBlock);
 
 const WIRE_SECTION_SCHEMAS: Record<SopSectionKind, z.ZodType> = {

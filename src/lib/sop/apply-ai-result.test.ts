@@ -108,6 +108,11 @@ test("the offline mock answer round-trips through validation and applies to ever
   const writtenProcedure = written.sections.find((section) => section.kind === "procedure") as Extract<SopSection, { kind: "procedure" }>;
   assert.ok(writtenProcedure.steps.length >= 3);
   assert.ok(writtenProcedure.steps.every((step) => step.id && step.id !== procedure.id));
+  // The mock writes an escalation matrix inside a step, as the prompt asks for; it arrives as a table block in place.
+  const escalation = writtenProcedure.steps.flatMap((step) => step.body).find((block) => block.type === "table")!;
+  assert.deepEqual(escalation.columns, ["Severity", "Example", "Response time", "Escalate to"]);
+  assert.equal(escalation.rows!.length, 3);
+  assert.ok(escalation.id);
 
   const refine = { type: "refine" as const, manual, sopId: sop.id, sectionId: procedure.id, mode: "expand" as const };
   const refined = finalizeSopOutput(refine, mockSopOutput(refine));
@@ -123,6 +128,21 @@ test("the offline mock answer round-trips through validation and applies to ever
   // A near-empty SOP is rejected so the queue retries it.
   const stub = JSON.parse(JSON.stringify(mockSopOutput({ type: "sop", manual, sopId: sop.id })), (key, value) => (typeof value === "string" && key !== "type" ? "Short." : value));
   assert.throws(() => finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, stub), /too short/);
+});
+
+test("rewriting a front matter or closing field keeps the writer's tables, after the new text", () => {
+  const manual = manualWithOneSop();
+  const table = { id: "t", type: "table" as const, text: "", columns: ["Trigger", "Action"], rows: [["Change in law", "Review"]] };
+  manual.frontMatter.introduction = [{ id: "a", type: "paragraph", text: "Old." }, table, { id: "b", type: "paragraph", text: "Old too." }];
+  manual.closing.reviewMechanism = [table];
+  const intro = finalizeSopOutput({ type: "manual-field", manual, field: "introduction", mode: "generate" }, { introduction: ["New."] });
+  const next = applyManualFieldResult(manual, intro as Extract<typeof intro, { type: "manual-field" }>);
+  assert.deepEqual(next.frontMatter.introduction.map((block) => block.type), ["paragraph", "table"]);
+  assert.equal(next.frontMatter.introduction[1], table);
+  const closing = applySopAiResult(manual, {}, { type: "closing", reviewMechanism: [{ id: "r", type: "paragraph", text: "Yearly." }], approvalStatement: "Approved." });
+  assert.deepEqual(closing.closing.reviewMechanism.map((block) => block.id), ["r", "t"]);
+  const front = applyFrontMatterResult(manual, { introduction: [], objective: [], benefits: [], coreValues: [], howToUse: [] });
+  assert.deepEqual(front.frontMatter.introduction, [table]);
 });
 
 test("a manual field result replaces only its own field, and the partial text matches the final text", () => {

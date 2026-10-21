@@ -224,8 +224,27 @@ export function partialManualText(partial: unknown, field: ManualAiField): strin
   return value.filter((item): item is string => typeof item === "string").map((item) => item.trim()).filter(Boolean).join("\n\n");
 }
 
+/**
+ * The front matter and closing AI writes paragraphs only and never sees the
+ * field's tables, so the writer's tables stay, after the new text.
+ */
+function withTables(previous: readonly RichTextBlock[], next: RichTextBlock[]): RichTextBlock[] {
+  const tables = previous.filter((block) => block.type === "table");
+  return tables.length ? [...next, ...tables] : next;
+}
+
 export function applyFrontMatterResult(manual: SopManual, frontMatter: Extract<SopAiResult, { type: "front-matter" }>["frontMatter"]): SopManual {
-  return { ...manual, frontMatter: { ...manual.frontMatter, ...frontMatter } };
+  const current = manual.frontMatter;
+  return {
+    ...manual,
+    frontMatter: {
+      ...current,
+      ...frontMatter,
+      introduction: withTables(current.introduction, frontMatter.introduction),
+      objective: withTables(current.objective, frontMatter.objective),
+      howToUse: withTables(current.howToUse, frontMatter.howToUse),
+    },
+  };
 }
 
 /** Replaces one narrative field of the front matter or closing, or the approval statement. */
@@ -233,8 +252,8 @@ export function applyManualFieldResult(manual: SopManual, result: Extract<SopAiR
   if (result.field === "approvalStatement") {
     return { ...manual, closing: { ...manual.closing, approval: { ...manual.closing.approval, statement: result.statement } } };
   }
-  if (result.field === "reviewMechanism") return { ...manual, closing: { ...manual.closing, reviewMechanism: result.blocks } };
-  return { ...manual, frontMatter: { ...manual.frontMatter, [result.field]: result.blocks } as SopManual["frontMatter"] };
+  if (result.field === "reviewMechanism") return { ...manual, closing: { ...manual.closing, reviewMechanism: withTables(manual.closing.reviewMechanism, result.blocks) } };
+  return { ...manual, frontMatter: { ...manual.frontMatter, [result.field]: withTables(manual.frontMatter[result.field], result.blocks) } as SopManual["frontMatter"] };
 }
 
 export function applyClosingResult(manual: SopManual, result: Pick<Extract<SopAiResult, { type: "closing" }>, "reviewMechanism" | "approvalStatement">): SopManual {
@@ -242,7 +261,7 @@ export function applyClosingResult(manual: SopManual, result: Pick<Extract<SopAi
     ...manual,
     closing: {
       ...manual.closing,
-      reviewMechanism: result.reviewMechanism,
+      reviewMechanism: withTables(manual.closing.reviewMechanism, result.reviewMechanism),
       approval: { ...manual.closing.approval, statement: result.approvalStatement },
     },
   };

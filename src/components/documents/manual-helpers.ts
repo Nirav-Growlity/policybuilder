@@ -36,12 +36,12 @@ export function richTextToPlain(blocks: readonly RichTextBlock[] | undefined): s
 /**
  * Parses edited text back into blocks. Paragraphs are separated by a blank
  * line; a paragraph whose lines all start with "-" or "1." becomes a list.
- * Block ids are reused by position so edits do not churn identities, and
- * table blocks from the original are kept after the text.
+ * Block ids are reused by position so edits do not churn identities. Table
+ * blocks from the original keep their place: a table that followed the n-th
+ * text block still follows it (or ends the list when the text got shorter).
  */
 export function plainToRichText(text: string, previous: readonly RichTextBlock[] = []): RichTextBlock[] {
   const textBlocks = previous.filter((block) => block.type !== "table");
-  const tables = previous.filter((block) => block.type === "table");
   const parts = text.replace(/\r\n/g, "\n").split(/\n[ \t]*\n/).map((part) => part.replace(/^\n+|\n+$/g, "")).filter((part) => part.trim());
   const blocks = parts.map((part, index): RichTextBlock => {
     const lines = part.split("\n").filter((line) => line.trim());
@@ -50,7 +50,57 @@ export function plainToRichText(text: string, previous: readonly RichTextBlock[]
       : "paragraph";
     return { id: textBlocks[index]?.id ?? createSopId("block"), type, text: type === "paragraph" ? part : lines.join("\n") };
   });
-  return [...blocks, ...tables];
+  // How many text blocks came before each table in the original.
+  let seen = 0;
+  const tables: Array<{ before: number; block: RichTextBlock }> = [];
+  for (const block of previous) {
+    if (block.type === "table") tables.push({ before: seen, block });
+    else seen += 1;
+  }
+  if (!tables.length) return blocks;
+  const out: RichTextBlock[] = [];
+  blocks.forEach((block, index) => {
+    out.push(...tables.filter((table) => table.before === index).map((table) => table.block));
+    out.push(block);
+  });
+  out.push(...tables.filter((table) => table.before >= blocks.length).map((table) => table.block));
+  return out;
+}
+
+/** A run of text blocks edited as one textarea, or one table block. `start` is its index in the field. */
+export type NarrativeSegment =
+  | { type: "text"; start: number; blocks: RichTextBlock[] }
+  | { type: "table"; start: number; block: RichTextBlock };
+
+/**
+ * A narrative field as the writer edits it, in block order: each run of
+ * consecutive text blocks is one segment, each table its own. An empty field
+ * is one empty text segment.
+ */
+export function narrativeSegments(blocks: readonly RichTextBlock[]): NarrativeSegment[] {
+  const segments: NarrativeSegment[] = [];
+  blocks.forEach((block, index) => {
+    if (block.type === "table") { segments.push({ type: "table", start: index, block }); return; }
+    const last = segments.at(-1);
+    if (last?.type === "text") last.blocks.push(block);
+    else segments.push({ type: "text", start: index, blocks: [block] });
+  });
+  return segments.length ? segments : [{ type: "text", start: 0, blocks: [] }];
+}
+
+/** Replaces `count` blocks from `start` with `next`. */
+export function spliceBlocks(blocks: readonly RichTextBlock[], start: number, count: number, next: readonly RichTextBlock[]): RichTextBlock[] {
+  return [...blocks.slice(0, start), ...next, ...blocks.slice(start + count)];
+}
+
+/** A small empty table for the writer to fill: headings show placeholders until typed. */
+export function createTableBlock(columns = 2, rows = 2): RichTextBlock {
+  return { id: createSopId("block"), type: "table", text: "", columns: Array.from({ length: columns }, () => ""), rows: Array.from({ length: rows }, () => Array.from({ length: columns }, () => "")) };
+}
+
+/** True when a table block has no heading or cell text at all. */
+export function isEmptyTable(block: RichTextBlock): boolean {
+  return block.type === "table" && ![...(block.columns ?? []), ...(block.rows ?? []).flat()].some((cell) => cell.trim());
 }
 
 /* ------------------------------------------------------------------ */
@@ -66,7 +116,7 @@ export function sectionHasContent(section: SopSection): boolean {
     case "procedure":
       return section.steps.length > 0;
     case "monitoring":
-      return section.kpis.length > 0 || section.narrative.some((block) => block.text.trim());
+      return section.kpis.length > 0 || section.narrative.some((block) => block.text.trim() || (block.rows?.length ?? 0) > 0);
     case "references":
       return section.items.some((item) => item.trim());
     default:
@@ -321,6 +371,59 @@ export type ReadinessTarget =
 
 export type ReadinessCheck = { id: string; label: string; detail: string; ok: boolean; fix?: ReadinessTarget };
 
+/**
+ * Square-bracket placeholders the AI leaves for unknown values, such as
+ * "[consented discharge limit]". Empty brackets, single characters ("[x]")
+ * and numeric citations ("[1]", "[2, 3]", "[4-6]") are not placeholders.
+ */
+const PLACEHOLDER = /\[([^[\]\n]{2,120})\]/g;
+
+export function findPlaceholders(text: string): string[] {
+  return [...text.matchAll(PLACEHOLDER)].filter((match) => /\p{L}/u.test(match[1]) && match[1].trim().length >= 2).map((match) => match[0]);
+}
+
+export type PlaceholderHit = { text: string; where: string; target: ReadinessTarget };
+
+function blockTexts(blocks: readonly RichTextBlock[] | undefined): string[] {
+  return (blocks ?? []).flatMap((block) => [block.text, ...(block.columns ?? []), ...(block.rows ?? []).flat()]);
+}
+
+function sectionTexts(section: SopSection): string[] {
+  switch (section.kind) {
+    case "definitions": return section.rows.flatMap((row) => [row.term, row.definition]);
+    case "responsibilities": return section.rows.flatMap((row) => [row.role, ...row.responsibilities]);
+    case "procedure": return section.steps.flatMap((step) => [step.heading, step.responsible ?? "", ...blockTexts(step.body), ...(step.substeps ?? []).flatMap((sub) => [sub.text, sub.responsible ?? ""])]);
+    case "monitoring": return [...section.kpis.flatMap((kpi) => [kpi.indicator, kpi.target, kpi.frequency, kpi.owner]), ...blockTexts(section.narrative)];
+    case "records": return section.rows.flatMap((row) => [row.record, row.owner, row.retention, row.format]);
+    case "references": return section.items;
+    default: return blockTexts(section.blocks);
+  }
+}
+
+/** Every placeholder left in the front matter, the enabled SOPs (in rail order) and the closing, in reading order. */
+export function manualPlaceholders(manual: SopManual): PlaceholderHit[] {
+  const hits: PlaceholderHit[] = [];
+  const collect = (texts: readonly string[], where: string, target: ReadinessTarget) => {
+    for (const text of texts) for (const found of findPlaceholders(text ?? "")) hits.push({ text: found, where, target });
+  };
+  const front = manual.frontMatter;
+  collect([
+    ...blockTexts(front.introduction), ...blockTexts(front.objective), ...front.benefits,
+    ...front.coreValues.flatMap((value) => [value.title, value.description]),
+    ...blockTexts(front.howToUse), ...front.glossary.flatMap((row) => [row.term, row.definition]),
+  ], "Front matter", { kind: "front" });
+  for (const sop of outlineOrder({ ...manual, sops: enabledSops(manual) })) {
+    const name = [sop.code.trim(), sop.title.trim()].filter(Boolean).join(" ") || "Untitled SOP";
+    for (const section of sop.sections.filter((item) => item.enabled)) collect(sectionTexts(section), `${name}, ${section.title.trim() || "section"}`, { kind: "sop", sopId: sop.id });
+  }
+  const closing = manual.closing;
+  collect([
+    ...blockTexts(closing.reviewMechanism), ...closing.revisionHistory.map((entry) => entry.description),
+    closing.approval.statement, ...closing.approval.signatories.flatMap((signatory) => [signatory.role, signatory.name, signatory.designation]),
+  ], "Closing", { kind: "closing" });
+  return hits;
+}
+
 export function readinessChecks(manual: SopManual): ReadinessCheck[] {
   const sops = enabledSops(manual);
   const unwritten = sops.filter((sop) => !isSopWritten(sop));
@@ -334,6 +437,7 @@ export function readinessChecks(manual: SopManual): ReadinessCheck[] {
   const front = manual.frontMatter;
   const plural = (count: number, noun: string) => `${count} ${noun}${count === 1 ? "" : "s"}`;
   const contacts = reachableContacts(companyFacts(manual));
+  const placeholders = manualPlaceholders(manual);
   return [
     { id: "company", label: "Company and approver", ok: Boolean(manual.company.name.trim() && manual.control.approvedBy.trim()), detail: manual.company.name.trim() && manual.control.approvedBy.trim() ? `${manual.company.name}, approved by ${manual.control.approvedBy}` : "Add the company name and who approves the manual.", fix: { kind: "details" } },
     { id: "control", label: "Document control", ok: Boolean(manual.control.docNo.trim() && manual.control.effectiveDate), detail: manual.control.docNo.trim() && manual.control.effectiveDate ? `${manual.control.docNo}, Rev ${manual.control.revision || "01"}` : "Add a document number and an effective date.", fix: { kind: "details" } },
@@ -342,6 +446,7 @@ export function readinessChecks(manual: SopManual): ReadinessCheck[] {
     { id: "procedure", label: "Every SOP has a procedure", ok: emptyProcedure.length === 0, detail: emptyProcedure.length ? `${plural(emptyProcedure.length, "SOP")} without procedure steps.` : "Each SOP lists its steps.", fix: emptyProcedure[0] ? { kind: "sop", sopId: emptyProcedure[0].id } : undefined },
     { id: "owners", label: "Owners and departments", ok: missingOwner.length === 0, detail: missingOwner.length ? `${plural(missingOwner.length, "SOP")} without an owner or department.` : "Every SOP has an owner.", fix: missingOwner[0] ? { kind: "sop", sopId: missingOwner[0].id } : undefined },
     { id: "codes", label: "Unique SOP codes", ok: duplicateCodes.length === 0 && codes.length === sops.length, detail: duplicateCodes.length ? `${duplicateCodes[0]} is used more than once.` : codes.length < sops.length ? "Some SOPs have no code." : "Codes are unique.", fix: (() => { const sop = sops.find((item) => !item.code.trim() || duplicateCodes.includes(item.code.trim())); return sop ? { kind: "sop" as const, sopId: sop.id } : undefined; })() },
+    { id: "placeholders", label: "Placeholders to fill", ok: placeholders.length === 0, detail: placeholders.length ? `${plural(placeholders.length, "placeholder")} still to replace. First: ${placeholders[0].text} in ${placeholders[0].where}.` : "No [bracketed] placeholders left.", fix: placeholders[0]?.target },
     { id: "front", label: "Introduction", ok: front.introduction.some((block) => block.text.trim()), detail: front.introduction.some((block) => block.text.trim()) ? "Introduction written." : "The manual has no introduction yet.", fix: { kind: "front" } },
     { id: "closing", label: "Approval statement", ok: Boolean(manual.closing.approval.statement.trim()), detail: manual.closing.approval.statement.trim() ? "Approval statement written." : "Add the approval statement for the closing page.", fix: { kind: "closing" } },
   ];
