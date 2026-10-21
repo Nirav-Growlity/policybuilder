@@ -38,11 +38,16 @@ export function manualFieldRequest(action: SectionAiAction, manual: SopManual, f
   }
 }
 
-/** Text written so far, read from a partial section or front matter object. */
+/**
+ * Text written so far. Reads the model's streamed shape, where the one section
+ * is keyed by kind under `sections` (blocks, or `{ narrative }` for
+ * monitoring), and the final result's `section`.
+ */
 export function partialText(partial: unknown): string {
   if (!partial || typeof partial !== "object") return "";
   const record = partial as Record<string, unknown>;
-  const holder = (record.section && typeof record.section === "object" ? record.section : record) as Record<string, unknown>;
+  const streamed = record.sections && typeof record.sections === "object" ? Object.values(record.sections as Record<string, unknown>)[0] : undefined;
+  const holder = (Array.isArray(streamed) ? { blocks: streamed } : streamed && typeof streamed === "object" ? streamed : record.section && typeof record.section === "object" ? record.section : record) as Record<string, unknown>;
   const blocks = Array.isArray(holder.blocks) ? holder.blocks : Array.isArray(holder.narrative) ? holder.narrative : [];
   return blocks.map((block) => (block && typeof block === "object" && typeof (block as { text?: unknown }).text === "string" ? (block as { text: string }).text : "")).filter(Boolean).join("\n\n");
 }

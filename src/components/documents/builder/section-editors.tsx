@@ -7,10 +7,11 @@ import { clsx } from "clsx";
 import { AutosizeTextarea, WritingField, authoring as ui, itemEnter } from "@/components/builder/steps/authoring-ui";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { StreamField } from "@/components/ui/ai-stream";
 import type { TextReveal } from "@/lib/ai/text-reveal";
 import type { RichTextBlock } from "@/lib/types";
 import { createSopId } from "@/lib/sop/initial-manual";
-import type { SopProcedureStep, SopSection } from "@/lib/sop/types";
+import type { SopDefinitionRow, SopKpi, SopProcedureStep, SopRecordRow, SopResponsibilityRow, SopSection } from "@/lib/sop/types";
 import { arrayMove, createTableBlock, narrativeSegments, plainToRichText, richTextToPlain, spliceBlocks } from "../manual-helpers";
 import styles from "./builder.module.css";
 
@@ -388,6 +389,11 @@ function StepBody({ step, index, sectionNumber, update }: { step: SopProcedureSt
   );
 }
 
+const DEFINITION_COLUMNS: ColumnSpec<SopDefinitionRow>[] = [{ key: "term", label: "Term", width: "28%", placeholder: "Term" }, { key: "definition", label: "Definition", width: "auto", placeholder: "What it means in this SOP" }];
+const RESPONSIBILITY_COLUMNS: ColumnSpec<SopResponsibilityRow>[] = [{ key: "role", label: "Role", width: "28%", placeholder: "e.g. EHS Manager" }, { key: "responsibilities", label: "Responsibilities (one per line)", width: "auto", placeholder: "One responsibility per line", lines: true }];
+const KPI_COLUMNS: ColumnSpec<SopKpi>[] = [{ key: "indicator", label: "Indicator", width: "36%", placeholder: "What is measured" }, { key: "target", label: "Target", width: "18%", placeholder: "e.g. 100%" }, { key: "frequency", label: "Frequency", width: "18%", placeholder: "Monthly" }, { key: "owner", label: "Owner", width: "auto", placeholder: "Role" }];
+const RECORD_COLUMNS: ColumnSpec<SopRecordRow>[] = [{ key: "code", label: "Form / record no.", width: "16%", placeholder: "Optional" }, { key: "record", label: "Record", width: "30%", placeholder: "e.g. Waste manifest register" }, { key: "owner", label: "Owner", width: "18%", placeholder: "Role" }, { key: "retention", label: "Retention", width: "14%", placeholder: "3 years" }, { key: "format", label: "Format", width: "auto", placeholder: "Electronic" }];
+
 /** The editor for one section's content, chosen by its kind. */
 export function SectionBody({ section, onChange, sectionNumber, busy, stream }: {
   section: SopSection;
@@ -408,23 +414,114 @@ export function SectionBody({ section, onChange, sectionNumber, busy, stream }: 
     case "appendix":
       return <NarrativeField blocks={section.blocks} onChange={(blocks) => onChange({ ...section, blocks })} label={section.title} busy={busy} stream={stream} placeholder={NARRATIVE_HINTS[section.kind]} />;
     case "definitions":
-      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ term: "", definition: "" })} addLabel="Add term" columns={[{ key: "term", label: "Term", width: "28%", placeholder: "Term" }, { key: "definition", label: "Definition", width: "auto", placeholder: "What it means in this SOP" }]} />;
+      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ term: "", definition: "" })} addLabel="Add term" columns={DEFINITION_COLUMNS} />;
     case "responsibilities":
-      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ role: "", responsibilities: [] })} addLabel="Add role" columns={[{ key: "role", label: "Role", width: "28%", placeholder: "e.g. EHS Manager" }, { key: "responsibilities", label: "Responsibilities (one per line)", width: "auto", placeholder: "One responsibility per line", lines: true }]} />;
+      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ role: "", responsibilities: [] })} addLabel="Add role" columns={RESPONSIBILITY_COLUMNS} />;
     case "procedure":
       return <ProcedureEditor steps={section.steps} onChange={(steps) => onChange({ ...section, steps })} sectionNumber={sectionNumber} />;
     case "monitoring":
       return (
         <div className={styles.stack}>
-          <RowsTable caption="Key performance indicators" rows={section.kpis} onChange={(kpis) => onChange({ ...section, kpis })} newRow={() => ({ indicator: "", target: "", frequency: "", owner: "" })} addLabel="Add KPI" columns={[{ key: "indicator", label: "Indicator", width: "36%", placeholder: "What is measured" }, { key: "target", label: "Target", width: "18%", placeholder: "e.g. 100%" }, { key: "frequency", label: "Frequency", width: "18%", placeholder: "Monthly" }, { key: "owner", label: "Owner", width: "auto", placeholder: "Role" }]} />
+          <RowsTable caption="Key performance indicators" rows={section.kpis} onChange={(kpis) => onChange({ ...section, kpis })} newRow={() => ({ indicator: "", target: "", frequency: "", owner: "" })} addLabel="Add KPI" columns={KPI_COLUMNS} />
           <NarrativeField blocks={section.narrative} onChange={(narrative) => onChange({ ...section, narrative })} label={`${section.title} notes`} placeholder="How results are reviewed and what happens when a target is missed (optional)." busy={busy} stream={stream} />
         </div>
       );
     case "records":
-      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ code: "", record: "", owner: "", retention: "", format: "" })} addLabel="Add record" columns={[{ key: "code", label: "Form / record no.", width: "16%", placeholder: "Optional" }, { key: "record", label: "Record", width: "30%", placeholder: "e.g. Waste manifest register" }, { key: "owner", label: "Owner", width: "18%", placeholder: "Role" }, { key: "retention", label: "Retention", width: "14%", placeholder: "3 years" }, { key: "format", label: "Format", width: "auto", placeholder: "Electronic" }]} />;
+      return <RowsTable caption={section.title} rows={section.rows} onChange={(rows) => onChange({ ...section, rows })} newRow={() => ({ code: "", record: "", owner: "", retention: "", format: "" })} addLabel="Add record" columns={RECORD_COLUMNS} />;
     case "references":
       return <LinesField lines={section.items} onChange={(items) => onChange({ ...section, items })} label={section.title} placeholder={"One reference per line, e.g.\nISO 14001:2015 Clause 8.1\nHazardous Waste Rules, 2016"} className={clsx(ui.writing, styles.linesWriting)} />;
   }
+}
+
+/**
+ * A table, procedure or list section while the whole SOP is written: the same
+ * layout as its editor, with words settling in and the caret on the field
+ * being written. `section` is the part typed so far.
+ */
+export function StreamingSectionBody({ section, sectionNumber }: { section: SopSection; sectionNumber: number }) {
+  // Two passes over the same layout: the first finds the last field with text, which carries the caret.
+  let count = 0;
+  let active = -1;
+  const draw = (measure: boolean) => {
+    count = 0;
+    const field = (text: string, className?: string) => {
+      const index = count++;
+      if (measure) {
+        if (text) active = index;
+        return null;
+      }
+      return <StreamField text={text} writing={index === active} className={clsx(ui.streamCell, className)} />;
+    };
+    const table = <Row extends Record<string, unknown>>(rows: Row[], columns: ColumnSpec<Row>[], caption: string) => (
+      <div className={styles.rowsTable}>
+        <div className={ui.tableWrap}>
+          <table className={clsx(ui.table, styles.table)} aria-busy="true">
+            <caption className="sr-only">{caption}</caption>
+            <colgroup>{columns.map((column) => <col key={column.key} style={{ width: column.width }} />)}<col style={{ width: 52 }} /></colgroup>
+            <thead><tr>{columns.map((column) => <th key={column.key} scope="col">{column.label}</th>)}<th><span className="sr-only">Actions</span></th></tr></thead>
+            <tbody>
+              {rows.map((row, index) => (
+                <motion.tr key={index} className={ui.tableRow} {...itemEnter}>
+                  {columns.map((column) => {
+                    const value = row[column.key];
+                    return <td key={column.key}>{field(Array.isArray(value) ? value.join("\n") : String(value ?? ""), ui.cellText)}</td>;
+                  })}
+                  <td />
+                </motion.tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+    switch (section.kind) {
+      case "definitions": return table(section.rows, DEFINITION_COLUMNS, section.title);
+      case "responsibilities": return table(section.rows, RESPONSIBILITY_COLUMNS, section.title);
+      case "records": return table(section.rows, RECORD_COLUMNS, section.title);
+      case "monitoring":
+        return (
+          <div className={styles.stack}>
+            {table(section.kpis, KPI_COLUMNS, "Key performance indicators")}
+            {section.narrative.length ? field(richTextToPlain(section.narrative), ui.writing) : null}
+          </div>
+        );
+      case "references":
+        return field(section.items.join("\n"), clsx(ui.writing, styles.linesWriting));
+      case "procedure":
+        return (
+          <div className={styles.procedure}>
+            <ol className={styles.steps}>
+              {section.steps.map((step, index) => (
+                <motion.li key={step.id} {...itemEnter} className={styles.step} aria-busy="true">
+                  <div className={styles.stepRail}><span className={styles.stepNumber}>{sectionNumber}.{index + 1}</span></div>
+                  <div className={styles.stepBody}>
+                    <div className={styles.stepHead}>
+                      {field(step.heading, styles.stepHeading)}
+                      {step.responsible ? <span className={styles.responsible}><span>Responsible</span>{field(step.responsible)}</span> : null}
+                    </div>
+                    {step.body.length ? field(richTextToPlain(step.body), ui.cellText) : null}
+                    {(step.substeps ?? []).length ? (
+                      <ol className={styles.substeps}>
+                        {(step.substeps ?? []).map((substep, subIndex) => (
+                          <li key={substep.id} className={styles.substep}>
+                            <span className={styles.substepNumber}>{sectionNumber}.{index + 1}.{subIndex + 1}</span>
+                            {field(substep.text, ui.cellText)}
+                          </li>
+                        ))}
+                      </ol>
+                    ) : null}
+                  </div>
+                </motion.li>
+              ))}
+            </ol>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+  draw(true);
+  return draw(false);
 }
 
 const NARRATIVE_HINTS: Partial<Record<SopSection["kind"], string>> = {

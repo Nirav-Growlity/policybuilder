@@ -72,30 +72,3 @@ export function editDirective(edit: AIEdit, current: string): string {
 export function editPromptBody(edit: AIEdit, label: string, current: string) {
   return `CURRENT ${label.toUpperCase()}:\n"""\n${current}\n"""\n\nEDIT: ${editDirective(edit, current)}\nReturn only the edited ${label}. Do not add new points beside it.`;
 }
-
-/** Keeps whole sentences until the word limit; always keeps the first one. */
-function shortenLocally(text: string) {
-  const limit = shortenLimit(text);
-  const sentences = text.match(/[^.!?]+[.!?]+(\s+|$)/g) ?? [text];
-  let kept = "";
-  for (const sentence of sentences) {
-    if (kept && words(kept + sentence) > limit) break;
-    kept += sentence;
-  }
-  return kept.trim();
-}
-
-/**
- * The offline answer to an edit, used without an API key. A rewrite falls back
- * to the normal mock text for that section, passed in as `fresh`.
- */
-export function mockEdit(ctx: AIContext & { edit: AIEdit }, fresh: () => AIResponse): AIResponse {
-  const current = editSourceText(ctx.existingContent);
-  if (ctx.edit.action === "rewrite" && isEditableTextType(ctx.type)) return fresh();
-  const text = ctx.edit.action === "shorten" ? shortenLocally(current) : current;
-  if (ctx.type === "qualitative") return { source: "mock", objectives: [text] };
-  if (ctx.type === "quantitative-refine" && ctx.existingContent && typeof ctx.existingContent === "object") {
-    return { source: "mock", targets: [{ ...(ctx.existingContent as NonNullable<AIResponse["targets"]>[number]), target: text }] };
-  }
-  return { source: "mock", text };
-}

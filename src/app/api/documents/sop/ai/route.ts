@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { ClaudeContextTooLargeError, ClaudeRefusalError } from "@/lib/ai/claude";
+import { ClaudeContextTooLargeError, ClaudeKeyMissingError, ClaudeRefusalError, hasClaudeKey } from "@/lib/ai/claude";
 import { parseSopAiRequest, runSopGeneration, SopOutputError } from "@/lib/ai/sop-generation";
 import { getManual } from "@/lib/manual-repository";
 import { MAX_MANUAL_JSON_BYTES, resolveManualAuth } from "@/lib/manual-request";
@@ -11,12 +11,10 @@ export const runtime = "nodejs";
 
 const NDJSON = "application/x-ndjson";
 
-/** Mock deltas arrive at about the pace of the model, so the offline UI feels the same. */
-const MOCK_DELAY_MS = 12;
-
 function errorMessage(error: unknown): string {
   if (error instanceof ClaudeRefusalError) return "This content could not be generated. Try rephrasing the instruction.";
   if (error instanceof SopOutputError) return error.message;
+  if (error instanceof ClaudeKeyMissingError) return error.message;
   if (error instanceof ClaudeContextTooLargeError) return "This manual is too large to send to the AI in one request.";
   return "Generation failed. Please try again.";
 }
@@ -35,6 +33,7 @@ export async function POST(request: Request) {
   if (!manualId) return NextResponse.json({ error: "manualId is required." }, { status: 400 });
   const resolved = await resolveManualAuth(request, { manualId, operation: "write" });
   if ("response" in resolved) return resolved.response;
+  if (!hasClaudeKey()) return NextResponse.json({ error: new ClaudeKeyMissingError().message }, { status: 503 });
 
   const raw = await request.text();
   if (raw.length > MAX_MANUAL_JSON_BYTES) return NextResponse.json({ error: "Manual is too large." }, { status: 413 });
@@ -73,7 +72,6 @@ export async function POST(request: Request) {
         const run = await runSopGeneration(parsed.request, {
           importedContext,
           signal,
-          mockDelayMs: MOCK_DELAY_MS,
           onDelta: (delta) => send({ delta }),
         });
         if (!signal.aborted) send({ done: true, result: run.result });

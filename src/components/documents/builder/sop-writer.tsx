@@ -8,15 +8,39 @@ import { Panel } from "@/components/ui/panel";
 import { Field, Input } from "@/components/ui/input";
 import { SelectMenu } from "@/components/ui/select-menu";
 import { Button } from "@/components/ui/button";
+import { useRevealText } from "@/components/ui/ai-stream";
+import { createTextReveal, type TextReveal } from "@/lib/ai/text-reveal";
 import { addSopAppendix } from "@/lib/sop/initial-manual";
 import { useSopBuilder } from "@/lib/sop/store";
 import type { Sop, SopPillar, SopSection } from "@/lib/sop/types";
-import { PILLAR_LABELS, PILLAR_ORDER, sectionAnchorId, sectionHasContent } from "../manual-helpers";
+import { PILLAR_LABELS, PILLAR_ORDER, richTextToPlain, sectionAnchorId, sectionHasContent, typedSoFar, writtenText } from "../manual-helpers";
 import { useSopBuilderActions } from "./builder-context";
 import { SectionAiActions } from "./section-ai-actions";
-import { SectionBody } from "./section-editors";
+import { SectionBody, StreamingSectionBody } from "./section-editors";
 import { useSectionAi } from "./use-section-ai";
 import styles from "./builder.module.css";
+
+/** A table, procedure or list section typing in as the AI writes it, inside its usual editor. */
+function TypingSectionBody({ section, sectionNumber, reveal }: { section: SopSection; sectionNumber: number; reveal: TextReveal }) {
+  const typed = useRevealText(reveal).length;
+  return <StreamingSectionBody section={typedSoFar(section, { left: typed })} sectionNumber={sectionNumber} />;
+}
+
+/**
+ * While the whole SOP is written, the section being written streams its words
+ * in, as a single-section AI edit does. A new reveal starts for each section.
+ */
+function useLiveReveal(key: string | undefined, text: string) {
+  const [reveal, setReveal] = React.useState<TextReveal>();
+  React.useEffect(() => {
+    if (!key) { setReveal(undefined); return; }
+    const next = createTextReveal();
+    setReveal(next);
+    return () => next.dispose();
+  }, [key]);
+  React.useEffect(() => { reveal?.set(text); }, [reveal, text]);
+  return key ? reveal : undefined;
+}
 
 /** One SOP in Write mode: its header facts, then every section as a sheet. */
 export function SopWriter({ sop }: { sop: Sop }) {
@@ -27,6 +51,11 @@ export function SopWriter({ sop }: { sop: Sop }) {
   const writing = generation?.status === "writing" || generation?.status === "queued";
   const partial = writing ? generation?.partialSections : undefined;
   const failed = generation?.status === "failed";
+  // Sections arrive in the order the AI writes them, so the last one is still being written.
+  const current = partial?.at(-1);
+  // Prose types in word by word; tables, steps and lists type into their cells.
+  const prose = current && "blocks" in current ? current : undefined;
+  const live = useLiveReveal(current?.kind, prose ? richTextToPlain(prose.blocks) : current ? writtenText(current) : "");
   const enabledSections = sop.sections.filter((section) => section.enabled);
   const empty = !sop.sections.some((section) => section.enabled && sectionHasContent(section));
 
@@ -101,7 +130,9 @@ export function SopWriter({ sop }: { sop: Sop }) {
               </>
             }
           >
-            <SectionBody section={display} sectionNumber={number} onChange={setSection} busy={busy} stream={ai.reveal(sop.id, section.id)} />
+            {live && shown && shown === current && !prose && !busy
+              ? <TypingSectionBody section={display} sectionNumber={number} reveal={live} />
+              : <SectionBody section={display} sectionNumber={number} onChange={setSection} busy={busy} stream={ai.reveal(sop.id, section.id) ?? (live && shown && shown === prose ? live : undefined)} />}
           </Panel>
         );
       })}

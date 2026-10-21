@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { mockGenerate } from "@/lib/ai/mock";
 import { parseRequestedCount, type AIContext } from "@/lib/ai/prompts";
 import { buildTemplateContext } from "@/lib/ai/template-context";
 import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
@@ -8,6 +7,7 @@ import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQ
 import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
 import { getCompanyClassificationContext } from "@/lib/company-classification";
 import {
+  ClaudeKeyMissingError,
   ClaudeRefusalError,
   cleanJsonText,
   createClaudeText,
@@ -222,6 +222,7 @@ export async function POST(req: NextRequest) {
     throw error;
   }
   if (!access.auth) return access.response || NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!hasClaudeKey()) return NextResponse.json({ error: new ClaudeKeyMissingError().message }, { status: 503 });
 
   let ctx: AIContext;
   try {
@@ -241,16 +242,13 @@ export async function POST(req: NextRequest) {
 
   if (streaming) return streamGeneration(ctx, req.signal);
 
-  if (!hasClaudeKey()) {
-    return NextResponse.json(mockGenerate(ctx));
-  }
-
   try {
     const { text } = await createClaudeText(toClaudeRequest(ctx), req.signal);
     return NextResponse.json(finalizeModelOutput(text, ctx));
   } catch (e) {
+    if (e instanceof ClaudeRefusalError) return NextResponse.json({ error: "This section could not be generated. Try rephrasing the instruction." }, { status: 422 });
     console.error("AI route failed", e);
-    return NextResponse.json(mockGenerate(ctx));
+    return NextResponse.json({ error: "Generation failed. Please try again." }, { status: 502 });
   }
 }
 
@@ -285,8 +283,7 @@ type StreamEvent = { delta: string } | { done: true; result: unknown } | { error
 /**
  * Streams a generation as newline-delimited JSON: `delta` events carry the
  * model's raw JSON text as it arrives, and one `done` event carries the final,
- * normalised result. Without an API key the mock answer is streamed the same
- * way so the writing experience matches.
+ * normalised result, or one `error` event.
  */
 function streamGeneration(ctx: AIContext, signal: AbortSignal) {
   const encoder = new TextEncoder();
@@ -296,8 +293,7 @@ function streamGeneration(ctx: AIContext, signal: AbortSignal) {
         if (!signal.aborted) controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`));
       };
       try {
-        if (hasClaudeKey() && await streamFromClaude(ctx, signal, send)) return;
-        await streamMock(ctx, signal, send);
+        await streamFromClaude(ctx, signal, send);
       } catch (error) {
         if (!signal.aborted) {
           console.error("AI stream failed", error);
@@ -317,46 +313,17 @@ function streamGeneration(ctx: AIContext, signal: AbortSignal) {
   });
 }
 
-/**
- * Returns false when Claude fails before any text arrives, so the caller can
- * fall back to the mock answer. A refusal or failure mid-stream is reported
- * as an error event instead, because the client already shows partial text.
- */
+/** A refusal becomes its own message; other failures go to the caller as a generic error event. */
 async function streamFromClaude(ctx: AIContext, signal: AbortSignal, send: (event: StreamEvent) => void) {
-  let sentText = false;
   try {
-    const { text } = await streamClaudeText(toClaudeRequest(ctx), (delta) => {
-      sentText = true;
-      send({ delta });
-    }, signal);
+    const { text } = await streamClaudeText(toClaudeRequest(ctx), (delta) => send({ delta }), signal);
     send({ done: true, result: finalizeModelOutput(text, ctx) });
-    return true;
   } catch (error) {
-    if (signal.aborted) return true;
+    if (signal.aborted) return;
     if (error instanceof ClaudeRefusalError) {
       send({ error: "This section could not be generated. Try rephrasing the instruction." });
-      return true;
+      return;
     }
-    console.error("Claude error", error);
-    if (sentText) throw error;
-    return false;
+    throw error;
   }
-}
-
-const pause = (ms: number, signal: AbortSignal) => new Promise<void>((resolve) => {
-  const timer = setTimeout(resolve, ms);
-  signal.addEventListener("abort", () => { clearTimeout(timer); resolve(); }, { once: true });
-});
-
-/** Streams the mock answer in word-sized pieces at a model-like pace. */
-async function streamMock(ctx: AIContext, signal: AbortSignal, send: (event: StreamEvent) => void) {
-  const result = mockGenerate(ctx);
-  const pieces = JSON.stringify(result).match(/\s*\S{1,7}/g) ?? [];
-  await pause(450, signal);
-  for (const piece of pieces) {
-    if (signal.aborted) return;
-    send({ delta: piece });
-    await pause(16 + Math.random() * 34, signal);
-  }
-  send({ done: true, result });
 }

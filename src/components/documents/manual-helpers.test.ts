@@ -335,3 +335,20 @@ test("the manual name is its own title when set, else the company name", () => {
   assert.equal(manualTitle({ ...manual, control: { ...manual.control, title: " ESG SOP Manual " } }), "ESG SOP Manual");
   assert.equal(manualTitle({ company: { ...manual.company, name: "" } }), "SOP Manual");
 });
+
+test("section AI reads text from the streamed shape and from the final result", async () => {
+  const { partialText } = await import("./builder/use-section-ai");
+  assert.equal(partialText({ sections: { scope: [{ type: "paragraph", text: "This SOP applies" }] } }), "This SOP applies");
+  assert.equal(partialText({ sections: { monitoring: { kpis: [], narrative: [{ type: "paragraph", text: "Reviewed monthly." }] } } }), "Reviewed monthly.");
+  assert.equal(partialText({ type: "sop-section", section: { kind: "scope", blocks: [{ type: "paragraph", text: "One." }, { type: "paragraph", text: "Two." }] } }), "One.\n\nTwo.");
+  assert.equal(partialText({ sections: {} }), "");
+});
+
+test("a streaming table section types in cell by cell and leaves out rows not reached", async () => {
+  const { typedSoFar, writtenText } = await import("./manual-helpers");
+  const section = { id: "s1", kind: "definitions", title: "Definitions", enabled: true, rows: [{ term: "EHS", definition: "Safety" }, { term: "PPE", definition: "Gear" }] };
+  assert.equal(writtenText(section), "EHSSafetyPPEGear");
+  assert.deepEqual(typedSoFar(section, { left: 5 }), { ...section, rows: [{ term: "EHS", definition: "Sa" }] });
+  assert.deepEqual(typedSoFar(section, { left: 0 }), { ...section, rows: [] });
+  assert.deepEqual(typedSoFar(section, { left: 99 }), section);
+});

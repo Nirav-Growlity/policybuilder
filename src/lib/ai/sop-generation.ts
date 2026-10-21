@@ -1,8 +1,8 @@
 /**
  * Server-side core of the SOP AI route: validates a request, builds the
  * prompt, streams Claude's structured JSON and turns it into a SopAiResult.
- * Without an API key a deterministic mock answer is used so the UI works
- * offline. Kept outside the route file so scripts and tests can call it.
+ * Without an API key it throws ClaudeKeyMissingError. Kept outside the
+ * route file so scripts and tests can call it.
  */
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import type Anthropic from "@anthropic-ai/sdk";
@@ -16,7 +16,7 @@ import { createSopId } from "../sop/initial-manual";
 import { sopManualSchema, type GeneratedSopSection } from "../sop/schema";
 import type { RichTextBlock } from "../types";
 import type { Sop, SopManual, SopSection } from "../sop/types";
-import { cleanJsonText, hasClaudeKey, streamClaudeText } from "./claude";
+import { ClaudeKeyMissingError, cleanJsonText, hasClaudeKey, streamClaudeText } from "./claude";
 import {
   buildSopPrompt,
   closingOutputSchema,
@@ -401,7 +401,7 @@ export function mockSopOutput(request: SopAiRequest): unknown {
 
 export type SopGenerationRun = {
   result: SopAiResult;
-  source: "claude" | "mock";
+  source: "claude";
   prompt?: Pick<SopPrompt, "estimatedTokens" | "maxTokens">;
   usage?: Anthropic.Messages.Usage;
   /** Milliseconds from the start of the request to the first text delta. */
@@ -415,15 +415,7 @@ export type SopGenerationOptions = {
   onDelta?: (delta: string) => void;
   /** Seed corpus folder; defaults to data/seed-sops. */
   seedDirectory?: string;
-  /** Pause between mock deltas, for a model-like pace. 0 streams the mock at once. */
-  mockDelayMs?: number;
 };
-
-const pause = (ms: number, signal?: AbortSignal) => new Promise<void>((resolve) => {
-  if (ms <= 0 || signal?.aborted) return resolve();
-  const timer = setTimeout(resolve, ms);
-  signal?.addEventListener("abort", () => { clearTimeout(timer); resolve(); }, { once: true });
-});
 
 /** Builds the Claude prompt for a request (references and imported text included). */
 export function prepareSopPrompt(request: SopAiRequest, options: Pick<SopGenerationOptions, "importedContext" | "seedDirectory"> = {}): SopPrompt {
@@ -443,18 +435,7 @@ export async function runSopGeneration(request: SopAiRequest, options: SopGenera
     options.onDelta?.(delta);
   };
 
-  if (!hasClaudeKey()) {
-    const output = mockSopOutput(request);
-    const delay = options.mockDelayMs ?? 0;
-    const pieces = JSON.stringify(output).match(/\s*\S{1,12}/g) ?? [];
-    await pause(delay ? 400 : 0, options.signal);
-    for (const piece of pieces) {
-      if (options.signal?.aborted) break;
-      onDelta(piece);
-      await pause(delay, options.signal);
-    }
-    return { result: finalizeSopOutput(request, output), source: "mock", firstDeltaMs, totalMs: Date.now() - started };
-  }
+  if (!hasClaudeKey()) throw new ClaudeKeyMissingError();
 
   const prompt = prepareSopPrompt(request, options);
   const { text, stopReason, usage } = await streamClaudeText({

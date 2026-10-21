@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { makeSamplePolicy } from "../store";
-import { mockGenerate } from "./mock";
 import { editDirective, editSourceText, parseEdit, shortenLimit } from "./policy-edit";
 
 const LONG = "The Company commits to reduce energy use across every site. It will report progress each year. It will train all staff on energy saving. It will review this policy every two years.";
@@ -35,18 +34,4 @@ test("the edit source is a section's text or one target's sentence", () => {
   assert.equal(editSourceText("  Text  "), "Text");
   assert.equal(editSourceText({ target: "Cut waste by 20%.", baseline: "FY 2024-25" }), "Cut waste by 20%.");
   assert.equal(editSourceText(["a", "b"]), "");
-});
-
-test("the offline answer edits in place and keeps the response shape", () => {
-  const policy = makeSamplePolicy();
-  const shortened = mockGenerate({ type: "preface", policy, existingContent: LONG, edit: { action: "shorten" } });
-  assert.ok((shortened.text || "").split(/\s+/).length <= shortenLimit(LONG));
-  assert.ok(LONG.startsWith(shortened.text || "-"));
-
-  const objective = mockGenerate({ type: "qualitative", policy, existingContent: "Cut waste.", edit: { action: "grammar" } });
-  assert.deepEqual(objective.objectives, ["Cut waste."]);
-
-  const target = { target: "Cut waste by 20%.", baseline: "FY 2024-25", deadline: "FY 2029-30", reportingFrequency: "Target period" as const };
-  const refined = mockGenerate({ type: "quantitative-refine", policy, existingContent: target, edit: { action: "improve" } });
-  assert.deepEqual(refined.targets, [target]);
 });

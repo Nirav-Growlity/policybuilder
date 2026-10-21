@@ -529,3 +529,35 @@ export function readinessChecks(manual: SopManual): ReadinessCheck[] {
     { id: "closing", label: "Approval statement", ok: Boolean(manual.closing.approval.statement.trim()), detail: manual.closing.approval.statement.trim() ? "Approval statement written." : "Add the approval statement for the closing page.", fix: { kind: "closing" } },
   ];
 }
+
+/** Keys that carry structure, not written text; they show at once while the rest types in. */
+const STRUCTURE_KEYS = new Set(["id", "kind", "type", "title", "enabled"]);
+
+/** Every written string in a section, in reading order, joined: the text the reveal types out. */
+export function writtenText(value: unknown): string {
+  if (typeof value === "string") return value;
+  if (Array.isArray(value)) return value.map(writtenText).join("");
+  if (value && typeof value === "object") return Object.entries(value).filter(([key]) => !STRUCTURE_KEYS.has(key)).map(([, item]) => writtenText(item)).join("");
+  return "";
+}
+
+/** The section cut to its first `budget` written characters; rows and steps not reached yet are left out. */
+export function typedSoFar<T>(value: T, budget: { left: number }): T {
+  if (typeof value === "string") {
+    const shown = value.slice(0, Math.max(0, budget.left));
+    budget.left -= value.length;
+    return shown as T;
+  }
+  if (Array.isArray(value)) {
+    const items: unknown[] = [];
+    for (const item of value) {
+      if (budget.left <= 0 && writtenText(item)) break;
+      items.push(typedSoFar(item, budget));
+    }
+    return items as T;
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, STRUCTURE_KEYS.has(key) ? item : typedSoFar(item, budget)])) as T;
+  }
+  return value;
+}

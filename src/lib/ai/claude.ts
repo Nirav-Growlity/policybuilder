@@ -32,6 +32,13 @@ export class ClaudeContextTooLargeError extends Error {
   }
 }
 
+export class ClaudeKeyMissingError extends Error {
+  constructor() {
+    super("Anthropic API key is not configured.");
+    this.name = "ClaudeKeyMissingError";
+  }
+}
+
 let cachedClient: Anthropic | null = null;
 
 export function hasClaudeKey() {
@@ -133,7 +140,7 @@ export async function streamClaudeText(
   signal?: AbortSignal,
 ): Promise<ClaudeTextResult> {
   const client = getClaudeClient();
-  if (!client) throw new Error("ANTHROPIC_API_KEY is not configured.");
+  if (!client) throw new ClaudeKeyMissingError();
   const stream = client.messages.stream(buildClaudeParams(request), { signal });
   stream.on("text", (delta) => {
     if (delta) onDelta(delta);
@@ -147,7 +154,7 @@ export async function streamClaudeText(
 /** One request without streaming, for short answers such as grammar fixes. */
 export async function createClaudeText(request: ClaudeRequest, signal?: AbortSignal): Promise<ClaudeTextResult> {
   const client = getClaudeClient();
-  if (!client) throw new Error("ANTHROPIC_API_KEY is not configured.");
+  if (!client) throw new ClaudeKeyMissingError();
   const message = await client.messages.create(buildClaudeParams(request), { signal });
   assertUsable(message);
   logUsage(message);
