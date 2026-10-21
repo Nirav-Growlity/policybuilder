@@ -157,3 +157,34 @@ test("manual field output is validated and capped before it reaches the manual",
   const long = finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: "x".repeat(5_000) });
   assert.equal(long.type === "manual-field" && "statement" in long ? long.statement.length : -1, 1_200);
 });
+
+test("the offline writer fills introduction, compliance and corrective action when they are switched on", () => {
+  const manual = manualWithOneSop();
+  manual.company.country = "India";
+  const sop = manual.sops[0];
+  sop.sections = sop.sections.map((section) => (section.kind === "introduction" || section.kind === "corrective" ? { ...section, enabled: true } : section));
+  const result = finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, mockSopOutput({ type: "sop", manual, sopId: sop.id }));
+  const written = applySopAiResult(manual, { sopId: sop.id }, result).sops[0];
+  const text = (kind: SopSection["kind"]) => {
+    const section = written.sections.find((candidate) => candidate.kind === kind) as SopNarrativeSection;
+    return section.blocks.map((block) => block.text).join("\n");
+  };
+  assert.match(text("introduction"), /^Energy conservation affects how/);
+  assert.match(text("compliance"), /in India/);
+  assert.match(text("compliance"), /legal register/);
+  assert.match(text("compliance"), /\[permit or consent number\]/);
+  assert.match(text("corrective"), /root-cause/);
+  assert.match(text("corrective"), /disciplinary procedure in the HR policy/);
+  // Mock records have no form numbers, so no code is stored.
+  const records = written.sections.find((section) => section.kind === "records") as Extract<SopSection, { kind: "records" }>;
+  assert.ok(records.rows.length > 0 && records.rows.every((row) => !("code" in row)));
+});
+
+test("a record code from the model is kept; an empty one is dropped", () => {
+  const section = generatedSectionToSopSection({ kind: "records", title: "Records", rows: [
+    { code: " MTPL/EHS/F-01 ", record: "Waste manifest", owner: "EHS", retention: "5 years", format: "Paper" },
+    { code: "", record: "Bin audit", owner: "EHS", retention: "1 year", format: "Electronic" },
+  ] }) as Extract<SopSection, { kind: "records" }>;
+  assert.equal(section.rows[0].code, "MTPL/EHS/F-01");
+  assert.equal("code" in section.rows[1], false);
+});

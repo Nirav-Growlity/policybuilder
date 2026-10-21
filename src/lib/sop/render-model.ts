@@ -6,8 +6,9 @@
 import type { RichTextBlock } from "../types";
 import { companyFacts } from "./company-facts";
 import { resolveSopDesign, SOP_PAGE_SIZES } from "./design/resolve";
+import { appendixLetter } from "./initial-manual";
 import type { RenderBlock, RenderChapter, RenderFrontSection, RenderSection, RenderSop, SopRenderModel } from "./render-types";
-import type { Sop, SopManual, SopPillar, SopSection } from "./types";
+import type { Sop, SopManual, SopPillar, SopRecordRow, SopSection } from "./types";
 
 export const PILLAR_LABELS: Record<SopPillar, string> = { E: "Environmental", S: "Social", G: "Governance" };
 
@@ -117,11 +118,42 @@ function sectionHasContent(section: SopSection): boolean {
   }
 }
 
+const APPENDIX_WORD = /^(appendix|annexure|annex)(?=$|[^a-z])/i;
+/** The letter or number after "Appendix" (upper case only, so "Appendix to…" keeps its words). */
+const APPENDIX_MARK = /^\s+(?:[A-Z]{1,2}|\d+)(?=$|[\s:.\-–—])/;
+
+/**
+ * Letters each appendix by its place among the appendices that print, so two
+ * or more read "Appendix A", "Appendix B"… whatever letters their stored
+ * titles carry. A single appendix keeps its title as typed.
+ */
+export function letterAppendixTitles(titles: readonly string[]): string[] {
+  if (titles.length < 2) return [...titles];
+  return titles.map((title, index) => {
+    const letter = appendixLetter(index);
+    const text = title.trim();
+    const word = APPENDIX_WORD.exec(text)?.[1];
+    const rest = word ? text.slice(word.length).replace(APPENDIX_MARK, "").replace(/^\s*[:.\-–—]?\s*/, "") : text;
+    const label = word ? word[0].toUpperCase() + word.slice(1).toLowerCase() : "Appendix";
+    return rest ? `${label} ${letter}: ${rest}` : `${label} ${letter}`;
+  });
+}
+
+/** Records table columns; the "No." column only when some record has a form or record number. */
+function recordsTable(rows: SopRecordRow[]): RenderBlock {
+  const coded = rows.some((row) => (row.code ?? "").trim());
+  return coded
+    ? { type: "table", columns: ["No.", "Record", "Owner", "Retention", "Format"], widths: [1.4, 2, 1.2, 1, 1], rows: rows.map((row) => [(row.code ?? "").trim(), row.record, row.owner, row.retention, row.format]) }
+    : { type: "table", columns: ["Record", "Owner", "Retention", "Format"], widths: [2.2, 1.3, 1, 1], rows: rows.map((row) => [row.record, row.owner, row.retention, row.format]) };
+}
+
 function renderSections(sop: Sop, includeEmpty: boolean): RenderSection[] {
   const visible = sop.sections.filter((section) => section.enabled && (includeEmpty || sectionHasContent(section)));
+  const appendices = visible.filter((section) => section.kind === "appendix");
+  const appendixTitles = new Map<SopSection, string>(letterAppendixTitles(appendices.map((section) => section.title)).map((title, index) => [appendices[index], title]));
   return visible.map((section, index): RenderSection => {
     const number = `${index + 1}.0`;
-    const base = { id: section.id, number, title: section.title, kind: section.kind };
+    const base = { id: section.id, number, title: appendixTitles.get(section) ?? section.title, kind: section.kind };
     switch (section.kind) {
       case "definitions":
         return { ...base, blocks: section.rows.length ? [{ type: "table", columns: ["Term", "Definition"], widths: [1, 3], rows: section.rows.map((row) => [row.term, row.definition]) }] : [] };
@@ -152,7 +184,7 @@ function renderSections(sop: Sop, includeEmpty: boolean): RenderSection[] {
           ],
         };
       case "records":
-        return { ...base, blocks: section.rows.length ? [{ type: "table", columns: ["Record", "Owner", "Retention", "Format"], widths: [2.2, 1.3, 1, 1], rows: section.rows.map((row) => [row.record, row.owner, row.retention, row.format]) }] : [] };
+        return { ...base, blocks: section.rows.length ? [recordsTable(section.rows)] : [] };
       case "references":
         return { ...base, blocks: section.items.some((item) => item.trim()) ? [{ type: "ul", items: section.items.filter((item) => item.trim()) }] : [] };
       default:

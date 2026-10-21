@@ -136,3 +136,18 @@ test("Word prints the classification instead of \"Controlled copy\", the new con
   const plainCover = plainBody.slice(0, plainBody.indexOf("Contents")).toLowerCase();
   for (const label of ["Supersedes", "Issue date", "Last review"]) assert.ok(!plainCover.includes(label.toLowerCase()) && !plainParts.map(text).join("").toLowerCase().includes(label.toLowerCase()), `no ${label}`);
 });
+
+test("Word prints the Compliance section and the records No. column only where the sample has form numbers", async () => {
+  const { model, assets } = await sample("controlled-manual");
+  const { document } = await open(await generateSopDocx(model, assets));
+  const text = document.replace(/<[^>]+>/g, "");
+  assert.equal(text.split("Legal &amp; Regulatory Compliance").length - 1 >= model.chapters.flatMap((chapter) => chapter.sops).length, true);
+  assert.match(text, /MTPL\/EHS\/F-01/);
+  const sops = model.chapters.flatMap((chapter) => chapter.sops);
+  const columns = (index: number) => {
+    const block = sops[index].sections.find((section) => section.kind === "records")!.blocks[0];
+    return block.type === "table" ? block.columns : [];
+  };
+  assert.deepEqual(columns(0).slice(0, 2), ["No.", "Record"]);
+  assert.equal(columns(1)[0], "Record");
+});

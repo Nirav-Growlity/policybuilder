@@ -201,6 +201,8 @@ function mockSection(manual: SopManual, sop: Sop, section: Pick<SopSection, "kin
   const topic = sop.title.toLowerCase() || "this activity";
   const title = section.title;
   switch (section.kind) {
+    case "introduction":
+      return { kind: "introduction", title, blocks: [{ type: "paragraph", text: `${topic.charAt(0).toUpperCase()}${topic.slice(1)} affects how ${company} operates at ${mockSites(manual)}, and how it meets the expectations of regulators, customers and its own people. A single controlled procedure keeps the practice consistent at every site and gives auditors clear evidence.` }] };
     case "purpose":
       return { kind: "purpose", title, blocks: [{ type: "paragraph", text: `To define how ${company} plans, carries out, checks and records ${topic}, so that the activity is controlled, consistent across sites and compliant with applicable requirements.` }] };
     case "scope":
@@ -233,11 +235,33 @@ function mockSection(manual: SopManual, sop: Sop, section: Pick<SopSection, "kin
       return { kind: "training", title, blocks: [{ type: "paragraph", text: `Everyone involved in ${topic} is trained on this procedure at induction and at an annual refresher, and again after any revision. Attendance is recorded in the training register.` }] };
     case "records":
       return { kind: "records", title, rows: [
-        { record: "Activity log", owner: "Section Supervisor", retention: "3 years", format: "Register (electronic)" },
-        { record: "Corrective action register", owner, retention: "3 years", format: "Register (electronic)" },
+        { code: "", record: "Activity log", owner: "Section Supervisor", retention: "3 years", format: "Register (electronic)" },
+        { code: "", record: "Corrective action register", owner, retention: "3 years", format: "Register (electronic)" },
       ] };
     case "references":
       return { kind: "references", title, items: [...companyFacts(manual).certifications.slice(0, 3), "ISO 14001:2015 Environmental management systems", "ISO 45001:2018 Occupational health and safety management systems"].filter((item, index, all) => all.indexOf(item) === index) };
+    case "compliance":
+      return { kind: "compliance", title, blocks: [
+        { type: "paragraph", text: `${company} carries out ${topic} in line with the legislation, permits and consents that apply ${manual.company.country ? `in ${manual.company.country}` : "in its country of operation"}, the management-system standards it follows and the codes of conduct of its customers.` },
+        { type: "bullets", text: [
+          // The laws and regulators the company listed come first.
+          ...companyFacts(manual).regulations.slice(0, 3).map((law) => `${law}: the requirements that apply to ${topic} are identified and met.`),
+          `Applicable legal and other requirements are listed in the legal register, which the ${owner} reviews at least once a year.`,
+          "Permits and consents ([permit or consent number]) are kept valid and their conditions are checked during monthly inspections.",
+          "Statutory returns are filed on time and copies are kept with the records of this SOP.",
+          "Internal and external audits verify compliance, and findings are tracked to closure.",
+        ].join("\n") },
+      ] };
+    case "corrective":
+      return { kind: "corrective", title, blocks: [
+        { type: "paragraph", text: `Any deviation from this procedure is reported to the ${owner} and recorded in the corrective action register the same day.` },
+        { type: "bullets", text: [
+          "The cause is investigated using a root-cause method such as the five whys.",
+          "Corrective and preventive actions are given an owner and a due date: 24 hours for critical findings, 7 days for major and 30 days for minor ones.",
+          "Actions not closed on time are escalated to the site head.",
+          "Wilful or repeated breaches are dealt with under the Company's disciplinary procedure in the HR policy.",
+        ].join("\n") },
+      ] };
     case "review":
       return { kind: "review", title, blocks: [{ type: "paragraph", text: `This SOP is reviewed ${manual.control.reviewFrequency ? manual.control.reviewFrequency.toLowerCase() : "annually"} by the ${owner}, and earlier after an incident, audit finding or change in legal requirements. Changes are approved by ${manual.control.approvedBy || "the approver of this manual"}.` }] };
     default:

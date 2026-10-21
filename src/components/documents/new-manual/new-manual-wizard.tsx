@@ -13,7 +13,7 @@ import type { CompanyMasterSnapshot } from "@/lib/policycraft-types";
 import type { Company } from "@/lib/types";
 import { SOP_CATALOG, recommendSops } from "@/lib/sop/catalog";
 import { createEmptyCompanyFacts } from "@/lib/sop/company-facts";
-import { createEmptySopCompany } from "@/lib/sop/initial-manual";
+import { createEmptySopCompany, withManualSkeleton } from "@/lib/sop/initial-manual";
 import { createSopManual, fetchAccess, fetchCompanySnapshot, importSopDocx, isImportAvailable, saveSopManual } from "@/lib/sop/client-api";
 import { DEFAULT_SOP_TEMPLATE_ID, type SopCompanyFacts, type SopCover, type SopManual, type SopManualControl, type SopTemplateId, type SopThemeOptions } from "@/lib/sop/types";
 import { buildNewManual, catalogTopicsById, manualTitle, suggestDocNo, withSuggestedCodes, type CustomSopDraft } from "../manual-helpers";
@@ -177,7 +177,7 @@ export function NewManualWizard() {
           const result = await importSopDocx(orgId, stored.id, importFile);
           if (result.status === "unavailable") push("Import is not available yet. Your manual was created without the file.", "info");
           else {
-            const imported: SopManual = result.manual ?? { ...stored.manual, sops: [...stored.manual.sops, ...(result.sops ?? [])] };
+            const imported: SopManual = withManualSkeleton(result.manual ?? { ...stored.manual, sops: [...stored.manual.sops, ...(result.sops ?? [])] });
             stored = await saveSopManual(orgId, stored.id, { title: stored.title, stage: stored.currentStage, manual: withSuggestedCodes(imported), lockVersion: stored.lockVersion });
             push(`Imported ${result.sops?.length ?? imported.sops.length} SOPs from ${importFile.name}.`, "success");
           }

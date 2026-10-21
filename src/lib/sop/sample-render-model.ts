@@ -19,7 +19,36 @@ const p = (text: string): RenderBlock => ({ type: "p", text });
 
 type SampleSop = (typeof sample.sops)[number];
 
-function sopSections(sop: SampleSop): RenderSection[] {
+/** What each pillar's SOPs answer to, for the sample's Legal & Regulatory Compliance sections. */
+const PILLAR_COMPLIANCE = {
+  E: "the conditions of the Consent to Operate issued by the State Pollution Control Board for Unit 1 and Unit 2, the environmental rules that apply to the sites, ISO 14001 and the restricted substances lists of the company's buyers",
+  S: "the Factories Act, 1948 and the state factory rules, the labour laws that apply to the sites, ISO 45001 and the social compliance codes of the company's buyers",
+  G: "the Companies Act, 2013, the company's statutory audit requirements, the Information Technology Act, 2000 where data is involved, and the codes of conduct of the company's buyers",
+} as const;
+
+function complianceBlocks(sop: SampleSop): RenderBlock[] {
+  const pillar = sop.pillar as keyof typeof PILLAR_COMPLIANCE;
+  return [
+    p(`${sop.title} at Meridian Textiles meets ${PILLAR_COMPLIANCE[pillar]}.`),
+    { type: "ul", items: [
+      `The ${sop.owner} keeps the applicable requirements in the legal register and reviews it every six months.`,
+      "Permit and consent conditions ([consent number]) are checked during the monthly site inspection.",
+      "Statutory returns and renewals are tracked in the compliance calendar and filed before their due dates.",
+      "Internal audits verify compliance once a year; findings are closed through the corrective action register.",
+    ] },
+  ];
+}
+
+/** The first SOP's records carry form numbers, so the sample shows the "No." column; the rest have none. */
+function recordsBlock(sop: SampleSop, index: number): RenderBlock {
+  if (index > 0) return { type: "table", columns: ["Record", "Owner", "Retention", "Format"], widths: [2.2, 1.3, 1, 1], rows: sop.records.map((row) => [row.record, row.owner, row.retention, row.format]) };
+  return {
+    type: "table", columns: ["No.", "Record", "Owner", "Retention", "Format"], widths: [1.4, 2, 1.2, 1, 1],
+    rows: sop.records.map((row, rowIndex) => [`MTPL/EHS/F-${String(rowIndex + 1).padStart(2, "0")}`, row.record, row.owner, row.retention, row.format]),
+  };
+}
+
+function sopSections(sop: SampleSop, sopIndex: number): RenderSection[] {
   const sections: Array<Omit<RenderSection, "number">> = [
     { id: "purpose", title: "Purpose", kind: "purpose", blocks: [p(sop.purpose)] },
     { id: "scope", title: "Scope", kind: "scope", blocks: [p(sop.scope)] },
@@ -28,8 +57,9 @@ function sopSections(sop: SampleSop): RenderSection[] {
     { id: "procedure", title: "Procedure", kind: "procedure", blocks: [], steps: [] },
     { id: "monitoring", title: "Monitoring & KPIs", kind: "monitoring", blocks: [{ type: "table", columns: ["Indicator", "Target", "Frequency", "Owner"], widths: [2.4, 1.4, 1, 1.2], rows: sop.kpis.map((kpi) => [kpi.indicator, kpi.target, kpi.frequency, kpi.owner]) }] },
     { id: "training", title: "Training & Awareness", kind: "training", blocks: [p(sop.training)] },
-    { id: "records", title: "Records", kind: "records", blocks: [{ type: "table", columns: ["Record", "Owner", "Retention", "Format"], widths: [2.2, 1.3, 1, 1], rows: sop.records.map((row) => [row.record, row.owner, row.retention, row.format]) }] },
+    { id: "records", title: "Records", kind: "records", blocks: [recordsBlock(sop, sopIndex)] },
     { id: "references", title: "References", kind: "references", blocks: [{ type: "ul", items: sop.references }] },
+    { id: "compliance", title: "Legal & Regulatory Compliance", kind: "compliance", blocks: complianceBlocks(sop) },
     { id: "review", title: "Review & Amendment", kind: "review", blocks: [p(sop.review)] },
   ];
   return sections.map((section, index) => {
@@ -68,7 +98,7 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
       pillar, pillarLabel: PILLAR_LABELS[pillar], color: grouping === "pillar" ? design.palette.pillars[pillar] : design.palette.primary,
       department: sop.department, owner: sop.owner, version: "1.0", effectiveDate: control.effectiveDate,
       nextReviewDate: control.nextReviewDate, preparedBy: control.preparedBy, approvedBy: control.approvedBy,
-      sections: sopSections(sop),
+      sections: sopSections(sop, sample.sops.indexOf(sop)),
     };
   };
   const chapters: RenderChapter[] = grouping === "pillar"

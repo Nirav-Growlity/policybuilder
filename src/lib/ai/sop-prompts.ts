@@ -31,6 +31,7 @@ LANGUAGE AND VOICE
 - Name the company and its real sites where it helps; otherwise say "the Company".
 
 HOUSE STYLE (learned from the reference manuals)
+- Introduction: two or three sentences on why this procedure matters for the company and its sites.
 - Purpose: one short paragraph of two or three sentences, starting "To define", "To establish" or "To ensure".
 - Scope: one paragraph naming the sites, departments, activities and people covered, using the company's actual sites.
 - Definitions: a table of four to eight terms and abbreviations that the SOP actually uses.
@@ -38,8 +39,10 @@ HOUSE STYLE (learned from the reference manuals)
 - Procedure: five to nine steps in the order the work happens. Each step has a short heading, one to three sentences of body text, the responsible role, and substeps where the step has distinct actions. Cover inputs, checks, decision points, escalation and the record each step creates.
 - Monitoring & KPIs: three to five indicators with a measurable target, a frequency and an owner. Use conservative targets such as "100% of ...", "zero ...", a count, or "within consent limits".
 - Training & Awareness: one paragraph on who is trained, when (induction, annual refresher, after changes) and how attendance is recorded.
-- Records: three to six records with owner, retention period and format (for example "Register (electronic)").
+- Records: three to six records with owner, retention period and format (for example "Register (electronic)"). Leave the record code empty unless the SOP text or the company's own material names a form or record number.
 - References: two to six items: management-system standards that fit the topic (such as ISO 14001, ISO 45001, ISO 9001, SA8000), applicable legislation named only by its title and only when you are certain it applies in the company's country, and related SOPs from the manual register by code and title.
+- Legal & Regulatory Compliance: the legislation, regulator, permits or consents, management-system standards and buyer codes the procedure satisfies, and how compliance is demonstrated (legal register, inspections, statutory returns, audits). Name a law only when you are certain it applies in the company's country, and write permit and consent numbers as [placeholders]. Do not repeat the References list; References keeps the standards and related SOPs.
+- Non-compliance & Corrective Action: how deviations are identified and recorded, root-cause analysis, corrective and preventive action (CAPA) with closure timelines by severity, escalation, and disciplinary consequences by reference to the HR policy.
 - Review & Amendment: one paragraph with the review frequency from the manual control data, the triggers for an earlier review, and who approves changes.
 - Match the length and depth of the reference SOPs when references are given; otherwise write about 900 to 1,300 words for a whole SOP.
 
@@ -221,9 +224,12 @@ const wireBlock = z.object({ type: z.enum(["paragraph", "bullets", "numbered"]),
 const wireBlocks = z.array(wireBlock);
 
 const WIRE_SECTION_SCHEMAS: Record<SopSectionKind, z.ZodType> = {
+  introduction: wireBlocks,
   purpose: wireBlocks,
   scope: wireBlocks,
   training: wireBlocks,
+  compliance: wireBlocks,
+  corrective: wireBlocks,
   review: wireBlocks,
   custom: wireBlocks,
   appendix: wireBlocks,
@@ -239,7 +245,7 @@ const WIRE_SECTION_SCHEMAS: Record<SopSectionKind, z.ZodType> = {
     kpis: z.array(z.object({ indicator: z.string(), target: z.string(), frequency: z.string(), owner: z.string() })),
     narrative: wireBlocks,
   }),
-  records: z.array(z.object({ record: z.string(), owner: z.string(), retention: z.string(), format: z.string() })),
+  records: z.array(z.object({ code: z.string(), record: z.string(), owner: z.string(), retention: z.string(), format: z.string() })),
   references: z.array(z.string()),
 };
 
@@ -280,9 +286,12 @@ export function manualFieldOutputSchema(field: ManualAiField) {
 }
 
 const SECTION_GUIDE: Record<SopSectionKind, string> = {
+  introduction: "blocks (usually one short paragraph)",
   purpose: "blocks (usually one paragraph)",
   scope: "blocks (usually one paragraph)",
   training: "blocks",
+  compliance: "blocks (paragraphs and bullets)",
+  corrective: "blocks (paragraphs and bullets)",
   review: "blocks",
   custom: "blocks",
   appendix: "blocks",
@@ -290,7 +299,7 @@ const SECTION_GUIDE: Record<SopSectionKind, string> = {
   responsibilities: "rows of role and its list of responsibilities",
   procedure: "steps, each with heading, responsible role (or \"\"), body blocks and substeps (each with text and responsible, or [])",
   monitoring: "kpis (indicator, target, frequency, owner) and a short narrative (blocks, may be [])",
-  records: "rows of record, owner, retention and format",
+  records: "rows of code (form or record number, or \"\"), record, owner, retention and format",
   references: "a list of reference strings",
 };
 

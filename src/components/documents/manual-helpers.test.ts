@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { SOP_CATALOG, recommendSops } from "@/lib/sop/catalog";
-import { createEmptyManual, createEmptySop, createEmptySopCompany, createEmptySopSection } from "@/lib/sop/initial-manual";
-import type { Sop, SopManual, SopProcedureSection } from "@/lib/sop/types";
+import { createEmptyManual, createEmptySop, createEmptySopCompany, createEmptySopSection, withManualSkeleton, withSopSkeleton } from "@/lib/sop/initial-manual";
+import { SOP_SECTION_KINDS, type Sop, type SopManual, type SopProcedureSection } from "@/lib/sop/types";
 import {
   buildNewManual,
   estimatePages,
@@ -182,4 +182,53 @@ test("readiness asks for a reachable contact for reporting channels", () => {
   const ok = check({ profile: "", certifications: [], regulations: [], contacts: [{ purpose: "Grievance", name: "", phone: "", email: "hr@meridian.in" }, { purpose: "EHS", name: "", phone: "+91 1", email: "" }] });
   assert.equal(ok.ok, true);
   assert.match(ok.detail, /2 contacts/);
+});
+
+test("new SOPs carry introduction, compliance and corrective action in canonical order", () => {
+  const sections = createEmptySop().sections;
+  assert.deepEqual(sections.map((section) => section.kind), SOP_SECTION_KINDS.map((entry) => entry.kind));
+  const enabled = Object.fromEntries(sections.map((section) => [section.kind, section.enabled]));
+  assert.equal(enabled.introduction, false);
+  assert.equal(enabled.compliance, true);
+  assert.equal(enabled.corrective, false);
+  assert.deepEqual(sections.slice(9, 13).map((section) => section.kind), ["references", "compliance", "corrective", "review"]);
+});
+
+test("an SOP saved before the new kinds gets them, switched off, at their canonical place", () => {
+  const NEW_KINDS = ["introduction", "compliance", "corrective"];
+  const custom = { ...createEmptySopSection("custom", { title: "Emergency contacts" }), id: "custom-1" };
+  const stored: Sop = { ...createEmptySop({ title: "Energy" }), id: "sop-old" };
+  stored.sections = [...stored.sections.filter((section) => !NEW_KINDS.includes(section.kind)), custom];
+  const opened = withSopSkeleton(stored);
+  assert.deepEqual(opened.sections.map((section) => section.kind), [
+    "introduction", "purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references",
+    "compliance", "corrective", "review", "appendix", "custom",
+  ]);
+  for (const kind of NEW_KINDS) {
+    const section = opened.sections.find((candidate) => candidate.kind === kind)!;
+    assert.equal(section.enabled, false, kind);
+    assert.equal(section.id, `sop-old-${kind}`, "ids are stable from load to load");
+  }
+  // Existing sections are the same objects; nothing else changes.
+  for (const section of stored.sections) assert.ok(opened.sections.includes(section));
+  assert.deepEqual(withSopSkeleton(stored), opened, "pure");
+  assert.equal(withSopSkeleton(opened), opened, "an SOP with every kind comes back unchanged");
+  const manual = createEmptyManual({ sops: [opened] });
+  assert.equal(withManualSkeleton(manual), manual);
+});
+
+test("the skeleton fills in an imported SOP that has only some sections", () => {
+  const imported: Sop = { ...createEmptySop({ title: "Imported" }), id: "imp" };
+  imported.sections = [
+    { ...createEmptySopSection("purpose"), id: "p" },
+    { ...createEmptySopSection("custom", { title: "Background" }), id: "c" },
+    { ...createEmptySopSection("procedure"), id: "pr" },
+    { ...createEmptySopSection("appendix", { title: "Annexure 1" }), id: "a1" },
+    { ...createEmptySopSection("appendix", { title: "Annexure 2" }), id: "a2" },
+  ];
+  const kinds = withSopSkeleton(imported).sections.map((section) => `${section.kind}${section.enabled ? "" : "(off)"}`);
+  assert.deepEqual(kinds, [
+    "introduction(off)", "purpose", "scope(off)", "definitions(off)", "responsibilities(off)", "custom", "procedure", "monitoring(off)", "training(off)",
+    "records(off)", "references(off)", "compliance(off)", "corrective(off)", "review(off)", "appendix", "appendix",
+  ]);
 });

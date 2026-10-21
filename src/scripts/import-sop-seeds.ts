@@ -53,7 +53,10 @@ const estimate = (text: string) => Math.ceil(text.length / 3);
 /* ------------------------------------------------------------------ */
 
 const CATALOG_IDS = new Set(SOP_CATALOG.map((topic) => topic.id));
-const SECTION_KINDS = ["purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references", "review", "appendix", "custom"] as const;
+const SECTION_KINDS = [
+  "introduction", "purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references",
+  "compliance", "corrective", "review", "appendix", "custom",
+] as const;
 
 /*
  * generatedSopSchema's 12-way section union compiles to a grammar the API
@@ -97,7 +100,8 @@ type GeneratedBlock = Extract<GeneratedSopSection, { kind: "purpose" }>["blocks"
 
 /** Section kinds the model sometimes borrows from the source headings. */
 const KIND_ALIASES: Record<string, (typeof SECTION_KINDS)[number]> = {
-  compliance: "custom",
+  overview: "introduction",
+  capa: "corrective",
   roles: "responsibilities",
   abbreviations: "definitions",
   kpis: "monitoring",
@@ -134,9 +138,12 @@ type FlatField = "blocks" | "definitions" | "roles" | "steps" | "kpis" | "record
 
 /** The flat field(s) each kind reads; anything else the model filled is carried over as blocks. */
 const NATIVE_FIELDS: Record<FlatSection["kind"], FlatField[]> = {
+  introduction: ["blocks"],
   purpose: ["blocks"],
   scope: ["blocks"],
   training: ["blocks"],
+  compliance: ["blocks"],
+  corrective: ["blocks"],
   review: ["blocks"],
   appendix: ["blocks"],
   custom: ["blocks"],
@@ -266,8 +273,8 @@ Faithfulness rules:
 
 Sections:
 - Each heading in the source becomes one section, in source order. Keep the source heading as the section title (without its number).
-- Choose the kind from the content: purpose, scope, definitions (terms and abbreviations as term/definition rows), responsibilities (one row per role with its duties as a list), procedure (numbered or titled steps), monitoring (KPIs as indicator/target/frequency/owner, any prose in narrative), training, records (record/owner/retention/format rows), references (one item per document, law or standard), review (review, amendment, continuous improvement), appendix (forms, annexures, checklists), custom (anything else, such as compliance, violations or future initiatives).
-- Each section has one field per content shape. Fill only the one for its kind and leave the rest as empty arrays: blocks (purpose, scope, training, review, appendix, custom, and the prose of monitoring), definitions, roles (responsibilities), steps (procedure), kpis (monitoring), records, items (references).
+- Choose the kind from the content: introduction (introduction, overview, summary or background before the purpose), purpose, scope, definitions (terms and abbreviations as term/definition rows), responsibilities (one row per role with its duties as a list), procedure (numbered or titled steps), monitoring (KPIs as indicator/target/frequency/owner, any prose in narrative), training, records (record/owner/retention/format rows), references (one item per document, law or standard), compliance (legal and regulatory compliance: the laws, permits, standards and buyer codes that apply and how compliance is shown), corrective (non-compliance, corrective and preventive action, enforcement, penalties, disciplinary action), review (review, amendment, continuous improvement), appendix (forms, annexures, checklists), custom (anything else, such as future initiatives).
+- Each section has one field per content shape. Fill only the one for its kind and leave the rest as empty arrays: blocks (introduction, purpose, scope, training, compliance, corrective, review, appendix, custom, and the prose of monitoring), definitions, roles (responsibilities), steps (procedure), kpis (monitoring), records, items (references).
 - Procedure: one step per sub-heading or numbered step. heading = the step's title (or a few words from its first sentence when untitled, copied from the source), body = its text as blocks, responsible = the role only when the source names it (else ""), substeps = lettered or nested items under it.
 - Blocks: type "paragraph" (blank line between paragraphs), "bullets" or "numbered" (one item per line, no markers), or "table" (columns = header cells, rows = body cells, text = ""). columns and rows are empty arrays for non-table blocks.
 - A "(parser guess: ...)" note after a heading is the extractor's guess at the kind. Use it as a hint only.

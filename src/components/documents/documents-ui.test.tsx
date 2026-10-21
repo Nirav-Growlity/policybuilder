@@ -12,6 +12,7 @@ import { ManualDetailsPanel } from "./new-manual/details-step";
 import { SopTemplatePicker } from "./design/sop-design-controls";
 import { SopBuilderContext, type SopBuilderActions } from "./builder/builder-context";
 import { SopWriter } from "./builder/sop-writer";
+import { SectionBody } from "./builder/section-editors";
 import { ReviewMode } from "./builder/review-mode";
 import { ProgressPill } from "./builder/progress-pill";
 import { FrontMatterWriter } from "./builder/manual-part-writers";
@@ -102,6 +103,34 @@ test("an empty SOP opens on its header facts, every section and a one-click Writ
   assert.match(markup, /Appendix<span[^>]*>Not in the document/);
   assert.match(markup, /Add step/);
   assert.match(markup, /Add KPI/);
+  // Compliance is written by default; introduction and corrective action wait to be included.
+  assert.match(markup, /value="Legal &amp; Regulatory Compliance"/);
+  assert.match(markup, /Introduction<span[^>]*>Not in the document/);
+  assert.match(markup, /Non-compliance &amp; Corrective Action<span[^>]*>Not in the document/);
+  assert.match(markup, />Add appendix</);
+});
+
+test("the records table asks for an optional form or record number first", () => {
+  const sop = createEmptySop({ title: "Waste" });
+  const records = sop.sections.find((section) => section.kind === "records")!;
+  const markup = inBuilder(React.createElement(SectionBody, {
+    section: { ...records, rows: [{ record: "Waste manifest", owner: "EHS", retention: "5 years", format: "Paper" }] } as typeof records,
+    onChange: noop,
+    sectionNumber: 8,
+  }));
+  assert.match(markup, /<th scope="col">Form \/ record no\.<\/th><th scope="col">Record<\/th>/);
+  assert.match(markup, /aria-label="Form \/ record no\., row 1" placeholder="Optional"/);
+});
+
+test("an SOP saved before the newer section kinds opens with them listed as left out, ready to include", () => {
+  const sop = createEmptySop({ title: "Energy", pillar: "E", department: "Utilities", code: "MT-UTL-001" });
+  sop.sections = sop.sections.filter((section) => !["introduction", "compliance", "corrective"].includes(section.kind));
+  loadManual([sop]);
+  const opened = useSopBuilder.getState().manual!.sops[0];
+  const markup = inBuilder(React.createElement(SopWriter, { sop: opened }));
+  for (const title of ["Introduction", "Legal &amp; Regulatory Compliance", "Non-compliance &amp; Corrective Action"]) {
+    assert.match(markup, new RegExp(`${title}<span[^>]*>Not in the document</span></span><button[^>]*>Include<`));
+  }
 });
 
 test("a failed generation says so and offers Retry", () => {

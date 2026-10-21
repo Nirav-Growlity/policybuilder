@@ -161,7 +161,8 @@ test("every request type builds a prompt with its own schema and token cap", () 
   // A whole SOP may only return the enabled kinds, each one required.
   const whole = buildSopPrompt(requests[0], { references: "", imported: "" });
   const shape = (whole.schema as unknown as { shape: { sections: { shape: Record<string, unknown> } } }).shape.sections.shape;
-  assert.deepEqual(Object.keys(shape), ["purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "records", "references", "review"]);
+  // Compliance is on by default; introduction and corrective action are off until the writer includes them.
+  assert.deepEqual(Object.keys(shape), ["purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "records", "references", "compliance", "review"]);
 });
 
 test("the budget trimmer cuts references first, then siblings, then imported context", () => {
@@ -344,4 +345,66 @@ test("the offline mock uses the profile and the certifications held", () => {
   const sop = mockSopOutput({ type: "sop", manual, sopId: manual.sops[1].id }) as { sections: { references: string[] } };
   assert.deepEqual(sop.sections.references.slice(0, 2), ["ISO 14001:2015", "SA8000:2014"]);
   assert.equal(new Set(sop.sections.references).size, sop.sections.references.length, "no repeated references");
+});
+
+test("the offline mock's compliance section names the laws and regulators the company listed", () => {
+  const manual = sampleManual();
+  const sopId = manual.sops[1].id;
+  const withLaws = mockSopOutput({ type: "sop", manual: { ...manual, facts: FACTS }, sopId }) as { sections: { compliance: unknown } };
+  const compliance = JSON.stringify(withLaws.sections.compliance);
+  assert.match(compliance, /Tamil Nadu Pollution Control Board: the requirements that apply/);
+  assert.match(compliance, /Factories Act, 1948: the requirements that apply/);
+  const without = mockSopOutput({ type: "sop", manual, sopId }) as { sections: { compliance: unknown } };
+  assert.doesNotMatch(JSON.stringify(without.sections.compliance), /the requirements that apply/);
+});
+
+test("the house style covers introduction, compliance and corrective action, and record codes", () => {
+  assert.match(SOP_SYSTEM_PROMPT, /- Introduction: two or three sentences on why this procedure matters for the company and its sites\./);
+  assert.match(SOP_SYSTEM_PROMPT, /- Legal & Regulatory Compliance: the legislation, regulator, permits or consents, management-system standards and buyer codes/);
+  assert.match(SOP_SYSTEM_PROMPT, /legal register, inspections, statutory returns, audits/);
+  assert.match(SOP_SYSTEM_PROMPT, /Name a law only when you are certain it applies in the company's country/);
+  assert.match(SOP_SYSTEM_PROMPT, /permit and consent numbers as \[placeholders\]/);
+  assert.match(SOP_SYSTEM_PROMPT, /Do not repeat the References list/);
+  assert.match(SOP_SYSTEM_PROMPT, /- Non-compliance & Corrective Action: how deviations are identified and recorded, root-cause analysis/);
+  assert.match(SOP_SYSTEM_PROMPT, /closure timelines by severity, escalation, and disciplinary consequences by reference to the HR policy/);
+  assert.match(SOP_SYSTEM_PROMPT, /Leave the record code empty unless/);
+  // In document order: introduction before purpose, compliance and corrective action between references and review.
+  const at = (label: string) => SOP_SYSTEM_PROMPT.indexOf(`- ${label}:`);
+  assert.ok(at("Introduction") < at("Purpose"));
+  assert.ok(at("References") < at("Legal & Regulatory Compliance"));
+  assert.ok(at("Legal & Regulatory Compliance") < at("Non-compliance & Corrective Action"));
+  assert.ok(at("Non-compliance & Corrective Action") < at("Review & Amendment"));
+});
+
+test("switched-on introduction and corrective action are written, in document order", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  sop.sections = sop.sections.map((section) => (section.kind === "introduction" || section.kind === "corrective" ? { ...section, enabled: true } : section));
+  const prompt = buildSopPrompt({ type: "sop", manual, sopId: sop.id }, { references: "", imported: "" });
+  assert.match(prompt.user, /- "introduction" \(heading "Introduction"\)/);
+  assert.match(prompt.user, /- "compliance" \(heading "Legal & Regulatory Compliance"\)/);
+  assert.match(prompt.user, /- "corrective" \(heading "Non-compliance & Corrective Action"\)/);
+  const shape = (prompt.schema as unknown as { shape: { sections: { shape: Record<string, unknown> } } }).shape.sections.shape;
+  const keys = Object.keys(shape);
+  assert.equal(keys[0], "introduction");
+  assert.deepEqual(keys.slice(-4), ["references", "compliance", "corrective", "review"]);
+  // Records rows carry a code, which the model leaves empty unless the text names one.
+  const row = { record: "Log", owner: "EHS", retention: "1 year", format: "Paper" };
+  const sections = (records: unknown) => ({ sections: { ...Object.fromEntries(keys.map((key) => [key, []])), monitoring: { kpis: [], narrative: [] }, records }, department: "", owner: "" });
+  assert.equal(prompt.schema.safeParse(sections([{ ...row, code: "" }])).success, true);
+  assert.equal(prompt.schema.safeParse(sections([row])).success, false);
+});
+
+test("reference SOPs offer their Compliance sections for a compliance rewrite, though the corpus stores them as custom", () => {
+  const seed = seedManual("Company A", ["textiles"], [{ title: "Waste Segregation and Disposal", catalogId: "waste-management" }]);
+  seed.sops[0].sections.push({ kind: "custom", title: "Compliance", blocks: [{ type: "paragraph", text: "SEED COMPLIANCE SENTINEL" }] });
+  seed.sops[0].sections.push({ kind: "custom", title: "Enforcement and Penalties", blocks: [{ type: "paragraph", text: "SEED PENALTY SENTINEL" }] });
+  withSeeds([seed], (directory) => {
+    const compliance = buildSopReferenceContext({ catalogId: "waste-management", title: "Waste Segregation and Disposal", sectionKind: "compliance", industryTags: [] }, { directory });
+    assert.match(compliance, /## Compliance \[compliance\]\nSEED COMPLIANCE SENTINEL/);
+    assert.doesNotMatch(compliance, /SEED PENALTY SENTINEL/);
+    const corrective = buildSopReferenceContext({ catalogId: "waste-management", title: "Waste Segregation and Disposal", sectionKind: "corrective", industryTags: [] }, { directory });
+    assert.match(corrective, /## Enforcement and Penalties \[corrective\]/);
+    assert.equal(buildSopReferenceContext({ catalogId: "waste-management", title: "Waste Segregation and Disposal", sectionKind: "introduction", industryTags: [] }, { directory }), "");
+  });
 });

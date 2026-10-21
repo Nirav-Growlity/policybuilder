@@ -4,7 +4,7 @@ import path from "node:path";
 import test from "node:test";
 import { findSopReferenceRoot } from "../../scripts/sop-reference-files";
 import { createEmptyManual } from "../sop/initial-manual";
-import { applyParsedControl, classifySectionLabel, cleanLabel, parseSopDocx, parsedControlPatch, parsedDateToIso, type ParsedSopManual } from "./sop-parse";
+import { applyParsedControl, classifySectionLabel, cleanLabel, parseSopDocx, parsedControlPatch, parsedDateToIso, recordRowsFromTable, type ParsedSopManual } from "./sop-parse";
 
 // The reference manuals live outside the repository (read-only data next to the checkout).
 const ROOT = findSopReferenceRoot();
@@ -34,8 +34,8 @@ function parseFixture(parts: string[]): Promise<ParsedSopManual> {
   return pending;
 }
 
-function share(manual: ParsedSopManual, kind: string): number {
-  return manual.sops.filter((sop) => sop.sections.some((section) => section.kind === kind)).length / manual.sops.length;
+function share(manual: ParsedSopManual, ...kinds: string[]): number {
+  return manual.sops.filter((sop) => sop.sections.some((section) => kinds.includes(section.kind ?? ""))).length / manual.sops.length;
 }
 
 function allBlockTexts(manual: ParsedSopManual): string[] {
@@ -44,7 +44,7 @@ function allBlockTexts(manual: ParsedSopManual): string[] {
 }
 
 for (const fixture of FIXTURES) {
-  test(`${fixture.name}: finds ${fixture.sops} SOPs with purpose and procedure sections`, { skip }, async () => {
+  test(`${fixture.name}: finds ${fixture.sops} SOPs with an opening (purpose or introduction) and procedure sections`, { skip }, async () => {
     const manual = await parseFixture(fixture.file);
 
     assert.equal(manual.sops.length, fixture.sops, manual.sops.map((sop) => sop.title).join("\n"));
@@ -52,7 +52,8 @@ for (const fixture of FIXTURES) {
       assert.ok(sop.title.length > 3, `empty SOP title in ${fixture.name}`);
       assert.ok(sop.sections.length >= 2, `"${sop.title}" has ${sop.sections.length} sections`);
     }
-    assert.ok(share(manual, "purpose") >= 0.75, `purpose share ${share(manual, "purpose")}`);
+    // Some manuals open each SOP with "Introduction" instead of "Purpose".
+    assert.ok(share(manual, "purpose", "introduction") >= 0.75, `purpose share ${share(manual, "purpose", "introduction")}`);
     assert.ok(share(manual, "procedure") >= 0.75, `procedure share ${share(manual, "procedure")}`);
   });
 
@@ -87,7 +88,7 @@ test("Priya Associates: table headings and term/role tables are preserved", { sk
   const first = manual.sops[0];
   assert.deepEqual(
     first.sections.slice(0, 4).map((section) => section.kind),
-    ["purpose", "scope", "definitions", "responsibilities"]
+    ["introduction", "scope", "definitions", "responsibilities"]
   );
   const roles = first.sections.find((section) => section.kind === "responsibilities")!;
   const table = roles.blocks.find((block) => block.type === "table");
@@ -179,6 +180,32 @@ test("section lexicon classifies common SOP headings", () => {
     ["Continuous Improvement", "review"],
     ["Compliance", "compliance"],
     ["ANNEXURES:", "appendix"],
+    // Introduction, compliance and corrective-action headings (their own SOP section kinds).
+    ["Introduction", "introduction"],
+    ["2. Overview", "introduction"],
+    ["Summary", "introduction"],
+    ["Background", "introduction"],
+    ["Purpose and Scope", "purpose"],
+    ["Legal Compliance", "compliance"],
+    ["Regulatory Compliance", "compliance"],
+    ["Compliance Requirements", "compliance"],
+    ["Compliance & Regulations", "compliance"],
+    ["Compliance and Legal Considerations", "compliance"],
+    ["Legal & Regulatory Compliance", "compliance"],
+    // The earliest keyword wins, as for "Terminology Overview".
+    ["Compliance and Monitoring", "compliance"],
+    ["Monitoring and Compliance", "monitoring"],
+    ["Corrective Action", "corrective"],
+    ["Corrective Actions", "corrective"],
+    ["Corrective and Preventive Actions", "corrective"],
+    ["CAPA", "corrective"],
+    ["Non-compliance", "corrective"],
+    ["Non-Compliance and Corrective Action", "corrective"],
+    ["Non-compliance & Corrective Action", "corrective"],
+    ["Enforcement and Penalties", "corrective"],
+    ["Disciplinary Action", "corrective"],
+    ["Disciplinary Actions", "corrective"],
+    ["Deviations", "review"],
     ["Water Recycling Technology", undefined],
   ];
   for (const [label, kind] of cases) assert.equal(classifySectionLabel(label), kind, label);
@@ -190,4 +217,30 @@ test("cleanLabel strips numbering prefixes but keeps words", () => {
   assert.equal(cleanLabel("SECTION D: PRODUCT & PACKAGING"), "PRODUCT & PACKAGING");
   assert.equal(cleanLabel("Introduction"), "Introduction");
   assert.equal(cleanLabel("A Guide to Waste"), "A Guide to Waste");
+});
+
+test("records tables map to rows, with a Record / Form / Format No. column as the code", () => {
+  for (const header of ["Record No.", "Form No.", "Format No", "Document Number"]) {
+    const rows = recordRowsFromTable(["Sr. No.", header, "Record Name", "Responsibility", "Retention Period", "Format"], [
+      ["1", "R/15-01", "Nonconforming Product Report", "Concerned HOD", "3 years", "Paper"],
+      ["2", "", "Bin audit sheet", "EHS Officer", "1 year", "Electronic"],
+    ]);
+    assert.deepEqual(rows, [
+      { code: "R/15-01", record: "Nonconforming Product Report", owner: "Concerned HOD", retention: "3 years", format: "Paper" },
+      { record: "Bin audit sheet", owner: "EHS Officer", retention: "1 year", format: "Electronic" },
+    ], header);
+  }
+  // No code column: rows without codes; the serial number is not a code.
+  assert.deepEqual(recordRowsFromTable(["S.No", "Records", "Maintained by", "Retention"], [["1", "Waste manifest", "Stores", "5 years"]]), [
+    { record: "Waste manifest", owner: "Stores", retention: "5 years", format: "" },
+  ]);
+  // A table that names no record is not a records table.
+  assert.equal(recordRowsFromTable(["Indicator", "Target"], [["Energy", "5%"]]), undefined);
+});
+
+test("Ganges: records tables keep their form numbers", { skip }, async () => {
+  const manual = await parseFixture(["Employee Handbook - SOP Manual", "SOP", "Ganges Jute", "SOP manual Ganges.docx"]);
+  const coded = manual.sops.flatMap((sop) => sop.sections).filter((section) => section.kind === "records" && section.records?.some((row) => row.code));
+  assert.ok(coded.length > 0, "a records table with form numbers");
+  assert.match(coded[0].records!.find((row) => row.code)!.code!, /^R\/\d+-\d+$/);
 });

@@ -12,7 +12,8 @@ import { sopSectionLabel, type Sop, type SopManual, type SopSection, type SopSec
 type IdFactory = (prefix: string) => string;
 
 const KNOWN_KINDS = new Set<SopSectionKind>([
-  "purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references", "review", "appendix", "custom",
+  "introduction", "purpose", "scope", "definitions", "responsibilities", "procedure", "monitoring", "training", "records", "references",
+  "compliance", "corrective", "review", "appendix", "custom",
 ]);
 
 const BLOCK_TYPES = new Set<RichTextBlock["type"]>(["paragraph", "bullets", "numbered", "table"]);
@@ -84,7 +85,10 @@ export function generatedSectionToSopSection(
       section.narrative = toBlocks(source.narrative, id);
       break;
     case "records":
-      section.rows = list(source.rows).map(record).map((row) => ({ record: str(row.record), owner: str(row.owner), retention: str(row.retention), format: str(row.format) })).filter((row) => row.record);
+      section.rows = list(source.rows).map(record).map((row) => ({
+        ...(str(row.code).trim() ? { code: str(row.code).trim() } : {}),
+        record: str(row.record), owner: str(row.owner), retention: str(row.retention), format: str(row.format),
+      })).filter((row) => row.record);
       break;
     case "references":
       section.items = list(source.items).map(str).filter(Boolean);
