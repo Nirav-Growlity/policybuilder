@@ -186,6 +186,14 @@ export interface SopManualControl {
   reviewedBy: string;
   approvedBy: string;
   classification: string;
+  /** Manual title on the cover and in running headers; "SOP Manual" when empty. */
+  title?: string;
+  /** Cover subtitle; the company name (and ESG line) when empty. */
+  subtitle?: string;
+  /** ISO yyyy-mm-dd, like effectiveDate. */
+  issueDate?: string;
+  /** ISO yyyy-mm-dd, like effectiveDate. */
+  lastReviewDate?: string;
 }
 
 export type SopCoreValue = { title: string; description: string };

@@ -191,7 +191,10 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
     reviewedBy: manual.control.reviewedBy,
     approvedBy: manual.control.approvedBy,
     classification: manual.control.classification,
+    issueDate: formatManualDate(manual.control.issueDate),
+    lastReviewDate: formatManualDate(manual.control.lastReviewDate),
   };
+  const manualTitle = manual.control.title?.trim() || "SOP Manual";
   const codes = suggestSopCodes(manual);
   const enabledSops = manual.sops.filter((sop) => sop.enabled);
   const pillarGrouped = manual.grouping === "pillar";
@@ -292,9 +295,11 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
       { role: "Reviewed by", name: "", designation: control.reviewedBy, date: "" },
       { role: "Approved by", name: "", designation: control.approvedBy, date: "" },
     ].filter((row) => row.designation);
+  // With no history, the one row is the current issue, so it carries the manual's own
+  // reviewer and approver (as the default approval signatories do).
   const revisions = manual.closing.revisionHistory.length
-    ? manual.closing.revisionHistory.map((entry) => ({ revision: entry.revisionNo, date: formatManualDate(entry.date), description: entry.description }))
-    : [{ revision: control.revision || "01", date: control.effectiveDate, description: "First issue of the SOP manual." }];
+    ? manual.closing.revisionHistory.map((entry) => ({ revision: entry.revisionNo, date: formatManualDate(entry.date), description: entry.description, reviewedBy: entry.reviewedBy?.trim() ?? "", approvedBy: entry.approvedBy?.trim() ?? "" }))
+    : [{ revision: control.revision || "01", date: control.effectiveDate, description: "First issue of the SOP manual.", reviewedBy: control.reviewedBy.trim(), approvedBy: control.approvedBy.trim() }];
   const reviewBlocks = toRenderBlocks(manual.closing.reviewMechanism);
 
   const page = manual.themeOptions.pageSize === "Letter" ? "Letter" : "A4";
@@ -303,14 +308,14 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
     mode: only ? "sops" : "full",
     design,
     page: { size: page, ...SOP_PAGE_SIZES[page] },
-    title: "SOP Manual",
+    title: manualTitle,
     company: { name: manual.company.name, logo: options.logoPath ?? null, industry: manual.company.industryDetail || manual.company.subCategory || manual.company.industry },
     control,
     cover: {
       image: options.coverImagePath ?? null,
       eyebrow: "Standard Operating Procedures",
-      title: "SOP Manual",
-      subtitle: [manual.company.name, pillarGrouped ? "Environmental, Social and Governance procedures" : ""].filter(Boolean).join("  |  "),
+      title: manualTitle,
+      subtitle: manual.control.subtitle?.trim() || [manual.company.name, pillarGrouped ? "Environmental, Social and Governance procedures" : ""].filter(Boolean).join("  |  "),
     },
     stats: {
       sopCount: enabledSops.length,

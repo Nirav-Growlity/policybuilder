@@ -97,3 +97,37 @@ test("bookmark names are valid Word names and quotes match Typst's smart quotes"
   assert.ok(bookmarkName("x".repeat(60)).length <= 40);
   assert.equal(smartQuotes(`the company's "approved" list`), "the company\u2019s \u201Capproved\u201D list");
 });
+
+test("Word prints the classification instead of \"Controlled copy\", the new control fields and revision columns", async () => {
+  const { model, assets } = await sample("controlled-manual");
+  assert.equal(model.control.classification, "Internal");
+  const { zip, document } = await open(await generateSopDocx(model, assets));
+  const parts = await Promise.all(Object.keys(zip.files).filter((name) => /^word\/(header|footer)\d+\.xml$/.test(name)).map((name) => zip.file(name)!.async("string")));
+  const text = (xml: string) => [...xml.matchAll(/<w:t(?: [^>]*)?>([^<]*)<\/w:t>/g)].map((match) => match[1]).join("");
+  const body = text(document);
+  const furniture = parts.map(text).join("\n");
+  // The sample's own text mentions controlled copies; the cover and the page furniture must not.
+  const cover = body.slice(0, body.indexOf("Contents"));
+  assert.doesNotMatch(cover + furniture, /controlled copy/i);
+  // Cover: the classification panel, and Supersedes / Issue date / Last review in the control grid
+  // (the grid sits in the cover section's footer, pinned to the page bottom as in Typst).
+  for (const label of ["ESG SOP Manual", "INTERNAL", "Supersedes", "Issue date", "Last review", "28 Oct 2026", "20 Oct 2026"]) assert.ok((cover + furniture).toLowerCase().includes(label.toLowerCase()), `cover shows ${label}`);
+  // Running header and footer.
+  for (const label of ["ESG SOP Manual", "Supersedes: Rev 00 (01 Nov 2025)", "Issue date: 28 Oct 2026", "Last review: 20 Oct 2026", "Internal | "]) assert.ok(furniture.includes(label), `header or footer shows ${label}`);
+  // Revision history gains Reviewed by / Approved by columns.
+  assert.match(body, /RevisionDateDescriptionReviewed byApproved by/);
+  assert.ok(body.includes("V. Raghavan, Managing Director"));
+
+  // No classification: back to "Controlled copy"; no revision names: no extra columns; no optional cells.
+  const plain = structuredClone(model);
+  Object.assign(plain.control, { classification: "", supersedes: "", issueDate: "", lastReviewDate: "" });
+  plain.closing.revisions = plain.closing.revisions.map((row) => ({ ...row, reviewedBy: "", approvedBy: "" }));
+  const reopened = await open(await generateSopDocx(plain, assets));
+  const plainParts = await Promise.all(Object.keys(reopened.zip.files).filter((name) => /^word\/(header|footer)\d+\.xml$/.test(name)).map((name) => reopened.zip.file(name)!.async("string")));
+  const plainBody = text(reopened.document);
+  assert.ok(plainParts.map(text).join("\n").includes("Controlled copy | "));
+  assert.match(plainBody.slice(0, plainBody.indexOf("Contents")), /CONTROLLED COPY/);
+  assert.match(plainBody, /RevisionDateDescription(?!Reviewed by)/);
+  const plainCover = plainBody.slice(0, plainBody.indexOf("Contents")).toLowerCase();
+  for (const label of ["Supersedes", "Issue date", "Last review"]) assert.ok(!plainCover.includes(label.toLowerCase()) && !plainParts.map(text).join("").toLowerCase().includes(label.toLowerCase()), `no ${label}`);
+});

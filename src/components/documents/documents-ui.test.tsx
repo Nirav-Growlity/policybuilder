@@ -8,6 +8,7 @@ import { createEmptyManual, createEmptySop } from "@/lib/sop/initial-manual";
 import { useSopBuilder } from "@/lib/sop/store";
 import type { StoredSopManual } from "@/lib/sop/client-api";
 import { ChooseSopsStep } from "./new-manual/choose-sops-step";
+import { ManualDetailsPanel } from "./new-manual/details-step";
 import { SopTemplatePicker } from "./design/sop-design-controls";
 import { SopBuilderContext, type SopBuilderActions } from "./builder/builder-context";
 import { SopWriter } from "./builder/sop-writer";
@@ -132,4 +133,13 @@ test("deleting an SOP moves the selection on and Undo puts it back in place", ()
   assert.deepEqual(useSopBuilder.getState().manual!.sops.map((sop) => sop.id), manual.sops.map((sop) => sop.id));
   useSopBuilder.getState().restoreSop(removed);
   assert.equal(useSopBuilder.getState().manual!.sops.length, 2, "restoring twice does not duplicate");
+});
+
+test("manual details ask for the title, subtitle, supersedes, issue and last review dates", () => {
+  const control = { ...createEmptyManual().control, title: "ESG SOP Manual", supersedes: "Rev 00", issueDate: "2026-10-28", lastReviewDate: "2026-10-20" };
+  const html = renderToStaticMarkup(React.createElement(ManualDetailsPanel, { control, onChange: noop, showErrors: false }));
+  for (const label of ["Manual title", "Subtitle", "Supersedes", "Issue date", "Last review date"]) assert.ok(html.includes(label), label);
+  assert.match(html, /value="ESG SOP Manual"/);
+  assert.match(html, /placeholder="SOP Manual"/);
+  assert.match(html, /value="Rev 00"/);
 });

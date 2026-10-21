@@ -108,6 +108,10 @@ export const sopManualControlSchema = z.object({
   reviewedBy: z.string(),
   approvedBy: z.string(),
   classification: z.string(),
+  title: z.string().optional(),
+  subtitle: z.string().optional(),
+  issueDate: z.string().optional(),
+  lastReviewDate: z.string().optional(),
 });
 
 export const sopFrontMatterSchema = z.object({
@@ -126,6 +130,8 @@ export const revisionEntrySchema = z.object({
   description: z.string(),
   source: z.enum(["scheduled", "custom"]).optional(),
   scheduleAnchor: z.number().optional(),
+  reviewedBy: z.string().optional(),
+  approvedBy: z.string().optional(),
 });
 
 export const sopClosingSchema = z.object({

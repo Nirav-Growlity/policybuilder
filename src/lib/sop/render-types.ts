@@ -96,6 +96,9 @@ export type SopRenderModel = {
     reviewedBy: string;
     approvedBy: string;
     classification: string;
+    /** Formatted dates, empty when not set (the cells are then left out). */
+    issueDate: string;
+    lastReviewDate: string;
   };
   cover: {
     /** Path of a full-bleed cover image inside the render workspace, or null for the template cover. */
@@ -109,7 +112,8 @@ export type SopRenderModel = {
   chapters: RenderChapter[];
   closing: {
     sections: RenderFrontSection[];
-    revisions: Array<{ revision: string; date: string; description: string }>;
+    /** reviewedBy / approvedBy are empty strings when not set; the columns print only when any row has one. */
+    revisions: Array<{ revision: string; date: string; description: string; reviewedBy: string; approvedBy: string }>;
     approval: { statement: string; signatories: Array<{ role: string; name: string; designation: string; date: string }> };
     anchors: { revisions: string; approval: string };
   };

@@ -1338,6 +1338,16 @@ function approvalBlock(ctx: Ctx): FlowItem[] {
 
 type SopMeta = { code: string; title: string; color: string; pillarLabel: string } | null;
 
+/** The classification stands in for the old fixed "Controlled copy" label (manual.typ `copy-label`). */
+function copyLabel(m: SopRenderModel): string {
+  return m.control.classification.trim() || "Controlled copy";
+}
+
+/** Optional control fields, left out when empty so older manuals keep their layout (manual.typ `optional-control`). */
+function optionalControl(pairs: Array<[string, string | undefined]>): Array<[string, string]> {
+  return pairs.filter((pair): pair is [string, string] => Boolean(pair[1]?.trim()));
+}
+
 function pageOf(ctx: Ctx, style: RunStyle): RunSpec[] {
   return [txt(ctx, "Page ", style), { field: "PAGE", ...style }, txt(ctx, " of ", style), { field: "NUMPAGES", ...style }];
 }
@@ -1367,21 +1377,40 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
     const titleCount = estimateLines(ctx, titleLines.lines[0].runs, widths[1] - 10) + estimateLines(ctx, titleLines.lines[1].runs, widths[1] - 10);
     const nameHeight = logo ? 8 * MM + 2 * ins.t : nameLines * (small + 1) + (nameLines - 1) * lead + 2 * ins.t;
     const titleHeight = titleCount * small + (titleCount - 1) * lead + 2 * ins.t;
-    const total = Math.max(2 * rowOne, nameHeight, titleHeight);
+    // Issue and last review dates share a row under the four fixed cells, and Supersedes
+    // (free text) gets a full-width row; a lone cell spans both columns.
+    const extraRows = [
+      optionalControl([["Issue date", m.control.issueDate], ["Last review", m.control.lastReviewDate]]),
+      optionalControl([["Supersedes", m.control.supersedes]]),
+    ].filter((row) => row.length > 0);
+    const rowCount = 2 + extraRows.length;
+    // Typst sizes each extra row to its text (Supersedes may wrap).
+    const textHeight = (lines: number) => lines * small + (lines - 1) * lead + 2 * ins.t;
+    const rowHeights = [rowOne, rowOne, ...extraRows.map((row) => Math.max(...row.map(([label, value]) => {
+      const width = row.length === 1 ? widths[2] + widths[3] : widths[2];
+      return textHeight(estimateLines(ctx, [txt(ctx, `${label}: ${value}`, { size: small })], width - 2 * ins.l));
+    })))];
+    const total = Math.max(rowHeights.reduce((sum, height) => sum + height, 0), nameHeight, titleHeight);
+    const cellRows: CellSpec[][] = [
+      [
+        { rowSpan: rowCount, vAlign: "center", inset: ins, borders, items: [{ ...par(ctx, [nameRun], tight), align: "center" }] },
+        { rowSpan: rowCount, vAlign: "center", inset: ins, borders, items: [titleLines] },
+        { vAlign: "center", inset: ins, borders, items: [smallText(`Doc No: ${m.control.docNo}`)] },
+        { vAlign: "center", inset: ins, borders, items: [smallText(`Rev: ${m.control.revision}`)] },
+      ],
+      [
+        { vAlign: "center", inset: ins, borders, items: [smallText(`Effective: ${m.control.effectiveDate}`)] },
+        { vAlign: "center", inset: ins, borders, items: [par(ctx, pageOf(ctx, { size: small }), tight)] },
+      ],
+    ];
+    for (const row of extraRows) {
+      cellRows.push(row.map(([label, value]) => ({ span: row.length === 1 ? 2 : undefined, vAlign: "center" as const, inset: ins, borders, items: [smallText(`${label}: ${value}`)] })));
+    }
+    // Every row but the last keeps its own height; the last takes what the spanning cells need (as in Typst).
+    const above = rowHeights.slice(0, -1).reduce((sum, height) => sum + height, 0);
     return [table(ctx, {
       widths,
-      rows: [
-        { height: rowOne, exact: true, cells: [
-          { rowSpan: 2, vAlign: "center", inset: ins, borders, items: [{ ...par(ctx, [nameRun], tight), align: "center" }] },
-          { rowSpan: 2, vAlign: "center", inset: ins, borders, items: [titleLines] },
-          { vAlign: "center", inset: ins, borders, items: [smallText(`Doc No: ${m.control.docNo}`)] },
-          { vAlign: "center", inset: ins, borders, items: [smallText(`Rev: ${m.control.revision}`)] },
-        ] },
-        { height: total - rowOne, cells: [
-          { vAlign: "center", inset: ins, borders, items: [smallText(`Effective: ${m.control.effectiveDate}`)] },
-          { vAlign: "center", inset: ins, borders, items: [par(ctx, pageOf(ctx, { size: small }), tight)] },
-        ] },
-      ],
+      rows: cellRows.map((cells, index) => (index < rowCount - 1 ? { height: rowHeights[index], exact: true, cells } : { height: total - above, cells })),
     })];
   }
   if (variant === "pillar-rule") {
@@ -1433,7 +1462,8 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
   const style = { size: small, color: ctx.pal.muted };
   const variant = ctx.d.runningFooter;
   if (variant === "prepared-approved") {
-    const third = [txt(ctx, `Controlled copy | Page ${"8".repeat(pageDigits)} of ${"8".repeat(pageDigits)}`, style)];
+    const label = copyLabel(m);
+    const third = [txt(ctx, `${label} | Page ${"8".repeat(pageDigits)} of ${"8".repeat(pageDigits)}`, style)];
     const thirdWidth = runsWidth(ctx, third);
     const column = (ctx.W - thirdWidth - 16) / 2;
     return [
@@ -1442,7 +1472,7 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
       par(ctx, [
         txt(ctx, `Prepared by: ${m.control.preparedBy}`, style), { tab: true },
         txt(ctx, `Approved by: ${m.control.approvedBy}`, style), { tab: true },
-        txt(ctx, "Controlled copy | ", style), ...pageOf(ctx, style),
+        txt(ctx, `${label} | `, style), ...pageOf(ctx, style),
       ], { blockLike: true, tabs: [{ type: "left", pos: column + 8 }, { type: "left", pos: ctx.W - thirdWidth }] }),
     ];
   }
@@ -1465,15 +1495,23 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
 function controlGrid(ctx: Ctx, width: number, indent?: number): TableItem {
   const c = ctx.m.control;
   const pairs: Array<[string, string]> = [
-    ["Document No.", c.docNo], ["Revision", c.revision], ["Effective date", c.effectiveDate], ["Next review", c.nextReviewDate],
+    ["Document No.", c.docNo], ["Revision", c.revision],
+    ...optionalControl([["Supersedes", c.supersedes], ["Issue date", c.issueDate]]),
+    ["Effective date", c.effectiveDate],
+    ...optionalControl([["Last review", c.lastReviewDate]]),
+    ["Next review", c.nextReviewDate],
     ["Prepared by", c.preparedBy], ["Reviewed by", c.reviewedBy], ["Approved by", c.approvedBy], ["Classification", c.classification],
   ];
   const line = { color: ctx.pal.line, size: RULE };
   const borders = { top: line, bottom: line, left: line, right: line };
+  // Optional fields can leave the last row short; empty cells keep the grid square.
+  const rowCount = Math.ceil(pairs.length / 4);
   return table(ctx, {
     widths: Array(4).fill(width / 4),
     indent,
-    rows: [0, 1].map((row) => ({ cells: pairs.slice(row * 4, row * 4 + 4).map(([label, value]) => ({ inset: inset(6, 5), borders, items: [metaPair(ctx, label, value)] })) })),
+    rows: Array.from({ length: rowCount }, (_, row) => ({
+      cells: Array.from({ length: 4 }, (_, column) => pairs[row * 4 + column]).map((pair) => ({ inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [] })),
+    })),
   });
 }
 
@@ -1546,8 +1584,8 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
           vAlign: "center", inset: inset(8, 5),
           borders: { top: { color: ctx.pal.primary, size: 1 }, bottom: { color: ctx.pal.primary, size: 1 }, left: { color: ctx.pal.primary, size: 1 }, right: { color: ctx.pal.primary, size: 1 } },
           items: [{ ...stack(ctx, [
-            [caps(ctx, "Controlled copy", { color: ctx.pal.primary })],
-            [txt(ctx, `${m.control.classification}  |  Rev ${m.control.revision}`, { size: ctx.sz.small, color: ctx.pal.muted })],
+            [caps(ctx, copyLabel(m), { color: ctx.pal.primary })],
+            [txt(ctx, `Rev ${m.control.revision}`, { size: ctx.sz.small, color: ctx.pal.muted })],
           ], tightOptions(ctx, ctx.sz.small)), align: "center" }],
         },
       ] }],
@@ -1851,7 +1889,15 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     const closing: FlowItem[] = [];
     for (const section of model.closing.sections) closing.push(...partTitle(ctx, section.title, section.anchor), ...renderBlocks(ctx, section.blocks, ctx.W), v(ctx.after));
     closing.push(...partTitle(ctx, "Revision history", model.closing.anchors.revisions));
-    closing.push(dataTable(ctx, ["Revision", "Date", "Description"], [0.8, 1, 3.2], model.closing.revisions.map((r) => [r.revision, r.date, r.description]), ctx.W));
+    // Reviewed by / Approved by columns appear only when some revision names someone (as in manual.typ).
+    const extra = ([["Reviewed by", "reviewedBy"], ["Approved by", "approvedBy"]] as const).filter(([, key]) => model.closing.revisions.some((r) => r[key]));
+    closing.push(dataTable(
+      ctx,
+      ["Revision", "Date", "Description", ...extra.map(([label]) => label)],
+      [...(extra.length ? [0.8, 1.2, 2.6] : [0.8, 1, 3.2]), ...extra.map(() => 1.3)],
+      model.closing.revisions.map((r) => [r.revision, r.date, r.description, ...extra.map(([, key]) => r[key])]),
+      ctx.W,
+    ));
     closing.push(v(ctx.after * 2), ...partTitle(ctx, "Approval", model.closing.anchors.approval), ...approvalBlock(ctx));
     plans.push({ kind: "body", sop: null, items: closing });
   }
