@@ -13,8 +13,10 @@ import { SOP_CATALOG } from "@/lib/sop/catalog";
 import { useSopBuilder } from "@/lib/sop/store";
 import type { Company } from "@/lib/types";
 import type { Sop, SopPillar } from "@/lib/sop/types";
+import { createEmptyCompanyFacts } from "@/lib/sop/company-facts";
 import { createSopId } from "@/lib/sop/initial-manual";
 import { PILLAR_LABELS, PILLAR_ORDER, filterCatalog, groupCatalog, sopFromCustom, sopFromTopic, withSuggestedCodes } from "../manual-helpers";
+import { CompanyFactsPanel } from "../new-manual/company-facts-panel";
 import { ManualDetailsPanel } from "../new-manual/details-step";
 import wizard from "../new-manual/wizard.module.css";
 import styles from "./builder.module.css";
@@ -94,6 +96,9 @@ export function AddSopModal({ open, onClose, onAdd }: { open: boolean; onClose: 
   );
 }
 
+/** One shared empty value, so editors that compare by identity do not see a new list on every render. */
+const NO_FACTS = createEmptyCompanyFacts();
+
 /**
  * Company and manual control, the builder's equivalent of the policy "Company details" dialog.
  * Like the policy, it first says what editing does not change, then opens the form.
@@ -138,6 +143,7 @@ export function ManualDetailsModal({ open, onClose }: { open: boolean; onClose: 
       <div className="pc-builder-authoring flex flex-col gap-5">
         <CompanyInfoForm company={manual.company} onCompanyChange={onCompanyChange} documentLabel="manual" />
         <ManualDetailsPanel control={manual.control} onChange={(patch) => setManual((current) => ({ ...current, control: { ...current.control, ...patch } }))} showErrors />
+        <CompanyFactsPanel facts={manual.facts ?? NO_FACTS} onChange={(patch) => setManual((current) => ({ ...current, facts: { ...(current.facts ?? NO_FACTS), ...patch } }))} />
       </div>
     </Modal>
   );

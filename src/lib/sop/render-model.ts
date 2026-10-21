@@ -4,6 +4,7 @@
  * labels, colours and visibility rules are decided here, once.
  */
 import type { RichTextBlock } from "../types";
+import { companyFacts } from "./company-facts";
 import { resolveSopDesign, SOP_PAGE_SIZES } from "./design/resolve";
 import type { RenderBlock, RenderChapter, RenderFrontSection, RenderSection, RenderSop, SopRenderModel } from "./render-types";
 import type { Sop, SopManual, SopPillar, SopSection } from "./types";
@@ -258,6 +259,27 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
     .filter((chapter) => chapter.sops.length > 0);
 
   const front = manual.frontMatter;
+  const facts = companyFacts(manual);
+  // Printed only when filled in (also in the live preview): they come from the
+  // company details, not from front-matter text the writer is expected to add.
+  const factSections = [
+    ...(facts.contacts.length ? [{
+      id: "contacts",
+      title: "Key Contacts",
+      blocks: [
+        { type: "p" as const, text: "Raise concerns, report incidents and ask questions about this manual through the contacts below." },
+        { type: "table" as const, columns: ["Purpose", "Name", "Phone", "Email"], widths: [1.4, 1.4, 1.2, 2], rows: facts.contacts.map((contact) => [contact.purpose, contact.name, contact.phone, contact.email]) },
+      ],
+    }] : []),
+    ...(facts.certifications.length ? [{
+      id: "certifications",
+      title: "Certifications and Standards",
+      blocks: [
+        { type: "p" as const, text: `${manual.company.name || "The Company"} holds the certifications and follows the standards listed below. The procedures in this manual support continued conformity with them.` },
+        { type: "ul" as const, items: facts.certifications },
+      ],
+    }] : []),
+  ];
   const frontMatter: RenderFrontSection[] = only ? [] : [
     { id: "introduction", title: "Introduction", blocks: toRenderBlocks(front.introduction) },
     {
@@ -273,6 +295,7 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
         { type: "table" as const, columns: ["Sr.", "Site", "Address", "Primary function"], widths: [0.4, 1.4, 2.4, 1.6], rows: front.sites.map((site, index) => [String(index + 1), site.location || "", site.address, site.primaryFunction || ""]) },
       ] : [],
     },
+    ...factSections,
     {
       id: "values",
       title: "Core Values",

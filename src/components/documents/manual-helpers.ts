@@ -5,9 +5,10 @@
  */
 import type { Company, RichTextBlock } from "@/lib/types";
 import { SOP_CATALOG, type SopCatalogTopic } from "@/lib/sop/catalog";
+import { companyFacts, hasCompanyFacts, reachableContacts } from "@/lib/sop/company-facts";
 import { createEmptyManual, createEmptySop, createSopId } from "@/lib/sop/initial-manual";
 import { PILLAR_LABELS, manualCodePrefix, suggestSopCodes } from "@/lib/sop/render-model";
-import type { Sop, SopCover, SopGrouping, SopManual, SopManualControl, SopPillar, SopSection, SopTemplateId, SopThemeOptions } from "@/lib/sop/types";
+import type { Sop, SopCompanyFacts, SopCover, SopGrouping, SopManual, SopManualControl, SopPillar, SopSection, SopTemplateId, SopThemeOptions } from "@/lib/sop/types";
 
 export { PILLAR_LABELS };
 export const PILLAR_ORDER: readonly SopPillar[] = ["E", "S", "G"];
@@ -265,11 +266,14 @@ export type NewManualInput = {
   themeOptions: SopThemeOptions;
   cover: SopCover;
   grouping?: SopGrouping;
+  /** Optional facts for the AI; kept only when something was filled in. */
+  facts?: SopCompanyFacts;
 };
 
 export function buildNewManual(input: NewManualInput): SopManual {
   const sops = [...input.topics.map(sopFromTopic), ...input.custom.filter((draft) => draft.title.trim()).map(sopFromCustom)];
   const base = createEmptyManual({ company: input.company, sops });
+  const facts = input.facts ? companyFacts({ facts: input.facts }) : undefined;
   return withSuggestedCodes({
     ...base,
     control: { ...base.control, ...input.control },
@@ -277,6 +281,7 @@ export function buildNewManual(input: NewManualInput): SopManual {
     theme: input.theme,
     themeOptions: input.themeOptions,
     cover: input.cover,
+    ...(facts && hasCompanyFacts(facts) ? { facts } : {}),
   });
 }
 
@@ -328,9 +333,11 @@ export function readinessChecks(manual: SopManual): ReadinessCheck[] {
   const duplicateCodes = codes.filter((code, index) => codes.indexOf(code) !== index);
   const front = manual.frontMatter;
   const plural = (count: number, noun: string) => `${count} ${noun}${count === 1 ? "" : "s"}`;
+  const contacts = reachableContacts(companyFacts(manual));
   return [
     { id: "company", label: "Company and approver", ok: Boolean(manual.company.name.trim() && manual.control.approvedBy.trim()), detail: manual.company.name.trim() && manual.control.approvedBy.trim() ? `${manual.company.name}, approved by ${manual.control.approvedBy}` : "Add the company name and who approves the manual.", fix: { kind: "details" } },
     { id: "control", label: "Document control", ok: Boolean(manual.control.docNo.trim() && manual.control.effectiveDate), detail: manual.control.docNo.trim() && manual.control.effectiveDate ? `${manual.control.docNo}, Rev ${manual.control.revision || "01"}` : "Add a document number and an effective date.", fix: { kind: "details" } },
+    { id: "contacts", label: "Contacts for reporting channels", ok: contacts.length > 0, detail: contacts.length ? `${plural(contacts.length, "contact")} for reports and concerns.` : "Add an email or phone number for reporting concerns, so SOPs name a real channel.", fix: { kind: "details" } },
     { id: "sops", label: "SOPs written", ok: sops.length > 0 && unwritten.length === 0, detail: sops.length === 0 ? "Add at least one SOP." : unwritten.length ? `${plural(unwritten.length, "SOP")} still to write.` : `All ${plural(sops.length, "SOP")} written.`, fix: unwritten[0] ? { kind: "sop", sopId: unwritten[0].id } : undefined },
     { id: "procedure", label: "Every SOP has a procedure", ok: emptyProcedure.length === 0, detail: emptyProcedure.length ? `${plural(emptyProcedure.length, "SOP")} without procedure steps.` : "Each SOP lists its steps.", fix: emptyProcedure[0] ? { kind: "sop", sopId: emptyProcedure[0].id } : undefined },
     { id: "owners", label: "Owners and departments", ok: missingOwner.length === 0, detail: missingOwner.length ? `${plural(missingOwner.length, "SOP")} without an owner or department.` : "Every SOP has an owner.", fix: missingOwner[0] ? { kind: "sop", sopId: missingOwner[0].id } : undefined },

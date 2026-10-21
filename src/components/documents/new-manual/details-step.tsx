@@ -8,7 +8,8 @@ import { Field, Input } from "@/components/ui/input";
 import { DatePicker } from "@/components/ui/calendar";
 import { SelectMenu } from "@/components/ui/select-menu";
 import type { Company } from "@/lib/types";
-import type { SopManualControl } from "@/lib/sop/types";
+import type { SopCompanyFacts, SopManualControl } from "@/lib/sop/types";
+import { CompanyFactsPanel } from "./company-facts-panel";
 import { WizardHeading } from "./wizard-chrome";
 
 export const REVIEW_FREQUENCIES = ["Yearly", "Half-yearly", "Quarterly", "Every 2 years", "Every 3 years"] as const;
@@ -90,11 +91,13 @@ export function ManualDetailsPanel({ control, onChange, showErrors }: { control:
   );
 }
 
-export function DetailsStep({ company, control, onCompanyChange, onControlChange, onContinue }: {
+export function DetailsStep({ company, control, facts, onCompanyChange, onControlChange, onFactsChange, onContinue }: {
   company: Company;
   control: SopManualControl;
+  facts: SopCompanyFacts;
   onCompanyChange: (updater: (company: Company) => Company | undefined) => void;
   onControlChange: (patch: Partial<SopManualControl>) => void;
+  onFactsChange: (patch: Partial<SopCompanyFacts>) => void;
   onContinue: () => void;
 }) {
   const [attempted, setAttempted] = React.useState(false);
@@ -109,6 +112,7 @@ export function DetailsStep({ company, control, onCompanyChange, onControlChange
       <div className="flex flex-col gap-5">
         <CompanyInfoForm company={company} onCompanyChange={onCompanyChange} documentLabel="manual" />
         <ManualDetailsPanel control={control} onChange={onControlChange} showErrors={attempted} />
+        <CompanyFactsPanel facts={facts} onChange={onFactsChange} />
       </div>
       <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-[var(--color-line)] bg-[var(--pc-panel)] p-4 sm:flex-row">
         <div className="flex items-center gap-2 text-[14px] text-[var(--color-muted)]" role={attempted && missing.length ? "alert" : undefined}>

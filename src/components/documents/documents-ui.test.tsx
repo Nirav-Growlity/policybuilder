@@ -14,6 +14,8 @@ import { SopBuilderContext, type SopBuilderActions } from "./builder/builder-con
 import { SopWriter } from "./builder/sop-writer";
 import { ReviewMode } from "./builder/review-mode";
 import { ProgressPill } from "./builder/progress-pill";
+import { FrontMatterWriter } from "./builder/manual-part-writers";
+import { CompanyFactsPanel } from "./new-manual/company-facts-panel";
 
 const noop = () => undefined;
 
@@ -142,4 +144,30 @@ test("manual details ask for the title, subtitle, supersedes, issue and last rev
   assert.match(html, /value="ESG SOP Manual"/);
   assert.match(html, /placeholder="SOP Manual"/);
   assert.match(html, /value="Rev 00"/);
+});
+
+test("the facts panel offers the profile, certifications, laws and a contacts table", () => {
+  const facts = { profile: "Founded in 1998.", certifications: ["ISO 14001:2015", "SA8000:2014"], regulations: ["Factories Act, 1948"], contacts: [{ purpose: "Grievance", name: "HR Manager", phone: "", email: "grievance@meridian.in" }] };
+  const markup = renderToStaticMarkup(React.createElement(Toaster, null, React.createElement(CompanyFactsPanel, { facts, onChange: noop })));
+  assert.match(markup, /Facts for writing/);
+  assert.match(markup, /Optional/);
+  assert.match(markup, />Founded in 1998\.</);
+  assert.match(markup, />ISO 14001:2015\nSA8000:2014</);
+  assert.match(markup, />Factories Act, 1948</);
+  assert.match(markup, />grievance@meridian\.in</);
+  assert.match(markup, /Add contact/);
+  const empty = renderToStaticMarkup(React.createElement(Toaster, null, React.createElement(CompanyFactsPanel, { facts: { profile: "", certifications: [], regulations: [], contacts: [] }, onChange: noop })));
+  assert.match(empty, /No contacts yet\. Add who handles ethics, grievances and emergencies\./);
+});
+
+test("the front matter shows the contacts and certifications it will print, with a way to edit them", () => {
+  loadManual();
+  const markup = inBuilder(React.createElement(FrontMatterWriter));
+  assert.match(markup, /No contacts or certifications yet/);
+  useSopBuilder.getState().setManual((manual) => ({ ...manual, facts: { profile: "", certifications: ["ISO 14001:2015"], regulations: [], contacts: [{ purpose: "Grievance", name: "HR Manager", phone: "", email: "grievance@meridian.in" }] } }));
+  const filled = inBuilder(React.createElement(FrontMatterWriter));
+  assert.match(filled, /Contacts and certifications/);
+  assert.match(filled, /<strong>Grievance<\/strong><span>HR Manager · grievance@meridian\.in<\/span>/);
+  assert.match(filled, /<strong>Certifications<\/strong><span>ISO 14001:2015<\/span>/);
+  assert.match(filled, /Edit facts/);
 });

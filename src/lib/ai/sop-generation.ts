@@ -11,6 +11,7 @@ import { z } from "zod";
 import { AI_WRITTEN_SECTION_KINDS, MANUAL_AI_FIELDS, type ManualAiField, type SopAiRequest, type SopAiResult } from "../sop/ai-contract";
 import { manualFieldText, wireSectionsToSop } from "../sop/apply-ai-result";
 import { getCatalogTopic } from "../sop/catalog";
+import { companyFacts } from "../sop/company-facts";
 import { createSopId } from "../sop/initial-manual";
 import { sopManualSchema, type GeneratedSopSection } from "../sop/schema";
 import type { RichTextBlock } from "../types";
@@ -236,7 +237,7 @@ function mockSection(manual: SopManual, sop: Sop, section: Pick<SopSection, "kin
         { record: "Corrective action register", owner, retention: "3 years", format: "Register (electronic)" },
       ] };
     case "references":
-      return { kind: "references", title, items: ["ISO 14001:2015 Environmental management systems", "ISO 45001:2018 Occupational health and safety management systems"] };
+      return { kind: "references", title, items: [...companyFacts(manual).certifications.slice(0, 3), "ISO 14001:2015 Environmental management systems", "ISO 45001:2018 Occupational health and safety management systems"].filter((item, index, all) => all.indexOf(item) === index) };
     case "review":
       return { kind: "review", title, blocks: [{ type: "paragraph", text: `This SOP is reviewed ${manual.control.reviewFrequency ? manual.control.reviewFrequency.toLowerCase() : "annually"} by the ${owner}, and earlier after an incident, audit finding or change in legal requirements. Changes are approved by ${manual.control.approvedBy || "the approver of this manual"}.` }] };
     default:
@@ -288,8 +289,10 @@ function toWire(sections: GeneratedSopSection[]): Record<string, unknown> {
 /** Canned front matter and closing text for the offline mock. */
 function mockNarrative(manual: SopManual): Record<Exclude<ManualAiField, "approvalStatement">, string[]> & { approvalStatement: string } {
   const company = manual.company.name || "The Company";
+  const profile = companyFacts(manual).profile.replace(/\s+/g, " ");
   return {
     introduction: [
+      ...(profile ? [profile] : []),
       `${company} operates in ${manual.company.industryDetail || manual.company.subCategory || manual.company.industry || "its sector"} at ${mockSites(manual)}.`,
       "This manual brings together the standard operating procedures that govern its environmental, social and governance performance and its day-to-day operations.",
     ],

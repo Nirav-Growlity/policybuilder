@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { SOP_CATALOG, recommendSops } from "@/lib/sop/catalog";
 import { createEmptyManual, createEmptySop, createEmptySopCompany, createEmptySopSection } from "@/lib/sop/initial-manual";
-import type { Sop, SopProcedureSection } from "@/lib/sop/types";
+import type { Sop, SopManual, SopProcedureSection } from "@/lib/sop/types";
 import {
   buildNewManual,
   estimatePages,
@@ -160,4 +160,26 @@ test("drafts rows read like the policy drafts list", () => {
   assert.equal(relativeTime("2026-10-14T12:00:00Z", now), "3 days ago");
   assert.equal(manualSummaryLine({ partCount: 14, pageCount: 96, updatedAt: "2026-10-17T10:00:00Z" }, now), "14 SOPs · 96 pages · updated 2h ago");
   assert.equal(manualSummaryLine({ partCount: 1, pageCount: null, updatedAt: "2026-10-17T11:55:00Z" }, now), "1 SOP · updated 5 min ago");
+});
+
+test("a new manual keeps company facts only when something was filled in, without blank lines", () => {
+  const company = { ...createEmptySopCompany(), name: "Meridian Textiles Pvt Ltd" };
+  const base = createEmptyManual({ company });
+  const input = { company, control: base.control, topics: [], custom: [], theme: "controlled-manual" as const, themeOptions: base.themeOptions, cover: base.cover };
+  assert.equal("facts" in buildNewManual(input), false);
+  assert.equal("facts" in buildNewManual({ ...input, facts: { profile: " ", certifications: [""], regulations: [], contacts: [{ purpose: "", name: "", phone: "", email: "" }] } }), false);
+  const manual = buildNewManual({ ...input, facts: { profile: "Founded 1998. ", certifications: ["ISO 14001:2015", ""], regulations: [], contacts: [{ purpose: "Grievance", name: "", phone: "", email: "hr@meridian.in" }] } });
+  assert.deepEqual(manual.facts, { profile: "Founded 1998.", certifications: ["ISO 14001:2015"], regulations: [], contacts: [{ purpose: "Grievance", name: "", phone: "", email: "hr@meridian.in" }] });
+});
+
+test("readiness asks for a reachable contact for reporting channels", () => {
+  const manual = createEmptyManual({ sops: [sop("Grievance", "S")] });
+  const check = (facts?: SopManual["facts"]) => readinessChecks({ ...manual, facts }).find((item) => item.id === "contacts")!;
+  assert.equal(check().ok, false);
+  assert.deepEqual(check().fix, { kind: "details" });
+  // A name without a phone or email is not a channel anyone can use.
+  assert.equal(check({ profile: "", certifications: [], regulations: [], contacts: [{ purpose: "Grievance", name: "HR Manager", phone: "", email: "" }] }).ok, false);
+  const ok = check({ profile: "", certifications: [], regulations: [], contacts: [{ purpose: "Grievance", name: "", phone: "", email: "hr@meridian.in" }, { purpose: "EHS", name: "", phone: "+91 1", email: "" }] });
+  assert.equal(ok.ok, true);
+  assert.match(ok.detail, /2 contacts/);
 });

@@ -99,6 +99,19 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
           ["3", "Head Office", "Avinashi Road, Coimbatore, Tamil Nadu", "Administration, HR, procurement, IT"],
         ] },
       ] },
+      { id: "contacts", anchor: "front-contacts", number: "", title: "Key Contacts", kind: "contacts", blocks: [
+        p("Raise concerns, report incidents and ask questions about this manual through the contacts below."),
+        { type: "table", columns: ["Purpose", "Name", "Phone", "Email"], widths: [1.4, 1.4, 1.2, 2], rows: [
+          ["Ethics & compliance", "S. Meena, Compliance Officer", "+91 424 253 1100", "ethics@meridiantextiles.in"],
+          ["Grievance", "HR Manager", "+91 424 253 1120", "grievance@meridiantextiles.in"],
+          ["EHS / emergency", "R. Karthik, EHS Manager", "+91 98430 21100", "ehs@meridiantextiles.in"],
+          ["Customer helpline", "Customer Service Desk", "1800 425 7700", "care@meridiantextiles.in"],
+        ] },
+      ] },
+      { id: "certifications", anchor: "front-certifications", number: "", title: "Certifications and Standards", kind: "certifications", blocks: [
+        p("Meridian Textiles Pvt Ltd holds the certifications and follows the standards listed below. The procedures in this manual support continued conformity with them."),
+        { type: "ul", items: ["ISO 14001:2015 Environmental Management System", "ISO 45001:2018 Occupational Health and Safety Management System", "SA8000:2014 Social Accountability", "OEKO-TEX Standard 100", "ZDHC Wastewater Guidelines"] },
+      ] },
       { id: "values", anchor: "front-values", number: "", title: "Core Values", kind: "values", blocks: [{ type: "table", columns: ["Value", "What it means here"], widths: [1, 3], rows: front.coreValues.map((value) => [value.title, value.description]) }] },
       { id: "how-to-use", anchor: "front-how-to-use", number: "", title: "How to Use this Manual", kind: "how-to-use", blocks: [p(front.howToUse)] },
     ],
