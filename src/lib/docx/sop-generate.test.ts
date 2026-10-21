@@ -167,3 +167,33 @@ test("a table inside a procedure step prints in place, nested in the step table 
     }
   }
 });
+
+test("title tables keep with what follows in every row, so Word never strands a heading", async () => {
+  const keeps = (paragraph: string) => /<w:keepNext(?![^>]*w:val="(false|0)")[^>]*\/>/.test(paragraph);
+  let checked = 0;
+  for (const design of SOP_DESIGNS) {
+    const { model, assets } = await sample(design.id);
+    const { document } = await open(await generateSopDocx(model, assets));
+    // The body heading of a front-matter part (the last bookmark of that name is in the body).
+    const at = document.lastIndexOf("Scope and Applicability");
+    const start = document.lastIndexOf("<w:tbl>", at);
+    const inTable = start >= 0 && document.indexOf("</w:tbl>", start) > at && document.lastIndexOf("</w:tbl>", at) < start;
+    if (!inTable) continue;
+    const tableXml = document.slice(start, document.indexOf("</w:tbl>", at));
+    const paragraphs = tableXml.match(/<w:p\b[\s\S]*?<\/w:p>/g) ?? [];
+    assert.ok(paragraphs.length > 1, `${design.id}: the alignment row and the title row`);
+    assert.ok(paragraphs.every(keeps), `${design.id}: every paragraph of the title table keeps with next`);
+    checked += 1;
+  }
+  // pillar-banner, title-banner and register-head draw part titles as tables.
+  assert.equal(checked, 3);
+});
+
+test("an SOP code that already starts with SOP is not printed as \"SOP SOP-…\"", async () => {
+  const { model, assets } = await sample("controlled-manual");
+  const sop = model.chapters[0].sops[0];
+  sop.code = "SOP-EHS-001";
+  const { document } = await open(await generateSopDocx(model, assets));
+  assert.doesNotMatch(document, /SOP SOP-EHS-001/i);
+  assert.match(document, /SOP-EHS-001 {3}\| {3}/);
+});

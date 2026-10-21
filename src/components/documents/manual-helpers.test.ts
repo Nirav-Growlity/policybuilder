@@ -12,6 +12,7 @@ import {
   groupCatalog,
   isSopWritten,
   manualProgress,
+  manualTitle,
   manualSummaryLine,
   mergeGeneratedSections,
   moveSopBefore,
@@ -297,4 +298,12 @@ test("the skeleton fills in an imported SOP that has only some sections", () => 
     "introduction(off)", "purpose", "scope(off)", "definitions(off)", "responsibilities(off)", "custom", "procedure", "monitoring(off)", "training(off)",
     "records(off)", "references(off)", "compliance(off)", "corrective(off)", "review(off)", "appendix", "appendix",
   ]);
+});
+
+test("the manual name is its own title when set, else the company name", () => {
+  const manual = createEmptyManual({ company: { ...createEmptySopCompany(), name: "Growlity Realty" } });
+  assert.equal(manualTitle(manual), "Growlity Realty SOP Manual");
+  assert.equal(manualTitle({ ...manual, control: { ...manual.control, title: "  " } }), "Growlity Realty SOP Manual");
+  assert.equal(manualTitle({ ...manual, control: { ...manual.control, title: " ESG SOP Manual " } }), "ESG SOP Manual");
+  assert.equal(manualTitle({ company: { ...manual.company, name: "" } }), "SOP Manual");
 });

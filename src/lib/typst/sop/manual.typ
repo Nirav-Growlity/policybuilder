@@ -225,7 +225,10 @@
 // ---------------------------------------------------------------- titles
 
 // Front-matter and closing section titles.
-#let part-title(title, label-name) = {
+// Sticky so a title never sits alone at the foot of a page (Word: keepNext on every part).
+// The block takes the spacing its first part had on its own (a table: block spacing; a
+// text title: paragraph spacing), so nothing moves.
+#let part-title(title, label-name) = block(breakable: false, sticky: true, above: if d.sopOpener in ("pillar-banner", "title-banner", "register-head") { after } else { pitch(body-size) - body-size + after }, {
   anchor(1, title, label-name)
   if d.sopOpener == "pillar-banner" or d.sopOpener == "title-banner" {
     table(columns: (1fr,), stroke: none, fill: if d.sopOpener == "title-banner" { primary-dark } else { primary }, inset: (x: 10pt, y: 8pt),
@@ -239,7 +242,7 @@
     line(length: 100%, stroke: (paint: if d.sopOpener == "ruled-title" { accent } else { primary }, thickness: 1pt))
   }
   v(after * 0.5)
-}
+})
 
 #let section-number-label(s) = if s.number != "" { s.number + "  " + s.title } else { s.title }
 
@@ -280,7 +283,8 @@
 #let sop-opener(sop) = {
   let color = col(sop.color)
   if d.sopOpener == "ruled-title" {
-    caps("SOP " + sop.code + "   |   " + sop.department, fill: accent)
+    // Codes such as "SOP-EHS-001" already say SOP.
+    caps((if upper(sop.code).starts-with("SOP") { sop.code } else { "SOP " + sop.code }) + "   |   " + sop.department, fill: accent)
     v(2pt)
     txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, sop.title)
     v(-2pt)

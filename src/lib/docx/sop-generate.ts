@@ -632,8 +632,8 @@ function resolveFlow(ctx: Ctx, items: FlowItem[], width: number, extra: { top?: 
   };
 }
 
-function spacer(height: number) {
-  return new Paragraph({ spacing: { before: 0, after: 0, line: Math.max(1, tw(height)), lineRule: LineRuleType.EXACT }, children: [new TextRun({ text: "", size: 2 })] });
+function spacer(height: number, keepNext = false) {
+  return new Paragraph({ keepNext: keepNext || undefined, spacing: { before: 0, after: 0, line: Math.max(1, tw(height)), lineRule: LineRuleType.EXACT }, children: [new TextRun({ text: "", size: 2 })] });
 }
 
 // ---------------------------------------------------------------- tables
@@ -649,6 +649,8 @@ type CellSpec = {
   span?: number;
   rowSpan?: number;
   borders?: { top?: Border | null; bottom?: Border | null; left?: Border | null; right?: Border | null };
+  /** An empty cell's filler paragraph keeps with next (title tables). */
+  keepNext?: boolean;
 };
 
 type RowSpec = { cells: CellSpec[]; header?: boolean; height?: number; exact?: boolean };
@@ -661,6 +663,11 @@ type TableSpec = {
   below?: number;
   /** Skip the page-top alignment room (tables placed at a fixed spot). */
   noShift?: boolean;
+  /**
+   * A title table: its alignment row keeps with the next row too. Word keeps a
+   * table with what follows only when every row keeps with the next one.
+   */
+  keepNext?: boolean;
 };
 
 const NO_BORDER = { style: BorderStyle.NONE, size: 0, color: "auto" };
@@ -684,7 +691,7 @@ function table(ctx: Ctx, input: TableSpec): TableItem {
   const shift = input.rows[0]?.height === undefined && !input.noShift ? topShift(ctx) : 0;
   const shiftOutside = shift > 0 && input.rows[0].cells.some((cell) => cell.fill);
   const spec: TableSpec = shiftOutside
-    ? { ...input, rows: [{ height: shift, exact: true, header: input.rows[0].header, cells: [{ items: [], span: input.widths.length, inset: inset(0, 0) }] }, ...input.rows] }
+    ? { ...input, rows: [{ height: shift, exact: true, header: input.rows[0].header, cells: [{ items: [], span: input.widths.length, inset: inset(0, 0), keepNext: input.keepNext }] }, ...input.rows] }
     : input;
   // Columns still covered by a row span from a row above.
   const covered = spec.widths.map(() => 0);
@@ -754,7 +761,7 @@ function table(ctx: Ctx, input: TableSpec): TableItem {
           verticalAlign: cell.vAlign === "center" ? VerticalAlign.CENTER : cell.vAlign === "bottom" ? VerticalAlign.BOTTOM : VerticalAlign.TOP,
           margins: { top: tw(rowMarginTop), bottom: tw(rowMarginBottom), left: tw(ins.l), right: tw(ins.r) },
           borders: { top: wordBorder(borders.top), bottom: wordBorder(borders.bottom), left: wordBorder(borders.left), right: wordBorder(borders.right) },
-          children: flow.children.length ? flow.children : [spacer(HAIR)],
+          children: flow.children.length ? flow.children : [spacer(HAIR, cell.keepNext)],
         });
       }),
     });
@@ -778,8 +785,8 @@ function table(ctx: Ctx, input: TableSpec): TableItem {
 }
 
 /** A one-cell shaded or ruled box (Typst `table(columns: (1fr,), ...)`). */
-function box(ctx: Ctx, width: number, items: FlowItem[], options: { fill?: string; inset?: Inset; borders?: CellSpec["borders"]; above?: number; below?: number; indent?: number } = {}): TableItem {
-  return table(ctx, { widths: [width], indent: options.indent, above: options.above, below: options.below, rows: [{ cells: [{ items, fill: options.fill, inset: options.inset, borders: options.borders }] }] });
+function box(ctx: Ctx, width: number, items: FlowItem[], options: { fill?: string; inset?: Inset; borders?: CellSpec["borders"]; above?: number; below?: number; indent?: number; keepNext?: boolean } = {}): TableItem {
+  return table(ctx, { widths: [width], indent: options.indent, above: options.above, below: options.below, keepNext: options.keepNext, rows: [{ cells: [{ items, fill: options.fill, inset: options.inset, borders: options.borders }] }] });
 }
 
 // ---------------------------------------------------------------- text components
@@ -901,30 +908,34 @@ function callout(ctx: Ctx, items: FlowItem[], width: number): TableItem {
 
 // ---------------------------------------------------------------- titles
 
+// Every part keeps with the next, so a title never sits alone at the foot of a page (Typst: a sticky block).
 function partTitle(ctx: Ctx, title: string, anchor: string): FlowItem[] {
   const opener = ctx.d.sopOpener;
   const size = ctx.sz.h1 * 0.85;
   if (opener === "pillar-banner" || opener === "title-banner") {
-    const item = box(ctx, ctx.W, [par(ctx, [txt(ctx, title, { font: "heading", size, bold: true, color: ctx.pal.onPrimary })], { bookmark: anchor, outline: 0 })], {
+    const item = box(ctx, ctx.W, [par(ctx, [txt(ctx, title, { font: "heading", size, bold: true, color: ctx.pal.onPrimary })], { bookmark: anchor, outline: 0, keepNext: true })], {
       fill: opener === "title-banner" ? ctx.pal.primaryDark : ctx.pal.primary,
       inset: inset(10, 8),
+      keepNext: true,
     });
-    return [item, v(ctx.after * 0.5)];
+    return [{ ...item, keepNext: true }, v(ctx.after * 0.5)];
   }
   if (opener === "register-head") {
     const item = table(ctx, {
       widths: [5 * MM, ctx.W - 5 * MM],
+      keepNext: true,
       rows: [{ cells: [
-        { items: [], fill: ctx.pal.primary, inset: inset(6, 5) },
-        { items: [par(ctx, [txt(ctx, title, { font: "heading", size, bold: true, color: ctx.pal.primary })], { bookmark: anchor, outline: 0 })], inset: inset(6, 5) },
+        // Word keeps a row with what follows only when every paragraph in it keeps with next.
+        { items: [par(ctx, [], { keepNext: true })], fill: ctx.pal.primary, inset: inset(6, 5) },
+        { items: [par(ctx, [txt(ctx, title, { font: "heading", size, bold: true, color: ctx.pal.primary })], { bookmark: anchor, outline: 0, keepNext: true })], inset: inset(6, 5) },
       ] }],
     });
-    return [item, v(ctx.after * 0.5)];
+    return [{ ...item, keepNext: true }, v(ctx.after * 0.5)];
   }
   return [
     par(ctx, [txt(ctx, title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { bookmark: anchor, outline: 0, keepNext: true }),
     v(-2),
-    rule(opener === "ruled-title" ? ctx.pal.accent : ctx.pal.primary, 1, { above: ctx.after, below: ctx.after }),
+    rule(opener === "ruled-title" ? ctx.pal.accent : ctx.pal.primary, 1, { above: ctx.after, below: ctx.after, keepNext: true }),
     v(ctx.after * 0.5),
   ];
 }
@@ -945,12 +956,14 @@ function sectionTitle(ctx: Ctx, section: RenderSection, color: string, width: nu
     return [group([{ ...box(ctx, width, [par(ctx, [caps(ctx, sectionLabel(section), { size: ctx.sz.h2, color })], { keepNext: true, outline: 2 })], {
       inset: { l: 7, r: 5, t: 2, b: 2 },
       borders: { left: { color, size: 3 } },
+      keepNext: true,
     }), keepNext: true }])];
   }
   if (heading === "number-chip") {
     const chip = 8 * MM;
     return [group([{ ...table(ctx, {
       widths: [chip, width - chip],
+      keepNext: true,
       rows: [{ cells: [
         { fill: ctx.pal.primary, vAlign: "center", inset: inset(5, 3), items: [par(ctx, [txt(ctx, section.number.replace(".0", ""), { bold: true, color: ctx.pal.onPrimary, size: ctx.sz.small + 1 })], { align: "center", keepNext: true })] },
         { vAlign: "center", inset: inset(5, 3), items: [par(ctx, [txt(ctx, section.title, { font: "heading", bold: true, color: ctx.pal.primaryDark, size: ctx.sz.h2 })], { keepNext: true, outline: 2 })] },
@@ -960,7 +973,7 @@ function sectionTitle(ctx: Ctx, section: RenderSection, color: string, width: nu
   // label-chip: a shaded chip as wide as its label.
   const label = caps(ctx, sectionLabel(section), { size: ctx.sz.small + 0.5, color: ctx.pal.primary });
   const chipWidth = Math.min(width, runsWidth(ctx, [label]) + 14 + 1);
-  return [group([{ ...box(ctx, chipWidth, [par(ctx, [label], { keepNext: true, outline: 2 })], { fill: ctx.pal.soft, inset: inset(7, 3) }), keepNext: true }])];
+  return [group([{ ...box(ctx, chipWidth, [par(ctx, [label], { keepNext: true, outline: 2 })], { fill: ctx.pal.soft, inset: inset(7, 3), keepNext: true }), keepNext: true }])];
 }
 
 // ---------------------------------------------------------------- SOP parts
@@ -1001,7 +1014,8 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
   };
   if (opener === "ruled-title") {
     out.push(
-      mark(par(ctx, [caps(ctx, `SOP ${sop.code}   |   ${sop.department}`, { color: ctx.pal.accent })], { keepNext: true })),
+      // Codes such as "SOP-EHS-001" already say SOP.
+      mark(par(ctx, [caps(ctx, `${/^sop/i.test(sop.code) ? sop.code : `SOP ${sop.code}`}   |   ${sop.department}`, { color: ctx.pal.accent })], { keepNext: true })),
       v(2),
       par(ctx, [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 1 }),
       v(-2),

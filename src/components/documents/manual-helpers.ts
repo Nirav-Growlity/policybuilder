@@ -302,7 +302,10 @@ export function suggestDocNo(company: Pick<Company, "name">, organizationCode?: 
   return `${prefix}/SOP/01`;
 }
 
-export function manualTitle(manual: Pick<SopManual, "company">): string {
+/** The manual's name in lists and file names: its own title when set, else "<Company> SOP Manual". */
+export function manualTitle(manual: Pick<SopManual, "company"> & { control?: Pick<SopManualControl, "title"> }): string {
+  const own = manual.control?.title?.trim();
+  if (own) return own;
   const name = manual.company.name.trim();
   return name ? `${name} SOP Manual` : "SOP Manual";
 }

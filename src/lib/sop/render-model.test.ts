@@ -307,3 +307,13 @@ test("several appendices print after the canonical sections, lettered in order",
   assert.deepEqual(sections.map((section) => section.number), sections.map((_, index) => `${index + 1}.0`));
   assert.equal(sections.at(-1)!.id, printed.at(-1)!.id);
 });
+
+test("rows left blank in a narrative table are not printed", () => {
+  const manual = sampleManual();
+  const sop = manual.sops[0];
+  const table = { id: "t", type: "table" as const, text: "", columns: ["Site", "Waste streams"], rows: [["Unit 1", "Debris"], [" ", ""], ["", "Packaging"]] };
+  sop.sections = sop.sections.map((section) => (section.kind === "scope" ? { ...section, blocks: [table] } : section));
+  const rendered = buildSopRenderModel(manual).chapters.flatMap((chapter) => chapter.sops).find((item) => item.title === sop.title)!;
+  const scope = rendered.sections.find((section) => section.kind === "scope")!;
+  assert.deepEqual(scope.blocks[0], { type: "table", columns: ["Site", "Waste streams"], widths: [1, 1], rows: [["Unit 1", "Debris"], ["", "Packaging"]] });
+});

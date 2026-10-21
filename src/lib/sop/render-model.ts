@@ -53,7 +53,8 @@ export function toRenderBlocks(blocks: RichTextBlock[] | undefined): RenderBlock
         type: "table",
         columns: block.columns,
         widths: block.columns.map(() => 1),
-        rows: (block.rows ?? []).map((row) => block.columns!.map((_, index) => row[index] ?? "")),
+        // Rows left blank in the editor are not printed.
+        rows: (block.rows ?? []).map((row) => block.columns!.map((_, index) => row[index] ?? "")).filter((row) => row.some((cell) => cell.trim())),
       });
     }
   }

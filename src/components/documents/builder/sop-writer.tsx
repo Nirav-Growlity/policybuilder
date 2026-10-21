@@ -89,7 +89,7 @@ export function SopWriter({ sop }: { sop: Sop }) {
           <Panel
             key={section.id}
             className={clsx(writing && !shown && styles.sectionPending)}
-            title={<span className={styles.sectionTitle}><span className={styles.sectionNumber}>{number}.0</span><input value={section.title} onChange={(event) => setSection({ ...section, title: event.target.value })} aria-label="Section heading" className={styles.sectionTitleInput} /></span>}
+            title={<span className={styles.sectionTitle}><span className={styles.sectionNumber}>{number}.0</span><input value={section.title} onChange={(event) => setSection({ ...section, title: event.target.value })} aria-label="Section heading" size={Math.max(6, section.title.length + 1)} className={styles.sectionTitleInput} /></span>}
             actions={
               <>
                 {section.kind === "appendix" && appendixCount > 1 && !sectionHasContent(section) ? (

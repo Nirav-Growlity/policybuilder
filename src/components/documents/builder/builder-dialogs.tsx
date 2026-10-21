@@ -15,7 +15,7 @@ import type { Company } from "@/lib/types";
 import type { Sop, SopPillar } from "@/lib/sop/types";
 import { createEmptyCompanyFacts } from "@/lib/sop/company-facts";
 import { createSopId } from "@/lib/sop/initial-manual";
-import { PILLAR_LABELS, PILLAR_ORDER, filterCatalog, groupCatalog, sopFromCustom, sopFromTopic, withSuggestedCodes } from "../manual-helpers";
+import { PILLAR_LABELS, PILLAR_ORDER, filterCatalog, groupCatalog, manualTitle, sopFromCustom, sopFromTopic, withSuggestedCodes } from "../manual-helpers";
 import { CompanyFactsPanel } from "../new-manual/company-facts-panel";
 import { ManualDetailsPanel } from "../new-manual/details-step";
 import wizard from "../new-manual/wizard.module.css";
@@ -142,7 +142,14 @@ export function ManualDetailsModal({ open, onClose }: { open: boolean; onClose: 
     <Modal open={open} onClose={onClose} title="Company and manual details" description="Changes save automatically. Review the SOPs after editing." width={980} footer={<Button variant="primary" size="md" onClick={onClose}>Done</Button>}>
       <div className="pc-builder-authoring flex flex-col gap-5">
         <CompanyInfoForm company={manual.company} onCompanyChange={onCompanyChange} documentLabel="manual" />
-        <ManualDetailsPanel control={manual.control} onChange={(patch) => setManual((current) => ({ ...current, control: { ...current.control, ...patch } }))} showErrors />
+        <ManualDetailsPanel control={manual.control} onChange={(patch) => {
+          const store = useSopBuilder.getState();
+          // A manual still carrying its automatic name follows its title; a renamed one keeps its name.
+          const followsTitle = store.manual !== null && (store.title === manualTitle(store.manual) || store.title === manualTitle({ company: store.manual.company }));
+          setManual((current) => ({ ...current, control: { ...current.control, ...patch } }));
+          const next = useSopBuilder.getState().manual;
+          if (followsTitle && next) store.setTitle(manualTitle(next));
+        }} showErrors />
         <CompanyFactsPanel facts={manual.facts ?? NO_FACTS} onChange={(patch) => setManual((current) => ({ ...current, facts: { ...(current.facts ?? NO_FACTS), ...patch } }))} />
       </div>
     </Modal>

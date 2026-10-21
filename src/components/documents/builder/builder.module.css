@@ -124,7 +124,8 @@
 .sopNotice[data-tone="error"] { background: var(--pc-error-surface); color: var(--pc-error); }
 .sectionTitle { display: flex; min-width: 0; align-items: baseline; gap: 8px; }
 .sectionNumber { flex: none; color: var(--pc-muted); font-size: 13px; font-weight: 650; font-variant-numeric: tabular-nums; }
-.sectionTitleInput { min-width: 0; width: 100%; border: 1px solid transparent; border-radius: 8px; background: transparent; padding: 2px 6px; margin-left: -6px; color: var(--pc-text); font: inherit; outline: none; transition: background-color 150ms ease, border-color 150ms ease; }
+/* The panel header sizes to its content, so the heading field sizes to its text (size= is the fallback). */
+.sectionTitleInput { min-width: 6ch; max-width: 100%; field-sizing: content; border: 1px solid transparent; border-radius: 8px; background: transparent; padding: 2px 6px; margin-left: -6px; color: var(--pc-text); font: inherit; outline: none; transition: background-color 150ms ease, border-color 150ms ease; }
 .sectionTitleInput:hover { background: var(--pc-inset); }
 .sectionTitleInput:focus-visible { border-color: var(--pc-brand); background: var(--pc-panel); }
 .sectionPending { opacity: .62; }
