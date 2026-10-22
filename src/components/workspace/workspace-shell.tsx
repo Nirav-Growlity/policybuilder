@@ -309,7 +309,7 @@ export function WorkspaceShell({
 
   return (
     <WorkspaceContext.Provider value={{ access }}>
-      <ApplicationSurface className={styles.workspaceRoot} style={role === "user" ? undefined : { "--color-muted": "#5f6e65" } as React.CSSProperties}>
+      <ApplicationSurface className={styles.workspaceRoot} style={role === "user" ? undefined : { "--color-muted": "var(--ws-shell-muted)" } as React.CSSProperties}>
         {signingOut ? <AppTransitionScreen overlay title="Signing you out" detail="Closing your session securely." /> : null}
         <a href="#workspace-main" className={styles.skipLink}>Skip to workspace</a>
         <header className={styles.header} data-scrolled={scrolled || undefined} inert={mobileNavOpen} style={{ viewTransitionName: "ws-header" }}>

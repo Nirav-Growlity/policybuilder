@@ -32,7 +32,7 @@ export function ApplicationUserMenu({ user, workspaceHref, onSignOut, signingOut
   const identity = user.name || user.email || "Your account";
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger className={styles.trigger} aria-label={`Account for ${identity}`}>
+      <DropdownMenu.Trigger className={`pc-ui ${styles.trigger}`} aria-label={`Account for ${identity}`}>
         <span className={styles.avatar} aria-hidden="true"><UserRound size={17} /></span>
         <span className={styles.name}>{identity}</span>
         <ChevronDown size={14} aria-hidden="true" />

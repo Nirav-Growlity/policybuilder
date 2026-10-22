@@ -301,6 +301,19 @@
 .pc-feature-field-error { color: var(--pc-error); }
 .pc-feature-field-hint { color: var(--pc-muted); }
 .pc-builder-authoring [role="option"][data-pc-active="true"] { background: var(--pc-selection); color: var(--pc-selection-text); }
+/* Combobox popups read the theme tokens directly so they follow dark mode outside the builder too. */
+.pc-ui .pc-feature-listbox { border-color: var(--pc-control); background: var(--pc-panel); color: var(--pc-text); scrollbar-color: var(--pc-control) transparent; }
+.pc-ui .pc-feature-listbox [role="option"] { color: var(--pc-text); }
+.pc-ui .pc-feature-listbox [role="option"]:hover,
+.pc-ui .pc-feature-listbox [role="option"][data-pc-active="true"] { background: var(--pc-inset); color: var(--pc-text); }
+.pc-ui .pc-feature-listbox [role="option"][aria-selected="true"] { background: var(--pc-selection); color: var(--pc-selection-text); }
+.pc-ui .pc-feature-listbox > p { color: var(--pc-muted); }
+.pc-ui .pc-feature-combobox-action { color: var(--pc-muted); }
+.pc-ui .pc-feature-combobox-action:hover { background: var(--pc-inset); color: var(--pc-text); }
+[data-pc-theme="dark"] .pc-ui .pc-feature-listbox { box-shadow: 0 0 0 1px rgb(255 255 255 / 4%), 0 18px 40px -12px rgb(0 0 0 / 70%); }
+[data-pc-theme="dark"] .pc-ui :is(.pc-feature-listbox [role="option"]:not([aria-selected="true"]):is(:hover, [data-pc-active="true"]), .pc-feature-combobox-action:hover) { background: rgb(255 255 255 / 8%); }
+/* Native select popups take their colours from the option, so a dark list needs them spelled out. */
+[data-pc-theme="dark"] .pc-ui option { background: var(--pc-panel); color: var(--pc-text); }
 
 @media (max-width: 640px) {
   .pc-company-info-panel > .pc-authoring-panel-header { flex-direction: column; align-items: stretch; }

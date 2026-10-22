@@ -51,8 +51,17 @@
 }
 
 .workspace :global(.bg-red-50),
-.dialogContent :global(.bg-red-50) {
+.dialogContent :global(.bg-red-50),
+.workspace :global(.bg-red-100),
+.dialogContent :global(.bg-red-100),
+.workspace :global(.hover\:bg-red-50:hover),
+.dialogContent :global(.hover\:bg-red-50:hover) {
   background-color: var(--pc-error-surface);
+}
+
+.workspace :global(.hover\:bg-red-100:hover),
+.dialogContent :global(.hover\:bg-red-100:hover) {
+  background-color: color-mix(in srgb, var(--pc-error) 12%, var(--pc-panel));
 }
 
 .workspace :global(.bg-emerald-50),
@@ -68,7 +77,9 @@
 }
 
 .workspace :global(.text-emerald-900),
-.dialogContent :global(.text-emerald-900) {
+.workspace :global(.text-emerald-800),
+.dialogContent :global(.text-emerald-900),
+.dialogContent :global(.text-emerald-800) {
   color: var(--pc-success);
 }
 
