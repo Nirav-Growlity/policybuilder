@@ -1,6 +1,4 @@
-import { generatePreviewPdf } from "./print-document";
 import { normalizePolicyQuantitative } from "../quantitative";
-import { renderPolicyTypstPdf } from "../typst/policy/render";
 import type { Policy } from "../types";
 import type { AuthorApprovalRenderData } from "../document-render-model";
 
@@ -20,8 +18,12 @@ const pdfCache = new Map<string, Buffer>();
 const pdfRequests = new Map<string, Promise<Buffer>>();
 const MAX_CACHED_PDFS = 4;
 
-function render(policy: Policy, authorApproval: AuthorApprovalRenderData | undefined, engine: PolicyPdfEngine) {
-  return engine === "typst" ? renderPolicyTypstPdf(policy, authorApproval) : generatePreviewPdf(policy, authorApproval);
+// Each engine loads on first use. The export route's function bundle only
+// ships the engine POLICY_PDF_ENGINE picks at build time (next.config.ts drops
+// the other one's native binaries), so neither may be imported eagerly.
+async function render(policy: Policy, authorApproval: AuthorApprovalRenderData | undefined, engine: PolicyPdfEngine): Promise<Buffer> {
+  if (engine === "typst") return (await import("../typst/policy/render")).renderPolicyTypstPdf(policy, authorApproval);
+  return (await import("./print-document")).generatePreviewPdf(policy, authorApproval);
 }
 
 export function generatePdf(inputPolicy: Policy, authorApproval?: AuthorApprovalRenderData, cacheScope = "public-template", engine = policyPdfEngine()): Promise<Buffer> {
