@@ -55,3 +55,31 @@ test("SVG logos are recognised by content even when the declared MIME type is mi
     assert.equal(result.width, 2000);
   }
 });
+
+test("logos sent as data URL strings, as the organization editor does, are processed like files", async () => {
+  const png = await sharp({ create: { width: 400, height: 120, channels: 4, background: "#176B45" } }).png().toBuffer();
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80"><rect width="300" height="80" fill="#2E7D32"/></svg>';
+  for (const [dataUrl, width] of [
+    [`data:image/png;base64,${png.toString("base64")}`, 400],
+    [`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`, 2000],
+    [`data:application/octet-stream;base64,${Buffer.from(svg).toString("base64")}`, 2000],
+  ] as const) {
+    const outgoing = new FormData();
+    outgoing.set("logo", dataUrl);
+    const form = await new Request("http://localhost/upload", { method: "POST", body: outgoing }).formData();
+    const result = await readPolicyCraftOrganizationLogo(form, true);
+    assert.ok(result);
+    assert.equal(result.width, width);
+  }
+});
+
+test("malformed or non-image data URLs are rejected as input errors", async () => {
+  for (const value of ["data:image/svg+xml,%E0%A4%A", "data:text/plain;base64,aGVsbG8=", "https://example.com/logo.png", ""]) {
+    const form = new FormData();
+    form.set("logo", value);
+    await assert.rejects(readPolicyCraftOrganizationLogo(form, true), PolicyCraftOrganizationInputError, value);
+  }
+  const optional = new FormData();
+  optional.set("logo", "");
+  assert.equal(await readPolicyCraftOrganizationLogo(optional, false), undefined);
+});
