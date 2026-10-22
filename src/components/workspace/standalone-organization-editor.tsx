@@ -66,9 +66,8 @@ const organizationFormSchema = z.object({
   reportingPeriod: z.enum(["FY", "CY"]),
   sites: z.array(z.object({ id: z.string().optional(), location: z.string(), address: z.string(), primaryFunction: z.string() })),
   companyLogo: z.string().optional(),
-  logo: z.any().optional(),
 });
-type OrganizationFormValues = StandaloneOrganizationProfile & { logo?: unknown };
+type OrganizationFormValues = StandaloneOrganizationProfile;
 
 const EDITOR_TITLE_ID = "organization-editor-title";
 const EDITOR_INTRO = "Set the company profile, Sector, Subsector and Industry used as defaults for new policies. Existing policies keep their saved details.";
@@ -82,6 +81,64 @@ function imageSource(reference: string | undefined, organizationId?: number) {
   return `${url.pathname}${url.search}`;
 }
 
+const LOGO_MAX_BYTES = 10 * 1024 * 1024;
+const LOGO_EDGE = 2000;
+// Vercel rejects request bodies over 4.5 MB, and base64 adds a third, so larger logos are redrawn smaller first.
+const LOGO_UPLOAD_BUDGET = 3.5 * 1024 * 1024;
+
+function readAsDataUrl(file: Blob) {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result));
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+/** Draws an SVG onto a canvas at LOGO_EDGE on its long side, so the server only ever receives a PNG. */
+async function rasterizeSvgLogo(file: File) {
+  const svg = new DOMParser().parseFromString(await file.text(), "image/svg+xml").documentElement;
+  if (svg.nodeName.toLowerCase() !== "svg") throw new Error("Not an SVG document.");
+  const viewBox = (svg.getAttribute("viewBox") || "").split(/[\s,]+/).map(Number);
+  const width = parseFloat(svg.getAttribute("width") || "") || viewBox[2] || 300;
+  const height = parseFloat(svg.getAttribute("height") || "") || viewBox[3] || 150;
+  if (!svg.getAttribute("viewBox")) svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  const scale = LOGO_EDGE / Math.max(width, height);
+  const target = { width: Math.round(width * scale), height: Math.round(height * scale) };
+  svg.setAttribute("width", String(target.width));
+  svg.setAttribute("height", String(target.height));
+  const image = document.createElement("img");
+  image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(svg))}`;
+  await image.decode();
+  const canvas = document.createElement("canvas");
+  canvas.width = target.width;
+  canvas.height = target.height;
+  canvas.getContext("2d")!.drawImage(image, 0, 0, target.width, target.height);
+  return canvas.toDataURL("image/png");
+}
+
+async function shrinkRasterLogo(dataUrl: string) {
+  const image = document.createElement("img");
+  image.src = dataUrl;
+  await image.decode();
+  const scale = Math.min(1, LOGO_EDGE / Math.max(image.naturalWidth, image.naturalHeight));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+  canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+  canvas.getContext("2d")!.drawImage(image, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL("image/webp", 0.92);
+}
+
+/** Mirrors the builder's company form: the logo is read in the browser and sent as a data URL, never as a file part. */
+async function prepareLogo(file: File) {
+  const isSvg = file.type === "image/svg+xml" || /\.svg$/i.test(file.name);
+  // The server can still rasterize an SVG the browser could not draw.
+  let dataUrl = isSvg ? await rasterizeSvgLogo(file).catch(() => readAsDataUrl(file)) : await readAsDataUrl(file);
+  if (dataUrl.length > LOGO_UPLOAD_BUDGET && !dataUrl.startsWith("data:image/svg")) dataUrl = await shrinkRasterLogo(dataUrl);
+  if (dataUrl.length > LOGO_UPLOAD_BUDGET) throw new Error("Logo too large to upload.");
+  return dataUrl;
+}
+
 function toFormValues(profile?: StandaloneOrganization): OrganizationFormValues {
   return {
     name: profile?.name || "",
@@ -93,7 +150,6 @@ function toFormValues(profile?: StandaloneOrganization): OrganizationFormValues 
     reportingPeriod: profile?.reportingPeriod || "FY",
     sites: profile?.sites?.length ? profile.sites.map((site) => ({ ...site })) : [{ location: "", address: "", primaryFunction: "" }],
     companyLogo: profile?.companyLogo,
-    logo: undefined,
   };
 }
 
@@ -131,23 +187,19 @@ export function StandaloneOrganizationStatus({ backHref, backLabel, navigation, 
 export function StandaloneOrganizationEditor({ organizationId, initial, backHref = "/admin/organizations/policycraft", navigation }: { organizationId?: number; initial?: StandaloneOrganization; backHref?: string; navigation?: React.ReactNode }) {
   const router = useRouter();
   const [lockVersion, setLockVersion] = React.useState(initial?.lockVersion ?? 1);
-  const [logoPreview, setLogoPreview] = React.useState("");
-  const logoPreviewRef = React.useRef("");
+  const [logoDataUrl, setLogoDataUrl] = React.useState("");
+  const [preparingLogo, setPreparingLogo] = React.useState(false);
+  const logoInputRef = React.useRef<HTMLInputElement>(null);
   const [error, setError] = React.useState("");
   const [saved, setSaved] = React.useState(false);
   const [saving, setSaving] = React.useState(false);
   const [conflict, setConflict] = React.useState(false);
-  const { register, control, handleSubmit, getValues, setValue, reset, resetField } = useForm<OrganizationFormValues>({
+  const { register, control, handleSubmit, getValues, setValue, reset } = useForm<OrganizationFormValues>({
     resolver: zodResolver(organizationFormSchema),
     defaultValues: toFormValues(initial),
   });
   const profile = useWatch({ control }) || toFormValues(initial);
   const siteFields = useFieldArray({ control, name: "sites", keyName: "fieldKey" });
-  const logoRegistration = register("logo");
-
-  React.useEffect(() => () => {
-    if (logoPreviewRef.current) URL.revokeObjectURL(logoPreviewRef.current);
-  }, []);
 
   function setClassification(key: "industry" | "subCategory" | "industryDetail", value: string) {
     const next = withCompanyClassification(getValues(), key, value);
@@ -157,27 +209,27 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
     setSaved(false);
   }
 
-  function chooseLogo(file?: File) {
+  async function chooseLogo(file?: File) {
     setError("");
     if (!file) return;
     // Some systems report no MIME type for SVGs, so fall back to the extension; the server checks the bytes.
     const supported = ["image/png", "image/jpeg", "image/webp", "image/svg+xml"].includes(file.type) || /\.(png|jpe?g|webp|svg)$/i.test(file.name);
-    if (!supported || file.size > 10 * 1024 * 1024) {
+    if (!supported || file.size > LOGO_MAX_BYTES) {
       setError("Choose a PNG, JPEG, WebP or SVG image under 10 MB.");
       return;
     }
-    if (logoPreviewRef.current) URL.revokeObjectURL(logoPreviewRef.current);
-    setSaved(false);
-    logoPreviewRef.current = URL.createObjectURL(file);
-    setLogoPreview(logoPreviewRef.current);
-    setValue("logo", file, { shouldDirty: true });
+    setPreparingLogo(true);
+    try {
+      setLogoDataUrl(await prepareLogo(file));
+      setSaved(false);
+    } catch (cause) {
+      setError(cause instanceof Error && cause.message === "Logo too large to upload." ? "This logo is too large to upload. Use a smaller image." : "That logo could not be read. Try exporting it again as PNG or SVG.");
+    } finally { setPreparingLogo(false); }
   }
 
   function clearSelectedLogo() {
-    if (logoPreviewRef.current) URL.revokeObjectURL(logoPreviewRef.current);
-    logoPreviewRef.current = "";
-    setLogoPreview("");
-    resetField("logo");
+    setLogoDataUrl("");
+    if (logoInputRef.current) logoInputRef.current.value = "";
   }
 
   async function reload() {
@@ -205,10 +257,9 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
     setSaved(false);
     setConflict(false);
     const form = new FormData();
-    const { logo, ...organizationProfile } = values;
-    form.set("profile", JSON.stringify({ ...organizationProfile, sites: values.sites.map(({ id, location, address, primaryFunction }) => ({ ...(id ? { id } : {}), location: location.trim(), address: address.trim(), primaryFunction: primaryFunction.trim() })) }));
+    form.set("profile", JSON.stringify({ ...values, sites: values.sites.map(({ id, location, address, primaryFunction }) => ({ ...(id ? { id } : {}), location: location.trim(), address: address.trim(), primaryFunction: primaryFunction.trim() })) }));
     if (organizationId) form.set("lockVersion", String(lockVersion));
-    if (logo instanceof File) form.set("logo", logo);
+    if (logoDataUrl) form.set("logo", logoDataUrl);
     try {
       const response = await fetch(organizationId ? `/api/policycraft/organizations/${organizationId}` : "/api/policycraft/admin/organizations", { method: organizationId ? "PATCH" : "POST", body: form });
       const result = await response.json().catch(() => null);
@@ -238,7 +289,9 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
 
   const backLabel = backHref.startsWith("/manager") ? "Organizations" : "PolicyCraft organizations";
   const hasExistingLogo = Boolean(profile.companyLogo);
-  const chosenLogo = logoPreview || imageSource(profile.companyLogo, organizationId);
+  const chosenLogo = logoDataUrl || imageSource(profile.companyLogo, organizationId);
+  // "Replace" only once a logo is saved; a picked but unsaved logo can still be changed.
+  const logoButtonLabel = preparingLogo ? "Reading logo…" : hasExistingLogo ? "Replace logo" : logoDataUrl ? "Change logo" : "Upload logo";
 
   return <ApplicationSurface data-pc-workspace="organization-editor" className={styles.surface}>
     <section className={styles.page} aria-labelledby={EDITOR_TITLE_ID}>
@@ -259,7 +312,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
                   const selected = field.value === period;
                   return <button key={period} type="button" aria-pressed={selected} disabled={saving} onClick={() => { field.onChange(period); setSaved(false); }} className={`${styles.periodButton} ${selected ? styles.periodSelected : ""}`}>{selected ? <SelectionPill layoutId="organization-reporting-period" /> : null}{period === "FY" ? "Financial year (FY)" : "Calendar year (CY)"}</button>;
                 })}</div></>} /></fieldset>
-                <div className={styles.logoField}><span className={styles.fieldLabel}>Company logo</span><div className={styles.logoRow}>{chosenLogo ? <Image src={chosenLogo} alt="Company logo preview" width={64} height={44} unoptimized className={styles.logoPreview} /> : null}<label className={styles.fileButton}><Upload size={14} aria-hidden="true" />{profile.logo || hasExistingLogo ? "Replace logo" : "Upload logo"}<input {...logoRegistration} name="logo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg" required={!hasExistingLogo && !profile.logo} disabled={saving} className={styles.visuallyHidden} onChange={(event) => chooseLogo(event.currentTarget.files?.[0])} /></label><span className={styles.hint}>PNG, JPEG, WebP or SVG · up to 10 MB</span></div></div>
+                <div className={styles.logoField}><span className={styles.fieldLabel}>Company logo</span><div className={styles.logoRow}>{chosenLogo ? <Image src={chosenLogo} alt="Company logo preview" width={64} height={44} unoptimized className={styles.logoPreview} /> : null}<label className={styles.fileButton}>{preparingLogo ? <Loader2 size={14} className={styles.spinner} aria-hidden="true" /> : <Upload size={14} aria-hidden="true" />}{logoButtonLabel}<input ref={logoInputRef} name="logo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg" required={!hasExistingLogo && !logoDataUrl} disabled={saving || preparingLogo} className={styles.visuallyHidden} onChange={(event) => void chooseLogo(event.currentTarget.files?.[0])} /></label><span className={styles.hint}>PNG, JPEG, WebP or SVG · up to 10 MB</span></div></div>
               </div>
             </section>
 
@@ -284,7 +337,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
             <p className={styles.status} aria-live="polite">{saving ? <><Loader2 size={14} className={styles.spinner} aria-hidden="true" />Saving organization…</> : saved ? <><Check size={14} aria-hidden="true" />Organization details saved.</> : "Your changes apply to policies created after they are saved."}</p>
             <div className={styles.footerActions}>
               <Link href={backHref} className={styles.cancelLink}>Cancel</Link>
-              <ApplicationButton type="submit" variant="primary" size="lg" className={`${styles.ctaButton} ${styles.submitButton}`} disabled={saving} busy={saving} busyLabel="Saving…">{organizationId ? "Save organization" : "Create organization"}</ApplicationButton>
+              <ApplicationButton type="submit" variant="primary" size="lg" className={`${styles.ctaButton} ${styles.submitButton}`} disabled={saving || preparingLogo} busy={saving} busyLabel="Saving…">{organizationId ? "Save organization" : "Create organization"}</ApplicationButton>
             </div>
           </div>
         </form>}
