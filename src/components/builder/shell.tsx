@@ -13,6 +13,7 @@ import { DesignInspector } from "@/components/builder/design-inspector";
 import { usePolicyDownload } from "@/components/builder/dock-sections";
 import { DebouncedPolicyPreview } from "@/components/builder/live-preview";
 import { AICoverGenerationLoader } from "@/components/builder/ai-cover-generation-loader";
+import { PolicyRail, PolicyRailSummary, usePolicyStepStates } from "@/components/builder/policy-rail";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { ApplicationSessionMenu } from "@/components/ui/application-user-menu";
 import { Button } from "@/components/ui/button";
@@ -121,9 +122,9 @@ export function BuilderShell({
   const currentIndex = reviewing ? railSteps.length : Math.max(0, railSteps.findIndex((item) => item.id === step));
   const currentStep = visibleSteps.find((item) => item.id === step) ?? railSteps[currentIndex];
   const nextStep = railSteps[currentIndex + 1];
-  const progress = reviewing ? 100 : railSteps.length ? ((currentIndex + 1) / railSteps.length) * 100 : 0;
   const stepNumber = Math.min(currentIndex + 1, railSteps.length);
-  const workspaceHref = workspaceScope?.role === "admin" ? "/admin/policies" : workspaceScope?.role === "manager" ? `/manager?orgId=${workspaceScope.organizationId}` : "/drafts";
+  const { states: stepStates, progress: writtenProgress } = usePolicyStepStates(railSteps);
+  const workspaceHref = workspaceScope?.role === "admin" ? "/admin/policies" : workspaceScope?.role === "manager" ? `/manager/policies?orgId=${workspaceScope.organizationId}` : "/drafts";
   const narrowViewport = React.useSyncExternalStore(subscribeViewport, getNarrowViewport, getServerFlag);
   const sidebarCollapsed = React.useSyncExternalStore(subscribeSidebarPreference, getSidebarPreference, getServerFlag);
   const sidebarPreferenceLoaded = React.useSyncExternalStore(subscribeHydration, getHydratedPreference, getServerHydratedPreference);
@@ -252,30 +253,16 @@ export function BuilderShell({
               <button type="button" onClick={toggleSidebar} title="Collapse sidebar (Ctrl+\\)" aria-label="Collapse sidebar" className={clsx(styles.railButton, styles.wideOnly)}><PanelLeftClose size={16} aria-hidden="true" /></button>
               <button type="button" onClick={closeWorkflow} aria-label="Close navigation" className={clsx(styles.railButton, styles.narrowOnly)}><X size={16} aria-hidden="true" /></button>
             </div>
-            <div className={styles.policyMeta}><span className={styles.policyIcon}><PolicyIcon size={15} aria-hidden="true" /></span><span className="min-w-0"><span className={styles.metaEyebrow}>Active policy</span><span className={styles.metaLabel}>{policyMeta.label}</span></span></div>
-            <div className={styles.progress} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)} aria-valuetext={`${Math.round(progress)} percent, step ${stepNumber} of ${railSteps.length}`} aria-label="Builder progress">
-              <div className={styles.progressLabels}><span>{String(stepNumber).padStart(2, "0")} / {String(railSteps.length).padStart(2, "0")}</span><span>{Math.round(progress)}%</span></div>
-              <div className={styles.progressTrack}><div className={styles.progressBar} style={{ width: `${progress}%` }} /></div>
-            </div>
-            <nav className={styles.nav} aria-label="Policy sections">
-              <ul className={styles.navList}>{railSteps.map((item, index) => {
-                const active = item.id === step;
-                const done = index < currentIndex;
-                return <li key={item.id}><button type="button" onClick={() => setStep(item.id)} aria-current={active ? "step" : undefined} title={item.desc} className={styles.navButton}>
-                  {active && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarker} transition={markerTransition} />}
-                  <span className={clsx(styles.stepNumber, done && styles.stepDone)}>{done ? <Check size={12} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</span>
-                  <span className={styles.stepTitle}>{item.label}</span>
-                </button></li>;
-              })}</ul>
-            </nav>
+            <PolicyRailSummary steps={railSteps} />
+            <PolicyRail steps={railSteps} />
           </> : <>
             <div className={styles.collapsedBrand}>
               <Link href="/" className={styles.brandMarkLink} aria-label="PolicyCraft home"><span className={styles.brandMark}><Leaf size={16} aria-hidden="true" /></span></Link>
             </div>
             <div className={styles.collapsedContent}>
               <span className={styles.miniPolicy} title={`Active policy: ${policyMeta.label}`}><PolicyIcon size={15} aria-hidden="true" /></span>
-              <span className={styles.miniProgress} title={`Progress ${Math.round(progress)}%`}>{Math.round(progress)}%</span>
-              <nav className={styles.miniNav} aria-label="Policy sections">{railSteps.map((item, index) => <button type="button" key={item.id} onClick={() => setStep(item.id)} title={`Step ${index + 1}: ${item.label} — ${item.desc}`} aria-label={`Step ${index + 1}: ${item.label}`} aria-current={item.id === step ? "step" : undefined} className={styles.stepIcon}>{item.id === step && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarkerCompact} transition={markerTransition} />}{index < currentIndex ? <Check size={13} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</button>)}</nav>
+              <span className={styles.miniProgress} title={`${writtenProgress.filledSections} of ${writtenProgress.totalSections} sections written`}>{writtenProgress.percentage}%</span>
+              <nav className={styles.miniNav} aria-label="Policy sections">{railSteps.map((item, index) => <button type="button" key={item.id} onClick={() => setStep(item.id)} title={`Step ${index + 1}: ${item.label} — ${item.desc}`} aria-label={`Step ${index + 1}: ${item.label}`} aria-current={item.id === step ? "step" : undefined} className={styles.stepIcon}>{item.id === step && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarkerCompact} transition={markerTransition} />}{stepStates.get(item.id)?.state === "written" ? <Check size={13} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</button>)}</nav>
             </div>
           </>}
         </aside>

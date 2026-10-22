@@ -1,0 +1,2453 @@
+{
+ "id": "sri-all-india-exports",
+ "company": "Sri All India Exports",
+ "industry": "Textile dyeing, washing, packaging and export manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "chemicals",
+  "textiles",
+  "consumer"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Sri All India/SOP Manual.docx",
+ "frontMatter": {
+  "introduction": "This SOP Manual has been developed to provide a structured framework for managing the environmental, social, and operational practices of Sri All India Exports. It ensures that all employees, contractors, and stakeholders follow standardized procedures that align with local regulations, international standards, and the company’s sustainability commitments.",
+  "objective": "The purpose of this manual is to:\nProvide a single reference guide for all operational and sustainability-related SOPs.\nEnsure consistency and compliance in day-to-day operations across all departments and sites.\nReduce environmental, social, and safety risks by standardizing best practices.\nSupport transparency and accountability during internal reviews, audits, and customer assessments.\n\nObjectives\nPromote continuous improvement in sustainability, safety, and compliance.\nEnsure responsible resource use, waste management, and pollution prevention.\nEnhance worker safety and wellbeing through proper training and operational controls.\nStrengthen customer and stakeholder confidence by demonstrating ethical and sustainable practices.",
+  "scope": "This SOP Manual applies to:\nAll Sri All India Exports facilities, including production, dyeing, washing, packaging, logistics, and administration.\nAll employees, contractors, suppliers, and third-party service providers engaged in operations.\nAll SOPs listed in this manual, including those related to energy, water, hazardous waste, product sustainability, worker safety, and compliance.",
+  "reviewMechanism": "This SOP will be reviewed every two years by the Environmental & Sustainability Office to assess its effectiveness in reducing water consumption, optimizing recycling systems, and ensuring wastewater compliance. The review will include evaluation of risk assessments, dyeing and washing efficiency, and rainwater harvesting performance. Updates will be made to integrate new technologies and meet future sustainability goals.\n\nReview Frequency: SOPs must be reviewed every two years or earlier if significant operational or regulatory changes occur.\nApproval Authority: All SOPs must be approved by the Environmental Manager and the Managing Director before implementation."
+ },
+ "sops": [
+  {
+   "title": "Workplace Safety Incident & Risk Management System",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Safety Officer",
+   "sourceWords": 487,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures for identifying, reporting, and managing workplace safety incidents, risks, and concerns at Sri All India Exports. The aim is to ensure a safe working environment for all employees by minimizing hazards and promoting a culture of safety awareness."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and visitors at Sri All India Exports across all locations. It covers procedures for reporting and addressing safety incidents, conducting risk assessments, and implementing corrective actions."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting Safety Incidents",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Immediate Reporting: Employees must report any workplace safety incident or near-miss to their supervisor immediately. Examples include slips, trips, falls, equipment malfunctions, and exposure to hazardous materials.\nUse the designated reporting channels:\nEmail: ramesh@sriallindia.com\nContact Person: P.Ramesh\nIncident Documentation: The supervisor will document the incident using the Workplace Safety Incident Report Form, including details such as the date, time, location, persons involved, and a brief description of the incident.\nInitial Response: The supervisor will take immediate steps to secure the area and prevent further incidents. This may include cordoning off the area, providing first aid, or shutting down equipment."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Risk Assessment and Management",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Conducting Risk Assessments: Annual risk assessments must be conducted in all work areas to identify potential hazards. This includes evaluating the safety of machinery, tools, materials, and working conditions.\nRisk Register: All identified risks must be recorded in a Risk Register, with details on the nature of the risk, the likelihood of occurrence, potential impact, and control measures in place.\nImplementation of Control Measures: Appropriate control measures must be implemented to mitigate identified risks. This can include engineering controls, administrative controls, and personal protective equipment (PPE)."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Investigating Workplace Safety Incidents",
+     "steps": [
+      {
+       "heading": "Incident Investigation Team",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A team comprising members of the Safety Committee and relevant supervisors will investigate all reported incidents."
+        }
+       ],
+       "responsible": "Safety Committee and relevant supervisors"
+      },
+      {
+       "heading": "Root Cause Analysis",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The investigation team will conduct a root cause analysis to identify underlying causes and contributing factors to the incident."
+        }
+       ],
+       "responsible": "Investigation team"
+      },
+      {
+       "heading": "Corrective and Preventive Actions (CAPA)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on the findings, the team will recommend CAPAs to prevent recurrence. The implementation of these actions will be tracked and documented."
+        }
+       ],
+       "responsible": "Investigation team"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Safety Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Mandatory Safety Training: All employees must undergo safety training during onboarding and receive regular refresher courses. Topics covered will include hazard identification, safe work practices, and emergency response procedures."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Report any safety incidents or concerns immediately to the supervisor or Safety Officer.",
+        "Follow all safety procedures and participate in safety training."
+       ]
+      },
+      {
+       "role": "Supervisors/Department Heads",
+       "responsibilities": [
+        "Ensure safety procedures are followed and report incidents to the Safety Officer.",
+        "Conduct regular safety inspections and address any safety concerns."
+       ]
+      },
+      {
+       "role": "Safety Officer",
+       "responsibilities": [
+        "Assess and respond to reported incidents.",
+        "Conduct risk assessments and implement safety measures.",
+        "Maintain incident and training records."
+       ]
+      },
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Review and approve safety procedures and protocols.",
+        "Provide resources and support for safety initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Health and Safety Manager Every Two year or following any significant incident to ensure its continued relevance and effectiveness in maintaining workplace safety standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air Emissions Management Guidelines",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "Environmental Safety Office",
+   "owner": "Environmental Manager",
+   "sourceWords": 721,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the measures and technologies implemented by Sri All India Exports to prevent and mitigate air pollution from its cotton fabric manufacturing processes. The SOP aims to ensure compliance with environmental regulations, enhance sustainability practices, and protect the health and safety of employees and the surrounding community."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operations at Sri All India Exports, including handloom and power loom manufacturing. It is applicable to all employees, contractors, and personnel involved in production, maintenance, and management activities."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Air Pollution Prevention Measures",
+     "steps": [
+      {
+       "heading": "Routine Air Quality Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Routine Monitoring: Conduct annual ambient air monitoring for PM10, PM2.5, SO2, and NOx to assess the environmental impact."
+        },
+        {
+         "text": "Equipment Maintenance: Schedule regular inspections and preventive maintenance for all critical equipment to prevent leaks and malfunctions."
+        },
+        {
+         "text": "Employee Training: Provide comprehensive training programs on environmental policies, spill prevention, and emergency response."
+        }
+       ]
+      },
+      {
+       "heading": "Particulate Emissions Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Enclosures: Enclose dust-generating processes like weaving and cutting to contain particulate emissions."
+        },
+        {
+         "text": "Housekeeping: Maintain clean work areas using industrial vacuum systems to minimize dust accumulation."
+        }
+       ]
+      },
+      {
+       "heading": "Management of VOCs & Gaseous Emissions",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Activated Carbon Filters: Install activated carbon filters in exhaust systems to capture and neutralize VOCs."
+        },
+        {
+         "text": "Low-VOC Materials: Use low-VOC dyes, adhesives, and solvents in manufacturing processes."
+        }
+       ]
+      },
+      {
+       "heading": "Sulfur Absorption Systems",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Closed-Loop System: The plant is designed with an enclosure system to ensure a closed-loop process for sulfur absorption, particularly in viscose manufacturing."
+        },
+        {
+         "text": "Monitoring and Maintenance: Regularly monitor the performance of the sulfur recovery system, ensuring optimal operation and minimal emissions."
+        }
+       ]
+      },
+      {
+       "heading": "Noise Pollution Mitigation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Sound Barriers: Install sound barriers around high-decibel equipment to reduce noise pollution."
+        },
+        {
+         "text": "Operational Scheduling: Schedule noisy operations during daytime hours to minimize disturbance."
+        },
+        {
+         "text": "Noise Monitoring: Conduct Annual noise monitoring in high-noise areas."
+        }
+       ]
+      },
+      {
+       "heading": "Odor Control Strategies",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Activated Carbon Filters: Use these filters in exhaust systems to neutralize odorous compounds."
+        },
+        {
+         "text": "Material Handling: Store odorous materials in sealed containers and handle them in well-ventilated areas."
+        }
+       ]
+      },
+      {
+       "heading": "Traffic Management & Congestion Avoidance",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Optimized Delivery Scheduling: Schedule deliveries and dispatches during off-peak hours to reduce traffic congestion."
+        },
+        {
+         "text": "Route Planning: Implement efficient route planning for company vehicles to avoid congested areas and reduce transit times."
+        },
+        {
+         "text": "Vehicle Maintenance: Ensure all company vehicles are regularly maintained for optimal fuel efficiency and minimal emissions during transit."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation"
+      },
+      {
+       "type": "bullets",
+       "text": "Annually Assessments: Conduct Annually assessments to track progress in emission control.\nData Analysis: Analyze data on emission levels and maintenance activities to ensure compliance.\nInternal Audits: Conduct annual internal audits to review the effectiveness of the air pollution management system, identifying areas for improvement and ensuring that all procedures are being followed.\nReporting: The Environmental Manager prepares reports summarizing findings and submits them to senior management."
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident Documentation: Document all incidents involving pollutant releases, including causes, response actions, and outcomes.\nResponse Evaluation: Conduct evaluations following each incident to identify root causes and implement corrective actions.\nCorrective Action Plan: Develop and implement corrective action plans based on incident evaluations to prevent future occurrences.\nRegulatory Reporting: Ensure all necessary reports are filed with local and national environmental agencies in accordance with legal requirements."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees the implementation of the SOP.",
+        "Ensures compliance with environmental regulations.",
+        "Manages relationships with regulatory bodies and directs environmental audits.",
+        "Prepares and submits regulatory and internal compliance reports.",
+        "Develops and oversees training programs related to air pollution management."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implements operational processes to meet environmental standards.",
+        "Oversees equipment maintenance and scheduling.",
+        "Coordinates with logistics to minimize road congestion impacts and ensure efficient transportation routes.",
+        "Ensures that operational activities comply with air pollution control measures."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts routine inspections and preventive maintenance.",
+        "Ensures equipment compliance with environmental standards.",
+        "Coordinates with the Environmental Manager to address equipment-related air pollution issues.",
+        "Supervises the maintenance of emission control equipment to ensure optimal performance."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Conducts employee training on environmental policies.",
+        "Monitors adherence to safety protocols.",
+        "Ensures that all air pollution management practices are in line with company safety standards.",
+        "Leads incident investigations and coordinates with the Environmental Manager to implement corrective actions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two year by the Environmental Safety Office to assess its effectiveness in meeting environmental goals and regulatory compliance. The review will include evaluating emission control measures, maintenance activities, and employee engagement initiatives. Any insights gathered will be used to enhance sustainability practices and ensure continued alignment with environmental standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Minimization & Disposal Strategy",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "",
+   "owner": "Environmental Safety Office",
+   "sourceWords": 705,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures for managing waste disposal at Sri All India Exports. It includes methods for reducing internal waste generation, evidence of waste sorting, and appropriate disposal practices to ensure environmental compliance and operational efficiency."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees involved in waste management across different areas including cutting, sewing, knitting, dyeing, and office operations."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Non-Hazardous Waste",
+       "definition": "Waste that does not pose a substantial hazard to human health or the environment."
+      },
+      {
+       "term": "Hazardous Waste",
+       "definition": "Waste that poses significant risks due to its chemical properties."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Cutting Master",
+       "responsibilities": [
+        "Oversees the disposal of fabric bits."
+       ]
+      },
+      {
+       "role": "Fabric Incharge",
+       "responsibilities": [
+        "Manages fabric rolls disposal."
+       ]
+      },
+      {
+       "role": "Accessories Incharge",
+       "responsibilities": [
+        "Handles poly bags, cones, labels, tags, cartons, and broken needles."
+       ]
+      },
+      {
+       "role": "Mechanic",
+       "responsibilities": [
+        "Responsible for the disposal of machine oil waste and toner cartridges."
+       ]
+      },
+      {
+       "role": "Admin",
+       "responsibilities": [
+        "Manages paper bits, PVC pipes, and broken furniture."
+       ]
+      },
+      {
+       "role": "Electrician",
+       "responsibilities": [
+        "Responsible for electrical waste, used batteries, and tube lights."
+       ]
+      },
+      {
+       "role": "HR",
+       "responsibilities": [
+        "Handles expired medicines and bio waste."
+       ]
+      },
+      {
+       "role": "House Keeping",
+       "responsibilities": [
+        "Manages sanitary waste and waste water."
+       ]
+      },
+      {
+       "role": "Finishing Incharge",
+       "responsibilities": [
+        "Oversees rag disposal."
+       ]
+      },
+      {
+       "role": "Godown Incharge",
+       "responsibilities": [
+        "Manages rejected products, surplus products, and scrap."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Waste Disposal Procedures",
+     "steps": [
+      {
+       "heading": "Waste Disposal Procedures",
+       "body": [
+        {
+         "type": "table",
+         "text": "WASTE DISPOSAL PROCEDURE",
+         "columns": [
+          "No",
+          "Waste Description",
+          "Material",
+          "Area",
+          "Type",
+          "Responsible person",
+          "Disposal",
+          "Frequency"
+         ],
+         "rows": [
+          [
+           "1",
+           "Fabric bits",
+           "Cotton, Polyester",
+           "Cutting, Sewing, Knitting, Dyeing",
+           "Non Hazardous",
+           "Cutting Master",
+           "Big bits sold for re – use, small bits sold for cleaning purpose",
+           "Weekly Twice"
+          ],
+          [
+           "2",
+           "Fabric rolls",
+           "Cotton, Polyester",
+           "Fabric roll covers",
+           "Non Hazardous",
+           "Fabric Incharge",
+           "Sold for reuse",
+           "6 Months"
+          ],
+          [
+           "3",
+           "Poly bags",
+           "PE , PP",
+           "Knitting, Dyeing",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Sold for reuse / recycling",
+           "3 Months"
+          ],
+          [
+           "4",
+           "Cones",
+           "Paper, Plastic",
+           "Excess, mistakes",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Sold for reuse",
+           "3 Months"
+          ],
+          [
+           "5",
+           "Labels, Tags",
+           "Nylon, Paper",
+           "Sewing",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Stored in house",
+           "3 Months"
+          ],
+          [
+           "6",
+           "Broken needles, band / straight cutting knives",
+           "Metal",
+           "Cone bag covering, Packing",
+           "Hazardous",
+           "Accessories Incharge",
+           "Stored in house",
+           "3 Years"
+          ],
+          [
+           "7",
+           "Cartons",
+           "Paper",
+           "Machines",
+           "Non Hazardous",
+           "Accessories Incharge",
+           "Sold for reuse / recycling",
+           "3 Months"
+          ],
+          [
+           "8",
+           "Machine oil waste",
+           "Oil",
+           "Office Production",
+           "Hazardous",
+           "Mechanic",
+           "Sold for workshop for cleaning purposes",
+           "3 Months"
+          ],
+          [
+           "9",
+           "Paper bits",
+           "Paper",
+           "Electrical",
+           "Hazardous",
+           "Admin",
+           "Disposed at garbage bins",
+           "3 Months"
+          ],
+          [
+           "10",
+           "Tube Light",
+           "Glass",
+           "Electrical",
+           "Hazardous",
+           "Electrician",
+           "Panchayat dump yard",
+           "3 Months"
+          ],
+          [
+           "11",
+           "Toner cartridges",
+           "Plastic",
+           "Printers, Copiers",
+           "Hazardous",
+           "Mechanic",
+           "Sent back to manufacturer",
+           "3 Months"
+          ],
+          [
+           "12",
+           "Expired medicines",
+           "Medicines",
+           "First Aid Box",
+           "Hazardous",
+           "H R",
+           "Panchayat dump yard",
+           "Monthly"
+          ],
+          [
+           "13",
+           "Used Battery",
+           "Plastic",
+           "Electrical",
+           "Hazardous",
+           "Electrician",
+           "Sold for exchange",
+           "3 Months"
+          ],
+          [
+           "14",
+           "Electrical Waste",
+           "Rubber",
+           "Electrical",
+           "Hazardous",
+           "Electrician",
+           "Sold as scrap",
+           "3 Months"
+          ],
+          [
+           "15",
+           "P.V.C. Pipes",
+           "PVC",
+           "Electrical",
+           "Hazardous",
+           "Admin",
+           "Sold as scrap",
+           "3 Months"
+          ],
+          [
+           "16",
+           "Broken Furniture & Fittings",
+           "Wood",
+           "Office / Work area",
+           "Non Hazardous",
+           "Admin",
+           "Sold for scrap",
+           "3 Months"
+          ],
+          [
+           "17",
+           "Sanitary",
+           "Solid",
+           "Toilets",
+           "Hazardous",
+           "Houser Keeping",
+           "Panchayat dump yard",
+           "Live"
+          ],
+          [
+           "18",
+           "Waste water",
+           "Liquid",
+           "Wash areas",
+           "Non Hazardous",
+           "Houser Keeping",
+           "Panchayat Drainage",
+           "Live"
+          ],
+          [
+           "19",
+           "Rag",
+           "Cotton, Lycra & Polyester",
+           "Cutting, Sewing and Packing",
+           "Hazardous",
+           "Finishing Incharge",
+           "Burning",
+           "1 Year"
+          ],
+          [
+           "20",
+           "Rejected products & fabrics",
+           "Cotton, Lycra & Polyester",
+           "Cutting, Sewing and Packing",
+           "Non Hazardous",
+           "Godown Incharge",
+           "Sold for scrap",
+           "3 Months"
+          ],
+          [
+           "21",
+           "Surplus products",
+           "Cotton, Lycra & Polyester",
+           "Cutting, Sewing and Packing",
+           "Non Hazardous",
+           "Godown Incharge",
+           "Sold",
+           "3 Months"
+          ],
+          [
+           "22",
+           "Bio Waste",
+           "Cotton Viscose",
+           "First Aid",
+           "Non Hazardous",
+           "H.R",
+           "Land filling",
+           "3 Months"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste Reduction Measures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Reuse and Recovery:"
+        },
+        {
+         "type": "bullets",
+         "text": "Furniture parts and equipment components are reused and repaired as needed.\nMaterials such as fabric bits and large items like fabric rolls are repurposed or sold for reuse."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste Sorting:"
+        },
+        {
+         "type": "bullets",
+         "text": "Waste is sorted according to streams including wood, electronic waste, electrical wires, scrap metals, glass, and plastics.\nProper handling methods are employed, such as recycling for plastics and glass, and safe disposal for hazardous waste."
+        },
+        {
+         "type": "paragraph",
+         "text": "Evidence of Compliance"
+        },
+        {
+         "type": "bullets",
+         "text": "Waste Management Records: Records of waste disposal and recycling are maintained.\nInspection Reports: Regular inspections confirm compliance with sorting and disposal procedures.\nTraining Records: Training sessions for employees on waste management and sorting practices are documented."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two year by the Environmental Safety Office to assess its effectiveness in meeting environmental goals and regulatory compliance. The review will include evaluating waste management practices, emission control measures, maintenance activities, and employee engagement initiatives. Insights gathered will be used to enhance sustainability practices and ensure alignment with environmental standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Product Recovery and Disposal Strategy",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "Environmental & Product Development Office",
+   "owner": "Environmental Manager",
+   "sourceWords": 557,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the protocols and procedures implemented by Sri All India Exports to enhance product sustainability through efficient use and storage practices, resource-efficient product design, and innovations to minimize microfiber shedding. The aim is to extend product life, reduce environmental impacts during product use, and ensure compliance with international sustainability standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Sri All India Exports operations related to product design, development, manufacturing, and customer information sharing. It is applicable to employees, contractors, suppliers, and customers who are involved in the lifecycle of products, from production to end use."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Product Sustainability Protocols",
+     "steps": [
+      {
+       "heading": "Efficient Use, Storage, and Maintenance to Extend Product Life",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Provide customers with clear instructions on best practices for using and maintaining textile products to extend their useful life."
+        },
+        {
+         "text": "For chemical-based products, ensure users are informed of correct storage conditions to prevent leaks or emissions."
+        },
+        {
+         "text": "Publish guidance on resource-efficient washing practices (e.g., low-temperature wash, minimal detergent use)."
+        },
+        {
+         "text": "Conduct awareness programs for employees and distributors on correct product handling and safe storage."
+        }
+       ]
+      },
+      {
+       "heading": "Design for Reduced Resource Input in Product Use",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Develop and introduce designs that minimize resource consumption during use, such as energy-efficient equipment, water-saving nozzles, and optimized fabrics requiring fewer consumables."
+        },
+        {
+         "text": "Conduct R&D to identify design modifications that reduce water, electricity, and chemical usage."
+        },
+        {
+         "text": "Integrate eco-design principles into all new product development cycles."
+        },
+        {
+         "text": "Regularly benchmark against industry best practices for resource-efficient product designs."
+        }
+       ]
+      },
+      {
+       "heading": "Design or Treatment to Minimize Microfiber Shedding and Tearing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Introduce treatments for yarns and fabrics to strengthen fibers, reducing microfiber release during washing."
+        },
+        {
+         "text": "Adopt compact weaving/knitting techniques to enhance durability and minimize tearing."
+        },
+        {
+         "text": "Collaborate with research labs and chemical suppliers to identify eco-friendly coating or finishing methods that reduce microfiber loss."
+        },
+        {
+         "text": "Conduct product testing in washing simulations to measure and control microfiber shedding before market release."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response:"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees implementation of the SOP.",
+        "Ensures compliance with eco-design and sustainability standards.",
+        "Prepares and submits sustainability reports to management and regulators."
+       ]
+      },
+      {
+       "role": "Product Development Manager",
+       "responsibilities": [
+        "Integrates eco-design principles into product development.",
+        "Coordinates R&D on resource efficiency and microfiber reduction.",
+        "Monitors implementation of sustainable materials and designs."
+       ]
+      },
+      {
+       "role": "Quality Assurance Manager",
+       "responsibilities": [
+        "Conducts product testing for durability and microfiber shedding.",
+        "Ensures products meet safety and sustainability criteria before release.",
+        "Reports quality deviations to the Product Development Manager."
+       ]
+      },
+      {
+       "role": "Training Coordinator",
+       "responsibilities": [
+        "Organizes employee training on product lifecycle sustainability and safe chemical storage.",
+        "Develops guidance materials for customers on efficient product use and maintenance.",
+        "Monitors training effectiveness through feedback and assessments."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental & Product Development Office to assess its effectiveness in extending product life, reducing resource use, and minimizing microfiber shedding. Findings will be used to update product design guidelines, improve maintenance information, and align with evolving sustainability standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Product Recovery and Disposal Strategy",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "Environmental Management",
+   "owner": "Environmental Manager",
+   "sourceWords": 807,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP provides detailed guidelines for managing the return, recycling, and disposal of products manufactured by Sri All India Exports at their end-of-life. It aims to minimize environmental impact by promoting responsible disposal practices, reducing waste to landfill, and optimizing packaging to facilitate user-friendly recycling processes."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all products manufactured by Sri All India Exports and is relevant to the company’s customers, partners, and internal stakeholders involved in product design, packaging, and sustainability initiatives."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "End-of-Life Product",
+       "definition": "A product that has reached the end of its usable life and requires disposal, recycling, or return."
+      },
+      {
+       "term": "Packaging Optimization",
+       "definition": "The process of designing product packaging to minimize material use and enhance recyclability."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Guidelines for Product Users",
+     "steps": [
+      {
+       "heading": "Return Programs",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Collection Points: Sri All India Exports provides designated collection points for returning end-of-life products. Users can return products at the following locations:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Return programs are designed to be convenient, with clear instructions provided on how and where to return products. Customers may also return products through mail-in options, which are detailed on the company’s website."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Karur Collection Center. Collection Hours: Monday to Saturday, 10:00 AM to 5:00 PM"
+        },
+        {
+         "text": "Coimbatore Drop-Off Point. Collection Hours: Monday to Friday, 9:00 AM to 6:00 PM."
+        }
+       ]
+      },
+      {
+       "heading": "Recycling Facilities",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Users are provided with detailed information on local recycling facilities capable of processing specific product types. This includes contact information, addresses, and guidelines on how to prepare products for recycling:"
+        },
+        {
+         "type": "paragraph",
+         "text": "The company collaborates with certified recycling partners to ensure that materials are processed in an environmentally friendly manner."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Karur Recycling Facility. Facility Type: Certified for textile recycling"
+        },
+        {
+         "text": "Tiruchirappalli Recycling Hub. Facility Type: General recycling"
+        }
+       ]
+      },
+      {
+       "heading": "Sanitary Waste Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For products that cannot be recycled, Sri All India Exports offers guidance on appropriate sanitary waste management practices. This includes:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Contact details for local waste management authorities and facilities."
+        },
+        {
+         "text": "Instructions on safe disposal methods to prevent contamination and environmental harm."
+        },
+        {
+         "text": "Local Waste Management Authority. Disposal Methods: Regular collection and safe handling guidelines."
+        }
+       ]
+      },
+      {
+       "heading": "Environmental Impact Minimization",
+       "body": [],
+       "responsible": "Environmental Manager",
+       "substeps": [
+        {
+         "text": "Waste to Landfill: Sri All India Exports aims to reduce the amount of waste sent to landfill by promoting recycling and reusing materials wherever possible."
+        },
+        {
+         "text": "Leakage Prevention: Users are advised on how to prevent product component or residue leakage during disposal, especially for products that contain materials that could harm the environment."
+        },
+        {
+         "text": "Virgin Material Use Reduction: The company encourages the reuse of product components to minimize the need for virgin materials in the production of new products."
+        }
+       ]
+      },
+      {
+       "heading": "Packaging Optimization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Design Principles:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Implementation Strategies:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Exclusions:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Material Reduction (Lightweighting): Packaging is designed to use the least amount of material necessary to protect and contain the product, reducing overall waste."
+        },
+        {
+         "text": "Monomaterial Packaging: Wherever possible, packaging is made from a single type of material, which simplifies the recycling process for consumers and enhances the recyclability of the packaging."
+        },
+        {
+         "text": "User-Friendly Recycling: Packaging includes clear recycling instructions, including information on how to disassemble or prepare the packaging for recycling."
+        },
+        {
+         "text": "Product Design Integration: Packaging optimization is considered during the product design phase to ensure that the materials used are sustainable and recyclable."
+        },
+        {
+         "text": "Continuous Improvement: The company regularly reviews packaging designs to identify opportunities for further reduction in material use and improvements in recyclability."
+        },
+        {
+         "text": "The SOP does not cover secondary and tertiary packaging, such as protective shrink wrap, foam reinforcement, crates, and pallets used for shipping and bulk transportation. Focus remains on primary packaging that comes into direct contact with the product."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation",
+     "rows": [
+      {
+       "record": "Product return, recycling, and disposal practices documentation",
+       "owner": "Sri All India Exports",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Communication with Customers",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "User Instructions:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Customer Support:"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental Safety Office to assess its effectiveness in guiding product users and achieving environmental goals. The review will focus on evaluating the clarity of the SOP, the impact of packaging optimization strategies, and the overall effectiveness of disposal practices. Feedback from customers, employees, and partners will be collected to identify areas for improvement. The SOP will be updated as needed to reflect regulatory changes and best practices in sustainability."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "IT Security Incident Handling & Recovery Procedure",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "IT Security Manager and Data Protection Officer",
+   "sourceWords": 773,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures for detecting, responding to, and managing security incidents to prevent further damage and protect sensitive information. It aims to ensure a swift and effective response to security incidents and to improve overall information security."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and third parties with access to the company's information systems and data across all locations."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Security Incident",
+       "definition": "An event that compromises the confidentiality, integrity, or availability of information or information systems."
+      },
+      {
+       "term": "Incident Response Team (IRT)",
+       "definition": "A designated team responsible for managing and responding to security incidents."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Detect and respond to information security incidents promptly.\nLimit the impact of security breaches.\nPrevent further damage and reassure affected parties.\nDocument and learn from incidents to enhance security measures."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Process",
+     "steps": [
+      {
+       "heading": "Detection and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Initial Detection: All employees must report any suspicious activity or potential security breaches immediately (within 1 hour of discovery) to the IT Security Team. Indicators of a breach include unusual system behavior, unauthorized access attempts, or unexpected data anomalies. All reports must include an initial assessment of the threat level, indicating whether it is high, medium, or low."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reporting: Report the incident to the IT Security Team using the designated channels: Name: P.Ramesh Phone: +91 9843031484. Provide the following information: Time and date of the incident; Description of the incident; Systems or data affected; Initial actions taken; Threat level assessment (high, medium, low)."
+        }
+       ]
+      },
+      {
+       "heading": "Alert and Contain the Breach",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Initial Alert: The IT Security Team will evaluate the report and confirm if a security breach has occurred. If confirmed, notify the Data Protection Team, Sri All India Exports Directors, and other key stakeholders within 2 hours of detection. Determine if external cybersecurity experts need to be involved and engage them if necessary."
+        },
+        {
+         "type": "paragraph",
+         "text": "Containment: Implement immediate actions to contain the breach and prevent further damage. This includes isolating affected systems, revoking access rights, or shutting down services. Document all containment actions taken. Verify that all containment actions are successful and that no further unauthorized access or data loss is occurring."
+        }
+       ]
+      },
+      {
+       "heading": "Assessment of the Breach",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Breach Assessment: The Data Protection Team, in collaboration with the IT Security Team, will perform a thorough assessment of the breach within 24 hours of containment. Evaluate the scope, cause, and impact of the breach, including the number of affected individuals and any potential data compromise. Identify and document the vulnerabilities exploited during the breach."
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Evaluation: Assess potential harm to the company, data subjects, and partners. Determine if the breach meets the criteria for mandatory reporting to authorities. Seek approval from Sri All India Exports Directors for further actions. Assess the financial and reputational impact of the breach."
+        }
+       ]
+      },
+      {
+       "heading": "Notification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Decision to Notify: Based on the assessment, decide if notification to authorities and/or individuals is required. Seek approval from Sri All India Exports Directors and consult with legal advisors if necessary. Ensure that notifications are made within regulatory timelines and include all required information."
+        },
+        {
+         "type": "paragraph",
+         "text": "Notification Process: Notify affected parties, including data controllers, data subjects, and relevant authorities as required. Provide clear and concise information about the breach, potential risks, and steps being taken to mitigate the impact. Ensure that all communications are consistent, transparent, and offer guidance on protective actions for affected parties."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation and Follow-up",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "CAPAs Implementation: Implement Corrective and Preventive Actions (CAPAs) to address the root cause of the breach and prevent recurrence. Verify and document the implementation of CAPAs. Develop and maintain a detailed incident report that includes findings, actions taken, and lessons learned."
+        },
+        {
+         "type": "paragraph",
+         "text": "Containment History Log: Maintain a detailed log of the containment and mitigation actions taken during the incident response. Include timestamps, responsible personnel, and outcomes for each action in the log."
+        },
+        {
+         "type": "paragraph",
+         "text": "Review and Learn: Conduct a post-incident review to identify lessons learned and opportunities for improvement. Update the Incident Response Procedure and related policies based on the review findings. Incorporate feedback from all stakeholders involved in the response process to enhance future incident handling."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "IT Security Team",
+       "responsibilities": [
+        "Detect, report, and respond to security incidents.",
+        "Implement containment and mitigation actions.",
+        "Collaborate with the Data Protection Team for breach assessment and risk evaluation."
+       ]
+      },
+      {
+       "role": "Data Protection Team",
+       "responsibilities": [
+        "Lead the breach assessment and risk evaluation process.",
+        "Coordinate notification efforts and communication with regulatory bodies.",
+        "Ensure compliance with relevant regulations."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Report any suspicious activity or potential security breaches immediately.",
+        "Follow instructions from the IT Security Team and Data Protection Team during incident response.",
+        "Participate in regular security awareness training."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the IT Security Manager and Data Protection Officer Every Two Year or following any significant incident to ensure its effectiveness and relevance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Authorization & Approval Process for Critical Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "Chief Financial Officer",
+   "sourceWords": 551,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedure for the approval of sensitive transactions, including gifts and travel expenses, to ensure compliance with company policies, ethical standards, and regulatory requirements. The goal is to prevent conflicts of interest, ensure transparency, and uphold the integrity of the company."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contractors, and third parties who are involved in or responsible for initiating, approving, or processing sensitive transactions at Sri All India Exports."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Sensitive Transactions",
+       "definition": "Transactions involving gifts, travel, or other benefits that may create a conflict of interest or influence business decisions."
+      },
+      {
+       "term": "Approval Authority",
+       "definition": "Designated individuals or departments responsible for reviewing and approving sensitive transactions."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Approval Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All sensitive transactions must be identified and documented. Examples include gifts exceeding a specified monetary threshold, business travel for non-routine purposes, or other benefits."
+        },
+        {
+         "type": "paragraph",
+         "text": "Thresholds: Gifts or benefits valued above ₹5,000 and travel expenses above ₹25,000 require specific approval."
+        },
+        {
+         "type": "paragraph",
+         "text": "Complete a Sensitive Transaction Request Form for each transaction. This form should include: Name of the recipient; Description of the transaction (gift, travel, etc.); Monetary value; Purpose of the transaction; Date and location; Justification for the transaction and any supporting documentation (e.g., travel itineraries, invoices)."
+        }
+       ]
+      },
+      {
+       "heading": "Initial Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Submit the completed Sensitive Transaction Request Form to the immediate supervisor or department head for an initial review. The supervisor will evaluate the transaction for compliance with company policies and potential conflicts of interest."
+        }
+       ],
+       "responsible": "Immediate supervisor or department head"
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Transactions requiring approval should be submitted to the following authorities based on the value. Gifts: Above ₹5,000: Department Head; Above ₹10,000: Senior Management. Travel Expenses: Above ₹25,000: Senior Management; Above ₹50,000: Executive Committee."
+        },
+        {
+         "type": "paragraph",
+         "text": "The approving authority will review the documentation and justification provided. They may request additional information if needed. Approval or rejection of the transaction must be documented in writing, including reasons for approval or denial."
+        }
+       ],
+       "responsible": "Approval Authorities"
+      },
+      {
+       "heading": "Processing and Recording",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Processing: Once approved, process the transaction according to company procedures. Ensure that all documentation is complete and accurate. For travel expenses, ensure that travel arrangements are booked in accordance with company travel policies."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recording: Maintain a record of all sensitive transactions, including approvals, supporting documentation, and any related correspondence. Records should be retained for a minimum of 5 years and made available for audit or review as needed."
+        }
+       ]
+      },
+      {
+       "heading": "Post-Transaction Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Post-Transaction Review: Conduct annual reviews of sensitive transactions to ensure compliance with policies and identify any potential issues or patterns. Review findings should be documented and reported to the relevant authorities for further action if required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Ensure that all sensitive transactions are documented and submitted for approval as required.",
+        "Adhere to company policies and procedures regarding sensitive transactions."
+       ]
+      },
+      {
+       "role": "Supervisors/Department Heads",
+       "responsibilities": [
+        "Perform initial reviews of sensitive transactions and provide recommendations for approval or rejection.",
+        "Ensure compliance with company policies and ethical standards."
+       ]
+      },
+      {
+       "role": "Approval Authorities",
+       "responsibilities": [
+        "Review and approve or reject sensitive transactions based on documentation and justification.",
+        "Maintain records of approvals and provide oversight to ensure adherence to policies."
+       ]
+      },
+      {
+       "role": "Finance and Compliance Team",
+       "responsibilities": [
+        "Maintain records of all sensitive transactions and perform periodic reviews.",
+        "Ensure compliance with relevant regulations and company policies."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Chief Financial Officer and the Compliance Officer Every Two Year or following any significant changes to ensure its effectiveness and relevance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Access Control & Customer Data Management Framework",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "IT Manager",
+   "sourceWords": 1143,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the internal controls and procedures implemented by Sri All India Exports to restrict unauthorized access to customer or client data, both physical and digital. It also provides guidelines on consulting and informing customers about the collection, storage, and sharing of their personal data."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and third parties who have access to customer or client data within Sri All India Exports. It encompasses data handling processes across all departments and locations."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Customer/Client Data",
+       "definition": "Personal and sensitive information collected from customers or clients, including names, addresses, contact details, payment information, and any other data shared during transactions."
+      },
+      {
+       "term": "Unauthorized Access",
+       "definition": "Access to data by individuals or entities not explicitly granted permission to view, modify, or use the data."
+      },
+      {
+       "term": "Data Retention Schedule",
+       "definition": "A timetable that specifies the duration for which different categories of data are kept and the actions to be taken at the end of the retention period."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Controls for Data Access",
+     "steps": [
+      {
+       "heading": "Physical Access Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Restricted Areas: Customer data is stored in secured areas accessible only to authorized personnel. Access to these areas requires security clearance and is monitored by CCTV. For example, physical copies of purchase orders and invoices containing customer addresses and payment details are kept in locked cabinets within a secured room."
+        },
+        {
+         "text": "Document Handling: Physical documents containing customer data must be stored in locked cabinets or rooms with restricted access. Employees must sign in and out when accessing these documents. Sensitive documents like contracts, legal agreements, and customer identification proofs are strictly controlled and logged."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Access Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "User Authentication: All employees accessing digital data systems must use unique user IDs and strong passwords. Multi-factor authentication (MFA) is enforced for sensitive data access. For instance, employees must enter a password and a one-time code sent to their mobile device to access the customer database."
+        },
+        {
+         "text": "Access Permissions: Data access permissions are granted based on job roles and responsibilities. Employees only have access to the data necessary for their tasks. Regular audits are conducted to ensure compliance. For example, only the finance team can access customer payment details, while the sales team can view contact information and order history."
+        },
+        {
+         "text": "Data Encryption: Sensitive customer data is encrypted both in transit and at rest. Encryption keys are securely stored and managed. Emails containing customer details are encrypted before sending, and databases storing personal information are protected with strong encryption algorithms."
+        },
+        {
+         "text": "Third-Party Access: Access to customer data by third-party vendors or service providers is restricted and granted only when necessary. Contracts include clauses ensuring data protection compliance. For example, a third-party logistics provider is given access only to customer shipping addresses for order fulfilment."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Auditing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Activity Logs: All access to customer data is logged, including the date, time, and user involved. Logs are regularly reviewed for any unauthorized access attempts. If a breach attempt is detected, an alert is immediately sent to the IT security team."
+        },
+        {
+         "text": "Regular Audits: Data access controls are subject to regular internal audits to identify vulnerabilities and ensure adherence to this SOP. Audits include reviewing access logs, verifying encryption standards, and assessing third-party compliance."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Customer Data Communication Process",
+     "steps": [
+      {
+       "heading": "Data Collection Notice",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Transparency: Customers are informed about the types of data being collected, the purpose of collection, and how it will be used at the time of data collection. For example, customers are notified that their contact information is collected for order processing and delivery notifications."
+        },
+        {
+         "text": "Consent: Explicit consent is obtained from customers before collecting their personal data, especially for sensitive information. Customers have the right to opt out of data collection where applicable. For instance, consent is required to collect and store customer bank account details for payment processing"
+        }
+       ]
+      },
+      {
+       "heading": "Data Storage and Sharing Information",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Data Retention: Customers are informed about the duration for which their data will be stored and the criteria used to determine this period."
+        },
+        {
+         "text": "Third-Party Sharing: If customer data is shared with third parties (e.g., for shipping or payment processing), customers are informed of the entities involved and the purpose of sharing. Third-party partners are vetted to ensure they comply with data protection standards. For example, shipping addresses are shared with logistics providers solely for the purpose of order delivery."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Consultation and Queries",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Access Requests: Customers have the right to request access to their data, request corrections, or ask for their data to be deleted. These requests are handled promptly and in accordance with data protection laws. For instance, a customer can request the deletion of their account and all associated personal information if they decide to stop using the company's services."
+        },
+        {
+         "text": "Communication Channels: Customers can contact the company via email: ramesh@sriallindia.com or Tel: +91 4324 237140 Or Fax: +91 4324 231484 for any queries regarding their personal data. A designated Person is available to address these concerns. Contact information for the Person is provided Below: Name: P.Ramesh Phone: +91 9843031484."
+        }
+       ]
+      },
+      {
+       "heading": "Data Breach Notification",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Immediate Notification: In the event of a data breach that compromises customer data, affected customers are notified promptly. The notification includes details of the breach, the data affected, and the steps being taken to mitigate the impact. For example, if unauthorized access to customer email addresses is detected, the company will notify all affected customers and advise them on how to secure their accounts."
+        },
+        {
+         "text": "Follow-up Support: The company provides support to customers following a breach, including offering credit monitoring services or guidance on securing their personal information."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention Schedule",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following table outlines the retention period for various types of customer data:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Type of Data",
+          "Retention Period",
+          "Retention Criteria"
+         ],
+         "rows": [
+          [
+           "Customer Contact Information",
+           "7 years",
+           "Retained for ongoing customer relationship and support"
+          ],
+          [
+           "Payment Information",
+           "5 years",
+           "Retained for audit purposes and to comply with financial regulations"
+          ],
+          [
+           "Order History",
+           "10 years",
+           "Retained for future orders, reference, and customer support"
+          ],
+          [
+           "Communication Records (Emails, Calls)",
+           "3 years",
+           "Retained for dispute resolution and customer service quality checks"
+          ],
+          [
+           "Sensitive Personal Data",
+           "Until consent is withdrawn or 5 years",
+           "Retained with explicit consent, until the customer requests deletion or the retention period ends"
+          ],
+          [
+           "Third-Party Data Sharing Logs",
+           "5 years",
+           "Retained for transparency and accountability purposes"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Note: Data that has reached the end of its retention period is securely deleted or anonymized, ensuring it is no longer identifiable."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "IT Manager",
+       "responsibilities": [
+        "Oversees the implementation of data protection measures and compliance with this SOP.",
+        "Handles customer data queries and requests.",
+        "Coordinates audits and responds to data breaches."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Manages digital data access controls, encryption, and monitoring systems.",
+        "Ensures that data access permissions are correctly assigned and updated."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Adhere to the data access controls and procedures outlined in this SOP.",
+        "Report any suspected unauthorized access or data breaches immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the IT Manager Every two year or following any significant changes in data protection laws or company operations to ensure its relevance and effectiveness."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hazardous Waste Management and Disposal Procedure",
+   "code": "",
+   "catalogId": "hazardous-waste",
+   "pillar": "E",
+   "department": "Environmental Safety Office",
+   "owner": "Environmental Manager",
+   "sourceWords": 1059,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the protocols and procedures implemented by Sri All India Exports for the safe labelling, storage, handling, and transportation of hazardous substances. The aim is to minimize environmental impact and exposure, ensure compliance with environmental regulations, and safeguard the health and safety of employees and the surrounding community."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operations at Sri All India Exports, including the management of hazardous substances used in handloom and power loom manufacturing processes. It is applicable to all employees, contractors, and personnel involved in production, maintenance, and management activities related to hazardous materials."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Hazardous Substances Management Protocols",
+     "steps": [
+      {
+       "heading": "Labelling of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Standardized labelling: Ensure all hazardous substances are labelled according to the Globally Harmonized System (GHS) standards, including hazard symbols, risk phrases, and safety precautions. Labels must be reviewed and updated every 6 months."
+        },
+        {
+         "text": "Language and Clarity: Labels must be in the local language and English, ensuring clarity and accessibility for all employees."
+        },
+        {
+         "text": "Regular Inspections: Conduct monthly inspections to verify that labels remain intact, legible, and accurate."
+        }
+       ]
+      },
+      {
+       "heading": "Storage of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Dedicated Storage Areas: Store hazardous substances in designated, well-ventilated areas away from incompatible materials, with clear signage indicating restricted access. Conduct an assessment every 3 months to ensure compliance."
+        },
+        {
+         "text": "Secondary Containment: Utilize secondary containment systems (e.g., spill pallets, bunds) to prevent leaks and spills from contaminating the environment."
+        },
+        {
+         "text": "Environmental Controls: Implement temperature and humidity controls in storage areas to maintain safe conditions for hazardous substances. Monitor these conditions daily."
+        },
+        {
+         "text": "Inventory Management: Maintain a detailed inventory of all hazardous substances, regularly updated to ensure accurate records. Inventory checks should be performed every 30 days."
+        }
+       ]
+      },
+      {
+       "heading": "Handling of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Personal Protective Equipment (PPE): Provide appropriate PPE (e.g., gloves, goggles, respirators) to all personnel handling hazardous substances and enforce its use. PPE must be inspected weekly for wear and tear."
+        },
+        {
+         "text": "Training Programs: Conduct annualy training on safe handling procedures, including emergency response protocols in case of spills or exposure."
+        },
+        {
+         "text": "Controlled Handling Areas: Restrict handling activities to controlled areas with proper ventilation and spill containment measures."
+        }
+       ]
+      },
+      {
+       "heading": "Transportation of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Certified Transport Vehicles: Use vehicles certified for hazardous materials transportation, equipped with spill response kits and proper signage. Vehicles should be inspected every 15 days."
+        },
+        {
+         "text": "Driver Training: Ensure drivers are trained in the safe transport of hazardous substances, including emergency response in case of accidents. Training refreshers should be held every 6 months."
+        },
+        {
+         "text": "Documentation: Accompany all hazardous materials with proper documentation, including Material Safety Data Sheets (MSDS), transport manifests, and emergency contact information."
+        },
+        {
+         "text": "Route Planning: Plan transportation routes to avoid populated areas and environmentally sensitive zones, minimizing risk during transit. Routes should be reviewed and optimized every 3 months."
+        }
+       ]
+      },
+      {
+       "heading": "Specialized Treatment and Safe Disposal of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Waste Segregation: Separate hazardous waste from non-hazardous waste at the source, ensuring proper labelling and containment. Segregation procedures should be reviewed every 2 months."
+        },
+        {
+         "text": "Neutralization and Treatment: Implement neutralization or chemical treatment processes before disposal to reduce toxicity and environmental impact."
+        },
+        {
+         "text": "Waste Minimization: Implement strategies to minimize hazardous waste generation through process optimization and material substitution."
+        },
+        {
+         "text": "Documentation and Reporting: Maintain detailed records of hazardous waste disposal, including quantities, disposal methods, and certificates of destruction. Reports should be compiled monthly."
+        }
+       ]
+      },
+      {
+       "heading": "Recovery and Reuse of Input Materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Recovery Practices: Adopt processes to recover and reuse scrap materials such as paper, wood, fabrics, and packaging materials within operations."
+        },
+        {
+         "text": "Repurposing: Repurpose old or used equipment for alternative functions to extend useful life and reduce waste."
+        },
+        {
+         "text": "Monitoring: Maintain monthly records of recovered and reused input materials and track reductions in raw material consumption."
+        }
+       ]
+      },
+      {
+       "heading": "Substitution with Safer and Less Hazardous Materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Substitution Practices: Replace highly toxic chemicals with safer alternatives such as non-chlorinated bleaching agents, organic or vegetable-based inks, and eco-friendly solvents."
+        },
+        {
+         "text": "Continuous Review: Periodically evaluate chemical inventories to identify hazardous substances that can be replaced with less harmful alternatives."
+        },
+        {
+         "text": "Compliance: Ensure all alternative materials meet industry standards and reduce risks to workers, consumers, and the environment."
+        },
+        {
+         "text": "Documentation: Maintain records of substituted materials and report improvements annually."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response:"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees the implementation of the SOP.",
+        "Ensures compliance with environmental regulations.",
+        "Manages relationships with regulatory bodies and directs environmental audits.",
+        "Prepares and submits regulatory and internal compliance reports.",
+        "Develops and oversees training programs related to hazardous substances management.",
+        "Develops and oversees training programs related to hazardous substances management, recovery/reuse of materials, and substitution of less hazardous alternatives."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implements operational processes to meet environmental standards.",
+        "Oversees the safe handling and storage of hazardous substances.",
+        "Coordinates with logistics to ensure safe transport of hazardous materials.",
+        "Ensures compliance with hazardous substances management protocols."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts routine inspections and preventive maintenance.",
+        "Ensures storage and transport equipment comply with safety standards.",
+        "Coordinates with the Environmental Manager to address hazardous substance-related issues.",
+        "Supervises the maintenance of hazardous waste containment systems.",
+        "Monitors repurposing of equipment and systems for safe reuse."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Conducts employee training on hazardous substances management.",
+        "Monitors adherence to safety protocols.",
+        "Ensures compliance with hazardous substances management practices.",
+        "Leads training on recovery/reuse and substitution of less hazardous alternatives",
+        "Leads incident investigations and coordinates with the Environmental Manager to implement corrective actions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental Safety Office to assess its effectiveness in minimizing environmental impact, promoting safe reuse and recovery of materials, and substituting hazardous substances with safer alternatives. The review will include evaluating storage, handling, and transportation protocols, as well as employee training and compliance levels. Any insights gathered will be used to enhance safety practices and ensure continued alignment with environmental standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Operations & Energy Efficiency Protocol",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Environmental & Sustainability Office",
+   "owner": "Environmental Manager",
+   "sourceWords": 638,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the protocols and procedures adopted by Sri All India Exports to reduce environmental impact by improving energy efficiency, installing waste heat recovery systems, reducing carbon emissions in transportation, and implementing employee training and sustainable packaging initiatives. The objective is to ensure continuous improvement in sustainability performance, align with international environmental standards, and strengthen our long-term commitment to a green supply chain."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all company operations, including production, dyeing, logistics, packaging, and administrative facilities of Sri All India Exports. It covers employees, contractors, and service providers directly or indirectly involved in activities impacting energy, emissions, and sustainability."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Energy Management Protocols",
+     "steps": [
+      {
+       "heading": "Energy Efficiency through Technology & Equipment Upgrades",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Assessment & Selection: Conduct annual energy audits to identify high-consumption machinery and processes. Select new equipment/technology with at least 20–30% higher efficiency compared to industry benchmarks."
+        },
+        {
+         "text": "Implementation Protocols: Replace conventional looms, boilers, pumps, motors, and lighting with energy-efficient alternatives. Install smart energy meters to monitor energy usage in real time."
+        },
+        {
+         "text": "Verification: Compare pre- and post-upgrade energy consumption data. Conduct quarterly reviews to verify sustained energy savings."
+        }
+       ]
+      },
+      {
+       "heading": "Implementation of Waste Heat Recovery and Cogeneration Systems",
+       "body": [],
+       "substeps": [
+        {
+         "text": "System Design : Install heat exchangers in dyeing and boiler units to capture energy from hot wastewater or exhaust steam. Assess and implement CHP or cogeneration systems for simultaneous heat and power generation."
+        },
+        {
+         "text": "Operational Protocols: Maintain daily logs of recovered heat and power generation. Conduct weekly preventive maintenance of heat exchangers and CHP equipment."
+        },
+        {
+         "text": "Monitoring: Track daily recovered steam/hot water in operational records. Publish an annual report quantifying total energy and CO₂ savings."
+        }
+       ]
+      },
+      {
+       "heading": "Reduction of Greenhouse Gas Emissions in Transportation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Fleet Management: Replace older vehicles with fuel-efficient, electric, or biofuel-powered vehicles. Install GPS-enabled route optimization systems to minimize distance and reduce empty miles."
+        },
+        {
+         "text": "Operational Protocols: Track fuel consumption and CO₂ emissions on a monthly basis. Promote carpooling and shared transport for employees to reduce commuting emissions."
+        },
+        {
+         "text": "Verification: Compare fuel and emission data before and after interventions."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Training on Energy & Sustainability",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Training Modules: Provide annual training on energy conservation, sustainable production, and workplace eco-practices. Conduct specialized training for machine operators on efficient machine handling."
+        },
+        {
+         "text": "Frequency: Induction training for all new employees."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation:"
+      },
+      {
+       "type": "bullets",
+       "text": "Routine Inspections: Conduct quarterly inspections of energy-efficient equipment, waste heat systems, and transport operations to ensure compliance with sustainability protocols.\nData Analysis: Analyze energy usage, CO₂ emissions, and packaging reports monthly to identify areas for improvement. Data should be reviewed annually for trend analysis."
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response:"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident Documentation: Document all incidents (e.g., equipment malfunction, energy inefficiency, transport emission deviation) within 24 hours.\nResponse Evaluation: Evaluate corrective actions within 7 days to identify root causes and prevent recurrence."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees SOP implementation across all sites.",
+        "Ensures compliance with sustainability regulations and standards.",
+        "Coordinates external environmental audits and prepares compliance reports.",
+        "Monitors performance KPIs and develops improvement strategies."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Ensures operational compliance with energy efficiency, waste heat recovery, and packaging protocols.",
+        "Oversees implementation of new technologies and process optimization.",
+        "Coordinates logistics and transport carbon reduction measures."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts routine inspections and preventive maintenance of upgraded equipment and CHP systems.",
+        "Ensures continuous monitoring and safe operation of heat recovery equipment.",
+        "Addresses maintenance-related issues with the Environmental Manager."
+       ]
+      },
+      {
+       "role": "Training Coordinator",
+       "responsibilities": [
+        "Develops and implements employee training modules on energy and sustainability.",
+        "Maintains training records and monitors employee participation.",
+        "Conducts refresher sessions and evaluates effectiveness of training programs."
+       ]
+      },
+      {
+       "role": "Sustainability Officer",
+       "responsibilities": [
+        "Tracks energy, emissions, and packaging KPIs for monthly and annual reporting.",
+        "Leads sustainability initiatives for certifications (Ecovadis, ISO 14001, SMETA).",
+        "Supports the Environmental Manager in preparing external sustainability disclosures."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed every two years by the Environmental & Sustainability Office to evaluate effectiveness, identify improvement opportunities, and align practices with international sustainability standards. Updates will include revised targets for energy efficiency, emissions, and packaging improvements."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Management & Efficiency Protocol",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "",
+   "owner": "Environmental Manager",
+   "sourceWords": 598,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the protocols and procedures adopted by Sri All India Exports to optimize water usage, recycle and reuse wastewater, adopt water-saving dyeing methods, minimize water consumption in washing processes, and strengthen water risk assessment and monitoring. Additionally, it establishes guidelines for rainwater harvesting and groundwater recharge to further enhance sustainable water management. The objective is to reduce freshwater dependency, ensure responsible wastewater discharge, and align with global sustainability standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all company operations, including dyeing, washing, cleaning, utility, and support processes at Sri All India Exports. It is applicable to all employees, contractors, and third-party service providers involved in production, utilities, and environmental monitoring."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Sri All India Exports",
+         "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Water Management Protocols",
+     "steps": [
+      {
+       "heading": "Technologies or Practices to Recycle or Reuse Water",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Install effluent treatment plants (ETP) and water recycling units to reclaim water from production and washing processes."
+        },
+        {
+         "text": "Reuse treated water for non-potable purposes such as cooling, irrigation, and process cleaning."
+        },
+        {
+         "text": "Implement closed-loop systems for dye baths and finishing units to minimize freshwater intake."
+        },
+        {
+         "text": "Monitor water recovery ratio monthly to ensure efficiency above 70%."
+        }
+       ]
+      },
+      {
+       "heading": "Adoption of Waterless or Water-Saving Dyeing Methods",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Introduce low-water dyeing machines and technologies such as air dye or foam dyeing methods."
+        },
+        {
+         "text": "Adopt low-water dyeing agents and nozzles to reduce water consumption per batch."
+        },
+        {
+         "text": "Regularly review and optimize dye recipes to align with water-saving practices."
+        },
+        {
+         "text": "Conduct trials of innovative technologies for potential adoption across processes."
+        }
+       ]
+      },
+      {
+       "heading": "Reduction of Water Consumption in Washing and Cleaning Processes",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Install water-efficient washing machines with flow control systems."
+        },
+        {
+         "text": "Adopt counter-current washing techniques to reduce water use per cycle."
+        },
+        {
+         "text": "Recycle wastewater from washing units after treatment for reuse in preliminary washing."
+        },
+        {
+         "text": "Regularly calibrate and maintain washing machinery to avoid unnecessary water losses."
+        }
+       ]
+      },
+      {
+       "heading": "Water Risk Assessment & Wastewater Monitoring",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conduct annual risk assessments to identify water scarcity, discharge risks, and compliance gaps."
+        },
+        {
+         "text": "Monitor wastewater parameters (COD, BOD, TSS, pH) in line with Pollution Control Board norms."
+        },
+        {
+         "text": "Submit quarterly wastewater compliance reports to local authorities."
+        },
+        {
+         "text": "Install online monitoring systems for real-time tracking of wastewater discharge quality."
+        }
+       ]
+      },
+      {
+       "heading": "Rainwater Harvesting & Groundwater Recharge (Additional Initiative)",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Implement rooftop rainwater collection systems to reduce freshwater dependency."
+        },
+        {
+         "text": "Install recharge pits to replenish groundwater levels in surrounding areas."
+        },
+        {
+         "text": "Maintain annual records of rainwater collected, stored, and reused."
+        },
+        {
+         "text": "Integrate rainwater usage into non-critical operations such as gardening, cooling, and floor cleaning."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Regular Monitoring and Evaluation:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response:"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees implementation of water management initiatives.",
+        "Ensures compliance with local and international water regulations.",
+        "Prepares compliance reports and coordinates with regulatory authorities."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Ensures production processes adopt water-efficient methods.",
+        "Coordinates implementation of water recycling and reuse protocols.",
+        "Oversees wastewater monitoring and ensures timely corrective actions."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts preventive maintenance of ETP, water recycling, and rainwater harvesting systems.",
+        "Ensures washing and dyeing equipment operates efficiently with minimum water wastage."
+       ]
+      },
+      {
+       "role": "Training Coordinator",
+       "responsibilities": [
+        "Develops employee training modules on water conservation and efficient water use practices.",
+        "Organizes refresher training every 6 months and maintains attendance records."
+       ]
+      },
+      {
+       "role": "Sustainability Officer",
+       "responsibilities": [
+        "Tracks water consumption KPIs, wastewater quality, and rainwater harvesting data.",
+        "Prepares annual sustainability reports and supports certifications (ISO 14001, Ecovadis, ZDHC)."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

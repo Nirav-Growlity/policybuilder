@@ -1,0 +1,3712 @@
+{
+ "id": "skypass-travel",
+ "company": "SKYPASS TRAVEL INC",
+ "industry": "Travel management services",
+ "industryTags": [
+  "services"
+ ],
+ "sourceFile": "SOP Manual  Employee Handbook/SOP MANUAL/SOP Manual Skypass (1).docx",
+ "frontMatter": {
+  "introduction": "At Skypass Travel Inc (Group), we are committed to providing exceptional travel management services that are efficient, customer-focused, and professionally executed. Our operations span across air ticketing, hotel bookings, ground transfers, travel insurance, visa assistance, and customized travel solutions for leisure, corporate, group, and mission-based travellers. To consistently deliver high-quality service and maintain operational excellence, we recognize the importance of standardized and clearly defined procedures.\n\nThis Standard Operating Procedure (SOP) Manual has been developed to ensure that every member of our organization follows a uniform, structured, and well-coordinated workflow. It establishes the guidelines, responsibilities, and protocols necessary to carry out our daily activities effectively, reduce operational errors, and maintain consistency in client experience across all departments.\n\nThrough this SOP Manual, we aim to:\nMaintain a high level of professionalism, accuracy, and accountability in service delivery\nStrengthen coordination between internal teams and external partners\nEnsure compliance with industry standards, safety regulations, and ethical business practices\nSupport employees with clear instructions and role-based responsibilities\nContinuously improve our operational efficiency and customer satisfaction\n\nAll employees are required to follow the processes outlined in this manual and apply them consistently in their respective roles. This document reflects our culture of excellence and our commitment to providing customers with smooth, reliable, and memorable travel experiences.\n\nWe will review and update this manual periodically to ensure that our procedures evolve along with our business, technology, and service expectations. Any revisions will be communicated to all team members in a timely manner.\n\nTogether, we uphold the integrity and quality that define Skypass Travel.",
+  "objective": "",
+  "scope": "",
+  "reviewMechanism": "This SOP manual will be reviewed annually or as needed to ensure continual improvement and compliance with regulatory requirements.\n\nNext Review Date: 01-April-2026"
+ },
+ "sops": [
+  {
+   "title": "Waste Management",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "Sustainability & Operations",
+   "owner": "Sustainability & Operations Team",
+   "sourceWords": 2246,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this Standard Operating Procedure (SOP) is to outline Skypass Travel’s structured approach to waste minimization, material efficiency, internal recycling, and environmentally responsible disposal practices. This SOP ensures that waste is managed in a systematic manner to reduce environmental impact, enhance resource utilization, and support sustainable operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, departments, and operational offices of Skypass Travel and covers the handling, segregation, reuse, reduction, recovery, recycling, and disposal of solid waste, electronic waste, hazardous office materials, and general office consumables generated during business activities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Waste Stream",
+       "definition": "A categorized flow of waste materials such as paper, plastics, metals, glass, e-waste, organic waste, and general office waste."
+      },
+      {
+       "term": "Reduce-Reuse-Recycle (3R)",
+       "definition": "Strategy to minimize waste by reducing material use, reusing products without additional processing, and recycling materials for new applications."
+      },
+      {
+       "term": "E-waste",
+       "definition": "Discarded electronic equipment such as computers, printers, and accessories requiring specialized disposal."
+      },
+      {
+       "term": "Material Recovery",
+       "definition": "Extracting usable resources from waste to maximize lifespan and reduce environmental burden."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Sustainability & Operations Team",
+       "responsibilities": [
+        "Oversees waste management programs, data tracking, vendor management, and performance reporting."
+       ]
+      },
+      {
+       "role": "Facilities & Administration Team",
+       "responsibilities": [
+        "Ensures waste segregation stations are maintained, collection schedules followed, and disposal partners engaged."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Manages refurbishment, internal transfer, and recycling of electronic equipment."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Follow waste segregation rules, participate in training, minimize consumable usage, and support recycling activities."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure & Implementation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Internal Waste Minimization & Resource Recovery Program"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Collection of Reusable Materials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Housekeeping collects packaging materials (cartons, bubble wraps, envelopes, plastic covers, thermocol) daily during waste collection.\nItems are placed in the Reuse Material Sorting Table located inside the TWSR."
+        }
+       ],
+       "responsible": "Housekeeping"
+      },
+      {
+       "heading": "Inspection & Categorization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Admin reuse coordinator inspects materials using Reuse Inspection Checklist (RP-03):\nClean & reusable\nDamaged but repairable\nScrap"
+        }
+       ],
+       "responsible": "Admin reuse coordinator"
+      },
+      {
+       "heading": "Sanitization & Repair",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Wipe/clean all safe-to-reuse items using disinfectant.\nCartons, document holders, and envelopes repaired using basic toolkit."
+        }
+       ]
+      },
+      {
+       "heading": "Entry into Reuse Inventory",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All approved items are counted and recorded in Reuse Distribution Inventory (RD-06)."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Redistribution",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Departments request materials through Admin Reuse Portal or Email Form.\nFirst-come/need-based allocation is followed to ensure fair distribution.\nAdmin logs movement under Reuse Movement Log (RL-07)."
+        }
+       ],
+       "responsible": "Admin"
+      },
+      {
+       "heading": "Tracking & Performance Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Monthly summary of reuse volume, cost savings, and request patterns compiled for ESG dashboard."
+        }
+       ]
+      },
+      {
+       "heading": "Output Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "82% of packaging requirement met from reuse stock.\nQuarterly review identifies non-performing departments."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Waste Management Awareness & Capacity Building",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All employees undergo mandatory waste management training during onboarding, emphasizing the importance of reducing, reusing, and recycling.\nRegular refresher sessions and quarterly awareness campaigns reinforce employee participation in waste reduction initiatives.\nTraining includes detailed guidance on segregation practices, labeling requirements, and environmentally safe disposal methods.\nVisual aids, info graphics, and signage across office spaces provide constant reminders for proper waste segregation and minimization.\nFeedback mechanisms allow employees to suggest new ways to reduce waste, including process adjustments or alternate reusable materials.\nHR schedules quarterly training calendar and communicates via email + notice board.\nLive training session conducted including:\nDemonstration of waste segregation\nUse of reuse platform\nExamples of incorrect practices\nSafety PPE use\nParticipating employees must sign Training Attendance Register (TR-01).\nStaff complete Post-Training Knowledge Assessment Test (min passing: 80%).\nDepartment heads receive monthly compliance scorecards.\nNon-performing employees undergo retraining."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Metric",
+        "Method"
+       ],
+       "rows": [
+        [
+         "Segregation accuracy",
+         "Waste Audit Evaluation Score"
+        ],
+        [
+         "Paper usage",
+         "Printer software report per employee"
+        ],
+        [
+         "Reuse participation",
+         "Exchange Hub Report"
+        ],
+        [
+         "Awareness results",
+         "Quiz scores"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "On-Site Waste Segregation & Sorting Infrastructure",
+     "steps": [
+      {
+       "heading": "On-Site Waste Segregation & Sorting Infrastructure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Skypass Travel has established clearly labeled waste segregation stations for paper, plastics, metals, glass, organic waste, e-waste, and general non-recyclable materials."
+        },
+        {
+         "type": "numbered",
+         "text": "All Skypass Travel offices operate a 6-Stream Waste Segregation Framework:\nPaper/Cardboard\nGlass\nMetals\nPlastic\nOrganic Waste\nHazardous/Sanitary Waste\nE-Waste (Separate)\nSegregation bins are color-coded and placed at:\nReception areas\nWorkstations & open office floors\nPantry rooms & break areas\nPrinting zones\nNear IT service desks\nEach bin station includes bilingual signage with examples and QR-coded training resources.\nHousekeeping staff collect waste twice daily (10:30 AM & 5:30 PM), documenting volumes using the Daily Waste Recording Log.\nWaste is transported via sealed and labeled trolleys to temporary storage rooms.\nWaste is handed over to certified disposal vendors as per the disposal schedule:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Type",
+          "Vendor Pickup"
+         ],
+         "rows": [
+          [
+           "Organic Waste",
+           "Daily"
+          ],
+          [
+           "Dry Recyclables",
+           "Twice a week"
+          ],
+          [
+           "Sanitary Waste",
+           "Twice a week"
+          ],
+          [
+           "E-Waste",
+           "Quarterly"
+          ],
+          [
+           "Metal/Glass",
+           "Monthly"
+          ]
+         ]
+        },
+        {
+         "type": "numbered",
+         "text": "Vendor Disposal Certificates and Waste Manifests are filed in Waste Compliance Register.\nWaste Category & Disposal Method"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Category",
+          "Disposal / Treatment Method"
+         ],
+         "rows": [
+          [
+           "Paper / Cardboard",
+           "Collected separately, compacted, and handed over to authorized recycling vendors for pulping and recycling into new paper products."
+          ],
+          [
+           "Plastic",
+           "Segregated by type, stored in dry conditions, and transferred to certified plastic recycling facilities for reprocessing."
+          ],
+          [
+           "Metals",
+           "Stored in designated metal bins and sent to approved scrap recyclers for melting and reuse."
+          ],
+          [
+           "Glass",
+           "Collected in impact-resistant containers and handed over to licensed glass recyclers for crushing and remanufacturing."
+          ],
+          [
+           "Organic Waste",
+           "Disposed of daily through municipal composting facilities or authorized organic waste processors for bio-decomposition."
+          ],
+          [
+           "Hazardous / Sanitary Waste",
+           "Collected in sealed, labeled containers and disposed of through authorized incineration or secured landfill as per regulatory norms."
+          ],
+          [
+           "E-Waste",
+           "Stored in a secured E-waste storage area and handed over quarterly to government-authorized E-waste dismantlers/recyclers with formal handover certificates."
+          ],
+          [
+           "General Non-Recyclable Waste",
+           "Disposed of through municipal solid waste management systems and sent to engineered landfills."
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Resource Efficiency & Process Optimization Program",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All internal approvals, invoices, itineraries, HR records, and vendor contracts are processed through ERP and cloud-based document management systems, resulting in a significant reduction in paper, printer ink, and physical file storage consumption.\nManual, multi-print approval processes have been replaced with automated digital workflows for travel bookings, reimbursements, and vendor onboarding—eliminating duplicate document generation and reducing stationery usage.\nSingle-use items such as disposable cups, plastic folders, and single-use cutlery have been eliminated and replaced with reusable mugs, refillable pens, and long-life office organizers across all locations.\nClient confirmations, invoices, boarding documents, and travel itineraries are issued electronically as standard practice, minimizing physical print requirements at both office and customer interface levels.\nDepartment-wise consumption data for paper, cartridges, and office consumables is recorded and reviewed monthly by the Operations & Sustainability Team to identify reduction opportunities and process gaps.\nStandard operating procedures include inventory optimization; ensuring supplies are purchased based on actual requirement forecasts.\nContinuous process improvement initiatives identify opportunities to repurpose excess materials and streamline internal operations.\nDepartments are encouraged to coordinate and consolidate requirements to reduce redundant ordering and packaging waste."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Sustainable, Low-Toxicity & Bio-Based Material Adoption",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All paper, envelopes, and notebooks used across Skypass Travel offices are sourced from FSC-certified, recycled, or chlorine-free materials to minimize environmental and health impacts.\nAll housekeeping operations use biodegradable, non-toxic, and phosphate-free cleaning agents certified under recognized eco-labels to eliminate employee exposure to hazardous substances.\nLow-volatile organic compound (VOC) inks, refillable cartridges, and water-based toners are used for printers and office equipment to reduce indoor air pollution and hazardous waste generation.\nCompostable cutlery, bio-based packaging, reusable crockery, and paper straws are used in all pantry and food-service areas to eliminate petroleum-based disposables.\nIT cables, power strips, insulation materials, and office accessories are procured with RoHS and REACH-compliant specifications to prevent the use of hazardous heavy metals and flame retardants.\nAll vendors supplying consumables, cleaning chemicals, and pantry materials are screened against eco-compliance criteria including biodegradability, chemical safety data sheets (SDS), and absence of carcinogenic substances.\nLiquid soaps, sanitizers, cleaning concentrates, and pantry liquids are procured in bulk refill formats to reduce single-use plastic packaging and hazardous residue waste.\nHazardous material handling inside offices is restricted entirely, with full substitution of chemical-intensive products by bio-based alternatives wherever technically feasible.\nSafety Data Sheets for all cleaning and maintenance materials are maintained digitally, and quarterly chemical audits ensure only approved low-hazard materials are in circulation.\nMaterial safety reviews are conducted to progressively replace any remaining moderate-risk materials with bio-based or environmentally superior alternatives.\nEmployee guidance promotes responsible consumption of materials, ensuring eco-friendly alternatives are properly used and disposed of."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Office Supply Redistribution & Sharing Program",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Skypass Travel operates a dedicated internal Inventory Exchange Module integrated with the intranet/ERP system, enabling real-time listing and transfer of surplus office supplies between departments and units.\nEach department updates excess or unused materials (paper reams, files, toner, stationery, IT accessories) on the platform with quantity, condition, and location details to enable immediate redistribution.\nEmployees raise internal requests directly through the platform, which are approved digitally by the respective department admin and fulfilled through centralized stores without new procurement.\nThe Procurement & Admin Team manages verification, reallocation, and re-issuance of exchanged items to ensure quality control and accurate stock mapping.\nReal-time stock visibility of usable surplus materials is available to all business units, preventing duplicate purchases and excess ordering.\nNo new purchase is approved for commonly reusable items unless the internal exchange platform confirms unavailability across all locations.\nTransfer of reusable materials between offices is executed through scheduled logistics runs to minimize transport emissions and ensure efficient redistribution.\nItems posted on the platform are inspected for usability and quality before transfer, ensuring functional reuse.\nDepartments are encouraged to coordinate resource sharing, reducing unnecessary procurement and avoiding premature disposal.\nPeriodic reminders and communication campaigns promote active participation in the internal exchange system."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "IT Equipment Reuse and Refurbishment Programme",
+     "steps": [
+      {
+       "heading": "IT Equipment Reuse and Refurbishment Programme",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The IT department identifies computers, laptops, and peripherals nearing the end of life for refurbishment rather than disposal."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Step",
+          "Activity",
+          "Responsible"
+         ],
+         "rows": [
+          [
+           "1",
+           "Department Head identifies unused, faulty, slow-performing, or surplus equipment",
+           "Department Heads"
+          ],
+          [
+           "2",
+           "Equipment is collected and transferred to IT department with acknowledgment",
+           "Workplace Admin"
+          ],
+          [
+           "3",
+           "IT updates internal asset register and assigns temporary status “Under Evaluation”",
+           "IT Inventory Controller"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Technical Evaluation & Refurbishment Feasibility. Once received, the IT Technician conducts a thorough physical and functional inspection to assess the device’s condition. This includes checking structural components, ports, screens, keyboards, hinges, and power functionality. The evaluation is recorded in the Technical Assessment Checklist.\n\nFollowing physical inspection, hardware diagnostics are performed using certified benchmarking and health tools to analyze memory, storage, battery condition, motherboard integrity, and network components. Based on diagnostic results, the IT Asset Manager classifies the equipment into one of the following categories:"
+        },
+        {
+         "type": "bullets",
+         "text": "Category A – Fully Refurbishable: Functionally recoverable with minor repairs or configuration changes.\nCategory B – Repairable with Parts: Requires replacement components (RAM, SSD, battery, keyboard, display, etc.).\nCategory C – Spare Parts Harvest: Not usable independently but useful for extracting parts.\nCategory D – Non-Repairable / E-Waste: Completely obsolete or beyond economical repair."
+        },
+        {
+         "type": "paragraph",
+         "text": "Following classification, a cost comparison is drafted to evaluate repair versus replacement value. If refurbishment is financially viable, the IT Asset Manager issues approval for refurbishment, documented as an Approval Note, and refurbishment work is scheduled.\n\nRefurbishment Execution. Once approved, refurbishment work is performed by certified IT Technicians. Typical refurbishment activities include SSD/HDD installations or upgrades, RAM expansion, thermal paste replacement, screen or keyboard replacement, battery installation, or other hardware rebuilding steps.\n\nEach refurbished device undergoes performance and load testing to validate reliability, including benchmark performance, battery endurance, thermal stability, and connectivity. If results meet minimum performance standards, the equipment is certified as refurbished and tagged with a Refurbishment Status Label that documents the refurbishment date, model number, technical performance score, warranty period, and next review schedule.\n\nRefurbishment turnaround time typically ranges between 5–7 working days based on parts availability and batch size.\n\nInternal Redistribution & Reallocation of Equipment. Once refurbishment and testing are complete, the asset is transferred to available inventory for internal distribution. Equipment allocation follows a priority framework to ensure optimal resource utilization. Priority is given to:"
+        },
+        {
+         "type": "numbered",
+         "text": "Temporary or contractual employees and interns\nNewly onboarded employees awaiting device assignment\nSecondary departments requiring backup equipment\nEmployees facing operational interruptions due to device failure\nTraining labs, guest workstations, and meeting room setups"
+        },
+        {
+         "type": "paragraph",
+         "text": "Departments that require equipment must submit an IT Asset Request. The IT Asset Manager reviews the request and selects the appropriate refurbished device based on performance compatibility and operational need. Once approved, the device is physically handed over to the requesting employee, who must sign the Asset Handover Form to confirm receipt and responsibility.\n\nThe IT Inventory Controller updates the IT Asset Register with the new assigned status, user name, and location details. After 15 days of use, the user completes the Internal User Feedback Form to evaluate device performance and report any concerns.\n\nHandling Non-Repairable. If equipment is classified as non-repairable or obsolete, it is immediately tagged with a “Beyond Repair / Obsolete” label by the IT Asset Manager and recorded under the E-Waste Inventory Log. The equipment is then transferred to the secure E-Waste Storage Room, which is accessible only to authorized personnel.\n\nNon-repairable IT equipment is stored until the quarterly disposal cycle, during which the Procurement Department and ESG Team coordinate pickup through a licensed, government-approved e-waste recycling vendor. Once collected, the vendor provides an official Environmental Compliance & E-Waste Recycling Certificate, which the ESG Team files in the centralized compliance archive and uploads to the ESG digital repository for audit and statutory verification."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Skypass Travel conducts monthly tracking of all waste streams, including paper, plastics, e-waste, and organic waste, to measure generation, segregation accuracy, and recycling performance.\nQuarterly review meetings are held with the Sustainability & Operations Team and Senior Leadership to evaluate the effectiveness of waste reduction initiatives, internal reuse programs, and refurbishment practices.\nKey performance indicators such as volume of waste recycled, percentage of materials reused internally, e-waste refurbishment rates, and reduction in disposable material consumption are analyzed to inform improvement strategies.\nMonitoring results, internal audit findings, and employee feedback are used to update waste management processes, enhance training programs, and optimize internal material exchange systems, ensuring continuous improvement and compliance with environmental goals."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Environmental Awareness and Sustainable Travel Initiatives",
+   "code": "",
+   "catalogId": "transport-emissions",
+   "pillar": "E",
+   "department": "Sustainability & Operations Team",
+   "owner": "Senior Management",
+   "sourceWords": 1286,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to outline the strategies and practices Skypass Travel has implemented to promote environmental awareness, sustainable travel, and responsible choices among its customers. This includes initiatives to reduce carbon emissions, encourage eco-friendly behaviors, and integrate environmental considerations into services and offerings."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All customer-facing services and offerings provided by Skypass Travel, including travel packages, tours, office facilities, and digital platforms.\nAll employees, guides, and contractors involved in service delivery or customer engagement.\nActivities that influence customer environmental impact, including travel options, catering, transportation, and sustainability advocacy."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definition",
+     "rows": [
+      {
+       "term": "Carbon Footprint",
+       "definition": "Total greenhouse gas (GHG) emissions generated directly or indirectly by a product, service, or activity."
+      },
+      {
+       "term": "Sustainable Travel",
+       "definition": "Travel practices that minimize environmental impact, including reduced emissions, responsible resource use, and conservation of natural habitats."
+      },
+      {
+       "term": "Alternative Transportation",
+       "definition": "Modes of travel such as bicycles, electric vehicles, public transport, or walking that reduce reliance on private, fossil-fuel-powered vehicles."
+      },
+      {
+       "term": "Single-Use Plastics",
+       "definition": "Disposable plastic items intended for one-time use, such as bottles, cups, cutlery, and straws."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve environmental service policies, review progress, and allocate resources for advocacy programs."
+       ]
+      },
+      {
+       "role": "Sustainability & Operations Team",
+       "responsibilities": [
+        "Implement environmental initiatives, coordinate eco-friendly service options, and monitor customer adoption."
+       ]
+      },
+      {
+       "role": "Customer Experience & Travel Advisors",
+       "responsibilities": [
+        "Educate customers on sustainable options, promote low-impact choices, and facilitate eco-friendly services."
+       ]
+      },
+      {
+       "role": "Tour Guides / Field Staff",
+       "responsibilities": [
+        "Ensure on-site environmental practices are followed, advise customers on nature impacts, and maintain sustainable service standards."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Customer Travel Carbon Accounting Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Skypass Travel provides tools and services that allow customers to calculate the carbon footprint of their travel, including flights, transport, accommodations, and activities.\nCustomers are provided with personalized recommendations to offset emissions or choose lower-impact alternatives.\nCarbon footprint data is integrated into booking confirmations, reports, and travel summaries to increase awareness of environmental impact.\nThe company encourages optional carbon offset programs, including tree planting or renewable energy contributions, aligned with customer travel choices.\nInformation on booking confirmations link to a personalized carbon dashboard showing emissions per flight, hotel stay, and transport.\nCustomers can choose \"eco-friendly trip\" filters that automatically select lower-emission flights and hotels."
+        },
+        {
+         "type": "paragraph",
+         "text": "We provide our customers with tools to understand and reduce the carbon footprint of their travel.\n\nHow We Implement This:\n\nCustomers can share trip details with us, including transportation modes, accommodation choices, and selected activities.\nUsing internationally recognized standards (GHG Protocol, ISO 14064), we calculate the carbon footprint for each trip, providing a clear, easy-to-understand report.\nThe report highlights the highest contributors to emissions and suggests ways to reduce or offset them.\n\nHow Customers Benefit:\n\nCustomers receive actionable insights to make eco-friendly choices, such as low-emission travel options or selecting eco-certified accommodations.\nWe also provide options for verified carbon offsetting directly through our platform.\n\nOur Commitment to Improvement:\n\nWe continuously monitor participation and customer feedback, reviewing our carbon calculation methods annually to ensure accuracy and usability."
+        }
+       ]
+      },
+      {
+       "heading": "Provision of Plant-Based Food & Beverage Options",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All travel packages, tours, and office catering options include plant-based or vegetarian alternatives to reduce environmental impact.\nMenus highlight low-carbon footprint food choices, providing customers with clear information to make sustainable selections.\nCatering partners are selected based on sustainability certifications and eco-friendly practices, ensuring responsible sourcing of ingredients.\nPeriodic customer surveys gauge acceptance and satisfaction with plant-based options, informing menu adjustments and sustainability communication."
+        },
+        {
+         "type": "paragraph",
+         "text": "We actively promote plant-based meals and beverages as part of our commitment to reducing the environmental footprint of travel.\n\nOur Approach:\n\nAll Skypass tours and partner accommodations offer clearly labeled plant-based options.\nWe collaborate with suppliers and chefs to ensure these options are nutritious, culturally relevant, and appealing to all customers.\n\nCustomer Engagement:\n\nMenus, apps, and promotional materials highlight the environmental benefits of plant-based meals, encouraging customers to make sustainable food choices.\n\nMonitoring and Feedback:\n\nWe track the selection of plant-based options and gather customer feedback to continuously improve variety, taste, and overall satisfaction."
+        }
+       ]
+      },
+      {
+       "heading": "Single-Use Plastic Elimination Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Skypass Travel has introduced reusable water bottles, coffee cups, and food containers for customer use during tours and office interactions.\nPlastic straws, cutlery, and packaging materials have been replaced with compostable or reusable alternatives.\nCustomers are educated on refill stations, proper cleaning, and sustainable disposal practices during tours.\nOn tours, all disposable cutlery replaced with bamboo sets, and used items collected for sterilization.\nPeriodic audits track single-use plastic reduction rates and identify opportunities for further improvement."
+        },
+        {
+         "type": "paragraph",
+         "text": "Our Actions:\n\nWe provide reusable water bottles, containers, and eco-friendly packaging for meals and travel kits.\nCustomers are encouraged to bring their own containers through incentive programs such as discounts or loyalty points.\n\nMaintenance and Hygiene:\n\nReusable items are collected, cleaned, and sanitized according to strict hygiene protocols to ensure safety.\nWe monitor reductions in single-use plastic consumption and measure customer participation in our reusable container programs."
+        }
+       ]
+      },
+      {
+       "heading": "Low-Emission Travel & Green Transport Initiative",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Travel packages prioritize electric or hybrid vehicles for transfers and local tours wherever feasible.\nCustomers are encouraged to adopt alternative modes of transportation, including bicycles, shared shuttle services, and public transport options.\nTravel itineraries highlight low-emission routes and sustainable mobility solutions, reducing the reliance on private fossil-fuel vehicles.\nAll airport transfers in top 5 city tours are done using electric vans; hybrid cars used elsewhere.\nApp provides \"green route\" suggestions for customers taking local taxis or shuttles.\nPartner hotels provide charging stations; bookings include a note on EV-friendly properties."
+        },
+        {
+         "type": "paragraph",
+         "text": "Our Implementation:\n\nSkypass partners with electric vehicle rental services, bike-sharing programs, and public transportation providers.\nCharging stations are made available at key partner hotels and tour hubs where feasible.\n\nCustomer Engagement:\n\nSustainable travel options are prominently highlighted on our booking platform, mobile app, and pre-trip communications.\nCustomers receive incentives, such as loyalty points or discounts, for choosing low-emission transportation.\nWe track usage patterns and assess the effectiveness of our initiatives to continuously enhance customer uptake and environmental impact."
+        }
+       ]
+      },
+      {
+       "heading": "Consideration of Nature Impacts During Tours",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All tours are planned to minimize environmental impact, including limiting the number of visitors in sensitive areas and avoiding activities that harm wildlife or natural habitats.\nGuides educate customers on conservation practices, responsible behavior, and Leave No Trace principles during excursions.\nEnvironmental impact assessments are conducted for new tour routes or experiences, ensuring sustainability considerations are integrated from planning to execution.\nCustomer feedback is collected on eco-conscious practices, enabling continuous improvement in environmental advocacy initiatives."
+        }
+       ]
+      },
+      {
+       "heading": "Biodiversity Protection & Nature-Sensitive Tourism Program",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All tour itineraries are designed to reduce waste: reusable meal kits, refillable water stations, and digital tickets replace paper.\nLight and noise pollution is minimized in wildlife-sensitive areas through controlled lighting, quiet travel zones, and electric/hybrid vehicles.\nWater use is optimized during accommodations and activities, with hotels and lodges participating in water-saving programs.\nPartnerships with local conservation NGOs enable tree planting, habitat restoration, and biodiversity monitoring programs linked to tours.\nEco-certified accommodations and local businesses are prioritized in bookings to support sustainable operations and community resilience.\nSelected tours include optional volunteering experiences such as beach clean-ups, mangrove restoration, or wildlife monitoring.\nPre-trip digital guides and short videos educate customers about local ecosystems, endangered species, and responsible behavior.\nTour guides conduct on-site awareness briefings about biodiversity, pollution prevention, and cultural respect.\nCustomers are incentivized to adopt low-impact behaviors through loyalty points, recognition badges, or discounts on eco-friendly activities."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Skypass Travel monitors the adoption of sustainable travel options, including electric vehicle bookings, alternative transportation usage, and plant-based catering choices, on a monthly basis.\nQuarterly reviews are conducted to evaluate the effectiveness of single-use plastic reduction, carbon footprint calculation programs, and customer participation in environmental initiatives.\nKey performance indicators (KPIs) such as percentage of low-carbon travel options selected, single-use plastic reduction, number of customers using carbon offset programs, and plant-based meal adoption are tracked to assess impact.\nFeedback from customers, tour guides, and partners is analyzed regularly to refine environmental advocacy programs, update SOPs, and ensure continuous improvement in promoting sustainable practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Safe Guarding Customers",
+   "code": "",
+   "catalogId": "customer-health-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Senior Management",
+   "sourceWords": 1605,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to define structured measures adopted by Skypass Travel to protect the health and safety of customers during all interactions, transactions, and service experiences. The procedure ensures risks to customers are proactively identified, monitored, and mitigated, and that customers can provide feedback or report concerns through a responsive, structured system."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All customer-facing operations of Skypass Travel, including offices, digital services, and travel assistance platforms.\nAll employees and contractors interacting with customers or handling customer information.\nSystems, processes, and infrastructure used to identify, assess, and mitigate customer health and safety risks."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Customer Health & Safety",
+       "definition": "The protection of customers from physical, psychological, or environmental risks during their engagement with company services."
+      },
+      {
+       "term": "Risk Assessment",
+       "definition": "A structured process to identify, evaluate, and mitigate potential hazards that may impact customer safety."
+      },
+      {
+       "term": "Emergency Preparedness",
+       "definition": "A set of planned procedures and resources in place to respond efficiently to incidents affecting customer safety."
+      },
+      {
+       "term": "Feedback Mechanism",
+       "definition": "Channels through which customers can report concerns, complaints, or suggestions regarding health and safety."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve customer health and safety policies, review incident reports, and ensure sufficient resources for safety programs."
+       ]
+      },
+      {
+       "role": "Operations & Customer Experience Team",
+       "responsibilities": [
+        "Implement health and safety procedures, manage the dedicated hotline, and respond to customer feedback promptly."
+       ]
+      },
+      {
+       "role": "Facilities & Safety Team",
+       "responsibilities": [
+        "Conduct regular risk assessments, maintain emergency equipment, and monitor compliance with safety procedures."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Adhere to health and safety protocols, report hazards or incidents, and assist in emergency procedures when necessary."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Dedicated Customer Health & Safety Hotline",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Skypass Travel maintains a dedicated hotline and email channel specifically to handle customer health and safety concerns, complaints, or suggestions.\nAll incoming feedback is logged into a centralized tracking system that records the nature of the concern, priority level, and follow-up actions.\nReports are reviewed daily by the Customer Experience Team, and urgent issues are escalated immediately to management for resolution.\nCustomers receive acknowledgment and response timelines, ensuring transparency and accountability."
+        }
+       ]
+      },
+      {
+       "heading": "Hotline Setup",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "We operate a 24/7 dedicated health and safety hotline, accessible via phone, email, and our mobile app.\nHotline information is shared during booking confirmation, pre-travel emails, and on our mobile app.\nIndia Hotline : +91 22 6942 7777 — Official hotline for Skypass Travel Pvt. Ltd. (India)\nGeneral Contact Numbers\nIndia Office: +91 80 4122 6228\nNorth America Office (USA): +1 800-252-9237"
+        }
+       ]
+      },
+      {
+       "heading": "Staffing & Training",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The hotline is staffed by trained personnel, including multilingual customer support agents and health & safety coordinators.\nStaff receives specialized training in first aid, emergency triage, crisis communication, and escalation procedures."
+        }
+       ]
+      },
+      {
+       "heading": "External Feedback Submission Form",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Field",
+          "Details / Instructions"
+         ],
+         "rows": [
+          [
+           "Submission Date",
+           "Enter date of submission (DD/MM/YYYY)"
+          ],
+          [
+           "Source of Feedback",
+           "Specify whether from Client / Visitor / Regulatory Authority"
+          ],
+          [
+           "Contributor Name",
+           "Optional; leave blank for anonymous submissions"
+          ],
+          [
+           "Contact Information",
+           "Email or phone number (optional)"
+          ],
+          [
+           "Type of Feedback",
+           "Indicate whether it is a Concern / Suggestion / Complaint"
+          ],
+          [
+           "Feedback Description",
+           "Provide a detailed explanation of the issue or suggestion"
+          ],
+          [
+           "Affected Location",
+           "Branch, office, or area involved"
+          ],
+          [
+           "Severity Level",
+           "High / Medium / Low, based on urgency and impact"
+          ],
+          [
+           "Immediate Measures Taken",
+           "Any temporary action already implemented, if applicable"
+          ],
+          [
+           "Expected Outcome",
+           "Desired resolution or follow-up from the organization"
+          ],
+          [
+           "Supporting Evidence",
+           "Upload documents, photos, or other relevant files"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Submission Guidelines and Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A. Submission Methods: Feedback can be submitted through multiple channels including email, company website, hotline, or social media platforms. All submissions are directed to the Health & Safety Officer within 24 hours of receipt.\n\nB. Confidentiality: All submissions are treated with strict confidentiality. Anonymity is maintained upon request.\n\nC. Response Timeline"
+        },
+        {
+         "type": "bullets",
+         "text": "Acknowledgment: Within 24 hours of submission\nInitial Review: Within 48 hours\nResolution: Based on severity, typically within 3–10 working days"
+        }
+       ]
+      },
+      {
+       "heading": "Logging and Documentation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Every feedback entry is recorded in the External Feedback Register (EFR), a secure digital database.\nEach record contains: date of submission, source, summary of issue, severity, location, response actions, and final resolution.\nA Unique Tracking Number (UTN) is generated for monitoring and follow-up.\nAccess is restricted to authorized Health & Safety personnel only."
+        }
+       ]
+      },
+      {
+       "heading": "Initial Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Review Window: All feedback is assessed within 48 hours by the Health & Safety Officer.\nClassification:\nUrgent: Requires immediate intervention (e.g., safety hazards in public areas).\nNon-Urgent: Tracked and addressed according to standard timelines.\nPrioritization: Determined based on potential impact, reputational risk, and regulatory or legal implications."
+        }
+       ]
+      },
+      {
+       "heading": "Investigation and Corrective Actions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A. Urgent Issues"
+        },
+        {
+         "type": "bullets",
+         "text": "A cross-functional team (HR, Facilities, Security) is assembled immediately.\nImmediate measures are taken, such as restricting access, providing medical support, or repairing faulty equipment.\nAn incident report is prepared within 48 hours.\nTransparent communication is maintained with the feedback provider throughout the process."
+        },
+        {
+         "type": "paragraph",
+         "text": "B. Non-Urgent Issues"
+        },
+        {
+         "type": "bullets",
+         "text": "The relevant department head leads the investigation.\nA Corrective Action Plan (CAP) is developed, outlining tasks, timelines, and accountability.\nThe feedback provider is regularly updated until the issue is resolved.\nA post-resolution evaluation is conducted to confirm closure and effectiveness of actions."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Interaction",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Customers report emergencies, seek medical guidance, or clarify safety protocols.\nAgents provide immediate instructions, coordinate with local medical services, and escalate urgent cases to management or authorities."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation & Tracking",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All hotline interactions are logged in a centralized incident management system.\nData includes customer details, type of incident, actions taken, resolution time, and follow-up requirements.\nWeekly and monthly reports track response times, issue resolution, and recurring patterns.\nInsights inform staff training, procedural updates, and communication improvements."
+        }
+       ]
+      },
+      {
+       "heading": "Emergency Preparedness and Response Procedures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Skypass Travel has implemented a comprehensive emergency response framework covering physical locations, digital platforms, and customer interactions. Detailed evacuation plans, assembly points, first-aid kits, and emergency contact lists are maintained and regularly updated.\n\nRisk-Specific Planning: We develop detailed emergency protocols for:"
+        },
+        {
+         "type": "bullets",
+         "text": "Medical emergencies (injury, illness, allergic reactions)\nNatural disasters (storms, earthquakes, floods)\nSecurity incidents (theft, political unrest)\nAccidents during travel or activities"
+        },
+        {
+         "type": "paragraph",
+         "text": "Staff Preparedness:"
+        },
+        {
+         "type": "bullets",
+         "text": "All tour guides and operational staff receive annual training in first aid, CPR, and emergency evacuation.\nDesignated Emergency Response Officers coordinate internal and external support during incidents."
+        },
+        {
+         "type": "paragraph",
+         "text": "Emergency Equipment & Resources:"
+        },
+        {
+         "type": "bullets",
+         "text": "First aid kits and AED devices are available on all tours, vehicles, and key facilities.\nPartnerships with local hospitals, clinics, and ambulance services ensure rapid response.\nCustomers receive pre-trip emails, app notifications, and in-person briefings covering:\nEmergency contacts\nEvacuation routes and procedures\nSafety precautions for specific destinations or activities"
+        },
+        {
+         "type": "paragraph",
+         "text": "Testing & Drills:"
+        },
+        {
+         "type": "bullets",
+         "text": "Emergency response procedures are tested quarterly via simulations and drills.\nPost-drill reports identify gaps, assign corrective actions, and update procedures."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Health & Safety Risk Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Regular risk assessments are conducted to proactively identify potential health or safety hazards affecting customers in office spaces, service interactions, or travel-related advisory operations. Hazards are evaluated based on severity and likelihood, and preventive or mitigation measures are implemented accordingly. Risk assessment reports include recommendations for operational adjustments, infrastructure improvements, or policy updates to reduce exposure.\n\nRisk Identification:\n\nFor each trip, we evaluate:"
+        },
+        {
+         "type": "bullets",
+         "text": "Transportation risks (vehicles, modes, road conditions)\nActivity risks (trekking, water sports, adventure activities)\nEnvironmental risks (weather, altitude, wildlife)\nLocal health risks (infectious diseases, food safety)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Assessment Documentation:\n\nAll hazards are assessed for likelihood and impact using a standardized risk matrix.\nMitigation measures are documented for each identified risk.\n\nMitigation Measures:\n\nExamples include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Requiring personal protective equipment (helmets, life jackets)\nProviding sanitation kits and hand hygiene facilities\nPartnering with certified accommodation providers for fire and health safety compliance\nLimiting participant numbers in high-risk activities\nRisk assessments are prepared by the Health & Safety Team in collaboration with tour managers and operational staff.\nAssessments are reviewed and approved by senior management before tour launch.\nRisk assessments are updated annually or whenever new activities, destinations, or regulations emerge."
+        }
+       ]
+      },
+      {
+       "heading": "Health & Safety Communication and Awareness",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customers are provided with clear guidance on health and safety protocols, including signage in offices, safety guidelines on digital platforms, and instructions during service interactions. Communication channels are continuously updated to reflect current health advisories, local regulations, and emergency procedures.\n\nPre-Travel Communication:\n\nCustomers receive detailed guidance via email, app notifications, and brochures, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Vaccination and medical advice\nSafety tips for activities and destinations\nEmergency contacts and procedures"
+        },
+        {
+         "type": "paragraph",
+         "text": "On-Trip Awareness:"
+        },
+        {
+         "type": "bullets",
+         "text": "Tour guides provide safety briefings at the start of each activity.\nCustomers are reminded of hygiene practices, social distancing (where applicable), and protective equipment requirements.\nSignage and in-app alerts reinforce safety measures in hotels, vehicles, and tour sites."
+        },
+        {
+         "type": "paragraph",
+         "text": "Education & Engagement:"
+        },
+        {
+         "type": "bullets",
+         "text": "Customers can participate in workshops or webinars covering:\nTravel health tips\nEmergency preparedness\nLocal environmental hazards\nWe promote awareness of personal responsibility and adherence to safety guidelines.\nCustomers are encouraged to share feedback on safety experiences through post-trip surveys.\nFeedback informs continuous improvement initiatives."
+        }
+       ]
+      },
+      {
+       "heading": "Continuous Monitoring and Improvement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All incidents, near-misses, and customer complaints are analyzed monthly to identify trends and systemic issues.\nThe SOP and related safety procedures are periodically reviewed and updated based on incident analysis, risk assessments, and feedback.\nLessons learned are incorporated into employee training modules, emergency drills, and customer guidance materials to strengthen safety outcomes.\nKPIs related to customer safety, including response time to complaints, incident resolution rates, and risk mitigation effectiveness, are monitored and reported to senior management quarterly.\nBest practices and new technologies in customer safety management are evaluated for potential implementation, ensuring continuous enhancement of protective measures."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Skypass Travel conducts monthly monitoring of all customer safety incidents, hotline reports, and feedback submissions to track the nature, frequency, and resolution of issues.\nQuarterly reviews are carried out by the Sustainability & Operations and Customer Experience Teams to evaluate the effectiveness of emergency preparedness procedures, risk mitigation measures, and response times.\nKey performance indicators (KPIs) such as incident resolution rate, average response time to safety concerns, number of near-miss events, and risk assessment completion are analyzed to ensure compliance with internal safety standards.\nFindings from monitoring activities, internal audits, and customer feedback are used to update SOPs, improve staff training, and refine emergency response protocols, ensuring continuous improvement in customer health and safety practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Management",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "Sustainability / Operations Committee",
+   "owner": "Senior Management / Executive Leadership",
+   "sourceWords": 1407,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish structured guidelines and operational practices implemented by Skypass Travel to reduce overall energy consumption and minimize greenhouse gas (GHG) emissions across all business activities. This procedure supports the company’s sustainability commitments, enhances operational efficiency, and contributes to global climate action by adopting responsible energy management."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All offices and operational locations of Skypass Travel.\nAll employees, contractors, and service partners.\nAll administrative, IT, and facility management activities where energy resources are consumed.\nAll travel-related consulting operations involving digital systems and workplace infrastructure."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Greenhouse Gases (GHGs)",
+       "definition": "Heat-trapping gases including carbon dioxide (CO₂), nitrous oxide (N₂O), methane (CH₄), and refrigerant gases."
+      },
+      {
+       "term": "Energy Audit / Carbon Assessment",
+       "definition": "A structured evaluation of energy performance to identify reduction opportunities and set improvement goals."
+      },
+      {
+       "term": "Energy Consumption",
+       "definition": "Total amount of power used by electrical, mechanical, IT, and office systems within operational control."
+      },
+      {
+       "term": "HVAC",
+       "definition": "Heating, Ventilation, and Air Conditioning systems used to regulate indoor temperatures and air quality"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management / Executive Leadership",
+       "responsibilities": [
+        "Approve energy policies, performance targets, infrastructure upgrades, and annual review outcomes"
+       ]
+      },
+      {
+       "role": "Sustainability / Operations Committee",
+       "responsibilities": [
+        "Develop strategy, review performance data, oversee implementation, lead improvement planning"
+       ]
+      },
+      {
+       "role": "Facilities & Administration Team",
+       "responsibilities": [
+        "Apply energy-saving measures across lighting, HVAC, appliances, and building maintenance"
+       ]
+      },
+      {
+       "role": "IT Team",
+       "responsibilities": [
+        "Optimize energy usage of IT infrastructure, enforce sleep-mode policies, manage hardware upgrades and virtualization"
+       ]
+      },
+      {
+       "role": "HR & Training Department",
+       "responsibilities": [
+        "Coordinate awareness programs and training modules for employee engagement"
+       ]
+      },
+      {
+       "role": "Internal Audit / Quality Team",
+       "responsibilities": [
+        "Conduct periodic audits, verify compliance, and prepare improvement recommendations"
+       ]
+      },
+      {
+       "role": "Employees & Contractors",
+       "responsibilities": [
+        "Follow daily energy-saving practices, shut down devices, comply with operational instructions, report wastage"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Energy Tracking and Performance Evaluation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Skypass Travel has deployed digital energy monitoring systems, including sub-metering across operational zones, enabling real-time visibility of consumption trends and peak-load behavior.\nEnergy performance statistics are reviewed every month by the Sustainability and Operations Team through analytical dashboards that highlight irregular usage or equipment-related inefficiencies.\nInsights from collected data are translated into improvement action plans, which may include equipment upgrades, optimization of operating schedules, or procedural adjustments.\nA consolidated quarterly evaluation report is submitted to senior leadership outlining progress, deviations, and recommended improvement measures to support continuous sustainability management.\nBenchmark comparisons are conducted with industry standards and historical performance to identify long-term reduction opportunities.\nData-based performance findings are integrated into annual sustainability strategy planning, ensuring that future initiatives are aligned with measured results."
+        }
+       ]
+      },
+      {
+       "heading": "Efficient Lighting Management Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All Skypass Travel facilities have undergone a systematic transition to LED lighting with low wattage configurations, replacing traditional lighting fixtures as part of an energy modernization commitment.\nOccupancy-based motion sensors and automatic dimming features are installed in low-use spaces such as corridors, storage areas, restrooms, and shared meeting rooms to eliminate unnecessary lighting load.\nOffice architectural layouts are intentionally designed to maximize access to natural daylight, reducing dependency on artificial lighting and supporting employee comfort.\nSensor-based lighting systems (motion and occupancy sensors) are installed across low-use areas to ensure automatic on/off control.\nDaylight sensor–controlled lighting is deployed near windows to automatically reduce artificial lighting during daytime.\nSmart timer-based lighting panels are installed to automatically switch off non-essential lights after office hours.\nThe Facilities Team carries out routine quarterly assessments to verify lighting system efficiency, document findings, and apply corrective actions where early deterioration or faults are detected.\nTimed lighting controls automatically power off office lighting after business hours, preventing avoidable night-time energy consumption.\nAll lighting upgrades are approved only after lifecycle energy-cost and carbon-reduction assessments to ensure long-term financial and environmental performance."
+        }
+       ]
+      },
+      {
+       "heading": "HVAC Energy Optimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "High-efficiency HVAC equipment with modern inverter technology has been deployed across all office sites, replacing outdated and energy-intensive units.\nSmart temperature control systems maintain optimized indoor climate settings, with programmed operation tied to occupancy and working hours to avoid unnecessary cooling loads.\nMaintenance performance and energy impact data are digitally logged and reviewed during monthly sustainability review meetings, enabling benchmarking against baseline usage figures.\nWorkspace insulation and reflective blinds have been installed to reduce indoor heat gain, lowering dependency on cooling operations.\nHVAC scheduling ensures systems are shut down outside working hours, and standby mode is used during low activity periods to prevent over-running.\nBureau of Energy Efficiency (BEE) 4-star and 5-star rated inverter split air conditioners are installed across all operational office areas.\nDigital thermostat–controlled temperature systems are used to maintain standardized cooling settings during office hours."
+        }
+       ]
+      },
+      {
+       "heading": "Low-Energy Office Equipment Operations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Office machinery and appliances such as printers, multifunction devices, and pantry equipment are procured strictly based on energy efficiency certification standards including ENERGY STAR and equivalent national benchmarks.\nDefault device configurations are pre-set to sleep mode and automatic shutdown features, minimizing idle-time energy consumption during non-operational hours.\nEmployees are instructed and routinely reminded to adopt shared-use practices and shut down equipment when not in use.\nENERGY STAR–rated printers and scanners with auto sleep mode are used in daily operations.\nSmart power extension boards with on/off switches are used at workstations to control idle power use.\nHigh-efficiency UPS systems are installed for computers and networking equipment to reduce standby losses.\nAdministrative teams conduct periodic compliance inspections and identify outdated equipment for scheduled replacement based on energy performance requirements."
+        }
+       ]
+      },
+      {
+       "heading": "IT Systems and Digital Energy Efficiency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Skypass Travel’s IT infrastructure uses high-efficiency hardware and optimized data center cooling to reduce carbon intensity associated with digital systems.\nCloud-based reservation, accounting, and document management systems are used to reduce dependence on on-site servers.\nAutomatic sleep, hibernation, and shutdown settings are enabled on all company laptops and desktops.\nEnergy-efficient Wi-Fi routers, network switches, and access points are installed for daily IT connectivity.\nExtensive virtualization and cloud migration initiatives have been implemented, significantly reducing on-premise server requirements and energy demand.\nIT performance and power consumption are tracked through Power Usage Effectiveness (PUE) indicators, which are reviewed quarterly to guide improvement decisions.\nCompany-issued computers operate under pre-set automatic hibernation and shutdown protocols, and employees are educated on responsible digital usage to limit unnecessary system loads.\nData storage is optimized through automated archival processes and reduced redundant data retention, decreasing server energy demand.\nPeriodic employee campaigns and digital efficiency drives promote responsible computing habits, including reduction of unnecessary processing workloads."
+        }
+       ]
+      },
+      {
+       "heading": "Sustainable Procurement and Supplier Collaboration",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Procurement policies incorporate energy-efficiency performance criteria for every purchase category, including IT hardware, building systems, lighting components, and support appliances.\nVendors are evaluated on their sustainability credentials and adherence to energy efficiency standards before contract finalization.\nAgreements include mandatory environmental compliance clauses, and suppliers undergo evaluation reviews to ensure consistent alignment with Skypass Travel’s sustainability objectives.\nVendor sustainability performance is included as part of annual vendor scorecard assessments, supporting progressive supply chain improvement.\nPreference is given to suppliers who implement renewable energy, carbon-neutral logistics, environmentally responsible packaging, or green certification commitments."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Capability Building & Sustainability Training",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees participate in mandatory energy efficiency and climate-action learning programs, strengthening organization-wide awareness and accountability for shared sustainability goals.\nTraining content includes practical guidelines for daily workplace actions, internal real-world case examples, and best-practice examples for reducing energy consumption and GHG emissions.\nTraining completion and refresher timelines are monitored through Skypass Travel’s Learning Management System (LMS), with attendance and certification records retained for audits and reporting requirements.\nCommunication campaigns and awareness drives reinforce behavioral practices that collectively support the company’s environmental commitments."
+        }
+       ]
+      },
+      {
+       "heading": "Climate Strategy Exploration & Future Readiness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "We are actively exploring opportunities for renewable energy adoption, including solar power and green electricity sourcing, with the expected outcome of reducing long-term electricity-related carbon emissions and dependence on grid-based fossil fuels.\nThe organization is in the process of evaluating structured carbon auditing mechanisms to assess current emission profiles, with the expected outcome of establishing a reliable baseline for future emission reduction planning and regulatory alignment.\nCarbon offset options through verified international programs are being explored to address residual emissions, with the expected outcome of enabling future carbon-neutral operations for unavoidable emission sources."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Skypass Travel conducts monthly monitoring of energy consumption across all office locations using smart meters and internal analytics dashboards to track usage trends and identify abnormal consumption patterns.\nQuarterly performance reviews are carried out by the Sustainability & Operations Team and reported to Senior Leadership, including progress against reduction targets, corrective measures taken, and opportunities for improvement.\nKey performance indicators such as total electricity usage, energy intensity per employee, HVAC efficiency metrics, and estimated GHG reduction outcomes are continuously assessed to evaluate the impact of implemented initiatives.\nFindings from monitoring activities, internal audits, and equipment inspection reports are used to update action plans and refine operational strategies, ensuring continuous improvement and alignment with long-term sustainability goals."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Water Management",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "Sustainability & Operations",
+   "owner": "Sustainability / Operations Committee",
+   "sourceWords": 501,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish systematic guidelines and operational practices implemented by Skypass Travel to optimize water usage, prevent wastage, and ensure responsible management of water resources across all business activities. This procedure supports the company’s sustainability commitments, strengthens operational efficiency, and contributes to water stewardship and environmental conservation."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All offices, branches, and operational locations of Skypass Travel.\nAll employees, contractors, and service partners.\nAll administrative, IT, and facility operations where water is consumed.\nAll travel-related consulting operations involving office infrastructure, guest services, and hygiene facilities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Water Efficiency",
+       "definition": "The practice of reducing water consumption while maintaining operational functionality."
+      },
+      {
+       "term": "Greywater",
+       "definition": "Wastewater generated from sinks, showers, and office activities that can be treated and reused for non-potable purposes."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management / Executive Leadership",
+       "responsibilities": [
+        "Approve water management policies, targets, infrastructure upgrades, and review outcomes annually"
+       ]
+      },
+      {
+       "role": "Sustainability / Operations Committee",
+       "responsibilities": [
+        "Develop strategy, analyze water consumption data, oversee implementation, lead improvement planning"
+       ]
+      },
+      {
+       "role": "Facilities & Administration Team",
+       "responsibilities": [
+        "Implement water-saving measures in plumbing, HVAC cooling, and hygiene facilities; maintain water systems"
+       ]
+      },
+      {
+       "role": "IT Team",
+       "responsibilities": [
+        "Ensure digital operations support water efficiency indirectly, e.g., cloud adoption reducing onsite cooling water needs"
+       ]
+      },
+      {
+       "role": "HR & Training Department",
+       "responsibilities": [
+        "Conduct employee awareness programs and training on water conservation practices"
+       ]
+      },
+      {
+       "role": "Internal Audit / Quality Team",
+       "responsibilities": [
+        "Audit water usage compliance, verify effectiveness of measures, and provide recommendations"
+       ]
+      },
+      {
+       "role": "Employees & Contractors",
+       "responsibilities": [
+        "Follow water-saving practices, report leaks or wastage, and adhere to operational guidelines"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Water Usage Monitoring and Performance Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Smart water meters and digital monitoring systems are installed across all locations to track real-time water consumption trends.\nMonthly water usage reports are reviewed by the Sustainability & Operations Team to identify irregular consumption patterns and potential inefficiencies.\nData insights inform operational improvements, such as fixture upgrades, leak repairs, and procedural adjustments.\nQuarterly performance reports are submitted to senior leadership, detailing usage trends, corrective actions, and progress toward conservation targets."
+        }
+       ]
+      },
+      {
+       "heading": "Water-Efficient Infrastructure Initiatives",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Low-flow faucets, dual-flush toilets, and sensor-based taps are installed across all office and public areas.\nAutomated water control systems are deployed in restrooms and pantry areas to minimize unnecessary usage."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Awareness & Behavioral Practices",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees participate in mandatory water conservation training, including practical guidance on daily office actions and water-efficient habits.\nAwareness campaigns are conducted via internal newsletters, posters, and digital communications to reinforce water-saving behaviors.\nEmployees are encouraged to report leaks, dripping faucets, or inefficient appliances through internal reporting channels.\nUsage guidelines, such as limiting excessive toilet flushing or sink use, are communicated as part of operational best practices."
+        }
+       ]
+      },
+      {
+       "heading": "Water-Efficient Procurement & Supplier Collaboration",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Procurement policies include water-efficiency criteria for equipment such as dishwashers, HVAC cooling systems, and plumbing fixtures."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring & Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Water consumption is monitored monthly via smart meters and analyzed for abnormal patterns or inefficiencies.\nQuarterly reviews by the Sustainability & Operations Team evaluate performance against reduction targets and identify corrective actions.\nKPIs such as total water usage, water per employee, efficiency of plumbing fixtures, and recycled water volume are continuously tracked.\nFindings from monitoring, audits, and inspections inform updates to operational procedures, ensuring continuous improvement and alignment with sustainability goals."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Inclusive Sourcing & Non-Discrimination in the Supply Chain",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "S",
+   "department": "Procurement",
+   "owner": "Senior Leadership",
+   "sourceWords": 1041,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish and implement actions that ensure Skypass Travel’s supply chain is fair, ethical, inclusive, and free from discrimination, harassment, or any human rights violations. This SOP supports responsible procurement practices that promote equal opportunities for suppliers and protect workforce rights throughout the supply chain."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All suppliers, contractors, service providers, agents, and business partners of Skypass Travel.\nAll employees involved in procurement, vendor onboarding, vendor evaluation, and contract negotiations.\nAll outsourcing activities and third-party vendor engagements linked to travel services, logistics, marketing, IT, and operations."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Inclusive Sourcing",
+       "definition": "Procurement practices that prioritize suppliers owned or led by underrepresented groups and ensure fair access without discrimination."
+      },
+      {
+       "term": "Non-Discrimination",
+       "definition": "Ensuring equal opportunities regardless of gender, age, caste, religion, disability, nationality, ethnicity, sexual orientation, or socioeconomic status."
+      },
+      {
+       "term": "Supplier Code of Conduct",
+       "definition": "Standards suppliers must follow related to ethics, labor rights, non-discrimination, safety, and environmental practices."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Leadership",
+       "responsibilities": [
+        "Approves and oversees inclusive sourcing strategies and policy compliance."
+       ]
+      },
+      {
+       "role": "Procurement & Vendor Management Team",
+       "responsibilities": [
+        "Executes supplier evaluation, onboarding, audits, and compliance reviews."
+       ]
+      },
+      {
+       "role": "Legal & Compliance Team",
+       "responsibilities": [
+        "Ensures contractual enforcement and handles violation cases or escalations."
+       ]
+      },
+      {
+       "role": "Suppliers / Contractors",
+       "responsibilities": [
+        "Comply with Skypass Travel’s Supplier Code of Conduct and non-discrimination standards."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure & Implementation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Skypass Travel follows a structured Inclusive Procurement Framework designed to ensure equitable access to business opportunities and selection of suppliers based on ethical, social, and sustainability criteria in addition to cost and quality. Key implementation actions include:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Inclusive & Ethical Supplier Selection",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Prioritizing engagement with suppliers from diverse and underrepresented groups, including women-owned, minority-owned, MSME, startup, and local community-based enterprises.\nRequiring suppliers to complete comprehensive registration and onboarding documentation, including disclosures related to ownership structure, labor and human rights practices, workplace diversity initiatives, and compliance certifications.\nUsing objective vendor evaluation scorecards that incorporate social responsibility performance, workplace policies, fair wage commitments, labor standards compliance, and DEI (Diversity, Equity & Inclusion) initiatives.\nConducting pre-qualification assessments and screening to ensure suppliers uphold equal opportunity employment, non-discriminatory recruitment, and ethical labor standards in alignment with international frameworks such as the UN Guiding Principles on Business & Human Rights (UNGPs) and ILO Conventions."
+        }
+       ]
+      },
+      {
+       "heading": "Prevention of Discrimination & Harassment in Supply Chain Workforce",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To ensure a safe, fair, and respectful working environment across the supply chain, Skypass Travel enforces strict expectations on supplier conduct and compliance. Implementation measures include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Mandatory acceptance of the Skypass Travel Supplier Code of Conduct, prohibiting discrimination, harassment, retaliation, child labor, forced labor, unsafe workplaces, and any violation of human dignity.\nRequiring suppliers to implement formal internal grievance systems accessible to all employees without risk of retaliation or penalties.\nConducting annual supplier audits and compliance reviews, including document verification, physical site inspections, employee interviews, and assessments of policy effectiveness.\nIssuing Corrective Action Plans (CAPs) in case of identified risks or violations, with defined timelines and monitoring for improvement. Suppliers who fail to comply face suspension, reduced engagement, or contract termination."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Training & Capacity Building",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Skypass Travel is committed to enhancing supplier capabilities and strengthening ethical practices across the value chain."
+        },
+        {
+         "type": "paragraph",
+         "text": "Training Programs:"
+        },
+        {
+         "type": "bullets",
+         "text": "Suppliers are enrolled in mandatory capacity-building sessions, covering topics such as:\nEnvironmental management and energy efficiency practices\nHealth, safety, and labor standards\nEthical procurement and anti-corruption guidelines\nDigital and operational best practices for sustainability"
+        },
+        {
+         "type": "paragraph",
+         "text": "Delivery Modes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Training is delivered through virtual workshops, on-site sessions, and e-learning modules for flexibility and accessibility.\nPrograms are tailored to supplier size, operational context, and strategic importance.\nHigh-impact suppliers (critical to operations or with high environmental footprint) receive intensive and specialized training."
+        },
+        {
+         "type": "paragraph",
+         "text": "Evaluation & Certification:"
+        },
+        {
+         "type": "bullets",
+         "text": "Supplier participation is tracked, and completion certificates are issued upon successful completion of training modules.\nSupplier knowledge and capability improvements are assessed through quizzes, audits, and practical demonstrations."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Grievance Reporting & Issue Resolution",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To support transparency and fair conflict resolution, Skypass Travel offers grievance channels accessible to suppliers and their employees. Maintaining a dedicated Supplier Support & Grievance Mechanism available through hotline, email, and online reporting forms to confidentially raise concerns related to discrimination, harassment, or unethical labor practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Grievance Channels:"
+        },
+        {
+         "type": "bullets",
+         "text": "Suppliers can report grievances via:\nDedicated email addresses\nSupplier portals in our digital management system\nDirect contact with the Supplier Relationship Manager\nIssues may include contractual disputes, compliance concerns, ethical or labor practice questions, or operational conflicts."
+        },
+        {
+         "type": "paragraph",
+         "text": "Acknowledgement & Tracking:"
+        },
+        {
+         "type": "bullets",
+         "text": "All grievances are acknowledged within 48 hours of receipt.\nEach case is logged into a centralized Supplier Grievance Management System with a unique reference number."
+        },
+        {
+         "type": "paragraph",
+         "text": "Investigation & Resolution:"
+        },
+        {
+         "type": "bullets",
+         "text": "A cross-functional team, including Procurement, Sustainability, and Legal Teams, investigates the issue.\nResolution involves dialogue with the supplier, assessment of evidence, and corrective action planning.\nComplex or high-impact grievances are escalated to senior management for review and decision-making.\nStandard grievances are resolved within 15 business days.\nCritical issues requiring further investigation are addressed as a priority, with interim updates provided to the supplier."
+        },
+        {
+         "type": "paragraph",
+         "text": "Documentation & Learning:"
+        },
+        {
+         "type": "bullets",
+         "text": "All resolved grievances are documented, including root cause analysis, corrective actions, and preventive measures.\nLessons learned are integrated into supplier training programs and internal process improvements."
+        }
+       ]
+      },
+      {
+       "heading": "Other Actions Supporting Non-Discriminatory Supply Chain Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Beyond compliance, Skypass Travel advances inclusive sourcing initiatives to empower disadvantaged groups and strengthen community impact. Supporting actions include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Local ecosystem development, prioritizing procurement from community-based, small-scale, and rural entrepreneurs.\nBusiness partnership and mentorship programs that create equitable tender access and encourage diverse suppliers to participate in competitive bidding without unfair barriers.\nIntegrating ethical behavior, employee well-being, and social impact metrics into supplier performance evaluations, moving beyond pricing-based selection."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Quarterly reports summarize the number of grievances, resolution timelines, recurring issues, and preventive measures.\nSupplier grievance trends are analyzed to identify systemic risks and drive continuous improvements in supplier engagement and compliance."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Supplier compliance with ESG and DEI requirements is monitored through quarterly audit reviews and annual performance evaluations.\nKey KPIs such as percentage of diverse suppliers engaged, audit compliance results, grievance resolution time, and training completion rates are tracked and reported to leadership.\nFindings are reviewed during quarterly ESG Committee meetings to identify improvement areas and update sourcing strategies.\nSupplier policies, contracts, and the Supplier Code of Conduct are reviewed annually or upon regulatory changes to ensure alignment with global standards."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Incident Response Plan (IRP) & Breach Management",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 1016,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Safeguarding confidential customer and corporate information—including travel itineraries, booking details, financial and payment data, digital identity documents, and other sensitive records is fundamental to maintaining customer trust and meeting international compliance obligations. This Incident Response Plan (IRP) establishes a structured framework to rapidly identify, assess, contain, and resolve cybersecurity incidents or data breaches affecting Skypass Travel Group operations across all global offices. The plan ensures operational continuity, regulatory compliance, and protection of customer, employee, and partner data."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The primary objectives of this IRP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure rapid detection and immediate response to incidents involving confidential or sensitive information.\nLimit the damage and operational disruption caused by a security breach.\nFulfill regulatory requirements for breach notification and reporting in applicable jurisdictions.\nEnable effective and transparent communication with internal stakeholders, customers, partners, and regulators.\nPrevent recurrence through continuous improvement, post-incident analysis, and procedural strengthening."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This plan applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All global offices of Skypass Travel Group, including remote employees and third-party service environments.\nAll IT systems, digital platforms, cloud infrastructure, and internal communication tools.\nBreaches involving personal data, financial information, corporate records, vendor data, or operational systems."
+      },
+      {
+       "type": "paragraph",
+       "text": "Examples of events covered under this IRP include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Unauthorized access, disclosure, modification, or theft of customer travel records or payment details.\nLoss or compromise of employee data, financial records, or sensitive business information.\nCyberattacks including malware, ransomware, phishing, account takeover, or system hacking.\nInsider threats, accidental disclosures, or system misconfigurations.\nFailures or security breaches affecting third-party partners handling Skypass data."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Incident Response Team (IRT)",
+       "responsibilities": [
+        "Leads and coordinates incident management and response activities across departments."
+       ]
+      },
+      {
+       "role": "IT Security Lead / Cybersecurity Manager",
+       "responsibilities": [
+        "Detects incidents, performs technical investigation, organizes containment and eradication efforts."
+       ]
+      },
+      {
+       "role": "Compliance Officer / Data Protection Officer",
+       "responsibilities": [
+        "Ensures response compliance with international privacy laws and reporting obligations."
+       ]
+      },
+      {
+       "role": "Legal Counsel",
+       "responsibilities": [
+        "Advises on legal exposure, regulatory obligations, contractual implications, and stakeholder communications."
+       ]
+      },
+      {
+       "role": "Communications / PR Manager",
+       "responsibilities": [
+        "Manages controlled internal and external communications, including notifications to customers and media."
+       ]
+      },
+      {
+       "role": "Business / Data Owners",
+       "responsibilities": [
+        "Assess operational and data impact, support risk evaluation and restoration priorities."
+       ]
+      },
+      {
+       "role": "All Employees & System Users",
+       "responsibilities": [
+        "Must report suspected security incidents immediately through approved channels."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Activation Thresholds for Incident Response",
+     "steps": [
+      {
+       "heading": "Activation Thresholds for Incident Response",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The IRP is activated when any of the following conditions are identified or suspected:"
+        },
+        {
+         "type": "bullets",
+         "text": "Unauthorized access or attempts to access sensitive systems or data.\nData leakage through email, portable devices, social engineering, or system exposure.\nMalware, ransomware, phishing, or unusual network activity suggesting compromise.\nLost or stolen devices (laptops, phones, storage media) containing confidential data.\nDiscrepancies in system records indicating manipulation, corruption, or fraud.\nReports of suspicious activity from employees, customers, vendors, or partners.\nNotification of a breach from a third-party vendor or cloud service provider.\nAbnormal system behavior or unexplained performance spikes."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Incident Reporting & Detection",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "All Skypass personnel must stay alert to security anomalies, suspicious emails, unusual account activity, or system performance issues.\nSuspected or confirmed incidents must be reported immediately via:\nInternal incident reporting portal\nSecurity hotline or emergency contact number\nDirectly to the IT Security Lead or Incident Response Team\nA reporter must provide:\nTime and method of detection\nDescription of suspected breach\nSystems, users, or data that may be affected\nAny actions already taken"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Incident Classification & Prioritization",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Incidents will be categorized based on severity and potential impact:"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Severity Level",
+        "Description"
+       ],
+       "rows": [
+        [
+         "High / Critical",
+         "Large-scale breach impacting sensitive personal data, financial records, or operational service disruption with regulatory or reputational consequences."
+        ],
+        [
+         "Medium",
+         "Limited data exposure or partial disruption with moderate operational or compliance risk."
+        ],
+        [
+         "Low",
+         "Minor or isolated incidents with minimal business or customer impact. Handled through routine corrective actions and monitoring."
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "Severity classification determines urgency, escalation requirements, and resource allocation."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Process",
+     "steps": [
+      {
+       "heading": "Immediate Action by First Responder",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The first individual who identifies a breach must:"
+        },
+        {
+         "type": "bullets",
+         "text": "Treat all suspicions as urgent—no incident is too minor to report.\nTake reasonable steps to contain exposure without altering any system evidence, such as:\nDisconnect affected devices from the network.\nDisable compromised user accounts and force password resets.\nStop system processes causing visible data leakage.\nReport the incident immediately to the Incident Response Team.\nDocument key initial information including date/time, observations, affected systems, and steps taken.\nAvoid deleting files, modifying system configurations, or conducting self-investigation."
+        }
+       ]
+      },
+      {
+       "heading": "Initial Response & Containment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The IRT isolates compromised systems, networks, accounts, or applications.\nSystem logs, event records, and device evidence are secured for forensic review.\nTemporary protection measures may be applied (e.g., email shutdown, IP blocking, access restrictions).\nAll actions taken are fully recorded."
+        }
+       ],
+       "responsible": "Incident Response Team (IRT)"
+      },
+      {
+       "heading": "Investigation & Impact Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "IT Security conducts root-cause analysis and forensic review.\nScope and data affected are identified.\nPotential harm to customers or business continuity is assessed.\nExternal cybersecurity professionals may be engaged for advanced forensics."
+        }
+       ],
+       "responsible": "IT Security Lead / Cybersecurity Manager"
+      },
+      {
+       "heading": "Notification & Regulatory Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Legal & Compliance determine mandatory reporting obligations under applicable regulations such as:"
+        },
+        {
+         "type": "bullets",
+         "text": "GDPR (EU) – Notification within 72 hours\nDPDPA India – Prompt reporting as required\nCCPA / U.S. State Breach Laws – Within prescribed timelines\nPCI-DSS – Immediate reporting for payment card data exposure\nAffected customers, partners, and internal leadership will be notified using approved messaging.\nNotifications will include:\nDetails of the breach\nData compromised\nPotential risks\nRecommended protective actions\nSupport services provided (e.g., monitoring assistance)"
+        }
+       ],
+       "responsible": "Compliance Officer / Data Protection Officer"
+      },
+      {
+       "heading": "Eradication & System Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Removal of malicious elements, closure of vulnerabilities, security patching, and system cleanup.\nRestoration of safe system functionality from verified clean backups.\nImplementation of enhanced monitoring to detect persistence attempts."
+        }
+       ],
+       "responsible": "IT Security Lead / Cybersecurity Manager"
+      },
+      {
+       "heading": "Post-Incident Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Formal review meeting held within 7–14 days.\nA comprehensive incident report is generated including timelines, actions taken, lessons learned, and CAPA (Corrective and Preventive Actions).\nPolicies, controls, technology tools, and training programs are updated based on findings.\nDisciplinary measures applied if negligence or misconduct is confirmed."
+        }
+       ],
+       "responsible": "Incident Response Team (IRT)"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Communications Protocol",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Only authorized personnel may communicate externally regarding the incident.\nAll messaging will be approved by Legal, Compliance, and Corporate Communications.\nInformation will be accurate, transparent, and constructed to maintain customer trust and protect Skypass reputation."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Mandatory cybersecurity awareness training for all employees annually.\nPeriodic simulation exercises (phishing tests, tabletop scenarios).\nIRT specialized technical training and readiness reviews."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Record Retention",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All incident documentation including logs, timelines, communications, and forensic results will be recorded in the incident management system.\nRecords will be securely retained in accordance with regulatory requirements, minimum 7 years.\nDocumentation will be available for audit or regulator review upon request."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Responsible Information Management & Data Protection Measures",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Managing Director/CEO",
+   "sourceWords": 2253,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Skypass Travel is committed to safeguarding confidential information and ensuring proper retention and secure disposal of records. This SOP establishes the guidelines and responsibilities for handling sensitive customer, partner, and operational data, ensuring compliance with legal, regulatory, and operational requirements across all Skypass Travel offices globally."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Obtain explicit stakeholder consent for processing, sharing, and storing confidential customer and travel-related information.\nProtect third-party data, including customer travel documents, payment details, and personal information, using robust digital (encryption, multi-factor authentication) and physical security measures.\nMaintain a records retention schedule aligned with global travel regulations, tax obligations, and data protection laws.\nEnsure transparency by informing customers about data collection, storage, and sharing practices.\nImplement internal controls to restrict unauthorized access to sensitive customer and business data.\nReview and update data management practices regularly to comply with evolving regulations internationally.\nProvide dedicated support channels for customers and partners to resolve data-related queries.\nGuarantee secure disposal of records once retention periods expire, in line with global travel industry standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Applicability & Coverage",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and third-party vendors handling confidential travel data, partner information, supplier data, and operational records. It covers digital and physical records, across all office locations, including head offices, branch offices, and remote work arrangements, ensuring compliance with internal policies, GDPR, Indian IT Act, and other applicable international regulations."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Director/CEO",
+       "responsibilities": [
+        "Oversees global data strategy and compliance."
+       ]
+      },
+      {
+       "role": "General Manager",
+       "responsibilities": [
+        "Implements data policies and manages retention and audit procedures."
+       ]
+      },
+      {
+       "role": "Head of Operations",
+       "responsibilities": [
+        "Protects customer communication, consent, and booking data."
+       ]
+      },
+      {
+       "role": "Travel Operations Manager",
+       "responsibilities": [
+        "Secures reservation data and coordinates with booking platforms."
+       ]
+      },
+      {
+       "role": "HR & Administration Manager",
+       "responsibilities": [
+        "Manages employee data, consent collection, and privacy training."
+       ]
+      },
+      {
+       "role": "Accounts & Finance Manager",
+       "responsibilities": [
+        "Ensures secure handling of financial records and payment information."
+       ]
+      },
+      {
+       "role": "IT Manager",
+       "responsibilities": [
+        "Maintains digital security, backups, and secure data transfers."
+       ]
+      },
+      {
+       "role": "Customer Service Manager",
+       "responsibilities": [
+        "Manages access to customer data and privacy requests."
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Ensures adherence to legal requirements and performs regular data audits."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Measures for Gaining Stakeholder Consent",
+     "steps": [
+      {
+       "heading": "Transparent Consent Collection",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Consent forms clearly state purpose, scope, duration, and legal basis for data processing with airlines, hotels, visa providers, insurance companies, and government authorities.\nForms are written in plain language and multiple regional languages.\nRights such as withdrawal, rectification, erasure, data portability, and complaint filing are clearly communicated.\nSeparate consent options are available for essential services, marketing, profiling, and loyalty programs."
+        }
+       ]
+      },
+      {
+       "heading": "Multi-Channel Consent Acquisition",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Consent is collected via online portals, apps, office visits, calls, emails, and partner platforms.\nEach consent is recorded with metadata (timestamp, IP address, staff details, version of form) for audit purposes.\nProgressive consent mechanisms allow customers to provide basic consent first and additional consent later.\nConfirmation mechanisms include email receipts, SMS, and printed acknowledgments."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Consent Management Systems",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Consent is tracked through an integrated system connected to CRM and booking databases.\nRole-based access controls restrict who can access or modify consent records.\nAutomated validation checks ensure all data processing activities are authorized.\nDetailed audit logs of consent access, changes, and processing are maintained.\nAdvanced analytics monitor patterns in consent usage to identify potential gaps or misuse.\nSystem generates compliance reports for internal management and external audits automatically."
+        }
+       ]
+      },
+      {
+       "heading": "Regular Consent Review and Renewal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Scheduled reviews of consent records occur quarterly, semi-annually, and annually.\nCustomers are notified of changes in policies, practices, or regulations affecting consent.\nAutomated systems monitor consent expiry and trigger renewal processes in advance.\nPersonalized reminders are sent to customers before renewal deadlines with clear instructions for updating consent.\nExceptions or special cases (e.g., regulatory consent requirements for specific regions) are flagged for manual review."
+        }
+       ]
+      },
+      {
+       "heading": "Clear Withdrawal Procedures",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Withdrawal options include online, email, phone, or written requests.\nRequests are processed within regulatory timelines with documented confirmation.\nPartial withdrawals are supported for specific purposes.\nAutomated confirmation of withdrawal is sent to customers immediately after processing.\nCustomers are provided with guidance on the consequences of withdrawal (e.g., limited access to certain services)."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Education and Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Customers receive regular updates and detailed transparency reports.\nDedicated support channels address privacy and data queries.\nEducational campaigns (emails, videos, webinars) are conducted periodically to enhance customer understanding of data privacy.\nFAQs and self-help guides are maintained online to assist customers in managing their consent preferences independently."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Compliance",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Compliance dashboards provide real-time visibility of consent management.\nRegular training and external expert consultations ensure alignment with evolving legal requirements.\nKey metrics such as consent opt-in rates, withdrawals, and expirations are tracked and reported to management monthly.\nPeriodic internal and external audits ensure ongoing compliance with international and regional regulations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Operational Process for Consulting and Informing Stakeholders",
+     "steps": [
+      {
+       "heading": "Comprehensive Customer Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Customers are provided detailed, clear, accessible, and regularly updated information regarding our travel data handling practices.\nMultiple channels are used: company website (dedicated privacy sections), emails with personalized content, booking confirmations with privacy information, and one-on-one travel consultations.\nData collected (passport, financial information, preferences) and its uses (bookings, insurance, personalization) are clearly disclosed.\nCommunications are available in multiple languages and formats for accessibility.\nRegular newsletters or email campaigns highlight updates to privacy policies or changes in data practices.\nCustomer surveys are conducted to understand information clarity and to gather feedback on privacy communication effectiveness."
+        }
+       ]
+      },
+      {
+       "heading": "Transparent Documentation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Comprehensive documentation is maintained covering all aspects of travel data management: collection, processing, storage, sharing, and disposal.\nAccessible in digital and print formats with simplified explanations, flowcharts, and diagrams.\nVersion control ensures stakeholders always access the latest policy and procedure documents.\nExecutive summaries and quick-reference guides are provided to facilitate easier understanding for non-technical stakeholders."
+        }
+       ]
+      },
+      {
+       "heading": "Dedicated Support Channels",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Multiple dedicated channels handle questions or concerns regarding travel data handling, privacy practices, or data rights.\nStaff receive ongoing training to provide accurate and timely responses regarding consent, data protection, and security.\nSupport channels include privacy phone lines, email support, live chat, and in-person consultations at offices.\nExtended support hours and multilingual support ensure global stakeholder accessibility.\nTicketing systems track all requests and issues to ensure resolution within defined timelines and regulatory compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Transparent Communication Practices",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regular transparency reports are published, providing proactive and clear updates on data practices.\nUpdates are shared via email, newsletters, website, and direct stakeholder consultations.\nStakeholders are offered opportunities to engage, ask questions, and provide feedback on privacy practices.\nCritical changes to data handling or regulatory requirements trigger immediate notifications to stakeholders.\nStakeholders are informed of audit results or compliance assessments relevant to data management and privacy practices."
+        }
+       ]
+      },
+      {
+       "heading": "Stakeholder Engagement and Feedback",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regular engagement sessions (webinars, workshops, or focus groups) are organized to discuss data handling, privacy practices, and service improvements.\nFeedback collected is incorporated into updates of data policies, consent processes, and communication strategies.\nA formal mechanism exists for stakeholders to escalate unresolved concerns or complaints to senior management.\nSurveys and periodic feedback collection help measure stakeholder satisfaction and identify areas for improvement in data handling transparency."
+        }
+       ]
+      },
+      {
+       "heading": "International and Regulatory Considerations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Information shared with stakeholders accounts for local laws, GDPR, and other international privacy standards.\nCross-border data handling and sharing practices are explicitly communicated with any associated risks.\nCountry-specific privacy notices are provided for stakeholders in international offices to meet local compliance requirements.\nStakeholders are informed of mechanisms to exercise their privacy rights in accordance with local and international regulations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Measures to Protect Third-Party Data",
+     "steps": [
+      {
+       "heading": "Robust Access Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Multi-layered role-based access controls ensure only authorized personnel access sensitive customer and partner travel data.\nAdvanced encryption protocols protect data in transit and at rest, including communications with travel partners and government agencies.\nPrinciple of least privilege is enforced, limiting access strictly to what employees need for their roles.\nRegular access reviews identify and revoke unnecessary permissions.\nAll access activities are logged and monitored using advanced Security Information and Event Management (SIEM) systems.\nAutomated alerts flag unusual access patterns or attempts to access unauthorized data.\nThird-party vendors undergo periodic security assessments before and during engagement to ensure adherence to access control policies."
+        }
+       ]
+      },
+      {
+       "heading": "Enhanced Physical Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Sensitive data storage areas, server rooms, customer service zones, and document repositories are access-controlled.\nSecurity measures include biometric authentication, access card systems with individual tracking, CCTV surveillance, and high-security filing cabinets.\nPhysical security incidents are promptly investigated and escalated per company protocol.\nSecurity audits are conducted regularly to identify vulnerabilities in physical infrastructure.\nVisitor management procedures require sign-in, escorting, and documentation of all non-authorized personnel entering secure areas."
+        }
+       ]
+      },
+      {
+       "heading": "Comprehensive Employee Training and Monitoring",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Mandatory training ensures staff understand proper handling of sensitive third-party data, including passports, visas, and financial details.\nEmployees in high-risk roles receive specialized training and refresher sessions.\nContinuous monitoring tools flag suspicious behavior, with clear escalation protocols.\nEmployees sign acknowledgment forms confirming understanding of third-party data responsibilities.\nSimulated phishing and data-handling exercises are conducted to reinforce awareness and practical application."
+        }
+       ]
+      },
+      {
+       "heading": "Vendor and Third-Party Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Third-party service providers (e.g., booking platforms, payment processors, travel partners) are required to follow strict data protection agreements.\nSecurity and privacy obligations are contractually enforced and include audits and reporting requirements.\nPeriodic security and compliance assessments are conducted for all third parties handling sensitive data.\nData sharing with third parties is limited to the minimum required information, with anonymization applied where feasible."
+        }
+       ]
+      },
+      {
+       "heading": "Data Encryption and Secure Transfers",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All third-party data transfers use encryption protocols (TLS/SSL) and secure VPN channels.\nDigital keys and certificates are managed with strict internal controls.\nData integrity checks are performed during transmission to detect unauthorized changes or tampering.\nSensitive data sent to international offices or external partners undergoes additional scrutiny to comply with cross-border data regulations."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring, Auditing, and Incident Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regular audits ensure compliance with internal policies and legal/regulatory obligations for third-party data protection.\nAny suspicious or unauthorized activity is reported immediately to the Incident Response Team (IRT).\nContinuous automated monitoring identifies anomalies in access or usage of third-party data.\nThird-party breaches or incidents are promptly communicated to stakeholders, with mitigation and remedial actions documented and implemented."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Policies, procedures, and training are reviewed and updated regularly based on audits, incidents, and evolving regulatory standards.\nBest practices from the travel industry and cybersecurity frameworks are incorporated.\nFeedback from customers, partners, and internal staff is used to strengthen third-party data protection measures.\nLessons learned from data breaches or near misses inform updates to access controls, encryption standards, and training programs."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Controls to Restrict Data Access",
+     "steps": [
+      {
+       "heading": "Digital Access Restrictions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Multi-factor authentication and role-based access control with regular audits.\nData Loss Prevention (DLP) systems prevent unauthorized data transfers or downloads.\nNetwork Segmentation: Critical systems are separated from general networks to reduce risk of lateral movement in case of compromise.\nAutomated Alerts: Real-time monitoring systems generate alerts for suspicious login attempts, unusual data access, or bulk downloads."
+        }
+       ]
+      },
+      {
+       "heading": "Physical Access Limitations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Verified credentials and biometric systems secure office and IT areas.\nEntry logs are reviewed regularly for abnormal access patterns.\nVisitor Management: All visitors must be pre-registered, escorted, and logged with purpose, duration, and areas accessed.\nSecure Device Policy: Only authorized devices (laptops, USBs, external drives) are allowed in sensitive areas, all logged and monitored."
+        }
+       ]
+      },
+      {
+       "heading": "Rigorous Audit Processes",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal and external audits ensure access control effectiveness and regulatory compliance.\nAudits proactively identify potential gaps, weaknesses, or non-compliance in access management.\nThird-Party Audit Reviews: Vendors and partners accessing sensitive data are included in periodic audits to verify adherence to access policies.\nContinuous Audit Feedback: Audit findings trigger immediate corrective actions, policy updates, and staff re-training if required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records Retention & Secure Information Disposal",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Skypass Travel follows a formal Records Retention and Information Disposal Program designed to ensure that documents and data are preserved for legally required periods and securely destroyed once they are no longer needed."
+      },
+      {
+       "type": "bullets",
+       "text": "Prevent unauthorized access, misuse, or accidental disclosure of information\nSupport compliance with data protection laws (GDPR, local data privacy acts)\nEnsure timely and systematic destruction of obsolete or redundant data\nPromote secure digital governance and operational efficiency"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Classification / Document Type",
+        "Examples / Details",
+        "Retention Period",
+        "Disposal Method"
+       ],
+       "rows": [
+        [
+         "Customer Data",
+         "Booking details, passport copies, visas, travel history",
+         "5 years after service completion",
+         "Secure shredding or digital deletion"
+        ],
+        [
+         "Employee Records",
+         "HR files, payroll, contracts, offer letters, performance appraisals",
+         "7–10 years after employment end",
+         "Secure archiving, encrypted storage, or shredding"
+        ],
+        [
+         "Financial Records",
+         "Invoices, payment records, accounting documents, TDS",
+         "7–8 years (as per statutory regulations)",
+         "Secure archiving or deletion"
+        ],
+        [
+         "Legal & Contractual Information",
+         "Commercial contracts, NDAs, insurance",
+         "Duration of contract + 7 years",
+         "Secure archiving or shredding"
+        ],
+        [
+         "Personal Identification Documents",
+         "Passport, Aadhaar, PAN, ID",
+         "As per local statutory requirement",
+         "Secure shredding or digital deletion"
+        ],
+        [
+         "Leave & Attendance Records",
+         "Leave logs, attendance sheets",
+         "5 years",
+         "Secure archiving or shredding"
+        ],
+        [
+         "Statutory Compliance Records",
+         "PF, ESIC, tax-related documents",
+         "As per regulatory requirements",
+         "Secure disposal"
+        ],
+        [
+         "Legal & Litigation Documents",
+         "Court cases, litigation files",
+         "7 years post-resolution",
+         "Archival or shredding"
+        ],
+        [
+         "Health & Safety Reports",
+         "Incident reports, safety audits",
+         "5 years",
+         "Shredding or deletion"
+        ],
+        [
+         "Environmental / CSR Records",
+         "Compliance, sustainability reports",
+         "7 years",
+         "Secure archiving or disposal"
+        ],
+        [
+         "Temporary Records",
+         "Meeting notes, working drafts, temporary logs",
+         "Deleted after completion of purpose",
+         "Secure deletion"
+        ],
+        [
+         "Contracts with Partners / Service Providers",
+         "Agreements, service contracts",
+         "7 years post-contract",
+         "Secure archiving or shredding"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Secure Storage & Access Control",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All digital records are stored in secure cloud platforms with encryption in transit and at rest.\nAccess to sensitive information is role-based and reviewed quarterly.\nPaper documents are stored in locked, access-controlled storage areas."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Secure Storage & Access Control",
+     "steps": [
+      {
+       "heading": "Data Disposal Authorization Workflow",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Department head requests record disposal\nCompliance Team verifies expiration date and legal criteria\nApproval is issued via Records Disposal Request Form\nIT or Admin performs secure destruction\nCompletion recorded in the Retention Compliance Log"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Employee Awareness & Training",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Employees participate in annual records management and data disposal training.\nNew joiners must complete mandatory retention compliance training before gaining system access."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Internal audits of information security procedures are conducted quarterly to evaluate system integrity, access controls, and compliance.\nBreach records, whistleblower reports, and system logs are reviewed monthly to identify potential patterns.\nConsent records and retention compliance checks are reviewed bi-annually.\nThe SOP is reviewed annually and updated based on audit findings, legal requirements, and cybersecurity upgrades."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Specific Approval Procedure for Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 871,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to establish strict internal controls, ethical standards, and transparent authorization processes to prevent corruption, bribery, fraud, and conflicts of interest in all sensitive financial transactions. This procedure ensures accountability, traceability, and compliance with relevant laws, international anti-corruption standards (e.g., ISO 37001), and company values."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees, contractors, consultants, and board members.\nAll financial and procurement transactions, contracts, and agreements.\nAll suppliers, service providers, intermediaries, agents, and partners.\nAny transaction involving potential legal, financial, reputational, or ethical risk."
+      },
+      {
+       "type": "paragraph",
+       "text": "Transaction types covered:"
+      },
+      {
+       "type": "bullets",
+       "text": "High-value purchasing and procurement contracts.\nVendor onboarding, renewals, and subcontracting arrangements.\nThird-party agent commissions, advisory fees, and consultancy payments.\nDonations, sponsorships, marketing promotions, and political contributions.\nGifts, hospitality, entertainment, or travel benefits.\nCash handling transactions or unusual payment structures (foreign currency, cash advances, crypto, etc.)."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Sensitive Transaction",
+       "definition": "Any transaction that has potential corruption, financial loss, or reputational risk"
+      },
+      {
+       "term": "Approval Authority",
+       "definition": "Designated role holder with authority to approve financial commitments."
+      },
+      {
+       "term": "Conflict of Interest",
+       "definition": "A personal, financial, or relational interest that could affect impartial decision-making."
+      },
+      {
+       "term": "Due Diligence",
+       "definition": "Verification and background assessment of suppliers, partners, or transaction legitimacy."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Employee / Requestor",
+       "responsibilities": [
+        "Prepare and submit request with complete documentation and justification."
+       ]
+      },
+      {
+       "role": "Procurement & Finance Team",
+       "responsibilities": [
+        "Verify cost reasonableness, perform financial due diligence, validate documents."
+       ]
+      },
+      {
+       "role": "Compliance & ESG Team",
+       "responsibilities": [
+        "Conduct corruption risk assessment and policy compliance check."
+       ]
+      },
+      {
+       "role": "Internal Audit Team",
+       "responsibilities": [
+        "Review approvals, detect anomalies, and conduct audits."
+       ]
+      },
+      {
+       "role": "Top Management / Board",
+       "responsibilities": [
+        "Approve high-risk or high-value transactions not covered under routine delegation limits."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure & Implementation",
+     "steps": [
+      {
+       "heading": "Transaction Identification & Risk Screening",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All transactions must be reviewed against a Corruption & Sensitive Transaction Risk Matrix evaluating:\nTransaction amount\nCountry/industry risk score\nSupplier or partner reputation\nPayment method (cash / foreign / advance / non-standard)\nAny declared conflict of interest\nTransactions meeting defined criteria are flagged as sensitive and routed through enhanced controls."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation & Submission Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The requestor must submit a Sensitive Transaction Request Form including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Business justification and financial impact analysis.\nFormal quotation / proposal / contract copy.\nThree comparative quotations (where applicable) for transparency.\nVendor due diligence reports (legal verification, sanctions list check, reference checks).\nConflict of Interest Declaration Form.\nCompliance screening checklist."
+        },
+        {
+         "type": "paragraph",
+         "text": "Requests without complete documentation are automatically rejected."
+        }
+       ],
+       "responsible": "Employee / Requestor"
+      },
+      {
+       "heading": "Multi-Level Approval Workflow",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Transaction Risk Category",
+          "Approving Authority"
+         ],
+         "rows": [
+          [
+           "Low-risk / small value",
+           "Department Manager"
+          ],
+          [
+           "Medium-risk / moderate value",
+           "Finance Manager + Compliance Officer"
+          ],
+          [
+           "High-risk / high value / PEP-linked",
+           "CFO + CEO / Board Audit Committee"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Key rules:"
+        },
+        {
+         "type": "bullets",
+         "text": "Segregation of Duties (SoD): no employee may request and approve the same transaction.\nSensitive approvals must be documented through digital workflow systems (ERP / e-signing tools).\nVerbal or informal approvals are strictly prohibited."
+        }
+       ]
+      },
+      {
+       "heading": "Vendor & Third-Party Due Diligence",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Mandatory checks performed before onboarding:\nLegal registration verification\nPAN/GST verification / banking validation\nAML, sanctions, and PEP list screening\nLitigation history review\nEthics and labor compliance status check\nVendors must sign the Anti-Bribery & Corruption Declaration and Supplier Code of Conduct before engagement.\nHigh-risk third parties undergo Enhanced Due Diligence including site visit, reference verification, and compliance questionnaire."
+        }
+       ]
+      },
+      {
+       "heading": "Financial Transaction Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Payments processed only against verified deliverables and approved purchase orders.\nCash transactions above defined limit are prohibited without CEO approval.\nSplit invoicing or artificially dividing transactions to bypass approval limits is banned.\nCommission payments must be performance-based and contract-supported."
+        }
+       ]
+      },
+      {
+       "heading": "Recordkeeping & Traceability",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All sensitive transaction records must be maintained for a minimum of 7 years.\nDocumentation stored securely in encrypted digital systems with access controls.\nAudit trails must show:\nDate of request\nReviewer comments\nFinal approval\nSupporting evidence"
+        }
+       ]
+      },
+      {
+       "heading": "Reporting & Whistleblowing",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Anonymous reporting channel:\nConfidential hotline\nSecure email\nWhistleblower portal\nComplaints handled with confidentiality and non-retaliation commitments.\nCompliance team conducts investigations and reports findings to management."
+        }
+       ],
+       "responsible": "Compliance Team"
+      },
+      {
+       "heading": "Non-compliance & Disciplinary Action",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Violations may result in:"
+        },
+        {
+         "type": "bullets",
+         "text": "Written warnings / probation\nSuspension or termination\nLegal action and referral to authorities\nSupplier blacklisting or contract termination"
+        }
+       ]
+      },
+      {
+       "heading": "Approval Criteria and Value Thresholds (Global & Regional Offices)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "To support consistent governance across all Skypass Travel Group locations, sensitive transaction approval thresholds are defined by region and applicable currency values. All offices must comply with the following criteria, applying equivalent thresholds in their respective currencies."
+        },
+        {
+         "type": "paragraph",
+         "text": "A. India Offices (INR)"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Category",
+          "Value Range",
+          "Approval Requirement"
+         ],
+         "rows": [
+          [
+           "Low-Tier Transactions",
+           "Below INR 1,000",
+           "Department Head approval"
+          ],
+          [
+           "Medium-Tier Transactions",
+           "INR 1,000 – INR 5,000",
+           "Department Head + Finance Team Review"
+          ],
+          [
+           "High-Tier Transactions",
+           "Above INR 5,000",
+           "Senior Management / COO / CFO / CEO (based on nature)"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Other International Branches (Regional Currency Equivalents)"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Category",
+          "Value Range",
+          "Approval Requirement"
+         ],
+         "rows": [
+          [
+           "Low-Tier Transactions",
+           "Equivalent to USD 20",
+           "Department approval"
+          ],
+          [
+           "Medium-Tier Transactions",
+           "Equivalent to USD 20 – USD 100",
+           "Department + Finance Review"
+          ],
+          [
+           "High-Tier Transactions",
+           "Equivalent to above USD 100",
+           "Senior Management / Regional Director / CFO"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Review & Continuous Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Quarterly internal audits are carried out to review sensitive transaction records, check approval authenticity, and identify any irregularities or red flags. Audit findings are documented and tracked until all corrective actions are closed.\nAnnual policy and control review is performed by the Compliance & Audit Committee to assess the effectiveness of anti-corruption measures and update procedures in alignment with evolving regulations and business risks.\nMandatory anti-corruption training sessions are conducted annually for all employees and vendor-facing teams to reinforce ethical conduct and ensure consistent understanding of compliance requirements. Training participation is monitored and recorded for accountability.\nContinuous risk assessment is performed through updates to the organization’s corruption risk matrix and monitoring KPIs such as audit results, incident trends, whistleblower reports, and vendor performance, supporting data-driven improvements and stronger risk prevention."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Recruitment Talent Acquisition",
+   "code": "",
+   "catalogId": "recruitment",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Manager",
+   "sourceWords": 937,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Skypass Travel, our people are the heart of our service excellence and customer experience. We believe that our success depends on hiring individuals who demonstrate passion for travel, integrity, and the commitment to delivering exceptional service to our global customers. Our recruitment process is designed to be ethical, structured, transparent, and inclusive, ensuring that we attract, select, and retain professionals who align with our values and strategic vision."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Our Hiring Philosophy",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Each individual carries unique strengths, experiences, and perspectives. At Skypass Travel, we value diversity and merit at every stage of the hiring process. Our recruitment approach is built to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure equal access to opportunities for all applicants\nEvaluate candidates based on competency, performance potential, and culture fit\nUphold fairness, objectivity, and respect during the selection process\nPromote diversity and encourage learning and growth across all teams"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "CHRO",
+       "responsibilities": [
+        "Approves final selections for leadership roles; reviews recruitment KPIs"
+       ]
+      },
+      {
+       "role": "HR Manager",
+       "responsibilities": [
+        "Leads overall recruitment strategy, compliance, and process effectiveness"
+       ]
+      },
+      {
+       "role": "HR Recruiter / Talent Acquisition Team",
+       "responsibilities": [
+        "Sourcing, screening, coordination, documentation, candidate engagement"
+       ]
+      },
+      {
+       "role": "Hiring Manager",
+       "responsibilities": [
+        "Functional requirement definition, interview participation, selection recommendation"
+       ]
+      },
+      {
+       "role": "Panel Members",
+       "responsibilities": [
+        "Provide unbiased structured evaluation based on competency matrix"
+       ]
+      },
+      {
+       "role": "Admin & IT",
+       "responsibilities": [
+        "Workstation readiness, system access, onboarding logistics"
+       ]
+      },
+      {
+       "role": "All Interviewers",
+       "responsibilities": [
+        "Maintain confidentiality, declare conflict of interest, follow evaluation scoring"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Our Commitment to Fair Hiring Practices",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "We uphold strong ethical and non-discrimination standards throughout the recruitment lifecycle. We commit to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Transparency throughout application, evaluation, and onboarding\nRespect for every applicant's time, effort, and dignity\nConfidential and secure handling of candidate information\nZero discrimination based on gender, age, disability, religion, caste, ethnicity, nationality, language, marital status, sexual orientation, or any personal background\nFull compliance with applicable labor laws and employment regulations in all regions where Skypass Travel operates"
+      },
+      {
+       "type": "paragraph",
+       "text": "Who We Hire\n\nWhether applying for a role in travel consulting, tour coordination, customer service, operations, sales, finance, marketing, or administration, every candidate begins their journey through a hiring process that is professional, supportive, and competency-driven.\n\nWe welcome individuals who:"
+      },
+      {
+       "type": "bullets",
+       "text": "Are customer-focused, collaborative, and service-oriented\nDemonstrate passion for travel and hospitality\nValue accuracy, responsibility, and teamwork\nEnjoy learning, problem-solving, and continuous growth\nShare our commitment to safe, responsible, and sustainable travel"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Recruitment Process",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Below is the standardized recruitment workflow implemented across all Skypass Travel locations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Recruitment Process",
+     "steps": [
+      {
+       "heading": "Job Requisition & Approval",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Hiring Manager identifies the requirement for a new or replacement position.\nHR and the Department Head review the staffing need, scope, and financial justification.\nA formal job description is developed, outlining responsibilities, required skills, performance expectations, and reporting structure.\nManpower request is reviewed and approved before any recruitment begins."
+        }
+       ],
+       "responsible": "Hiring Manager"
+      },
+      {
+       "heading": "Job Posting & Advertisement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved roles are publicly advertised through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Skypass Travel's official website career page\nMajor job portals and recruitment platforms\nLinkedIn and professional social channels\nInternal employee referral programs\nDiversity, disability-inclusive, and equal opportunity job boards"
+        },
+        {
+         "type": "paragraph",
+         "text": "All job postings clearly mention role requirements, responsibilities, location, and reasonable accommodation provisions."
+        }
+       ]
+      },
+      {
+       "heading": "Application & Acknowledgment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Candidates submit applications through designated online portals or email.\nEach applicant receives an acknowledgment confirming receipt of their application.\nApplication status updates are provided in a timely and respectful manner."
+        }
+       ]
+      },
+      {
+       "heading": "Initial Screening",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "HR screens applications based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Minimum required qualifications and skills\nRelevant work experience\nCommunication and professionalism indicators\nAlignment with behavioral and cultural expectations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Skypass Travel uses bias-free evaluation tools, and HR staff are trained in inclusive hiring and accessibility-friendly recruitment practices, particularly supporting persons with disabilities."
+        }
+       ],
+       "responsible": "HR"
+      },
+      {
+       "heading": "Interview Process",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Round 1 – HR Interview: Introduction to company values, work culture, growth expectations, and basic suitability.\nRound 2 – Technical / Functional Interview: Conducted by departmental or technical experts assessing role-specific expertise.\nRound 3 – Final Interview (if required): Senior leadership evaluation for strategic or leadership positions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reasonable accommodations such as accessible rooms, interpreters, extended time, or virtual interviews are provided upon request. All interviews may be conducted virtually or in person, depending on the position and candidate availability."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Round 1 – HR Interview: Introduction to company values, work culture, growth expectations, and basic suitability.",
+         "responsible": "HR"
+        },
+        {
+         "text": "Round 2 – Technical / Functional Interview: Conducted by departmental or technical experts assessing role-specific expertise.",
+         "responsible": "Hiring Manager"
+        },
+        {
+         "text": "Round 3 – Final Interview (if required): Senior leadership evaluation for strategic or leadership positions.",
+         "responsible": "CHRO"
+        }
+       ]
+      },
+      {
+       "heading": "Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For selected roles, assessments such as case studies, travel-service simulations, destination knowledge tasks, or problem-solving exercises may be required.\nAssessments are designed to be fair and may be adapted based on an individual's accommodation needs."
+        }
+       ]
+      },
+      {
+       "heading": "Reference & Background Verification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Verification of previous employment, academic qualifications, and professional references.\nBackground checks are conducted transparently and confidentially, strictly in accordance with legal requirements and privacy laws.\nThe purpose of verification is accuracy, not exclusion."
+        }
+       ]
+      },
+      {
+       "heading": "Offer & Onboarding",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Selected candidate receives a formal offer with complete role details, compensation structure, and onboarding schedule.\nUpon acceptance, HR initiates onboarding, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Orientation on company values, structure, ethics, ESG and sustainability culture\nWorkplace policies and employee benefits\nTeam introduction and department integration\nRequired job training and travel safety standards\nAccessible support through assistive tools or workplace adjustments where needed"
+        }
+       ],
+       "responsible": "HR"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Age Verification Requirements",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Candidates must provide one of the following original or verified documents for proof of age:"
+      },
+      {
+       "type": "bullets",
+       "text": "Passport\nNational Identity Card\nDriver's License (with date of birth)\nBirth Certificate\nSchool Leaving Certificate or Academic Transcript (supporting)\nEmployment Pass or Work Permit (for foreign nationals where required)"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Verification Protocol",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "HR verifies authenticity using internal review methods and authorized digital platforms (where available).\nDocuments are securely stored and protected following relevant data privacy regulations.\nHR ensures compliance with minimum legal employment age requirements in each operating country."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "In Case of Discrepancies",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "If age proof cannot be confirmed:"
+      },
+      {
+       "type": "bullets",
+       "text": "Recruitment decision will be deferred until acceptable supporting documents are submitted.\nAny falsification or misrepresentation will be escalated to HR and the Compliance Officer and may result in disqualification or withdrawal of employment offer."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Closing Statement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Skypass Travel, we believe recruitment is the beginning of a meaningful journey not just a hiring transaction. We are committed to nurturing talent, building a diverse workforce, strengthening inclusion, and always hiring with fairness, dignity, and respect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Human Rights Compliance Procedure",
+   "code": "",
+   "catalogId": "human-rights",
+   "pillar": "S",
+   "department": "Human Resources (HR) Department",
+   "owner": "ESG & Compliance Manager",
+   "sourceWords": 689,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Skypass Travel, we are committed to protecting and upholding fundamental human rights throughout all business operations and interactions. We prioritize dignity, equality, and fairness, ensuring a safe, ethical, and respectful workplace environment for all employees, partners, and stakeholders. This procedure outlines the operational framework implemented to prevent violations, promote responsible behavior, and support a culture rooted in transparency and respect."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure is applicable to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All full-time and part-time employees\nContract staff, interns, trainees, and consultants\nSuppliers, vendors, and third-party service partners operating for or on behalf of Skypass Travel\nAll office locations and corporate activities conducted under the administrative control of Skypass Travel"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Governance & Responsibilities",
+     "rows": [
+      {
+       "role": "Human Resources (HR) Department",
+       "responsibilities": [
+        "Implements human rights policies, ensures ethical recruitment, conducts due diligence checks, delivers training, and maintains grievance mechanisms."
+       ]
+      },
+      {
+       "role": "ESG & Compliance Manager",
+       "responsibilities": [
+        "Conducts internal audits, monitors compliance with national and international human rights standards, and prepares performance reports."
+       ]
+      },
+      {
+       "role": "Department Heads / Managers",
+       "responsibilities": [
+        "Ensure safe work environments, address violations promptly, and report compliance findings to HR and Senior Management."
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Must comply with the Human Rights Policy, avoid misconduct, and report violations through approved confidential channels."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Operational Measures",
+     "steps": [
+      {
+       "heading": "Recruitment & Employment Practices",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employment is voluntary and formalized through legally compliant employment contracts.\nMandatory age verification is conducted for all candidates to prevent any instance of child labor.\nSkypass Travel strictly prohibits charging any form of recruitment or processing fees to applicants.\nEvery new employee must undergo an orientation session that includes awareness on human rights, code of conduct, anti-harassment, and grievance channels.\nEqual access to opportunities, benefits, and advancement is ensured, without favoritism or bias."
+        }
+       ]
+      },
+      {
+       "heading": "Non-Discrimination & Equal Opportunity",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Skypass Travel enforces a zero-tolerance policy toward discrimination based on gender, identity, religion, caste, marital status, sexual orientation, disability, nationality, or socio-economic background.\nAll hiring, promotion, reward, and transfer decisions are merit-based and documented.\nAny complaints of discrimination are investigated under a formal escalation system and treated as serious disciplinary matters.\nWorkplace adjustments or accommodations are provided for employees with disabilities to support full participation."
+        }
+       ]
+      },
+      {
+       "heading": "Safe & Respectful Workplace Environment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All offices are required to meet certified standards for fire safety, ergonomic design, emergency preparedness, and occupational health compliance.\nAccess to clean drinking water, hygienic sanitation facilities, and well-maintained work areas is mandatory at all locations.\nSkypass Travel offers a confidential Employee Assistance Program (EAP) for counseling and mental wellness support.\nA fully functional Internal Complaints Committee (ICC) handles sexual harassment cases in alignment with the POSH Act (India) 2013 or local jurisdiction requirements in other countries of operation.\nStrict protection is provided against retaliation, victimization, or pressure on complainants."
+        }
+       ]
+      },
+      {
+       "heading": "Grievance Redressal Mechanism",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees may raise concerns through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Confidential email reporting\nDirect written submission to HR / drop box\nAnonymous reporting channel (where available)"
+        },
+        {
+         "type": "paragraph",
+         "text": "All complaints are:"
+        },
+        {
+         "type": "bullets",
+         "text": "Acknowledged within 3 working days\nInvestigated and resolved within 10–15 working days, depending on case complexity\nHandled with complete confidentiality and impartiality"
+        },
+        {
+         "type": "paragraph",
+         "text": "Retaliation against whistleblowers is prohibited and leads to disciplinary action up to termination."
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Human Rights Assurance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All suppliers, vendors, and tourism service providers must comply with Skypass’s Supplier Code of Conduct."
+        },
+        {
+         "type": "paragraph",
+         "text": "Vendor audits and assessments are performed annually and may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Document verification\nSite inspections\nWorker interviews where relevant"
+        },
+        {
+         "type": "paragraph",
+         "text": "Non-compliant partners must implement Corrective Action Plans (CAPs) with defined closure deadlines.\nSevere or repeated violations result in contract termination and vendor disqualification."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Evaluation & Continuous Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Human rights performance is reviewed through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Semi-annual internal audits\nGrievance statistics and closure reports\nCompliance logs from the ICC and EAP\nSupplier audit summaries"
+      },
+      {
+       "type": "paragraph",
+       "text": "Key indicators monitored include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Number and nature of complaints received\nResolution timelines and recurrence patterns\nEmployee well-being and satisfaction metrics\nVendor compliance status"
+      },
+      {
+       "type": "paragraph",
+       "text": "Findings are reported to Senior Management to guide corrective actions, training programs, and policy updates."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annual mandatory training for all employees on:\nHuman rights and ethical workplace conduct\nAnti-harassment & POSH compliance\nGrievance reporting responsibilities\nSupplier human rights expectations (for procurement and travel operations teams)"
+      },
+      {
+       "type": "paragraph",
+       "text": "Training records and attendance logs are maintained by HR for audit reference."
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records & Documentation",
+     "rows": [
+      {
+       "record": "Employee grievance records and resolution reports",
+       "owner": "",
+       "retention": "Minimum 5 years",
+       "format": ""
+      },
+      {
+       "record": "ICC meeting minutes and sexual harassment case reports",
+       "owner": "",
+       "retention": "Minimum 5 years",
+       "format": ""
+      },
+      {
+       "record": "Employee age verification and recruitment documents",
+       "owner": "",
+       "retention": "Minimum 5 years",
+       "format": ""
+      },
+      {
+       "record": "Vendor audit and compliance records",
+       "owner": "",
+       "retention": "Minimum 5 years",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records & Documentation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following documents are maintained securely for a minimum of 5 years:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Internal Assessment Procedure",
+   "code": "",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Team",
+   "sourceWords": 635,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Skypass Travel Pvt. Ltd. is committed to ensuring operational excellence, regulatory compliance, and a culture of continuous improvement across all business and service functions. To strengthen governance practices and reduce operational risk, Skypass conducts structured internal assessments on a periodic basis. These evaluations focus on compliance, risk management, customer service integrity, digital security, ethical business conduct, and process optimization. This Standard Operating Procedure (SOP) defines the process, scope, and responsibilities related to internal assessments within the organization."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The objectives of the internal assessment process include:"
+      },
+      {
+       "type": "bullets",
+       "text": "To evaluate adherence to internal policies, SOPs, and legal/regulatory requirements.\nTo identify operational risks, inefficiencies, or control gaps that may affect performance or compliance.\nTo enhance transparency and accountability across organizational functions.\nTo strengthen internal controls and support continuous improvement initiatives.\nTo promote preparedness and readiness for third-party and external audits.\nTo improve overall service quality and customer experience."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope of Internal Assessments",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Internal assessments apply to all departments and offices of Skypass Travel, including but not limited to:"
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Key Assessment Area",
+        "Description"
+       ],
+       "rows": [
+        [
+         "Legal & Regulatory Compliance",
+         "Verification of compliance with applicable travel, tourism, aviation, consumer protection, taxation, labor laws, and ESG requirements."
+        ],
+        [
+         "Financial Controls",
+         "Review of expense approvals, accounts payable/receivable, billing accuracy, sensitive transaction controls, and fraud prevention measures."
+        ],
+        [
+         "Data Privacy & Information Security",
+         "Protection of customer data, cybersecurity controls, system access management, data confidentiality, and backup protocols."
+        ],
+        [
+         "Procurement & Vendor Management",
+         "Supplier onboarding evaluation, contract compliance, performance reviews, and third-party risk control."
+        ],
+        [
+         "Health, Safety & Security",
+         "Evaluation of workplace safety practices, emergency preparedness, and incident reporting."
+        ],
+        [
+         "Customer Service & Quality Delivery",
+         "Review of booking accuracy, refund and cancellation handling, feedback and complaint resolution processes."
+        ],
+        [
+         "IT Systems & Digital Infrastructure",
+         "Assessment of system reliability, disaster recovery readiness, and technology optimization."
+        ],
+        [
+         "Anti-Corruption & Business Ethics",
+         "Review of approval protocols, ethical procurement, and whistleblower mechanism effectiveness."
+        ],
+        [
+         "Labor Rights & Human Rights Protection",
+         "Prevention of forced labor, discrimination, harassment, child labor, and ensuring fair working conditions."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Compliance Team",
+       "responsibilities": [
+        "Develops annual internal assessment plans, coordinates assessments, and monitors corrective actions."
+       ]
+      },
+      {
+       "role": "Internal Audit Team / ESG Team",
+       "responsibilities": [
+        "Conducts independent assessments and evaluates compliance performance."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Provide documentation, participate in evaluations, and implement corrective action."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Reviews assessment reports, approves improvement actions, and allocates resources."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Cooperate during assessments and follow internal control policies."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Assessment Process",
+     "steps": [
+      {
+       "heading": "Planning",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Compliance & ESG teams prepare an Annual Internal Assessment Plan outlining scope, frequency, timelines, and resources.\nHigh-risk areas and previous audit findings are prioritized.\nDepartments are notified in advance to ensure preparedness and documentation availability."
+        }
+       ],
+       "responsible": "Compliance & ESG teams"
+      },
+      {
+       "heading": "Conducting the Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Review relevant records, documents, policies, and system data.\nConduct interviews and meetings with key personnel.\nPerform physical verification when necessary to validate documented processes.\nUse standardized checklists to ensure objective and consistent evaluations."
+        }
+       ]
+      },
+      {
+       "heading": "Identifying Findings",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Document compliance gaps, non-conformities, potential risks, and efficiency improvement opportunities.\nRecord best practices and strengths observed during the review.\nAssign risk ratings (High / Medium / Low) based on severity and impact."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "A formal Internal Assessment Report is prepared summarizing:"
+      },
+      {
+       "type": "bullets",
+       "text": "Scope and methodology\nObservations and findings\nRisk level classification\nRecommended actions\nResponsible person and target completion date\nThe report is shared with relevant department heads and senior management."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Corrective Action & Follow-Up",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Departments prepare and implement Corrective Action Plans (CAPs).\nCompliance monitors progress and verifies closure of corrective actions.\nFollow-up reviews are scheduled for major findings."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Record-Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All assessment reports, communication records, CAPs, and supporting documents are securely stored in the internal audit system.\nDocumentation is retained according to the company's document retention policy."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Review trends from assessment outcomes to update policies and future planning.\nProvide training to improve identified weak areas.\nAnnual review of this SOP to ensure alignment with updated business needs."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Internal assessments are conducted in alignment with:"
+      },
+      {
+       "type": "bullets",
+       "text": "Applicable government regulations & travel industry standards\nGDPR/Data privacy norms where applicable\nESG principles and ethical business conduct policies\nInternal HR, procurement, security, and financial SOPs"
+      },
+      {
+       "type": "paragraph",
+       "text": "Skypass Travel reaffirms commitment to integrity, transparency, and responsible governance through continuous monitoring, review, and improvement processes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Supplier Evaluation Procedure",
+   "code": "",
+   "catalogId": "sustainable-procurement",
+   "pillar": "G",
+   "department": "Procurement / Vendor Management Team",
+   "owner": "Procurement / Vendor Management Team",
+   "sourceWords": 949,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Skypass Travel is committed to responsible procurement and ensuring that all suppliers operate with integrity, service excellence, and compliance with ethical, regulatory, and sustainability standards. This SOP establishes a structured procedure for evaluating, selecting, onboarding, and continuously monitoring suppliers based on service quality, operational reliability, commercial competitiveness, customer service efficiency, and compliance with legal and ESG requirements"
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure suppliers meet quality, safety, ethical, and regulatory standards relevant to the travel and tourism industry.\nMinimize operational, financial, compliance, and reputational risks in the supply chain.\nImprove customer satisfaction through reliable and performance-driven supplier partnerships.\nMaintain transparent, evaluated, and traceable records of supplier performance.\nEncourage continuous improvement and long-term collaboration."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement / Vendor Management Team",
+       "responsibilities": [
+        "Conduct supplier evaluations, maintain scorecards, onboarding documentation, and monitor performance"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Identify service requirements and recommend suitable suppliers"
+       ]
+      },
+      {
+       "role": "Finance Team",
+       "responsibilities": [
+        "Commercial evaluation, price approvals, and payment compliance"
+       ]
+      },
+      {
+       "role": "Compliance & Legal Officer",
+       "responsibilities": [
+        "Ensure ethical standards, contract compliance, and risk verification"
+       ]
+      },
+      {
+       "role": "Supplier Relationship Manager",
+       "responsibilities": [
+        "Communicate requirements, support supplier development, review issues and CAPs"
+       ]
+      },
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Strategic approval, periodic review & decisions related to continuation or discontinuation"
+       ]
+      },
+      {
+       "role": "Suppliers",
+       "responsibilities": [
+        "Provide accurate information, meet performance standards, support audits & corrective actions"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Supplier Evaluation Process",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The supplier evaluation process at Skypass Travel follows a structured approach to ensure that service providers meet quality, financial, ethical, and operational standards. The process includes supplier identification, pre-qualification, evaluation, scoring, onboarding, monitoring, and re-assessment."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Supplier Evaluation Process",
+     "steps": [
+      {
+       "heading": "Identification of Requirement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Each department identifies the need for a new supplier based on service gaps, customer demand, or expansion requirements.\nA Supplier Requirement Request Form is submitted to the Procurement / Vendor Management Team outlining:\nProcurement verifies business justification, checks if alternatives already exist, and proceeds to supplier sourcing."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Nature and scope of service needed (e.g., travel booking platform, hotel partner, transport service provider, IT support)"
+        },
+        {
+         "text": "Required service level expectations"
+        },
+        {
+         "text": "Budget estimates & commercial considerations"
+        },
+        {
+         "text": "Any critical compliance or certification requirements"
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Pre-Qualification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Potential suppliers must complete the Supplier Pre-Qualification Questionnaire addressing:\nRisk assessment is performed considering:\nProcurement shortlists qualified vendors for detailed evaluation."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Business registration details and legal documents (PAN, GST, incorporation certificate)"
+        },
+        {
+         "text": "Company profile, ownership structure, and contact points"
+        },
+        {
+         "text": "Industry experience and previous client portfolio (preferably in travel sector)"
+        },
+        {
+         "text": "Financial stability and performance capability"
+        },
+        {
+         "text": "Certifications, licenses, and insurances (if any)"
+        },
+        {
+         "text": "Geographic risk (operating country/city)"
+        },
+        {
+         "text": "Service criticality (impact of failure on travel operations)"
+        },
+        {
+         "text": "Data privacy & digital security (for technology providers)"
+        },
+        {
+         "text": "Reputation and adherence to ethical practices"
+        }
+       ]
+      },
+      {
+       "heading": "Initial Screening & Comparative Evaluation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Procurement Team reviews shortlisted suppliers using comparison sheets considering:\nReference checks may be conducted with existing clients for credibility validation.\nSuppliers meeting minimum requirements move to the next stage."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Service capability & operational strength"
+        },
+        {
+         "text": "Pricing structure, payment terms, discount models, cancellation or refund policies"
+        },
+        {
+         "text": "SLA response timeline and escalation structure"
+        },
+        {
+         "text": "Platform or system compatibility with Skypass’s tools"
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Self-Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Suppliers complete an annual Self-Assessment Form covering:\nThe Procurement & Vendor Management Team reviews responses, identifies improvement areas, and assesses operational risk exposure."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "SLA performance history and deliverable capacity"
+        },
+        {
+         "text": "Customer service responsiveness & complaint handling mechanism"
+        },
+        {
+         "text": "Cybersecurity protocols and data protection controls (critical for travel technology)"
+        },
+        {
+         "text": "Backup and contingency planning (business continuity)"
+        },
+        {
+         "text": "Ethical and anti-corruption practices"
+        },
+        {
+         "text": "ESG parameters including safety practices & inclusivity"
+        }
+       ]
+      },
+      {
+       "heading": "On-Site / Remote Audit (Based on Risk and Importance)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Audit may be performed for:"
+        },
+        {
+         "type": "bullets",
+         "text": "High-value suppliers\nCritical travel service partners (hotels, transport agencies, aviation support services)\nTechnology service providers handling customer data\n\nAudit scope includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Audit findings are:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Process walkthrough to verify service workflow & resource capability"
+        },
+        {
+         "text": "Documentation review (licenses, training logs, incident records, complaint history)"
+        },
+        {
+         "text": "Verification of customer service infrastructure & call center capability"
+        },
+        {
+         "text": "IT audit for cybersecurity, server security, disaster recovery systems"
+        },
+        {
+         "text": "Health & safety checks for physical service partners"
+        },
+        {
+         "text": "Verification of escalation resolution mechanism"
+        },
+        {
+         "text": "Documented in audit report format"
+        },
+        {
+         "text": "Classified by Critical / Major / Minor non-conformance level"
+        },
+        {
+         "text": "Shared with supplier for acknowledgement and improvement response"
+        }
+       ]
+      },
+      {
+       "heading": "Detailed Evaluation & Scoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Suppliers are scored using a standardized evaluation scorecard on the following weighted factors:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Key Criteria",
+          "Evaluation Parameters"
+         ],
+         "rows": [
+          [
+           "Service Quality & Performance",
+           "SLA adherence, booking success rate, accuracy, reliability"
+          ],
+          [
+           "Delivery Timelines",
+           "Response time, resolution speed, turnaround efficiency"
+          ],
+          [
+           "Customer Service & Support",
+           "Escalation process, availability (24/7), multilingual support"
+          ],
+          [
+           "Commercial & Financial Value",
+           "Cost efficiency, transparent pricing, cancellation/refund flexibility"
+          ],
+          [
+           "Technology & Integration Capability",
+           "Automation, security, API/portal integration, customer interface quality"
+          ],
+          [
+           "Compliance & Legal Requirements",
+           "Anti-corruption, privacy compliance, operational licenses"
+          ],
+          [
+           "Risk Management",
+           "Business continuity, backup systems, dispute handling"
+          ],
+          [
+           "ESG & Sustainability Standards",
+           "Ethical practices, workforce conditions, safety controls"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Scoring Classification"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Score Range",
+          "Supplier Status",
+          "Action"
+         ],
+         "rows": [
+          [
+           "≥ 80%",
+           "Approved",
+           "Proceed to contracting and onboarding"
+          ],
+          [
+           "60% – 79%",
+           "Conditional",
+           "Corrective Action Plan required before approval"
+          ],
+          [
+           "< 60%",
+           "Rejected",
+           "Not eligible for partnership"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Contracting & Onboarding",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All approved suppliers undergo:\nOrientation to operational expectations and communication channels is completed.\nIntegration testing for IT suppliers is performed before rollout."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Contract drafting and negotiation"
+        },
+        {
+         "text": "NDA and confidentiality agreement signing"
+        },
+        {
+         "text": "Review of payment schedule, terms & SLAs"
+        },
+        {
+         "text": "Supplier registration in Vendor Management System"
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Monitoring & Performance Tracking",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Supplier performance is monitored continuously through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monthly tracking of complaints, escalations, and service failures\nSLA (Service Level Agreement) performance dashboards & service scorecards\nPeriodic review meetings with internal stakeholders\nCustomer feedback surveys and vendor rating reports\n\nCorrective actions are implemented when gaps are identified."
+        }
+       ]
+      },
+      {
+       "heading": "Corrective Action Plan (CAP) & Follow-Up",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "CAP issued for non-conformance with defined deadlines\nProgress monitored through review meetings\nVerification conducted through follow-up audits or documentation review\nLack of improvement may result in suspension or termination"
+        }
+       ]
+      },
+      {
+       "heading": "Annual Review & Re-Evaluation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Full evaluation conducted annually including:\nHigh-performing suppliers recognized and considered for strategic partnerships\nPoor-performing suppliers replaced as part of risk mitigation"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Updated scorecard"
+        },
+        {
+         "text": "Service quality trends"
+        },
+        {
+         "text": "Renewal or discontinuation recommendation"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Review",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Supplier performance is continuously monitored through periodic evaluations, SLA reviews, and feedback analysis. Corrective actions are implemented when required, and performance is reassessed to ensure improvement. This SOP is reviewed annually to maintain effectiveness and alignment with organizational requirements."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

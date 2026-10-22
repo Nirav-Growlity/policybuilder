@@ -1,0 +1,4440 @@
+{
+ "id": "tagoor-laboratories",
+ "company": "Tagoor Laboratories Pvt. Ltd",
+ "industry": "Pharmaceutical API manufacturing and laboratory operations",
+ "industryTags": [
+  "manufacturing",
+  "pharma"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Tagoor/Tagoor Laboratories Pvt Ltd SOP Manual - Copy.docx",
+ "frontMatter": {
+  "introduction": "This Standard Operating Procedures (SOP) Manual has been developed to establish a consistent and systematic approach to managing the operations, people, health and safety, environmental, ethical, information security, and supply chain activities of Tagoor Laboratories Pvt. Ltd.\n\nThe purpose of this manual is to provide employees, managers, contractors, and other relevant stakeholders with clear guidance on their roles, responsibilities, and operational requirements to ensure compliance with applicable legal, regulatory, customer, and organizational requirements. The procedures contained within this manual support the Company's commitment to operational excellence, employee well-being, environmental stewardship, business integrity, data protection, and sustainable business practices.\n\nAll personnel are expected to understand and comply with the requirements outlined in this manual. Department heads and managers are responsible for ensuring effective implementation, communication, and monitoring of the applicable procedures within their areas of responsibility.\n\nThis manual shall be reviewed periodically and updated as necessary to reflect changes in business operations, legal requirements, industry best practices, and organizational objectives. The latest approved version shall be maintained as a controlled document and made accessible to relevant personnel.\n\nFailure to comply with the requirements of this manual may result in corrective action in accordance with applicable company policies and procedures.\n\nThis document is the property of Tagoor Laboratories Pvt. Ltd. and is intended for internal use only unless otherwise authorized by Management.",
+  "objective": "The purpose of this manual is to provide employees, managers, contractors, and other relevant stakeholders with clear guidance on their roles, responsibilities, and operational requirements to ensure compliance with applicable legal, regulatory, customer, and organizational requirements. The procedures contained within this manual support the Company's commitment to operational excellence, employee well-being, environmental stewardship, business integrity, data protection, and sustainable business practices.",
+  "scope": "All personnel are expected to understand and comply with the requirements outlined in this manual. Department heads and managers are responsible for ensuring effective implementation, communication, and monitoring of the applicable procedures within their areas of responsibility.\n\nThis document is the property of Tagoor Laboratories Pvt. Ltd. and is intended for internal use only unless otherwise authorized by Management.",
+  "reviewMechanism": "This Standard Operating Procedures (SOP) Manual shall be reviewed annually to ensure its continued relevance, effectiveness, and alignment with applicable legal, regulatory, customer, and organizational requirements of Tagoor Laboratories Pvt. Ltd.\n\nThe review process shall be coordinated by the HR Manager in consultation with relevant Department Heads and Senior Management. The review shall verify that all procedures remain current, practical, and reflective of actual business operations.\n\nA review may also be initiated under the following circumstances:\nChanges in applicable laws, regulations, standards, or compliance requirements.\nIntroduction of new processes, technologies, equipment, or management systems.\nChanges in organizational structure, operational activities, or business requirements.\nFindings arising from internal audits, external audits, inspections, incidents, complaints, or corrective actions.\nRecommendations from management reviews or continual improvement initiatives.\n\nAll revisions, amendments, and updates to this Manual shall be documented and maintained through the Revision Control Record. Updated versions shall be approved before implementation and communicated to relevant personnel."
+ },
+ "sops": [
+  {
+   "title": "Recruitment & Selection Procedure",
+   "code": "",
+   "catalogId": "recruitment",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "HR Manager",
+   "sourceWords": 665,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure defines the end-to-end process followed by Tagoor Laboratories Pvt Ltd for attracting, evaluating, selecting, and onboarding new employees. It ensures that all hiring decisions are transparent, merit-based, consistent, and compliant with applicable labour laws and the company's equal opportunity commitments."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all permanent, contractual, and temporary positions across all departments and locations of Tagoor Laboratories Pvt Ltd. It is applicable to the Human Resources department, department heads, and all members of interview panels."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "HR Manager",
+       "responsibilities": [
+        "Owns the recruitment process, maintains all records, and ensures compliance with this SOP."
+       ]
+      },
+      {
+       "role": "Department Head",
+       "responsibilities": [
+        "Raises manpower requisition, participates in technical interviews, and approves final selection."
+       ]
+      },
+      {
+       "role": "Interview Panel Members",
+       "responsibilities": [
+        "Conduct structured assessments and complete evaluation scorecards objectively."
+       ]
+      },
+      {
+       "role": "MD / Director",
+       "responsibilities": [
+        "Provides final approval for senior-level appointments."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Recruitment Process",
+     "steps": [
+      {
+       "heading": "Manpower Requisition",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The concerned department head completes a Manpower Requisition Form (MRF) specifying the role title, key responsibilities, required qualifications, experience, and budget approval. The MRF is submitted to HR for review and approval before any recruitment activity begins."
+        }
+       ],
+       "responsible": "Department Head"
+      },
+      {
+       "heading": "Job Description Preparation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "HR prepares or updates the Job Description (JD) in consultation with the requesting department. The JD defines reporting structure, key deliverables, technical competencies, and any regulatory or safety certifications required for the role."
+        }
+       ],
+       "responsible": "HR Manager"
+      },
+      {
+       "heading": "Sourcing & Advertisement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Open positions are first communicated internally to give existing employees the opportunity to apply. If no suitable internal candidate is identified, the vacancy is advertised through approved external channels including job portals, recruitment consultants, or campus placement drives as appropriate."
+        }
+       ]
+      },
+      {
+       "heading": "Application Screening & Shortlisting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "HR reviews all applications received against the eligibility criteria defined in the JD. A shortlist is prepared and shared with the department head for concurrence before candidates are invited for assessment."
+        }
+       ],
+       "responsible": "HR Manager"
+      },
+      {
+       "heading": "Interview & Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All shortlisted candidates undergo a minimum of two structured interview rounds. The HR round assesses behavioural competencies, cultural fitment, and compensation expectations. The Technical/Functional round is conducted by the department head or a subject matter expert and evaluates role-specific knowledge and practical skills. Panel members record their evaluation on standardised Interview Assessment Scorecards, which are retained on file."
+        }
+       ],
+       "responsible": "Interview Panel Members"
+      },
+      {
+       "heading": "Background Verification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prior to issuing a formal Offer Letter, all selected candidates shall undergo background verification covering previous employment history, educational qualifications, professional references, age verification, and submitted personal documents. HR shall verify the candidate's age eligibility through government-issued identity documents such as Aadhaar Card, Passport, Voter ID, or Driving Licence to confirm that the candidate is 18 years or above at the time of joining. Document verification shall include review of identity proof, PAN Card, educational certificates, experience certificates, relieving letters, and other relevant employment documents, as applicable. Any discrepancy, mismatch, or adverse finding identified during the verification process shall be documented and reviewed by the HR Manager before a final recruitment decision is made."
+        }
+       ],
+       "responsible": "HR Manager"
+      },
+      {
+       "heading": "Offer & Appointment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The HR department issues a formal Offer Letter outlining the designation, compensation, joining date, and terms of employment. Upon acceptance and joining, an Appointment Letter is issued confirming the candidate's employment with Tagoor Laboratories Pvt Ltd."
+        }
+       ],
+       "responsible": "HR Manager"
+      },
+      {
+       "heading": "Induction & Onboarding",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All new joiners complete a structured induction programme covering company policies, safety procedures, quality standards, departmental orientation, and introduction to key teams. The induction is completed within the first two weeks of joining and is documented on an Onboarding Checklist signed by both HR and the new employee."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Equal Opportunity Commitment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Tagoor Laboratories Pvt Ltd is committed to providing equal employment opportunities to all applicants and employees. Recruitment and selection decisions are made solely on the basis of qualifications, competence, and organizational requirements. Discrimination on the basis of gender, caste, religion, nationality, age, disability, or any other protected characteristic is strictly prohibited at every stage of the recruitment process."
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records to be Maintained",
+     "rows": [
+      {
+       "record": "Approved Manpower Requisition Forms",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Job Descriptions for all roles",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Candidate applications and shortlisting notes",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Interview Assessment Scorecards",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Background verification reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Offer Letters and Appointment Letters",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Signed Onboarding Checklists and induction records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Health and Safety Procedure",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "Health, Safety & Environment (HSE)",
+   "owner": "EHS Department",
+   "sourceWords": 921,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the framework followed by Tagoor Laboratories Pvt Ltd to identify occupational health and safety risks, prevent workplace injuries and illnesses, protect employees and contract workers, and ensure compliance with applicable occupational health and safety requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure defines requirements for workplace risk assessment, chemical safety, personal protective equipment management, employee health monitoring, safety training, emergency preparedness, incident investigation, and safety performance monitoring."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contract workers, trainees, visitors, and service personnel working within Tagoor Laboratories Pvt Ltd premises."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure covers:"
+      },
+      {
+       "type": "bullets",
+       "text": "API manufacturing operations\nProduction areas\nQuality Control laboratories\nQuality Assurance areas\nResearch and Development activities\nWarehouse and material handling operations\nUtility areas\nMaintenance activities\nAdministrative offices"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Human Resources Department",
+       "responsibilities": [
+        "Coordinate implementation of this procedure.",
+        "Maintain required records and documentation.",
+        "Monitor compliance with the requirements of this SOP."
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Implement health and safety programs and procedures.",
+        "Conduct risk assessments, inspections, and safety training.",
+        "Monitor workplace health and safety performance."
+       ]
+      },
+      {
+       "role": "Department Heads and Supervisors",
+       "responsibilities": [
+        "Ensure compliance with health and safety requirements within their areas of responsibility.",
+        "Support implementation of corrective and preventive actions.",
+        "Ensure employees receive required training and PPE."
+       ]
+      },
+      {
+       "role": "Employees and Contract Workers",
+       "responsibilities": [
+        "Follow applicable health and safety procedures and instructions.",
+        "Use provided PPE and safety equipment correctly.",
+        "Report hazards, incidents, and unsafe conditions promptly."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Employee Safety Training and Competency Development",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All employees receive safety training according to their job responsibilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Training is provided:"
+        },
+        {
+         "type": "bullets",
+         "text": "During joining induction.\nBefore assigning hazardous work.\nDuring process changes.\nPeriodically through refresher training."
+        },
+        {
+         "type": "paragraph",
+         "text": "Safety training topics include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Workplace safety rules\nChemical handling practices\nPPE requirements\nFire prevention and firefighting\nEmergency response procedures\nIncident reporting\nSafe work practices\nOccupational health hazards"
+        },
+        {
+         "type": "paragraph",
+         "text": "Training effectiveness may be evaluated through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Knowledge assessments\nPractical demonstrations\nSupervisor observations"
+        }
+       ]
+      },
+      {
+       "heading": "Workplace Hazard Identification and Risk Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The EHS Department conducts hazard identification and risk assessments for workplace activities to identify potential occupational health and safety risks."
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk assessments are performed for:"
+        },
+        {
+         "type": "bullets",
+         "text": "Chemical handling activities\nManufacturing processes\nLaboratory operations\nEquipment operation\nMaintenance activities\nMaterial handling\nStorage operations\nEmergency situations"
+        },
+        {
+         "type": "paragraph",
+         "text": "The assessment evaluates:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hazard identification\nPotential impact on employees\nLikelihood of occurrence\nExisting control measures\nAdditional preventive actions required"
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk controls are implemented following the hierarchy of controls:"
+        },
+        {
+         "type": "numbered",
+         "text": "Elimination of hazard where possible\nSubstitution with safer alternatives\nEngineering controls\nAdministrative controls\nPersonal Protective Equipment (PPE)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk assessments are reviewed:"
+        },
+        {
+         "type": "bullets",
+         "text": "Annually\nAfter process modification\nAfter significant incidents\nBefore introduction of new chemicals or equipment"
+        },
+        {
+         "type": "paragraph",
+         "text": "Records Maintained:\n\nEmployee Health & Safety Risk Assessment\nHazard Identification Register\nCorrective Action Records"
+        }
+       ],
+       "responsible": "EHS Department"
+      },
+      {
+       "heading": "Personal Protective Equipment (PPE) Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The EHS Department identifies PPE requirements based on workplace hazards and job activities."
+        },
+        {
+         "type": "paragraph",
+         "text": "PPE requirements may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Safety helmet\nSafety shoes\nSafety goggles\nChemical-resistant gloves\nProtective clothing\nFace shields\nRespiratory protection equipment"
+        },
+        {
+         "type": "paragraph",
+         "text": "The PPE management process includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hazard-based PPE selection.\nPPE issue to employees before starting assigned work.\nEmployee training on correct PPE usage.\nPeriodic inspection of PPE condition.\nReplacement of damaged or ineffective PPE."
+        },
+        {
+         "type": "paragraph",
+         "text": "Supervisors verify PPE compliance during routine operations."
+        }
+       ],
+       "responsible": "EHS Department"
+      },
+      {
+       "heading": "Chemical Safety Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Due to API manufacturing activities, Tagoor Laboratories Pvt Ltd implements controls for safe handling, storage, and use of chemicals."
+        },
+        {
+         "type": "paragraph",
+         "text": "Before handling chemicals:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employees are trained on chemical hazards and safe handling requirements.\nSafety Data Sheets (SDS) are made available for applicable chemicals.\nRequired PPE is identified based on chemical hazards."
+        },
+        {
+         "type": "paragraph",
+         "text": "Chemical handling controls include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Proper chemical labeling and identification.\nStorage according to compatibility requirements.\nUse of designated chemical handling areas.\nAvailability of spill response materials.\nPrevention of unauthorized access to chemical storage areas."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees handling hazardous chemicals shall follow approved operating procedures and emergency response requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Records Maintained:\n\nChemical Inventory Records\nSDS Records"
+        }
+       ]
+      },
+      {
+       "heading": "Permit to Work System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For high-risk activities, Tagoor Laboratories Pvt Ltd follows a Permit-to-Work system."
+        },
+        {
+         "type": "paragraph",
+         "text": "Activities requiring permits may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hot work\nConfined space entry\nElectrical work\nWork at height\nMaintenance activities involving hazardous energy"
+        },
+        {
+         "type": "paragraph",
+         "text": "Before work begins:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hazards are assessed.\nRequired precautions are identified.\nAuthorized persons approve the permit.\nWork area safety conditions are verified."
+        },
+        {
+         "type": "paragraph",
+         "text": "Records Maintained:\n\nPermit-to-Work Records\nWork Authorization Documents"
+        }
+       ]
+      },
+      {
+       "heading": "Workplace Safety Inspection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The EHS Department conducts routine workplace inspections to verify implementation of safety requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Inspections cover:"
+        },
+        {
+         "type": "bullets",
+         "text": "PPE usage\nHousekeeping standards\nChemical storage conditions\nEmergency equipment availability\nSafety signage\nEquipment safety conditions\nAccess routes and exits"
+        },
+        {
+         "type": "paragraph",
+         "text": "Inspection findings are documented and corrective actions are assigned with responsible persons and completion timelines."
+        },
+        {
+         "type": "paragraph",
+         "text": "Records Maintained:\n\nSafety Inspection Checklist\nCorrective Action Tracker"
+        }
+       ],
+       "responsible": "EHS Department"
+      },
+      {
+       "heading": "Incident, Accident, and Near-Miss Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All workplace incidents, accidents, and near misses shall be reported immediately to the supervisor and EHS Department."
+        },
+        {
+         "type": "paragraph",
+         "text": "Incident management includes:"
+        },
+        {
+         "type": "numbered",
+         "text": "Immediate response and injured employee support.\nIncident reporting and documentation.\nInvestigation to identify root causes.\nImplementation of corrective and preventive actions.\nVerification of action effectiveness."
+        },
+        {
+         "type": "paragraph",
+         "text": "Lessons learned are communicated to relevant employees to prevent recurrence."
+        }
+       ]
+      },
+      {
+       "heading": "Occupational Health Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Tagoor Laboratories Pvt Ltd implements employee health monitoring based on workplace exposure risks and job requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Health monitoring includes:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Pre-Employment Medical Examination"
+        },
+        {
+         "type": "paragraph",
+         "text": "Before joining, employees undergo medical evaluation where required to confirm fitness for assigned work."
+        },
+        {
+         "type": "paragraph",
+         "text": "Periodic Health Check-up"
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees exposed to occupational hazards undergo periodic medical examinations as per applicable requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Health monitoring may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "General health assessment\nVision examination\nRespiratory health assessment\nExposure-related medical checks"
+        },
+        {
+         "type": "paragraph",
+         "text": "Medical information is maintained confidentially and accessed only by authorized personnel."
+        },
+        {
+         "type": "paragraph",
+         "text": "Records Maintained:\n\nMedical Examination Records\nHealth Monitoring Reports"
+        }
+       ]
+      },
+      {
+       "heading": "Safety Performance Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The EHS Department monitors safety performance through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Incident frequency\nNear-miss reporting\nSafety inspection findings\nTraining completion\nCorrective action closure status"
+        },
+        {
+         "type": "paragraph",
+         "text": "Safety performance is reviewed periodically with management to identify improvement opportunities."
+        }
+       ],
+       "responsible": "EHS Department"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Non-Employee Health and Safety Procedure",
+   "code": "",
+   "catalogId": "contractor-safety",
+   "pillar": "S",
+   "department": "Environment, Health & Safety (EHS)",
+   "owner": "EHS Department",
+   "sourceWords": 781,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to establish controls for protecting the health, safety, and well-being of non-employees who enter, work at, or visit Tagoor Laboratories Pvt Ltd facilities. This procedure ensures that contractors, visitors, consultants, service providers, transport personnel, auditors, customers, and other third parties are informed of applicable health and safety requirements and perform their activities in a safe and controlled manner."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Coordinate implementation of this procedure.",
+        "Provide health and safety guidance to non-employees.",
+        "Monitor compliance with applicable health and safety requirements."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure non-employees working within their departments comply with applicable safety requirements.",
+        "Coordinate with EHS for high-risk activities and permit approvals."
+       ]
+      },
+      {
+       "role": "Security Personnel",
+       "responsibilities": [
+        "Control site access and maintain visitor entry records.",
+        "Ensure completion of visitor registration and entry requirements."
+       ]
+      },
+      {
+       "role": "Contractors, Visitors, and Other Non-Employees",
+       "responsibilities": [
+        "Follow applicable site safety requirements.",
+        "Use required personal protective equipment.",
+        "Report hazards, incidents, and unsafe conditions immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Pre-Entry Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "3.3.1 Pre-Entry Requirements"
+        },
+        {
+         "type": "paragraph",
+         "text": "Contractor Qualification Review\n\nContractors performing work on company premises shall be evaluated before engagement to ensure they possess the necessary competency, licenses, certifications, manpower capability, and safety arrangements required for the assigned work."
+        },
+        {
+         "type": "paragraph",
+         "text": "Document Verification\n\nRelevant documents such as employee identification records, training certificates, insurance documents, statutory registrations, and work-related certifications shall be reviewed before granting work authorization where applicable."
+        },
+        {
+         "type": "paragraph",
+         "text": "Work Scope Review\n\nThe concerned department shall communicate the scope of work, location of work, expected duration, and applicable safety requirements before commencement of activities."
+        }
+       ]
+      },
+      {
+       "heading": "Site Access and Visitor Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Visitor Registration\n\nAll visitors shall register at the security gate before entering company premises and provide relevant identification and visit details.\n\nHost Authorization\n\nVisitors shall enter operational areas only after approval from the concerned department or designated host employee.\n\nVisitor Identification\n\nVisitor badges or temporary access permits shall be issued and displayed throughout the visit.\n\nRestricted Access\n\nAccess to production areas, laboratories, chemical storage locations, utility areas, and other restricted locations shall only be permitted when authorized and accompanied by designated personnel."
+        }
+       ]
+      },
+      {
+       "heading": "Safety Induction and Communication",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Site Safety Orientation\n\nContractors and long-term service providers shall receive site-specific safety induction before commencing work activities.\n\nVisitor Safety Briefing\n\nVisitors entering operational areas shall receive a brief safety orientation covering emergency exits, assembly points, restricted areas, emergency contact information, and required precautions.\n\nCommunication of Hazards\n\nRelevant workplace hazards, emergency procedures, and applicable safety rules shall be communicated before access is granted."
+        }
+       ]
+      },
+      {
+       "heading": "Personal Protective Equipment (PPE) Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Mandatory PPE Compliance\n\nNon-employees entering operational areas shall wear PPE appropriate to the hazards present within the work area.\n\nArea-Specific PPE Requirements\n\nDepending on the work location and activity, required PPE may include safety shoes, helmets, safety goggles, gloves, high-visibility vests, hearing protection, respiratory protection, or other protective equipment.\n\nPPE Monitoring\n\nSupervisors and EHS personnel shall monitor compliance with PPE requirements and may restrict access where PPE requirements are not met."
+        }
+       ]
+      },
+      {
+       "heading": "Contractor Work Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Work Planning\n\nContractors shall perform work only within the approved scope and designated work area.\n\nCompliance with Site Rules\n\nContractors shall comply with all applicable company procedures, safety instructions, signage, and operational controls while performing work on company premises.\n\nSupervision and Monitoring\n\nContractor activities shall be monitored periodically by the concerned department and EHS personnel to verify compliance with health and safety requirements.\n\nSubcontractor Control\n\nContractors engaging subcontractors shall ensure that subcontractor personnel comply with the same health and safety requirements applicable to contractor personnel."
+        }
+       ]
+      },
+      {
+       "heading": "Permit-to-Work Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "High-Risk Activities\n\nA Permit-to-Work shall be obtained before commencing high-risk activities including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Hot work\nWork at height\nConfined space entry\nElectrical maintenance\nExcavation work\nLine breaking or chemical system maintenance"
+        },
+        {
+         "type": "paragraph",
+         "text": "Permit Verification\n\nThe concerned department and EHS representative shall verify implementation of required safety precautions before permit approval.\n\nPermit Closure\n\nUpon completion of work, the work area shall be inspected and the permit formally closed by the authorized person."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Movement and Workplace Conduct",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Vehicle Movement\n\nDrivers and transport personnel shall comply with site traffic rules, designated speed limits, parking requirements, and loading/unloading instructions.\n\nRestricted Activities\n\nSmoking, alcohol consumption, unauthorized photography, tampering with equipment, horseplay, and unauthorized access to operational systems are prohibited.\n\nHousekeeping Requirements\n\nContractors shall maintain good housekeeping standards and ensure work areas are kept free from unnecessary waste, obstructions, and hazards."
+        }
+       ]
+      },
+      {
+       "heading": "Incident and Hazard Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Immediate Reporting\n\nAny accident, injury, near miss, unsafe act, unsafe condition, environmental incident, or property damage involving non-employees shall be reported immediately.\n\nIncident Investigation\n\nRelevant incidents involving non-employees shall be investigated to identify root causes and determine corrective and preventive actions.\n\nCorrective Action Implementation\n\nIdentified corrective actions shall be assigned, tracked, and verified for completion."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Performance Monitoring and Compliance",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Safety Inspections\n\nEHS personnel may conduct periodic inspections of contractor activities and work areas to verify compliance with company safety requirements.\n\nNon-Compliance Management\n\nRepeated safety violations, failure to comply with permit requirements, refusal to use PPE, or unsafe work practices may result in suspension of work, removal from site, or termination of contractor access privileges.\n\nPerformance Review\n\nContractor safety performance may be considered during contractor evaluation, renewal, and future engagement decisions."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Performance Evaluation Procedure",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "Human Resources",
+   "sourceWords": 749,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes a structured process for evaluating employee performance at Tagoor Laboratories Pvt Ltd.\n\nThe objective is to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Assess employee performance against defined expectations.\nRecognize achievements and contributions.\nIdentify competency and development needs.\nSupport career development, succession planning, promotions, and performance improvement.\nAlign individual performance with organizational objectives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all permanent employees who have successfully completed their probation period.\n\nThe process covers:"
+      },
+      {
+       "type": "bullets",
+       "text": "Annual performance evaluations.\nMid-year performance discussions.\nIndividual Career Development Plans (ICDPs).\nPerformance Improvement Plans (PIPs).\nPromotion and succession planning inputs.\nTraining and development planning."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Human Resources",
+       "responsibilities": [
+        "Coordinate evaluation process, maintain records, ensure consistency, monitor development plans, maintain confidentiality"
+       ]
+      },
+      {
+       "role": "Reporting Manager",
+       "responsibilities": [
+        "Set objectives, monitor performance, conduct evaluations, provide feedback, identify development needs"
+       ]
+      },
+      {
+       "role": "Department Head",
+       "responsibilities": [
+        "Review evaluation outcomes, ensure fairness, support development and succession planning"
+       ]
+      },
+      {
+       "role": "Employee",
+       "responsibilities": [
+        "Complete self-evaluation, participate in discussions, implement agreed development actions"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Roles and Responsibilities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Function",
+        "Responsibility"
+       ],
+       "rows": [
+        [
+         "Human Resources",
+         "Coordinate evaluation process, maintain records, ensure consistency, monitor development plans, maintain confidentiality"
+        ],
+        [
+         "Reporting Manager",
+         "Set objectives, monitor performance, conduct evaluations, provide feedback, identify development needs"
+        ],
+        [
+         "Department Head",
+         "Review evaluation outcomes, ensure fairness, support development and succession planning"
+        ],
+        [
+         "Employee",
+         "Complete self-evaluation, participate in discussions, implement agreed development actions"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Performance Evaluation Procedure",
+     "steps": [
+      {
+       "heading": "4.4.1 Objective Setting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "At the beginning of the review cycle, Reporting Managers shall establish employee objectives based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Job responsibilities.\nDepartment targets.\nQuality and compliance requirements.\nProductivity expectations.\nImprovement initiatives.\nBehavioral expectations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Objectives shall be discussed with employees and documented."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "4.4.2 Performance Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employee performance shall be monitored throughout the year using:"
+        },
+        {
+         "type": "bullets",
+         "text": "KPI achievement.\nWork quality and productivity.\nTraining completion.\nAttendance and punctuality.\nCompliance records.\nAudit observations.\nProject completion.\nWorkplace behavior."
+        },
+        {
+         "type": "paragraph",
+         "text": "Managers shall provide regular feedback and guidance during the review period."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "4.4.3 Mid-Year Performance Discussion",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A mid-year review shall be conducted to discuss:"
+        },
+        {
+         "type": "bullets",
+         "text": "Progress against objectives.\nAchievements.\nChallenges.\nDevelopment requirements.\nRequired management support."
+        },
+        {
+         "type": "paragraph",
+         "text": "Performance concerns identified during this stage shall be documented with improvement actions."
+        }
+       ]
+      },
+      {
+       "heading": "4.4.4 Employee Self-Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Before annual evaluation, employees shall complete a self-assessment covering:"
+        },
+        {
+         "type": "bullets",
+         "text": "Key achievements.\nCompleted responsibilities.\nImprovement initiatives.\nTraining completed.\nChallenges faced.\nDevelopment needs.\nCareer aspirations."
+        }
+       ],
+       "responsible": "Employee"
+      },
+      {
+       "heading": "4.4.5 Manager Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall evaluate employee performance based on documented evidence.\n\nAssessment shall consider:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Role Effectiveness"
+        },
+        {
+         "type": "bullets",
+         "text": "Achievement of objectives.\nQuality and accuracy of work.\nTechnical knowledge.\nCompliance with SOPs and company requirements.\nProblem-solving ability.\nAccountability."
+        },
+        {
+         "type": "paragraph",
+         "text": "Communication and Workplace Behavior"
+        },
+        {
+         "type": "bullets",
+         "text": "Professional conduct.\nCommunication skills.\nTeam interaction.\nCooperation with stakeholders."
+        },
+        {
+         "type": "paragraph",
+         "text": "Productivity and Growth"
+        },
+        {
+         "type": "bullets",
+         "text": "Learning ability.\nInitiative and improvement efforts.\nAdaptability.\nParticipation in training."
+        },
+        {
+         "type": "paragraph",
+         "text": "Team Contribution"
+        },
+        {
+         "type": "bullets",
+         "text": "Support to team members.\nCross-functional collaboration.\nParticipation in projects and improvement activities."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "4.4.6 Performance Rating System",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees shall be evaluated using the following rating scale:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Rating",
+          "Description"
+         ],
+         "rows": [
+          [
+           "5",
+           "Outstanding"
+          ],
+          [
+           "4",
+           "Good"
+          ],
+          [
+           "3",
+           "Acceptable"
+          ],
+          [
+           "2",
+           "Low Performance"
+          ],
+          [
+           "1",
+           "Poor Performance"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Rating controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Ratings shall be supported by performance evidence.\nRatings of 5 and 1 require documented justification.\nDepartment Heads shall review ratings before final approval.\nHR shall verify evaluation consistency."
+        }
+       ]
+      },
+      {
+       "heading": "4.4.7 Performance Review Meeting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall conduct a review discussion with the employee covering:"
+        },
+        {
+         "type": "bullets",
+         "text": "Evaluation results.\nStrengths and achievements.\nImprovement areas.\nTraining requirements.\nCareer goals.\nFuture expectations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees may provide comments or feedback regarding the evaluation outcome."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "4.4.8 Evaluation Approval Process",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Activity",
+          "Responsibility"
+         ],
+         "rows": [
+          [
+           "Self-Evaluation",
+           "Employee"
+          ],
+          [
+           "Performance Assessment",
+           "Reporting Manager"
+          ],
+          [
+           "Review and Validation",
+           "Department Head"
+          ],
+          [
+           "Record Maintenance",
+           "HR"
+          ],
+          [
+           "Final Approval",
+           "Functional Head/Management"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Approved evaluation records shall be maintained by HR."
+        }
+       ]
+      },
+      {
+       "heading": "4.4.9 Individual Career Development Plan (ICDP)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on evaluation outcomes, employees may be provided with an Individual Career Development Plan to support competency development and career growth.\n\nThe ICDP shall include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Career goals.\nCurrent strengths.\nDevelopment gaps.\nRequired actions.\nTraining requirements.\nTarget timelines.\nSuccess indicators."
+        },
+        {
+         "type": "paragraph",
+         "text": "Development activities may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Technical training.\nCertifications.\nCoaching and mentoring.\nJob rotation.\nCross-functional assignments.\nLeadership development."
+        },
+        {
+         "type": "paragraph",
+         "text": "ICDP progress shall be reviewed periodically by the Reporting Manager."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "4.4.10 Performance Improvement Plan (PIP)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A Performance Improvement Plan shall be initiated when:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employee receives rating of 1 or 2.\nSignificant performance gaps are identified.\nRepeated concerns remain unresolved.\nQuality, compliance, or productivity issues occur."
+        },
+        {
+         "type": "paragraph",
+         "text": "The PIP shall define:"
+        },
+        {
+         "type": "bullets",
+         "text": "Performance gaps.\nExpected improvement standards.\nRequired actions.\nTraining/coaching support.\nReview timelines."
+        },
+        {
+         "type": "paragraph",
+         "text": "PIP Duration: Normally 60–90 days.\n\nProgress shall be reviewed monthly and documented."
+        }
+       ]
+      },
+      {
+       "heading": "4.5 Promotion and Succession Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Performance evaluation results shall support decisions related to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Promotions.\nCareer progression.\nIncreased responsibilities.\nSuccession planning.\nLeadership development."
+        },
+        {
+         "type": "paragraph",
+         "text": "Decisions shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Performance results.\nCompetency level.\nExperience.\nbehavioral performance.\nBusiness requirements."
+        }
+       ]
+      },
+      {
+       "heading": "4.6 Employee Appeal Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees who disagree with evaluation results may submit an appeal to HR within 10 working days of receiving the evaluation.\n\nHR shall review the concern with the Reporting Manager and Department Head and communicate the final decision within 15 working days."
+        }
+       ],
+       "responsible": "HR"
+      },
+      {
+       "heading": "4.7 Performance Evaluation Timeline",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Activity",
+          "Timeline"
+         ],
+         "rows": [
+          [
+           "Objective Setting",
+           "April"
+          ],
+          [
+           "Performance Monitoring",
+           "Throughout the Year"
+          ],
+          [
+           "Mid-Year Discussion",
+           "October–November"
+          ],
+          [
+           "Employee Self-Evaluation",
+           "March"
+          ],
+          [
+           "Annual Evaluation",
+           "April–June"
+          ],
+          [
+           "ICDP Preparation",
+           "Within 30 Days of Evaluation"
+          ],
+          [
+           "PIP Review",
+           "Monthly"
+          ],
+          [
+           "Training Need Consolidation",
+           "July"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Buyer Performance Evaluation Procedure",
+   "code": "",
+   "catalogId": "buyer-performance",
+   "pillar": "S",
+   "department": "Procurement",
+   "owner": "Human Resources",
+   "sourceWords": 980,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to establish a structured and objective process for evaluating the performance of Buyers at Tagoor Laboratories Pvt Ltd. The evaluation process enables the organization to assess employee contributions, procurement effectiveness, supplier management performance, communication skills, sustainability engagement, and overall achievement of departmental objectives.\n\nThe evaluation results are used to support employee development, performance improvement, succession planning, career progression, and workforce capability enhancement."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees performing Buyer, Procurement Executive, Senior Buyer, and similar procurement-related roles responsible for supplier sourcing, procurement coordination, purchase order management, supplier performance monitoring, and procurement support activities.\n\nThe procedure covers annual performance evaluations, development planning, performance improvement actions, and evaluation record management."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Human Resources",
+       "responsibilities": [
+        "Coordinate evaluation activities, maintain records, and monitor completion of evaluations."
+       ]
+      },
+      {
+       "role": "Reporting Manager",
+       "responsibilities": [
+        "Conduct evaluations, assign ratings, provide feedback, and recommend development actions."
+       ]
+      },
+      {
+       "role": "Department Head",
+       "responsibilities": [
+        "Review and approve evaluation outcomes and development recommendations."
+       ]
+      },
+      {
+       "role": "Employee",
+       "responsibilities": [
+        "Complete self-assessment and participate in evaluation discussions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Performance Evaluation Procedure",
+     "steps": [
+      {
+       "heading": "5.4.1 Evaluation Planning",
+       "body": [],
+       "responsible": "Human Resources",
+       "substeps": [
+        {
+         "text": "Human Resources shall initiate the annual performance evaluation process during April of each year.",
+         "responsible": "Human Resources"
+        },
+        {
+         "text": "The evaluation period shall normally cover employee performance during the previous financial year."
+        },
+        {
+         "text": "Employees who have completed a minimum of six months of service during the review period shall be eligible for evaluation."
+        },
+        {
+         "text": "HR shall communicate evaluation timelines and distribute performance evaluation forms to eligible employees and reporting managers.",
+         "responsible": "Human Resources"
+        }
+       ]
+      },
+      {
+       "heading": "5.4.2 Self-Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees shall complete the self-assessment section of the Buyer Performance Evaluation Form."
+        },
+        {
+         "type": "paragraph",
+         "text": "The self-assessment shall provide an overview of performance achievements, challenges encountered, improvement initiatives undertaken, training programmes completed, and contributions made during the review period."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees shall provide supporting examples wherever applicable."
+        },
+        {
+         "type": "paragraph",
+         "text": "Completed self-assessments shall be submitted to the Reporting Manager within the specified timeline."
+        }
+       ],
+       "responsible": "Employee"
+      },
+      {
+       "heading": "5.4.3 Evaluation of Supplier Sustainability Compliance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall assess the employee's contribution towards supplier sustainability management and responsible procurement practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Follow-up of supplier sustainability questionnaires and declarations.\nCollection and maintenance of supplier sustainability information.\nCommunication of customer sustainability requirements to suppliers.\nParticipation in supplier sustainability assessments and reviews.\nSupport provided to suppliers for corrective actions related to sustainability requirements.\nContribution towards increasing supplier sustainability awareness.\nSupporting evidence may include supplier assessment records, supplier communication records, sustainability tracking reports, and supplier improvement activities."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "5.4.4 Evaluation of Communication Skills",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall assess the employee's ability to communicate effectively with suppliers and internal stakeholders."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Timeliness of responses to procurement-related requests.\nAccuracy and professionalism of supplier communications.\nCommunication of procurement status updates to relevant departments.\nTimely escalation of procurement risks and supply disruptions.\nAbility to resolve supplier-related and internal coordination issues.\nCollaboration with Production, Warehouse, Quality Assurance, Quality Control, Finance, and other departments.\nInternal stakeholder feedback may be considered during the evaluation process."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "5.4.5 Evaluation of Individual Performance and Work Effectiveness",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall evaluate the employee's effectiveness in carrying out assigned procurement responsibilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Timely conversion of approved Purchase Requisitions into Purchase Orders.\nMonitoring and follow-up of open Purchase Orders.\nProcurement documentation accuracy.\nTimely completion of assigned procurement activities.\nCompliance with procurement procedures and approval requirements.\nAbility to manage urgent procurement requirements.\nContribution towards uninterrupted availability of materials and services.\nInitiative shown in resolving procurement-related challenges."
+        },
+        {
+         "type": "paragraph",
+         "text": "Procurement records, purchase order reports, procurement trackers, and operational feedback may be reviewed as part of the evaluation."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "5.4.6 Evaluation of Supplier Engagement and Performance Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall evaluate the employee's ability to manage supplier relationships and supplier performance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Follow-up of supplier delivery commitments.\nResolution of supplier-related issues.\nSupplier responsiveness and communication effectiveness.\nMonitoring of supplier delivery performance.\nParticipation in supplier evaluation and qualification activities.\nIdentification of alternate suppliers where required.\nCoordination with suppliers during material shortages, delivery delays, or operational disruptions.\nContribution towards maintaining continuity of supply."
+        },
+        {
+         "type": "paragraph",
+         "text": "Supplier performance reports and supplier evaluation records may be reviewed during assessment."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "5.4.7 Manager Review and Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Reporting Manager shall assign ratings against each evaluation category based on available evidence and observed performance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Evaluation comments shall include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Key strengths.\nSignificant achievements.\nAreas requiring improvement.\nRecommended development actions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Completed evaluations shall be submitted to the Department Head for review and approval."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "5.4.8 Performance Review Meeting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Upon completion of the evaluation, the Reporting Manager shall conduct a formal performance review meeting with the employee."
+        },
+        {
+         "type": "paragraph",
+         "text": "The meeting shall include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Discussion of evaluation results.\nReview of procurement achievements.\nDiscussion of performance challenges.\nIdentification of development opportunities.\nDiscussion of future performance expectations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees shall be given an opportunity to provide feedback and comments regarding their evaluation."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "5.4.9 Performance Rating Scale",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Rating",
+          "Performance Level"
+         ],
+         "rows": [
+          [
+           "5",
+           "Outstanding"
+          ],
+          [
+           "4",
+           "Exceeds Expectations"
+          ],
+          [
+           "3",
+           "Meets Expectations"
+          ],
+          [
+           "2",
+           "Needs Improvement"
+          ],
+          [
+           "1",
+           "Unsatisfactory"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Rating Guidelines\n\nOutstanding: Performance consistently exceeds all expectations and demonstrates exceptional contribution."
+        },
+        {
+         "type": "bullets",
+         "text": "Exceeds Expectations: Performance regularly exceeds established requirements.\nMeets Expectations: Performance consistently meets job requirements.\nNeeds Improvement: Performance does not consistently meet expectations and requires improvement.\nUnsatisfactory: Significant performance deficiencies requiring immediate corrective action."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "5.5 Individual Development Plan (IDP)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "An Individual Development Plan shall be prepared where development opportunities or competency gaps are identified."
+      },
+      {
+       "type": "paragraph",
+       "text": "Development plans may focus on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Sustainable procurement practices.\nSupplier management skills.\nNegotiation and commercial management.\nProcurement analytics and reporting.\nCommunication and stakeholder management."
+      },
+      {
+       "type": "paragraph",
+       "text": "Leadership development.\n\nEach development plan shall define development objectives, planned actions, responsible persons, target completion dates, and success indicators.\nProgress shall be reviewed periodically by the Reporting Manager."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "5.6 Performance Improvement Actions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Employees receiving a rating of \"Needs Improvement\" or \"Unsatisfactory\" may be placed under a Performance Improvement Plan (PIP)."
+      },
+      {
+       "type": "paragraph",
+       "text": "Improvement plans shall include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Identified performance gaps.\nExpected performance standards.\nCorrective actions.\nRequired training and support.\nReview milestones.\nTarget completion dates."
+      },
+      {
+       "type": "paragraph",
+       "text": "Progress shall be monitored by the Reporting Manager and Human Resources Department."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "5.7 Records Maintained",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained:"
+      },
+      {
+       "type": "bullets",
+       "text": "Buyer Performance Evaluation Forms.\nIndividual Development Plans.\nPerformance Improvement Plans.\nTraining Records.\nProcurement Performance Reports."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Career Progression and Advancement Procedure",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "Human Resources Department",
+   "sourceWords": 866,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to establish a fair, transparent, and merit-based process for employee promotion and career advancement at Tagoor Laboratories Pvt Ltd. The procedure aims to ensure that all employees are provided equal access to career growth opportunities based on performance, competencies, experience, potential, and business requirements without discrimination."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all permanent employees of Tagoor Laboratories Pvt Ltd across all departments and functions."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure covers:"
+      },
+      {
+       "type": "bullets",
+       "text": "Employee promotions.\nInternal career advancement opportunities.\nInternal job transfers.\nSuccession planning recommendations.\nEqual opportunity requirements.\nPromotion approval process."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Human Resources Department",
+       "responsibilities": [
+        "Coordinate promotion reviews, maintain records, and ensure compliance with equal opportunity principles."
+       ]
+      },
+      {
+       "role": "Reporting Manager",
+       "responsibilities": [
+        "Evaluate employee performance and recommend eligible employees for promotion."
+       ]
+      },
+      {
+       "role": "Department Head",
+       "responsibilities": [
+        "Review promotion recommendations and assess business requirements."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve promotions for managerial and critical positions."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Participate in performance reviews and development activities."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Promotion and Career Advancement Procedure",
+     "steps": [
+      {
+       "heading": "Identification of Promotion Opportunities",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Promotion opportunities may arise due to organizational growth, business expansion, workforce restructuring, succession planning requirements, creation of new positions, or employee vacancies.\nDepartment Heads shall review workforce requirements annually and identify positions that may require internal advancement.\nHuman Resources shall maintain records of available advancement opportunities and communicate them to relevant departments.\nInternal candidates shall be considered before external recruitment is initiated wherever feasible."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Eligibility for Promotion",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees may be considered for promotion based on the following criteria:"
+        },
+        {
+         "type": "bullets",
+         "text": "Consistent achievement of performance objectives during annual performance evaluations.\nDemonstration of technical competence required for the higher position.\nCompliance with company policies, procedures, and workplace standards.\nPositive disciplinary record during the review period.\nDemonstrated leadership potential and ability to handle additional responsibilities.\nCompletion of mandatory training programmes applicable to the target role.\nAbility to perform responsibilities associated with the proposed position."
+        },
+        {
+         "type": "paragraph",
+         "text": "Promotion eligibility does not guarantee promotion and shall remain subject to business requirements and position availability."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Assessment for Promotion",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reporting Managers shall evaluate employees using available performance evaluation records."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Performance ratings achieved during previous review cycles.\nQuality and accuracy of work performed.\nProductivity and achievement of departmental objectives.\nProblem-solving capabilities.\nInitiative and innovation demonstrated.\nAbility to work independently and within teams.\nLeadership and supervisory capabilities where applicable.\nProfessional conduct and workplace behavior."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees consistently receiving performance ratings below expectations shall not normally be considered for promotion until performance improvement is demonstrated."
+        }
+       ],
+       "responsible": "Reporting Manager"
+      },
+      {
+       "heading": "Competency and Capability Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In addition to performance evaluation results, employees shall be assessed against the competency requirements of the proposed position."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Technical knowledge.\nFunctional expertise.\nCommunication skills.\nDecision-making ability.\nLeadership capability.\nStakeholder management skills.\nPlanning and organizational skills.\nRegulatory and compliance awareness."
+        },
+        {
+         "type": "paragraph",
+         "text": "Additional interviews, assessments, or competency reviews may be conducted where required."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Career Advancement Opportunities",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Vacant positions may be communicated internally through notice boards, emails, internal communication systems, or departmental announcements.\nEmployees meeting minimum qualification and experience requirements may apply for internal advancement opportunities.\nInternal applicants shall be evaluated using the same objective criteria applied to promotion assessments.\nSelection decisions shall be based on competency, performance, experience, and suitability for the role.\nInternal transfers may be considered to support employee development and organizational requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Equal Opportunity and Non-Discrimination Requirements",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Promotion and career advancement decisions shall be based solely on merit, qualifications, performance, competency, experience, and business requirements.\nDiscrimination based on gender, age, religion, caste, ethnicity, nationality, disability, marital status, pregnancy, political opinion, union membership, or any other legally protected characteristic is strictly prohibited.\nAll employees shall be provided equal access to promotion opportunities and professional development programmes.\nReasonable accommodations shall be considered where required to ensure equal participation in promotion processes.\nHuman Resources shall review promotion recommendations to ensure compliance with equal opportunity principles."
+        }
+       ],
+       "responsible": "Human Resources"
+      },
+      {
+       "heading": "Individual Development and Career Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees identified as high-potential candidates may be included in development programmes designed to prepare them for future responsibilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Development activities may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Technical training programmes.\nLeadership development programmes.\nCross-functional assignments.\nMentoring and coaching.\nProfessional certification programmes.\nProject leadership opportunities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Individual Development Plans (IDPs) may be prepared to support career progression and succession planning activities."
+        }
+       ]
+      },
+      {
+       "heading": "Promotion Approval Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Promotion recommendations shall be submitted by the Reporting Manager to the Department Head."
+        },
+        {
+         "type": "paragraph",
+         "text": "The Department Head shall review:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employee performance history.\nCompetency assessment results.\nBusiness requirements.\nPosition availability.\nBudget considerations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Human Resources shall review promotion recommendations for compliance with company policies and equal opportunity requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Final approval shall be obtained from Senior Management for managerial and critical positions."
+        }
+       ],
+       "responsible": "Department Head"
+      },
+      {
+       "heading": "Communication of Promotion Decisions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved promotions shall be formally communicated through a Promotion Letter issued by Human Resources."
+        },
+        {
+         "type": "paragraph",
+         "text": "The Promotion Letter shall specify:"
+        },
+        {
+         "type": "bullets",
+         "text": "New designation.\nEffective date.\nRevised reporting structure.\nCompensation revisions where applicable.\nKey responsibilities associated with the new role."
+        },
+        {
+         "type": "paragraph",
+         "text": "Promotion records shall be maintained within the employee personnel file."
+        }
+       ],
+       "responsible": "Human Resources"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Career Advancement Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Human Resources shall periodically review promotion trends and career advancement data."
+      },
+      {
+       "type": "paragraph",
+       "text": "Reviews may include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Internal promotion rates.\nDepartment-wise promotion statistics.\nGender diversity in promotions.\nDevelopment programmes participation.\nSuccession planning readiness."
+      },
+      {
+       "type": "paragraph",
+       "text": "Identified gaps shall be reviewed and improvement actions implemented where necessary."
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records Maintained",
+     "rows": [
+      {
+       "record": "Performance Evaluation Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Promotion Recommendation Forms",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Competency Assessment Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Promotion Approval Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Promotion Letters",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Internal Job Posting Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Individual Development Plans",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Succession Planning Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Efficiency and Low-Carbon Energy Management Procedure",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "Senior Management",
+   "sourceWords": 891,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes the framework for improving energy efficiency, optimizing energy consumption, increasing the use of renewable energy, and reducing greenhouse gas (GHG) emissions associated with operations at Tagoor Laboratories Pvt Ltd.\n\nThe procedure aims to support responsible energy management through the identification and implementation of energy conservation measures, low-carbon technologies, fuel-switching initiatives, renewable energy projects, waste heat recovery systems, and continuous improvement activities."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all operational activities, utilities, buildings, infrastructure, equipment, and processes that consume energy at Tagoor Laboratories Pvt Ltd.\n\nThe procedure covers:"
+      },
+      {
+       "type": "bullets",
+       "text": "Electricity consumption.\nFuel consumption.\nUtility operations.\nProcess energy use.\nRenewable energy projects.\nEnergy-efficient equipment and technology upgrades.\nWaste heat recovery initiatives.\nLow-carbon energy transition projects."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve energy efficiency objectives and initiatives.",
+        "Provide resources for implementation of energy improvement projects.",
+        "Review energy performance and progress periodically."
+       ]
+      },
+      {
+       "role": "Engineering / Maintenance Department",
+       "responsibilities": [
+        "Monitor energy consumption.",
+        "Identify energy-saving opportunities.",
+        "Evaluate equipment efficiency.",
+        "Implement approved energy efficiency projects.",
+        "Maintain energy-related records."
+       ]
+      },
+      {
+       "role": "EHS / Sustainability Team",
+       "responsibilities": [
+        "Track energy performance indicators.",
+        "Monitor renewable energy and carbon reduction initiatives.",
+        "Support awareness and training activities.",
+        "Maintain energy performance reports."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Support implementation of energy conservation initiatives.",
+        "Promote responsible energy use within their departments."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow energy conservation practices.",
+        "Report energy wastage, leaks, or inefficient equipment operation."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Measures and Procedures",
+     "steps": [
+      {
+       "heading": "Energy Performance Monitoring",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall monitor energy consumption across operations to identify opportunities for improving energy efficiency and reducing energy-related greenhouse gas emissions.\n\nEnergy consumption data may be collected from:"
+        },
+        {
+         "type": "bullets",
+         "text": "Electricity bills.\nFuel consumption records.\nUtility meter readings.\nEquipment operating records.\nRenewable energy generation records."
+        },
+        {
+         "type": "paragraph",
+         "text": "Energy performance shall be reviewed periodically to identify significant energy-consuming activities and opportunities for improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Efficiency Improvement Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall implement energy efficiency measures aimed at reducing overall energy consumption and improving operational performance.\n\nSuch measures may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of LED lighting systems.\nReplacement of inefficient motors and pumps with energy-efficient models.\nInstallation of Variable Frequency Drives (VFDs).\nOptimization of HVAC systems.\nOptimization of compressed air systems.\nProcess automation and control improvements.\nPreventive maintenance programs to maintain equipment efficiency.\nEnergy-efficient utility and facility upgrades."
+        },
+        {
+         "type": "paragraph",
+         "text": "Energy-saving opportunities identified through operational reviews, inspections, audits, or employee suggestions shall be evaluated for implementation."
+        }
+       ]
+      },
+      {
+       "heading": "Fuel Switching and Low-Carbon Energy Transition",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall evaluate opportunities to transition from higher-carbon energy sources to cleaner and lower-emission alternatives where technically and economically feasible.\n\nInitiatives may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Replacement of diesel-powered equipment with electric alternatives.\nTransition from conventional fuels to lower-carbon fuels.\nElectrification of operational processes and utility systems.\nAdoption of cleaner energy technologies.\nReduction of dependence on carbon-intensive fuels."
+        },
+        {
+         "type": "paragraph",
+         "text": "Fuel-switching projects shall be prioritized based on potential energy efficiency improvements and greenhouse gas emission reduction benefits."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Heat Recovery and Energy Recovery Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall assess opportunities to recover and utilize waste energy generated during operations to improve overall energy efficiency.\n\nPotential initiatives may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of waste heat recovery systems.\nRecovery and reuse of process heat.\nHeat exchangers and energy recovery units.\nCombined Heat and Power (CHP) systems.\nCogeneration systems.\nReuse of recovered energy within operational processes."
+        },
+        {
+         "type": "paragraph",
+         "text": "Where technically feasible, recovered energy shall be utilized to reduce overall energy demand and improve operational efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Renewable Energy Procurement and Generation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall promote the use of renewable energy to reduce dependence on conventional energy sources and lower operational carbon emissions.\n\nRenewable energy initiatives may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of rooftop solar photovoltaic systems.\nSolar water heating systems.\nProcurement of renewable electricity from approved suppliers.\nRenewable energy power purchase agreements.\nRenewable Energy Certificates (RECs), where applicable.\nEvaluation of additional renewable energy opportunities suitable for operations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Progress in renewable energy adoption shall be monitored periodically."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Considerations in Equipment and Technology Upgrades",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Energy performance shall be considered when purchasing new equipment, replacing existing assets, or implementing technology upgrades.\n\nSelection criteria may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Energy efficiency performance.\nExpected energy savings.\nEquipment operating efficiency.\nLife-cycle energy consumption.\nPotential reduction in greenhouse gas emissions.\nReliability and maintenance requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Preference shall be given to technologies that contribute to long-term energy efficiency improvements and support the Company's sustainability objectives.\n\nExamples may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "High-efficiency motors.\nEnergy-efficient chillers.\nEfficient boilers.\nSmart energy monitoring systems.\nAutomated process control systems.\nAdvanced utility management technologies."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Awareness and Employee Participation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall promote employee participation in energy conservation initiatives.\n\nAwareness activities may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Energy conservation training.\nAwareness campaigns.\nEnergy-saving communications.\nEmployee suggestion programs."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees are encouraged to identify and report opportunities for reducing energy consumption and improving operational efficiency."
+        }
+       ]
+      },
+      {
+       "heading": "Energy Performance Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Energy performance shall be reviewed periodically using indicators such as:"
+        },
+        {
+         "type": "bullets",
+         "text": "Total energy consumption.\nElectricity consumption.\nFuel consumption.\nRenewable energy consumption.\nPercentage of renewable energy usage.\nEnergy intensity.\nEnergy savings achieved through implemented projects.\nCarbon emission intensity."
+        },
+        {
+         "type": "paragraph",
+         "text": "Improvement opportunities identified during reviews shall be incorporated into future action plans and operational objectives."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "The effectiveness of this procedure may be monitored using indicators such as:"
+      },
+      {
+       "type": "bullets",
+       "text": "Total energy consumption.\nEnergy intensity per unit of production.\nRenewable energy generation or procurement.\nPercentage renewable energy contribution.\nNumber of energy efficiency projects implemented.\nFuel consumption reduction.\nCarbon emission intensity reduction."
+      },
+      {
+       "type": "paragraph",
+       "text": "Results shall be reviewed periodically by relevant departments and Senior Management."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Records to be Maintained",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The following records shall be maintained, as applicable:"
+      },
+      {
+       "type": "bullets",
+       "text": "Electricity consumption records.\nFuel consumption records.\nUtility meter readings.\nEnergy monitoring reports.\nEnergy audit reports.\nRenewable energy records.\nEnergy efficiency project records.\nEquipment upgrade records.\nTraining and awareness records.\nEnergy performance review records."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ESG Risk Screening and Third-Party Management Procedure",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Procurement / Sustainability / Compliance",
+   "owner": "Procurement Head",
+   "sourceWords": 844,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to establish a structured approach for conducting Environmental, Social, and Governance (ESG) due diligence on suppliers, contractors, service providers, consultants, distributors, logistics partners, and other third parties engaged by Tagoor Laboratories Pvt Ltd."
+      },
+      {
+       "type": "paragraph",
+       "text": "This procedure aims to identify, assess, manage, and monitor ESG-related risks within the supply chain and business relationships while promoting responsible sourcing, ethical business conduct, labour rights, environmental stewardship, and regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all new and existing third parties that provide goods, services, raw materials, transportation, contract labour, consultancy services, waste management services, facility management services, and other business-related activities for Tagoor Laboratories Pvt Ltd."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure covers:"
+      },
+      {
+       "type": "bullets",
+       "text": "Supplier onboarding.\nSupplier qualification.\nVendor approval.\nContractor engagement.\nThird-party ESG risk assessment.\nOngoing supplier monitoring.\nCorrective action management.\nSupplier re-evaluation."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement Head",
+       "responsibilities": [
+        "Ensure implementation of ESG due diligence requirements during supplier selection and evaluation."
+       ]
+      },
+      {
+       "role": "Sustainability / ESG Coordinator",
+       "responsibilities": [
+        "Conduct ESG assessments and monitor supplier ESG performance."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Support supplier evaluations relevant to their operational areas."
+       ]
+      },
+      {
+       "role": "Quality Assurance",
+       "responsibilities": [
+        "Verify compliance with applicable quality and regulatory requirements."
+       ]
+      },
+      {
+       "role": "Suppliers / Third Parties",
+       "responsibilities": [
+        "Provide requested ESG information and cooperate during assessments."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Review high-risk findings and approve risk mitigation actions where required."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "ESG Due Diligence Procedure",
+     "steps": [
+      {
+       "heading": "Third-Party Identification and Registration",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prior to onboarding a new supplier or contractor, the Procurement Department shall collect basic supplier information including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Company name and registration details.\nBusiness address and contact information.\nNature of products or services supplied.\nKey management contacts.\nRegulatory licenses and certifications.\nGST and statutory registration details."
+        },
+        {
+         "type": "paragraph",
+         "text": "Suppliers shall be registered in the Approved Vendor List (AVL) only after completion of the applicable assessment process."
+        }
+       ],
+       "responsible": "Procurement Department"
+      },
+      {
+       "heading": "Initial ESG Screening",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All new suppliers and third parties shall undergo an initial ESG screening before approval."
+        },
+        {
+         "type": "paragraph",
+         "text": "The screening shall evaluate potential risks associated with:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Environmental Factors"
+        },
+        {
+         "type": "bullets",
+         "text": "Environmental permits and regulatory compliance.\nWaste management practices.\nHazardous material handling.\nPollution prevention measures.\nEnergy and water management practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Social Factors"
+        },
+        {
+         "type": "bullets",
+         "text": "Child labour practices.\nForced labour risks.\nWorking conditions.\nOccupational health and safety management.\nEmployee welfare practices.\nWorking hours and wage compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Governance Factors"
+        },
+        {
+         "type": "bullets",
+         "text": "Business ethics practices.\nAnti-bribery and anti-corruption controls.\nRegulatory compliance history.\nData protection and confidentiality practices.\nConflict of interest concerns."
+        }
+       ]
+      },
+      {
+       "heading": "ESG Risk Categorization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on the screening results, suppliers shall be classified into the following risk categories:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Risk Category",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Low Risk",
+           "Limited ESG risks identified and adequate controls demonstrated."
+          ],
+          [
+           "Medium Risk",
+           "Some ESG risks identified requiring monitoring or corrective actions."
+          ],
+          [
+           "High Risk",
+           "Significant ESG concerns identified requiring management review and mitigation actions."
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Considerations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk categorization may consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Type of goods or services supplied.\nGeographic location.\nLabour-intensive operations.\nEnvironmental impact of operations.\nPrevious compliance violations.\nRegulatory enforcement history.\nReputational risks."
+        }
+       ]
+      },
+      {
+       "heading": "ESG Assessment and Documentation Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Depending on the risk level, suppliers may be requested to provide supporting documentation including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Business registration certificates.\nEnvironmental permits and licenses.\nISO certifications.\nOccupational Health & Safety certifications.\nSustainability policies.\nLabour and Human Rights policies.\nBusiness Ethics policies.\nAnti-Corruption policies.\nEnvironmental management procedures.\nWorker welfare programmes.\nESG assessment questionnaires.\nCorrective action records."
+        },
+        {
+         "type": "paragraph",
+         "text": "The ESG Coordinator shall review submitted information and document findings."
+        }
+       ],
+       "responsible": "ESG Coordinator"
+      },
+      {
+       "heading": "Supplier ESG Questionnaire Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Medium and High-Risk suppliers may be required to complete an ESG Self-Assessment Questionnaire."
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment areas may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Environmental management.\nEnergy and water conservation.\nWaste management.\nOccupational health and safety.\nLabour practices.\nHuman rights protection.\nEthics and compliance.\nBusiness continuity measures."
+        },
+        {
+         "type": "paragraph",
+         "text": "Responses shall be reviewed and evaluated by the Sustainability Coordinator and Procurement Department."
+        }
+       ],
+       "responsible": "Sustainability Coordinator and Procurement Department"
+      },
+      {
+       "heading": "Supplier Approval Decision",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The supplier approval decision shall be based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Business requirements.\nTechnical capability.\nQuality performance.\nESG assessment results.\nRegulatory compliance status.\nRisk assessment outcome."
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval decisions may be categorized as:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Status",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Approved",
+           "Supplier meets business and ESG requirements."
+          ],
+          [
+           "Conditional Approval",
+           "Supplier approved subject to completion of corrective actions."
+          ],
+          [
+           "Rejected",
+           "Significant ESG or compliance concerns identified."
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Corrective Action Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where ESG gaps are identified, suppliers may be requested to implement corrective actions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Corrective actions may relate to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Health and safety deficiencies.\nEnvironmental non-compliance.\nLabour rights concerns.\nMissing policies or procedures.\nRegulatory compliance issues."
+        },
+        {
+         "type": "paragraph",
+         "text": "Suppliers shall provide evidence of corrective action completion within the agreed timeline."
+        },
+        {
+         "type": "paragraph",
+         "text": "Procurement and Sustainability teams shall verify closure of corrective actions."
+        }
+       ],
+       "responsible": "Procurement and Sustainability teams"
+      },
+      {
+       "heading": "Supplier Monitoring and Re-Evaluation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approved suppliers shall be monitored periodically to ensure continued compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Supplier performance reviews may consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Delivery performance.\nQuality performance.\nESG performance.\nRegulatory compliance status.\nCorrective action closure.\nHigh-Risk suppliers shall be reviewed annually."
+        },
+        {
+         "type": "paragraph",
+         "text": "Medium-Risk suppliers shall be reviewed every two years."
+        },
+        {
+         "type": "paragraph",
+         "text": "Low-Risk suppliers shall be reviewed every three years or when significant changes occur."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "ESG Risk Escalation Matrix",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Situation",
+        "Escalation To",
+        "Response Time"
+       ],
+       "rows": [
+        [
+         "Missing ESG documentation",
+         "Procurement Manager",
+         "Within 10 Working Days"
+        ],
+        [
+         "Minor ESG non-conformance",
+         "Sustainability Coordinator",
+         "Within 30 Days"
+        ],
+        [
+         "Significant ESG compliance concern",
+         "Procurement Head",
+         "Within 7 Days"
+        ],
+        [
+         "Child Labour, Forced Labour or Serious Human Rights Violation",
+         "Senior Management",
+         "Immediate"
+        ],
+        [
+         "Regulatory violation or environmental incident",
+         "Senior Management",
+         "Immediate"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records Maintained",
+     "rows": [
+      {
+       "record": "Supplier Registration Forms",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "ESG Risk Assessment Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Supplier ESG Questionnaires",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Supplier Evaluation Reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Corrective Action Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Supplier Monitoring Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Approved Vendor List",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Supplier Audit Reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "ESG Performance Review Reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Climate-Related Risk and Operational Resilience Procedure",
+   "code": "",
+   "catalogId": "climate-risk",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Department",
+   "sourceWords": 936,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes a systematic framework for identifying, assessing, mitigating, and monitoring climate-related risks, physical hazards, and business disruption risks that may affect employees, facilities, utilities, information systems, supply chain operations, product delivery, and business continuity at Tagoor Laboratories Pvt Ltd."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objective is to improve organizational resilience, minimize operational disruptions, protect employees and assets, maintain regulatory compliance, and ensure continuity of critical business activities during emergencies and unforeseen events."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Manufacturing operations.\nUtility and engineering systems.\nWarehouse and storage facilities.\nAdministrative offices.\nInformation technology infrastructure.\nLogistics and transportation activities.\nContractors and service providers operating at company premises."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure covers climate-related hazards, physical hazards, utility failures, infrastructure disruptions, supply chain interruptions, and emergency recovery activities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve climate resilience and business continuity strategies.",
+        "Allocate resources for risk mitigation initiatives.",
+        "Review significant climate and business continuity risks annually."
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Conduct climate and physical hazard assessments.",
+        "Maintain the Climate Risk Register.",
+        "Coordinate emergency preparedness activities.",
+        "Monitor implementation of mitigation measures."
+       ]
+      },
+      {
+       "role": "Engineering Department",
+       "responsibilities": [
+        "Maintain critical utilities and infrastructure.",
+        "Implement engineering controls for identified risks.",
+        "Maintain backup power and utility systems."
+       ]
+      },
+      {
+       "role": "Information Technology Department",
+       "responsibilities": [
+        "Maintain data backup and recovery systems.",
+        "Ensure continuity of critical IT infrastructure."
+       ]
+      },
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Assess supply chain vulnerabilities.",
+        "Identify alternate suppliers for critical materials."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Identify department-specific continuity requirements.",
+        "Support implementation of risk mitigation measures."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Follow emergency procedures.",
+        "Participate in emergency drills.",
+        "Report hazards and emergency situations immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Climate and Physical Hazard Assessment",
+     "steps": [
+      {
+       "heading": "Climate and Physical Hazard Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The EHS Department shall conduct a Climate Risk and Physical Hazard Assessment annually and whenever significant changes occur to operations, facilities, or infrastructure."
+        },
+        {
+         "type": "paragraph",
+         "text": "The assessment shall evaluate the following hazards:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Hazard",
+          "Potential Impact"
+         ],
+         "rows": [
+          [
+           "Extreme Heat",
+           "Heat stress, reduced productivity, increased cooling demand"
+          ],
+          [
+           "Heavy Rainfall",
+           "Site access restrictions, water ingress, logistics delays"
+          ],
+          [
+           "Flooding",
+           "Damage to equipment, inventory loss, operational disruption"
+          ],
+          [
+           "Water Scarcity",
+           "Reduced water availability for manufacturing and domestic use"
+          ],
+          [
+           "Storms and Cyclones",
+           "Structural damage, power outages, transportation disruption"
+          ],
+          [
+           "Power Failure",
+           "Production stoppage and utility interruption"
+          ],
+          [
+           "Fire",
+           "Injury, asset damage, business interruption"
+          ],
+          [
+           "Chemical Spill",
+           "Environmental contamination and safety incidents"
+          ],
+          [
+           "Equipment Failure",
+           "Production downtime and delayed deliveries"
+          ],
+          [
+           "IT System Failure",
+           "Loss of business-critical information and operational disruption"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Each identified risk shall be evaluated based on likelihood, severity, and business impact."
+        }
+       ],
+       "responsible": "EHS Department"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Climate Risk Mitigation Measures",
+     "steps": [
+      {
+       "heading": "Extreme Heat Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where workplace temperatures exceed safe operating conditions:"
+        },
+        {
+         "type": "bullets",
+         "text": "Drinking water stations shall be available in operational areas.\nVentilation and cooling systems shall be maintained.\nHeat-generating equipment shall be monitored.\nEmployees exposed to high-temperature environments shall receive heat stress awareness training."
+        }
+       ]
+      },
+      {
+       "heading": "Heavy Rainfall and Flood Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Prior to the monsoon season:"
+        },
+        {
+         "type": "bullets",
+         "text": "Drainage systems shall be inspected and cleaned.\nRoofs and rainwater channels shall be inspected.\nFlood-prone areas shall be identified and monitored.\nCritical equipment and inventory shall be protected from potential water damage."
+        },
+        {
+         "type": "paragraph",
+         "text": "Raw materials, finished goods, and critical records shall be stored in designated protected locations."
+        }
+       ]
+      },
+      {
+       "heading": "Water Scarcity Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monitor monthly water consumption.\nMaintain water storage facilities.\nPromote water conservation measures.\nEvaluate opportunities for rainwater harvesting and water recycling."
+        }
+       ]
+      },
+      {
+       "heading": "Power Disruption Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall maintain backup power systems to support critical operations including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Manufacturing equipment.\nLaboratory operations.\nInformation technology systems.\nEmergency lighting.\nFire protection systems."
+        },
+        {
+         "type": "paragraph",
+         "text": "Emergency generators shall be inspected and tested periodically."
+        }
+       ]
+      },
+      {
+       "heading": "Physical Hazard Control Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "9.6 Physical Hazard Control Measures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Fire Prevention and Protection. The Company shall maintain:"
+        },
+        {
+         "type": "bullets",
+         "text": "Fire detection systems.\nFire extinguishers.\nHydrant systems where applicable.\nEmergency evacuation procedures."
+        },
+        {
+         "type": "paragraph",
+         "text": "Fire safety inspections shall be conducted periodically."
+        },
+        {
+         "type": "paragraph",
+         "text": "Chemical Spill Preparedness. The Company shall maintain:"
+        },
+        {
+         "type": "bullets",
+         "text": "Spill response kits.\nChemical handling procedures.\nEmergency response instructions.\nAppropriate personal protective equipment."
+        },
+        {
+         "type": "paragraph",
+         "text": "Employees involved in chemical handling shall receive appropriate training."
+        },
+        {
+         "type": "paragraph",
+         "text": "Equipment and Utility Failure Prevention. Critical equipment shall be covered under preventive maintenance programmes. Maintenance activities shall include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Inspection.\nTesting.\nCalibration, where applicable.\nReplacement of worn components."
+        },
+        {
+         "type": "paragraph",
+         "text": "Infrastructure Protection. Buildings, warehouses, utility areas, and storage facilities shall be inspected periodically to identify structural risks and maintenance requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Business Continuity Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "9.7 Business Continuity Planning. The Company shall maintain a documented Business Continuity Plan (BCP) covering critical operational activities. The BCP shall identify:"
+        },
+        {
+         "type": "bullets",
+         "text": "Critical business functions.\nKey personnel and responsibilities.\nEmergency communication channels.\nUtility recovery arrangements.\nAlternative operating arrangements.\nRecovery priorities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Each department shall identify activities essential for maintaining business operations during disruptions."
+        }
+       ]
+      },
+      {
+       "heading": "Supply Chain Continuity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "9.8 Supply Chain Continuity. The Procurement Department shall annually assess risks associated with critical suppliers and service providers. The assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Geographic location.\nClimate-related risks.\nTransportation risks.\nDependency on single-source suppliers.\nHistorical supply disruptions."
+        },
+        {
+         "type": "paragraph",
+         "text": "Where feasible, alternate suppliers shall be identified for critical raw materials and services."
+        }
+       ],
+       "responsible": "Procurement Department"
+      },
+      {
+       "heading": "Information Technology and Data Continuity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "9.9 Information Technology and Data Continuity. The IT Department shall maintain measures to protect critical business information. Controls shall include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Daily data backup.\nSecure backup storage.\nControlled access to information systems.\nCybersecurity protection measures.\nPeriodic testing of data recovery capabilities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Critical operational, quality, regulatory, and business records shall be protected from loss or unauthorized access."
+        }
+       ],
+       "responsible": "Information Technology Department"
+      },
+      {
+       "heading": "Emergency Response and Recovery",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "9.10 Emergency Response and Recovery. Following a climate event, physical hazard incident, or significant disruption:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Initial Response"
+        },
+        {
+         "type": "bullets",
+         "text": "Ensure employee safety.\nSecure affected areas.\nActivate emergency response procedures.\nNotify relevant management personnel."
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact Assessment. Responsible departments shall assess:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employee impacts.\nFacility damage.\nEquipment damage.\nUtility disruptions.\nInventory losses.\nSupply chain impacts."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recovery Activities. The Company shall prioritize restoration of:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employee safety systems.\nUtilities.\nInformation systems.\nManufacturing operations.\nCustomer commitments."
+        },
+        {
+         "type": "paragraph",
+         "text": "Corrective actions shall be implemented to prevent recurrence where applicable."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Relevant employees shall receive training on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Climate-related risks.\nEmergency response procedures.\nFire safety.\nSpill response.\nBusiness continuity responsibilities.\nEvacuation procedures."
+      },
+      {
+       "type": "paragraph",
+       "text": "Emergency drills may be conducted at least annually."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "The Company shall monitor:"
+      },
+      {
+       "type": "bullets",
+       "text": "Climate risk assessments completed.\nPhysical hazard assessments completed.\nEmergency drills conducted.\nBusiness continuity tests performed.\nClimate-related disruptions.\nUtility interruptions.\nCorrective actions implemented."
+      },
+      {
+       "type": "paragraph",
+       "text": "Results shall be reviewed by Senior Management annually."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Confidential Information, Data Protection and Stakeholder Consent Procedure",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "Information Technology (IT)",
+   "owner": "Information Technology Department",
+   "sourceWords": 822,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes the requirements for the collection, processing, storage, access, sharing, retention, and disposal of confidential information and personal data at Tagoor Laboratories Pvt Ltd.\n\nThe objective is to protect employee, customer, supplier, contractor, and business information from unauthorized access, disclosure, alteration, loss, theft, or misuse while ensuring that personal information is collected and processed only for legitimate business purposes and with appropriate stakeholder consent where required."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all employees, contract workers, consultants, suppliers, service providers, customers, visitors, and other stakeholders whose information is collected, processed, stored, or maintained by Tagoor Laboratories Pvt Ltd.\n\nThe procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Employee records.\nRecruitment and applicant information.\nCustomer information.\nSupplier and contractor information.\nBusiness contracts and agreements.\nFinancial and commercial records.\nElectronic databases and software systems.\nEmails and electronic communications.\nPhysical documents and records."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Provide oversight for information security and data protection practices.",
+        "Review significant data protection risks and incidents.",
+        "Ensure adequate resources are available for implementation of this procedure."
+       ]
+      },
+      {
+       "role": "Information Technology Department",
+       "responsibilities": [
+        "Maintain information security controls.",
+        "Manage user access rights.",
+        "Protect electronic information and databases.",
+        "Conduct periodic system backups.",
+        "Monitor cybersecurity risks."
+       ]
+      },
+      {
+       "role": "Human Resources Department",
+       "responsibilities": [
+        "Maintain confidentiality of employee and applicant records.",
+        "Obtain employee consent where required.",
+        "Restrict access to personnel records."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure confidential information is used only for legitimate business purposes.",
+        "Approve access to sensitive information where applicable.",
+        "Report data protection incidents."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Protect confidential information under their control.",
+        "Follow data protection requirements.",
+        "Report actual or suspected breaches immediately."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Measures and Procedures",
+     "steps": [
+      {
+       "heading": "Collection of Information",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall collect only information necessary for operational, employment, legal, contractual, regulatory, quality, safety, or business purposes.\n\nInformation may be collected through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employment applications.\nVendor registration forms.\nCustomer agreements.\nContracts and purchase orders.\nRegulatory submissions.\nBusiness correspondence."
+        },
+        {
+         "type": "paragraph",
+         "text": "Personal information shall not be collected beyond legitimate business requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Stakeholder Consent",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Consent shall be obtained where required before collecting, processing, storing, or sharing personal information.\n\nConsent may be obtained through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employment application forms.\nAppointment letters and employment contracts.\nSupplier registration forms.\nService agreements.\nCustomer agreements.\nWritten declarations and consent forms.\nElectronic acceptance records."
+        },
+        {
+         "type": "paragraph",
+         "text": "Stakeholders shall be informed regarding:"
+        },
+        {
+         "type": "bullets",
+         "text": "Purpose of information collection.\nIntended use of information.\nInformation sharing requirements, where applicable.\nRecord retention practices."
+        }
+       ]
+      },
+      {
+       "heading": "Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Access to confidential information shall be granted only to authorized personnel based on job responsibilities and business requirements.\n\nControl measures may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Password-protected systems.\nUser access permissions.\nLocked storage cabinets.\nController server access.\nRestricted document access."
+        },
+        {
+         "type": "paragraph",
+         "text": "Access rights shall be reviewed periodically and revoked when employees leave the organization or change roles."
+        }
+       ]
+      },
+      {
+       "heading": "Protection of Electronic Information",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Electronic information shall be protected through appropriate information security controls including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Password protection.\nMulti-user access controls.\nAntivirus and malware protection.\nFirewall protection.\nSecure data storage.\nRegular software updates.\nData backup procedures."
+        },
+        {
+         "type": "paragraph",
+         "text": "Critical business systems shall be accessible only to authorized users."
+        }
+       ]
+      },
+      {
+       "heading": "Protection of Physical Records",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Confidential physical records shall be stored in secured locations with controlled access.\n\nExamples include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employee files.\nPayroll records.\nCustomer records.\nSupplier records.\nRegulatory documents.\nContracts and agreements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Unauthorized copying, removal, or disclosure of confidential records is prohibited."
+        }
+       ]
+      },
+      {
+       "heading": "Confidentiality Obligations",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees, contractors, consultants, and third parties with access to confidential information shall maintain confidentiality during and after their engagement with the Company.\n\nConfidential information shall not be:"
+        },
+        {
+         "type": "bullets",
+         "text": "Shared with unauthorized individuals.\nUsed for personal benefit.\nDisclosed outside the organization without approval.\nDistributed through unauthorized channels."
+        },
+        {
+         "type": "paragraph",
+         "text": "Confidentiality obligations may be supported through Non-Disclosure Agreements (NDAs) or contractual confidentiality clauses."
+        }
+       ]
+      },
+      {
+       "heading": "Information Sharing and Third-Party Disclosure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Confidential or personal information shall only be disclosed:"
+        },
+        {
+         "type": "bullets",
+         "text": "For legitimate business purposes.\nUnder legal or regulatory requirements.\nUnder contractual obligations.\nWith stakeholder consent where applicable."
+        },
+        {
+         "type": "paragraph",
+         "text": "Before sharing information with external parties, the responsible department shall ensure appropriate confidentiality safeguards are in place."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention and Record Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Information shall be retained according to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Legal requirements.\nRegulatory obligations.\nContractual requirements.\nBusiness needs."
+        },
+        {
+         "type": "paragraph",
+         "text": "When records are no longer required, disposal shall be performed securely through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Shredding of physical documents.\nPermanent deletion of electronic files.\nSecure destruction methods approved by the Company."
+        }
+       ]
+      },
+      {
+       "heading": "Data Breach and Incident Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Any actual or suspected data breach shall be reported immediately to the Department Head, HR Department, IT Department, or Management.\n\nThe investigation shall evaluate:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of the breach.\nInformation affected.\nRoot cause.\nPotential business impact.\nCorrective actions required."
+        },
+        {
+         "type": "paragraph",
+         "text": "Appropriate containment, corrective, and preventive actions shall be implemented to reduce the risk of recurrence."
+        }
+       ]
+      },
+      {
+       "heading": "Training and Awareness",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees handling confidential information shall receive periodic awareness training on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Data protection requirements.\nConfidentiality obligations.\nInformation security practices.\nCybersecurity awareness.\nData breach reporting procedures."
+        },
+        {
+         "type": "paragraph",
+         "text": "Training records shall be maintained by the relevant department."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "The effectiveness of this procedure may be monitored through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Number of data protection incidents reported.\nNumber of information security incidents.\nCompletion of data protection training.\nAccess control reviews completed.\nData breach investigations closed.\nCompliance with confidentiality requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "Significant incidents shall be reported to Senior Management for review and corrective action."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cyber Incident Response and Business Recovery Procedure",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "Information Technology (IT)",
+   "owner": "IT Manager",
+   "sourceWords": 606,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes a structured approach for identifying, reporting, assessing, responding to, containing, investigating, recovering from, and preventing information security incidents that may impact the confidentiality, integrity, or availability of company information, systems, applications, networks, and business operations.\n\nThe procedure aims to minimize operational disruption, protect confidential information, support business continuity, and strengthen the Company's cybersecurity resilience."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees, contractors, consultants, and temporary personnel.\nInformation systems and applications.\nCompany-owned computers, laptops, servers, mobile devices, and storage media.\nEmail and communication platforms.\nCloud-based services and databases.\nNetwork infrastructure.\nThird-party systems connected to Company networks."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Monitor information security incidents.",
+        "Coordinate incident response activities.",
+        "Investigate security events.",
+        "Implement containment and recovery actions.",
+        "Maintain incident records."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Immediately report suspected security incidents.",
+        "Follow information security requirements.",
+        "Cooperate with investigations."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Support incident investigations.",
+        "Ensure affected employees follow recovery requirements.",
+        "Escalate significant incidents to Management."
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Review significant incidents.",
+        "Approve major recovery actions where required.",
+        "Support implementation of corrective actions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Procedure",
+     "steps": [
+      {
+       "heading": "Incident Identification and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Information security incidents may be identified through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employee reports.\nSecurity monitoring tools.\nAntivirus alerts.\nNetwork monitoring systems.\nSystem access logs.\nThird-party notifications."
+        },
+        {
+         "type": "paragraph",
+         "text": "Examples include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Phishing emails.\nMalware infections.\nRansomware attacks.\nUnauthorized access attempts.\nLoss of devices containing company information.\nData leakage incidents.\nSystem compromise.\nUnauthorized disclosure of confidential information."
+        },
+        {
+         "type": "paragraph",
+         "text": "All suspected incidents shall be reported to the IT Department immediately upon discovery."
+        }
+       ],
+       "responsible": "Employees"
+      },
+      {
+       "heading": "Incident Assessment and Classification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The IT Department shall evaluate:"
+        },
+        {
+         "type": "bullets",
+         "text": "Type of incident.\nSystems affected.\nInformation affected.\nPotential business impact.\nRegulatory implications.\nRecovery requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Incidents may be classified as:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Classification",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Critical",
+           "Significant business disruption, ransomware, major data breach"
+          ],
+          [
+           "High",
+           "Unauthorized access, confidential data exposure"
+          ],
+          [
+           "Medium",
+           "Malware infection or localized system compromise"
+          ],
+          [
+           "Low",
+           "Minor security violation with limited impact"
+          ]
+         ]
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Containment Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The IT Department shall take immediate action to limit the impact of the incident.\n\nContainment measures may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Disconnecting affected devices.\nBlocking malicious network activity.\nDisabling compromised accounts.\nRestricting unauthorized access.\nIsolating affected systems."
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Investigation and Root Cause Analysis",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The IT Department shall investigate:"
+        },
+        {
+         "type": "bullets",
+         "text": "Source of the incident.\nMethod of compromise.\nSystems and information affected.\nDuration of exposure.\nBusiness impact."
+        },
+        {
+         "type": "paragraph",
+         "text": "Root cause analysis shall be documented for significant incidents."
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Recovery and Restoration",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Following containment and investigation, recovery activities shall be initiated.\n\nActions may include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Restoration of systems from backups.\nReinstallation of software.\nRecovery of business data.\nValidation of system functionality.\nRestoration of network connectivity.\nSecurity testing prior to returning systems to operation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Critical business systems shall be prioritized during recovery."
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Incident Closure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "An incident may be closed after:"
+        },
+        {
+         "type": "bullets",
+         "text": "Recovery activities are completed.\nCorrective actions are implemented.\nSystems are verified as operational.\nIncident documentation is completed."
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval for closure shall be provided by the IT Manager or designated authority."
+        }
+       ],
+       "responsible": "IT Manager"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Data Backup and Business Continuity",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To support recovery activities:"
+      },
+      {
+       "type": "bullets",
+       "text": "Critical business data shall be backed up regularly.\nBackup records shall be maintained securely.\nRecovery testing shall be conducted periodically.\nAccess to backup systems shall be restricted."
+      },
+      {
+       "type": "paragraph",
+       "text": "Where security incidents impact business operations, applicable Business Continuity Plans shall be activated."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Corrective and Preventive Actions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Following incident closure, corrective actions may include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Security patch implementation.\nPassword resets.\nAccess control improvements.\nInfrastructure upgrades.\nAdditional employee training.\nPolicy revisions.\nEnhanced monitoring controls."
+      },
+      {
+       "type": "paragraph",
+       "text": "Actions shall be tracked to completion."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Employees shall receive periodic awareness training on:"
+      },
+      {
+       "type": "bullets",
+       "text": "Phishing prevention.\nPassword security.\nSafe use of information systems.\nData protection requirements.\nIncident reporting procedures."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "The Company may monitor:"
+      },
+      {
+       "type": "bullets",
+       "text": "Number of information security incidents.\nData breach incidents.\nPhishing reports.\nMalware incidents.\nIncident response times.\nRecovery completion times.\nCorrective actions completed."
+      },
+      {
+       "type": "paragraph",
+       "text": "Significant incidents shall be reviewed by Senior Management."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Authorization and Approval Matrix for Financial, Procurement and Business Transactions Procedure",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "Finance",
+   "owner": "Managing Director",
+   "sourceWords": 826,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes a structured authorization and approval framework for financial, procurement, contractual, operational, and administrative transactions undertaken by Tagoor Laboratories Pvt Ltd."
+      },
+      {
+       "type": "paragraph",
+       "text": "The purpose of this procedure is to ensure that all transactions are properly reviewed, approved by authorized personnel, supported by appropriate documentation, aligned with approved budgets, and executed in accordance with the Company's internal control requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure also aims to prevent unauthorized commitments, financial irregularities, conflicts of interest, fraud, and approval bypasses."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all departments and employees involved in initiating, reviewing, approving, processing, recording, or monitoring transactions, including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Purchase requisitions\nPurchase orders\nVendor onboarding\nCapital expenditure (CAPEX)\nOperational expenditure (OPEX)\nService contracts and agreements\nConsultancy engagements\nEmployee reimbursements\nVendor payments\nAsset purchases and disposals\nDonations and sponsorships\nBusiness commitments involving financial obligations"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Managing Director",
+       "responsibilities": [
+        "Approve high-value transactions and strategic commitments.",
+        "Approve major contracts and capital investments.",
+        "Review exceptional transactions exceeding approval limits."
+       ]
+      },
+      {
+       "role": "Finance Department",
+       "responsibilities": [
+        "Verify budget availability.",
+        "Review financial implications.",
+        "Process payments after approval verification.",
+        "Maintain transaction records."
+       ]
+      },
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Verify procurement approvals.",
+        "Conduct vendor due diligence.",
+        "Maintain supplier records and purchasing documentation."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Initiate and justify business requirements.",
+        "Review operational necessity.",
+        "Approve transactions within authorized limits."
+       ]
+      },
+      {
+       "role": "Compliance / Internal Audit",
+       "responsibilities": [
+        "Review adherence to authorization controls.",
+        "Identify approval violations and control weaknesses."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "General Approval Requirements",
+     "steps": [
+      {
+       "heading": "General Approval Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All transactions shall:"
+        },
+        {
+         "type": "bullets",
+         "text": "Have a valid business justification.\nBe supported by appropriate documentation.\nBe approved before execution.\nComply with approved budgets.\nBe processed through authorized approval channels.\nBe retained for audit and verification purposes."
+        },
+        {
+         "type": "paragraph",
+         "text": "No employee shall approve a transaction that directly benefits themselves or creates a conflict of interest."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Financial Authorization Matrix",
+     "steps": [
+      {
+       "heading": "Financial Authorization Matrix",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Transaction Value (INR)",
+          "Approval Authority"
+         ],
+         "rows": [
+          [
+           "Up to ₹25,000",
+           "Department Head"
+          ],
+          [
+           "₹25,001 – ₹1,00,000",
+           "Department Head + Finance Manager"
+          ],
+          [
+           "₹1,00,001 – ₹5,00,000",
+           "Functional Head + Finance Head"
+          ],
+          [
+           "₹5,00,001 – ₹20,00,000",
+           "Director / Plant Head"
+          ],
+          [
+           "Above ₹20,00,000",
+           "Managing Director"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Transactions exceeding approved budgets shall require additional approval from Management."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procurement Authorization Procedure",
+     "steps": [
+      {
+       "heading": "Procurement Authorization Procedure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All procurement activities shall follow the approved procurement process."
+        },
+        {
+         "type": "paragraph",
+         "text": "Purchase Requisition"
+        },
+        {
+         "type": "paragraph",
+         "text": "The requesting department shall submit a Purchase Requisition containing:"
+        },
+        {
+         "type": "bullets",
+         "text": "Description of item or service.\nQuantity required.\nBusiness justification.\nEstimated value.\nRequired delivery date."
+        },
+        {
+         "type": "paragraph",
+         "text": "Procurement Approval Matrix"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Procurement Value (INR)",
+          "Approval Requirement"
+         ],
+         "rows": [
+          [
+           "Up to ₹25,000",
+           "Department Head"
+          ],
+          [
+           "₹25,001 – ₹1,00,000",
+           "Department Head + Finance"
+          ],
+          [
+           "₹1,00,001 – ₹5,00,000",
+           "Functional Head"
+          ],
+          [
+           "₹5,00,001 – ₹20,00,000",
+           "Director"
+          ],
+          [
+           "Above ₹20,00,000",
+           "Managing Director"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Approved Purchase Orders shall be issued before procurement activities commence."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Vendor Approval and Creation",
+     "steps": [
+      {
+       "heading": "Vendor Approval and Creation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Before onboarding a vendor, the following documents shall be verified:"
+        },
+        {
+         "type": "bullets",
+         "text": "GST Registration Certificate.\nPAN Card.\nBank Account Details.\nCompany Registration Certificate.\nMSME Certificate (where applicable).\nCancelled Cheque.\nBusiness Licenses and Permits."
+        },
+        {
+         "type": "paragraph",
+         "text": "Vendor creation shall require review by Procurement and Finance Departments.\n\nHigh-risk vendors may require additional management approval.\n\nOnly approved vendors shall be used for procurement activities."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Contract and Agreement Approval",
+     "steps": [
+      {
+       "heading": "Contract and Agreement Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All contracts shall be reviewed prior to execution.\n\nThe review shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Scope of work.\nCommercial terms.\nPayment conditions.\nCompliance obligations.\nConfidentiality requirements.\nLegal and regulatory implications."
+        },
+        {
+         "type": "paragraph",
+         "text": "Contract Approval Matrix"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Contract Value (INR)",
+          "Approval Authority"
+         ],
+         "rows": [
+          [
+           "Up to ₹5,00,000",
+           "Functional Head"
+          ],
+          [
+           "₹5,00,001 – ₹20,00,000",
+           "Director"
+          ],
+          [
+           "Above ₹20,00,000",
+           "Managing Director"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Only authorized signatories may sign contracts on behalf of the Company."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Payment Authorization Procedure",
+     "steps": [
+      {
+       "heading": "Payment Authorization Procedure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All payments shall be supported by:"
+        },
+        {
+         "type": "bullets",
+         "text": "Approved Purchase Order.\nVendor Invoice.\nGoods Receipt Note (GRN) or Service Completion Confirmation.\nPayment Approval Form."
+        },
+        {
+         "type": "paragraph",
+         "text": "Payment Approval Matrix"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Payment Amount (INR)",
+          "Approval Authority"
+         ],
+         "rows": [
+          [
+           "Up to ₹50,000",
+           "Finance Manager"
+          ],
+          [
+           "₹50,001 – ₹2,00,000",
+           "Finance Head"
+          ],
+          [
+           "₹2,00,001 – ₹10,00,000",
+           "Director"
+          ],
+          [
+           "Above ₹10,00,000",
+           "Managing Director"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Payments shall not be processed without supporting documentation."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Employee Reimbursement and Advance Approval",
+     "steps": [
+      {
+       "heading": "Employee Reimbursement and Advance Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees seeking reimbursement shall submit:"
+        },
+        {
+         "type": "bullets",
+         "text": "Expense Claim Form.\nOriginal receipts or invoices.\nSupporting approvals."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reimbursement Approval Matrix"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Claim Amount (INR)",
+          "Approval Authority"
+         ],
+         "rows": [
+          [
+           "Up to ₹10,000",
+           "Reporting Manager"
+          ],
+          [
+           "₹10,001 – ₹50,000",
+           "Department Head"
+          ],
+          [
+           "Above ₹50,000",
+           "Finance Head"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Incomplete claims may be rejected."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Capital Expenditure (CAPEX) Approval",
+     "steps": [
+      {
+       "heading": "Capital Expenditure (CAPEX) Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "CAPEX proposals shall include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Business justification.\nTechnical specifications.\nCost estimate.\nVendor quotation(s).\nExpected business benefits."
+        },
+        {
+         "type": "paragraph",
+         "text": "CAPEX Approval Matrix"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "CAPEX Value (INR)",
+          "Approval Authority"
+         ],
+         "rows": [
+          [
+           "Up to ₹5,00,000",
+           "Department Head + Finance"
+          ],
+          [
+           "₹5,00,001 – ₹20,00,000",
+           "Director"
+          ],
+          [
+           "Above ₹20,00,000",
+           "Managing Director"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "No capital asset purchase shall be initiated without approved CAPEX authorization."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Donations, Sponsorships and Contributions",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All donations and sponsorships shall:"
+      },
+      {
+       "type": "bullets",
+       "text": "Be lawful and transparent.\nHave a legitimate business or social purpose.\nBe supported by documentation.\nReceive management approval before commitment."
+      },
+      {
+       "type": "paragraph",
+       "text": "Political contributions shall not be made unless specifically permitted by applicable law and approved by the Managing Director."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Segregation of Duties",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To strengthen internal controls:"
+      },
+      {
+       "type": "bullets",
+       "text": "Requestor and approver shall be different individuals.\nProcurement and payment functions shall be segregated.\nVendor creation and payment approval shall not be performed by the same employee.\nFinancial system access shall be restricted to authorized personnel."
+      },
+      {
+       "type": "paragraph",
+       "text": "Any exceptions shall be documented and approved by Management."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Compliance with this procedure shall be monitored through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Internal audits.\nFinancial reviews.\nProcurement reviews.\nPayment verification checks.\nVendor management reviews."
+      },
+      {
+       "type": "paragraph",
+       "text": "Significant control violations shall be reported to Senior Management."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Non-compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Failure to comply with this procedure may result in:"
+      },
+      {
+       "type": "bullets",
+       "text": "Transaction rejection.\nCorrective action.\nDisciplinary action.\nInvestigation of potential misconduct."
+      },
+      {
+       "type": "paragraph",
+       "text": "Unauthorized commitments made without approval may be considered a violation of Company policy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Grievance Management and Remediation Procedure",
+   "code": "",
+   "catalogId": "grievance-handling",
+   "pillar": "G",
+   "department": "Management",
+   "owner": "Human Resources Department",
+   "sourceWords": 921,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure establishes a formal mechanism for employees, contract workers, suppliers, contractors, customers, local communities, and other stakeholders to raise grievances, concerns, or complaints regarding labour practices, human rights, workplace conditions, ethics, environmental issues, health and safety matters, corruption, discrimination, harassment, or violations of company policies."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure also establishes a structured remediation process to investigate confirmed concerns, implement corrective actions, address adverse impacts on affected stakeholders, and prevent recurrence."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Permanent employees.\nContract workers and temporary workers.\nApprentices and trainees.\nSuppliers and contractors.\nService providers.\nCustomers.\nLocal communities.\nOther stakeholders interacting with Tagoor Laboratories Pvt Ltd."
+      },
+      {
+       "type": "paragraph",
+       "text": "The procedure covers concerns relating to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Human rights and labour practices.\nHarassment and discrimination.\nWage and benefit issues.\nWorking conditions and working hours.\nOccupational health and safety.\nEnvironmental impacts.\nEthical misconduct.\nCorruption and bribery.\nSupplier non-compliance.\nViolations of company policies and applicable legal requirements."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Human Resources Department",
+       "responsibilities": [
+        "Receive and register grievances.",
+        "Maintain grievance records.",
+        "Coordinate investigations.",
+        "Monitor closure of corrective actions and remediation plans."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Support investigations.",
+        "Provide relevant information and records.",
+        "Implement agreed corrective actions."
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Investigate health, safety, and environmental concerns.",
+        "Verify implementation of corrective actions."
+       ]
+      },
+      {
+       "role": "Compliance / Management",
+       "responsibilities": [
+        "Review significant grievances.",
+        "Approve remediation plans where necessary.",
+        "Monitor closure of critical issues."
+       ]
+      },
+      {
+       "role": "Employees and Stakeholders",
+       "responsibilities": [
+        "Raise concerns in good faith.",
+        "Cooperate with investigations.",
+        "Provide accurate information where available."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Grievance Reporting Channels",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Grievances may be submitted through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Reporting to Manager, Supervisor, Department Head or Human Resources Manager.\nEmail: hr@tagoorlab.com\nWritten Complaint submitted to the Human Resources Department.\nSuggestion / Complaint Box located at the facility.\nSenior Management"
+      },
+      {
+       "type": "paragraph",
+       "text": "The Company shall maintain confidentiality and protect complainants from retaliation to the extent practicable."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Grievance Management Process",
+     "steps": [
+      {
+       "heading": "13.5.1 Grievance Submission",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Stakeholders may submit grievances verbally, in writing, via email, complaint boxes, or through designated reporting channels."
+        },
+        {
+         "type": "paragraph",
+         "text": "Anonymous grievances may also be accepted where sufficient information is available to conduct a review."
+        }
+       ]
+      },
+      {
+       "heading": "13.5.2 Registration and Acknowledgement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Upon receipt:"
+        },
+        {
+         "type": "bullets",
+         "text": "The grievance shall be entered into the Grievance Register.\nA unique grievance reference number shall be assigned.\nThe date, source, and nature of the grievance shall be recorded."
+        },
+        {
+         "type": "paragraph",
+         "text": "Acknowledgement shall normally be provided within 7 working days where contact details are available."
+        }
+       ]
+      },
+      {
+       "heading": "13.5.3 Initial Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The grievance shall be assessed to determine:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of the issue.\nSeverity and urgency.\nStakeholders affected.\nPotential legal, ethical, environmental, health and safety, or human rights implications."
+        },
+        {
+         "type": "paragraph",
+         "text": "High-risk grievances involving child labour, forced labour, harassment, discrimination, corruption, environmental incidents, or serious safety concerns shall be escalated immediately to Management."
+        }
+       ]
+      },
+      {
+       "heading": "13.5.4 Investigation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Company shall investigate grievances through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Interviews with relevant personnel.\nReview of records and documents.\nSite inspections where necessary.\nCollection of supporting evidence."
+        },
+        {
+         "type": "paragraph",
+         "text": "Investigations shall be conducted fairly, objectively, and confidentially."
+        }
+       ]
+      },
+      {
+       "heading": "13.5.5 Investigation Outcome",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Investigation findings shall be documented and classified as:"
+        },
+        {
+         "type": "bullets",
+         "text": "Substantiated.\nPartially Substantiated.\nUnsubstantiated."
+        },
+        {
+         "type": "paragraph",
+         "text": "Where allegations are substantiated or partially substantiated, the matter shall proceed to the Remediation Process."
+        }
+       ]
+      },
+      {
+       "heading": "13.5.6 Communication and Closure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The complainant shall be informed of the outcome where appropriate and permitted by confidentiality requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "The grievance shall be formally closed after completion of the investigation and documentation of findings."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Remediation Process",
+     "steps": [
+      {
+       "heading": "13.6.1 Initiation of Remediation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A remediation process shall be initiated when investigations, audits, inspections, assessments, or monitoring activities confirm:"
+        },
+        {
+         "type": "bullets",
+         "text": "Human rights violations.\nLabour rights violations.\nWorkplace harassment or discrimination.\nWage or benefit non-compliance.\nHealth and safety deficiencies.\nEnvironmental incidents.\nEthical misconduct.\nSupplier non-compliance.\nRegulatory non-compliance."
+        }
+       ]
+      },
+      {
+       "heading": "13.6.2 Impact Assessment and Root Cause Analysis",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The responsible department shall evaluate:"
+        },
+        {
+         "type": "bullets",
+         "text": "The nature and severity of the issue.\nStakeholders affected.\nPotential legal and regulatory implications.\nBusiness impacts.\nRoot causes contributing to the issue.\nRisk of recurrence."
+        }
+       ]
+      },
+      {
+       "heading": "13.6.3 Remediation Action Plan",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A documented Remediation Action Plan shall be developed which includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Description of the issue.\nRoot cause identified.\nCorrective actions required.\nRemediation measures.\nResponsible person(s).\nTarget completion dates.\nVerification requirements."
+        }
+       ]
+      },
+      {
+       "heading": "13.6.4 Implementation of Remediation Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Remediation actions may include:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Issue Identified",
+          "Example Remediation Action"
+         ],
+         "rows": [
+          [
+           "Wage Underpayment",
+           "Payment of wage shortfall and payroll correction"
+          ],
+          [
+           "Excessive Working Hours",
+           "Revision of work schedules and workforce planning"
+          ],
+          [
+           "Harassment or Discrimination",
+           "Investigation, disciplinary action, counselling, awareness training"
+          ],
+          [
+           "Health and Safety Hazard",
+           "Hazard elimination and workplace improvements"
+          ],
+          [
+           "Child Labour",
+           "Immediate removal from work, protection of the child, support for continued education"
+          ],
+          [
+           "Forced Labour",
+           "Immediate cessation of practice and worker protection measures"
+          ],
+          [
+           "Environmental Incident",
+           "Containment, clean-up, corrective action and restoration"
+          ],
+          [
+           "Supplier Non-Compliance",
+           "Supplier Corrective Action Plan and follow-up verification"
+          ],
+          [
+           "Corruption or Ethical Misconduct",
+           "Investigation, disciplinary action, and control strengthening"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "13.6.5 Verification of Completion",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The responsible department shall verify that:"
+        },
+        {
+         "type": "bullets",
+         "text": "Corrective actions have been completed.\nRemediation commitments have been fulfilled.\nSupporting evidence is available.\nThe issue has been adequately addressed."
+        }
+       ]
+      },
+      {
+       "heading": "13.6.6 Effectiveness Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "An effectiveness review shall be conducted to determine whether:"
+        },
+        {
+         "type": "bullets",
+         "text": "Root causes have been eliminated.\nSimilar incidents are unlikely to recur.\nAdditional actions are required."
+        }
+       ]
+      },
+      {
+       "heading": "13.6.7 Remediation Closure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The remediation case shall be formally closed after:"
+        },
+        {
+         "type": "bullets",
+         "text": "Completion of corrective actions.\nVerification of effectiveness.\nApproval by the responsible department or Management."
+        },
+        {
+         "type": "paragraph",
+         "text": "Closure records shall be retained for future review and audit purposes."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Protection Against Retaliation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Company prohibits retaliation against any person who reports a concern or participates in an investigation in good faith."
+      },
+      {
+       "type": "paragraph",
+       "text": "Retaliation may include:"
+      },
+      {
+       "type": "bullets",
+       "text": "Dismissal or termination.\nDemotion.\nHarassment.\nIntimidation.\nDiscrimination.\nReduction of benefits or opportunities."
+      },
+      {
+       "type": "paragraph",
+       "text": "Any retaliation complaint shall be investigated separately and may result in disciplinary action."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "The Company shall monitor:"
+      },
+      {
+       "type": "bullets",
+       "text": "Number of grievances received.\nNumber of grievances resolved.\nAverage grievance closure time.\nHuman rights-related grievances.\nHealth and safety grievances.\nEthics and compliance concerns.\nCorrective actions completed within agreed timelines.\nRepeat grievance trends."
+      },
+      {
+       "type": "paragraph",
+       "text": "Significant grievances and remediation actions shall be periodically reviewed by Management."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

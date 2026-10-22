@@ -1,11 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { mockGenerate } from "@/lib/ai/mock";
 import { parseRequestedCount, type AIContext } from "@/lib/ai/prompts";
 import { buildTemplateContext } from "@/lib/ai/template-context";
 import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
+import { editPromptBody, editSourceText, isEditableTextType, parseEdit, textSectionName } from "@/lib/ai/policy-edit";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
 import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
 import { getCompanyClassificationContext } from "@/lib/company-classification";
+import {
+  ClaudeKeyMissingError,
+  ClaudeRefusalError,
+  cleanJsonText,
+  createClaudeText,
+  hasClaudeKey,
+  streamClaudeText,
+  type ClaudeRequest,
+} from "@/lib/ai/claude";
 import {
   getPolicyCraftAuthResult,
   parsePolicyCraftOrganizationSelector,
@@ -20,7 +29,7 @@ Use the provided reference policies as context for what to write and where to wr
 CRITICAL INSTRUCTION: Analyze the reference documents to see exactly how much content is written for the specific section you are generating. Your response MUST match the same length, depth, and structure. Do not generate a 5-paragraph essay for a section that is only 3 sentences in the reference policies.
 Always return valid JSON with no markdown fences.`;
 
-function buildPrompt(ctx: AIContext): { user: string; system: string } {
+function buildPrompt(ctx: AIContext): { user: string; system: string; context: string } {
   const p = ctx.policy;
   const profile = getPolicyProfile(p.policyType);
   const tpl = p.presentationTemplate || "standard";
@@ -45,7 +54,8 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
   const importedReference = buildImportedPolicyContext(ctx.referencePolicy, ctx.type);
   const co = p.company;
   const classificationContext = getCompanyClassificationContext(co);
-  const SYSTEM = `${SYSTEM_BASE}\n\nCOMPANY CLASSIFICATION CONTEXT: ${classificationContext || "Not provided"}. Treat these labels as factual company context and use the most specific supplied level when adapting content.\n\n${importedReference ? `${importedReference}\n\n` : ""}SECONDARY TEMPLATE CONTEXT: ${templateContext}\n\n${templateReferences}`;
+  const SYSTEM = SYSTEM_BASE;
+  const CONTEXT = `COMPANY CLASSIFICATION CONTEXT: ${classificationContext || "Not provided"}. Treat these labels as factual company context and use the most specific supplied level when adapting content.\n\n${importedReference ? `${importedReference}\n\n` : ""}SECONDARY TEMPLATE CONTEXT: ${templateContext}\n\n${templateReferences}`;
   const stds = p.standards.join(", ") || profile.standards.join(", ");
   const industry = co.industryDetail || co.subCategory || co.industry || "manufacturing";
   const company = co.name || "a manufacturing company";
@@ -74,26 +84,61 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
       }`
     : "";
 
+  // An edit changes what is already written, so the "only new points" and quantity rules above do not apply.
+  const current = ctx.edit ? editSourceText(ctx.existingContent) : "";
+  if (ctx.edit && current) {
+    if (isEditableTextType(ctx.type)) {
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit the ${textSectionName(ctx.type)} section of a ${profile.label} of ${company}.\n\n${editPromptBody(ctx.edit, "section text", current)}\nReturn JSON: {"text": "..."}`,
+      };
+    }
+    if (ctx.type === "qualitative") {
+      const area = p.focusAreas[ctx.areaIndex ?? 0] || "this focus area";
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit one qualitative objective for "${area}" in a ${profile.label} of ${company}.\n\n${editPromptBody(ctx.edit, "objective", current)}\nReturn JSON with exactly one objective: {"objectives": ["..."]}`,
+      };
+    }
+    if (ctx.type === "quantitative-refine") {
+      const area = ctx.areaName || p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
+      const rules = ctx.edit.action === "grammar"
+        ? "Return the target's baseline, deadline and reportingFrequency exactly as they are."
+        : quantitativeRules;
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit one quantitative target for "${area}" in a ${profile.label} of ${company}. The full current target is ${JSON.stringify(ctx.existingContent)}.\n\n${editPromptBody(ctx.edit, "target sentence", current)}\n${rules}\nReturn JSON with exactly one target: {"targets": [${targetShape}]}`,
+      };
+    }
+  }
+
   switch (ctx.type) {
     case "preface":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write a Preface for a ${profile.label} of ${company} in ${industry}, aligned with ${stds}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "declaration":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write a Policy Declaration for a ${profile.label} of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "scope":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write a Scope section for a ${profile.label} of ${company} operating at ${co.site || "its covered sites"}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "qualitative": {
       const area = p.focusAreas[ctx.areaIndex ?? 0] || "this focus area";
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write qualitative objectives for "${area}" in a ${profile.label} of ${company}.${existingStr}${customStr}\nIf no count is specified in the user directive, generate 3 new objectives. Return JSON: {"objectives": ["...", "..."]}`,
       };
     }
@@ -101,6 +146,7 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
       const area = p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write quantitative targets for "${area}" in a ${profile.label} of ${company}. ${quantitativeRules}${existingStr}${customStr}\nIf no count is specified in the user directive, generate 3 new targets. Return JSON: {"targets": [${targetShape}]}`,
       };
     }
@@ -108,6 +154,7 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
       const area = ctx.areaName || "this area";
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write 3 quantitative targets for the user-defined topic "${area}" in a ${profile.label} of ${company}. ${quantitativeRules}${customStr}\nReturn JSON: {"targets": [${targetShape}]}`,
       };
     }
@@ -115,33 +162,39 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
       const area = ctx.areaName || p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Refine this single quantitative target for "${area}" in a ${profile.label} of ${company}: ${JSON.stringify(ctx.existingContent)}. Preserve the user's intent while making it specific and measurable. ${quantitativeRules}${customStr}\nReturn JSON: {"targets": [${targetShape}]}`,
       };
     }
     case "sdg":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `For a ${profile.label} of ${company} in ${industry}, which UN SDG numbers are relevant?${existingStr}${customStr}\nReturn JSON: {"sdgs": [1,3,8]}`,
       };
     case "responsibilities":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write responsibilities for a ${profile.label} of ${company}.${existingStr}${customStr}\nIf no count is specified in the user directive, generate 5-6 responsibilities. Return JSON: {"responsibilities": [{"role": "...", "duty": "..."}]}`,
       };
     case "monitoring":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write a Monitoring, Reporting & Transparency section for a ${profile.label} of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "review":
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write a Review Mechanism & Continuous Improvement section for a ${profile.label} of ${company}. Name the responsible reviewer designation(s) explicitly (for example, Sustainability Manager, EHS Manager, Compliance Officer, or Executive Committee); do not refer only to a department or function. ${reviewerDesignations.length ? `Use these configured reviewer designation(s): ${reviewerDesignations.join(", ")}.` : "If no designation is configured, propose at least one suitable named designation."} State review frequency, triggers, approval, feedback, and communication.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "all":
     default:
       return {
         system: SYSTEM,
+        context: CONTEXT,
         user: `Write a 2-sentence summary for a ${profile.label} of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
   }
@@ -169,6 +222,7 @@ export async function POST(req: NextRequest) {
     throw error;
   }
   if (!access.auth) return access.response || NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!hasClaudeKey()) return NextResponse.json({ error: new ClaudeKeyMissingError().message }, { status: 503 });
 
   let ctx: AIContext;
   try {
@@ -179,54 +233,38 @@ export async function POST(req: NextRequest) {
   if (!ctx?.policy || !Object.prototype.hasOwnProperty.call(POLICY_PROFILES, ctx.policy.policyType)) {
     return NextResponse.json({ error: "Unsupported policy type" }, { status: 400 });
   }
-  const apiKey = process.env.OPENAI_API_KEY;
+  if (ctx.edit !== undefined) {
+    const edit = parseEdit(ctx.edit);
+    if (!edit) return NextResponse.json({ error: "Unsupported AI edit." }, { status: 400 });
+    ctx = { ...ctx, edit };
+  }
   const streaming = req.headers.get("accept")?.includes(NDJSON) ?? false;
 
-  if (streaming) return streamGeneration(ctx, apiKey, req.signal);
-
-  if (!apiKey) {
-    return NextResponse.json(mockGenerate(ctx));
-  }
+  if (streaming) return streamGeneration(ctx, req.signal);
 
   try {
-    const { user, system } = buildPrompt(ctx);
-    const res = await fetch(OPENAI_URL, {
-      method: "POST",
-      headers: openAIHeaders(apiKey),
-      body: JSON.stringify(openAIBody(system, user)),
-    });
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("OpenAI error", err);
-      return NextResponse.json(mockGenerate(ctx));
-    }
-    const data = await res.json();
-    const text = data.choices?.[0]?.message?.content || "";
+    const { text } = await createClaudeText(toClaudeRequest(ctx), req.signal);
     return NextResponse.json(finalizeModelOutput(text, ctx));
   } catch (e) {
+    if (e instanceof ClaudeRefusalError) return NextResponse.json({ error: "This section could not be generated. Try rephrasing the instruction." }, { status: 422 });
     console.error("AI route failed", e);
-    return NextResponse.json(mockGenerate(ctx));
+    return NextResponse.json({ error: "Generation failed. Please try again." }, { status: 502 });
   }
 }
 
 const NDJSON = "application/x-ndjson";
-const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
-const MODEL = "gpt-6-luna";
 
-const openAIHeaders = (apiKey: string) => ({ "Content-Type": "application/json", "Authorization": `Bearer ${apiKey}` });
-const openAIBody = (system: string, user: string, stream = false) => ({
-  model: MODEL,
-  response_format: { type: "json_object" },
-  ...(stream ? { stream: true } : {}),
-  messages: [
-    { role: "system", content: system },
-    { role: "user", content: user },
-  ],
-});
+/** Generous enough for the longest section (a full quantitative table), short enough to stay fast. */
+const POLICY_MAX_TOKENS = 6_000;
+
+function toClaudeRequest(ctx: AIContext): ClaudeRequest {
+  const { system, context, user } = buildPrompt(ctx);
+  return { system, cachedContext: context, user, maxTokens: POLICY_MAX_TOKENS, effort: "low" };
+}
 
 /** Turns the model's raw JSON text into the response the builder expects. */
 function finalizeModelOutput(text: string, ctx: AIContext) {
-  const clean = text.replace(/```json|```/g, "").trim();
+  const clean = cleanJsonText(text);
   try {
     const parsed = JSON.parse(clean);
     if (Array.isArray(parsed.targets)) {
@@ -234,9 +272,9 @@ function finalizeModelOutput(text: string, ctx: AIContext) {
         normalizeQuantitativeTarget(target, ctx.policy.company.reportingPeriod || "FY")
       );
     }
-    return { ...parsed, source: "openai" };
+    return { ...parsed, source: "claude" };
   } catch {
-    return { text: clean, source: "openai" };
+    return { text: clean, source: "claude" };
   }
 }
 
@@ -245,10 +283,9 @@ type StreamEvent = { delta: string } | { done: true; result: unknown } | { error
 /**
  * Streams a generation as newline-delimited JSON: `delta` events carry the
  * model's raw JSON text as it arrives, and one `done` event carries the final,
- * normalised result. Without an API key the mock answer is streamed the same
- * way so the writing experience matches.
+ * normalised result, or one `error` event.
  */
-function streamGeneration(ctx: AIContext, apiKey: string | undefined, signal: AbortSignal) {
+function streamGeneration(ctx: AIContext, signal: AbortSignal) {
   const encoder = new TextEncoder();
   const body = new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -256,8 +293,7 @@ function streamGeneration(ctx: AIContext, apiKey: string | undefined, signal: Ab
         if (!signal.aborted) controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`));
       };
       try {
-        if (apiKey && await streamFromOpenAI(ctx, apiKey, signal, send)) return;
-        await streamMock(ctx, signal, send);
+        await streamFromClaude(ctx, signal, send);
       } catch (error) {
         if (!signal.aborted) {
           console.error("AI stream failed", error);
@@ -277,59 +313,17 @@ function streamGeneration(ctx: AIContext, apiKey: string | undefined, signal: Ab
   });
 }
 
-/** Returns false when OpenAI refuses the request before any text, so the caller can fall back. */
-async function streamFromOpenAI(ctx: AIContext, apiKey: string, signal: AbortSignal, send: (event: StreamEvent) => void) {
-  const { user, system } = buildPrompt(ctx);
-  const res = await fetch(OPENAI_URL, {
-    method: "POST",
-    headers: openAIHeaders(apiKey),
-    body: JSON.stringify(openAIBody(system, user, true)),
-    signal,
-  });
-  if (!res.ok || !res.body) {
-    console.error("OpenAI error", await res.text().catch(() => res.statusText));
-    return false;
-  }
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = "";
-  let text = "";
-  for (;;) {
-    const { value, done } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split("\n");
-    buffer = lines.pop() ?? "";
-    for (const line of lines) {
-      const data = line.startsWith("data:") ? line.slice(5).trim() : "";
-      if (!data || data === "[DONE]") continue;
-      try {
-        const delta = JSON.parse(data).choices?.[0]?.delta?.content;
-        if (typeof delta === "string" && delta) {
-          text += delta;
-          send({ delta });
-        }
-      } catch { /* keep-alive or partial line */ }
-    }
-  }
-  send({ done: true, result: finalizeModelOutput(text, ctx) });
-  return true;
-}
-
-const pause = (ms: number, signal: AbortSignal) => new Promise<void>((resolve) => {
-  const timer = setTimeout(resolve, ms);
-  signal.addEventListener("abort", () => { clearTimeout(timer); resolve(); }, { once: true });
-});
-
-/** Streams the mock answer in word-sized pieces at a model-like pace. */
-async function streamMock(ctx: AIContext, signal: AbortSignal, send: (event: StreamEvent) => void) {
-  const result = mockGenerate(ctx);
-  const pieces = JSON.stringify(result).match(/\s*\S{1,7}/g) ?? [];
-  await pause(450, signal);
-  for (const piece of pieces) {
+/** A refusal becomes its own message; other failures go to the caller as a generic error event. */
+async function streamFromClaude(ctx: AIContext, signal: AbortSignal, send: (event: StreamEvent) => void) {
+  try {
+    const { text } = await streamClaudeText(toClaudeRequest(ctx), (delta) => send({ delta }), signal);
+    send({ done: true, result: finalizeModelOutput(text, ctx) });
+  } catch (error) {
     if (signal.aborted) return;
-    send({ delta: piece });
-    await pause(16 + Math.random() * 34, signal);
+    if (error instanceof ClaudeRefusalError) {
+      send({ error: "This section could not be generated. Try rephrasing the instruction." });
+      return;
+    }
+    throw error;
   }
-  send({ done: true, result });
 }

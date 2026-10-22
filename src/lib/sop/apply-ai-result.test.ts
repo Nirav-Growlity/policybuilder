@@ -1,0 +1,210 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { finalizeSopOutput, mockSopOutput } from "../ai/sop-generation";
+import {
+  applyClosingResult,
+  applyFrontMatterResult,
+  applyManualFieldResult,
+  applySectionResult,
+  applySopAiResult,
+  applySopResult,
+  generatedSectionToSopSection,
+  manualFieldText,
+  partialManualText,
+  partialSectionsFromGenerated,
+} from "./apply-ai-result";
+import { createEmptyManual, createEmptySop, createEmptySopSection } from "./initial-manual";
+import type { SopManual, SopNarrativeSection, SopSection } from "./types";
+
+function manualWithOneSop(): SopManual {
+  const sop = createEmptySop({ title: "Energy Conservation", department: "", owner: "Utilities Head" });
+  sop.sections = sop.sections.map((section) => {
+    if (section.kind === "training") return { ...section, enabled: false, blocks: [{ id: "t", type: "paragraph", text: "USER TRAINING TEXT" }] };
+    if (section.kind === "purpose") return { ...section, title: "Objective" };
+    return section;
+  });
+  sop.sections.push({ ...createEmptySopSection("custom", { title: "Site notes" }), blocks: [{ id: "c", type: "paragraph", text: "KEEP CUSTOM" }] } as SopSection);
+  return createEmptyManual({ sops: [sop] });
+}
+
+const generated = (kind: SopSection["kind"], text: string) =>
+  generatedSectionToSopSection({ kind, title: kind, blocks: [{ type: "paragraph", text }] })!;
+
+test("a whole-SOP result fills enabled sections and keeps ids, titles and switched-off sections", () => {
+  const manual = manualWithOneSop();
+  const sop = manual.sops[0];
+  const result = { sections: [generated("purpose", "NEW PURPOSE"), generated("training", "AI TRAINING"), generated("scope", "NEW SCOPE")], department: "Utilities", owner: "AI Owner" };
+  const next = applySopResult(manual, sop.id, result);
+  const updated = next.sops[0];
+  const byKind = (kind: string) => updated.sections.find((section) => section.kind === kind)! as SopNarrativeSection;
+
+  assert.equal(updated.status, "draft");
+  assert.equal(byKind("purpose").blocks[0].text, "NEW PURPOSE");
+  assert.equal(byKind("purpose").title, "Objective");
+  assert.equal(byKind("purpose").id, sop.sections.find((section) => section.kind === "purpose")!.id);
+  assert.equal(byKind("training").enabled, false);
+  assert.equal(byKind("training").blocks[0].text, "USER TRAINING TEXT");
+  assert.equal(byKind("custom").blocks[0].text, "KEEP CUSTOM");
+  assert.equal(updated.department, "Utilities", "blank department is filled");
+  assert.equal(updated.owner, "Utilities Head", "user owner is kept");
+  assert.equal(updated.sections.length, sop.sections.length);
+  assert.equal(manual.sops[0].status, "empty", "input is not mutated");
+});
+
+test("a section result replaces one section in place and ignores a kind mismatch", () => {
+  const manual = manualWithOneSop();
+  const sop = manual.sops[0];
+  const scope = sop.sections.find((section) => section.kind === "scope")!;
+  const next = applySectionResult(manual, sop.id, scope.id, generated("scope", "REWRITTEN"));
+  const updated = next.sops[0].sections.find((section) => section.id === scope.id)! as SopNarrativeSection;
+  assert.equal(updated.blocks[0].text, "REWRITTEN");
+  assert.equal(next.sops[0].status, "draft");
+
+  const mismatch = applySectionResult(manual, sop.id, scope.id, generated("purpose", "WRONG"));
+  assert.deepEqual(mismatch.sops[0], sop);
+});
+
+test("front matter and closing results keep sites, glossary and signatories", () => {
+  const manual = manualWithOneSop();
+  manual.frontMatter.sites = [{ address: "Plant 1" }];
+  manual.frontMatter.glossary = [{ term: "EHS", definition: "Environment, health and safety" }];
+  manual.closing.approval.signatories = [{ role: "Approved by", name: "A. Rao", designation: "MD", date: "" }];
+  const intro = [{ id: "i", type: "paragraph" as const, text: "INTRO" }];
+  const withFront = applyFrontMatterResult(manual, { introduction: intro, objective: [], benefits: ["One"], coreValues: [], howToUse: [] });
+  assert.equal(withFront.frontMatter.introduction[0].text, "INTRO");
+  assert.deepEqual(withFront.frontMatter.sites, manual.frontMatter.sites);
+  assert.deepEqual(withFront.frontMatter.glossary, manual.frontMatter.glossary);
+
+  const closed = applyClosingResult(manual, { reviewMechanism: intro, approvalStatement: "Approved." });
+  assert.equal(closed.closing.approval.statement, "Approved.");
+  assert.deepEqual(closed.closing.approval.signatories, manual.closing.approval.signatories);
+});
+
+test("partial generated JSON maps to sections with stable positional ids", () => {
+  const partial = { title: "x", sections: [{ kind: "purpose", title: "Purpose", blocks: [{ type: "paragraph", text: "To def" }] }, { kind: "procedure", title: "Proc", steps: [{ heading: "Step one" }] }, { kind: "unknown" }] };
+  const first = partialSectionsFromGenerated(partial);
+  const second = partialSectionsFromGenerated(partial);
+  assert.equal(first.length, 2);
+  assert.deepEqual(first.map((section) => section.id), second.map((section) => section.id));
+  const procedure = first[1] as Extract<SopSection, { kind: "procedure" }>;
+  assert.equal(procedure.steps[0].heading, "Step one");
+  assert.deepEqual(procedure.steps[0].body, []);
+  assert.deepEqual(partialSectionsFromGenerated(undefined), []);
+
+  // The compact keyed shape the model streams.
+  const wire = partialSectionsFromGenerated({ sections: { purpose: [{ type: "paragraph", text: "To" }], procedure: [{ heading: "Collect", responsible: "" }] } }, { purpose: "Objective" });
+  assert.deepEqual(wire.map((section) => [section.kind, section.title]), [["purpose", "Objective"], ["procedure", "Procedure"]]);
+  assert.equal((wire[1] as Extract<SopSection, { kind: "procedure" }>).steps[0].responsible, undefined);
+});
+
+test("the offline mock answer round-trips through validation and applies to every request type", () => {
+  const manual = manualWithOneSop();
+  const sop = manual.sops[0];
+  const procedure = sop.sections.find((section) => section.kind === "procedure")!;
+
+  const sopResult = finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, mockSopOutput({ type: "sop", manual, sopId: sop.id }));
+  const written = applySopAiResult(manual, { sopId: sop.id }, sopResult).sops[0];
+  const writtenProcedure = written.sections.find((section) => section.kind === "procedure") as Extract<SopSection, { kind: "procedure" }>;
+  assert.ok(writtenProcedure.steps.length >= 3);
+  assert.ok(writtenProcedure.steps.every((step) => step.id && step.id !== procedure.id));
+  // The mock writes an escalation matrix inside a step, as the prompt asks for; it arrives as a table block in place.
+  const escalation = writtenProcedure.steps.flatMap((step) => step.body).find((block) => block.type === "table")!;
+  assert.deepEqual(escalation.columns, ["Severity", "Example", "Response time", "Escalate to"]);
+  assert.equal(escalation.rows!.length, 3);
+  assert.ok(escalation.id);
+
+  const refine = { type: "refine" as const, manual, sopId: sop.id, sectionId: procedure.id, mode: "expand" as const };
+  const refined = finalizeSopOutput(refine, mockSopOutput(refine));
+  assert.equal(refined.type, "refine");
+  if (refined.type === "refine") assert.equal(refined.section.id, procedure.id);
+
+  const front = finalizeSopOutput({ type: "front-matter", manual }, mockSopOutput({ type: "front-matter", manual }));
+  assert.equal(front.type, "front-matter");
+  const closing = finalizeSopOutput({ type: "closing", manual }, mockSopOutput({ type: "closing", manual }));
+  assert.equal(applySopAiResult(manual, {}, closing).closing.approval.statement.length > 0, true);
+
+  assert.throws(() => finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, { sections: "nope" }), /did not match/);
+  // A near-empty SOP is rejected so the queue retries it.
+  const stub = JSON.parse(JSON.stringify(mockSopOutput({ type: "sop", manual, sopId: sop.id })), (key, value) => (typeof value === "string" && key !== "type" ? "Short." : value));
+  assert.throws(() => finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, stub), /too short/);
+});
+
+test("rewriting a front matter or closing field keeps the writer's tables, after the new text", () => {
+  const manual = manualWithOneSop();
+  const table = { id: "t", type: "table" as const, text: "", columns: ["Trigger", "Action"], rows: [["Change in law", "Review"]] };
+  manual.frontMatter.introduction = [{ id: "a", type: "paragraph", text: "Old." }, table, { id: "b", type: "paragraph", text: "Old too." }];
+  manual.closing.reviewMechanism = [table];
+  const intro = finalizeSopOutput({ type: "manual-field", manual, field: "introduction", mode: "generate" }, { introduction: ["New."] });
+  const next = applyManualFieldResult(manual, intro as Extract<typeof intro, { type: "manual-field" }>);
+  assert.deepEqual(next.frontMatter.introduction.map((block) => block.type), ["paragraph", "table"]);
+  assert.equal(next.frontMatter.introduction[1], table);
+  const closing = applySopAiResult(manual, {}, { type: "closing", reviewMechanism: [{ id: "r", type: "paragraph", text: "Yearly." }], approvalStatement: "Approved." });
+  assert.deepEqual(closing.closing.reviewMechanism.map((block) => block.id), ["r", "t"]);
+  const front = applyFrontMatterResult(manual, { introduction: [], objective: [], benefits: [], coreValues: [], howToUse: [] });
+  assert.deepEqual(front.frontMatter.introduction, [table]);
+});
+
+test("a manual field result replaces only its own field, and the partial text matches the final text", () => {
+  const manual = manualWithOneSop();
+  manual.frontMatter.benefits = ["KEEP BENEFIT"];
+  manual.closing.approval.signatories = [{ role: "Approved by", name: "A. Rao", designation: "MD", date: "" }];
+  const intro = finalizeSopOutput({ type: "manual-field", manual, field: "introduction", mode: "generate" }, { introduction: ["First para.", "  ", "Second para."] });
+  assert.equal(intro.type, "manual-field");
+  const withIntro = applyManualFieldResult(manual, intro as Extract<typeof intro, { type: "manual-field" }>);
+  assert.equal(manualFieldText(withIntro, "introduction"), "First para.\n\nSecond para.");
+  assert.deepEqual(withIntro.frontMatter.benefits, ["KEEP BENEFIT"]);
+  assert.equal(withIntro.closing.approval.signatories.length, 1);
+
+  const statement = finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: "  Approved.  " });
+  const closed = applySopAiResult(withIntro, {}, statement);
+  assert.equal(closed.closing.approval.statement, "Approved.");
+  assert.equal(manualFieldText(closed, "introduction"), "First para.\n\nSecond para.");
+
+  // What streams in while the model writes matches what the field holds at the end.
+  assert.equal(partialManualText({ introduction: ["First para.", "Sec"] }, "introduction"), "First para.\n\nSec");
+  assert.equal(partialManualText({ approvalStatement: "Appr" }, "approvalStatement"), "Appr");
+  assert.equal(partialManualText({}, "objective"), "");
+});
+
+test("manual field output is validated and capped before it reaches the manual", () => {
+  const manual = manualWithOneSop();
+  assert.throws(() => finalizeSopOutput({ type: "manual-field", manual, field: "objective", mode: "generate" }, { introduction: [] }), /did not match/);
+  assert.throws(() => finalizeSopOutput({ type: "manual-field", manual, field: "objective", mode: "generate" }, { objective: ["  ", ""] }), /empty/);
+  assert.throws(() => finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: 3 }), /did not match/);
+  const many = finalizeSopOutput({ type: "manual-field", manual, field: "howToUse", mode: "generate" }, { howToUse: Array.from({ length: 20 }, (_, index) => `Para ${index}`) });
+  assert.equal(many.type === "manual-field" && "blocks" in many ? many.blocks.length : -1, 8);
+  const long = finalizeSopOutput({ type: "manual-field", manual, field: "approvalStatement", mode: "generate" }, { approvalStatement: "x".repeat(5_000) });
+  assert.equal(long.type === "manual-field" && "statement" in long ? long.statement.length : -1, 1_200);
+});
+
+test("the offline writer fills introduction, compliance and corrective action when they are switched on", () => {
+  const manual = manualWithOneSop();
+  manual.company.country = "India";
+  const sop = manual.sops[0];
+  sop.sections = sop.sections.map((section) => (section.kind === "introduction" || section.kind === "corrective" ? { ...section, enabled: true } : section));
+  const result = finalizeSopOutput({ type: "sop", manual, sopId: sop.id }, mockSopOutput({ type: "sop", manual, sopId: sop.id }));
+  const written = applySopAiResult(manual, { sopId: sop.id }, result).sops[0];
+  const text = (kind: SopSection["kind"]) => {
+    const section = written.sections.find((candidate) => candidate.kind === kind) as SopNarrativeSection;
+    return section.blocks.map((block) => block.text).join("\n");
+  };
+  assert.match(text("introduction"), /^Energy conservation affects how/);
+  assert.match(text("compliance"), /in India/);
+  assert.match(text("compliance"), /legal register/);
+  assert.match(text("compliance"), /\[permit or consent number\]/);
+  assert.match(text("corrective"), /root-cause/);
+  assert.match(text("corrective"), /disciplinary procedure in the HR policy/);
+  // Mock records have no form numbers, so no code is stored.
+  const records = written.sections.find((section) => section.kind === "records") as Extract<SopSection, { kind: "records" }>;
+  assert.ok(records.rows.length > 0 && records.rows.every((row) => !("code" in row)));
+});
+
+test("a record code from the model is kept; an empty one is dropped", () => {
+  const section = generatedSectionToSopSection({ kind: "records", title: "Records", rows: [
+    { code: " MTPL/EHS/F-01 ", record: "Waste manifest", owner: "EHS", retention: "5 years", format: "Paper" },
+    { code: "", record: "Bin audit", owner: "EHS", retention: "1 year", format: "Electronic" },
+  ] }) as Extract<SopSection, { kind: "records" }>;
+  assert.equal(section.rows[0].code, "MTPL/EHS/F-01");
+  assert.equal("code" in section.rows[1], false);
+});

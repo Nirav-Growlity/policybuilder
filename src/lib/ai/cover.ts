@@ -5,7 +5,8 @@ import type { CoverComposition, CoverElement, CoverTextElement, Policy } from ".
 import { getCompanyClassificationContext } from "../company-classification";
 
 export const AI_COVER_IMAGE_MODEL = "gpt-image-2.5-flare";
-export const AI_COVER_LAYOUT_MODEL = "gpt-6-luna";
+/** Reads the artwork and places the cover text. Same model as CLAUDE_MODEL in lib/ai/claude.ts (not imported, this file also runs in the browser). */
+export const AI_COVER_LAYOUT_MODEL = "claude-haiku-5-5";
 export const AI_COVER_IMAGE_SIZE = "1024x1456";
 export const AI_COVER_IMAGE_MAX_ATTEMPTS = 3;
 

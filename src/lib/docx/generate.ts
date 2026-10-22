@@ -48,7 +48,8 @@ import { getCoverBindingValue, getCoverTextPresentation } from "../cover-composi
 import type { DocumentTextAlignment, Policy, QuantitativeArea, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embedDocumentFontStyles, embeddedDocumentFonts } from "./document-fonts";
-import { createCoverCompositionSvg, resolveCoverTextLayout } from "../cover-renderer";
+import { resolveCoverTextLayout } from "../cover-renderer";
+import { renderCoverRaster } from "../cover-raster";
 import { listMarkerText } from "../list-formatting";
 
 type Typography = NonNullable<Policy["typography"]>;
@@ -872,14 +873,8 @@ function imageParagraph(logo: NonNullable<LogoImage>, alignment: typeof Alignmen
 export async function customCoverImage(policy: Policy, model: DocumentRenderModel, includeElements = false, includeText = false): Promise<LogoImage> {
   const composition = model.cover.composition;
   if (!composition) return null;
-  const svg = createCoverCompositionSvg(policy, composition, {
-    includeElements,
-    includeText,
-    width: 2480,
-    height: 3508,
-    resolveAsset: (source) => source?.startsWith("data:image/") ? source : undefined,
-  });
-  return { data: await sharp(Buffer.from(svg)).png().toBuffer(), type: "png", width: 2480, height: 3508 };
+  const cover = await renderCoverRaster(policy, composition, { includeElements, includeText });
+  return { data: await cover.png().toBuffer(), type: "png", width: 2480, height: 3508 };
 }
 
 function customCoverParagraph(background: NonNullable<LogoImage>, overlays: ParagraphChild[]) {

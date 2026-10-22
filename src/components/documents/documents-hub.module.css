@@ -1,0 +1,40 @@
+/* Documents hub additions; the page itself reuses the policy drafts stylesheet. */
+.toolbarEnd { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.orgPicker { min-width: 220px; }
+.coverImage { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; background: #fff; }
+.emptyAction { margin-top: 22px; }
+
+/* Document type chooser: the policy selector's start cards. */
+.typeGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 4px 0 0; padding: 0; list-style: none; }
+.typeCard {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--pc-divider);
+  border-radius: 12px;
+  background: var(--pc-panel);
+  padding: 20px;
+  color: var(--pc-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+.typeCard:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--pc-control); background: var(--pc-inset); }
+.typeCard:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+.typeCard:disabled { cursor: not-allowed; opacity: .62; }
+.typeIcon { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 10px; background: var(--pc-selection); color: var(--pc-selection-text); }
+.typeTitle { font-family: var(--pc-font); margin-top: 18px; font-size: 17px; font-weight: 620; letter-spacing: -.01em; }
+.typeDescription { margin-top: 6px; color: var(--pc-muted); font-size: 13.5px; line-height: 1.5; }
+.typeFoot { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; border-top: 1px solid var(--pc-divider); padding-top: 14px; }
+.typeDescription + .typeFoot { margin-top: 18px; }
+.typeMeta { color: var(--pc-muted); font-size: 12px; }
+.typeStart { display: inline-flex; align-items: center; gap: 6px; color: var(--pc-primary); font-size: 13px; font-weight: 600; }
+.typeStart svg { transition: transform 200ms ease; }
+.typeCard:hover .typeStart svg { transform: translateX(2px); }
+
+@media (max-width: 640px) {
+  .typeGrid { grid-template-columns: minmax(0, 1fr); }
+  .orgPicker { min-width: 0; width: 100%; }
+}

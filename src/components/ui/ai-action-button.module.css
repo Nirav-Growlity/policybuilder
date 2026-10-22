@@ -182,5 +182,6 @@
   transition: filter 160ms ease, transform 200ms cubic-bezier(.22, 1, .36, 1), box-shadow 220ms ease;
 }
 .generate:hover { box-shadow: 0 10px 22px -12px var(--ai); filter: brightness(1.06); transform: translateY(-1px); }
+.generate:disabled { cursor: not-allowed; opacity: .5; box-shadow: none; filter: none; transform: none; }
 .generate:active { transform: scale(.97); }
 :is(.cancel, .generate, .back):focus-visible { outline: 2px solid var(--pc-brand, #4186f3); outline-offset: 2px; }

@@ -12,12 +12,14 @@ interface PanelProps {
   children: React.ReactNode;
   className?: string;
   bodyClassName?: string;
+  /** DOM id, for links that scroll to this panel. */
+  id?: string;
 }
 
-export function Panel({ title, description, icon, actions, children, className, bodyClassName }: PanelProps) {
+export function Panel({ title, description, icon, actions, children, className, bodyClassName, id }: PanelProps) {
   const application = useApplicationSurface();
   return (
-    <section className={clsx("doc-card overflow-visible", application && "pc-authoring-panel", className)}>
+    <section id={id} className={clsx("doc-card overflow-visible", application && "pc-authoring-panel", className)}>
       {(title || actions) && (
         <header className={clsx("flex items-center justify-between gap-3 px-6 py-4 border-b border-[var(--color-line)] bg-gradient-to-b from-[#fafaf5] to-[var(--color-cream-2)] rounded-t-[inherit]", application && "pc-authoring-panel-header")}>
           <div className="flex items-center gap-2.5 min-w-0">

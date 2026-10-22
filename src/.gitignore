@@ -48,3 +48,6 @@ yarn-error.log*
 next-env.d.ts
 
 /.pet-runs/
+
+# local benchmark output
+/.scratch/

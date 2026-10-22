@@ -29,6 +29,6 @@ export default function ManagerEditOrganizationPage() {
   }, [organizationId, router]);
   React.useEffect(() => { const timer = window.setTimeout(() => void load(), 0); return () => { window.clearTimeout(timer); requestGeneration.current += 1; }; }, [load]);
 
-  if (organization?.id === organizationId) return <StandaloneOrganizationEditor key={`${organization.id}:${organization.lockVersion}`} organizationId={organization.id} initial={organization} backHref={`/manager?orgId=${organization.id}`} />;
-  return <StandaloneOrganizationStatus backHref="/manager" backLabel="Organizations & policies" loading={loading} error={error} onRetry={() => void load()} />;
+  if (organization?.id === organizationId) return <StandaloneOrganizationEditor key={`${organization.id}:${organization.lockVersion}`} organizationId={organization.id} initial={organization} backHref="/manager" />;
+  return <StandaloneOrganizationStatus backHref="/manager" backLabel="Organizations" loading={loading} error={error} onRetry={() => void load()} />;
 }

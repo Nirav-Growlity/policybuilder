@@ -1,0 +1,1548 @@
+{
+ "id": "permeshwar-creations",
+ "company": "Permeshwar Creations Pvt. Ltd.",
+ "industry": "Garment and fashion product manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "textiles"
+ ],
+ "sourceFile": "SOP Manual  Employee Handbook/SOP MANUAL/SOP Manual - Permeshwar creation.docx",
+ "frontMatter": {
+  "introduction": "",
+  "objective": "",
+  "scope": "",
+  "reviewMechanism": "This SOP will be reviewed every year by the Environmental Safety Office to assess its effectiveness in reducing hazardous material usage and promoting sustainable practices. The review will evaluate substitution strategies, process optimization, and compliance with environmental standards. Feedback from employees and audit results will be incorporated to enhance the SOP and further reduce the environmental impact of the company’s operations."
+ },
+ "sops": [
+  {
+   "title": "Implementing a Sustainable Take-Back Program",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Manager",
+   "sourceWords": 759,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures for implementing a take-back or buy-back program at Permeshwar Creations Pvt. Ltd. aimed at collecting used products from customers. The goal is to remanufacture, recycle, or safely dispose of returned products, contributing to environmental sustainability and circular economy practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all products manufactured by Permeshwar Creations Pvt. Ltd. and is relevant to all employees involved in product development, customer service, logistics, and sustainability initiatives."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Take-Back or Buy-Back Program Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Return Programs:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Process for Remanufacture, Recycling, or Safe Disposal",
+     "steps": [
+      {
+       "heading": "Product Assessment",
+       "body": []
+      },
+      {
+       "heading": "Remanufacture Process",
+       "body": []
+      },
+      {
+       "heading": "Recycling Process",
+       "body": []
+      },
+      {
+       "heading": "Safe Disposal",
+       "body": []
+      },
+      {
+       "heading": "Customer Communication and Support",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Program Awareness"
+        },
+        {
+         "type": "paragraph",
+         "text": "Customer Support:"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Program Metrics:\n\nSustainability Reporting:"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Sustainability Manager",
+       "responsibilities": [
+        "Oversees the implementation and monitoring of the take-back and buy-back program.",
+        "Ensures compliance with environmental regulations and sustainability goals."
+       ]
+      },
+      {
+       "role": "Customer Support Team",
+       "responsibilities": [
+        "Provides guidance to customers on how to participate in the program.",
+        "Manages customer inquiries and assists with product returns."
+       ]
+      },
+      {
+       "role": "Logistics Team",
+       "responsibilities": [
+        "Coordinates the collection, transportation, and processing of returned products.",
+        "Ensures products are delivered to the appropriate facility for remanufacture, recycling, or disposal."
+       ]
+      },
+      {
+       "role": "Product Development Team",
+       "responsibilities": [
+        "Works with the Sustainability Manager to integrate recycled materials into new product designs.",
+        "Ensures remanufactured products meet quality standards."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed annually by the Sustainability Manager to ensure the take-back and buy-back program remains effective and aligned with the company’s environmental objectives. Any necessary updates to the SOP will be made to reflect changes in technology, customer preferences, or regulatory requirements."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "IT Security Incident Handling & Recovery Procedure",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "Information Security",
+   "owner": "Information Security Officer (ISO)",
+   "sourceWords": 1029,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the Incident Response Procedure (IRP) for managing breaches of confidential information at Permeshwar Creations Pvt. Ltd.. The purpose is to provide clear instructions for detecting, responding to, and minimizing the impact of information security breaches to prevent further damage, protect sensitive data, and reassure affected parties."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and third-party service providers who have access to confidential information related to Permeshwar Creations Pvt. Ltd. It covers breaches involving data loss, unauthorized access, disclosure of confidential information, or any other information security incidents."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Procedure Overview",
+     "steps": [
+      {
+       "heading": "Incident Detection",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Monitoring Systems: All company systems handling confidential information should be monitored regularly for any suspicious activity, unauthorized access, or other indications of a breach."
+        },
+        {
+         "text": "Reporting Channels: Employees must report any suspicious activity or potential breaches to the Information Security Officer (ISO) immediately. The ISO can be contacted via email at iso@permeshwarcreations.com or by phone at 91-022-28226245."
+        },
+        {
+         "text": "Automated Alerts: Systems are equipped with automated alerts to notify the ISO of unusual access patterns, failed login attempts, or other triggers indicating a potential breach."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Identification and Classification",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Assessment: Upon detecting or receiving a report of a potential breach, the ISO will assess the situation to determine the scope, severity, and type of incident.",
+         "responsible": "Information Security Officer (ISO)"
+        },
+        {
+         "text": "Classification: Incidents will be classified into one of the following categories: Low Severity: Minor incidents with no significant impact on confidential information. Medium Severity: Incidents involving some exposure of confidential information, with limited potential for harm. High Severity: Major breaches where sensitive data is exposed, and there is a significant risk to business operations, clients, or other stakeholders."
+        }
+       ]
+      },
+      {
+       "heading": "Containment and Mitigation",
+       "body": [],
+       "responsible": "Information Security Officer (ISO)",
+       "substeps": [
+        {
+         "text": "Immediate Action: Once a breach is confirmed, the Information Security Officer will activate the incident response team to take immediate steps to contain the breach, preventing further unauthorized access or data loss.",
+         "responsible": "Information Security Officer (ISO)"
+        },
+        {
+         "text": "System Isolation: In the event of an ongoing breach, affected systems will be temporarily isolated from the network to stop further damage."
+        },
+        {
+         "text": "Access Revocation: If necessary, user accounts or credentials involved in the breach will be revoked or reset to prevent further exploitation."
+        },
+        {
+         "text": "Data Backup: Ensure all critical data is backed up to avoid data loss or corruption during the containment process."
+        }
+       ]
+      },
+      {
+       "heading": "Notification of Affected Parties",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Internal Notification: Relevant internal stakeholders, including department heads, IT personnel, and legal teams, will be notified of the breach and the steps being taken."
+        },
+        {
+         "text": "External Notification: In cases where client data or third-party information is affected, external parties will be notified promptly. Notifications will include: A description of the breach and the data involved. Steps being taken to mitigate the impact and prevent future incidents. Contact information for further inquiries:"
+        }
+       ]
+      },
+      {
+       "heading": "Breach Investigation and Documentation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Root Cause Analysis: The incident response team will conduct a full investigation to determine the root cause of the breach. This includes identifying vulnerabilities in the system, human errors, or any malicious activities.",
+         "responsible": "Incident Response Team"
+        },
+        {
+         "text": "Documentation: All details of the breach, including timelines, actions taken, and communication with affected parties, will be thoroughly documented."
+        },
+        {
+         "text": "Forensic Analysis: If needed, forensic experts will be engaged to conduct in-depth analysis of the breach, particularly for high-severity incidents."
+        }
+       ]
+      },
+      {
+       "heading": "Remediation and Recovery",
+       "body": [],
+       "responsible": "IT Department",
+       "substeps": [
+        {
+         "text": "System Restoration: After containing the breach, the IT team will work to restore affected systems and ensure their security before bringing them back online.",
+         "responsible": "IT Department"
+        },
+        {
+         "text": "Patch and Fix Vulnerabilities: Vulnerabilities identified during the investigation will be patched or mitigated to prevent similar breaches in the future.",
+         "responsible": "IT Department"
+        },
+        {
+         "text": "User Training: Employees involved in the breach or who could prevent future breaches may be required to undergo additional security training."
+        }
+       ]
+      },
+      {
+       "heading": "Reassuring Affected Parties",
+       "body": [],
+       "responsible": "Customer Support Team",
+       "substeps": [
+        {
+         "text": "Customer Communication: Affected customers or third parties will receive clear communication on the status of the breach, the measures being taken to secure their data, and steps they can take to protect themselves.",
+         "responsible": "Customer Support Team"
+        },
+        {
+         "text": "Follow-Up Support: The company will provide ongoing support to affected parties to address concerns, including offering credit monitoring or other services if necessary.",
+         "responsible": "Customer Support Team"
+        }
+       ]
+      },
+      {
+       "heading": "Post-Incident Review",
+       "body": [],
+       "responsible": "Information Security Officer (ISO)",
+       "substeps": [
+        {
+         "text": "Debriefing: Once the incident has been fully managed, a post-incident review will be conducted by the Information Security Officer and the response team to evaluate the effectiveness of the response.",
+         "responsible": "Information Security Officer (ISO)"
+        },
+        {
+         "text": "Lessons Learned: The review will focus on identifying lessons learned from the breach and areas for improvement in the company's security infrastructure and incident response plan."
+        }
+       ]
+      },
+      {
+       "heading": "Improvement and Updates",
+       "body": [],
+       "substeps": [
+        {
+         "text": "System and Policy Enhancements: Based on the post-incident review, the company will update its security policies, systems, and procedures to strengthen defenses against future breaches."
+        },
+        {
+         "text": "Incident Response Plan Updates: The IRP will be revised as needed to incorporate the new findings and ensure a more effective response in future incidents."
+        },
+        {
+         "text": "Security Awareness Training: Employees will undergo regular security awareness training, with additional emphasis on lessons learned from recent incidents."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Information Security Officer (ISO)",
+       "responsibilities": [
+        "Oversees the detection, response, and mitigation of information security breaches.",
+        "Coordinates communication with affected parties and stakeholders.",
+        "Leads the post-incident review and ensures proper documentation."
+       ]
+      },
+      {
+       "role": "Incident Response Team",
+       "responsibilities": [
+        "Activated in the event of a confirmed breach.",
+        "Responsible for containing the breach, investigating the root cause, and restoring affected systems."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Ensures that systems are monitored and alerts are in place for detecting breaches.",
+        "Manages system isolation, access revocation, and vulnerability patching."
+       ]
+      },
+      {
+       "role": "Legal and Compliance Team",
+       "responsibilities": [
+        "Provides guidance on regulatory requirements related to breaches of confidential information.",
+        "Manages external notifications and ensures compliance with data protection laws."
+       ]
+      },
+      {
+       "role": "Customer Support Team",
+       "responsibilities": [
+        "Handles communication with affected customers or third parties.",
+        "Provides ongoing support to ensure customer concerns are addressed."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "numbered",
+       "text": "Incident Tracking: All breaches, regardless of severity, will be logged in the company's incident tracking system. This log will include key details such as the type of breach, impacted data, and actions taken.\nRegular Audits: The ISO will conduct regular audits of the incident response process to ensure the procedures are followed, and improvements are identified."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed annually by the Information Security Officer (ISO) to ensure it remains aligned with the latest industry standards and regulatory requirements. Updates will be made to reflect any changes in the company's infrastructure, incident response technologies, or external compliance obligations."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Establishing Robust Authorization & Approval Frameworks",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "Chief Financial Officer",
+   "sourceWords": 588,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedure for the approval of sensitive transactions, including gifts and travel expenses, to ensure compliance with Permeshwar Creations Pvt. Ltd. policies, ethical standards, and regulatory requirements. The primary objective is to prevent conflicts of interest, ensure transparency, and uphold the integrity of the company’s financial operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and third parties involved in initiating, approving, or processing sensitive transactions at Permeshwar Creations Pvt. Ltd."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Sensitive Transactions",
+       "definition": "These include gifts, travel expenses, or other benefits that could create a conflict of interest or influence business decisions. Examples include non-routine travel, gifts exceeding monetary thresholds, or any benefit that may appear to compromise company integrity."
+      },
+      {
+       "term": "Approval Authority",
+       "definition": "Designated individuals or departments responsible for reviewing and approving sensitive transactions. These may include department heads, senior management, or the executive committee."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Approval Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Documentation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification:"
+        },
+        {
+         "type": "bullets",
+         "text": "All sensitive transactions, such as gifts exceeding ₹5,000 or travel expenses above ₹25,000, must be identified and documented.\nThresholds: Any gift or benefit valued over ₹5,000 or travel expenses over ₹25,000 requires specific approval.\nDocumentation:"
+        },
+        {
+         "type": "paragraph",
+         "text": "A Sensitive Transaction Request Form must be completed for each transaction, which includes the following:"
+        },
+        {
+         "type": "bullets",
+         "text": "Name of the recipient\nDescription of the transaction (gift, travel, etc.)\nMonetary value\nPurpose of the transaction\nDate and location\nJustification for the transaction and any supporting documentation (e.g., travel itineraries, invoices)."
+        }
+       ]
+      },
+      {
+       "heading": "Initial Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Submit the completed Sensitive Transaction Request Form to the immediate supervisor or department head for an initial review.\nThe supervisor will evaluate the transaction for compliance with company policies and potential conflicts of interest."
+        }
+       ],
+       "responsible": "Immediate supervisor or department head"
+      },
+      {
+       "heading": "Approval Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Approval Authorities:\nTransactions requiring approval should be submitted to the following authorities based on the value.\nGifts:\nAbove ₹5,000: Department Head\nAbove ₹10,000: Senior Management\nTravel Expenses:\nAbove ₹25,000: Senior Management\nAbove ₹50,000: Executive Committee"
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval Procedure:\nThe approving authority will review the documentation and justification provided. They may request additional information if needed.\nApproval or rejection of the transaction must be documented in writing, including reasons for approval or denial."
+        }
+       ],
+       "responsible": "Approval authority"
+      },
+      {
+       "heading": "Processing and Recording",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Processing:\nOnce approved, process the transaction according to company procedures. Ensure that all documentation is complete and accurate.\nFor travel-related expenses, book travel in accordance with Permeshwar Creations’ travel policies.\nRecording:\nMaintain a record of all sensitive transactions, including approvals, supporting documentation, and any related correspondence.\nRecords should be retained for a minimum of 5 years and made available for audit or review as needed."
+        }
+       ]
+      },
+      {
+       "heading": "Post-Transaction Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Post-Transaction Review:\nConduct annual reviews of sensitive transactions to ensure compliance with policies and identify any potential issues or patterns.\nReview findings should be documented and reported to the relevant authorities for further action if required."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Ensure that all sensitive transactions are documented and submitted for approval as required.",
+        "Adhere to company policies and procedures regarding sensitive transactions."
+       ]
+      },
+      {
+       "role": "Supervisors/Department Heads",
+       "responsibilities": [
+        "Perform initial reviews of sensitive transactions and provide recommendations for approval or rejection.",
+        "Ensure compliance with company policies and ethical standards."
+       ]
+      },
+      {
+       "role": "Approval Authorities",
+       "responsibilities": [
+        "Review and approve or reject sensitive transactions based on documentation and justification.",
+        "Maintain records of approvals and provide oversight to ensure adherence to policies."
+       ]
+      },
+      {
+       "role": "Finance and Compliance Team",
+       "responsibilities": [
+        "Maintain records of all sensitive transactions and perform periodic reviews.",
+        "Ensure compliance with relevant regulations and company policies."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed by the Chief Financial Officer and the Compliance Officer Every Year or following any significant changes to ensure its effectiveness and relevance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Access Controls: Best Practices and Challenges",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Information Security Officer (ISO)",
+   "sourceWords": 1346,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the necessary steps and controls to protect third-party data from unauthorized access or disclosure and outlines the measures for gaining stakeholder consent regarding the processing, sharing, and retention of confidential information. The aim is to safeguard customer and client data while ensuring compliance with data protection regulations and building trust with stakeholders."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, and third-party service providers who handle customer, client, or other stakeholder data for Permeshwar Creations Pvt. Ltd. It ensures secure data management and transparency in processing and storage."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Key measures to safeguard third-party data",
+     "steps": [
+      {
+       "heading": "Internal Controls for Physical Access",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Restricted Areas: Confidential data will only be stored in restricted areas such as secure server rooms, vaults, or locked file cabinets that can only be accessed by authorized personnel."
+        },
+        {
+         "text": "Employee Access Control: Employees who require access to sensitive data must request clearance from the Information Security Officer (ISO). Access will be granted only based on the principle of least privilege, ensuring that employees only access the data necessary for their role.",
+         "responsible": "Information Security Officer (ISO)"
+        },
+        {
+         "text": "Physical Security: Access to premises where sensitive data is stored will be restricted via electronic access cards, biometric authentication, or PIN codes. Visitors and third-party contractors must be logged in and accompanied at all times when accessing these areas."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Controls for Digital Access",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Role-Based Access Control (RBAC): Digital access to sensitive customer and client data will be managed through role-based access control (RBAC), limiting access to specific users based on job roles."
+        },
+        {
+         "text": "Two-Factor Authentication (2FA): All systems containing confidential data will require two-factor authentication to ensure secure login. Employees will authenticate via both password and a secondary security measure (e.g., mobile app verification, hardware tokens)."
+        },
+        {
+         "text": "Data Encryption: All confidential data in transit (e.g., email, file transfer) and at rest (e.g., databases, hard drives) must be encrypted using industry-standard encryption protocols such as AES-256."
+        },
+        {
+         "text": "Audit Logs: All access to customer data will be logged in an audit trail that tracks the time, user, and data accessed. Logs will be regularly reviewed by the IT security team to detect unauthorized or unusual access patterns.",
+         "responsible": "IT security team"
+        }
+       ]
+      },
+      {
+       "heading": "External and Third-Party Access Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Vendor Contracts: Third-party vendors who handle sensitive customer data will be required to sign Non-Disclosure Agreements (NDAs) and will undergo a vendor security assessment before being granted access."
+        },
+        {
+         "text": "Data Sharing Agreements: Any sharing of data with third-party service providers will require a Data Processing Agreement (DPA), ensuring they adhere to the company's data security protocols and applicable data protection laws (e.g., GDPR)."
+        },
+        {
+         "text": "External Access Monitoring: Third-party access will be limited and monitored. Contractors or vendors will receive time-bound access and can only use secure, company-provided systems to interact with sensitive data."
+        }
+       ]
+      },
+      {
+       "heading": "Key measures to obtain stakeholder consent",
+       "body": []
+      },
+      {
+       "heading": "Collection of Informed Consent",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Consent Forms: Customers or clients must be provided with clear consent forms when collecting personal or confidential information. These forms will outline: The type of data being collected (e.g., contact information, financial data). The purpose of data processing (e.g., marketing, order processing). Data sharing policies, including whether data will be shared with third parties. The retention period for which the data will be stored. Contact details for data inquiries or requests for information deletion."
+        },
+        {
+         "text": "Explicit Consent: Consent must be collected through opt-in mechanisms, such as checkboxes or electronic signatures, ensuring customers provide explicit permission for their data to be collected, processed, and shared."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Communication Regarding Data Use",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Privacy Policy: Customers will be informed of the company's data use policies via the Privacy Policy, which will be accessible on the company's website and during onboarding processes. The Privacy Policy must cover: Data collection practices: What data is collected, and why. Data storage and sharing practices: How and where data is stored, and if it's shared with third parties. Customer rights: Including the right to access their data, request data corrections, or delete their data."
+        },
+        {
+         "text": "Consent Management: Customers will have access to a consent management platform or portal, allowing them to modify their data-sharing preferences or revoke consent at any time."
+        }
+       ]
+      },
+      {
+       "heading": "Processing, Sharing, and Retention of Confidential Information",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Data Minimization: The company will only collect and process the minimum amount of personal data necessary to complete the business function. Unnecessary data collection is prohibited."
+        },
+        {
+         "text": "Data Sharing with Third Parties: Any sharing of customer or client data with third parties must be pre-approved by the customer. The third parties will be clearly listed in the consent forms or agreements."
+        },
+        {
+         "text": "Data Retention: Customer data will only be stored for as long as necessary to fulfill the purpose for which it was collected. Data retention periods will be clearly communicated to customers. For example: User Data Backup: Retained for 5 years. Information Security Records: Retained for 3 years. Closed Circuit Television (CCTV): Retained for 15 days. System Access Logs: Retained for 1 year. Incident Response Reports: Retained for 2 years. Audit Logs: Retained for 3 years. Software Licensing Records: Retained for 7 years. Employee Termination Records: Retained for 2 years. Vendor and Third-Party Contracts: Retained for 6 years. Email Communications (Official): Retained for 3 years."
+        }
+       ]
+      },
+      {
+       "heading": "Customer Consultation and Notification Process",
+       "body": []
+      },
+      {
+       "heading": "Pre-Collection Consultation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Customer Information Sessions: Prior to collecting data, customers will be given information sessions or online materials (e.g., webinars, tutorials) detailing the nature of the data collected and how it will be processed and stored."
+        },
+        {
+         "text": "Point of Contact: Customers will have a direct line to the Data Protection Officer (DPO) for queries or concerns regarding their data. The DPO can be reached at dpo@permeshwarcreations.com or via phone at 91-022-28226246.",
+         "responsible": "Data Protection Officer (DPO)"
+        }
+       ]
+      },
+      {
+       "heading": "Post-Collection Updates",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Data Updates and Changes: If there are any changes in the way data is processed, stored, or shared, customers will be promptly notified via email or SMS and will be required to reaffirm their consent for continued data use."
+        },
+        {
+         "text": "Breach Notification: In case of unauthorized access or data breaches, the company will notify affected customers within 72 hours of discovering the breach, detailing: The nature of the breach. Steps taken to mitigate the breach. Recommendations for customers to secure their accounts."
+        }
+       ]
+      },
+      {
+       "heading": "Proper Documentation and Record-Keeping",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Consent Records: Centralized Record Keeping: All consent forms, agreements, and any modifications to customer consent will be securely stored in a centralized database. These records will be accessible by authorized personnel only. Audit Trails: All customer interactions regarding data consent will be logged in a detailed audit trail, ensuring compliance with regulatory requirements."
+        },
+        {
+         "text": "Data Retention Logs: Automated Retention Monitoring: The IT team will implement automated systems to monitor data retention periods, ensuring data is deleted or archived when it reaches the end of its retention period. Review and Deletion: Any data flagged for deletion will be reviewed by the Data Compliance Team, ensuring it meets the data retention and deletion policy.",
+         "responsible": "IT team; Data Compliance Team"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Information Security Officer (ISO)",
+       "responsibilities": [
+        "Oversees the implementation and monitoring of physical and digital access controls for customer data.",
+        "Manages the incident response to any breaches of third-party data and ensures affected customers are informed promptly."
+       ]
+      },
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "Acts as the primary point of contact for customer inquiries related to data collection, processing, and sharing.",
+        "Ensures all data consent processes are clear, documented, and comply with applicable regulations."
+       ]
+      },
+      {
+       "role": "Legal and Compliance Team",
+       "responsibilities": [
+        "Reviews and updates all data-related contracts (e.g., NDAs, DPAs) with third-party service providers to ensure compliance with local and international data protection laws.",
+        "Provides oversight on customer notifications and compliance with data privacy laws (e.g., GDPR, CCPA)."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Implements and maintains the technical infrastructure for data encryption, access control, and audit logs.",
+        "Monitors data retention systems to ensure compliance with deletion timelines."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Access Control Audits: Regular audits of both physical and digital access control systems will be conducted to verify compliance with access control policies and prevent unauthorized access."
+      },
+      {
+       "type": "paragraph",
+       "text": "Consent Review Audits: Periodic reviews of customer consent records will be conducted to ensure all data processing activities are backed by valid, informed consent."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed annually by the Data Protection Officer (DPO) and the Information Security Officer (ISO) to ensure it reflects changes in regulatory requirements and company practices."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Maximizing Product Value: Efficient Use and Maintenance",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Manager",
+   "sourceWords": 1006,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures for promoting the efficient use, storage, maintenance, and proper disposal of products at Permeshwar Creations Pvt. Ltd. The goal is to enhance product longevity, minimize environmental impact, and ensure responsible end-of-life management of products."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "SCOPE",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all products manufactured by Permeshwar Creations Pvt. Ltd. and is relevant to all employees, contractors, and personnel involved in product design, development, marketing, and customer relations."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Efficient Use of Products",
+     "steps": [
+      {
+       "heading": "User Guidelines",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Provide clear and detailed guidelines to product users on best practices for product use. These guidelines should focus on minimizing resource consumption, such as water, energy, and materials, during the product's intended use."
+        }
+       ]
+      },
+      {
+       "heading": "Optimization Tips",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Offer tips for optimizing product performance with minimal resource input. For example, recommend using the appropriate amount of detergent for washing garments to avoid overuse of chemicals and water."
+        }
+       ]
+      },
+      {
+       "heading": "Durable Goods",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For durable goods like garments, educate users on how to care for products to extend their lifespan, such as washing in cold water, avoiding harsh chemicals, and proper storage techniques."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Storage and Maintenance",
+     "steps": [
+      {
+       "heading": "Proper Storage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Provide information on the appropriate storage conditions for each product to maintain its quality and functionality. For instance, store garments in a cool, dry place away from direct sunlight to prevent fading and degradation."
+        }
+       ]
+      },
+      {
+       "heading": "Maintenance Instructions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Offer comprehensive maintenance instructions to product users. For garments, this may include information on proper washing, drying, and ironing techniques to preserve the fabric's integrity."
+        }
+       ]
+      },
+      {
+       "heading": "Chemical Products",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "For chemical products, such as dyes or cleaning agents, provide detailed instructions on safe storage to prevent leaks, spills, or harmful emissions. Ensure users understand the importance of sealing containers properly and storing them in designated areas away from heat or moisture."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Product End-of-Life Management",
+     "steps": [
+      {
+       "heading": "Disposal Guidelines",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Include clear guidelines on how to responsibly dispose of products at the end of their useful life. The disposal information should be specific to each product type and aim to minimize environmental impact."
+        }
+       ]
+      },
+      {
+       "heading": "Recycling and Return Programs",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Highlight any company-sponsored recycling or return programs that allow users to return or recycle products. For example, offer a garment recycling program where customers can return old clothing for recycling or repurposing."
+        }
+       ]
+      },
+      {
+       "heading": "Circular Material Flow",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Encourage practices that support a circular economy by providing options for reusing or repurposing products instead of disposing of them. For instance, suggest ways to upcycle old garments or donate them to charitable organizations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Collection and Recycling Infrastructure",
+     "steps": [
+      {
+       "heading": "Collection and Recycling Infrastructure",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Local Resources: Provide information on local collection, recycling, or sanitary waste management facilities available to product users. For example, include a list of nearby recycling centers or donation drop-off points where customers can dispose of products responsibly.\nEcoReco Recycling\nService: Comprehensive waste management and recycling services.\nAddress: Eco House, S. No. 22, H. No.6 & 7, Bhoipada, Near Range Office,Sativali, Vasai (East), District: Palghar, Maharashtra - 401208, India.\nContact: +91 9004297203\nWebsite: ecoreco.com\nVapi Green Enviro Limited (VGEL)\nService: Hazardous waste management and disposal.\nAddress: Plot No. 16, Phase I, GIDC, Vapi, Valsad, Gujarat 396195, India.\nContact: 0260 2431597, +91 9714007068\nWebsite: vgelvapi.com\nGreenobin Recycling Pvt. Ltd.\nService: Recycling of paper and other recyclable materials.\nAddress: A-120, Sector 63, Noida, Uttar Pradesh 201301, India.\nContact: +91-8800557379\nWebsite: greenobin.com\nCollaboration with Partners: Work with local waste management partners to establish collection points for used products. Ensure customers are informed about these collection points and the types of products accepted.\nMinimal Waste to Landfill: Educate users on the importance of minimizing waste to landfills by choosing recycling or repurposing options. Highlight the environmental benefits of reducing virgin material usage in new product creation through recycling efforts."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Communication Channels",
+     "steps": [
+      {
+       "heading": "Product Labels",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Include essential usage, storage, and disposal instructions on product labels, ensuring the information is accessible and easy to understand."
+        }
+       ]
+      },
+      {
+       "heading": "User Manuals",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Provide detailed user manuals with every product that include best practices for use, maintenance, and disposal. Ensure these manuals are available both in print and online."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Customer Support",
+     "steps": [
+      {
+       "heading": "Communication Channels",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Customers can contact the company via email: permeshwarimages@permeshwarimages.com or Tel: +91 022-28226245/47 Or Fax: +91 022-28382544 for any queries."
+        }
+       ]
+      },
+      {
+       "heading": "Workshops and Tutorials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Organize workshops or online tutorials to educate customers on product care and sustainable practices. These can include demonstrations on garment care, proper storage, and recycling methods."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Continuous Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Customer Feedback: Collect feedback from customers regarding the effectiveness of the information provided on product use, storage, and disposal. Use this feedback to improve guidelines and instructions.\nPerformance Metrics: Track the success of recycling and return programs, including the volume of products returned or recycled and the reduction in waste sent to landfills.\nSustainability Reporting: Include the outcomes of these initiatives in the company's annual sustainability report, highlighting the impact of efficient product use, extended product life, and responsible disposal."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Product Records: Maintain records of all products that include information on usage guidelines, storage conditions, maintenance instructions, and disposal options.\nRegulatory Compliance: Ensure all disposal practices comply with local, national, and international environmental regulations. Regularly review and update the SOP to reflect changes in regulations or best practices."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Product Development Team",
+     "rows": [
+      {
+       "role": "Product Development Team",
+       "responsibilities": [
+        "Develops and updates product usage, storage, and maintenance guidelines.",
+        "Ensures that all product labels and user manuals include accurate and comprehensive information."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Sustainability Manager",
+     "rows": [
+      {
+       "role": "Sustainability Manager",
+       "responsibilities": [
+        "Oversees the implementation of recycling and return programs.",
+        "Coordinates with local waste management partners to facilitate responsible disposal practices.",
+        "Monitors customer feedback and performance metrics related to product use and disposal."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Marketing and Communications Team",
+     "rows": [
+      {
+       "role": "Marketing and Communications Team",
+       "responsibilities": [
+        "Disseminates information on best practices for product use, maintenance, and disposal through various channels, including the company website, social media, and product packaging.",
+        "Organizes workshops and tutorials to educate customers on sustainable practices."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Customer Support Team",
+     "rows": [
+      {
+       "role": "Customer Support Team",
+       "responsibilities": [
+        "Provides support and guidance to customers on product care and responsible disposal.",
+        "Collects and reports customer feedback to the Product Development and Sustainability teams."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed annually by the Sustainability Manager to ensure that the guidelines and information provided remain relevant and effective. The review process will include an assessment of customer feedback, the success of recycling and return programs, and compliance with environmental regulations. Any necessary updates to the SOP will be implemented to further enhance the company's efforts toward sustainability and responsible product management."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Managing and Disposing of Hazardous Waste",
+   "code": "",
+   "catalogId": "hazardous-waste",
+   "pillar": "E",
+   "department": "Environmental Safety Office",
+   "owner": "Environmental Manager",
+   "sourceWords": 867,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the guidelines and procedures followed by Permeshwar Creations Pvt. Ltd. for the safe labeling, storage, handling, and transportation of hazardous materials. The primary goal is to minimize environmental impact, ensure regulatory compliance, and protect the health and safety of employees and the surrounding community."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all operations at Permeshwar Creations Pvt. Ltd. involving hazardous substances used in manufacturing processes. It covers all employees, contractors, and personnel involved in production, maintenance, and management tasks related to hazardous materials."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Protocols for Hazardous Substance Management",
+     "steps": [
+      {
+       "heading": "Labelling of Hazardous Materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Consistent Labeling: Ensure that all hazardous materials are labeled according to Globally Harmonized System (GHS) standards, including hazard symbols, risk phrases, and safety instructions. Labels must be checked and updated biannually."
+        },
+        {
+         "text": "Clear Communication: Labels should be in both the local language and English, ensuring they are clear and understandable for all employees."
+        },
+        {
+         "text": "Regular Inspections: Conduct monthly inspections to verify that labels are intact, legible, and correctly placed."
+        }
+       ]
+      },
+      {
+       "heading": "Storage of Hazardous Materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Dedicated Storage Areas: Store hazardous materials in specific, well-ventilated areas with clear signage indicating restricted access. A compliance assessment should be conducted every three months."
+        },
+        {
+         "text": "Secondary Containment: Use secondary containment measures (e.g., spill pallets, bunds) to prevent leaks and spills from contaminating the environment."
+        },
+        {
+         "text": "Environmental Controls: Implement temperature and humidity controls in storage areas to maintain safe conditions for hazardous materials. Monitor these conditions daily."
+        },
+        {
+         "text": "Inventory Control: Maintain an up-to-date inventory of all hazardous materials, with inventory checks conducted every 30 days to ensure accuracy."
+        }
+       ]
+      },
+      {
+       "heading": "Handling of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Personal Protective Equipment (PPE): Provide appropriate PPE (e.g., gloves, goggles, respirators) to all personnel handling hazardous substances and enforce its use. PPE must be inspected weekly for wear and tear."
+        },
+        {
+         "text": "Employee Training: Conduct annual training sessions on safe handling practices, including emergency response procedures for spills or exposure."
+        },
+        {
+         "text": "Controlled Handling Areas: Restrict handling activities to designated areas with appropriate ventilation and spill containment measures."
+        }
+       ]
+      },
+      {
+       "heading": "Transportation of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Certified Transport Vehicles: Use vehicles certified for the transport of hazardous materials, equipped with spill response kits and proper signage. Vehicle inspections should be performed every 15 days."
+        },
+        {
+         "text": "Driver Certification: Ensure that drivers are trained in the safe transport of hazardous materials, including emergency response protocols. Training should be refreshed every six months."
+        },
+        {
+         "text": "Documentation: Ensure that all hazardous materials are accompanied by proper documentation, including Material Safety Data Sheets (MSDS), transport manifests, and emergency contact details."
+        },
+        {
+         "text": "Safe Route Planning: Plan transportation routes to avoid populated areas and environmentally sensitive zones, reducing risks during transit. Routes should be reviewed and optimized quarterly."
+        }
+       ]
+      },
+      {
+       "heading": "Specialized Treatment and Safe Disposal of Hazardous Substances",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Waste Segregation: Separate hazardous waste from non-hazardous waste at the source, with proper labeling and containment. Segregation procedures should be reviewed every two months."
+        },
+        {
+         "text": "Neutralization and Treatment: Apply neutralization or chemical treatment processes before disposal to reduce toxicity and environmental harm."
+        },
+        {
+         "text": "Waste Minimization: Implement strategies to reduce hazardous waste generation through process improvements and material substitution."
+        },
+        {
+         "text": "Record Keeping and Reporting: Maintain detailed records of hazardous waste disposal, including quantities, methods, and certificates of destruction. Reports should be compiled monthly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Ongoing Monitoring and Evaluation"
+      },
+      {
+       "type": "bullets",
+       "text": "Routine Inspections: Conduct annual inspections of storage, handling, and transportation activities to ensure compliance with safety standards.\nData Analysis: Analyse incident reports, spill data, and disposal records to identify areas for improvement. Data should be reviewed annualy.\nInternal Audits: Conduct annual internal audits of hazardous substances management practices, reviewing all protocols and identifying areas for enhancement."
+      },
+      {
+       "type": "paragraph",
+       "text": "Incident Reporting and Response"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident Documentation: Document all incidents involving hazardous substances, including causes, response actions, and outcomes. Documentation should be completed within 24 hours of the incident.\nResponse Evaluation: Evaluate response actions following each incident to identify root causes and implement corrective measures. Evaluations should be conducted within 7 days of the incident.\nCorrective Action Plan: Develop and implement corrective action plans based on incident evaluations to prevent future occurrences."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees the implementation of the SOP.",
+        "Ensures compliance with environmental regulations.",
+        "Manages relationships with regulatory bodies and directs environmental audits.",
+        "Prepares and submits regulatory and internal compliance reports.",
+        "Develops and oversees training programs related to hazardous substances management."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implements operational processes to meet environmental standards.",
+        "Oversees the safe handling and storage of hazardous substances.",
+        "Coordinates with logistics to ensure safe transport of hazardous materials.",
+        "Ensures compliance with hazardous substances management protocols."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Conducts routine inspections and preventive maintenance.",
+        "Ensures storage and transport equipment comply with safety standards.",
+        "Coordinates with the Environmental Manager to address hazardous substance-related issues.",
+        "Supervises the maintenance of hazardous waste containment systems."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Conducts employee training on hazardous substances management.",
+        "Monitors adherence to safety protocols.",
+        "Ensures compliance with hazardous substances management practices.",
+        "Leads incident investigations and coordinates with the Environmental Manager to implement corrective actions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP will be reviewed Annually by the Environmental Safety Office to assess its effectiveness in reducing environmental impact and exposure to hazardous materials. The review will evaluate storage, handling, and transportation protocols, as well as employee training and compliance levels. Insights gained will be used to improve safety practices and ensure continued alignment with environmental regulations."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hazardous Substances Substitution: Finding Safer Alternatives",
+   "code": "",
+   "catalogId": "hazardous-substitution",
+   "pillar": "E",
+   "department": "",
+   "owner": "Environmental Manager",
+   "sourceWords": 658,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures and initiatives undertaken by Permeshwar Creations Pvt. Ltd. to reduce the use of hazardous materials in its manufacturing processes. The goal is to minimize environmental impact, enhance workplace safety, and align with sustainable practices by substituting harmful chemicals with safer, eco-friendly alternatives."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all manufacturing units and operations at Permeshwar Creations Pvt. Ltd. where hazardous substances are used. It covers all employees, contractors, and personnel involved in production, maintenance, and management tasks related to chemical processes."
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Sr. No.",
+        "Name of Site",
+        "Address"
+       ],
+       "rows": [
+        [
+         "1",
+         "Rishita Fashion",
+         "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat."
+        ],
+        [
+         "2",
+         "PK Enterprises",
+         "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301, India."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Reduction Strategies for Hazardous Materials",
+     "steps": [
+      {
+       "heading": "Identification of Hazardous Materials",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Material Review: Conduct a thorough review of all chemicals and substances used in the production process to identify those that are hazardous. This review should be updated every six months."
+        },
+        {
+         "text": "Risk Assessment: Evaluate the health and environmental risks associated with each hazardous material, focusing on its potential impact on workers and the environment."
+        }
+       ]
+      },
+      {
+       "heading": "Substitution of Hazardous Chemicals",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Chemical Substitution: Replace hazardous chemicals with less harmful or non-hazardous alternatives wherever possible. Examples include: Biodegradable Surfactants: Replace traditional surfactants used in cleaning and processing with biodegradable options to reduce water pollution. Enzyme-Based Processes (Bio-Processing): Substitute chemical-based processes, such as bleaching, with enzyme-based alternatives that are gentler on fabrics and the environment. Natural Dyes: Adopt the use of plant/vegetation-based natural dyes instead of synthetic dyes, reducing the chemical load in wastewater. Green Chemistry: Encourage the use of green chemistry principles in the development of new processes and products."
+        }
+       ]
+      },
+      {
+       "heading": "Implementation of Safer Alternatives",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Training and Awareness: Provide training to employees on the safe handling and application of alternative materials. Ensure all personnel understand the benefits of using safer alternatives."
+        },
+        {
+         "text": "Pilot Testing: Conduct pilot tests to ensure that the alternative materials perform effectively without compromising product quality."
+        },
+        {
+         "text": "Supplier Collaboration: Work closely with suppliers to source safer alternatives and ensure they meet the company's quality and safety standards."
+        }
+       ]
+      },
+      {
+       "heading": "Process Optimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Process Re-engineering: Re-engineer manufacturing processes to reduce the need for hazardous materials. For example, optimize dyeing processes to reduce chemical usage and improve resource efficiency."
+        },
+        {
+         "text": "Water and Energy Efficiency: Implement measures to reduce water and energy consumption during production, which in turn decreases the demand for chemical treatments."
+        },
+        {
+         "text": "Waste Minimization: Focus on minimizing waste generation by optimizing material usage and recycling process residues."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Ongoing Monitoring and Evaluation:"
+      },
+      {
+       "type": "bullets",
+       "text": "Regular Audits: Conduct annual audits to assess the effectiveness of the reduction strategies and ensure compliance with company policies. Performance Metrics: Track key performance indicators (KPIs) related to the reduction of hazardous materials, including the volume of chemicals replaced, environmental impact, and cost savings. Continuous Improvement: Use audit results and performance data to refine strategies and identify further opportunities for reducing hazardous material usage."
+      },
+      {
+       "type": "paragraph",
+       "text": "Documentation and Reporting:"
+      },
+      {
+       "type": "bullets",
+       "text": "Material Substitution Records: Maintain detailed records of all substituted hazardous materials, including the alternatives used, their sources, and the rationale for substitution. Environmental Impact Reports: Prepare annual reports outlining the environmental impact of the reduction strategies, including reductions in emissions, waste, and resource consumption. Compliance Reporting: Ensure that all substitutions and process changes comply with local, national, and international environmental regulations."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Environmental Manager",
+       "responsibilities": [
+        "Oversees the implementation of hazardous material reduction strategies.",
+        "Ensures compliance with environmental regulations and company policies.",
+        "Leads audits and prepares environmental impact reports.",
+        "Coordinates training programs related to the use of safer alternatives."
+       ]
+      },
+      {
+       "role": "Operations Manager",
+       "responsibilities": [
+        "Implements process changes to reduce hazardous material usage.",
+        "Monitors the performance of alternative materials and processes.",
+        "Collaborates with suppliers to source and test safer alternatives."
+       ]
+      },
+      {
+       "role": "Procurement Manager",
+       "responsibilities": [
+        "Sources eco-friendly and safer chemical alternatives.",
+        "Works with suppliers to ensure the quality and safety of alternative materials.",
+        "Manages relationships with suppliers and negotiates contracts for safer materials."
+       ]
+      },
+      {
+       "role": "Safety and Compliance Officer",
+       "responsibilities": [
+        "Ensures that all employees are trained in the safe handling of alternative materials.",
+        "Monitors adherence to safety protocols during the transition to safer alternatives.",
+        "Conducts regular inspections to ensure compliance with hazardous material reduction policies."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

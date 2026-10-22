@@ -6,8 +6,9 @@ import type { Policy } from "@/lib/types";
 
 // PdfPolicyPreview asks the server for a fresh render whenever its policy input
 // changes. Holding the input back until typing pauses keeps the live preview
-// from requesting a render on every keystroke.
-export const LIVE_PREVIEW_DEBOUNCE_MS = 800;
+// from requesting a render on every keystroke. Typst renders in about 0.3 s, so
+// it waits as long as the SOP preview; Chromium's 2-6 s prints wait longer.
+export const LIVE_PREVIEW_DEBOUNCE_MS = process.env.POLICY_PDF_ENGINE === "typst" ? 500 : 800;
 
 export function useDebouncedValue<T>(value: T, delay: number): T {
   const [debounced, setDebounced] = React.useState(value);

@@ -1,0 +1,4696 @@
+{
+ "id": "indian-synthetic-rubber",
+ "company": "Indian Synthetic Rubber Private Limited",
+ "industry": "Synthetic rubber manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "chemicals"
+ ],
+ "sourceFile": "SOP Manual  Employee Handbook/SOP MANUAL/SOP Manual - ISRPL.docx",
+ "frontMatter": {
+  "introduction": "ISRPL has established a comprehensive, integrated, and structured management framework to ensure standardization, operational excellence, regulatory compliance, and continuous improvement across all business functions.\n\nThis Standard Operating Procedure (SOP) is developed to provide a formalized, consistent, and controlled approach for managing specific processes in alignment with ISRPL's strategic objectives and sustainability commitments.\n\nThe key objectives of this SOP are to:\nEstablish a clear, systematic, and standardized methodology for execution of the defined process\nEnsure compliance with all applicable legal, statutory, regulatory, and internal policy requirements\nEnhance operational efficiency, process reliability, and quality of outcomes\nStrengthen risk identification, mitigation, and control mechanisms\nPromote accountability and clarity in roles and responsibilities across functions\nEnable effective monitoring, measurement, and performance evaluation\nSupport data integrity, documentation control, and traceability of records\nIntegrate Environmental, Social, and Governance (ESG) principles, including:\nResource efficiency\nEnvironmental protection\nOccupational health and safety\nEthical and responsible business practices\nFoster a culture of continuous improvement, innovation, and employee engagement\n\nThis SOP also ensures that all activities are carried out in a manner that aligns with ISRPL's commitment to sustainable development, stakeholder trust, and long-term value creation.",
+  "objective": "The key objectives of this SOP are to:\nEstablish a clear, systematic, and standardized methodology for execution of the defined process\nEnsure compliance with all applicable legal, statutory, regulatory, and internal policy requirements\nEnhance operational efficiency, process reliability, and quality of outcomes\nStrengthen risk identification, mitigation, and control mechanisms\nPromote accountability and clarity in roles and responsibilities across functions\nEnable effective monitoring, measurement, and performance evaluation\nSupport data integrity, documentation control, and traceability of records\nIntegrate Environmental, Social, and Governance (ESG) principles, including:\nResource efficiency\nEnvironmental protection\nOccupational health and safety\nEthical and responsible business practices\nFoster a culture of continuous improvement, innovation, and employee engagement",
+  "scope": "This SOP is applicable to all ISRPL operations and defines the boundaries within which the specified process shall be implemented, monitored, and controlled.\n\nThe scope includes:\n\nOrganizational Coverage\nAll ISRPL facilities including:\nManufacturing units\nUtilities and process areas\nWarehouses and storage locations\nAdministrative and corporate offices\n\nFunctional Coverage\nAll departments and functions involved in or impacted by the process, including but not limited to:\nProduction\nEngineering and Utilities\nQuality Assurance / Quality Control\nEnvironment, Health & Safety (EHS)\nHuman Resources\nProcurement and Supply Chain\nFinance and Administration\nIT and Compliance\n\nPersonnel Coverage\nAll individuals engaged in ISRPL operations, including:\nPermanent employees\nContractual staff\nThird-party personnel, vendors, and service providers (where applicable)\n\nProcess Coverage\nThis SOP covers the complete lifecycle of the defined process, including:\nPlanning and requirement identification\nProcess execution and operational controls\nMonitoring, measurement, and performance tracking\nDocumentation and record management\nRisk management and corrective actions\nReview, audit, and continuous improvement\n\nData and Documentation Coverage\nAll forms of records associated with the process, including:\nPhysical documents\nDigital records and databases\nLogs, reports, and registers\n\nCompliance and Standards Alignment\nThis SOP is designed to align with:\nApplicable national and international laws and regulations\nInternal ISRPL policies and management systems\nRelevant standards such as:\nEnvironmental and sustainability frameworks\nOccupational health and safety requirements\nQuality management systems\nESG and responsible business conduct principles",
+  "reviewMechanism": "This SOP has been duly reviewed and formally approved by the Top Management of ISRPL, confirming that the procedures outlined herein are accurate, relevant, and aligned with the organization's operational, regulatory, and ESG requirements.\n\nAll departments and employees are expected to comply with the provisions of this SOP. Any changes, deviations, or revisions shall be undertaken only with prior approval from the authorized authorities and in accordance with the established review process. This SOP shall become effective from the date of approval and will remain in force until it is revised or superseded through the formal document control mechanism."
+ },
+ "sops": [
+  {
+   "title": "Energy Consumption Reduction and GHG Emissions Management",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1169,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a comprehensive, data-driven energy and greenhouse gas (GHG) management framework aimed at systematically reducing energy consumption, improving operational efficiency, and minimizing emissions across all business activities.\n\nThe organization has formally committed to achieving Net Zero emissions by 2050, supported by a structured decarbonization roadmap, defined baseline emissions, and a continuously monitored Carbon Reduction Action Tracker.\n\nISRPL has established FY 2022–23 as its baseline year, which serves as the reference point for measuring progress in emission reduction. This baseline enables identification of emission hotspots, prioritization of reduction initiatives, and tracking of performance improvements over time.\n\nThis SOP applies to all ISRPL operations, including:"
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Manufacturing processes and production lines\nUtility systems (boilers, cooling towers, compressors, DG sets, etc.)\nAdministrative and support functions\nLogistics, transportation, and supply chain activities"
+      },
+      {
+       "type": "paragraph",
+       "text": "It covers all energy sources (electricity, fuels, thermal energy) and emissions categories:"
+      },
+      {
+       "type": "bullets",
+       "text": "Scope 1: Direct emissions from fuel combustion and operations\nScope 2: Indirect emissions from purchased electricity\nScope 3: Indirect emissions from supply chain, logistics, and business activities"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Leads GHG accounting, emissions tracking, and sustainability reporting",
+        "Ensures compliance with environmental regulations and internal policies",
+        "Coordinates energy and carbon audits"
+       ]
+      },
+      {
+       "role": "Engineering & Utilities Team",
+       "responsibilities": [
+        "Identifies, implements, and monitors energy efficiency projects",
+        "Ensures optimal operation of equipment and utility systems"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Plans and executes employee training and awareness initiatives",
+        "Integrates sustainability into employee engagement programs"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Sources renewable energy and energy-efficient equipment",
+        "Engages with vendors on sustainability criteria"
+       ]
+      },
+      {
+       "role": "Plant Heads / HODs",
+       "responsibilities": [
+        "Drive implementation of initiatives at site level",
+        "Monitor performance and ensure accountability"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Responsibility",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a cross-functional governance structure to ensure effective implementation and monitoring:"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a comprehensive portfolio of energy and carbon reduction initiatives, which are tracked through a centralized Carbon Reduction Action Tracker capturing initiative details, timelines, responsibilities, and status (completed / ongoing / planned)."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Technology Modernization and Energy Efficiency Enhancement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented extensive technology upgrades to improve energy efficiency.\n\nKey initiatives include:"
+        },
+        {
+         "type": "bullets",
+         "text": "100% LED lighting replacement (completed)\nInstallation of motion sensor-based lighting systems (in progress)\nDeployment of smart energy meters for real-time monitoring (planned for full coverage)\nReplacement and upgrade of energy-efficient pumps and equipment\nImplementation of Leak Detection and Repair (LDAR) program (quarterly ongoing)\nRetrofitting of DG sets to reduce NOx and SOx emissions (completed)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Performance approach:"
+        },
+        {
+         "type": "bullets",
+         "text": "Continuous monitoring of equipment efficiency\nPreventive and predictive maintenance practices"
+        }
+       ]
+      },
+      {
+       "heading": "Capacity Building and Employee Engagement on Energy & Climate Action",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has embedded a strong culture of sustainability through continuous employee engagement and awareness programs.\n\nImplemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Structured training programs on energy conservation, climate change, and GHG reduction\nInclusion of sustainability modules in employee induction and refresher training\nAwareness campaigns on Net Zero commitment and responsible energy use\nBehavioural initiatives such as:\nPromotion of carpooling and shared transportation (ongoing)\nEncouragement of virtual meetings to reduce business travel\nIntegration of sustainability responsibilities into employee roles and performance expectations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Improved employee participation in energy-saving practices\nIncreased awareness of carbon footprint and reduction measures"
+        }
+       ]
+      },
+      {
+       "heading": "Structured Energy and Carbon Performance Assessments",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL conducts structured energy and carbon audits to identify inefficiencies and drive continuous improvement.\n\nImplemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Internal and third-party energy audits\nIdentification of inefficiencies, losses, and emission-intensive processes\nDevelopment of corrective action plans tracked through the Carbon Reduction Action Tracker"
+        },
+        {
+         "type": "paragraph",
+         "text": "Baseline Emissions (FY 2022–23):"
+        },
+        {
+         "type": "bullets",
+         "text": "Scope 1: 1,361.68 tCO₂eq\nScope 2: 42,429.29 tCO₂eq\nScope 3: 145,881.56 tCO₂eq\nTotal: 189,672.54 tCO₂eq"
+        },
+        {
+         "type": "paragraph",
+         "text": "Insight:"
+        },
+        {
+         "type": "bullets",
+         "text": "Majority emissions from Scope 3, guiding supply chain-focused strategies"
+        },
+        {
+         "type": "paragraph",
+         "text": "Follow-up mechanism:"
+        },
+        {
+         "type": "bullets",
+         "text": "Tracking of audit recommendations through action registers\nPeriodic review meetings to monitor closure of identified actions\nDocumentation of achieved energy savings and emission reductions"
+        }
+       ]
+      },
+      {
+       "heading": "Transition to Renewable Energy Sources",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has taken significant steps to decarbonize its energy mix through renewable energy adoption.\n\nImplemented actions include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Commissioning of a 2.7 MWp on-site solar power plant, contributing to reduction in Scope 2 emissions\nPlanned expansion through additional 0.5 MWp solar installation\nExploration of long-term green energy sourcing agreements\nContinuous evaluation of additional renewable energy opportunities across locations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Management approach:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monthly monitoring of renewable energy generation and consumption\nTracking renewable energy contribution as a percentage of total energy mix"
+        }
+       ]
+      },
+      {
+       "heading": "Waste Heat Recovery and Energy Efficiency Enhancement Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented systems to improve thermal energy efficiency and reduce fuel consumption.\n\nImplemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of waste heat recovery systems in process areas\nReuse of recovered heat for process heating and utility applications\nEvaluation and planning of back-pressure turbine installation (target: 2029)\nUtilization of recovered heat for:\nPreheating of feed materials\nSteam generation or other thermal requirements\nDeployment of Combined Heat and Power (CHP) systems where feasible to generate electricity and useful heat simultaneously"
+        },
+        {
+         "type": "paragraph",
+         "text": "Performance management:"
+        },
+        {
+         "type": "bullets",
+         "text": "Continuous monitoring of heat recovery efficiency\nPeriodic maintenance to ensure optimal system performance\nMeasurement and documentation of energy savings achieved"
+        }
+       ]
+      },
+      {
+       "heading": "Low-Carbon Fuel Transition Strategy",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented fuel transition strategies to reduce reliance on high-carbon fuels and improve overall energy efficiency.\n\nKey actions include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Replacement of conventional fuels such as coal and furnace oil with cleaner alternatives like natural gas\nTransition from conventional fuels to RLNG (Regasified Liquefied Natural Gas) in production processes\nOptimization of combustion systems to improve efficiency\nEvaluation and adoption of low-carbon or alternative fuels where technically feasible\nContinuous monitoring of fuel consumption patterns and emission factors"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact tracking:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in Scope 1 emissions intensity\nMeasurement of reduction in emission intensity due to fuel switch\nPeriodic reporting and review of fuel efficiency improvements"
+        }
+       ]
+      },
+      {
+       "heading": "Sustainable Logistics and Electrification Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented initiatives to reduce emissions from logistics and transportation.\n\nKey actions include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Adoption of multimodal transport systems (90–95% implemented)\nTransition to electric material handling:\n9 out of 14 forklifts battery-operated\nRemaining fleet planned for electrification by 2025\nEvaluation of fuel-efficient and alternative fuel vehicles"
+        }
+       ]
+      },
+      {
+       "heading": "Supply Chain and Scope 3 Emission Reduction Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL actively manages Scope 3 emissions through supplier engagement.\n\nPractices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Communication of GHG reduction requirements to suppliers\nSupplier acknowledgment and implementation of emission reduction practices\nDevelopment of local suppliers to reduce logistics emissions"
+        }
+       ]
+      },
+      {
+       "heading": "Circular Economy and Resource Efficiency Initiatives",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL integrates circular economy principles to reduce overall environmental impact.\n\nImplemented actions:"
+        },
+        {
+         "type": "bullets",
+         "text": "KCl recovery project from RO reject water (under approval)\nReduction in hazardous waste generation\nWaste-to-compost initiatives\nElimination of single-use plastics (completed)"
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation of Advanced Carbon Reduction Technologies",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL is preparing for long-term decarbonization through advanced solutions.\n\nApproach includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Feasibility assessment of CCS technologies\nExploration of carbon offset mechanisms\nContinuous tracking of emerging technologies"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a robust monitoring system to ensure transparency and accountability."
+      },
+      {
+       "type": "bullets",
+       "text": "Monthly tracking of energy consumption (electricity, fuel, thermal energy)\nCalculation and monitoring of Scope 1,2 and Scope 3 GHG emissions\nEstablishment of Key Performance Indicators (KPIs), such as:\nEnergy intensity (energy per unit of production)\nGHG emission intensity\nRenewable energy percentage\nPeriodic internal reviews and management reporting\nIntegration of performance data into sustainability disclosures and external reporting frameworks"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Records",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL maintains detailed documentation to support implementation and compliance:"
+      },
+      {
+       "type": "bullets",
+       "text": "Training records and awareness program materials\nEnergy and carbon audit reports and action plans\nRenewable energy procurement and generation data\nEquipment upgrade and maintenance records\nFuel usage and transition documentation\nWaste heat recovery and CHP performance data\nGHG emissions inventory and monitoring reports"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management and Resource Recovery",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1139,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a structured and integrated waste management framework focused on waste minimization, segregation, recovery, and environmentally sound disposal."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objective is to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Reduce waste generation at source through process optimization\nPromote reuse, recovery, and circular economy practices\nEnsure safe handling, segregation, and disposal of all waste streams\nPrevent environmental contamination and ensure regulatory compliance\nBuild employee awareness and accountability in waste management"
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All waste generated from production, utilities, maintenance, and support functions\nHazardous and non-hazardous waste streams\nWaste storage, handling, recovery, and disposal activities across ISRPL facilities"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Defines waste management procedures and ensures compliance",
+        "Maintains waste inventory, manifests, and reporting",
+        "Conducts waste audits and stream mapping"
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Minimizes waste generation through process optimization",
+        "Ensures segregation at source"
+       ]
+      },
+      {
+       "role": "Stores & Logistics Team",
+       "responsibilities": [
+        "Manages storage and movement of waste",
+        "Coordinates disposal with authorized agencies"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Conducts employee training and awareness programs"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a waste hierarchy approach:\n\nReduce → Reuse → Recover → Dispose"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Control of Transboundary Movement of Hazardous Waste",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL strictly complies with regulatory requirements regarding the movement and disposal of hazardous waste."
+        },
+        {
+         "type": "paragraph",
+         "text": "Implemented measures include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Prohibition of unauthorized transboundary movement of hazardous waste\nDisposal only through government-approved and authorized TSDF facilities\nVerification of vendor authorization and compliance before waste transfer\nMaintenance of proper documentation, manifests, and records"
+        },
+        {
+         "type": "paragraph",
+         "text": "Compliance controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Adherence to national hazardous waste management rules\nPeriodic audits of waste disposal vendors\nFull traceability of waste movement"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Prevention of illegal or unsafe disposal practices\nAssurance of environmentally sound waste management"
+        }
+       ]
+      },
+      {
+       "heading": "Waste Reduction through Reuse, Recovery and Repurposing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a structured waste minimization strategy by integrating material recovery, reuse, and repurposing practices within operations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Enhanced practices with plant-level implementation:"
+        },
+        {
+         "type": "bullets",
+         "text": "Recovery of usable materials through distillation, filtration, and neutralization systems\nReuse of recovered materials in production after QA/QC validation\nDisposal of waste rubber to authorized vendors for reprocessing\nUtilization of centrifuge sludge as manure for agricultural purposes\nConversion of waste streams into value-added outputs through:\nWaste-to-compost initiatives\nBio-remediation trials"
+        },
+        {
+         "type": "paragraph",
+         "text": "Process-level reuse example:"
+        },
+        {
+         "type": "bullets",
+         "text": "Unusable styrene is routed to liquid waste incinerator, generating steam for process reuse, ensuring energy recovery and waste minimization"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in internal waste generation\nImproved circular economy performance\nResource and energy efficiency enhancement"
+        }
+       ]
+      },
+      {
+       "heading": "Internal Waste Segregation, Storage and Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a comprehensive waste segregation and disposal system, aligned with waste classification and regulatory requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste Classification (As Implemented at ISRPL)"
+        },
+        {
+         "type": "bullets",
+         "text": "Type 1: Solid Waste\nBiodegradable (canteen, plantation waste)\nNon-biodegradable (plastic, rubber, scrap, etc.)\nType 2: Liquid Waste\nWastewater, process effluent, waste oil\nType 3: Gaseous Waste\nStack emissions from scrubbers, DG sets, and process vents"
+        },
+        {
+         "type": "paragraph",
+         "text": "Solid Waste Handling and Disposal"
+        },
+        {
+         "type": "bullets",
+         "text": "Office waste segregated into:\nGreen bins (biodegradable)\nRed bins (non-biodegradable)\nCanteen and plantation waste sent to vendors for recycling/composting\nMEE sludge:\nStored in 500 kg jumbo bags\nDisposed every 2 days to authorized TSDF\nCentrifuge sludge:\nReused as manure for agricultural applications\nMetal scrap:\nCollected in drums and sold to authorized recyclers\nWaste rubber:\nSent to vendors for reprocessing\nPopcorn rubber:\nStored under controlled conditions (water sprinkling)\nSent for incineration"
+        },
+        {
+         "type": "paragraph",
+         "text": "Liquid Waste Handling"
+        },
+        {
+         "type": "bullets",
+         "text": "Wastewater (~3000 m³/day) treated in WWTP through:\nBiological oxidation\nFiltration\nReverse osmosis\nTreated water reused for:\nCooling tower makeup\nGardening\nUsed oil:\nCollected in barrels\nSent to authorized recyclers"
+        },
+        {
+         "type": "paragraph",
+         "text": "Gaseous Waste Handling"
+        },
+        {
+         "type": "bullets",
+         "text": "Exhaust gases treated in scrubber systems before release\nContinuous monitoring through online analyzers\nVent gases routed to flare system for complete combustion"
+        },
+        {
+         "type": "paragraph",
+         "text": "Storage & Handling Controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of designated containers (bins, drums, jumbo bags)\nClear labelling and segregation\nPrevention of mixing incompatible waste"
+        }
+       ]
+      },
+      {
+       "heading": "Waste Stream Mapping and Quantification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has conducted systematic mapping of all waste streams to improve management and reduction strategies."
+        },
+        {
+         "type": "paragraph",
+         "text": "Practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Identification of waste generation points across processes and utilities\nClassification of waste based on:\nType (hazardous/non-hazardous)\nSource (process, utility, maintenance)\nQuantification and tracking of waste volumes"
+        },
+        {
+         "type": "paragraph",
+         "text": "Usage of mapping data:"
+        },
+        {
+         "type": "bullets",
+         "text": "Identification of high waste-generating areas\nDevelopment of targeted reduction and recovery initiatives\nMonitoring of waste trends over time"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Waste Category",
+          "Source / Generation Point",
+          "Segregation Method",
+          "Storage / Handling Practice",
+          "Quantification & Tracking"
+         ],
+         "rows": [
+          [
+           "Hazardous Process Waste",
+           "Polymerization, finishing operations",
+           "Segregated at source in labelled containers",
+           "Stored in designated hazardous waste area with secondary containment",
+           "Measured in MT/month and recorded in waste logs"
+          ],
+          [
+           "Chemical Residues / Sludge",
+           "ETP / RO / MEE systems",
+           "Separate collection based on chemical composition",
+           "Stored in sealed containers; disposed via authorized vendors",
+           "Tracked through disposal manifests and records"
+          ],
+          [
+           "Used Oil & Lubricants",
+           "Machinery, maintenance activities",
+           "Collected in dedicated drums",
+           "Stored in leak-proof containers in isolated area",
+           "Quantity tracked and handed over to authorized recyclers"
+          ],
+          [
+           "Contaminated Packaging Waste",
+           "Raw material drums, chemical containers",
+           "Segregated as hazardous if contaminated",
+           "Decontaminated or stored separately for disposal",
+           "Inventory-based tracking"
+          ],
+          [
+           "Non-Hazardous Solid Waste",
+           "Office, canteen, general operations",
+           "Segregated as recyclable / non-recyclable",
+           "Stored in designated bins (color-coded)",
+           "Monitored through periodic waste audits"
+          ],
+          [
+           "Recyclable Waste",
+           "Paper, plastic, metal scrap",
+           "Segregated at source",
+           "Sent to authorized recyclers",
+           "Quantity recorded monthly"
+          ],
+          [
+           "Wastewater / Liquid Waste",
+           "Process discharge, utilities",
+           "Segregated into high-load and low-load streams",
+           "Treated through ETP → RO → MEE (ZLD system)",
+           "Flow meters and water balance tracking"
+          ],
+          [
+           "Domestic Waste",
+           "Canteen, sanitation facilities",
+           "Segregated as wet and dry waste",
+           "Treated via STP or municipal disposal",
+           "Periodic estimation and monitoring"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Color-Coded Bin System for Waste Segregation"
+        },
+        {
+         "type": "numbered",
+         "text": "Red Bin – Hazardous Waste\nUsed for: Contaminated rags, chemical residues, ETP sludge, contaminated containers\nDisposal: Stored in designated hazardous area and handed over to authorized vendors\nYellow Bin – Chemical / Special Waste\nUsed for: Laboratory waste, contaminated PPE, chemical sludge\nDisposal: Treated and disposed as per hazardous waste regulations\nBlue Bin – Recyclable Waste\nUsed for: Paper, plastic, metal scrap, clean drums\nDisposal: Sent to authorized recyclers\nGreen Bin – Biodegradable Waste\nUsed for: Food waste, canteen waste, garden waste\nDisposal: Composting or organic waste processing\nBlack Bin – General / Non-Recyclable Waste\nUsed for: Sweepings, non-recyclable office waste\nDisposal: Disposed as per municipal guidelines\nWhite / Transparent Containers – Used Oil & Lubricants\nUsed for: Waste oil from machinery and maintenance\nDisposal: Stored in sealed containers and handed over to authorized recyclers\nOrange Bin (if applicable) – Industrial Process Waste\nUsed for: Polymer waste, process rejects\nDisposal: Co-processing or controlled industrial disposal"
+        }
+       ]
+      },
+      {
+       "heading": "Employee Training and Awareness on Waste Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has institutionalized training programs to ensure effective waste segregation and reduction practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Training coverage includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Waste identification and classification\nSegregation of hazardous and non-hazardous waste\nSafe handling and storage practices\nEnvironmental and health impacts of improper waste disposal\nCirculareconomy and waste reduction practices\nWaste classification"
+        },
+        {
+         "type": "paragraph",
+         "text": "Training methods:"
+        },
+        {
+         "type": "bullets",
+         "text": "Induction programs for new employees\nPeriodic refresher training sessions\nToolbox talks and awareness campaigns"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Improved compliance with waste management procedures\nIncreased employee participation in waste reduction initiatives"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a structured monitoring system:\n\nTracking of:\nWaste generation quantities\nWaste recovery and reuse rates\nDisposal volumes\nPeriodic waste audits and inspections\nMaintenance of waste manifests and compliance records\nReporting to regulatory authorities and internal management"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Waste inventory and tracking logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Waste manifests and disposal records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Recovered material usage records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Inspection and audit reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Materials and Chemicals Management",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1213,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a comprehensive and structured system for the safe, efficient, and environmentally responsible management of materials and chemicals across all operations."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objective is to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Minimize material consumption through process optimization\nReduce environmental and health risks associated with hazardous substances\nEnsure safe handling, storage, transportation, and disposal of chemicals\nPromote substitution with safer and environmentally friendly alternatives\nPrevent incidents through preparedness and employee awareness"
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Procurement, storage, handling, and use of raw materials and chemicals\nHazardous and non-hazardous substances\nWaste generated from chemical usage\nAll operational areas, warehouses, and utility systems"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Develops chemical safety procedures and ensures regulatory compliance",
+        "Maintains MSDS/SDS and hazard communication systems",
+        "Conducts training and emergency preparedness programs"
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Ensures safe and optimized use of materials in processes",
+        "Minimizes waste generation"
+       ]
+      },
+      {
+       "role": "Stores & Procurement Team",
+       "responsibilities": [
+        "Ensures proper labelling, storage, and inventory control",
+        "Sources safer and compliant materials"
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Ensures safe handling during maintenance activities",
+        "Prevents leaks and spills"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a life-cycle approach for materials and chemicals:"
+      },
+      {
+       "type": "paragraph",
+       "text": "Procurement → Storage → Handling → Usage → Disposal → Monitoring"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Material Optimization and Reduction in Consumption",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented structured process optimization and recovery systems to minimize material consumption and improve resource efficiency."
+        },
+        {
+         "type": "paragraph",
+         "text": "Enhanced implemented practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of approved recovery systems such as distillation, filtration, and neutralization to recover usable materials from process streams\nIdentification of materials suitable for recovery through defined procedures and QA/QC validation\nBlending of recovered materials with fresh raw materials to optimize consumption without affecting product quality\nControlled dosing and optimized usage of chemicals in utilities and processes"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational control and Uses of Recovered Materials"
+        },
+        {
+         "type": "bullets",
+         "text": "Only approved recovered materials are reused in production\nMaterials are tested for:\nPurity\nConcentration\nContaminants\nQA/QC validation ensures compliance with product specifications"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in raw material consumption\nImproved process efficiency and cost optimization\nContribution to circular economy practices"
+        }
+       ]
+      },
+      {
+       "heading": "Use of Eco-Friendly and Sustainable Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL promotes the use of environmentally responsible materials wherever technically feasible."
+        },
+        {
+         "type": "paragraph",
+         "text": "Practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Evaluation of eco-friendly or low-impact chemicals during procurement\nUse of cleaner fuels such as RLNG in operations\nExploration of low GWP substances (e.g., refrigerants)\nReduction and elimination of single-use plastics (completed initiative)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduced environmental footprint\nAlignment with sustainability and regulatory expectations"
+        }
+       ]
+      },
+      {
+       "heading": "Environmental Emergency Preparedness and Response",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has established emergency response systems to manage chemical-related incidents."
+        },
+        {
+         "type": "paragraph",
+         "text": "Preparedness measures include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Identification of potential chemical hazards and risk scenarios\nAvailability of spill kits, neutralizing agents, and emergency equipment\nDefined procedures for handling spills, leaks, and exposures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Response actions include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Immediate isolation of affected area\nInforming control room and EHS team\nContainment and neutralization of spilled chemicals\nSafe disposal of contaminated materials"
+        },
+        {
+         "type": "paragraph",
+         "text": "Integration with operations:"
+        },
+        {
+         "type": "bullets",
+         "text": "Linked with LDAR and leak management systems\nEmergency drills conducted periodically"
+        }
+       ]
+      },
+      {
+       "heading": "Safe Storage, Labelling, Handling, and Transportation of Chemicals",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented strict controls to ensure safe management of hazardous substances."
+        },
+        {
+         "type": "paragraph",
+         "text": "Storage practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Segregation of chemicals based on compatibility\nStorage in designated areas with secondary containment\nUse of corrosion-resistant storage systems"
+        },
+        {
+         "type": "paragraph",
+         "text": "Labelling and identification:"
+        },
+        {
+         "type": "bullets",
+         "text": "All containers labelled as per regulatory requirements\nAvailability of Safety Data Sheets (SDS/MSDS) at point of use"
+        },
+        {
+         "type": "paragraph",
+         "text": "Handling practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of appropriate PPE (gloves, goggles, masks, etc.)\nDefined work instructions for handling hazardous chemicals\nControlled transfer systems to prevent spills and leaks"
+        },
+        {
+         "type": "paragraph",
+         "text": "Transportation controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Safe internal transfer using designated containers\nCompliance with safety norms during external transportation"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Chemical Type",
+          "Example Chemicals",
+          "GHS Pictogram",
+          "GHS Code / Standard",
+          "Key Hazard"
+         ],
+         "rows": [
+          [
+           "Flammable / Monomers",
+           "Butadiene / Styrene / Propylene",
+           "",
+           "GHS02 / UN GHS Rev.9 / ISO 7010-W021 / Class 2 / Class 3",
+           "Highly flammable / vapour / fire risk / explosion hazard"
+          ],
+          [
+           "Compressed / Gases",
+           "Butadiene (gas) / Nitrogen (inerting) / Instrument air",
+           "",
+           "GHS04 / UN GHS Rev.9 / Div. 2.2 / 2.3 / ISO 7010-W029",
+           "High pressure vessel / bursting / explosion / asphyxiation risk"
+          ],
+          [
+           "Toxic / Chemicals",
+           "Styrene vapour / Acrylonitrile / Toxic additives",
+           "",
+           "GHS06 / UN GHS Rev.9 / Acute Tox Cat 1-3 / ISO 7010-W016",
+           "Acute oral/dermal / inhalation toxicity / lethal if swallowed"
+          ],
+          [
+           "Corrosive / Chemicals",
+           "Sulfuric acid (H₂SO₄) / Sodium hydroxide / Hydrochloric acid",
+           "",
+           "GHS05 / UN GHS Rev.9 / Skin Corr. Cat 1 / ISO 7010-W023",
+           "Severe skin burns / serious eye damage / metal corrosion"
+          ],
+          [
+           "Oxidizing / Agents",
+           "Organic peroxides / Benzoyl peroxide / TBHP",
+           "",
+           "GHS03 / UN GHS Rev.9 / Ox. Liq. Class 5.1 / ISO 7010-W028",
+           "Intensifies fire / may cause explosion / strong oxidiser"
+          ],
+          [
+           "Flammable / Liquids",
+           "Petroleum solvents / Process / white oils / Naphtha",
+           "",
+           "GHS02 / UN GHS Rev.9 / Flam. Liq. Class 3 / ISO 7010-W021",
+           "Flash point <60°C / ignition / fire risk / flammable vapours"
+          ],
+          [
+           "Harmful / / Irritant",
+           "Emulsifiers / Surfactants / Mild additives",
+           "",
+           "GHS07 / UN GHS Rev.9 / Acute Tox Cat 4 / ISO 7010-W027",
+           "Skin/eye irritation / respiratory irritant / harmful if inhaled"
+          ],
+          [
+           "Environmental / Hazard",
+           "Waste chemicals / Process residues / Spent catalyst",
+           "",
+           "GHS09 / UN GHS Rev.9 / Aquatic Tox Cat 1 / ISO 7010-W057",
+           "Aquatic toxicity / long-term damage / environmental harm"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Training and Awareness on Hazardous Substance Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures that all employees handling chemicals are adequately trained."
+        },
+        {
+         "type": "paragraph",
+         "text": "Training programs include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Safe handling and storage of chemicals\nUnderstanding of SDS and hazard communication\nUse of PPE and emergency response procedures\nAwareness of environmental and health impacts"
+        },
+        {
+         "type": "paragraph",
+         "text": "Frequency:"
+        },
+        {
+         "type": "bullets",
+         "text": "Induction training for new employees\nPeriodic refresher training sessions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Improved safety culture\nReduced risk of incidents and exposure"
+        }
+       ]
+      },
+      {
+       "heading": "Hazardous Waste Treatment and Safe Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures safe handling, treatment, and disposal of hazardous substances, while also minimizing waste through recovery and reuse."
+        },
+        {
+         "type": "paragraph",
+         "text": "Enhanced practices with recovery integration:"
+        },
+        {
+         "type": "bullets",
+         "text": "Segregation of hazardous waste at source\nRecovery of usable materials before disposal through:\nDistillation\nFiltration\nNeutralization processes\nStorage of recovered materials in properly labelled dedicated containers/tanks\nDisposal of non-recoverable hazardous waste through authorized TSDF facilities\nMaintenance of detailed records for:\nMaterial recovery\nTesting\nUsage and disposal"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Strict adherence to PPE and MSDS guidelines during handling\nRisk assessment prior to reuse of recovered materials"
+        }
+       ]
+      },
+      {
+       "heading": "Substitution with Less Hazardous Materials",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has demonstrated a structured approach to replacing hazardous substances with safer alternatives through technical evaluation and trials."
+        },
+        {
+         "type": "paragraph",
+         "text": "Case Implementation: Replacement of TNPP with Safer Antioxidant (A6)"
+        },
+        {
+         "type": "bullets",
+         "text": "TNPP (existing antioxidant) was identified under REACH SVHC compliance list, prompting substitution\nISRPL introduced A6 antioxidant (C25H44OS2) as a safer alternative"
+        },
+        {
+         "type": "paragraph",
+         "text": "Structured evaluation approach:"
+        },
+        {
+         "type": "bullets",
+         "text": "Laboratory trials conducted as per SOP and standard ASTM methods\nComparative analysis performed on:\nVisual appearance (before and after ageing)\nMooney viscosity\nPhysical properties (tensile strength, modulus, elongation)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Key results:"
+        },
+        {
+         "type": "bullets",
+         "text": "Performance of A6 found comparable to TNPP\nNo significant deviation observed in polymer properties\nProduct quality maintained within ISRPL specifications"
+        },
+        {
+         "type": "paragraph",
+         "text": "Conclusion and implementation:"
+        },
+        {
+         "type": "bullets",
+         "text": "Safer antioxidant successfully validated\nRecommended for plant-scale implementation"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in use of hazardous (SVHC-listed) substances\nCompliance with international regulatory standards\nImproved environmental and product safety profile"
+        }
+       ]
+      },
+      {
+       "heading": "Reduction in Hazardous Waste Generation and Toxicity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a multi-dimensional approach to reduce both the quantity and toxicity of hazardous substances and waste."
+        },
+        {
+         "type": "paragraph",
+         "text": "Enhanced practices (with your SOP integration):"
+        },
+        {
+         "type": "bullets",
+         "text": "Recovery and reuse of process materials through structured systems\nReduction in hazardous waste generation below design levels\nControlled chemical dosing to avoid excess usage\nElimination of single-use plastics (completed initiative)\nImplementation of circular economy initiatives such as:\nMaterial recovery and reuse\nWaste-to-value exploration"
+        },
+        {
+         "type": "paragraph",
+         "text": "Quality and safety assurance:"
+        },
+        {
+         "type": "bullets",
+         "text": "All recovered materials undergo QA/QC testing before reuse\nProper labelling and traceability maintained\nRecords maintained for recovery, testing, and utilization"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Significant reduction in hazardous waste generation\nLower environmental impact\nImproved resource efficiency and sustainability performance"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a structured monitoring system:"
+      },
+      {
+       "type": "bullets",
+       "text": "Tracking of:\nMaterial consumption\nHazardous chemical usage\nWaste generation levels\nMaintenance of:\nChemical inventory records\nWaste disposal manifests\nPeriodic audits and inspections\nReporting to regulatory authorities"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Safety Data Sheets (SDS/MSDS)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Chemical inventory logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Waste disposal records and manifests",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Incident and spill reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Inspection and audit reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Responsible Water Management and Stewardship",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1486,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented an integrated and site-wide water management system designed to minimize freshwater withdrawal, maximize water reuse, ensure regulatory compliance, and prevent environmental contamination. The objective is to institutionalize responsible water stewardship through technological interventions, risk-based assessments, and continuous monitoring, thereby reducing water intensity and safeguarding local water resources."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All manufacturing units and process operations\nUtility systems (cooling, boilers, etc.)\nDomestic water usage within premises\nWastewater generation, treatment, reuse, and discharge\nSurface water and groundwater protection systems"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility Framework",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Leads water compliance, wastewater quality monitoring, and risk assessments",
+        "Maintains regulatory liaison and reporting"
+       ]
+      },
+      {
+       "role": "Utilities & Engineering Team",
+       "responsibilities": [
+        "Designs, operates, and optimizes water systems (ETP/STP, cooling, recycling)",
+        "Implements conservation and reuse technologies"
+       ]
+      },
+      {
+       "role": "Operations Team",
+       "responsibilities": [
+        "Ensures efficient water use in processes",
+        "Reports leakages, losses, and abnormal consumption"
+       ]
+      },
+      {
+       "role": "Plant Management",
+       "responsibilities": [
+        "Reviews KPIs, approves improvement projects, and ensures accountability"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a comprehensive water management framework focused on optimization of water use, recycling, quality control, and efficient utility operations. The cooling tower system forms a critical component of water consumption, and ISRPL has established detailed operational and treatment controls to ensure efficient and responsible water usage."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Groundwater Protection and Contamination Prevention Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented preventive and control measures to eliminate risks of groundwater contamination."
+        },
+        {
+         "type": "paragraph",
+         "text": "Preventive infrastructure:"
+        },
+        {
+         "type": "bullets",
+         "text": "Impervious flooring and bunding in chemical storage and handling areas\nDedicated drainage systems segregating stormwater and effluent\nLeak-proof pipelines and storage systems"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Spill prevention and emergency response procedures\nRegular inspection of tanks, pipelines, and storage areas\nHazardous material handling protocols"
+        }
+       ]
+      },
+      {
+       "heading": "Comprehensive Water Auditing and Loss Reduction Program",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a structured and periodic water auditing mechanism to identify inefficiencies and drive reduction initiatives."
+        },
+        {
+         "type": "paragraph",
+         "text": "Audit approach"
+        },
+        {
+         "type": "bullets",
+         "text": "Detailed mapping of water flow across:\nProcess consumption\nCooling and boiler systems\nDomestic and auxiliary usage\nIdentification of:\nHigh consumption zones\nLeakages and unaccounted losses\nInefficient practices or equipment"
+        },
+        {
+         "type": "paragraph",
+         "text": "Implementation controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of digital water meters and submeters across critical points\nDevelopment of water balance diagrams for each facility\nBenchmarking water consumption per unit of production"
+        },
+        {
+         "type": "paragraph",
+         "text": "Corrective actions"
+        },
+        {
+         "type": "bullets",
+         "text": "Leak detection and rectification programs\nOptimization of process water usage\nStandardization of operating procedures to reduce wastage"
+        }
+       ]
+      },
+      {
+       "heading": "Water-Efficient Cooling and Utility Management Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Cooling systems are one of the highest water-consuming utilities; ISRPL has optimized them through efficiency measures."
+        },
+        {
+         "type": "paragraph",
+         "text": "Implemented initiatives"
+        },
+        {
+         "type": "bullets",
+         "text": "Operation of cooling towers at optimized cycles of concentration (CoC) to reduce blowdown losses\nUse of recycled treated water in cooling systems\nInstallation of automatic chemical dosing systems to maintain water quality and reduce scaling\nUse of drift eliminators to minimize evaporative losses"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Continuous monitoring of:\nBlowdown quantity\nMake-up water requirement\nCooling efficiency parameters\nPeriodic descaling and maintenance to sustain performance"
+        }
+       ]
+      },
+      {
+       "heading": "Advanced Water Recycling and Circular Water Use Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a multi-stage water recycling and reuse system to significantly reduce dependence on freshwater sources."
+        },
+        {
+         "type": "paragraph",
+         "text": "System infrastructure and practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of Effluent Treatment Plants (ETP) for industrial wastewater and Sewage Treatment Plants (STP) for domestic wastewater\nUse of primary, secondary, and tertiary treatment processes, including filtration and biological treatment\nDeployment of tertiary polishing units (e.g., RO / UF where applicable) to enhance reuse quality\nSegregation of high-load and low-load effluent streams to optimize treatment efficiency"
+        },
+        {
+         "type": "paragraph",
+         "text": "Water reuse integration:"
+        },
+        {
+         "type": "bullets",
+         "text": "Treated water is actively reused in:\nCooling tower make-up\nBoiler feed (after appropriate treatment)\nUtility washing and floor cleaning\nGreenbelt and landscaping\nImplementation of closed-loop circulation systems in utilities to minimize discharge"
+        },
+        {
+         "type": "paragraph",
+         "text": "Control & monitoring:"
+        },
+        {
+         "type": "bullets",
+         "text": "Flow meters installed at key inlet, outlet, and reuse points\nDaily water balance analysis (input vs reuse vs discharge)\nTargets defined for increasing reuse percentage"
+        }
+       ]
+      },
+      {
+       "heading": "Site-Level Water Risk Assessment and Mitigation Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL conducts comprehensive water risk assessments to evaluate both operational and geographical risks."
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk identification includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Water scarcity and dependency on external sources\nImpact on local water tables and surrounding communities\nRegulatory risks related to water withdrawal and discharge\nClimate-related risks (rainfall variability, drought conditions)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Mitigation measures implemented:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction of freshwater dependency through reuse systems\nDevelopment of contingency plans for water shortages\nPrioritization of critical operations during water stress scenarios\nIntegration of water risk findings into business continuity planning"
+        }
+       ]
+      },
+      {
+       "heading": "Cooling Water Quality Monitoring and Preventive Maintenance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures consistent system performance through strict monitoring, cleaning, and preventive maintenance practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Water quality monitoring:"
+        },
+        {
+         "type": "bullets",
+         "text": "Daily monitoring: pH, TDS, conductivity, hardness, chlorides, silica, turbidity, residual chlorine\nMonthly monitoring: ORP, bacterial count, SRB count, corrosion rates"
+        },
+        {
+         "type": "paragraph",
+         "text": "Preventive and corrective practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Pre-cleaning of equipment (heat exchangers, pipelines) before operation\nPeriodic bio-cleaning using biocides\nPassivation treatment to prevent corrosion and extend equipment life\nUse of corrosion coupons to evaluate system performance"
+        },
+        {
+         "type": "paragraph",
+         "text": "Make-up water control:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of RO permeate water with controlled quality\nMonitoring of raw and treated water parameters"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Stable water quality within defined limits\nReduced risk of scaling and equipment damage\nSustained efficiency and reduced water losses"
+        }
+       ]
+      },
+      {
+       "heading": "Wastewater Quality Assurance and Compliance Control Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has established stringent wastewater quality monitoring and control systems to ensure zero environmental harm."
+        },
+        {
+         "type": "paragraph",
+         "text": "Treatment and monitoring practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Continuous operation of ETP/STP with defined treatment standards\nMonitoring of critical parameters:\npH, COD, BOD, TSS, oil & grease\nInstallation of online monitoring systems (OCEMS) where applicable\nRoutine laboratory testing (internal + third-party certified labs)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Compliance assurance:"
+        },
+        {
+         "type": "bullets",
+         "text": "Adherence to statutory discharge norms and consent conditions\nMaintenance of logs, lab reports, and compliance records\nImmediate corrective actions in case of deviations"
+        }
+       ]
+      },
+      {
+       "heading": "Rainwater Harvesting and Groundwater Recharge Infrastructure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented rainwater harvesting systems to reduce dependence on external water sources and support groundwater recharge."
+        },
+        {
+         "type": "bullets",
+         "text": "Rooftop rainwater collection systems\nRecharge pits, percolation wells, and storage tanks\nStormwater channelling systems to direct runoff into recharge structures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Utilization and impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Harvested water used for non-potable applications where feasible\nSignificant contribution to groundwater table replenishment"
+        }
+       ]
+      },
+      {
+       "heading": "Water-Efficient Cooling System Infrastructure and Operation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL operates an open recirculating cooling water system designed to optimize water use and minimize freshwater consumption through efficient heat exchange and controlled evaporation."
+        },
+        {
+         "type": "paragraph",
+         "text": "System configuration includes"
+        },
+        {
+         "type": "bullets",
+         "text": "Cooling tower with 3 cells\nCirculation rate: 5000 m³/hr\nHolding volume: 1975 m³\nCycle of concentration maintained at ~6 cycles\nEvaporation loss: 53.1 m³/hr\nControlled blowdown: 10.71 m³/hr"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational practices implemented"
+        },
+        {
+         "type": "bullets",
+         "text": "Operation of pumps based on plant load to avoid excess water usage\nMaintaining discharge and return pressures within defined limits\nOptimized use of cooling tower cells and fans as per process requirement\nContinuous monitoring of supply and return temperatures"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Optimized water consumption\nReduced freshwater intake through recirculation\nEfficient thermal performance of utilities"
+        }
+       ]
+      },
+      {
+       "heading": "Cooling Water Treatment, Filtration and Chemical Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a comprehensive water treatment and chemical dosing system to maintain water quality and improve reuse efficiency."
+        },
+        {
+         "type": "paragraph",
+         "text": "Filtration system:"
+        },
+        {
+         "type": "bullets",
+         "text": "Installation of side stream sand filters (200 m³/hr capacity)\nContinuous removal of suspended solids\nAutomatic backwash system to maintain filter efficiency\nMonitoring of turbidity at inlet and outlet"
+        },
+        {
+         "type": "paragraph",
+         "text": "Chemical dosing system includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Scale inhibitors\nCorrosion inhibitors\nBio-dispersants\nOxidizing and non-oxidizing biocides\nAcid dosing (H₂SO₄) for pH control"
+        },
+        {
+         "type": "paragraph",
+         "text": "Benefits of treatment system:"
+        },
+        {
+         "type": "bullets",
+         "text": "Prevention of scaling, corrosion, and biofouling\nIncreased cycles of concentration\nReduction in blowdown losses\nImproved water reuse and conservation"
+        }
+       ]
+      },
+      {
+       "heading": "Zero Liquid Discharge (ZLD) System and Water Monitoring Framework",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented a Zero Liquid Discharge (ZLD) system to ensure complete recycling and reuse of wastewater, eliminating any liquid discharge outside the facility."
+        },
+        {
+         "type": "paragraph",
+         "text": "System configuration and operation:"
+        },
+        {
+         "type": "bullets",
+         "text": "Industrial wastewater generated from manufacturing operations is treated through Effluent Treatment Plant (ETP) and Reverse Osmosis (RO) systems\nThe RO reject is further processed in a Multiple Effect Evaporator (MEE) system\nRecovered water is reused across operations, including:\nProcess operations\nCooling systems\nUtility applications such as gardening"
+        },
+        {
+         "type": "paragraph",
+         "text": "Residue management: The remaining solid residue in the form of salts is safely handled and disposed of through authorized vendors in compliance with regulatory requirements"
+        },
+        {
+         "type": "paragraph",
+         "text": "Water monitoring and measurement: Water consumption is mapped across key operational areas, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Polymerization processes\nCooling systems\nFinishing operations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Flow meters are installed at major consumption points to enable section-wise monitoring. Water consumption data is recorded and reviewed on a monthly basis."
+        },
+        {
+         "type": "paragraph",
+         "text": "Performance tracking:"
+        },
+        {
+         "type": "bullets",
+         "text": "Water intensity is calculated as cubic meters (m³) per metric ton (MT) of production\nThis metric is used as a key performance indicator (KPI) to assess water efficiency and drive optimization"
+        },
+        {
+         "type": "paragraph",
+         "text": "Estimation and data reliability:"
+        },
+        {
+         "type": "bullets",
+         "text": "In areas where direct measurement is not feasible, water consumption is estimated using operational data and water balance analysis\nSteam required for operations is sourced externally via pipeline supply; therefore, boiler water consumption is not considered within the site boundary"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Achievement of zero wastewater discharge\nMaximized water reuse and reduced freshwater dependency\nStrengthened regulatory compliance and environmental protection"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Performance Tracking",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a data-driven water management system:"
+      },
+      {
+       "type": "bullets",
+       "text": "Daily and monthly water consumption tracking\nKPI monitoring:\nWater intensity (m³ per unit production)\n% water recycled and reused\nFreshwater withdrawal reduction\nTrend analysis and benchmarking across plants\nManagement review meetings for performance evaluation"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Evidence Records",
+     "rows": [
+      {
+       "record": "Water balance sheets and audit reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "ETP/STP operational logs and lab reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Water consumption and metering data",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Rainwater harvesting records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Groundwater monitoring reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Corrective action and inspection records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Product Environmental Impact Management",
+   "code": "",
+   "catalogId": "hazardous-substitution",
+   "pillar": "E",
+   "department": "Technical Services (TS) / R&D Team",
+   "owner": "Technical Services (TS) / R&D Team",
+   "sourceWords": 812,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a comprehensive and structured framework to identify, assess, and minimize environmental impacts associated with its products across their lifecycle, from raw material selection to end-use application."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objective of this SOP is to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Evaluate environmental and regulatory risks associated with product formulations\nReduce environmental footprint through product design, optimization, and safer material substitution\nEnsure compliance with global regulations (e.g., REACH, SVHC requirements)\nPromote responsible product use through customer awareness and guidance\nDrive continuous improvement in product sustainability and environmental performance"
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Product design, development, and modification processes\nRaw material evaluation, selection, and substitution\nLaboratory testing, pilot trials, and performance validation\nCustomer-facing documentation (SDS, technical datasheets)\nEnvironmental and regulatory compliance of products"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Technical Services (TS) / R&D Team",
+       "responsibilities": [
+        "Conducts product development, trials, and environmental impact assessments",
+        "Identifies opportunities for safer alternatives and formulation improvements"
+       ]
+      },
+      {
+       "role": "QA/QC Department",
+       "responsibilities": [
+        "Performs laboratory testing and validation of product quality and performance",
+        "Ensures products meet internal and regulatory specifications"
+       ]
+      },
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Monitors environmental and regulatory risks associated with product composition",
+        "Ensures compliance with environmental standards and chemical regulations"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Sources compliant and environmentally preferable raw materials",
+        "Engages with suppliers on safer chemical alternatives"
+       ]
+      },
+      {
+       "role": "Sales & Customer Support Team",
+       "responsibilities": [
+        "Provides product usage, storage, and safety guidance to customers",
+        "Ensures dissemination of SDS and technical instructions"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a life-cycle-oriented product stewardship approach, integrating environmental considerations into product design and usage."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Product Environmental Impact Assessment and Technical Studies",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL conducts structured technical and environmental studies to evaluate the impact of product formulations and identify opportunities for improvement."
+        },
+        {
+         "type": "paragraph",
+         "text": "Implemented Case Study: Replacement of Hazardous Antioxidant (TNPP → A6)"
+        },
+        {
+         "type": "paragraph",
+         "text": "ISRPL identified that TNPP (Tris Nonylphenyl Phosphite), used as an antioxidant in SBR1502 rubber, was included in the REACH SVHC (Substances of Very High Concern) list, posing environmental and regulatory risks."
+        },
+        {
+         "type": "paragraph",
+         "text": "Action Taken:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Initiated a detailed technical and environmental performance study to replace TNPP with a safer alternative antioxidant (A6 / C25H44OS2)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Study Methodology:"
+        },
+        {
+         "type": "bullets",
+         "text": "Laboratory trials conducted as per ISRPL SOP and international standards\nComparative analysis between TNPP and A6 based on:\nVisual appearance before and after ageing\nThermal ageing performance (140°C / 1 hour)\nMooney viscosity (ASTM D1646)\nMechanical properties (ASTM D412)\nOxidation stability under controlled conditions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Key Observations:"
+        },
+        {
+         "type": "bullets",
+         "text": "Comparable product appearance before and after ageing\nNegligible difference in Mooney viscosity (performance consistency maintained)\nMechanical and physical properties remained within specification limits\nNo adverse impact on product quality or process performance"
+        },
+        {
+         "type": "paragraph",
+         "text": "Outcome:"
+        },
+        {
+         "type": "bullets",
+         "text": "A6 antioxidant validated as a technically equivalent and environmentally safer substitute\nRecommended for plant-scale implementation"
+        },
+        {
+         "type": "paragraph",
+         "text": "Environmental Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Elimination/reduction of SVHC-listed chemical usage\nImproved product environmental compliance\nReduced risk of hazardous discharge during product lifecycle"
+        }
+       ],
+       "responsible": "Technical Services (TS) / R&D Team"
+      },
+      {
+       "heading": "Product Design for Reduced Consumption and Optimized Usage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL integrates efficiency principles into product formulation to ensure optimal performance with minimal resource consumption."
+        },
+        {
+         "type": "paragraph",
+         "text": "Implemented strategies include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Optimization of chemical formulations to achieve required performance at standard or reduced dosage levels\nElimination of unnecessary additives or excess chemical loading\nContinuous improvement through laboratory testing and process optimization"
+        },
+        {
+         "type": "paragraph",
+         "text": "Example linkage:"
+        },
+        {
+         "type": "bullets",
+         "text": "Replacement of TNPP with A6 ensured:\nNo increase in dosage requirement\nMaintenance of performance efficiency\nAvoidance of additional material consumption"
+        },
+        {
+         "type": "paragraph",
+         "text": "Supporting practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Process optimization to reduce variability and overuse\nMonitoring of product performance consistency"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduced chemical consumption during product application\nLower environmental burden from product usage"
+        }
+       ],
+       "responsible": "Technical Services (TS) / R&D Team"
+      },
+      {
+       "heading": "Product Design to Reduce Toxic Discharges and Environmental Risk",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL actively incorporates environmental considerations into product design to minimize toxicity and environmental release."
+        },
+        {
+         "type": "paragraph",
+         "text": "Key initiatives include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Replacement of hazardous substances (e.g., TNPP) with safer alternatives\nEvaluation of raw materials based on:\nToxicity profile\nEnvironmental persistence\nRegulatory status\nSelection of raw materials from approved and compliant suppliers"
+        },
+        {
+         "type": "paragraph",
+         "text": "Supporting controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Alignment with REACH and global chemical safety standards\nContinuous review of product composition to reduce environmental impact\nCollaboration with licensors (e.g., TSRC) for environmentally improved formulations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduced risk of toxic discharge into air, water, and soil\nImproved environmental compatibility of products\nEnhanced regulatory compliance and market acceptance"
+        }
+       ],
+       "responsible": "Technical Services (TS) / R&D Team"
+      },
+      {
+       "heading": "Customer Information for Safe Use, Storage, and Lifecycle Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures that customers are equipped with detailed information to minimize environmental impact during product handling and usage."
+        },
+        {
+         "type": "paragraph",
+         "text": "Implemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Provision of Safety Data Sheets (SDS) with every product\nInclusion of:\nHazard identification and risk information\nSafe handling and storage conditions\nSpill prevention and emergency response measures\nTechnical datasheets specifying:\nRecommended usage conditions\nStorage temperature and shelf-life requirements"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Customers are advised on controlled usage to avoid overconsumption\nGuidance provided on proper storage to prevent product degradation and waste generation"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in environmental release due to improper handling\nExtended product shelf life and usability\nImproved safety and environmental compliance at customer end"
+        }
+       ],
+       "responsible": "Sales & Customer Support Team"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL ensures continuous monitoring of product environmental performance through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Tracking of:\nSubstituted hazardous chemicals\nProduct formulation changes\nReview of laboratory and trial data\nDocumentation of performance validation results\nMonitoring regulatory updates and compliance requirements"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Technical study reports (e.g., antioxidant substitution report)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Product testing and validation data",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Safety Data Sheets (SDS)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Regulatory compliance documentation (REACH, SVHC status)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Customer technical communication records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Product and Packaging End-of-Life Environmental Management",
+   "code": "",
+   "catalogId": "product-end-of-life",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 807,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a structured framework to minimize environmental impacts arising from product and packaging at the end of their lifecycle, while promoting circular economy principles, safe disposal practices, and sustainable packaging design.\n\nThe objective of this SOP is to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure environmentally sound disposal and management of products and packaging\nPromote recycling, recovery, and circular material flow\nReduce packaging waste through optimization and material efficiency\nMinimize environmental risks from residual chemicals in products\nStrengthen collaboration with external stakeholders for responsible end-of-life handling"
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Finished products and their lifecycle beyond customer use\nPackaging materials (primary, secondary, tertiary)\nCustomer guidance on disposal and recycling\nVendor and recycler engagement for waste management"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Defines disposal guidelines and monitors environmental compliance",
+        "Ensures safe end-of-life practices and regulatory adherence"
+       ]
+      },
+      {
+       "role": "Technical Services (TS) / R&D Team",
+       "responsibilities": [
+        "Designs products with reduced environmental persistence and toxicity",
+        "Evaluates green chemistry approaches"
+       ]
+      },
+      {
+       "role": "Procurement & Packaging Team",
+       "responsibilities": [
+        "Optimizes packaging design and material selection",
+        "Engages with suppliers for sustainable packaging solutions"
+       ]
+      },
+      {
+       "role": "Sales & Customer Support Team",
+       "responsibilities": [
+        "Communicates disposal and recycling guidelines to customers"
+       ]
+      },
+      {
+       "role": "Logistics & External Vendors",
+       "responsibilities": [
+        "Support recycling, recovery, and safe disposal processes"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a life-cycle and circular economy approach, focusing on minimizing environmental impact beyond product use."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Patch up with External Stakeholders for End-of-Life Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL actively collaborates with external stakeholders to ensure environmentally responsible handling of products and packaging after use.\n\nImplemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Engagement with authorized recyclers and waste management vendors for handling packaging waste\nDisposal of packaging materials (drums, bags, containers) through approved recycling channels\nCoordination with vendors for reuse, recycling, or recovery of materials wherever feasible\nCollaboration with suppliers and licensors to improve product sustainability and reduce environmental impact"
+        },
+        {
+         "type": "paragraph",
+         "text": "Supply chain engagement:"
+        },
+        {
+         "type": "bullets",
+         "text": "Encouraging vendors to adopt GHG reduction and sustainable practices\nDevelopment of local suppliers to reduce environmental impact from logistics"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Strengthening circular economy practices\nEnsuring environmentally compliant disposal\nReduction in landfill burden"
+        }
+       ]
+      },
+      {
+       "heading": "Green Chemistry and Product Design to Reduce Residual Environmental Impact",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL integrates green chemistry principles into product design to minimize environmental impact at end-of-life.\n\nKey initiatives include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Replacement of hazardous substances with safer alternatives\nExample: Substitution of TNPP (SVHC-listed antioxidant) with A6 antioxidant\nEvaluation of product formulations to:\nReduce toxic residues\nMinimize environmental persistence\nSelection of raw materials with improved environmental profiles"
+        },
+        {
+         "type": "paragraph",
+         "text": "Design and Process Controls"
+        },
+        {
+         "type": "bullets",
+         "text": "Optimization of reaction conditions (temperature, pressure, catalyst efficiency) to ensure maximum conversion and minimal residuals\nReduction of unreacted monomers (e.g., styrene, butadiene) through improved polymerization efficiency\nImplementation of closed-loop systems to prevent loss of chemicals into the environment\nControl of additive dosing to avoid excess chemical loading"
+        },
+        {
+         "type": "paragraph",
+         "text": "Leaching Risk Reduction Measures"
+        },
+        {
+         "type": "bullets",
+         "text": "Evaluation of leaching potential through standard extraction and migration tests\nUse of stabilizers and binding agents to reduce chemical release from final products\nAssessment of product behavior under different environmental conditions (moisture, temperature, UV exposure)\nDesign of products to ensure chemical stability during storage, use, and disposal phases"
+        },
+        {
+         "type": "paragraph",
+         "text": "Lifecycle Perspective"
+        },
+        {
+         "type": "bullets",
+         "text": "Consideration of environmental impact from raw material sourcing to end-of-life disposal\nDesign for safer disposal, recycling, or recovery where applicable\nReduction of long-term environmental persistence of product components"
+        },
+        {
+         "type": "paragraph",
+         "text": "Technical approach:"
+        },
+        {
+         "type": "bullets",
+         "text": "Laboratory and pilot-scale testing to ensure:\nProduct performance is maintained\nEnvironmental impact is reduced\nContinuous monitoring of regulatory developments and compliance requirements"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduced leaching of harmful substances into soil and water\nLower environmental risk during disposal phase\nImproved sustainability of products"
+        }
+       ]
+      },
+      {
+       "heading": "Customer Guidance on Safe Disposal and Circular Material Flow",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL provides clear guidance to customers to ensure safe disposal and environmentally responsible handling of products and packaging.\n\nImplemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Provision of Safety Data Sheets (SDS) containing:\nDisposal considerations\nHandling of residues and contaminated packaging\nInstructions on:\nAvoiding release of residual chemicals into environment\nSafe disposal through authorized channels\nGuidance on:\nRecycling or returning packaging materials where applicable"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational approach:"
+        },
+        {
+         "type": "bullets",
+         "text": "Customers are encouraged to:\nSegregate packaging waste\nFollow local regulatory requirements for disposal\nClear labelling of packaging for identification and safe handling"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduction in improper disposal practices\nPromotion of recycling and reuse\nImproved environmental compliance across product lifecycle"
+        }
+       ]
+      },
+      {
+       "heading": "Optimization of Packaging for Reduced Environmental Impact",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented measures to optimize packaging design to reduce environmental footprint.\n\nKey initiatives include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of durable and reusable packaging materials such as drums, containers, and PP woven bags\nReduction of packaging material through:\nOptimized dimensions and weight\nEfficient packing configurations\nSimplification of packaging material types to improve recyclability"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of standardized packaging formats to reduce waste generation\nEnsuring packaging is suitable for:\nSafe transport\nReuse or recycling\nContinuous evaluation of packaging efficiency"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Reduced packaging waste generation\nImproved recyclability of materials\nLower environmental footprint from packaging lifecycle"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL monitors end-of-life environmental performance through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Tracking of packaging material usage and waste\nMonitoring recycling and disposal practices\nReview of customer feedback and compliance\nEvaluation of product formulation changes"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Safety Data Sheets (SDS)",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Packaging specifications and material records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Vendor and recycler authorization records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Product formulation and substitution reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Compliance and audit records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air Emissions, Noise and Environmental Nuisance Management",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "EHS Department",
+   "owner": "EHS Department",
+   "sourceWords": 1274,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has implemented a comprehensive and technically robust framework for the prevention, control, monitoring, and continuous reduction of air emissions, noise, and other environmental nuisances arising from its operations."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objective is to minimize emissions at source, deploy effective pollution control technologies, and ensure continuous compliance with regulatory standards, while aligning with the organization’s broader sustainability and decarbonization commitments."
+      },
+      {
+       "type": "paragraph",
+       "text": "The approach integrates process optimization, cleaner fuel transition (RLNG), advanced control systems, structured monitoring, and preventive maintenance practices to manage particulate matter, gaseous pollutants (SO₂, NOx, VOCs), fugitive emissions, noise, and odor."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all ISRPL operations including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Process units and production lines\nUtility systems (boilers, DG sets, compressors, cooling towers)\nStorage, handling, and transfer of raw materials and chemicals\nAll emission sources:\nStack emissions\nFugitive emissions\nAmbient air pollutants\nNoise and odor sources"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "EHS Department",
+       "responsibilities": [
+        "Develops and maintains emission inventory and monitoring protocols",
+        "Conducts ambient air, stack, and noise monitoring",
+        "Manages LDAR program and compliance reporting",
+        "Reviews emission trends and recommends corrective actions"
+       ]
+      },
+      {
+       "role": "Engineering & Utilities Team",
+       "responsibilities": [
+        "Designs and operates emission control systems (filters, scrubbers, enclosures)",
+        "Optimizes fuel usage and combustion efficiency",
+        "Ensures integration of low-emission technologies"
+       ]
+      },
+      {
+       "role": "Production Team",
+       "responsibilities": [
+        "Maintains process discipline to minimize emissions",
+        "Ensures proper operation of pollution control equipment",
+        "Reports deviations and abnormal emissions"
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Executes preventive and predictive maintenance",
+        "Ensures reliability of emission and noise control systems"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a hierarchical control approach:"
+      },
+      {
+       "type": "numbered",
+       "text": "Prevention → (2) Control → (3) Monitoring → (4) Continuous Improvement"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure (Implemented and Operational Practices)",
+     "steps": [
+      {
+       "heading": "Source-Level Emission Prevention and Environmental Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL focuses on minimizing pollutant generation at source through process and input optimization."
+        },
+        {
+         "type": "bullets",
+         "text": "Transition to RLNG fuel, significantly reducing SO₂, NOx, and particulate emissions compared to furnace oil/coal\nOptimization of combustion parameters (air-fuel ratio, temperature control) to ensure complete combustion and reduced emission formation\nUse of closed handling and transfer systems for powders and chemicals to eliminate dust release\nSealing of pumps, valves, and pipelines to prevent fugitive emissions\nControlled storage systems with proper ventilation and containment\nDevelopment of greenbelt across plant premises, acting as:\nDust barrier\nPollutant sink\nNoise attenuation layer"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Routine inspection of potential emission sources\nImmediate corrective action for leakages or abnormal emissions"
+        }
+       ]
+      },
+      {
+       "heading": "Advanced Particulate Matter (PM) Control Systems",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented multi-stage particulate control mechanisms to ensure effective removal of dust and solid particles."
+        },
+        {
+         "type": "paragraph",
+         "text": "Technologies deployed:"
+        },
+        {
+         "type": "bullets",
+         "text": "Bag filters and dust collectors at key emission points\nCyclone separators for coarse particle removal\nWet scrubbers where applicable for fine particulate capture\nCovered material transfer systems to prevent dispersion"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational excellence practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monitoring of pressure drop across filters to assess efficiency\nScheduled cleaning/replacement of filter media\nEnsuring proper sealing to avoid bypass emissions\nCollection and safe disposal/reuse of captured particulate matter"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Significant reduction in particulate emissions\nImproved ambient air quality within plant premises"
+        }
+       ]
+      },
+      {
+       "heading": "Leak Detection and Repair (LDAR) Program for Fugitive Emissions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has established a formal, structured LDAR (Leak Detection and Repair) program, supported by a detailed SOP, to detect, report, and eliminate fugitive emissions of gases, vapors, and hazardous substances. To ensure early detection and timely repair of leaks to minimize environmental impact, improve safety, and maintain operational integrity."
+        },
+        {
+         "type": "bullets",
+         "text": "Applicable to all systems handling gases, vapors, and hazardous chemicals\nCovers pipelines, valves, flanges, pumps, and connectors across plant operations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Leak Detection Methodologies Implemented:"
+        },
+        {
+         "type": "paragraph",
+         "text": "ISRPL uses a combination of manual and advanced detection techniques:"
+        },
+        {
+         "type": "bullets",
+         "text": "Visual inspection: Identification of stains, drips, corrosion\nOlfactory detection: Identification of unusual odors (where safe)\nAuditory detection: Detection of hissing or leakage sounds\nInstrument-based monitoring:\nPortable and fixed gas detectors\nInfrared cameras for leak visualization\nUltrasonic leak detectors\nSoap solution testing for pressurized systems"
+        },
+        {
+         "type": "paragraph",
+         "text": "Routine Monitoring Frequency:"
+        },
+        {
+         "type": "bullets",
+         "text": "Daily: Monitoring by operations team\nWeekly: Inspection by HSE team\nQuarterly: Detailed monitoring by third-party agencies"
+        },
+        {
+         "type": "paragraph",
+         "text": "Leak Reporting and Response Protocol:"
+        },
+        {
+         "type": "bullets",
+         "text": "Immediate reporting to control room and HSE department\nDocumentation through Leak Incident Report system\nIsolation and tagging of leak source (if safe)\nActivation of emergency response for critical leaks"
+        },
+        {
+         "type": "paragraph",
+         "text": "Repair and Verification Process:"
+        },
+        {
+         "type": "bullets",
+         "text": "Maintenance team conducts repair or replacement\nPost-repair verification using detection instruments\nConfirmation of leak elimination before system normalization"
+        },
+        {
+         "type": "paragraph",
+         "text": "Documentation and Tracking:"
+        },
+        {
+         "type": "bullets",
+         "text": "Maintenance of LDAR logs and inspection records\nMonthly reporting to HSE\nContinuous tracking of recurring issues and corrective actions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Significant reduction in fugitive VOC emissions\nImproved environmental compliance\nEnhanced plant safety and operational efficiency"
+        }
+       ]
+      },
+      {
+       "heading": "Air Emission Monitoring and Ambient Air Quality Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has established a structured and periodic monitoring system to ensure compliance and performance tracking."
+        },
+        {
+         "type": "paragraph",
+         "text": "Stack emission monitoring:"
+        },
+        {
+         "type": "bullets",
+         "text": "Conducted periodically through internal and accredited third-party agencies\nParameters monitored:\nParticulate Matter (PM)\nSO₂\nNOx\nVOCs (where applicable)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Ambient air quality monitoring:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monitoring at plant boundary and key internal locations\nAssessment of pollutant dispersion and impact"
+        },
+        {
+         "type": "paragraph",
+         "text": "Data management:"
+        },
+        {
+         "type": "bullets",
+         "text": "Comparison with statutory limits\nTrend analysis for continuous improvement\nImmediate corrective action for exceedances"
+        }
+       ]
+      },
+      {
+       "heading": "Gaseous Emission Control (VOC, SO₂, NOx, Odor Control Systems)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented advanced exhaust gas treatment systems to control gaseous emissions and odor from process operations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Exhaust Gas Scrubber System (Implemented and Operational)"
+        },
+        {
+         "type": "paragraph",
+         "text": "ISRPL operates an Exhaust Gas Scrubber system to treat process emissions, particularly from dryer operations, ensuring removal of water-soluble pollutants and odor-causing compounds."
+        },
+        {
+         "type": "paragraph",
+         "text": "Working Principle:"
+        },
+        {
+         "type": "bullets",
+         "text": "Exhaust gases are routed to the scrubber system\nWater acts as the primary absorbent medium\nNaOH (caustic solution) is dosed to neutralize acidic gases\nPollutants are absorbed into the liquid phase, reducing emission load"
+        },
+        {
+         "type": "paragraph",
+         "text": "Operational Controls and Practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Maintenance of scrubber water level between 50–55% for optimal absorption\nContinuous water circulation using dedicated pumps\nControlled dosing of caustic solution to maintain pH between 9–9.5\nProper gas line alignment from process units to scrubber system\nMonitoring of system performance through:\npH levels\nFlow conditions\nGas absorption efficiency"
+        },
+        {
+         "type": "paragraph",
+         "text": "Maintenance and Performance Optimization:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic acid wash (every 15 days or based on pressure drop) to remove accumulated contaminants from packing\nMonitoring of differential pressure across scrubber\nTurbidity-based cleaning validation\nTroubleshooting practices for:\nOdor issues (water saturation)\npH imbalance (caustic flow issues)\nFlow measurement inaccuracies"
+        },
+        {
+         "type": "paragraph",
+         "text": "Environmental Impact:"
+        },
+        {
+         "type": "bullets",
+         "text": "Effective removal of acidic gases and soluble pollutants\nSignificant reduction in odor emissions\nImproved ambient air quality and regulatory compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Noise Monitoring and Regulatory Compliance",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures systematic monitoring of noise levels to prevent environmental and occupational impact."
+        },
+        {
+         "type": "paragraph",
+         "text": "Monitoring practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic boundary noise monitoring campaigns\nMeasurement of noise levels in high-risk operational zones\nMaintenance of records for regulatory compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Noise Mitigation through Engineering and Administrative Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented multiple layers of noise control:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Engineering controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Acoustic enclosures for DG sets, compressors, and high-noise equipment\nInstallation of silencers and vibration dampers\nIsolation of vibrating equipment"
+        },
+        {
+         "type": "paragraph",
+         "text": "Administrative controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Restricted access to high-noise zones\nScheduling of high-noise activities where feasible"
+        },
+        {
+         "type": "paragraph",
+         "text": "Greenbelt contribution:"
+        },
+        {
+         "type": "bullets",
+         "text": "Acts as a natural sound barrier"
+        }
+       ]
+      },
+      {
+       "heading": "Preventive Maintenance and Noise Reduction Program",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL follows a proactive maintenance strategy to prevent abnormal noise generation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Detailed practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic inspection of rotating and vibrating equipment\nReplacement of worn-out parts (bearings, fans, belts, couplings)\nLubrication and alignment checks\nImmediate shutdown and repair in case of abnormal noise"
+        }
+       ]
+      },
+      {
+       "heading": "Odor Prevention and Control Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented both process-level and treatment-based odor control mechanisms."
+        },
+        {
+         "type": "paragraph",
+         "text": "Integrated measures include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Use of Exhaust Gas Scrubber system to neutralize odor-causing compounds\nMaintenance of optimal pH conditions in scrubber for effective gas absorption\nRegular replacement or treatment of scrubber water to prevent saturation\nClosed handling systems for chemicals and volatile substances\nGood housekeeping and spill prevention practices"
+        },
+        {
+         "type": "paragraph",
+         "text": "Outcome:"
+        },
+        {
+         "type": "bullets",
+         "text": "Effective control of odor emissions at source and treatment level\nPrevention of nuisance conditions within and outside plant premises"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Measurement and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a data-driven monitoring framework:"
+      },
+      {
+       "type": "bullets",
+       "text": "Monthly/periodic tracking of:\nStack emissions\nAmbient air quality\nNoise levels\nKPI tracking:\nEmission intensity\nCompliance status\nIntegration into sustainability and regulatory reporting\nPeriodic management review"
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Stack emission monitoring reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Ambient air quality monitoring data",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Noise monitoring records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "LDAR logs and corrective action records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Maintenance and inspection logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Calibration records of instruments",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee Performance Evaluation and Career Development Framework",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "HR Department",
+   "owner": "HR Department",
+   "sourceWords": 658,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a comprehensive and structured framework to systematically evaluate employee performance, enhance individual capabilities, and support career progression, ensuring alignment with organizational goals, operational excellence, and long-term sustainability.\n\nThe objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Establish a transparent, fair, and consistent performance evaluation system\nAlign individual performance with organizational objectives and KPIs\nIdentify strengths, development areas, and training needs\nSupport career growth, succession planning, and talent retention\nFoster a culture of continuous feedback, accountability, and improvement"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Designs and manages the performance evaluation framework",
+        "Facilitates appraisal cycles and maintains records",
+        "Supports training and development planning"
+       ]
+      },
+      {
+       "role": "Reporting Manager / HOD",
+       "responsibilities": [
+        "Conducts employee evaluations",
+        "Provides feedback and development guidance",
+        "Monitors employee performance regularly"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Participate in self-evaluation",
+        "Take ownership of performance and development goals"
+       ]
+      },
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Reviews performance outcomes and succession plans",
+        "Approves promotions, increments, and development initiatives"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a structured and cyclical performance management process:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Goal Setting and Performance Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "At the beginning of the appraisal cycle:\n\nIndividual goals are defined based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Departmental objectives\nOrganizational KPIs\nRole-specific responsibilities\nGoals are categorized into:\nKey Result Areas (KRAs)\nKey Performance Indicators (KPIs)\nGoals include both:\nQuantitative targets (production, efficiency, cost, etc.)\nQualitative aspects (behavior, teamwork, compliance, innovation)\nGoals are documented and mutually agreed upon between employee and reporting manager"
+        }
+       ]
+      },
+      {
+       "heading": "Continuous Performance Monitoring and Feedback",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL promotes a continuous feedback culture rather than a one-time evaluation.\n\nImplemented practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Regular one-on-one discussions between employee and manager\nMonitoring of performance against defined KPIs\nIdentification of performance gaps and corrective actions\nRecognition of achievements and contributions"
+        },
+        {
+         "type": "paragraph",
+         "text": "Tools used:"
+        },
+        {
+         "type": "bullets",
+         "text": "Performance tracking sheets\nDepartmental review meetings\nSupervisor observations and feedback"
+        }
+       ]
+      },
+      {
+       "heading": "Mid-Year Review (Interim Evaluation)",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted to assess progress against goals\nIdentifies:\nPerformance gaps\nTraining and development needs\nEnables course correction where required"
+        }
+       ]
+      },
+      {
+       "heading": "Annual Performance Evaluation Process",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL follows a structured evaluation process combining self-assessment and managerial evaluation.\n\nPerformance Evaluation Format\n\nA. Evaluation Criteria\n\nThe performance of employees shall be assessed across the following parameters:"
+        },
+        {
+         "type": "bullets",
+         "text": "Achievement of Key Performance Indicators (KPIs) and Key Result Areas (KRAs)\nQuality of work and accuracy of output\nProductivity and efficiency in task execution\nTechnical knowledge and job-related competencies\nProblem-solving and decision-making ability\nCompliance with safety, health, and regulatory requirements\nAwareness and contribution towards environmental and sustainability initiatives\nTeamwork, collaboration, and interpersonal effectiveness\nCommunication skills (verbal and written)\nInitiative, innovation, and proactive behavior\nAttendance, punctuality, and discipline\nAdaptability, learning ability, and openness to change"
+        },
+        {
+         "type": "paragraph",
+         "text": "B. Assessment Methodology\n\nThe evaluation shall be conducted through a two-stage assessment process:"
+        },
+        {
+         "type": "numbered",
+         "text": "Self-Evaluation by the Employee\nEvaluation by Reporting Manager / HOD"
+        },
+        {
+         "type": "paragraph",
+         "text": "Each parameter shall be assessed using a standard rating scale, ensuring consistency across departments.\n\nC. Rating Scale (Example)"
+        },
+        {
+         "type": "bullets",
+         "text": "5 – (Outstanding)\n4 – (Very Good)\n3 – (Good)\n2 – (Needs Improvement)\n1 – (Unsatisfactory)"
+        }
+       ]
+      },
+      {
+       "heading": "Final Review and Performance Calibration",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "HOD reviews evaluation to ensure consistency and fairness\nHR facilitates calibration across departments to avoid bias\nFinal ratings are approved by management"
+        }
+       ]
+      },
+      {
+       "heading": "Feedback and Performance Discussion",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "One-on-one discussion conducted between employee and manager\nFeedback includes:\nStrengths and achievements\nAreas of improvement\nFuture expectations\nEmployee acknowledgment is recorded"
+        }
+       ]
+      },
+      {
+       "heading": "Career Development and Growth Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL integrates performance evaluation with structured career development.\n\nKey practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Identification of high-potential employees\nDevelopment of Individual Development Plans (IDP)\nCareer path planning (technical/managerial roles)\nSuccession planning for critical roles"
+        }
+       ]
+      },
+      {
+       "heading": "Training and Development",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on evaluation outcomes:\n\nTraining needs are identified in areas such as:"
+        },
+        {
+         "type": "bullets",
+         "text": "Technical skills\nSafety and compliance\nLeadership and behavioral skills"
+        },
+        {
+         "type": "paragraph",
+         "text": "Training methods include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Internal training programs\nExternal workshops and certifications\nOn-the-job training"
+        }
+       ]
+      },
+      {
+       "heading": "Rewards, Recognition, and Compensation Linkage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Performance evaluation outcomes are linked to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Salary increments\nPromotions\nPerformance incentives\nRecognition programs"
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures effectiveness of the system through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Tracking completion of appraisal cycles\nMonitoring employee performance trends\nReviewing retention and promotion data\nConducting periodic audits of evaluation process"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Goal setting and KPI documents",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Self-evaluation forms",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Manager evaluation records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Final appraisal reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Training and development plans",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Promotion and increment records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Ethical Practices",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL ensures:"
+      },
+      {
+       "type": "bullets",
+       "text": "Fair and unbiased evaluation process\nEqual opportunity for all employees\nConfidentiality of performance data\nTransparency in decision-making"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Confidential Data Management & Records Retention",
+   "code": "",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "IT Department",
+   "owner": "IT Department",
+   "sourceWords": 665,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a robust framework to ensure the protection, confidentiality, integrity, and availability of sensitive information, along with systematic retention and disposal of records in compliance with legal, regulatory, and organizational requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Safeguard confidential and sensitive information from unauthorized access, disclosure, or misuse\nEnsure proper classification, storage, and handling of data\nDefine standardized retention periods for various records\nEnable secure disposal of obsolete or expired records\nEnsure compliance with applicable laws, contractual obligations, and internal policies"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Ensures cybersecurity, data backup, and system access controls",
+        "Maintains secure storage systems and network protections"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Manages confidentiality of employee records",
+        "Ensures compliance with data privacy requirements"
+       ]
+      },
+      {
+       "role": "EHS / Legal / Compliance Team",
+       "responsibilities": [
+        "Defines regulatory retention requirements",
+        "Ensures legal compliance for data handling and disposal"
+       ]
+      },
+      {
+       "role": "Department Heads / Record Owners",
+       "responsibilities": [
+        "Ensure proper classification, storage, and retention of departmental records",
+        "Authorize access and disposal of records"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Maintain confidentiality of information handled",
+        "Follow data protection and record retention guidelines"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a structured approach for data classification, handling, storage, retention, and disposal."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Data Classification",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All data is classified based on sensitivity and criticality:"
+        },
+        {
+         "type": "bullets",
+         "text": "Confidential Data: Business strategies, financial data, contracts, technical documents, proprietary information\nInternal Data: Operational procedures, internal communications, reports\nPublic Data: Information approved for external sharing (e.g., website content, public disclosures)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Key practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Classification labels applied to documents\nAccess restricted based on classification level"
+        }
+       ]
+      },
+      {
+       "heading": "Data Access Control and Security",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has implemented strict access control mechanisms:"
+        },
+        {
+         "type": "bullets",
+         "text": "Role-based access to systems and records\nPassword protection and authentication controls\nRestricted access to confidential documents and systems\nMonitoring of system access and usage"
+        },
+        {
+         "type": "paragraph",
+         "text": "Physical security controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Secure storage of files in locked cabinets\nControlled access to record rooms and archives"
+        },
+        {
+         "type": "paragraph",
+         "text": "Digital security measures:"
+        },
+        {
+         "type": "bullets",
+         "text": "Firewalls, antivirus, and network security systems\nRegular password updates and access reviews"
+        }
+       ]
+      },
+      {
+       "heading": "Data Handling and Usage",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees must ensure:"
+        },
+        {
+         "type": "bullets",
+         "text": "Confidential information is shared only on a need-to-know basis\nUse of authorized communication channels for data transfer\nAvoidance of unauthorized copying, downloading, or sharing"
+        },
+        {
+         "type": "paragraph",
+         "text": "Additional controls:"
+        },
+        {
+         "type": "bullets",
+         "text": "Encryption of sensitive digital data (where applicable)\nUse of official systems and email IDs for communication"
+        }
+       ]
+      },
+      {
+       "heading": "Data Storage and Backup",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures secure and reliable storage of data:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Electronic records:"
+        },
+        {
+         "type": "bullets",
+         "text": "Stored on secured servers or approved cloud systems\nRegular data backup schedules implemented\nDisaster recovery mechanisms in place"
+        },
+        {
+         "type": "paragraph",
+         "text": "Physical records:"
+        },
+        {
+         "type": "bullets",
+         "text": "Stored in designated record rooms or filing systems\nIndexed and labeled for easy retrieval"
+        }
+       ]
+      },
+      {
+       "heading": "Records Retention Management",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL defines retention periods based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Legal and regulatory requirements\nBusiness and operational needs"
+        },
+        {
+         "type": "paragraph",
+         "text": "Illustrative Records Retention Matrix"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Record Type",
+          "Retention Period",
+          "Responsible Department"
+         ],
+         "rows": [
+          [
+           "Employee Records",
+           "5–7 years after exit",
+           "HR"
+          ],
+          [
+           "Financial Records",
+           "7–10 years",
+           "Finance"
+          ],
+          [
+           "Legal Contracts",
+           "Contract period + 5 years",
+           "Legal"
+          ],
+          [
+           "EHS Records",
+           "As per regulatory requirement",
+           "EHS"
+          ],
+          [
+           "Production Records",
+           "3–5 years",
+           "Production"
+          ],
+          [
+           "Training Records",
+           "3–5 years",
+           "HR"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Key practices:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic review of records for retention compliance\nArchival of records nearing end-of-life"
+        }
+       ]
+      },
+      {
+       "heading": "Data Sharing with Third Parties",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Data shared only with authorized parties under formal agreements\nExecution of Non-Disclosure Agreements (NDAs) where required\nEnsuring third-party compliance with ISRPL data protection standards"
+        }
+       ]
+      },
+      {
+       "heading": "Records Disposal and Destruction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures secure disposal of records after retention period:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Physical records:"
+        },
+        {
+         "type": "bullets",
+         "text": "Shredding or secure destruction"
+        },
+        {
+         "type": "paragraph",
+         "text": "Electronic records:"
+        },
+        {
+         "type": "bullets",
+         "text": "Permanent deletion from systems\nSecure wiping of storage devices"
+        },
+        {
+         "type": "paragraph",
+         "text": "Approval process:"
+        },
+        {
+         "type": "bullets",
+         "text": "Disposal approved by record owner and relevant department\nDocumentation of disposal activity maintained"
+        }
+       ]
+      },
+      {
+       "heading": "Incident Management and Data Breach Handling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL has defined procedures for handling data security incidents:"
+        },
+        {
+         "type": "bullets",
+         "text": "Immediate reporting of suspected data breaches\nInvestigation by IT / Compliance team\nImplementation of corrective and preventive actions\nDocumentation and reporting of incidents"
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures effectiveness through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic audits of data management practices\nReview of access controls and user permissions\nMonitoring of data breaches or security incidents\nCompliance checks for retention and disposal"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Data classification records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Access control logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Backup and recovery logs",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Records retention schedules",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Disposal records and approvals",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Incident and breach reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Ethical Practices",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL ensures:"
+      },
+      {
+       "type": "bullets",
+       "text": "Protection of confidential and proprietary information\nCompliance with applicable data protection laws\nEthical handling of employee and business data\nPrevention of data misuse or unauthorized disclosure"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Third-Party Ethical Compliance Due Diligence",
+   "code": "",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Procurement / Supply Chain",
+   "owner": "Procurement / Supply Chain Team",
+   "sourceWords": 583,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a structured due diligence framework to evaluate, monitor, and ensure ethical compliance of third-party entities, including suppliers, contractors, vendors, and service providers."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure third parties comply with ethical, legal, environmental, and social standards\nMitigate risks related to corruption, human rights violations, environmental non-compliance, and unethical practices\nPromote responsible sourcing and sustainable supply chain practices\nStrengthen transparency, accountability, and long-term business integrity"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "Procurement / Supply Chain Team",
+       "responsibilities": [
+        "Conducts initial due diligence and vendor evaluation",
+        "Ensures compliance requirements are included in contracts"
+       ]
+      },
+      {
+       "role": "HSE / Sustainability / Compliance Team",
+       "responsibilities": [
+        "Assesses environmental, social, and ethical risks",
+        "Monitors sustainability and ESG compliance"
+       ]
+      },
+      {
+       "role": "Legal Department",
+       "responsibilities": [
+        "Reviews contractual clauses related to compliance and ethics",
+        "Ensures inclusion of anti-corruption and regulatory requirements"
+       ]
+      },
+      {
+       "role": "Finance Department",
+       "responsibilities": [
+        "Conducts financial due diligence and risk assessment"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Provide inputs on vendor performance and risk"
+       ]
+      },
+      {
+       "role": "Top Management",
+       "responsibilities": [
+        "Approves high-risk or critical vendor engagements"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a structured, risk-based due diligence process:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Third-Party Identification and Risk Categorization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All third parties are categorized based on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of services/products\nGeographical location\nLevel of interaction with ISRPL operations\nCriticality to business operations"
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk categories:"
+        },
+        {
+         "type": "bullets",
+         "text": "Low Risk\nMedium Risk\nHigh Risk"
+        },
+        {
+         "type": "paragraph",
+         "text": "High-risk examples:"
+        },
+        {
+         "type": "bullets",
+         "text": "Vendors handling hazardous materials\nSuppliers in high-risk geographies\nContractors with significant environmental or labor impact"
+        }
+       ]
+      },
+      {
+       "heading": "Pre-Qualification and Screening",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL conducts initial screening before onboarding:"
+        },
+        {
+         "type": "bullets",
+         "text": "Collection of vendor information:\nCompany profile and registration details\nLicenses and certifications\nPast performance and references\nScreening against:\nBlacklists or sanction lists\nLegal or regulatory violations\nAdverse media or reputational risks"
+        }
+       ]
+      },
+      {
+       "heading": "Ethical and Compliance Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third parties are evaluated against ISRPL's ethical standards:"
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment areas include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Compliance with laws and regulations\nAnti-corruption and anti-bribery practices\nLabor practices and human rights\nEnvironmental compliance and sustainability practices\nHealth and safety standards"
+        },
+        {
+         "type": "paragraph",
+         "text": "Tools used:"
+        },
+        {
+         "type": "bullets",
+         "text": "Supplier questionnaires/self-assessment forms\nDocument verification\nSite audits (for critical vendors)"
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Code of Conduct and Contractual Requirements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All third parties are required to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Accept and adhere to ISRPL's Supplier Code of Conduct\nComply with ethical, environmental, and social standards"
+        },
+        {
+         "type": "paragraph",
+         "text": "Contracts include clauses on:"
+        },
+        {
+         "type": "bullets",
+         "text": "Anti-bribery and anti-corruption\nCompliance with labor laws and human rights\nEnvironmental protection requirements\nRight to audit and terminate in case of non-compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Risk Evaluation and Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on due diligence findings, vendors are:"
+        },
+        {
+         "type": "bullets",
+         "text": "Approved\nApproved with conditions\nRejected\nHigh-risk vendors require:\nAdditional approvals from senior management\nMitigation plans before engagement"
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Monitoring and Performance Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures continuous monitoring of third-party compliance:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic performance evaluations\nRenewal of compliance declarations\nMonitoring of regulatory compliance and certifications\nTracking of incidents or non-compliance cases"
+        }
+       ]
+      },
+      {
+       "heading": "Audits and Site Assessments",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL conducts audits for critical vendors:"
+        },
+        {
+         "type": "bullets",
+         "text": "Environmental audits\nSafety audits\nEthical compliance audits\nESG Audits\nAudit findings are documented and shared with vendors"
+        }
+       ]
+      },
+      {
+       "heading": "Non-Compliance and Corrective Actions",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In case of non-compliance:"
+        },
+        {
+         "type": "bullets",
+         "text": "Issue of non-conformance notice\nDevelopment of Corrective Action Plan (CAPA)\nFollow-up and verification of closure\nEscalation actions:\nSuspension of vendor\nTermination of contract (in severe cases)"
+        }
+       ]
+      },
+      {
+       "heading": "Training and Awareness for Third Parties",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL promotes ethical practices by:"
+        },
+        {
+         "type": "bullets",
+         "text": "Sharing guidelines and expectations with vendors\nConducting awareness programs on:\nSafety\nEnvironmental compliance\nEthical business practices"
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures effectiveness through:"
+        },
+        {
+         "type": "bullets",
+         "text": "Periodic review of vendor risk profiles\nTracking compliance performance metrics\nInternal audits of procurement and vendor management processes\nContinuous improvement of due diligence framework"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation and Records",
+     "rows": [
+      {
+       "record": "Vendor registration and due diligence forms",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Risk assessment reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Supplier Code of Conduct acknowledgments",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Audit reports and findings",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "CAPA records and follow-ups",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Contracts and compliance declarations",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Ethical Practices",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL ensures:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ethical sourcing and responsible procurement\nZero tolerance for corruption and unethical practices\nRespect for human rights and labor standards\nEnvironmental responsibility across the supply chain"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Incident Response Plan (IRP) for Breaches of Confidential Information",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "IT",
+   "owner": "Incident Response Team (IRT)",
+   "sourceWords": 583,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL has established a structured Incident Response Plan (IRP) to identify, manage, and mitigate breaches of confidential information, ensuring timely response, minimal impact, and compliance with legal and organizational requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "The objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Ensure rapid detection and response to data breaches\nMinimize damage to business operations, reputation, and stakeholders\nProtect confidential, personal, and proprietary information\nEstablish clear roles, responsibilities, and escalation mechanisms\nEnsure proper documentation, reporting, and corrective actions"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibility",
+     "rows": [
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Detects, investigates, and contains digital security incidents",
+        "Implements technical controls and recovery measures"
+       ]
+      },
+      {
+       "role": "HSE / Compliance / Legal Team",
+       "responsibilities": [
+        "Assesses regulatory implications",
+        "Handles legal reporting and compliance requirements"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Manages employee-related breaches and disciplinary actions",
+        "Conducts awareness and training programs"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure reporting of incidents within their teams",
+        "Support investigation and corrective actions"
+       ]
+      },
+      {
+       "role": "Incident Response Team (IRT)",
+       "responsibilities": [
+        "Cross-functional team responsible for managing incidents end-to-end"
+       ]
+      },
+      {
+       "role": "All Employees",
+       "responsibilities": [
+        "Immediately report any suspected or actual data breach"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Procedure",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL follows a structured and time-bound response process:"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Detection of Incident",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Incidents may be identified through:"
+        },
+        {
+         "type": "bullets",
+         "text": "System alerts and security monitoring tools\nUnauthorized access attempts or login anomalies\nLoss or theft of devices or documents\nSuspicious emails or phishing attempts\nEmployee or third-party reporting"
+        },
+        {
+         "type": "paragraph",
+         "text": "Immediate action:"
+        },
+        {
+         "type": "bullets",
+         "text": "Any employee identifying a breach must report immediately to:\nReporting Manager\nIT Department / HSE"
+        }
+       ],
+       "responsible": "All Employees"
+      },
+      {
+       "heading": "Incident Classification and Risk Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Once reported, the incident is classified based on severity:"
+        },
+        {
+         "type": "bullets",
+         "text": "Low: Minor internal exposure, no critical impact\nMedium: Limited data exposure, manageable impact\nHigh: Significant breach involving confidential or personal data\nCritical: Large-scale breach with legal, financial, or reputational risk"
+        },
+        {
+         "type": "paragraph",
+         "text": "Assessment parameters:"
+        },
+        {
+         "type": "bullets",
+         "text": "Type and sensitivity of data affected\nNumber of records impacted\nPotential business and legal impact"
+        }
+       ]
+      },
+      {
+       "heading": "Containment and Immediate Control Measures",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL ensures quick containment to prevent further damage:"
+        },
+        {
+         "type": "bullets",
+         "text": "Isolation of affected systems or networks\nDisabling compromised user accounts\nRetrieval of leaked or exposed physical documents (if possible)\nBlocking unauthorized access channels"
+        },
+        {
+         "type": "paragraph",
+         "text": "Objective:"
+        },
+        {
+         "type": "bullets",
+         "text": "Prevent further data leakage or system compromise"
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Investigation and Root Cause Analysis",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A detailed investigation is conducted to determine:"
+        },
+        {
+         "type": "bullets",
+         "text": "Source and cause of the breach\nSystems or processes affected\nExtent of data exposure"
+        },
+        {
+         "type": "paragraph",
+         "text": "Methods used:"
+        },
+        {
+         "type": "bullets",
+         "text": "System log analysis\nForensic investigation (if required)\nInterviews with involved personnel"
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Notification and Escalation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Depending on severity, ISRPL ensures appropriate escalation:"
+        },
+        {
+         "type": "bullets",
+         "text": "Internal escalation to:\nSenior Management\nCompliance / Legal team\nExternal notification (if required):\nRegulatory authorities\nAffected stakeholders or clients"
+        },
+        {
+         "type": "paragraph",
+         "text": "Note:"
+        },
+        {
+         "type": "bullets",
+         "text": "Notifications are made in accordance with applicable laws and contractual obligations"
+        }
+       ],
+       "responsible": "HSE / Compliance / Legal Team"
+      },
+      {
+       "heading": "Recovery and Restoration",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL initiates recovery actions to restore normal operations:"
+        },
+        {
+         "type": "bullets",
+         "text": "Restoration of systems from secure backups\nRevalidation of system integrity\nReinstatement of access controls"
+        },
+        {
+         "type": "paragraph",
+         "text": "Post-recovery checks:"
+        },
+        {
+         "type": "bullets",
+         "text": "Ensure no residual vulnerabilities exist\nValidate system functionality and data accuracy"
+        }
+       ],
+       "responsible": "IT Department"
+      },
+      {
+       "heading": "Corrective and Preventive Actions (CAPA)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on findings, ISRPL implements CAPA:"
+        },
+        {
+         "type": "bullets",
+         "text": "Strengthening security controls\nUpdating policies and procedures\nFixing system vulnerabilities\nEnhancing monitoring mechanisms"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Reporting",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All incidents are documented in detail:"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident description and timeline\nRoot cause and impact analysis\nActions taken (containment, recovery, CAPA)\nFinal closure status"
+      },
+      {
+       "type": "paragraph",
+       "text": "Records maintained:"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident Report Form\nInvestigation Report\nCAPA tracking logs"
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Awareness and Training",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To prevent recurrence, ISRPL conducts:"
+      },
+      {
+       "type": "bullets",
+       "text": "Employee awareness programs on data security\nTraining on phishing, password security, and safe data handling\nPeriodic drills and simulations"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Control",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL ensures continuous improvement through:"
+      },
+      {
+       "type": "bullets",
+       "text": "Periodic review of incident trends\nMonitoring response time and effectiveness\nInternal audits of incident response process\nTesting of IRP through mock drills"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Records",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Incident reporting forms\nInvestigation and forensic reports\nCAPA records\nCommunication logs (internal and external)\nTraining and awareness records"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Ethical Practices",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL ensures:"
+      },
+      {
+       "type": "bullets",
+       "text": "Compliance with data protection and privacy regulations\nTransparent and responsible handling of breaches\nProtection of stakeholder interests\nConfidentiality during investigation and reporting"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Specific Approval for sensitive transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 430,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To outline the formalized process for seeking, reviewing, granting, recording, and monitoring specific approvals within ISRPL, ensuring all requests are managed transparently, ethically, and in accordance with company policy and applicable laws."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, directors, and business associates of ISRPL who require specific approval for activities, transactions, or exceptions to policies and involves functional heads, management, and designated authorities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Specific Approval",
+       "definition": "Authorization granted for particular transactions, activities, or exceptions which are outside the routine delegation or require higher-level endorsement."
+      },
+      {
+       "term": "Competent Authority",
+       "definition": "Individual(s) or committee designated to grant approvals as per the company's delegation matrix."
+      },
+      {
+       "term": "Requestor",
+       "definition": "Person initiating the approval request."
+      },
+      {
+       "term": "Record of Approval",
+       "definition": "Authentic documentation of approvals granted, as per compliance requirements."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Initiation of Request",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The requestor must submit a specific approval request in writing, detailing the nature, scope, purpose, and justification for the approval."
+        },
+        {
+         "type": "paragraph",
+         "text": "Requests should use the approved format (see Annexure A from Vigil Mechanism SOP) and may be digital or physical as per organizational guidelines."
+        },
+        {
+         "type": "paragraph",
+         "text": "All supporting documents must be attached."
+        }
+       ],
+       "responsible": "Requestor"
+      },
+      {
+       "heading": "Submission and Routing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The request is submitted to the appropriate authority, following the organization's escalation matrix:"
+        },
+        {
+         "type": "bullets",
+         "text": "Standard approvals to Functional Head;\nSensitive matters (personal data, policy exceptions, financial transactions) directly to MD/CEO/CFO/COO/Chairman/Audit Committee as applicable."
+        },
+        {
+         "type": "paragraph",
+         "text": "If the request involves potential conflicts of interest, it should be escalated per conflict-handling protocols."
+        }
+       ]
+      },
+      {
+       "heading": "Review and Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Competent Authority reviews the request, checks policy compliance, assesses risks, and consults relevant stakeholders as required."
+        },
+        {
+         "type": "paragraph",
+         "text": "Where necessary, additional information or clarifications may be sought from the requestor."
+        },
+        {
+         "type": "paragraph",
+         "text": "For matters involving privacy or personal data, compliance with Section 43A of the IT Act and the company's Privacy Policy is mandatory."
+        }
+       ],
+       "responsible": "Competent Authority"
+      },
+      {
+       "heading": "Approval or Rejection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Decisions will be documented:"
+        },
+        {
+         "type": "bullets",
+         "text": "Approval shall include conditions, duration, and scope.\nRejection shall provide reason(s)."
+        },
+        {
+         "type": "paragraph",
+         "text": "The decision is formally communicated to the requestor."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Record Keeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All requests and decisions are recorded and securely maintained by HR/Admin/Legal as per the company's record retention policy."
+      },
+      {
+       "type": "paragraph",
+       "text": "Records must include request details, authority, decision, and supporting documentation."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Periodic Review",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Records of specific approvals are reviewed quarterly by the Audit Committee and relevant Management for compliance and process improvement."
+      },
+      {
+       "type": "paragraph",
+       "text": "Any changes or amendments to the approval process will be updated in the SOP and communicated organization-wide."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Grievance and Escalation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Disputes or concerns regarding approvals may be addressed to the Grievance Officer (as per the Privacy SOP) or escalated directly to the Chairman of Audit Committee in sensitive cases."
+      },
+      {
+       "type": "paragraph",
+       "text": "Protective disclosure forms and confidentiality protocols must be followed."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Confidentiality and Protection",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All information pertaining to specific approval requests is considered confidential and handled as per company's Privacy Policy and Vigil Mechanism."
+      },
+      {
+       "type": "paragraph",
+       "text": "Whistleblowers or parties raising legitimate concerns are protected from victimization."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Anti-Corruption and Anti-Bribery SOP",
+   "code": "",
+   "catalogId": "anti-corruption",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance / Legal Team",
+   "sourceWords": 631,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL is committed to conducting business with integrity, transparency, and accountability. The Company adopts a zero-tolerance approach towards corruption, bribery, fraud, and unethical conduct.\nThis SOP establishes a structured framework to prevent, detect, and respond to corruption risks across all operations and third-party interactions."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees (permanent, contractual, trainees)\nDirectors and senior management\nContractors, consultants, vendors, and suppliers\nAgents, intermediaries, and business partners\nAll domestic and international business activities"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definitions",
+     "rows": [
+      {
+       "term": "Bribery",
+       "definition": "Offering, promising, giving, or receiving anything of value to improperly influence a business decision"
+      },
+      {
+       "term": "Corruption",
+       "definition": "Abuse of entrusted power for personal or organizational gain"
+      },
+      {
+       "term": "Facilitation Payments",
+       "definition": "Small unofficial payments made to expedite routine government actions (strictly prohibited)"
+      },
+      {
+       "term": "Kickbacks",
+       "definition": "Undisclosed return of a portion of payment as an incentive or reward"
+      },
+      {
+       "term": "Conflict of Interest",
+       "definition": "Situation where personal interest interferes with professional duties"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Governance and Responsibility Framework",
+     "rows": [
+      {
+       "role": "Board / Senior Management",
+       "responsibilities": [
+        "Set ethical tone (“tone at the top”)",
+        "Approve policies and ensure enforcement"
+       ]
+      },
+      {
+       "role": "Compliance / Legal Team",
+       "responsibilities": [
+        "Conduct corruption risk assessments",
+        "Monitor regulatory compliance and policy implementation",
+        "Lead investigations and reporting"
+       ]
+      },
+      {
+       "role": "Internal Audit",
+       "responsibilities": [
+        "Review financial controls and detect irregularities",
+        "Perform periodic anti-corruption audits"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Ensure SOP implementation in their respective functions",
+        "Identify and mitigate operational risks"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Adhere to ethical standards",
+        "Report any suspicious or unethical activity"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Corruption Risk Areas",
+     "steps": [
+      {
+       "heading": "Corruption Risk Areas",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL recognizes the following high-risk areas:"
+        },
+        {
+         "type": "bullets",
+         "text": "Procurement and vendor selection\nContract negotiation and approvals\nInteraction with government authorities (licenses, permits, inspections)\nLogistics and transportation contracts\nDisposal of waste and engagement with authorized vendors\nCapital projects and contractor management"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Prohibited Practices",
+     "steps": [
+      {
+       "heading": "Prohibited Practices",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "ISRPL strictly prohibits:"
+        },
+        {
+         "type": "bullets",
+         "text": "Offering or accepting bribes, kickbacks, or improper advantages\nFacilitation payments of any kind\nUse of intermediaries to bypass anti-corruption requirements\nFalsification or manipulation of financial records\nUndisclosed conflicts of interest\nAny form of fraud, embezzlement, or misappropriation of assets"
+        }
+       ]
+      },
+      {
+       "heading": "Gifts, Hospitality, and Business Courtesies",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Must be reasonable, infrequent, and directly related to legitimate business purposes\nMust not influence or appear to influence business decisions\nCash or cash equivalents (gift cards, vouchers) are strictly prohibited\nGifts and hospitality exceeding defined thresholds require prior approval\nAll such transactions must be recorded and auditable"
+        }
+       ]
+      },
+      {
+       "heading": "Donations, Sponsorships, and CSR Contributions",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Must be made only for legitimate purposes and through approved channels\nMust not be used as a means to obtain business advantage\nRequire due diligence and management approval\nFull transparency and documentation must be maintained"
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Due Diligence and Controls",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Background verification of vendors, agents, and contractors\nEvaluation of reputation, legal compliance, and past conduct\nInclusion of anti-corruption and termination clauses in contracts\nPeriodic review of high-risk third-party relationships\nImmediate action in case of non-compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Financial Controls and Record Integrity",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All transactions must be accurately recorded in official books\nNo off-the-record accounts or undisclosed payments\nSegregation of duties for approvals and payments\nMandatory supporting documents for all financial transactions\nRegular audits and reconciliation to detect anomalies"
+        }
+       ]
+      },
+      {
+       "heading": "Reporting and Whistleblower Mechanism",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Employees and stakeholders are encouraged to report concerns in good faith\nReporting channels may include:\nDesignated ethics/compliance email\nReporting officer or hotline\nReports can be made anonymously\nStrict non-retaliation policy for whistleblowers\nConfidentiality of information is maintained throughout the process"
+        }
+       ]
+      },
+      {
+       "heading": "Investigation and Disciplinary Action",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All allegations are investigated in a timely, fair, and confidential manner\nInvestigation process includes:\nPreliminary review\nEvidence collection\nInterviews and documentation review\nViolations may result in:\nDisciplinary action (warning, suspension, termination)\nFinancial recovery (if applicable)\nLegal action under applicable laws\nThird parties may face:\nContract termination\nBlacklisting\nLegal consequences"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Mandatory induction training on anti-corruption for all employees\nPeriodic refresher programs for high-risk roles (procurement, finance, operations)\nAwareness campaigns to promote ethical culture\nCommunication of policy updates and case learnings"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring, Audit, and Continuous Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Periodic compliance audits and internal reviews\nRisk-based monitoring of high-risk transactions\nTracking of incidents and corrective actions\nContinuous strengthening of controls and governance framework"
+      }
+     ]
+    },
+    {
+     "kind": "references",
+     "title": "Regulatory Compliance",
+     "items": [
+      "Prevention of Corruption Act, 1988",
+      "Companies Act, 2013",
+      "Applicable international anti-corruption standards (where relevant)"
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Regulatory Compliance",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL complies with all applicable laws and regulations, including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Prevention of Corruption Act, 1988\nCompanies Act, 2013\nApplicable international anti-corruption standards (where relevant)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "IT Systems Management and Information Security SOP",
+   "code": "",
+   "catalogId": "it-security",
+   "pillar": "G",
+   "department": "IT Department",
+   "owner": "IT Department",
+   "sourceWords": 726,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Objective",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL is committed to ensuring the security, integrity, and availability of its information systems and data. This SOP establishes controls to protect IT infrastructure from unauthorized access, cyber threats, data loss, and operational disruptions."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees, contractors, and third-party users\nAll IT assets (hardware, software, networks, servers, cloud systems)\nAll data (operational, financial, personal, and confidential)\nAll locations and remote access environments"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "IT Governance and Responsibilities",
+     "rows": [
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Manage IT infrastructure, cybersecurity, and system availability",
+        "Implement security controls and monitoring systems"
+       ]
+      },
+      {
+       "role": "Management",
+       "responsibilities": [
+        "Approve IT policies and ensure adequate resources",
+        "Review IT risks and performance"
+       ]
+      },
+      {
+       "role": "Employees / Users",
+       "responsibilities": [
+        "Use IT systems responsibly and securely",
+        "Report any suspicious activity or incidents"
+       ]
+      },
+      {
+       "role": "Vendors / Service Providers",
+       "responsibilities": [
+        "Comply with ISRPL IT security requirements",
+        "Ensure protection of company data"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "IT Asset Management",
+     "steps": [
+      {
+       "heading": "IT Asset Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Maintain inventory of all IT assets (laptops, desktops, servers, networking equipment)\nAssign assets to authorized users with proper documentation\nEnsure secure configuration and periodic maintenance\nDecommission assets securely with data wiping protocols"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Access Control and User Management",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Unique user IDs for all employees\nRole-based access control (RBAC) based on job responsibilities\nStrong password policies (complexity, periodic change)\nMulti-factor authentication (MFA) for critical systems\nImmediate revocation of access upon employee exit or role change"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Access Control and User Management",
+     "steps": [
+      {
+       "heading": "Network Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Deployment of firewalls, intrusion detection/prevention systems\nSegregation of networks (IT, OT, guest networks)\nSecure Wi-Fi with encryption and access controls\nMonitoring of network traffic for suspicious activity"
+        }
+       ]
+      },
+      {
+       "heading": "Data Protection and Confidentiality",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Classification of data (confidential, internal, public)\nEncryption of sensitive data (at rest and in transit)\nRestricted access to critical business and operational data\nProhibition of unauthorized data sharing or external storage use"
+        }
+       ]
+      },
+      {
+       "heading": "Endpoint Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Installation of antivirus/endpoint protection software\nRegular patching and updates of operating systems and applications\nRestriction on installation of unauthorized software\nUse of secure configurations for all devices"
+        }
+       ]
+      },
+      {
+       "heading": "Backup and Disaster Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Regular automated backups of critical data and systems\nSecure storage of backups (on-site/off-site/cloud)\nPeriodic testing of backup restoration processes\nDefined Disaster Recovery (DR) plan with recovery time objectives (RTO)"
+        }
+       ]
+      },
+      {
+       "heading": "Cybersecurity and Threat Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Continuous monitoring for cyber threats and vulnerabilities\nPeriodic vulnerability assessments and penetration testing (VAPT)\nImplementation of security patches and updates\nAwareness of phishing, malware, and ransomware risks"
+        }
+       ]
+      },
+      {
+       "heading": "Incident Management and Response",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Immediate reporting of IT incidents (data breach, malware, system failure). Defined incident response process:"
+        },
+        {
+         "type": "bullets",
+         "text": "Detection and reporting\nContainment and mitigation\nInvestigation and root cause analysis\nRecovery and corrective actions\nDocumentation of incidents and lessons learned"
+        }
+       ]
+      },
+      {
+       "heading": "Acceptable Use of IT Resources",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "IT systems must be used only for authorized business purposes. Prohibited activities include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Accessing unauthorized or harmful websites\nSharing confidential information externally without approval\nInstalling pirated or unauthorized software\nLimited personal use permitted if it does not impact operations or security"
+        }
+       ]
+      },
+      {
+       "heading": "Email and Communication Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Use of official email IDs for business communication\nAvoid opening suspicious attachments or links\nReporting of phishing emails to IT team\nNo forwarding of confidential data without authorization"
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party and Vendor Access",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Controlled access for vendors and service providers\nUse of temporary credentials with limited privileges\nMonitoring of third-party activities\nCompliance with contractual IT security clauses"
+        }
+       ]
+      },
+      {
+       "heading": "Compliance and Audit",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Compliance with applicable IT laws and data protection regulations\nPeriodic internal and external IT audits\nMaintenance of logs and records for audit purposes\nImmediate corrective actions for non-compliance"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Regular IT security awareness programs for employees\nTraining on password security, phishing, and safe internet practices\nSpecialized training for high-risk roles"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Continuous Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Continuous monitoring of system performance and security\nReview of IT risks and emerging threats\nImplementation of new technologies and best practices\nPeriodic update of SOP based on business and regulatory changes"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "ISRPL shall periodically review this SOP Manual to ensure its continued effectiveness, regulatory compliance, and alignment with organizational objectives."
+      },
+      {
+       "type": "bullets",
+       "text": "The SOP Mnaual shall be reviewed at least annually or whenever there are significant changes in regulations, operations, or business processes\nKey performance indicators (KPIs) across all sections (energy, water, waste, emissions, IT, ethics, HR) shall be monitored to assess effectiveness and identify improvement areas\nInternal audits and compliance reviews shall be conducted to verify adherence to procedures and controls\nAny incidents, non-compliances, or audit findings shall be investigated, and appropriate corrective and preventive actions shall be implemented\nFeedback from employees, stakeholders, and auditors shall be considered for improving processes and controls\nNecessary updates to the SOP shall be documented, approved, and communicated to relevant personnel"
+      },
+      {
+       "type": "paragraph",
+       "text": "ISRPL is committed to continuous improvement by strengthening its systems, adopting best practices, and enhancing overall operational, environmental, and governance performance."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

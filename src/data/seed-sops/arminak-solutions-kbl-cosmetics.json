@@ -1,0 +1,6552 @@
+{
+ "id": "arminak-solutions-kbl-cosmetics",
+ "company": "Arminak Solutions LLC dba KBL Cosmetics",
+ "industry": "Private label and contract cosmetic manufacturing",
+ "industryTags": [
+  "manufacturing",
+  "consumer"
+ ],
+ "sourceFile": "Employee Handbook - SOP Manual/SOP/Arminak Solutions LLC dba KBL Cosmetics/SOP Manual.docx",
+ "frontMatter": {
+  "introduction": "At Arminak Solutions LLC dba KBL Cosmetics, we are committed to delivering high-quality, innovative, and sustainable cosmetic manufacturing solutions. Our turnkey, private label, and contract manufacturing services are backed by strict adherence to quality, safety, and environmental standards.\n\nThis Standard Operating Procedure (SOP) Manual serves as the foundational framework for ensuring consistency across all operational practices at our Corona, California facility. It defines standardized protocols to promote regulatory compliance, production excellence, and continuous improvement. This manual reinforces our belief that precision, responsibility, and collaboration drive excellence across every batch, every fill, and every customer interaction.",
+  "objective": "This SOP Manual has been developed to:\nEstablish a unified approach to key operational procedures.\nEnsure compliance with local, federal, and international cosmetic regulations.\nPromote operational efficiency while minimizing health, safety, and environmental risks.\nFoster a culture of quality, responsibility, and sustainability.\nEnable every team member to operate with clarity, purpose, and accountability.",
+  "scope": "This manual applies to all internal departments, vendors, service providers, and partners associated with Arminak Solutions LLC dba KBL Cosmetics. It includes operations related to R&D, manufacturing, quality control, packaging, warehousing, maintenance, safety, and sustainability.",
+  "reviewMechanism": "To ensure this SOP remains relevant, up-to-date, and aligned with evolving business practices and regulatory requirements, Arminak Solutions LLC dba KBL Cosmetics has established an Annual SOP Manual Review Process.\n\nFrequency:\nThis SOP is reviewed once every 12 months, or immediately after any critical breach, regulatory update, or major infrastructure change.\n\nReview History\n\nVersion | Effective Date | Revision Date | Changes Made | Approved By\n00 | 01-01-2024 | – | Initial Release of Incident Response SOP | Plant Manager\n01 | 01-01-2024 | 01-01-2025 | Added some new SOP into SOP Manual / Added Review History Table | Plant Manager\n\nApproved By :"
+ },
+ "sops": [
+  {
+   "title": "Water and Wastewater Management",
+   "code": "",
+   "catalogId": "water-conservation",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 1003,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, we recognize that water is a critical natural resource and a key input in cosmetic manufacturing. Our facility in Corona, California is committed to sustainable water use, protection of natural water systems, and compliance with environmental regulations. This SOP outlines our efforts to responsibly manage water consumption, prevent pollution, and implement advanced water-saving and wastewater treatment technologies. These measures align with our company's broader sustainability mission and regulatory expectations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The primary objectives of this SOP are to:"
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Manufacturing and mixing operations, Utility and cooling systems, Wastewater treatment areas, Housekeeping and sanitation, Administrative and landscaping areas operated by Arminak Solutions LLC dba KBL Cosmetics. This SOP is applicable to operators, engineers, maintenance personnel, and third-party water monitoring and treatment partners."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "ZLD",
+       "definition": "Zero Liquid Discharge - A system that ensures all wastewater is treated and reused."
+      },
+      {
+       "term": "ETP",
+       "definition": "Effluent Treatment Plant - A facility designed to treat industrial wastewater before reuse or discharge."
+      },
+      {
+       "term": "RWH",
+       "definition": "Rainwater Harvesting - A method of collecting and storing rainwater for non-potable uses."
+      },
+      {
+       "term": "TDS",
+       "definition": "Total Dissolved Solids - A measure of inorganic salts and small amounts of organic matter in water."
+      },
+      {
+       "term": "BOD/COD",
+       "definition": "Biological/Chemical Oxygen Demand - Indicators of the level of pollution in wastewater."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Water Recycling Technology",
+     "steps": [
+      {
+       "heading": "Primary & Secondary Treatment",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "System",
+          "Technology Used",
+          "Reuse Application",
+          "Recovery Efficiency"
+         ],
+         "rows": [
+          [
+           "Primary Filtration",
+           "Multimedia Filters",
+           "Solid Removal",
+           "80%"
+          ],
+          [
+           "Secondary Treatment",
+           "RO + UV",
+           "Cooling Tower Makeup",
+           "90%"
+          ],
+          [
+           "Recycled Wastewater",
+           "Ultrafiltration",
+           "Cleaning, Irrigation",
+           "85%"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Treated Water Reuse",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Efficient Cooling Systems",
+     "steps": [
+      {
+       "heading": "Closed Loop Systems",
+       "body": []
+      },
+      {
+       "heading": "Cooling Tower Optimization",
+       "body": []
+      },
+      {
+       "heading": "Heat Exchange Efficiency",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Equipment",
+          "Upgrade Type",
+          "Expected Savings"
+         ],
+         "rows": [
+          [
+           "Chillers",
+           "Closed-Loop Water-Cooled",
+           "15%"
+          ],
+          [
+           "Cooling Towers",
+           "Drift Eliminators + VFD",
+           "20%"
+          ],
+          [
+           "Heat Exchangers",
+           "Plate-Type",
+           "10%"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Rainwater Harvesting System",
+     "steps": [
+      {
+       "heading": "Rainwater Capture",
+       "body": []
+      },
+      {
+       "heading": "Storage and Distribution",
+       "body": []
+      },
+      {
+       "heading": "Preventive Maintenance",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Component",
+          "Material",
+          "Capacity",
+          "Use Application"
+         ],
+         "rows": [
+          [
+           "Gutters",
+           "PVC",
+           "—",
+           "Rooftop Collection"
+          ],
+          [
+           "Storage Tanks",
+           "HDPE",
+           "10,000 L",
+           "Cleaning, Gardening"
+          ],
+          [
+           "Diverters",
+           "SS304",
+           "Inline",
+           "Contamination Control"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Control Measures to Prevent Contamination of Groundwater",
+     "steps": [
+      {
+       "heading": "Containment and Structural Safety",
+       "body": []
+      },
+      {
+       "heading": "Testing and Monitoring",
+       "body": []
+      },
+      {
+       "heading": "Spill Control and Training",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Regular Wastewater Monitoring by Third Party",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Parameter",
+        "Frequency",
+        "Standard Reference"
+       ],
+       "rows": [
+        [
+         "BOD/COD",
+         "Monthly",
+         "EPA/ISO Guidelines"
+        ],
+        [
+         "TDS",
+         "Monthly",
+         "Local Norms"
+        ],
+        [
+         "Flow Rate",
+         "Weekly",
+         "Internal SOP"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Regular Wastewater Monitoring by Third Party",
+     "steps": [
+      {
+       "heading": "Sampling & Analysis",
+       "body": []
+      },
+      {
+       "heading": "Regulatory Compliance",
+       "body": []
+      },
+      {
+       "heading": "Calibration & Maintenance",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Oversees water management, compliance reporting, and external lab coordination."
+       ]
+      },
+      {
+       "role": "Maintenance Lead",
+       "responsibilities": [
+        "Ensures upkeep of ETP, cooling systems, and pipelines."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Sources water-efficient technologies and eco-certified materials."
+       ]
+      },
+      {
+       "role": "Utility Technician",
+       "responsibilities": [
+        "Monitors meter readings and RWH systems."
+       ]
+      },
+      {
+       "role": "Training Officer",
+       "responsibilities": [
+        "Conducts awareness sessions and skill training for conservation initiatives."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "Total Water Consumption",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "EHS Team"
+      },
+      {
+       "indicator": "Treated Wastewater Volume",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Utility Staff"
+      },
+      {
+       "indicator": "BOD/COD Levels",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "External Lab"
+      },
+      {
+       "indicator": "Reuse Ratio (Fresh vs. Treated)",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Data Analytics"
+      },
+      {
+       "indicator": "Rainwater Harvested",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Maintenance Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed:"
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "Water Consumption and Rainwater Harvesting Form",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Month",
+        "Total Water Consumption (L)",
+        "Reuse Ratio (%)",
+        "Treated Wastewater Volume (L)",
+        "Rainwater Harvested (L)",
+        "Groundwater Level (m)"
+       ],
+       "rows": [
+        [
+         "January",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "February",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "March",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "April",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "May",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "June",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "July",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "August",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "September",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "October",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "November",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "December",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Total/Average",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Air Pollution Prevention",
+   "code": "",
+   "catalogId": "air-emissions",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 808,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, we recognize the potential impact of air pollutants and airborne particulates generated during manufacturing processes. This SOP is established to guide efforts in minimizing air emissions, managing indoor and outdoor air quality, and complying with all applicable air pollution control regulations at our Corona, California facility."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Minimize emissions from manufacturing and utility systems.\nEnsure regulatory compliance with federal, state, and local air quality standards.\nProtect employee health and nearby communities from airborne pollutants.\nImplement emission control technologies and best practices.\nMonitor air quality parameters and improve through continuous innovation."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all operations, equipment, HVAC systems, production lines, storage zones, and external vendors involved in activities that may emit airborne contaminants. It covers emissions from manufacturing processes, solvent use, transportation, exhaust systems, and air handling units."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Particulate Matter",
+       "definition": "Microscopic solid or liquid particles suspended in air, such as dust, dirt, soot, or smoke."
+      },
+      {
+       "term": "VOC",
+       "definition": "Volatile Organic Compounds are organic chemicals that easily become vapors or gases. Common in solvents, paints, and fuels."
+      },
+      {
+       "term": "NOₓ / SO₂",
+       "definition": "Nitrogen Oxides (NOₓ) and Sulfur Dioxide (SO₂) are combustion-related gases that contribute to smog and acid rain."
+      },
+      {
+       "term": "ESP",
+       "definition": "ESP is acronym for Electrostatic Precipitator which is an equipment that uses electrical charge to remove fine particles from gas streams."
+      },
+      {
+       "term": "CEMS",
+       "definition": "Continuous Emissions Monitoring Systems are automated systems that monitor pollutant levels in stack emissions."
+      },
+      {
+       "term": "Fugitive Emissions",
+       "definition": "Emissions not released through a stack or vent, such as dust from handling materials or leaks from equipment."
+      },
+      {
+       "term": "Ambient Air Quality Monitoring",
+       "definition": "The assessment of outdoor air quality by measuring key pollutants at fixed locations over time."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Air Pollutants & Contribution",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Source",
+        "Pollutants"
+       ],
+       "rows": [
+        [
+         "Boilers & Furnaces",
+         "PM, SO₂, NOₓ, CO"
+        ],
+        [
+         "Material Handling & Conveying",
+         "PM₁₀, PM₂.₅"
+        ],
+        [
+         "Transportation & Internal Traffic",
+         "CO, NOₓ, Dust"
+        ],
+        [
+         "DG Sets & Utility Operations",
+         "CO, NOₓ, VOCs"
+        ],
+        [
+         "Chemical Handling / VOC Emissions",
+         "VOCs, Odor"
+        ],
+        [
+         "Waste & Wastewater Treatment Areas",
+         "VOCs, Odor"
+        ],
+        [
+         "Miscellaneous Fugitive Emissions",
+         "PM, VOCs, Metals"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Control Measures",
+     "steps": [
+      {
+       "heading": "Leak Detection and Repair (LDAR) Program",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Implement a formal LDAR program to systematically detect and repair fugitive emissions."
+        },
+        {
+         "text": "Conduct routine inspections using gas detection instruments such as flame ionization detectors or infrared cameras."
+        },
+        {
+         "text": "Tag and track each identified leak using a digital log system."
+        },
+        {
+         "text": "Establish clear timelines for repairing leaks based on severity."
+        },
+        {
+         "text": "Maintain annual LDAR performance reports to evaluate emission reduction outcomes"
+        }
+       ]
+      },
+      {
+       "heading": "Source Emission Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Install fume extractors on all high-emission processes including mixing and filling."
+        },
+        {
+         "text": "Use scrubbers and activated carbon filters for VOC capture."
+        },
+        {
+         "text": "Maintain sealed storage containers for volatile raw materials."
+        }
+       ]
+      },
+      {
+       "heading": "Ventilation and HVAC Management",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Ensure air handling units are fitted with HEPA filters."
+        },
+        {
+         "text": "Replace intake and exhaust filters as per maintenance schedule."
+        },
+        {
+         "text": "Optimize air recirculation to minimize indoor pollutant buildup."
+        }
+       ]
+      },
+      {
+       "heading": "Process Design Adjustments",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Replace high-VOC solvents with low-emission alternatives."
+        },
+        {
+         "text": "Schedule production batches to minimize simultaneous emission sources."
+        },
+        {
+         "text": "Conduct regular leak detection and repair (LDAR) audits."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Periodical Analysis",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Category",
+        "Method",
+        "Frequency"
+       ],
+       "rows": [
+        [
+         "Air Quality Assessment",
+         "VOCs, PM2.5, PM10, CO2 testing using calibrated devices",
+         "Quarterly"
+        ],
+        [
+         "Stack Emission Testing",
+         "AQMD-compliant stack monitoring",
+         "Annually"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Technology Implemented",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Technology Area",
+        "Implemented Solution",
+        "Benefit"
+       ],
+       "rows": [
+        [
+         "Filtration Systems",
+         "Bag Filters, ESPs, Carbon Beds",
+         "Effective particulate and VOC removal"
+        ],
+        [
+         "Monitoring Tools",
+         "CEMS integrated with EMS",
+         "Real-time tracking of critical emissions"
+        ],
+        [
+         "Energy-Efficient Controls",
+         "VFDs, Demand-based Ventilation",
+         "Reduced power use and optimized air flow"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Noise & Odor Management",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Odor Management"
+      },
+      {
+       "type": "bullets",
+       "text": "Enclose all chemical mixing and formulation processes to contain volatile organic compounds (VOCs).\nUse vapor balancing systems during chemical transfer to minimize odor release.\nInstall local exhaust ventilation near strong odor sources and maintain filters regularly."
+      },
+      {
+       "type": "paragraph",
+       "text": "Noise Control Measures"
+      },
+      {
+       "type": "bullets",
+       "text": "Install sound-absorbing wall panels and acoustic insulation in high-noise areas such as utility rooms and production floors.\nMap noise levels across the facility on a bi-annual basis and assess against OSHA standards.\nProvide hearing protection PPE to staff operating near high-decibel equipment and train them on proper usage.\nSchedule maintenance during non-peak hours to reduce operational noise impact."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Lead air pollution control initiatives, regulatory liaison, and audit oversight."
+       ]
+      },
+      {
+       "role": "Maintenance Supervisor",
+       "responsibilities": [
+        "Ensure upkeep of filtration and exhaust systems."
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Implement batch scheduling and VOC substitution protocols."
+       ]
+      },
+      {
+       "role": "Facilities Engineer",
+       "responsibilities": [
+        "Maintain HVAC integrity and equipment calibration."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "PM2.5/PM10 Levels",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "EHS Team"
+      },
+      {
+       "indicator": "VOC Concentration",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "EHS Team"
+      },
+      {
+       "indicator": "Stack Emission Reports",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "External Lab"
+      },
+      {
+       "indicator": "Odor Complaints",
+       "target": "",
+       "frequency": "Ongoing",
+       "owner": "HR & Facility"
+      },
+      {
+       "indicator": "Filter Maintenance Logs",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Maintenance"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "training",
+     "title": "Employee Engagement & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Awareness Training"
+      },
+      {
+       "type": "bullets",
+       "text": "Train staff on emission risks and personal protective equipment (PPE).\nInclude air quality responsibilities in onboarding."
+      },
+      {
+       "type": "paragraph",
+       "text": "Reporting Channels"
+      },
+      {
+       "type": "bullets",
+       "text": "Enable anonymous reporting of odor or air quality issues.\nInclude air pollution prevention in monthly safety meetings."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP shall be reviewed:"
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "Air Quality Measurements and Emissions Form",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "Annual Air Quality and Emissions Metrics",
+       "columns": [
+        "Month",
+        "PM2.5 (µg/m³)",
+        "PM10 (µg/m³)",
+        "VOC (ppm)",
+        "NOₓ Emissions (mg/Nm³)",
+        "SO₂ Emissions (mg/Nm³)",
+        "Leaks Detected (count)",
+        "Odor Complaints (count)",
+        "Noise Level (dB)",
+        "Filters Replaced (count)"
+       ],
+       "rows": [
+        [
+         "January",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "February",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "March",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "April",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "May",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "June",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "July",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "August",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "September",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "October",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "November",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "December",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Total/Average",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Management",
+   "code": "",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Lead",
+   "sourceWords": 1048,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, sustainability is deeply embedded in our commitment to responsible manufacturing. As a high-volume contract manufacturer and private-label partner for the personal care and cosmetic industry, we recognize the critical role we play in minimizing our environmental footprint. This SOP outlines our strategic framework for enhancing energy efficiency and reducing greenhouse gas (GHG) emissions throughout our manufacturing facility in Corona, California. Our efforts align with our broader mission to integrate innovation, compliance, and sustainability in all operations."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The primary objectives of this SOP are to:"
+      },
+      {
+       "type": "bullets",
+       "text": "Standardize the monitoring, control, and optimization of energy usage.\nSystematically reduce direct and indirect GHG emissions.\nComply with local, state, and federal environmental regulations.\nPromote low-carbon operational practices and technology adoption.\nEstablish measurable performance indicators and tracking mechanisms."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Production lines, HVAC and utilities, Warehousing, Administrative and R&D areas operated by Arminak Solutions LLC dba KBL Cosmetics. It is applicable to equipment operators, facility managers, engineering personnel, maintenance teams, procurement departments, and third-party contractors engaged in energy-related activities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "GHG",
+       "definition": "GHG is acronym for Greenhouse Gases. These are gases that trap heat in the atmosphere, contributing to global warming. Key GHGs include carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and fluorinated gases."
+      },
+      {
+       "term": "CCS",
+       "definition": "CCS is acronym for Carbon Capture & Storage which is a technology designed to capture carbon dioxide emissions from industrial sources and store it underground to prevent it from entering the atmosphere."
+      },
+      {
+       "term": "CHP",
+       "definition": "CHP means Combined Heat & Power. It is a system that simultaneously generates usable heat and electricity from a single energy source, increasing overall efficiency."
+      },
+      {
+       "term": "VFD",
+       "definition": "VFD is acronym for Variable frequency Drive. It is an electronic device that controls the speed and torque of electric motors by varying input frequency and voltage, leading to significant energy savings."
+      },
+      {
+       "term": "EMS",
+       "definition": "Energy Management System - digital tools to track and optimize energy performance"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Energy Efficiency Program",
+     "steps": [
+      {
+       "heading": "Energy Audits and Baseline Assessments",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct comprehensive energy audits quarterly.\nDocument baseline performance of all high-energy-consuming assets.\nTrack historical usage data for trending and comparison."
+        }
+       ]
+      },
+      {
+       "heading": "Equipment Modernization and Upgrade Plan",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Replace legacy systems with high-efficiency units.\nPrioritize upgrades for high-consumption units based on audit outcomes.\nEvaluate energy savings post-installation through EMS."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Area",
+          "Existing Equipment",
+          "Proposed Upgrade",
+          "Expected Savings"
+         ],
+         "rows": [
+          [
+           "Lighting",
+           "Halogen Bulbs",
+           "LED Panels",
+           "40–60%"
+          ],
+          [
+           "Motors",
+           "IE1 Motors",
+           "IE4 + VFD Motors",
+           "15–20%"
+          ],
+          [
+           "Air Compression",
+           "Fixed-Speed Compressors",
+           "VFD Compressors",
+           "18–22%"
+          ],
+          [
+           "HVAC",
+           "Split AC Units",
+           "Central Inverter HVAC",
+           "25–30%"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Process Optimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Introduce programmable logic controllers (PLCs) and automation.\nInstall motion sensors and timers in low-use areas.\nSchedule batch production for optimized energy clustering."
+        }
+       ]
+      },
+      {
+       "heading": "Utility Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Implement EMS to track real-time data across utilities.\nSet usage thresholds with alerts for consumption anomalies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "GHG Emissions Management",
+     "steps": [
+      {
+       "heading": "Scope Identification",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Scope",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Scope 1",
+           "Direct emissions from onsite fuel combustion."
+          ],
+          [
+           "Scope 2",
+           "Indirect emissions from purchased electricity."
+          ],
+          [
+           "Scope 3",
+           "Indirect emissions from logistics, vendor operations, and product use phase."
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Emission Reduction Tactics",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Switch to renewable energy sources.\nTransition fleet to electric or hybrid models.\nEngage vendors to disclose and reduce upstream emissions.\nImplement carbon capture and storage (CCS) technology for high-emission processes.\nInstall post-combustion carbon capture systems on boiler exhaust stacks"
+        }
+       ]
+      },
+      {
+       "heading": "GHG Emission Reporting",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Activity",
+          "Tool/Standard",
+          "Frequency"
+         ],
+         "rows": [
+          [
+           "GHG Inventory Compilation",
+           "ISO 14064, GHG Protocol",
+           "Annually"
+          ],
+          [
+           "CCS Performance Reporting",
+           "EPA GHGRP, CARB",
+           "Quarterly"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Heat Recovery Systems",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "System",
+        "Monitoring Method",
+        "Target ROI (Years)"
+       ],
+       "rows": [
+        [
+         "Air Heat Recovery",
+         "EMS Heat Transfer Sensors",
+         "< 2 years"
+        ],
+        [
+         "Water Recirculation",
+         "Flowmeters, Thermocouples",
+         "< 3 years"
+        ]
+       ]
+      },
+      {
+       "type": "paragraph",
+       "text": "Flow Diagram: Heat Source → Heat Exchanger → Reuse Loop → Utility System"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Heat Recovery Systems",
+     "steps": [
+      {
+       "heading": "Heat Source Identification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify boilers, exhaust systems, and thermal tunnels."
+        }
+       ]
+      },
+      {
+       "heading": "System Design",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Install appropriate heat exchangers.\nRedirect recovered energy to boiler feed water or cleaning processes."
+        }
+       ]
+      },
+      {
+       "heading": "Efficiency Monitoring",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Fuel Switching for Carbon Reduction",
+     "steps": [
+      {
+       "heading": "Strategy",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Replace diesel-based generators with natural gas-powered models.\nEvaluate and pilot biomass-based heating systems for R&D and production support.\nPurchase renewable energy credits to offset indirect emissions."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Metrics",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Fuel Source",
+          "New Alternative",
+          "Estimated Emissions Reduction"
+         ],
+         "rows": [
+          [
+           "Diesel Generators",
+           "Natural Gas",
+           "10–20%"
+          ],
+          [
+           "Diesel Heating Systems",
+           "Biomass Boilers",
+           "15–30%"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Expected Benefits",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Lower carbon intensity across operations.\nImproved compliance with regulatory standards (e.g., EPA, CARB).\nEnhanced brand image and alignment with global sustainability benchmarks."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Carbon Capture and Storage Implementation",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Process Flow Diagram: Emission Source → Capture Technology → Compression → Quality Control → Storage Preparation → Transport → Permanent Sequestration"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Carbon Capture and Storage Implementation",
+     "steps": [
+      {
+       "heading": "System Design and Integration",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Install membrane-based CO₂ separation technology on high-emission processes.\nImplement compression and liquefaction equipment for captured carbon preparation.\nEstablish contained temporary storage protocols before transport to sequestration sites."
+        }
+       ]
+      },
+      {
+       "heading": "Partnerships and Sequestration",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Partner with certified geological sequestration facilities for permanent carbon storage.\nMaintain chain-of-custody documentation for all captured and sequestered carbon.\nRegister with appropriate regulatory bodies for carbon credit generation."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring Framework",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "System",
+          "Monitoring Method",
+          "Target Performance"
+         ],
+         "rows": [
+          [
+           "Carbon Capture Units",
+           "CEMS",
+           "85-90% capture rate"
+          ],
+          [
+           "Transport Preparation",
+           "Automated Purity Testing",
+           ">99% CO₂ concentration"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Plant Manager",
+       "responsibilities": [
+        "Authorize upgrades, allocate budgets and oversee implementation timelines."
+       ]
+      },
+      {
+       "role": "Sustainability Lead",
+       "responsibilities": [
+        "Track KPIs, conduct training, and review SOP effectiveness annually."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Maintain, calibrate, and upgrade energy systems and sensors."
+       ]
+      },
+      {
+       "role": "Procurement",
+       "responsibilities": [
+        "Evaluate vendors based on efficiency and environmental certifications."
+       ]
+      },
+      {
+       "role": "Production Supervisor",
+       "responsibilities": [
+        "Ensure SOP compliance and staff awareness during production operations."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Equipment & Technology Selection",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Criteria",
+        "Requirement"
+       ],
+       "rows": [
+        [
+         "Performance Rating",
+         "IE4, Energy Star, UL Certification"
+        ],
+        [
+         "Emission Profile",
+         "Measurable CO2e reductions through vendor data or case studies"
+        ],
+        [
+         "Compliance Standards",
+         "ISO 50001, EPA, CE, LEED where applicable"
+        ],
+        [
+         "Automation Compatibility",
+         "SCADA, EMS, or other IoT-enabled technology"
+        ],
+        [
+         "Vendor Sustainability",
+         "Environmental Product Declarations, Waste Take-back Initiatives"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & Performance Indicators",
+     "kpis": [
+      {
+       "indicator": "Energy Use Index (EUI)",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Sustainability Team"
+      },
+      {
+       "indicator": "GHG Emissions (CO2 eq)",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "HSE & Ops Team"
+      },
+      {
+       "indicator": "Efficiency Post-Upgrade",
+       "target": "",
+       "frequency": "Per Project",
+       "owner": "Maintenance Team"
+      },
+      {
+       "indicator": "Smart Meter Reporting",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Data Analytics Team"
+      },
+      {
+       "indicator": "Scope 1, 2, 3 Updates",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Sustainability Lead"
+      },
+      {
+       "indicator": "CCS Performance",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Sustainability & Operations Teams"
+      },
+      {
+       "indicator": "Carbon Sequestration Volume",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Sustainability Lead"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "training",
+     "title": "Employee Awareness & Engagement",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Program",
+        "Audience",
+        "Frequency"
+       ],
+       "rows": [
+        [
+         "Energy Awareness",
+         "All Employees",
+         "Annually"
+        ],
+        [
+         "GHG Compliance",
+         "Supervisors, Leads",
+         "Bi-annually"
+        ],
+        [
+         "SOP Onboarding",
+         "New Joiners",
+         "Onboarding"
+        ]
+       ]
+      },
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Initiative",
+        "Reward Type",
+        "Criteria"
+       ],
+       "rows": [
+        [
+         "Green Champion Award",
+         "Certificate, Gift Card",
+         "Team with most energy savings"
+        ],
+        [
+         "Idea-to-Impact Sustainability",
+         "Spot Bonus",
+         "Practical idea implemented"
+        ]
+       ]
+      },
+      {
+       "type": "bullets",
+       "text": "Dedicated “Green Suggestions” form available at production floor and intranet.\nMonthly feedback review by the Sustainability Council."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is subject to review:"
+      },
+      {
+       "type": "bullets",
+       "text": "Every 12 months,\nUpon introduction of new technologies or regulations,\nOr after any significant incident or internal audit recommendation."
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "Energy Consumption and Management Form",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Month",
+        "Total Energy Consumption (kWh)",
+        "Energy Use Index (kWh/m²)",
+        "Motors Energy (kWh)",
+        "HVAC Energy (kWh)",
+        "Air Heat Recovery (kWh)",
+        "Carbon Capture Rate (%)",
+        "Sequestered Carbon (tCO₂)"
+       ],
+       "rows": [
+        [
+         "January",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "February",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "March",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "April",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "May",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "June",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "July",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "August",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "September",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "October",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "November",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "December",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Total / Average",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management",
+   "code": "",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "",
+   "owner": "EHS Officer",
+   "sourceWords": 770,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, we recognize that waste management is not only a regulatory obligation but a strategic component of sustainable manufacturing. Our objective is to minimize waste generation, promote reuse and recycling, and ensure the responsible handling of all waste streams—hazardous and non-hazardous alike—within our Corona, California facility."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Minimize emissions from manufacturing and utility systems.\nEnsure regulatory compliance with federal, state, and local air quality standards.\nProtect employee health and nearby communities from airborne pollutants.\nImplement emission control technologies and best practices.\nMonitor air quality parameters and improve through continuous innovation."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments responsible for waste-producing activities, including production, R&D, warehousing, maintenance, and facility services. It also covers waste handlers, transporters, and third-party recyclers contracted by Arminak Solutions LLC."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "Waste Streams",
+       "definition": "Categories of waste generated during operations – solid, liquid, hazardous, recyclable, organic, etc."
+      },
+      {
+       "term": "EPR",
+       "definition": "Extended Producer Responsibility"
+      },
+      {
+       "term": "Segregation",
+       "definition": "The separation of waste into predefined categories at the source"
+      },
+      {
+       "term": "MSW",
+       "definition": "Municipal Solid Waste - General waste from non-hazardous sources."
+      },
+      {
+       "term": "EPR",
+       "definition": "Extended Producer Responsibility - A policy approach where producers are responsible for post-consumer waste."
+      },
+      {
+       "term": "TCLP",
+       "definition": "Toxicity Characteristic Leaching Procedure - A method to determine hazardous characteristics in waste."
+      },
+      {
+       "term": "TSDF",
+       "definition": "Treatment, Storage, and Disposal Facility - A certified center for handling hazardous waste."
+      },
+      {
+       "term": "RCRA",
+       "definition": "Resource Conservation and Recovery Act - U.S. law regulating hazardous waste disposal."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Reuse Programs",
+     "steps": [
+      {
+       "heading": "Repurpose containers and packaging materials for internal storage use.",
+       "body": []
+      },
+      {
+       "heading": "Reuse off-spec product material in non-customer-facing processes.",
+       "body": []
+      },
+      {
+       "heading": "Maintain a reuse inventory log to track materials re-entering operations.",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Process Waste Recovery",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Reuse Stream",
+        "Recovery Strategy",
+        "Impact"
+       ],
+       "rows": [
+        [
+         "Plastic Drums",
+         "Reuse for in-house batching",
+         "Reduced procurement cost"
+        ],
+        [
+         "Off-Spec Blends",
+         "Internal reprocessing",
+         "Waste diversion"
+        ],
+        [
+         "Cardboard Boxes",
+         "Repackaging",
+         "Eliminates disposal volume"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Process Waste Recovery",
+     "steps": [
+      {
+       "heading": "Extract and purify residual chemicals for reuse where applicable.",
+       "body": []
+      },
+      {
+       "heading": "Return excess raw material to storage if not contaminated.",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Segregated Waste Stream Handling",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Waste Type",
+        "Container Color",
+        "Disposal Method"
+       ],
+       "rows": [
+        [
+         "General Waste",
+         "Black",
+         "Landfill via licensed hauler"
+        ],
+        [
+         "Recyclables",
+         "Blue",
+         "Third-party recycling partner"
+        ],
+        [
+         "Hazardous",
+         "Red",
+         "TSDF-compliant disposal"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Segregated Waste Stream Handling",
+     "steps": [
+      {
+       "heading": "Sorting Procedures",
+       "body": []
+      },
+      {
+       "heading": "Waste Stream Disposal",
+       "body": []
+      },
+      {
+       "heading": "Documentation & Labeling",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Waste Stream Mapping & Analysis",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Waste Mapping Type",
+        "Description",
+        "Source Area"
+       ],
+       "rows": [
+        [
+         "Solid Waste Mapping",
+         "Tracks general and recyclable waste from packaging, office, and production",
+         "Admin, Production"
+        ],
+        [
+         "Hazardous Waste Mapping",
+         "Identifies flammable, toxic, or reactive waste streams",
+         "Mixing, Storage"
+        ],
+        [
+         "Liquid Waste Mapping",
+         "Maps wastewater and rinse water from cleaning and sanitation",
+         "Utilities, Sanitation"
+        ],
+        [
+         "Organic Waste Mapping",
+         "Tracks biodegradable inputs like food or",
+         "Canteen, Landscaping"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Continuous Improvement",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Mapping Tool",
+        "Purpose",
+        "Frequency"
+       ],
+       "rows": [
+        [
+         "Waste Flow Charts",
+         "Visualize generation points",
+         "Annual or process change"
+        ],
+        [
+         "Audit Sheets",
+         "Evaluate stream quality",
+         "Quarterly"
+        ],
+        [
+         "Trend Dashboards",
+         "Monitor reduction progress",
+         "Monthly"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Hazardous Waste Movement Controls",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Compliance Area",
+        "Control Action",
+        "Verification Method"
+       ],
+       "rows": [
+        [
+         "Transboundary Rules",
+         "Basel Convention Compliance",
+         "Export declaration audit"
+        ],
+        [
+         "Manifest Management",
+         "Signed TSDF manifests",
+         "Filing and inspection logs"
+        ],
+        [
+         "Training & Awareness",
+         "Annual EHS training",
+         "Quiz + Attendance Log"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Hazardous Waste Movement Controls",
+     "steps": [
+      {
+       "heading": "Export Restrictions",
+       "body": []
+      },
+      {
+       "heading": "Tracking & Documentation",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Employee Responsibility",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Train relevant employees on hazardous waste segregation and international shipping restrictions.",
+        "Conduct internal compliance reviews bi-annually."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Officer",
+       "responsibilities": [
+        "Conduct audits, maintain waste logs, coordinate vendor pickups."
+       ]
+      },
+      {
+       "role": "Department Leads",
+       "responsibilities": [
+        "Monitor waste generation and ensure internal segregation."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Manage disposal logistics and bin maintenance."
+       ]
+      },
+      {
+       "role": "Compliance Manager",
+       "responsibilities": [
+        "Ensure legal documentation and transboundary compliance."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "Waste Segregation Accuracy",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "EHS"
+      },
+      {
+       "indicator": "Reuse Rate of Internal Waste",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Ops + R&D"
+      },
+      {
+       "indicator": "Hazardous Waste Disposal Volume",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "EHS"
+      },
+      {
+       "indicator": "Waste Stream Mapping Review",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "EHS & Department Heads"
+      },
+      {
+       "indicator": "Transboundary Compliance Reports",
+       "target": "",
+       "frequency": "Bi-Annually",
+       "owner": "Compliance Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed"
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "Waste Management Form",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Annual Material Management and Chemical Safety Metrics",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       "rows": [
+        [
+         "Month",
+         "Raw Material Usage per Batch (kg)",
+         "Scrap Rate (%)",
+         "Eco-Certified Inputs (%)",
+         "Recovery Rate of Materials (%)",
+         "Chemical Spill Incidents (count)",
+         "Hazardous Waste Volume (kg)",
+         "Substituted Hazardous Substances (count)"
+        ],
+        [
+         "January",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "February",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "March",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "April",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "May",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "June",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "July",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "August",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "September",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "October",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "November",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "December",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ],
+        [
+         "Total/Average",
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Material & Chemicals Management",
+   "code": "",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "EHS",
+   "owner": "EHS Manager",
+   "sourceWords": 866,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, responsible material and chemical management is essential to maintaining product integrity, ensuring safety, and minimizing environmental impacts. This SOP outlines our systematic approach to reducing material consumption, managing hazardous substances, and promoting safer and more sustainable alternatives across all operations at our facility in Corona, California."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Minimize emissions from manufacturing and utility systems.\nEnsure regulatory compliance with federal, state, and local air quality standards.\nProtect employee health and nearby communities from airborne pollutants.\nImplement emission control technologies and best practices.\nMonitor air quality parameters and improve through continuous innovation."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments involved in sourcing, storing, using, and disposing of raw materials, intermediates, and finished goods. It includes production, R&D, warehousing, logistics, and procurement activities."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Definition",
+     "rows": [
+      {
+       "term": "Hazardous Chemical",
+       "definition": "Substances that pose a risk to health, safety, or environment due to flammability, toxicity, or reactivity."
+      },
+      {
+       "term": "MSDS",
+       "definition": "Material Safety Data Sheet, a document outlining safety, health, and environmental hazards associated with chemicals."
+      },
+      {
+       "term": "SDS",
+       "definition": "Safety Data Sheet - Updated version of MSDS with GHS compliance."
+      },
+      {
+       "term": "GHS",
+       "definition": "Globally Harmonized System - Standard for labeling and classifying chemicals."
+      },
+      {
+       "term": "PPE",
+       "definition": "Personal Protective Equipment - Gear worn to minimize exposure to hazards."
+      },
+      {
+       "term": "RCRA",
+       "definition": "Resource Conservation and Recovery Act - U.S. law governing hazardous waste."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definition",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Description"
+       ],
+       "rows": [
+        [
+         "Hazardous Chemical",
+         "Substances that pose a risk to health, safety, or environment due to flammability, toxicity, or reactivity."
+        ],
+        [
+         "MSDS",
+         "Material Safety Data Sheet, a document outlining safety, health, and environmental hazards associated with chemicals."
+        ],
+        [
+         "SDS",
+         "Safety Data Sheet - Updated version of MSDS with GHS compliance."
+        ],
+        [
+         "GHS",
+         "Globally Harmonized System - Standard for labeling and classifying chemicals."
+        ],
+        [
+         "PPE",
+         "Personal Protective Equipment - Gear worn to minimize exposure to hazards."
+        ],
+        [
+         "RCRA",
+         "Resource Conservation and Recovery Act - U.S. law governing hazardous waste."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Material Consumption Optimization",
+     "steps": [
+      {
+       "heading": "Optimization of Material Usage",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Review batch formulations to reduce raw material overuse."
+        },
+        {
+         "text": "Implement portion control and pre-weighing for precise dispensing."
+        },
+        {
+         "text": "Monitor scrap rates and set reduction targets."
+        },
+        {
+         "text": "Collaborate with R&D to reformulate high-waste products."
+        },
+        {
+         "text": "Track monthly variance between issued and consumed materials"
+        }
+       ]
+      },
+      {
+       "heading": "Digital Inventory Control",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Use software to track real-time material usage and flag overconsumption."
+        },
+        {
+         "text": "Automate reorder triggers based on consumption trends."
+        }
+       ]
+      },
+      {
+       "heading": "Production Efficiency",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Schedule production to reduce start-up waste."
+        },
+        {
+         "text": "Conduct lean manufacturing workshops to identify waste sources."
+        },
+        {
+         "text": "Encourage batch consolidation to minimize setup losses."
+        }
+       ]
+      },
+      {
+       "heading": "Optimization summary",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Optimization Area",
+          "Strategy",
+          "Expected Outcome"
+         ],
+         "rows": [
+          [
+           "Formulations",
+           "Reduce excess buffer quantities",
+           "Minimized waste"
+          ],
+          [
+           "Inventory",
+           "Real-time usage tracking",
+           "Efficient ordering"
+          ],
+          [
+           "Efficiency",
+           "Lean scheduling",
+           "Lower material losses"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Sustainable Material Inputs & Recovery",
+     "steps": [
+      {
+       "heading": "Sustainable Material Sourcing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Prioritize suppliers offering recycled, biodegradable, or renewable feedstocks."
+        },
+        {
+         "text": "Evaluate supplier certifications (e.g., USDA Organic, RSPO, Ecocert)."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Recovery Programs",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Reprocess excess material when quality permits."
+        },
+        {
+         "text": "Store returned goods separately for recovery assessment."
+        },
+        {
+         "text": "Implement closed-loop reuse systems for compatible inputs."
+        }
+       ]
+      },
+      {
+       "heading": "Substitution with Safer Alternatives",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Replace synthetic additives with naturally derived counterparts."
+        },
+        {
+         "text": "Maintain a database of preferred green chemistry alternatives."
+        },
+        {
+         "text": "Phase out non-biodegradable packaging inputs."
+        }
+       ]
+      },
+      {
+       "heading": "Recovery summary",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Recovery Initiative",
+          "Description",
+          "Environmental Impact"
+         ],
+         "rows": [
+          [
+           "Supplier Vetting",
+           "Use eco-certified vendors",
+           "Lower lifecycle emissions"
+          ],
+          [
+           "Material Reuse",
+           "Reprocess off-spec product",
+           "Reduces disposal volumes"
+          ],
+          [
+           "Green Substitution",
+           "Plant-based oils and waxes",
+           "Biodegradable & safe"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Hazardous Substance Handling & Compliance",
+     "steps": [
+      {
+       "heading": "Labeling",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Ensure all containers have GHS-compliant labels including pictograms and hazard classes."
+        },
+        {
+         "text": "Review labeling during safety audits."
+        },
+        {
+         "text": "Maintain digital SDS access via QR codes on containers."
+        }
+       ]
+      },
+      {
+       "heading": "Storage",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Segregate incompatible chemicals based on reactivity."
+        },
+        {
+         "text": "Use ventilated, bunded storage for flammable or volatile chemicals."
+        },
+        {
+         "text": "Inspect chemical storage rooms monthly and log compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Handling & Transport",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Provide PPE and spill kits at all handling stations."
+        },
+        {
+         "text": "Train staff on safe lifting and internal transport protocols."
+        },
+        {
+         "text": "Use approved containers for intra-facility transfers."
+        },
+        {
+         "text": "Conduct annual drills on chemical spill containment and evacuation."
+        }
+       ]
+      },
+      {
+       "heading": "Handling summary",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Activity",
+          "Measure",
+          "Risk Reduction"
+         ],
+         "rows": [
+          [
+           "Labeling",
+           "QR-linked GHS signs",
+           "Faster hazard identification"
+          ],
+          [
+           "Storage",
+           "Bunded segregation",
+           "Prevents chemical reactions"
+          ],
+          [
+           "Transport",
+           "PPE + certified drums",
+           "Minimizes exposure risk"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Safer Substance Selection",
+     "steps": [
+      {
+       "heading": "Evaluation Process",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conduct chemical risk assessments before procurement."
+        },
+        {
+         "text": "Screen new materials against the internal hazard threshold matrix."
+        },
+        {
+         "text": "Prioritize substances listed on EPA Safer Chemicals Ingredients List"
+        }
+       ]
+      },
+      {
+       "heading": "Implementation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Pilot safer alternatives in R&D before full-scale adoption."
+        },
+        {
+         "text": "Document product performance and safety improvements."
+        },
+        {
+         "text": "Monitor changes in toxicity and exposure risk post-adoption."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier Collaboration",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Work with vendors to access greener formulations."
+        },
+        {
+         "text": "Participate in industry forums on sustainable chemistry."
+        },
+        {
+         "text": "Require compliance disclosures from vendors during onboarding."
+        }
+       ]
+      },
+      {
+       "heading": "Selection summary",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Evaluation Area",
+          "Method",
+          "Benefit"
+         ],
+         "rows": [
+          [
+           "Risk Assessment",
+           "Hazard Matrix",
+           "Controlled exposure"
+          ],
+          [
+           "Green Pilots",
+           "R&D test phases",
+           "Reduced toxicity"
+          ],
+          [
+           "Vendor Vetting",
+           "Sustainability criteria",
+           "Safer inputs sourced"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Hazardous Impact Reduction Strategies",
+     "steps": [
+      {
+       "heading": "Source Elimination",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Minimize use of known carcinogens, mutagens, or reproductive toxins."
+        },
+        {
+         "text": "Revise formulations to lower hazardous content."
+        },
+        {
+         "text": "Ban restricted substances listed under REACH or Prop 65."
+        }
+       ]
+      },
+      {
+       "heading": "Engineering Controls",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Use enclosed processing to contain hazardous vapours or dust."
+        },
+        {
+         "text": "Install localized exhaust ventilation systems."
+        },
+        {
+         "text": "Conduct semi-annual air quality assessments in chemical zones."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Minimization",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Treat effluents on-site before disposal."
+        },
+        {
+         "text": "Segregate and neutralize hazardous waste at the source."
+        },
+        {
+         "text": "Label waste containers with disposal instructions and hazard classes."
+        }
+       ]
+      },
+      {
+       "heading": "Impact summary",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Strategy",
+          "Implementation",
+          "Impact"
+         ],
+         "rows": [
+          [
+           "Source Reduction",
+           "Remove high-risk chemicals",
+           "Less regulatory burden"
+          ],
+          [
+           "Containment",
+           "Fume extraction systems",
+           "Lower workplace exposure"
+          ],
+          [
+           "Waste Handling",
+           "On-site treatment",
+           "Reduced external liabilities"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Maintain chemical inventory, hazard assessments, and regulatory compliance."
+       ]
+      },
+      {
+       "role": "Procurement Lead",
+       "responsibilities": [
+        "Source eco-certified and safer alternatives."
+       ]
+      },
+      {
+       "role": "Warehouse Supervisor",
+       "responsibilities": [
+        "Enforce labeling, storage, and segregation protocols."
+       ]
+      },
+      {
+       "role": "Production Manager",
+       "responsibilities": [
+        "Implement safe handling and waste reduction measures."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "Raw Material Usage per Batch",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Production"
+      },
+      {
+       "indicator": "% Eco-Certified Inputs",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Procurement"
+      },
+      {
+       "indicator": "Chemical Spill Incidents",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "EHS"
+      },
+      {
+       "indicator": "Hazardous Waste Volume",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "EHS"
+      },
+      {
+       "indicator": "Recovery Rate of Materials",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Operations"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "training",
+     "title": "Employee Training & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Conduct annual training on chemical safety and GHS labeling.\nOnboard new hires with SDS and PPE protocols.\nHost awareness drives on eco-friendly materials."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed:"
+      },
+      {
+       "type": "bullets",
+       "text": "Annually by the EHS Team,\nWhen new chemicals or materials are introduced,\nFollowing incidents, near-misses, or audit observations."
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "Material and chemical data Form",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Category",
+        "Metric",
+        "Value",
+        "Unit",
+        "Date"
+       ],
+       "rows": [
+        [
+         "Material Consumption",
+         "Raw Material Usage per Batch",
+         "",
+         "kg",
+         ""
+        ],
+        [
+         "",
+         "Scrap Rate",
+         "",
+         "%",
+         ""
+        ],
+        [
+         "Sustainable Sourcing",
+         "Eco-Certified Inputs",
+         "",
+         "%",
+         ""
+        ],
+        [
+         "Material Recovery",
+         "Recovery Rate of Materials",
+         "",
+         "%",
+         ""
+        ],
+        [
+         "Hazardous Substances",
+         "Chemical Spill Incidents",
+         "",
+         "Count",
+         ""
+        ],
+        [
+         "",
+         "Hazardous Waste Volume",
+         "",
+         "kg",
+         ""
+        ],
+        [
+         "Safer Alternatives",
+         "Substituted Hazardous Substances",
+         "",
+         "Count",
+         ""
+        ]
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Packaging Lifecycle Management",
+   "code": "",
+   "catalogId": "sustainable-packaging",
+   "pillar": "E",
+   "department": "Environmental",
+   "owner": "Packaging Engineer",
+   "sourceWords": 647,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, we recognize our extended responsibility beyond product manufacturing. As a partner in the personal care and cosmetics industry, we are committed to designing products and packaging with end-of-life sustainability in mind. This SOP addresses how we inform consumers about responsible disposal practices, optimize packaging design, and encourage the use of resealable or returnable packaging to reduce environmental impact."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Encourage responsible end-of-life product disposal among consumers.\nReduce packaging material waste through smart design and material selection.\nPromote packaging reusability to minimize single-use applications.\nAlign packaging decisions with circular economy principles.\nEnhance our sustainability reputation and compliance with waste minimization regulations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all product lines developed by Arminak Solutions LLC, including packaging design, product labeling, marketing communications, and sustainability programs related to packaging and disposal. It is relevant for packaging engineers, designers, marketing staff, and supply chain partners."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Circular Economy",
+       "definition": "An economic system aimed at eliminating waste and continual use of resources."
+      },
+      {
+       "term": "Monomaterial Packaging",
+       "definition": "Packaging made of a single material, easier to recycle."
+      },
+      {
+       "term": "Lightweighting",
+       "definition": "Reducing material weight in packaging while maintaining function."
+      },
+      {
+       "term": "Returnable Packaging",
+       "definition": "Packaging designed for reuse in multiple product cycles."
+      },
+      {
+       "term": "Post-Consumer Waste",
+       "definition": "Material discarded after consumer use."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology Overview",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Circular Economy",
+         "An economic system aimed at eliminating waste and continual use of resources."
+        ],
+        [
+         "Monomaterial Packaging",
+         "Packaging made of a single material, easier to recycle."
+        ],
+        [
+         "Lightweighting",
+         "Reducing material weight in packaging while maintaining function."
+        ],
+        [
+         "Returnable Packaging",
+         "Packaging designed for reuse in multiple product cycles."
+        ],
+        [
+         "Post-Consumer Waste",
+         "Material discarded after consumer use."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Consumer Disposal Guidance Program",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Disposal Method",
+        "Communication Medium",
+        "Target Product Category"
+       ],
+       "rows": [
+        [
+         "Recycling Label",
+         "On-pack label & QR code",
+         "Bottles, Jars"
+        ],
+        [
+         "Take-back Program",
+         "Website, Social Media, In-store Posters",
+         "Applicators, Pumps, Caps"
+        ],
+        [
+         "Email Campaign",
+         "Customer loyalty base",
+         "High-volume SKUs"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Consumer Disposal Guidance Program",
+     "steps": [
+      {
+       "heading": "Disposal Instructions on Packaging",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Clearly indicate recycling symbols and instructions on primary packaging."
+        },
+        {
+         "text": "Add QR codes linking to online resources for disposal and take-back options."
+        },
+        {
+         "text": "Include step-by-step disposal instructions for pumps, applicators, and multi-part packaging."
+        },
+        {
+         "text": "Encourage responsible behavior by highlighting benefits of proper disposal."
+        }
+       ]
+      },
+      {
+       "heading": "Product Stewardship Campaigns",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Launch consumer education campaigns highlighting product end-of-life handling."
+        },
+        {
+         "text": "Coordinate with recycling partners and municipalities to promote drop-off locations."
+        },
+        {
+         "text": "Display banners at retail locations promoting take-back and recycling."
+        }
+       ]
+      },
+      {
+       "heading": "Branded Product Take-Back",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Offer a voluntary take-back program for cosmetic components such as pumps, caps, or small containers that are not widely recycled."
+        },
+        {
+         "text": "Encourage customers to return these components through prepaid mailers or collection bins at selected retail or salon partners."
+        },
+        {
+         "text": "Introduce loyalty incentives (e.g., rewards points, product discounts) for active participants in take-back programs."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Primary Packaging Design Optimization",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Packaging Element",
+        "Optimization Action",
+        "Environmental Benefit"
+       ],
+       "rows": [
+        [
+         "Tubes & Caps",
+         "Wall thickness reduction",
+         "Less raw material used"
+        ],
+        [
+         "Bottles",
+         "Shift to PET-only",
+         "Enhanced recyclability"
+        ],
+        [
+         "Labels",
+         "Heat-transfer printing",
+         "Eliminates glue residue"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Primary Packaging Design Optimization",
+     "steps": [
+      {
+       "heading": "Material Efficiency",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Use lightweight materials without compromising packaging integrity."
+        },
+        {
+         "text": "Minimize secondary packaging layers (e.g., avoid unnecessary cartons or plastic sleeves)."
+        }
+       ]
+      },
+      {
+       "heading": "Simplified Composition",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Design all components of packaging (cap, bottle, label) from the same polymer type where possible."
+        },
+        {
+         "text": "Avoid using composites that complicate recycling (e.g., plastic-aluminum laminates)."
+        }
+       ]
+      },
+      {
+       "heading": "Packaging Evaluation Protocols",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conduct recyclability and lifecycle assessments during new product development."
+        },
+        {
+         "text": "Track annual reduction in packaging weight across product lines."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Multi-Use & Returnable Packaging",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Packaging Type",
+        "Reuse Cycle",
+        "Target Audience"
+       ],
+       "rows": [
+        [
+         "Twist Caps",
+         "3–5 uses",
+         "General Consumers"
+        ],
+        [
+         "Refill Bottles",
+         "Continuous",
+         "Salon/B2B Clients"
+        ],
+        [
+         "Resealable Pouches",
+         "2–3 uses",
+         "Retail Customers"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Multi-Use & Returnable Packaging",
+     "steps": [
+      {
+       "heading": "Resealable Packaging",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Design products with resealable caps, nozzles, or pouches to preserve contents for longer use."
+        },
+        {
+         "text": "Educate customers on proper resealing techniques to extend product shelf life."
+        }
+       ]
+      },
+      {
+       "heading": "Return-Enabled Systems",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Offer refillable options in flagship stores and salons."
+        },
+        {
+         "text": "Provide strong, reusable containers designed to withstand multiple fill cycles and easy cleaning."
+        }
+       ]
+      },
+      {
+       "heading": "Consumer Communication",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Include a printed insert inside product boxes about the advantages of resealing and refilling."
+        },
+        {
+         "text": "Launch video tutorials and visual FAQs on how to reuse or return packaging easily."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Packaging Engineer",
+       "responsibilities": [
+        "Design for recyclability, material optimization, and usability."
+       ]
+      },
+      {
+       "role": "Marketing Team",
+       "responsibilities": [
+        "Communicate disposal and return guidance through brand channels."
+       ]
+      },
+      {
+       "role": "Supply Chain Lead",
+       "responsibilities": [
+        "Source sustainable packaging and coordinate return logistics."
+       ]
+      },
+      {
+       "role": "QA Team",
+       "responsibilities": [
+        "Ensure packaging safety and performance after redesign or light-weighting."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring & KPIs",
+     "kpis": [
+      {
+       "indicator": "% Monomaterial Packaging",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Packaging Engineering"
+      },
+      {
+       "indicator": "Consumer Disposal Engagement",
+       "target": "",
+       "frequency": "Bi-Annually",
+       "owner": "Marketing"
+      },
+      {
+       "indicator": "Packaging Weight Reduction per SKU",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "R&D/Packaging"
+      },
+      {
+       "indicator": "Returnable Packaging Uptake",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Sales & Logistics"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed annually by the Packaging and Sustainability Committees,"
+      },
+      {
+       "type": "bullets",
+       "text": "Upon packaging redesign or product relaunch,\nIn response to new customer or regulatory feedback."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Recruitment SOP",
+   "code": "",
+   "catalogId": "recruitment",
+   "pillar": "S",
+   "department": "HR",
+   "owner": "HR Manager",
+   "sourceWords": 479,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, maintaining a fair, inclusive, and compliant hiring process is essential to building a diverse and competent workforce. This SOP outlines structured procedures for recruiting, screening, and hiring employees in accordance with federal, state, and local labor laws, while upholding our commitments to equal opportunity, diversity, and internal growth."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a standardized, transparent, and compliant recruitment process that ensures the selection of qualified candidates based on merit while promoting workplace diversity, ethical practices, and legal compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all recruitment and hiring activities for full-time, part-time, contract, and temporary positions across all departments and locations of Arminak Solutions LLC dba KBL Cosmetics."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Equal Opportunity Employer",
+       "definition": "A company that does not discriminate in hiring based on protected characteristics"
+      },
+      {
+       "term": "Internal Mobility",
+       "definition": "Opportunities for current employees to move to new roles or departments"
+      },
+      {
+       "term": "Bias-Free Hiring",
+       "definition": "Hiring decisions based solely on job-related criteria"
+      },
+      {
+       "term": "DEI",
+       "definition": "Diversity, Equity, and Inclusion"
+      },
+      {
+       "term": "FCRA",
+       "definition": "Fair Credit Reporting Act – governs background checks"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "HR Manager",
+       "responsibilities": [
+        "Oversees recruitment strategy, compliance, and final offer approvals"
+       ]
+      },
+      {
+       "role": "Hiring Manager",
+       "responsibilities": [
+        "Develops job descriptions, conducts interviews, and selects candidates"
+       ]
+      },
+      {
+       "role": "Recruitment Coordinator",
+       "responsibilities": [
+        "Schedules interviews, communicates with candidates, and maintains documentation"
+       ]
+      },
+      {
+       "role": "DEI Committee",
+       "responsibilities": [
+        "Ensures inclusive hiring practices and monitors for bias or discrimination"
+       ]
+      },
+      {
+       "role": "All Interviewers",
+       "responsibilities": [
+        "Conduct fair, structured, and non-discriminatory assessments"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Recruitment Process",
+     "steps": [
+      {
+       "heading": "Job Requisition & Approval",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Hiring Manager submits job requisition form with justification.\nHR reviews and approves the position in line with headcount planning."
+        }
+       ]
+      },
+      {
+       "heading": "Job Posting",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Positions are posted internally and externally through the company portal and job boards.\nAll postings include clear qualifications and comply with Equal Opportunity principles."
+        }
+       ]
+      },
+      {
+       "heading": "Candidate Screening",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Resumes are screened using standardized criteria focused on experience, skills, and role fit.\nNo decisions are made based on personal characteristics or demographic information."
+        }
+       ]
+      },
+      {
+       "heading": "Interview Process",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Structured interviews are conducted with standardized questions for consistency.\nEvaluation is based on pre-defined scoring rubrics.\nInterview panels include diverse representation to reduce bias."
+        }
+       ]
+      },
+      {
+       "heading": "Background Checks & Verification",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Selected candidates may undergo education, employment, and criminal background checks.\nAll checks comply with FCRA and privacy regulations."
+        }
+       ]
+      },
+      {
+       "heading": "Age Verification",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "Government-issued ID is required to confirm legal working age prior to onboarding."
+        }
+       ]
+      },
+      {
+       "heading": "Offer & Onboarding",
+       "body": [
+        {
+         "type": "numbered",
+         "text": "HR prepares and issues offer letters.\nCandidates complete onboarding and orientation programs."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Internal Hiring & Career Mobility",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Employees are encouraged to apply for open roles through the internal career portal.\nInternal mobility includes promotions, lateral transfers, and cross-functional assignments.\nAll internal applications are reviewed with equal consideration and confidentiality.\nParticipation in mentorship, leadership training, and development programs is encouraged."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Time to Hire",
+       "target": "",
+       "frequency": "Per Opening",
+       "owner": "HR Manager"
+      },
+      {
+       "indicator": "Internal Hire Rate",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Recruitment Coordinator"
+      },
+      {
+       "indicator": "Candidate Diversity Metrics",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "DEI Committee"
+      },
+      {
+       "indicator": "Interview Evaluation Consistency",
+       "target": "",
+       "frequency": "Per Hire",
+       "owner": "Hiring Manager"
+      },
+      {
+       "indicator": "Compliance with FCRA/EEO",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "HR & Legal Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed annually or whenever significant changes in labor laws or company recruitment policies occur. Any updates must be approved by the HR Director and communicated across all hiring teams."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Label Handling – OTC & Homeopathic",
+   "code": "",
+   "catalogId": "stores-inventory",
+   "pillar": "S",
+   "department": "QA",
+   "owner": "QA Supervisor",
+   "sourceWords": 461,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, label accountability for OTC and Homeopathic products is critical for maintaining regulatory compliance, ensuring product safety, and minimizing labeling errors. This SOP outlines the end-to-end controls in place for receiving, inspecting, storing, issuing, and reconciling printed labels used in regulated product categories."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to ensure that all OTC and Homeopathic labels are properly received, identified, handled, stored, inspected, used, and reconciled throughout their lifecycle. This includes maintaining label traceability, inventory control, and ensuring compliance with applicable standards."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments involved in the receipt, inspection, issuance, and usage of printed labels and inserts for OTC and Homeopathic drug products at Arminak Solutions LLC."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "OTC",
+       "definition": "Over-the-Counter Drug Products"
+      },
+      {
+       "term": "AQL",
+       "definition": "Acceptable Quality Level used in sampling inspection"
+      },
+      {
+       "term": "BOM",
+       "definition": "Bill of Materials"
+      },
+      {
+       "term": "NOR",
+       "definition": "Notice of Rejection Document"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "QA Inspector",
+       "responsibilities": [
+        "Verifies label counts via weighing, conducts AQL inspections, initiates approval forms"
+       ]
+      },
+      {
+       "role": "QC Team",
+       "responsibilities": [
+        "Maintains storage, initiates and tracks Label Accountability Form (QC-002A), reconciles label inventory"
+       ]
+      },
+      {
+       "role": "Production Line Leader",
+       "responsibilities": [
+        "Tracks label issuance and reconciliation, completes W/O Reconciliation Form (QC-001B)"
+       ]
+      },
+      {
+       "role": "QA Supervisor",
+       "responsibilities": [
+        "Audits process, reviews discrepancies, and approves final documentation"
+       ]
+      },
+      {
+       "role": "Customer Service",
+       "responsibilities": [
+        "Submits artwork and coordinates regulatory status with QA/RA departments"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Label Receipt and Sampling Procedure",
+     "steps": [
+      {
+       "heading": "Label Receipt and Sampling Procedure",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Labels are received by warehouse personnel and matched to purchase order.\nQA inspects each label lot:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Verifies roll count via weighing",
+         "responsible": "QA Inspector"
+        },
+        {
+         "text": "Collects AQL sample using ANSI/ASQ Z1.4 method",
+         "responsible": "QA Inspector"
+        },
+        {
+         "text": "Documents scan/photo in drive under: S:\\005 Quality\\Quality Dept\\OTC LABELS QC-002C",
+         "responsible": "QA Inspector"
+        },
+        {
+         "text": "Stamps accepted labels with \"OTC Approved\" identifier on the roll core",
+         "responsible": "QA Inspector"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Label Accountability Initiation",
+     "steps": [
+      {
+       "heading": "Label Accountability Initiation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "QC logs each lot using Form QC-002A, which captures:\nItem description and number\nReceiver number, quantity (full rolls/partials), BOH\nW/O details (date, quantity issued/returned)\nEach roll is clearly tagged and stored in a temperature-controlled secure room."
+        }
+       ],
+       "responsible": "QC Team"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Label Issuance to Production",
+     "steps": [
+      {
+       "heading": "Label Issuance to Production",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "QC issues labels based on W/O pick lists or supplemental requests.\nAll issuance is logged on QC-002A, noting:\nDate of issue\nWork Order number\nQuantity issued and requested"
+        }
+       ],
+       "responsible": "QC Team"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Production Use and Label Return",
+     "steps": [
+      {
+       "heading": "Production Use and Label Return",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Before a run, Production verifies roll label count matches BOM.\nPost-run:\nScrap or rejects recorded on Form QC-001B\nUnused labels and completed forms returned to QC"
+        }
+       ],
+       "responsible": "Production Line Leader"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Label Reconciliation and Closure",
+     "steps": [
+      {
+       "heading": "Label Reconciliation and Closure",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "QC reconciles labels using:\nReturned quantity\nRejected/scrap quantity\nDiscrepancy notes\nNew Balance on Hand (BOH)\nIf yield variance is within ±5%, unused labels are returned to inventory.\nIf > ±5%, investigation is initiated by QA Supervisor."
+        }
+       ],
+       "responsible": "QC Team"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Obsolete Label Disposal",
+     "steps": [
+      {
+       "heading": "Obsolete Label Disposal",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Obsolete or rejected labels are disposed per SOP QC-029.\nDisposal is documented using NOR and recorded on QC-002A for final audit closure."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Label Inventory Accuracy",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "QC"
+      },
+      {
+       "indicator": "Label Scrap % vs Issued",
+       "target": "",
+       "frequency": "Per Batch",
+       "owner": "QA"
+      },
+      {
+       "indicator": "Discrepancy Investigations",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "QA Supervisor"
+      },
+      {
+       "indicator": "Internal Audit Compliance",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "QA Lead"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Annually\nUpon regulatory updates\nFollowing significant audit findings or process deviate"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Occupational Health and Working Conditions",
+   "code": "",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "Environment, Health & Safety Team",
+   "owner": "EHS Manager",
+   "sourceWords": 888,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, we are committed to providing a safe, healthy, and supportive working environment for all employees. Our goal is to proactively prevent work-related injuries and illnesses while promoting overall well-being through proper health safeguards, protective equipment, and health insurance benefits. This SOP defines the standards for employee safety, occupational health, and workplace welfare."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The purpose of this SOP is to ensure:"
+      },
+      {
+       "type": "bullets",
+       "text": "Prevention of work-related injuries and illnesses.\nProvision of personal protective equipment (PPE) appropriate to job hazards.\nImplementation of periodic employee health check-ups.\nCoverage of employees through comprehensive health insurance programs."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all permanent, temporary, and third-party contract workers across all departments and facilities operated by Arminak Solutions LLC."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "PPE",
+       "definition": "Personal Protective Equipment"
+      },
+      {
+       "term": "OSHA",
+       "definition": "Occupational Safety and Health Administration"
+      },
+      {
+       "term": "EHS",
+       "definition": "Environment, Health & Safety Team"
+      },
+      {
+       "term": "Health Screening",
+       "definition": "Periodic medical assessments to evaluate employee health status"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "EHS Manager",
+       "responsibilities": [
+        "Conducts risk assessments, supervises PPE issuance, oversees health and safety initiatives"
+       ]
+      },
+      {
+       "role": "HR Manager",
+       "responsibilities": [
+        "Coordinates health insurance enrollment, annual health check-ups, and employee welfare programs"
+       ]
+      },
+      {
+       "role": "Supervisors/Managers",
+       "responsibilities": [
+        "Ensure PPE compliance, report safety incidents, encourage safe behavior"
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Use PPE properly, attend trainings, report unsafe conditions immediately"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Personal Protective Equipment (PPE) Provision",
+     "steps": [
+      {
+       "heading": "Risk assessments are conducted to identify necessary PPE per job role.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Risk assessments are conducted to identify necessary PPE per job role."
+        }
+       ]
+      },
+      {
+       "heading": "Types of PPE provided include",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Safety glasses\nGloves (chemical resistant, general purpose)\nLab coats and uniforms\nHearing protection\nRespiratory masks (where needed)"
+        }
+       ]
+      },
+      {
+       "heading": "PPE is issued at onboarding and replaced regularly or upon damage.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "PPE is issued at onboarding and replaced regularly or upon damage."
+        }
+       ]
+      },
+      {
+       "heading": "Training on proper use, care, and maintenance of PPE is mandatory.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Training on proper use, care, and maintenance of PPE is mandatory."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "PPE Type",
+          "Applicable Work Area",
+          "Replacement Frequency"
+         ],
+         "rows": [
+          [
+           "Safety Glasses",
+           "Production, Mixing Areas",
+           "Annually or as needed"
+          ],
+          [
+           "Chemical Gloves",
+           "Warehouse, Lab",
+           "Every 6 months"
+          ],
+          [
+           "Hearing Protection",
+           "Machine Operation Zones",
+           "Every 12 months"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Employee Health Check-ups",
+     "steps": [
+      {
+       "heading": "Annual health screenings are organized for all employees, covering",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Respiratory function\nVision and hearing tests\nBasic cardiovascular health checks\nExposure-related assessments for employees handling chemicals"
+        }
+       ]
+      },
+      {
+       "heading": "Specialized check-ups for high-risk groups (e.g., chemical handlers) are conducted every 6 months.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Specialized check-ups for high-risk groups (e.g., chemical handlers) are conducted every 6 months."
+        }
+       ]
+      },
+      {
+       "heading": "Medical records are kept confidential and maintained in compliance with HIPAA regulations.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Medical records are kept confidential and maintained in compliance with HIPAA regulations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Health Insurance Coverage",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All eligible employees are enrolled in the company's health insurance plan."
+      },
+      {
+       "type": "paragraph",
+       "text": "Coverage includes:"
+      },
+      {
+       "type": "bullets",
+       "text": "General medical care\nEmergency services\nPreventive screenings\nPrescription medications\nSpecialist referrals and hospital coverage"
+      },
+      {
+       "type": "paragraph",
+       "text": "HR department communicates insurance enrollment windows annually and during onboarding."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Reporting and Injury Management",
+     "steps": [
+      {
+       "heading": "All work-related injuries or illnesses must be reported immediately to supervisors and the EHS team.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All work-related injuries or illnesses must be reported immediately to supervisors and the EHS team."
+        }
+       ]
+      },
+      {
+       "heading": "First aid is administered onsite if necessary; emergency medical assistance is arranged promptly.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "First aid is administered onsite if necessary; emergency medical assistance is arranged promptly."
+        }
+       ]
+      },
+      {
+       "heading": "An internal incident investigation is conducted within 48 hours.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "An internal incident investigation is conducted within 48 hours."
+        }
+       ]
+      },
+      {
+       "heading": "Corrective actions are implemented to prevent recurrence.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Corrective actions are implemented to prevent recurrence."
+        }
+       ]
+      },
+      {
+       "heading": "OSHA reporting requirements are fulfilled for recordable injuries.",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "OSHA reporting requirements are fulfilled for recordable injuries."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "PPE Compliance Rate",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "EHS Team"
+      },
+      {
+       "indicator": "Injury Frequency Rate",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "EHS Team"
+      },
+      {
+       "indicator": "Annual Health Check Completion",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "HR Team"
+      },
+      {
+       "indicator": "Employee Insurance Enrollment Rate",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "HR Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed: Annually or Following any major incident or regulatory update or Upon change in workplace operations or identified risks"
+      }
+     ]
+    },
+    {
+     "kind": "appendix",
+     "title": "Initial Report of Accident/Incident",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This report must be completed before the Supervisor leaves the building at shift end and turned into HR. Employee Information: Name: Department: Job Title: Accident Information: Date of accident: Time of accident: Date reported: ____________. TYPE OF INJURY: Use the check boxes below to indicate the type of injury. TYPE OF ACCIDENT: Struck by/Against; Contacted by/with; Caught in/on; Same Level Fall; Different Level Fall; Exposure to Harmful Substance; List: Burn or Shock; Push / Pull/Lift/Ergonomic. TYPE OF INJURY: Amputation; Burn or Scald (heat); Burn (chemical); Concussion; Cut/Laceration; Crushing injury; Hernia; Bruise/Contusion; Occupation illness; Sprain/Strain. BODY PART INJURED: Eyes; Head/Face; Back; Arm; Hand /Wrist; Finger; Leg; Feet/Ankles; Toes; Internal; Other: Describe the injury (including the body parts involved): ___. ACCIDENT CAUSATION: Use the check boxes below to indicate contributing factors to the incident. UNSAFE PERSONAL FACTORS: Unaware of job hazards; Lack of job knowledge; Inattention to known hazards; Influence of intoxicant/drugs; Saving time and effort; Avoiding discomfort; Improper attitude; Influence of emotions; Other (explain). UNSAFE CONDITIONS: Inadequate guards or safety devices; Inadequate warning systems; Fire and explosion hazards; Poor housekeeping; Defective equipment, tools; Hazardous fumes and vapors; Inadequate illumination; Hazardous personal attire; Other (explain). UNSAFE WORK PROCEDURES: Operating without authority; Working at unsafe speeds; Failing to clean up; Nullifying safety devices; Using equipment unsafely; Taking unsafe position; Horseplay; Failing to use PPE; Other (explain). SUPPLEMENTARY ACCIDENT INFORMATION: Time of injury; Time employee began work on day of injury; Was there a witness? If so, list names and get statement (see separate form); If an accident occurred off-site, give name, address, and detail; What was the employee doing just before the incident occurred? (Describe activity & equipment involved); Describe any abnormal circumstances contributing to the accident. ACCIDENT PREVENTION INFORMATION: Has the hazard been eliminated? Y/N (circle); If no, have actions been taken to prevent additional injuries? Y/N (circle); If not, has equipment been locked/tagged out and/or has the area been isolated? Y/N (circle); Describe any recommendations to prevent future recurrence? Medical Treatment Information: Did the employee receive on-site first aid? Y/N (circle) If yes, what was provided and by whom?; Was the employee sent for off-site medical treatment? Y/N (circle) If yes, where and how were they transported?; List treatment below you are aware that was provided to injured employee; Was the employee hospitalized over-night? Y/N (circle); Did the employee return to work? Y/N (circle). Report Completed By: Name (Printed); Signature; Date. Attach any additional reports or information that helps explain the accident or will help prevent similar accidents."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Recall & Simulation Management",
+   "code": "",
+   "catalogId": "product-recall",
+   "pillar": "S",
+   "department": "Quality",
+   "owner": "Head of Quality",
+   "sourceWords": 522,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, ensuring the safety and integrity of our products in the market is paramount. This SOP outlines the structured procedures for initiating, managing, and documenting product recalls in compliance with FDA (21 CFR Part 7) and Health Canada regulations. It also covers internal mock recall exercises to test the robustness of our traceability systems."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a standardized process for promptly removing or correcting products that are in violation or pose potential health risks from the market. This procedure also ensures regulatory communication and traceability are managed effectively."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all products manufactured, filled, labeled, or distributed under the Arminak Solutions LLC brand or customer brands from our Corona, California facility, and distributed in the U.S. and Canadian markets."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Recall",
+       "definition": "Removal or correction of marketed product that is violative or potentially harmful"
+      },
+      {
+       "term": "Mock Recall",
+       "definition": "Simulated recall activity to test recall effectiveness and traceability"
+      },
+      {
+       "term": "Traceability",
+       "definition": "Ability to track product movement from production to end user"
+      },
+      {
+       "term": "FDA",
+       "definition": "U.S. Food and Drug Administration"
+      },
+      {
+       "term": "NPN",
+       "definition": "Natural Product Number (Canada)"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology Overview",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Recall",
+         "Removal or correction of marketed product that is violative or potentially harmful"
+        ],
+        [
+         "Mock Recall",
+         "Simulated recall activity to test recall effectiveness and traceability"
+        ],
+        [
+         "Traceability",
+         "Ability to track product movement from production to end user"
+        ],
+        [
+         "FDA",
+         "U.S. Food and Drug Administration"
+        ],
+        [
+         "NPN",
+         "Natural Product Number (Canada)"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Head of Quality",
+       "responsibilities": [
+        "Oversees all recall activities, regulatory communication, and status reports"
+       ]
+      },
+      {
+       "role": "Recall Committee",
+       "responsibilities": [
+        "Coordinates recall, communication, and documentation with stakeholders and authorities"
+       ]
+      },
+      {
+       "role": "Customer Service",
+       "responsibilities": [
+        "Provides customer notifications and supports distribution tracking"
+       ]
+      },
+      {
+       "role": "QA & QC Team",
+       "responsibilities": [
+        "Provides documentation, reconciliation, and verification of affected inventory"
+       ]
+      },
+      {
+       "role": "Regulatory Affairs",
+       "responsibilities": [
+        "Communicates with Health Canada and ensures regulatory submissions"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Recall Process (U.S. - FDA Compliance)",
+     "steps": [
+      {
+       "heading": "Recall initiation",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Health Canada Recall Procedure",
+     "steps": [
+      {
+       "heading": "Notification to Health Canada's ROC within 3 days of initiating recall",
+       "body": [],
+       "responsible": "Regulatory Affairs"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Mock Recall Program",
+     "steps": [
+      {
+       "heading": "Mock Recall execution",
+       "body": []
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Mock Recall Completion Time",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "QA Supervisor"
+      },
+      {
+       "indicator": "Traceability Accuracy (%)",
+       "target": "",
+       "frequency": "Per Event",
+       "owner": "QC/QA"
+      },
+      {
+       "indicator": "Recall Notification Rate",
+       "target": "",
+       "frequency": "Per Recall",
+       "owner": "Customer Service"
+      },
+      {
+       "indicator": "FDA/Health Canada Feedback",
+       "target": "",
+       "frequency": "Per Recall",
+       "owner": "Regulatory Affairs"
+      }
+     ],
+     "narrative": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Metric",
+        "Frequency",
+        "Responsible"
+       ],
+       "rows": [
+        [
+         "Mock Recall Completion Time",
+         "Annually",
+         "QA Supervisor"
+        ],
+        [
+         "Traceability Accuracy (%)",
+         "Per Event",
+         "QC/QA"
+        ],
+        [
+         "Recall Notification Rate",
+         "Per Recall",
+         "Customer Service"
+        ],
+        [
+         "FDA/Health Canada Feedback",
+         "Per Recall",
+         "Regulatory Affairs"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed: Annually or After any recall or regulatory update"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Employee and Buyer Performance Review",
+   "code": "",
+   "catalogId": "performance-evaluation",
+   "pillar": "S",
+   "department": "Human Resources",
+   "owner": "HR Department",
+   "sourceWords": 462,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, continuous performance evaluation of employees and supplier partners is integral to organizational success. This SOP outlines structured processes for appraising staff performance and assessing supplier/buyer reliability, aiming to promote growth, accountability, and high operational standards."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes a structured framework for reviewing employee and buyer performance to ensure continuous improvement, accountability, and alignment with organizational goals"
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is applicable to:"
+      },
+      {
+       "type": "bullets",
+       "text": "All employees (staff, line workers, managers) across departments.\nAll buyers/vendors/suppliers engaged in procurement or business partnerships."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Objectives",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "To evaluate and document employee performance consistently and fairly.\nTo assess supplier/buyer performance against quality, delivery, and compliance expectations.\nTo provide structured feedback for improvement and future planning.\nTo link performance evaluation to career progression, training needs, or contract continuation."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology",
+     "rows": [
+      {
+       "term": "KRA",
+       "definition": "Key Result Area – Targeted outcome for a role or responsibility"
+      },
+      {
+       "term": "KPI",
+       "definition": "Key Performance Indicator – Measurable metrics to evaluate performance"
+      },
+      {
+       "term": "Appraisal",
+       "definition": "Annual or biannual performance assessment of employees"
+      },
+      {
+       "term": "Vendor Scorecard",
+       "definition": "A quantitative review of supplier/buyer performance"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Oversee employee appraisal cycles and maintain records"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Evaluate team members and support IDP updates"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Manage buyer evaluations, documentation, and performance tracking"
+       ]
+      },
+      {
+       "role": "Quality & Compliance",
+       "responsibilities": [
+        "Provide feedback on vendor quality and sustainability adherence"
+       ]
+      },
+      {
+       "role": "Senior Management",
+       "responsibilities": [
+        "Approve results of performance reviews and recommend promotions or vendor contracts"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Employee Performance Review Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted biannually (Mid-Year & Annual Review)\nForms used: “Employee Performance Evaluation Form” covering KRA, punctuality, teamwork, initiative, communication, etc."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation Parameters",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "KRA achievement (target vs. actual performance)\nQuality of work, productivity, and innovation\nDiscipline, behavior, punctuality\nTeamwork and leadership potential\nCompliance with safety, EHS, and company policies."
+        }
+       ]
+      },
+      {
+       "heading": "Process Flow",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Self-evaluation by employee\nManager evaluation and discussion\nReview by HR\nPerformance score finalization\nRecommendations: IDP update, promotion, training need, or PIP (Performance Improvement Plan)."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Buyer/Vendor Performance Review Process",
+     "steps": [
+      {
+       "heading": "Frequency",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted annually or as required by project cycles."
+        }
+       ]
+      },
+      {
+       "heading": "Evaluation Form",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Buyer Performance Evaluation Form includes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Quality of material supplied\nOn-time delivery\nCommercial terms compliance\nResponsiveness and communication\nLegal and ethical compliance"
+        }
+       ]
+      },
+      {
+       "heading": "Review Criteria & Scoring",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Criteria",
+          "Weightage (%)",
+          "Minimum Acceptable Score"
+         ],
+         "rows": [
+          [
+           "Product/Service Quality",
+           "25%",
+           "≥70%"
+          ],
+          [
+           "Delivery Timeliness",
+           "20%",
+           "≥80%"
+          ],
+          [
+           "Communication",
+           "15%",
+           "≥70%"
+          ],
+          [
+           "Pricing/Cost Effectiveness",
+           "20%",
+           "As per agreed terms"
+          ],
+          [
+           "Ethical & ESG Compliance",
+           "20%",
+           "100% mandatory"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "heading": "Action Based on Score",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "≥85%: Preferred Vendor\n70–84%: Approved Vendor with improvement areas\n<70%: Put on Watchlist / Not Considered for New Contracts"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Record-Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All appraisal and vendor review forms will be stored digitally via the HRMS and Vendor Management System.\nA copy will be shared with the respective employee/buyer.\nSummary reports to be reviewed in quarterly HR or procurement reviews."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Improvement",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Trends in low-scoring employees or vendors will be analyzed.\nCorrective actions include training plans, contract renegotiation, or disengagement.\nContinuous feedback mechanisms (360°, customer satisfaction, etc.) will support improvements."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Cycle",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "SOP to be reviewed annually.\nChanges based on company policies, strategic direction, or audit recommendations.\nAmendments approved by HR Director and Procurement Head."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "CSR (Corporate Socially Responsible)",
+   "code": "",
+   "catalogId": null,
+   "pillar": "G",
+   "department": "Governance",
+   "owner": "CSR Committee",
+   "sourceWords": 404,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, Corporate Social Responsibility (CSR) is integral to our identity and business strategy. Our CSR approach reflects our commitment to environmental sustainability, social equity, ethical conduct, and community engagement. This SOP outlines the framework through which CSR activities are planned, executed, monitored, and reported."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define a standardized approach to CSR initiatives that ensures consistency, transparency, and alignment with the company’s values, stakeholder expectations, and applicable legal and regulatory requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all CSR initiatives undertaken by Arminak Solutions LLC dba KBL Cosmetics across its operational sites and regions, and involves all relevant departments such as HR, EHS, Legal, and Marketing."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "CSR",
+       "definition": "Corporate Social Responsibility; company-driven initiatives benefitting society and the environment"
+      },
+      {
+       "term": "ESG",
+       "definition": "Environmental, Social, and Governance; a framework often used in CSR reporting"
+      },
+      {
+       "term": "Stakeholders",
+       "definition": "Individuals or groups affected by or capable of influencing CSR activities"
+      },
+      {
+       "term": "CSR Project",
+       "definition": "A formally approved initiative under the company’s CSR strategy"
+      },
+      {
+       "term": "Impact Assessment",
+       "definition": "Evaluation of social and environmental outcomes of a CSR activity"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "CSR Committee",
+       "responsibilities": [
+        "Plans, reviews, and monitors CSR programs"
+       ]
+      },
+      {
+       "role": "Compliance Dept.",
+       "responsibilities": [
+        "Ensures CSR initiatives comply with legal and ethical standards"
+       ]
+      },
+      {
+       "role": "Finance Dept.",
+       "responsibilities": [
+        "Allocates CSR budget and handles financial reporting"
+       ]
+      },
+      {
+       "role": "HR Dept.",
+       "responsibilities": [
+        "Facilitates employee volunteering and engagement"
+       ]
+      },
+      {
+       "role": "EHS Dept.",
+       "responsibilities": [
+        "Supports environmental and sustainability initiatives"
+       ]
+      },
+      {
+       "role": "Marketing Dept.",
+       "responsibilities": [
+        "Promotes CSR activities and stakeholder communication"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "CSR Implementation Process",
+     "steps": [
+      {
+       "heading": "Identification of CSR Focus Areas",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Environmental sustainability (e.g., waste reduction, water conservation)"
+        },
+        {
+         "text": "Community development (e.g., education, healthcare, women empowerment)"
+        },
+        {
+         "text": "Ethical sourcing and supply chain responsibility."
+        },
+        {
+         "text": "Employee engagement and volunteering."
+        }
+       ]
+      },
+      {
+       "heading": "CSR Planning and Approval",
+       "body": [],
+       "responsible": "CSR Committee",
+       "substeps": [
+        {
+         "text": "Projects proposed annually by CSR Committee.",
+         "responsible": "CSR Committee"
+        },
+        {
+         "text": "Evaluation of potential impact and alignment with company goals."
+        },
+        {
+         "text": "Approval by senior management and finance allocation."
+        }
+       ]
+      },
+      {
+       "heading": "Execution and Monitoring",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Project owners assigned to each initiative."
+        },
+        {
+         "text": "Regular status updates and site visits."
+        },
+        {
+         "text": "Stakeholder feedback gathered where applicable."
+        }
+       ]
+      },
+      {
+       "heading": "Impact Measurement and Reporting",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Quantitative and qualitative KPIs tracked.."
+        },
+        {
+         "text": "Annual CSR Report compiled for internal and external disclosure."
+        },
+        {
+         "text": "Compliance with applicable disclosure regulations and frameworks (e.g., GRI, EcoVadis)",
+         "responsible": "Compliance Dept."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Involvement",
+       "body": [],
+       "responsible": "HR Dept.",
+       "substeps": [
+        {
+         "text": "Volunteering opportunities communicated via HR.",
+         "responsible": "HR Dept."
+        },
+        {
+         "text": "Recognition for outstanding CSR participation."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Number of CSR Initiatives Executed",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "CSR Committee"
+      },
+      {
+       "indicator": "CSR Budget Utilization Rate",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Finance Dept."
+      },
+      {
+       "indicator": "Beneficiary Impact Reports Received",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "CSR Committee"
+      },
+      {
+       "indicator": "Employee Participation Rate in CSR",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "HR Dept."
+      },
+      {
+       "indicator": "ESG Rating Performance (e.g., EcoVadis)",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Compliance Dept."
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed annually or following any major CSR strategic shift or regulatory update. Amendments must be approved by the CSR Committee and Compliance Department."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Governance of Sensitive Transactions",
+   "code": "",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Officer",
+   "sourceWords": 404,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, maintaining the highest ethical standards is essential when dealing with external stakeholders. This SOP outlines the approval process for sensitive transactions involving gifts, travel, entertainment, hospitality, and donations to ensure full transparency, compliance, and avoidance of conflicts of interest."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish clear guidelines and approval procedures for sensitive transactions involving external stakeholders, promoting ethical behavior and regulatory compliance."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, management, and external stakeholders engaged in financial transactions or business dealings involving gifts, sponsored travel, entertainment, or donations."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Sensitive Transaction",
+       "definition": "A transaction that could influence business decision-making or create a perceived conflict of interest"
+      },
+      {
+       "term": "GDF-01",
+       "definition": "Gift Declaration Form"
+      },
+      {
+       "term": "TAR-02",
+       "definition": "Travel Approval Request Form"
+      },
+      {
+       "term": "EAF-04",
+       "definition": "Event Approval Form"
+      },
+      {
+       "term": "SDR-05",
+       "definition": "Sponsorship & Donation Request Form"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Definition of Sensitive Transactions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Sensitive transactions include:\nGifts & Hospitality: Monetary or non-monetary items given or received.\nTravel & Accommodation: Vendor-sponsored travel.\nEntertainment & Events: Invitations to external events by business partners.\nSponsorships & Donations: Company contributions to organizations or causes."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles and Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Declare all sensitive transactions and seek necessary approvals before engagement"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Review and approve sensitive transactions within their departments; escalate high-risk cases to Compliance"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Maintain oversight, perform audits, and ensure adherence to sensitive transaction policies"
+       ]
+      },
+      {
+       "role": "Finance Team",
+       "responsibilities": [
+        "Assist in transaction recording, auditing, and report submission"
+       ]
+      },
+      {
+       "role": "HR Department",
+       "responsibilities": [
+        "Support in policy communication and training to all employees"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Approval Process for Sensitive Transactions",
+     "steps": [
+      {
+       "heading": "Gifts & Hospitality",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Gifts exceeding $50 USD require Department Head and Compliance Officer approval.\nDeclare gifts via Gift Declaration Form (GDF-01) within 5 working days.\nPromotional items (e.g., pens, calendars) are exempt."
+        }
+       ]
+      },
+      {
+       "heading": "Travel & Accommodation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Sponsored travel must be pre-approved by HR & Compliance.\nSubmit Travel Approval Request (TAR-02) at least 10 working days in advance.\nExpense reimbursement requires valid receipts and Expense Report (ER-03)."
+        }
+       ]
+      },
+      {
+       "heading": "Entertainment & Events",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Written approval required before attending third-party events.\nSubmit Event Approval Form (EAF-04) before attending.\nEvents exceeding $150 USD require CEO approval."
+        }
+       ]
+      },
+      {
+       "heading": "Sponsorships & Donations",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "No sponsorships or donations without authorization.\nSubmit Sponsorship & Donation Request Form (SDR-05) for Corporate Affairs review."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Record-Keeping & Compliance",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All sensitive transaction records are maintained for a minimum of 3 years.\nFinance & Compliance Team conducts quarterly audits.\nNon-compliance may result in disciplinary action under company policy."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting Violations",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "Suspected violations must be reported via the Whistleblower Hotline or compliance email. Confidentiality and non-retaliation policies apply."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Number of Declarations Submitted",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Compliance Team"
+      },
+      {
+       "indicator": "Audit Findings on Sensitive Transactions",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Finance & Compliance"
+      },
+      {
+       "indicator": "Whistleblower Reports Investigated",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Compliance Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "This SOP shall be reviewed:\nAnnually\nAfter any regulatory update\nBased on internal audit recommendations"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Data Sharing and Consent Management with External Parties",
+   "code": "",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer (DPO)",
+   "sourceWords": 458,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, protecting third-party confidential information is central to maintaining stakeholder trust and ensuring regulatory compliance. This SOP establishes measures for securing external data, managing stakeholder consent transparently, and maintaining robust internal controls."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedure to safeguard third-party data from unauthorized access or disclosure and defines the methodology for gaining stakeholder consent, maintaining documentation, and ensuring data privacy and operational integrity."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Applies to all employees, contractors, and third-party vendors involved in handling, processing, or accessing third-party confidential data, including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Physical and digital data security\nConsent management processes\nStakeholder communications regarding data usage"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Third-Party Data",
+       "definition": "Confidential information provided by external entities (clients, vendors, customers)"
+      },
+      {
+       "term": "Unauthorized Access",
+       "definition": "Access to confidential information without appropriate authorization"
+      },
+      {
+       "term": "Stakeholder Consent",
+       "definition": "Explicit approval provided for data processing and sharing"
+      },
+      {
+       "term": "Exception Handling",
+       "definition": "Special cases preventing standard procedures due to legal or regulatory requirements"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "Oversees compliance, consent processes, and handles exception scenarios"
+       ]
+      },
+      {
+       "role": "IT Security Team",
+       "responsibilities": [
+        "Manages access controls, monitors audit trails, and investigates breaches"
+       ]
+      },
+      {
+       "role": "Data Handling Employees",
+       "responsibilities": [
+        "Follow protocols for proper data access and consent documentation"
+       ]
+      },
+      {
+       "role": "Third-Party Vendors",
+       "responsibilities": [
+        "Adhere to Arminak Solutions LLC’s data protection policies and promptly report any incidents"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Internal Controls to Restrict Access",
+     "steps": [
+      {
+       "heading": "Physical Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Confidential printed documents must be stored in locked cabinets or controlled rooms.\nVisitor access to data storage areas must be logged and monitored."
+        }
+       ]
+      },
+      {
+       "heading": "Digital Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Implement role-based access controls to limit data visibility by role.\nEnforce Multi-Factor Authentication (MFA) across all critical systems.\nEncrypt sensitive data both at rest and during transmission.\nMaintain detailed audit logs of all data access events and conduct periodic reviews."
+        }
+       ]
+      },
+      {
+       "heading": "Stakeholder Notification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "A detailed Privacy Notice is provided before collecting any data, outlining:\nData categories collected\nPurpose of data use\nInformation on third-party sharing (if applicable)\nRetention period and data protection rights\nPrivacy Notices are accessible through:\nCompany website\nClient onboarding materials\nContractual documentation"
+        }
+       ]
+      },
+      {
+       "heading": "Consent Collection and Documentation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Explicit consent is collected using standardized Consent Forms.\nConsents are stored digitally in a secure Consent Management System (CMS).\nRecords must be easily retrievable for audit and regulatory purposes."
+        }
+       ]
+      },
+      {
+       "heading": "Ongoing Communication and Consent Management",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Notify stakeholders of any significant changes to data processing policies.\nProvide clear instructions on withdrawing consent and ensure requests are processed within 30 days."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Compliance",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Quarterly Data Access Audits: Review user access rights and detect unauthorized access attempts. Conduct anomaly investigations immediately.\nConsent Compliance Audits: Validate 100% consent collection before any processing activity. Ensure opt-in confirmations are recorded and updated periodically.\nCompliance Reporting: Submit semi-annual compliance reports to the DPO and Senior Management. Track incidents, access breaches, and stakeholder consent metrics."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Key Metrics for Success",
+     "kpis": [
+      {
+       "indicator": "Unauthorized Access Incidents",
+       "target": "Zero reported incidents per year",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Stakeholder Consent Compliance",
+       "target": "100% compliance for all third-party data before processing",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review and Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Frequency: Annual or following significant regulatory updates."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Records Retention, Access, and Compliance Guideline",
+   "code": "",
+   "catalogId": "document-control",
+   "pillar": "G",
+   "department": "Quality Assurance",
+   "owner": "Quality Assurance (QA) Unit",
+   "sourceWords": 499,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, maintaining the integrity, accessibility, and confidentiality of GMP (Good Manufacturing Practice) records is essential for regulatory compliance, operational traceability, and quality assurance. This SOP establishes a structured approach for managing all GMP documentation throughout its lifecycle."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The objectives of this SOP are to:"
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all GMP-related records for cosmetic and OTC drug products manufactured and/or packaged at Arminak Solutions LLC dba KBL Cosmetics. Applicable records include:"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "GMP Records",
+       "definition": "Documents demonstrating compliance with Good Manufacturing Practices."
+      },
+      {
+       "term": "Master Batch Record (MBR)",
+       "definition": "Authorized document detailing production process and quality assurance requirements."
+      },
+      {
+       "term": "Preventive Maintenance Records",
+       "definition": "Logs documenting equipment servicing activities."
+      },
+      {
+       "term": "Validation Records",
+       "definition": "Documentation confirming validation of products, processes, and equipment."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Information Technology (IT) Unit",
+       "responsibilities": [
+        "Ensure secure electronic backup of all GMP records and transaction data."
+       ]
+      },
+      {
+       "role": "Quality Assurance (QA) Unit",
+       "responsibilities": [
+        "Control, maintain, and authorize access to GMP documentation."
+       ]
+      },
+      {
+       "role": "Operations Unit",
+       "responsibilities": [
+        "Accurately complete batch records, maintain equipment logs, and submit documentation to QA/QC."
+       ]
+      },
+      {
+       "role": "Human Resources (HR) Department",
+       "responsibilities": [
+        "Maintain GMP-relevant employee and training records."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "GMP Records Management Procedure",
+     "steps": [
+      {
+       "heading": "Access to GMP Records",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "GMP records are accessible only with prior approval from the QA Unit.\nUnauthorized duplication or distribution is strictly prohibited."
+        }
+       ]
+      },
+      {
+       "heading": "Retention Periods",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "GMP Records",
+          "Minimum Retention Period"
+         ],
+         "rows": [
+          [
+           "Employee records",
+           "During the employment of personnel plus 6 years"
+          ],
+          [
+           "Training records and Job Descriptions",
+           "During the employment of personnel plus 6 years"
+          ],
+          [
+           "Standard Operating Procedures and Policies",
+           "Current plus 6 years"
+          ],
+          [
+           "Master Batch Records",
+           "10 years"
+          ],
+          [
+           "Stability and Product Review",
+           "Life of the product plus 1 year"
+          ],
+          [
+           "Testing records",
+           "10 years"
+          ],
+          [
+           "Change Control records",
+           "10 years"
+          ],
+          [
+           "Investigation records: OOS, Deviations, CAPA, Customer Complaints, Disposal Records, Returns, Audits, Product Recalls, Mock Recalls",
+           "10 years"
+          ],
+          [
+           "All Validation Records",
+           "Life of process/method/product/equipment plus 1 year"
+          ],
+          [
+           "Preventive Maintenance and Calibration records",
+           "10 years"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Note: Retention periods may vary based on customer agreements or Quality Agreements. Always confirm with QA prior to destruction."
+        }
+       ]
+      },
+      {
+       "heading": "Document Revisions and Updates",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Only authorized personnel may revise Master Records.\nChanges must follow the approved Document Change Control process (SOP GEN-011)."
+        }
+       ]
+      },
+      {
+       "heading": "Electronic Storage and Security",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All GMP records are scanned and securely stored in a dedicated server drive with restricted access to QA personnel.\nRegular backup protocols are enforced by the IT Unit to ensure business continuity and disaster recovery."
+        }
+       ]
+      },
+      {
+       "heading": "External Disclosure",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "GMP documents shall not be disclosed externally without written authorization from the Head of Quality and the CEO.\nAll external disclosures must be logged, reviewed, and approved."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Compliance",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Conduct quarterly internal audits on GMP record maintenance and retention practices.\nInvestigate and document any non-conformance or unauthorized access."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Key Metrics for Success",
+     "kpis": [
+      {
+       "indicator": "Retrieval Accuracy",
+       "target": "100% retrievability within 24 hours",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Unauthorized Access",
+       "target": "Zero incidents annually",
+       "frequency": "",
+       "owner": ""
+      },
+      {
+       "indicator": "Document Retention Compliance",
+       "target": "100% adherence to timelines",
+       "frequency": "",
+       "owner": ""
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review and Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Frequency: Annual Review, or sooner in case of major regulatory or operational changes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Anti-Competitive Practices",
+   "code": "",
+   "catalogId": "anti-competitive",
+   "pillar": "G",
+   "department": "Legal and Compliance",
+   "owner": "Compliance Officer",
+   "sourceWords": 419,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, we uphold the highest standards of ethical business conduct and fair competition. This SOP outlines the procedures and expectations regarding compliance with anti-trust and competition laws to ensure that the company avoids any practices that may be deemed anti-competitive or monopolistic. These guidelines align with U.S. Federal Trade Commission (FTC) laws and global competition standards."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a clear framework that prevents anti-competitive behavior, fosters ethical business practices, and ensures compliance with antitrust regulations. This SOP supports transparency, fairness, and integrity in all market dealings."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all employees, contractors, executives, and agents of Arminak Solutions LLC dba KBL Cosmetics engaged in sales, marketing, procurement, partnerships, and strategic planning activities across all operational geographies."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Anti-Competitive Practices",
+       "definition": "Actions that unfairly limit competition or control market pricing"
+      },
+      {
+       "term": "Price Fixing",
+       "definition": "Agreement between competitors to set prices or other trading conditions"
+      },
+      {
+       "term": "Bid Rigging",
+       "definition": "Collusion to influence the outcome of a competitive bidding process"
+      },
+      {
+       "term": "Market Allocation",
+       "definition": "Agreement between competitors to divide markets or customers"
+      },
+      {
+       "term": "FTC",
+       "definition": "U.S. Federal Trade Commission"
+      },
+      {
+       "term": "Antitrust Laws",
+       "definition": "Laws that promote fair competition and prohibit monopolistic practices"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Oversees implementation and training related to competition law"
+       ]
+      },
+      {
+       "role": "Legal Counsel",
+       "responsibilities": [
+        "Provides legal interpretation and guidance on specific competition matters"
+       ]
+      },
+      {
+       "role": "Sales & Marketing",
+       "responsibilities": [
+        "Must avoid collusion, price sharing, or market division with competitors"
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Ensures vendor relationships are free from exclusivity clauses that reduce competition"
+       ]
+      },
+      {
+       "role": "Human Resources",
+       "responsibilities": [
+        "Conducts training and handles reports of potential violations"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Anti-Competitive Risk Prevention Process",
+     "steps": [
+      {
+       "heading": "All business conduct must avoid practices that",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Restrict trade or manipulate market access"
+        },
+        {
+         "text": "Coordinate prices, terms, or bid submissions with competitors"
+        },
+        {
+         "text": "Divide markets by territory, customers, or products"
+        },
+        {
+         "text": "Force suppliers or customers into exclusive contracts"
+        }
+       ]
+      },
+      {
+       "heading": "Employees must not discuss sensitive competitive information (pricing, customers, future strategies) with competitors",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees must not discuss sensitive competitive information (pricing, customers, future strategies) with competitors."
+        }
+       ]
+      },
+      {
+       "heading": "In joint ventures or industry events",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "In joint ventures or industry events:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Follow the \"No Collusion\" rule"
+        },
+        {
+         "text": "Document all discussions and decisions"
+        },
+        {
+         "text": "Have legal counsel review agreements when in doubt"
+        }
+       ]
+      },
+      {
+       "heading": "Training",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Training:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Mandatory annual antitrust and fair competition training"
+        },
+        {
+         "text": "Special sessions for Sales, Marketing, and Executive teams"
+        }
+       ]
+      },
+      {
+       "heading": "Reporting Concerns",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Reporting Concerns:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Employees are encouraged to report suspicious activities to the Compliance Officer"
+        },
+        {
+         "text": "Anonymous reporting is available through internal hotlines"
+        },
+        {
+         "text": "No retaliation policy enforced for good-faith reporting"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Employee Training Completion Rate",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Human Resources"
+      },
+      {
+       "indicator": "Reported Anti-Competitive Concerns",
+       "target": "",
+       "frequency": "Per Incident",
+       "owner": "Compliance Officer"
+      },
+      {
+       "indicator": "Legal Review of Contracts",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Legal Counsel"
+      },
+      {
+       "indicator": "FTC or Regulatory Inquiries",
+       "target": "",
+       "frequency": "As Occurred",
+       "owner": "Legal & Compliance"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed: Annually or after any regulatory or internal investigation related to anti-competitive behavior. All updates must be approved by the Legal and Compliance departments."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Plan for Responding to Confidential Information Incidents",
+   "code": "",
+   "catalogId": "data-breach-response",
+   "pillar": "G",
+   "department": "",
+   "owner": "Incident Response Lead (IT Head)",
+   "sourceWords": 471,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, safeguarding confidential information is vital to our operations and reputation. This SOP outlines a structured incident response plan to detect, report, mitigate, and recover from any breach involving employee data, customer records, financial information, or proprietary data."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedure for detecting, reporting, responding to, and mitigating any breach or unauthorized access involving confidential information. The aim is to ensure quick containment, minimal impact, and protection of stakeholder interests."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Sop Applies to all departments, locations, systems, and personnel (internal or external) who handle or access confidential and sensitive information, including: Employee records , Customer/vendor data, Financial and legal information, Proprietary process, product or R&D information, Network/system security credentials"
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Confidential Information",
+       "definition": "Non-public information impacting privacy, operations, or compliance"
+      },
+      {
+       "term": "Security Incident",
+       "definition": "Attempted or successful unauthorized access, disclosure, or misuse of information"
+      },
+      {
+       "term": "Breach",
+       "definition": "Confirmed event where confidential information is lost, stolen, or exposed"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Roles & Responsibilities",
+     "rows": [
+      {
+       "role": "Incident Response Lead (IT Head)",
+       "responsibilities": [
+        "Coordinates IRP activation, investigation, and technical response"
+       ]
+      },
+      {
+       "role": "Compliance Officer",
+       "responsibilities": [
+        "Ensures regulatory reporting, legal review, and records actions taken"
+       ]
+      },
+      {
+       "role": "HR/Department Head",
+       "responsibilities": [
+        "Supports internal communication and corrective actions"
+       ]
+      },
+      {
+       "role": "Information Owner",
+       "responsibilities": [
+        "Identifies impact of breach and supports recovery"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Incident Response Lifecycle",
+     "steps": [
+      {
+       "heading": "Detection & Identification",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All employees must report suspicious activity or confirmed breach within 1 hour.\nExamples include unusual login alerts, unauthorized data transfer, lost devices, phishing attacks."
+        }
+       ]
+      },
+      {
+       "heading": "Containment & Eradication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "IT isolates affected systems/devices.\nAccess rights are revoked; firewalls updated.\nMalware removed; evidence logs captured."
+        }
+       ],
+       "responsible": "IT"
+      },
+      {
+       "heading": "Impact Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Identify type of data compromised (PII, business confidential, customer data).\nEvaluate scope: number of records, systems affected, potential harm."
+        }
+       ]
+      },
+      {
+       "heading": "Communication",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Notify affected internal stakeholders, regulatory bodies (if required), customers/vendors under legal guidance.\nCommunication is approved by Director – Information Security & Compliance Officer."
+        }
+       ],
+       "responsible": "Director – Information Security & Compliance Officer"
+      },
+      {
+       "heading": "Recovery",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Restore systems from clean backups.\nChange credentials across affected endpoints.\nMonitor post-incident for anomalies."
+        }
+       ]
+      },
+      {
+       "heading": "Root Cause Analysis & Documentation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conducted by IT + Compliance within 3 working days.\nReport includes timeline, actions taken, weaknesses exploited, corrective actions."
+        }
+       ],
+       "responsible": "IT + Compliance"
+      },
+      {
+       "heading": "Post-Incident Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Internal debrief within 7 days.\nLessons learned applied to SOP updates, training programs, and IT policies."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Prevention & Awareness",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Quarterly training on phishing, data handling, and reporting channels.\nConfidential data access is role-based (least privilege).\nUSBs and external media are restricted.\nMFA (Multi-Factor Authentication) enabled on cloud and email systems."
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Documentation & Recordkeeping",
+     "rows": [
+      {
+       "record": "Information Security Incident Register",
+       "owner": "",
+       "retention": "7 Years",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All incidents logged in the Information Security Incident Register, capturing:"
+      },
+      {
+       "type": "bullets",
+       "text": "Incident ID\nTime of detection\nReported by\nSystems affected\nType of data breached\nActions taken\nCommunication details\nLessons learned Retention Period: 7 Years"
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Escalation Matrix",
+     "steps": [
+      {
+       "heading": "Escalation Matrix",
+       "body": [
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Severity Level",
+          "Escalation Timeline",
+          "Action Owner"
+         ],
+         "rows": [
+          [
+           "Minor (limited impact)",
+           "Within 12 hours",
+           "IT Helpdesk + Dept. Supervisor"
+          ],
+          [
+           "Moderate (system/data exposure)",
+           "Within 4 hours",
+           "IT Manager + Compliance Officer"
+          ],
+          [
+           "Major (external breach or regulatory)",
+           "Immediate (within 1 hour)",
+           "Director – IS + Top Management"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Incident Reporting Compliance",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "IT Security Team"
+      },
+      {
+       "indicator": "Root Cause Analysis Closure",
+       "target": "",
+       "frequency": "Per Incident",
+       "owner": "Compliance Officer"
+      },
+      {
+       "indicator": "Post-Incident Training Completion",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "HR & IT Team"
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually or after major incidents."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Stakeholder Engagement Practices",
+   "code": "",
+   "catalogId": null,
+   "pillar": "G",
+   "department": "Compliance Dept.",
+   "owner": "Compliance Dept.",
+   "sourceWords": 383,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, stakeholder engagement is a strategic process that ensures open, inclusive, and transparent dialogue with individuals and groups that influence or are affected by our operations. This SOP outlines the principles and procedures for identifying, communicating with, and responding to stakeholders across our value chain."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To formalize the approach for engaging stakeholders in a way that supports trust, collaboration, and long-term value creation for both the company and its stakeholders."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all functions and departments that interact with internal and external stakeholders, including but not limited to employees, customers, suppliers, regulatory bodies, local communities, and investors."
+      }
+     ]
+    },
+    {
+     "kind": "definitions",
+     "title": "Terminology Overview",
+     "rows": [
+      {
+       "term": "Stakeholder",
+       "definition": "Any individual or group affected by or capable of affecting the company’s decisions"
+      },
+      {
+       "term": "Engagement",
+       "definition": "The process of interacting with stakeholders through formal or informal means"
+      },
+      {
+       "term": "Materiality",
+       "definition": "The significance of an issue to stakeholders and the company"
+      },
+      {
+       "term": "Dialogue",
+       "definition": "Two-way communication designed to understand stakeholder concerns and expectations"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Compliance Dept.",
+       "responsibilities": [
+        "Coordinates overall stakeholder engagement strategy"
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Engage relevant stakeholders in daily operations and decision-making"
+       ]
+      },
+      {
+       "role": "HR Dept.",
+       "responsibilities": [
+        "Manages employee-related engagement activities"
+       ]
+      },
+      {
+       "role": "EHS Dept.",
+       "responsibilities": [
+        "Handles engagement with communities and regulatory authorities"
+       ]
+      },
+      {
+       "role": "Marketing & Sales",
+       "responsibilities": [
+        "Manages customer feedback and outreach"
+       ]
+      },
+      {
+       "role": "Procurement",
+       "responsibilities": [
+        "Coordinates engagement with suppliers and vendors"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Stakeholder Engagement Process",
+     "steps": [
+      {
+       "heading": "Stakeholder Identification and Mapping",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Categorize stakeholders into internal (e.g., employees, management) and external (e.g., customers, suppliers, communities, regulators)"
+        },
+        {
+         "text": "Prioritize stakeholders based on influence and interest"
+        }
+       ]
+      },
+      {
+       "heading": "Engagement Planning",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Define objectives for engagement (e.g., gather feedback, address concerns, communicate performance)"
+        },
+        {
+         "text": "Select appropriate engagement methods (surveys, meetings, audits, reports)"
+        }
+       ]
+      },
+      {
+       "heading": "Engagement Execution",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Schedule regular meetings, town halls, audits, or forums as per stakeholder category"
+        },
+        {
+         "text": "Record feedback and issues raised"
+        },
+        {
+         "text": "Ensure transparency and mutual respect in communication"
+        }
+       ]
+      },
+      {
+       "heading": "Issue Management and Escalation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Assign responsible teams for addressing stakeholder concerns"
+        },
+        {
+         "text": "Escalate unresolved or critical issues to senior management"
+        }
+       ]
+      },
+      {
+       "heading": "Feedback Integration and Reporting",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Integrate stakeholder input into materiality assessments, sustainability reports, and strategic plans"
+        },
+        {
+         "text": "Share outcomes and updates with stakeholders where applicable"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and KPIs",
+     "kpis": [
+      {
+       "indicator": "Number of Stakeholder Meetings Held",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Compliance Dept."
+      },
+      {
+       "indicator": "Stakeholder Satisfaction Index",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Marketing/HR"
+      },
+      {
+       "indicator": "Number of Resolved Stakeholder Concerns",
+       "target": "",
+       "frequency": "Quarterly",
+       "owner": "Relevant Depts."
+      },
+      {
+       "indicator": "Stakeholder Feedback Response Time",
+       "target": "",
+       "frequency": "Monthly",
+       "owner": "Relevant Depts."
+      },
+      {
+       "indicator": "Inclusion of Stakeholder Input in Decisions",
+       "target": "",
+       "frequency": "Annually",
+       "owner": "Compliance Dept."
+      }
+     ],
+     "narrative": []
+    },
+    {
+     "kind": "review",
+     "title": "Review & Amendment",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed annually or in response to significant changes in stakeholder expectations, regulations, or operational scope. Revisions must be approved by the Compliance Department."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Internal Audit Procedure for Ethics and Compliance Systems",
+   "code": "",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Lead",
+   "sourceWords": 417,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Introduction",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "At Arminak Solutions LLC dba KBL Cosmetics, fostering an ethical, compliant, and transparent work environment is a priority. This SOP defines the standardized process for conducting internal audits of ethics, anti-corruption, and compliance control systems. The audits help in identifying gaps, preventing misconduct, ensuring continuous improvement, and safeguarding stakeholder trust."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the methodology for conducting internal audits to evaluate the effectiveness of Arminak Solutions LLC dba KBL Cosmetics' ethics and compliance control systems. These audits are designed to detect potential gaps, ensure continuous improvement, and support legal compliance and ethical conduct across all functions and third-party relationships."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Audits are conducted to assess the following key areas"
+      },
+      {
+       "type": "bullets",
+       "text": "Procurement and supply chain integrity\nAnti-bribery and corruption policy implementation\nEmployee awareness and ethics training\nRegulatory compliance with national and global anti-corruption laws\nWhistleblower mechanism and non-retaliation practices\nFinancial transparency and fraud controls\nThird-party risk management and screening\nInformation security controls and data protection measures"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Terminology Overview",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "Audit",
+         "Systematic review to assess effectiveness of internal controls"
+        ],
+        [
+         "Ethics Compliance",
+         "Adherence to laws, policies, and principles promoting integrity and fairness"
+        ],
+        [
+         "Corrective Action Plan (CAP)",
+         "Action strategy to resolve identified non-conformities"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Accountable Entities",
+     "rows": [
+      {
+       "role": "Compliance Officer, HR Department",
+       "responsibilities": [
+        "Policy Enforcement & Ethics Culture"
+       ]
+      },
+      {
+       "role": "Procurement Head, Legal Advisor",
+       "responsibilities": [
+        "Third-Party Due Diligence"
+       ]
+      },
+      {
+       "role": "Finance Controller",
+       "responsibilities": [
+        "Financial & Fraud Controls"
+       ]
+      },
+      {
+       "role": "IT Head & Data Privacy Officer",
+       "responsibilities": [
+        "Information Security"
+       ]
+      },
+      {
+       "role": "Internal Audit Team (under Compliance Lead)",
+       "responsibilities": [
+        "Audit Execution"
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Accountable Entities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Audit Focus Area",
+        "Responsible Entity"
+       ],
+       "rows": [
+        [
+         "Policy Enforcement & Ethics Culture",
+         "Compliance Officer, HR Department"
+        ],
+        [
+         "Third-Party Due Diligence",
+         "Procurement Head, Legal Advisor"
+        ],
+        [
+         "Financial & Fraud Controls",
+         "Finance Controller"
+        ],
+        [
+         "Information Security",
+         "IT Head & Data Privacy Officer"
+        ],
+        [
+         "Audit Execution",
+         "Internal Audit Team (under Compliance Lead)"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Audit Methodology & Tools",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The audit uses a structured questionnaire-based assessment aligned with your Internal Assessment Form. This includes:"
+      },
+      {
+       "type": "bullets",
+       "text": "15+ key control questions to be answered as Yes / No\nDocument review and system walkthroughs\nInterviews with department heads and key employees\nSample testing of procurement decisions, training records, financial entries, and whistleblower logs\nRetrospective review of ethics policy effectiveness and compliance incidents\nEmployees involved in the audit must sign an undertaking confirming accurate disclosure."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Audit Methodology & Tools",
+     "steps": [
+      {
+       "heading": "The audit uses a structured questionnaire-based assessment aligned with your Internal Assessment Form",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "15+ key control questions to be answered as Yes / No\nDocument review and system walkthroughs\nInterviews with department heads and key employees\nSample testing of procurement decisions, training records, financial entries, and whistleblower logs\nRetrospective review of ethics policy effectiveness and compliance incidents\nEmployees involved in the audit must sign an undertaking confirming accurate disclosure."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation & Recordkeeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All completed forms, audit reports, and follow-up logs are stored in the Compliance Shared Drive\nCopies of final assessments are signed and acknowledged by Management\nRetention period: 7 years in line with audit and legal policy"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting & Corrective Action",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Findings are categorized as: Observations, Minor Non-conformities, or Major Non-conformities\nA Corrective Action Plan (CAP) must be developed within 15 days for each finding\nHigh-risk or repeated issues are escalated to the Ethics Committee and Board Compliance Officer\nFollow-up is conducted within 30 to 60 days to verify closure"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review & Continuous Improvement",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The Internal Assessment Form and audit checklist are updated annually\nCompliance team reviews trends from past audit cycles to inform training and policy updates\nAdjustments are made to improve scope, frequency, or accountability mechanisms"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

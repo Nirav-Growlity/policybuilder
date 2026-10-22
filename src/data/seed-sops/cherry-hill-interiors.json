@@ -1,0 +1,3243 @@
+{
+ "id": "cherry-hill-interiors",
+ "company": "CHERRY HILL INTERIORS PVT. LTD",
+ "industry": "Corporate interior fit-out and turnkey interiors services",
+ "industryTags": [
+  "consumer",
+  "services"
+ ],
+ "sourceFile": "SOP/5) SOP Manual - Cherry Hill.docx",
+ "frontMatter": {
+  "introduction": "This Standard Operating Procedure (SOP) Manual is designed to serve as a comprehensive guide for Cherry Hill Interiors Pvt. Ltd., one of India’s leading corporate interiors firms. With a legacy of over three decades and a diverse portfolio of turnkey interior solutions, Cherry Hill has transformed the way workplaces are conceptualized and executed. The company specializes in delivering world-class interior environments across office spaces, healthcare facilities, educational institutions, hotels, and retail establishments. This manual reflects Cherry Hill’s unwavering commitment to sustainability, ethical business practices, and secure information management in every aspect of its operations.\n\nCherry Hill’s business model integrates a unique combination of design innovation, project execution excellence, and responsible resource management. As client expectations and global sustainability standards evolve, it is imperative to adopt structured processes that uphold environmental responsibility, safeguard data, and enforce ethical governance. This SOP Manual documents the protocols, systems, and controls implemented by Cherry Hill to meet these objectives and align with international best practices.\n\nThe SOP Manual outlines standardized procedures covering areas such as renewable energy usage, carbon footprint reduction, hazardous material management, waste minimization, ethical controls, and information security protocols. It serves not only as an operational guide for internal teams but also as a declaration of the company’s accountability to clients, partners, and regulatory authorities.\n\nThe key goals of this manual include:\nEmbedding sustainability and circularity into the core of Cherry Hill’s project lifecycle—from design to demolition.\nEnsuring safe handling, usage, and traceability of materials, especially those that pose environmental or health risks.\nEnhancing transparency and integrity in commercial transactions through strong anti-corruption mechanisms.\nStrengthening data protection and privacy through robust information security and stakeholder consent frameworks.\nSupporting continuous improvement by documenting best practices and audit-ready procedures.\n\n\"Systematic procedures drive accountable practices—at Cherry Hill, our SOP manual establishes the foundation for sustainability, operational efficiency, and continuous progress.\"",
+  "objective": "",
+  "scope": "This SOP Manual applies to all operations of Cherry Hill Interiors Pvt. Ltd. and serves as a standardized reference for procedures to be followed across project planning, execution, and post-delivery phases. It is intended for use by employees, contractors, and third-party partners involved in interior fit-out projects across various sectors and locations. The manual ensures consistency, accountability, and compliance with company policies, legal requirements, and client expectations, supporting Cherry Hill’s commitment to responsible and efficient project execution.\n\nNOTE: The Ahmedabad, Kolkata, and Sri Lanka sites are not operational, and less than 1% of employees are from this location out of the total.",
+  "reviewMechanism": "Revision No. 00 (01/01/25): Initial release of the SOP Manual.\nRevision No. 01 (01/01/26): Annual Review.\nRevision No. 02 (01/05/26): Waste management, Due Diligence and workplace safety procedures added. Hazardous substances management procedures updated."
+ },
+ "sops": [
+  {
+   "title": "Integrated Environmental Monitoring and Audit Procedures",
+   "code": "SOP/5",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Manager",
+   "sourceWords": 904,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Cherry Hill conducts comprehensive audit procedures as part of its ongoing commitment to sustainability and operational efficiency. These audits are designed to evaluate various aspects of resource use, environmental impact, and energy performance. By identifying areas for improvement, the audits help uncover new opportunities for reducing energy consumption, minimizing carbon footprints, and implementing more sustainable practices. The insights gained from these audits are integrated into the company’s strategies, ensuring continuous progress toward achieving long-term environmental goals."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Carbon Audits",
+     "steps": [
+      {
+       "heading": "Carbon Footprint Calculation Procedure",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Cherry Hill undertakes comprehensive carbon footprint assessments to quantify and manage its greenhouse gas (GHG) emissions. The calculation process follows internationally recognized standards, primarily the Greenhouse Gas (GHG) Protocol and ISO 14064, ensuring consistency, accuracy, and global comparability."
+        },
+        {
+         "type": "paragraph",
+         "text": "1. Categorization of Emissions. GHG emissions are systematically classified into the following scopes:"
+        },
+        {
+         "type": "bullets",
+         "text": "Scope 1: Direct emissions from sources owned or controlled by Cherry Hill, such as emissions from boilers, generators, and manufacturing equipment.\nScope 2: Indirect emissions resulting from the consumption of purchased electricity, steam, and other imported energy used across production and administrative operations.\nScope 3: All other indirect emissions that occur in the value chain, including emissions from raw material transportation, supplier operations, product distribution, waste disposal, and employee commuting."
+        },
+        {
+         "type": "paragraph",
+         "text": "1. Data Management and Audit Implementation Procedure. Data Collection and Maintenance. Cherry Hill maintains a structured system for data collection and periodic updates to support accurate GHG calculations. The following datasets are continuously tracked and verified:"
+        },
+        {
+         "type": "bullets",
+         "text": "Energy consumption records (electricity, fuel, steam)\nProduction volumes from all operational facilities\nTransport and logistics logs, including vehicle use and distances covered\nSupplier-related data relevant to upstream emission sources"
+        },
+        {
+         "type": "paragraph",
+         "text": "Emission Calculations. Collected data is used to calculate emissions in terms of CO₂-equivalents (CO₂e) across all three scopes. These calculations help establish a baseline and track performance trends over time."
+        },
+        {
+         "type": "bullets",
+         "text": "Scope 1: Direct emissions\nScope 2: Indirect emissions from purchased energy\nScope 3: Indirect emissions from the value chain"
+        },
+        {
+         "type": "paragraph",
+         "text": "Third-Party Audit Execution. Cherry Hill commissions regular third-party audits to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Monitor emission trends and benchmark them against historical performance\nAssess progress toward emission reduction targets and climate commitments\nIdentify opportunities to enhance energy efficiency and reduce carbon intensity\nRecommend the adoption of cleaner technologies and operational improvements"
+        },
+        {
+         "type": "paragraph",
+         "text": "Outcomes and Integration. Audit findings are documented in detailed reports and disseminated to relevant departments. Outcomes from these audits are integrated into Cherry Hill’s broader sustainability framework and operational decision-making. Audit results contribute to:"
+        },
+        {
+         "type": "bullets",
+         "text": "Compliance with environmental regulations and reporting requirements\nIncreased transparency in environmental performance disclosures\nContinuous improvement through data-driven sustainability planning\nStrengthening Cherry Hill’s long-term climate strategy and carbon reduction goals."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Energy Audits",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To systematically assess and enhance energy efficiency across all operations, Cherry Hill conducts regular energy audits. These audits focus on identifying conservation opportunities, reducing operational energy consumption, and improving the performance of critical systems."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Energy Audits",
+     "steps": [
+      {
+       "heading": "Planning and Preparation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Energy audits are conducted annually in coordination with a certified third-party energy auditing agency.\nMajor energy-consuming systems such as HVAC systems, lighting infrastructure, on-site electrical panels, office equipment, and temporary construction power setups are identified for detailed assessment.\nFacility managers and project site teams are notified in advance and briefed on the audit schedule, with clear instructions for supporting data sharing, site access, and technical coordination.\nHistorical utility data, including electricity and diesel bills, generator logs, and load summaries, are compiled to establish performance baselines."
+        }
+       ]
+      },
+      {
+       "heading": "Data Collection and Measurement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Real-time parameters such as voltage, current, load factor, power factor, and ambient temperature are measured using calibrated tools.\nEnergy consumption data is collected for at least the past 12 months to identify peak loads, seasonal variations, and cost impacts.\nLoad distribution, usage duration, and energy ratings are recorded for HVAC units, lighting arrays, desktop/server infrastructure, and temporary power systems used during interior fit-outs.\nParticular attention is paid to systems operating for extended hours or across multiple projects, where hidden inefficiencies may occur."
+        }
+       ]
+      },
+      {
+       "heading": "Performance Analysis",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Collected data is analyzed to detect underperforming systems, wastage from idle loads, and inefficient scheduling of equipment.\nHVAC systems are evaluated for thermal performance, load balancing, and maintenance frequency.\nLighting systems are assessed for lumens per watt, zoning, and potential for automation or LED retrofitting.\nOffice and IT infrastructure energy patterns are examined to explore options for load optimization and auto-shutdown protocols."
+        }
+       ]
+      },
+      {
+       "heading": "Recommendation and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Findings are compiled into a detailed Energy Audit Report, covering:"
+        },
+        {
+         "type": "bullets",
+         "text": "Identified Energy Conservation Measures (ECMs)\nEstimated energy savings (in kWh) and cost reduction (in INR)\nPayback period and suggested implementation roadmap\nRecommendations for smarter energy practices and system upgrades"
+        }
+       ]
+      },
+      {
+       "heading": "Implementation and Follow-up",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Approved energy-saving actions are prioritized and phased into project planning or facility maintenance cycles.\nProject site teams and facility managers integrate energy-efficient solutions, such as occupancy sensors, optimized HVAC scheduling, or energy-efficient appliances.\nPost-implementation reviews are conducted to track actual savings against estimated targets.\nAll changes and improvements are documented and reported to the sustainability lead for compliance and review."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Responsibilities",
+     "blocks": [
+      {
+       "type": "table",
+       "text": "",
+       "columns": [
+        "Role",
+        "Responsibilities"
+       ],
+       "rows": [
+        [
+         "Sustainability Manager",
+         "Lead audit coordination and oversee execution of recommended actions."
+        ],
+        [
+         "Facility and Site Managers",
+         "Facilitate access, data sharing, and implement approved energy-saving measures."
+        ],
+        [
+         "Procurement Team",
+         "Source energy-efficient products and services."
+        ],
+        [
+         "Employees and Project Staff",
+         "Follow energy-efficient protocols in daily operations."
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually by the Sustainability Manager to evaluate its effectiveness in meeting defined targets. Key indicators such as energy consumption, emissions, and machine performance are assessed to identify gaps and areas for enhancement. Findings are shared with the management team and relevant departments. Where required, corrective actions are implemented to further optimize resource use and reduce the facility’s carbon footprint."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Resource and Material Efficiency",
+   "code": "SOP/5",
+   "catalogId": "material-efficiency",
+   "pillar": "E",
+   "department": "Design and Project Execution",
+   "owner": "Project Managers",
+   "sourceWords": 1313,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Efficient resource and material utilization is a critical aspect of Cherry Hill’s project delivery process, supporting both operational excellence and environmental responsibility. This SOP outlines standardized procedures to optimize material planning, procurement, usage, and reuse across all project sites. By minimizing material wastage and encouraging responsible consumption, the company aims to enhance cost-effectiveness, reduce project-related environmental impacts, and support its commitment to sustainable interior solutions. The procedures set forth in this document ensure that all departments involved in design and execution operate with a shared focus on efficiency, accountability, and continuous improvement."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish standard procedures that ensure efficient use of materials and resources throughout Cherry Hill's interior fit-out projects. This SOP aims to reduce material consumption, improve cost-effectiveness, minimize environmental impact, and support sustainable construction practices."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all design, procurement, and project execution activities undertaken by Cherry Hill Interiors Pvt. Ltd. across all project sites. It is applicable to project managers, site engineers, procurement teams, and subcontractors involved in material selection, usage, and waste management."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Project Managers",
+       "responsibilities": [
+        "Ensure adherence to resource efficiency practices during execution."
+       ]
+      },
+      {
+       "role": "Design Team",
+       "responsibilities": [
+        "Incorporate material optimization strategies during project planning."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Source materials responsibly and avoid over-ordering."
+       ]
+      },
+      {
+       "role": "Site Engineers",
+       "responsibilities": [
+        "Monitor material usage and report discrepancies or excesses."
+       ]
+      },
+      {
+       "role": "Sustainability Coordinator",
+       "responsibilities": [
+        "Track material efficiency metrics and recommend improvements."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Integrated Design Coordination",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Design and execution teams collaborate during the project planning phase to minimize material consumption through process-driven design strategies. The following practices are adopted to enhance resource efficiency and reduce construction waste:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Modular room layouts, uniform partition systems, pre-engineered ceiling grids, and modular concrete formwork systems are incorporated in alignment with Cherry Hill’s standard design protocols. These solutions not only simplify on-site execution but also reduce material wastage significantly."
+        },
+        {
+         "text": "Modular room layouts are developed to accommodate flexible interior fit-outs using standard dimensions, enabling reduced on-site alterations and improved space utilization."
+        },
+        {
+         "text": "Uniform partition systems, including demountable walls and standardized gypsum or metal stud assemblies are applied to maintain consistency across project sites, allowing for easier installation, disassembly, and reuse where feasible."
+        },
+        {
+         "text": "Pre-designed ceiling frameworks, such as grid-based or modular suspended ceiling systems, are used to simplify installation, reduce waste generated from cutting or adjustments, and ensure compatibility with lighting and HVAC services."
+        },
+        {
+         "text": "Modular formwork systems particularly for concrete construction in projects involving integrated civil and interior scopes are employed to eliminate excess waste from traditional single-use formwork. These systems are made of reusable materials like aluminum or plastic. These systems allow for precise assembly and repeated use, significantly reducing the material waste typically associated with conventional, single-use timber shuttering. The use of such modular systems enhances construction speed, ensures dimensional accuracy, and supports a cleaner work environment by reducing debris and excess material from on-site formwork cutting."
+        },
+        {
+         "text": "Standard-sized materials are prioritized during design to minimize offcuts and reduce excess usage. Any deviations from these norms are permitted only when technically justified and approved through a formal review process."
+        },
+        {
+         "text": "To prevent inefficiencies arising from on-site modifications, all custom fabrication requirements are addressed during the design stage. Technical drawings undergo rigorous validation to ensure optimized material utilization and seamless execution."
+        }
+       ]
+      },
+      {
+       "heading": "BIM and BOQ-Driven Material Forecasting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All project designs are developed using Autodesk Revit, a BIM (Building Information Modeling) software, to enable accurate 3D visualization, clash detection, and precise material quantity estimation.\nBOQs (Bills of Quantities) are generated directly from Revit models, ensuring that procurement is aligned with actual project requirements and optimized to minimize material waste."
+        },
+        {
+         "type": "bullets",
+         "text": "To support resource efficiency and precise execution across projects, the following software tools are utilized:\nAutodesk Revit – for Building Information Modeling (BIM), including 3D visualization, quantity takeoffs, and coordination across disciplines.\nMicrosoft Excel – for managing and formatting BOQs (Bills of Quantities) exported from BIM models.\nAutoCAD – for producing 2D technical drawings where required.\nNavisworks – for model integration, clash detection, and construction planning reviews (used on larger projects when applicable).\nMS Project / Primavera – for project scheduling and progress tracking."
+        },
+        {
+         "type": "paragraph",
+         "text": "These tools form the backbone of Cherry Hill’s digital project execution strategy, helping to reduce errors, optimize material use, and maintain execution timelines."
+        },
+        {
+         "type": "bullets",
+         "text": "Design revisions are carefully evaluated by project teams for their impact on material usage, ensuring that optimization remains a guiding principle before any procurement is finalized.\nProcurement quantities are closely matched with GFC (Good for Construction) drawings to eliminate excess orders and reduce unused material inventory."
+        }
+       ]
+      },
+      {
+       "heading": "Just-in-Time and Lean Procurement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Procurement teams follow a just-in-time model to reduce on-site storage and prevent material deterioration.\nOrders are placed based on verified site readiness and the latest GFC drawings.\nPre-fabricated and factory-finished components are prioritized to minimize material processing at project sites.\nDelivery schedules are aligned with execution sequences to limit idle inventory."
+        }
+       ]
+      },
+      {
+       "heading": "Site-Level Material Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Site engineers maintain detailed material issue registers to track usage against approved plans.\nStorage zones are clearly marked, protected from weather, and equipped with racking systems.\nAll materials are labelled and segregated into fresh stock, reusable items, and recyclable materials.\nRegular inventory checks are conducted to identify deviations and initiate corrective action promptly."
+        }
+       ],
+       "responsible": "Site Engineers"
+      },
+      {
+       "heading": "Material Reuse, Repurposing, and Recycling Strategy",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Material Reuse & Repurposing:"
+        },
+        {
+         "type": "bullets",
+         "text": "Surplus and recovered materials such as MDF boards, plywood sheets, aluminum sections, demountable partitions, ceiling grid elements, and hardware fittings are evaluated for reuse within the same project or transferred to other active sites.\nPartially used sealants, adhesives, tapes, and paints approaching their shelf life are prioritized for consumption to avoid waste.\nAll activities are tracked in the Material Repurposing Register, maintained by the Project Manager, documenting source, condition, quantity, and deployment location. This register is reviewed monthly to track performance and identify improvement areas."
+        },
+        {
+         "type": "paragraph",
+         "text": "Recycling of Construction Waste:"
+        },
+        {
+         "type": "bullets",
+         "text": "Non-reusable materials like damaged gypsum boards, broken tiles, offcuts of metal or wood, and plastic packaging are sorted at source into designated bins for recycling.\nRecyclable waste streams include:\nMetals (e.g., steel, aluminum frames)\nWood-based materials (e.g., MDF, plywood, untreated timber)\nPlastics (e.g., HDPE sheets, packaging films)\nGlass and ceramics (e.g., broken tiles, glass panels)\nPaper and cardboard (e.g., packaging from delivered materials)\nSegregated recyclable waste is handed over only to authorized recyclers registered with pollution control boards.\nWeighbridge slips or vendor collection receipts are maintained as evidence for compliance reporting and audit purposes.\nRegular awareness sessions are conducted with site staff and vendors to reinforce correct segregation and recycling procedures."
+        },
+        {
+         "type": "paragraph",
+         "text": "End-of-Project Clearance and Pre-Demolition Recycling:"
+        },
+        {
+         "type": "bullets",
+         "text": "Prior to site clearance or demolition, all salvageable materials are recovered systematically and sorted for reuse or recycling.\nItems like modular furniture, partitions, ceiling panels, light fittings, and wiring trays are dismantled for reuse or recycling.\nWaste audit is conducted before site demobilization to ensure recovery and recycling targets are met."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Reporting",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Site engineers and project coordinators are responsible for tracking material consumption, reuse, and waste generation across all phases of the project.\nA Material Utilization Log is maintained at each site, documenting:\nQuantities issued vs. actual usage\nSurplus recovery\nMaterials reused, repurposed, or recycled\nWaste generated by type (wood, metal, gypsum, etc.)\nData from individual project sites is compiled monthly and submitted to the central project management office for consolidation and analysis.\nKey metrics such as material efficiency ratio, percentage of reused/recycled materials, and waste diversion rate are monitored.\nDeviations from standard benchmarks are flagged for corrective actions, which may include design revisions, procurement adjustments, or retraining of site personnel.\nProject Managers present a quarterly Resource Efficiency Report to the Operations Head summarizing performance across projects and highlighting best practices and areas of concern."
+        }
+       ],
+       "responsible": "Site Engineers and Project Coordinators"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Quality and Sustainability Team, along with the Project Management Office, conducts a annual review of material optimization practices to assess progress on efficiency and waste reduction targets. The review incorporates feedback from project teams and post-project evaluations to identify gaps and improvement areas. Based on the findings, recommendations are made for updates to the SOP, which are reviewed and approved by the Director – Projects and Execution. Final changes are shared with all stakeholders, and additional training is provided as needed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Energy Efficiency and Management",
+   "code": "SOP/5",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Sustainability Manager",
+   "sourceWords": 568,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a standardized procedure that drives energy-efficient practices across Cherry Hill's project execution and office operations, promoting sustainability and operational cost savings."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all departments, project sites, and corporate offices where energy is consumed during construction, project execution, or daily activities."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Lighting Efficiency",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conventional lighting systems across the facility have been fully replaced with energy-efficient LED fixtures, equipped with motion and daylight sensors to significantly reduce energy demand."
+        },
+        {
+         "text": "Zonal lighting systems are implemented, enabling targeted illumination that minimizes unnecessary lighting during non-operational hours."
+        },
+        {
+         "text": "Smart control systems adjust lighting levels in real-time, based on ambient conditions and occupancy levels, ensuring energy is used efficiently throughout the day."
+        }
+       ]
+      },
+      {
+       "heading": "Renewable Energy Integration",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "We at Cherry Hill has initiated renewable energy integration practices as part of our ongoing commitment to sustainability. We are actively exploring and implementing renewable energy solutions, starting with the deployment of solar power systems, to reduce our environmental impact and reliance on traditional energy sources. By embracing renewable energy, we aim to lower our carbon footprint, improve energy efficiency, and contribute to the transition toward a more sustainable future. The following procedure is set to ensure the systematic and efficient integration of a solar power generating system as part of our renewable energy initiative within the park premises."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Site Assessment: Assess open park areas for solar exposure, shade patterns, and available space for ground-mounted or elevated solar structures. Evaluate soil conditions, structural feasibility, and proximity to electrical infrastructure. Prepare a feasibility report detailing estimated energy generation, installation footprint, and integration potential with park lighting or amenities."
+        },
+        {
+         "text": "System Design & Procurement: Design a solar PV system suitable for outdoor park settings, considering aesthetics, safety, and public accessibility. Select durable, weather-resistant components including solar panels, inverters, and mounting frames. Procure materials from certified vendors, ensuring all equipment meets industry and safety standards."
+        },
+        {
+         "text": "Site Preparation: Level the designated area and perform necessary civil works such as constructing mounting bases or elevated platforms to avoid interference with public movement. Lay underground conduits for safe electrical cabling and plan connection routes to the park's existing electrical system."
+        },
+        {
+         "text": "Installation: Install the solar mounting structures and securely fix the panels. Complete all electrical wiring including inverters, safety disconnects, and grounding systems. Ensure safe synchronization with the park's grid or standalone systems like solar-powered lighting or irrigation."
+        },
+        {
+         "text": "Testing & Commissioning: Conduct performance tests and safety inspections to ensure correct voltage, connectivity, and protection mechanisms. Address any faults and finalize system tuning before commissioning the system for renewable energy generation."
+        },
+        {
+         "text": "Monitoring & Handover: Install a digital monitoring system for tracking energy output and identifying maintenance needs. Provide handover documentation, system guides, and training for park maintenance teams to ensure proper upkeep. Integrate system performance data into Cherry Hill's sustainability monitoring framework."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually by the Sustainability Manager, who assesses energy consumption data, solar system performance, and lighting efficiency outcomes. Recommendations are documented and discussed with the Operations and Projects teams. If significant deviations or opportunities for improvement are identified, the SOP is updated accordingly to ensure continuous alignment with Cherry Hill's sustainability targets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Construction Techniques and Material Choices",
+   "code": "SOP/5",
+   "catalogId": "energy-efficiency",
+   "pillar": "E",
+   "department": "",
+   "owner": "Project Manager",
+   "sourceWords": 905,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To optimize sustainability in construction projects by integrating energy-efficient design, utilizing sustainable materials, and adopting energy-saving construction techniques."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all fit-out projects and construction activities at Cherry Hill, covering the selection of materials, design integration, and construction methods to ensure energy efficiency and sustainability. The procedure extends to all teams involved in project planning, design, procurement, and execution."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Project Manager",
+       "responsibilities": [
+        "Ensures integration of energy-efficient practices throughout the project and monitors compliance with energy targets."
+       ]
+      },
+      {
+       "role": "Design Team",
+       "responsibilities": [
+        "Applies energy-efficient design principles and selects low-impact materials."
+       ]
+      },
+      {
+       "role": "Procurement Team",
+       "responsibilities": [
+        "Sources energy-efficient and sustainable materials."
+       ]
+      },
+      {
+       "role": "Site Engineer",
+       "responsibilities": [
+        "Implements energy-saving construction techniques and monitors on-site energy use."
+       ]
+      },
+      {
+       "role": "Sustainability Officer",
+       "responsibilities": [
+        "Coordinates energy efficiency efforts and maintains related records."
+       ]
+      },
+      {
+       "role": "Facility Team",
+       "responsibilities": [
+        "Maintains performance of energy-efficient systems post-handover."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Energy-Efficient Design Integration",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Energy-efficient design principles are incorporated into the planning phase of all fit-out projects, ensuring energy efficiency is prioritized in every decision."
+        },
+        {
+         "type": "paragraph",
+         "text": "The building orientation is optimized to maximize natural light and minimize solar heat gain. Windows are strategically placed to reduce reliance on artificial lighting, while promoting better passive heating or cooling. Shading systems are used to control solar exposure, enhancing overall energy efficiency."
+        },
+        {
+         "type": "paragraph",
+         "text": "Shading elements, such as overhangs and blinds, are integrated to prevent excessive heat gain during summer months and allow solar heat during winter, supporting natural heating and reducing reliance on mechanical heating systems."
+        }
+       ]
+      },
+      {
+       "heading": "Thermal Insulation and Glazing",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Thermal Insulation: Advanced thermal insulation materials, such as fiberglass insulation, rigid foam boards (polystyrene), and mineral wool, are standardized across all projects to minimize heat loss or gain. This helps stabilize indoor temperatures and reduce the load on HVAC systems. Insulation techniques are implemented to prevent thermal bridging, ensuring that energy is not lost through structural elements like walls, beams, and windows, thus optimizing energy efficiency."
+        },
+        {
+         "text": "Low-Emissivity Glazing: Low-emissivity (Low-E) glazing is used in all windows, glass doors, and facades to reduce heat transfer and enhance energy retention. This minimizes heat gain during the summer and reduces the need for air conditioning, while also reducing heat loss in winter, lowering heating requirements. Low-E glass is combined with effective daylighting strategies, ensuring optimal natural lighting and controlling solar heat gain, which reduces the need for artificial lighting and cooling energy. The use of recycled and recyclable materials, such as reclaimed wood, recycled steel, and eco-friendly flooring options, is prioritized to minimize environmental impact and contribute to the circular economy."
+        }
+       ]
+      },
+      {
+       "heading": "Energy-Efficient Construction Techniques",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All project sites are equipped with energy-efficient machinery and tools. This includes the use of electric-powered cranes, battery-operated hand tools, and LED-based temporary site lighting that consumes significantly less energy than traditional halogen or metal halide fixtures. The use of diesel-powered equipment is strategically minimized through smart scheduling and by selecting equipment with fuel-efficient engines and emission-control technologies such as DPF & EGR. This helps reduce fuel consumption, greenhouse gas emissions, and on-site noise levels.\nA substantial portion of building elements are prefabricated off-site under controlled factory conditions. These include modular wall panels, ceiling frameworks, pre-insulated HVAC ducts, and plumbing assemblies, which are delivered to site ready for installation. Prefabrication not only ensures high precision and quality but also significantly reduces on-site energy consumption, labor hours, and material waste.\nPre-insulated panels contribute to enhanced thermal performance of the built space, reducing the need for post-construction HVAC energy consumption.\nModular frameworks for ceilings, partitions, and flooring are designed for fast assembly and disassembly, lowering the demand for heavy equipment during installation.\nPre-cut materials such as gypsum boards, tiles, and metal channels are dimensioned based on GFC (Good for Construction) drawings to minimize cutting, grinding, and energy-intensive activities on site.\nProject timelines are strategically aligned to reduce idle time for equipment and labor, preventing unnecessary energy expenditure. Construction zones are sequenced to allow continuous workflows, thereby minimizing overlapping trades and extended machinery operation."
+        }
+       ]
+      },
+      {
+       "heading": "On-Site Energy Optimization",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "LED lighting is installed across all construction sites, equipped with motion sensors to ensure that lighting is only in use when necessary, significantly reducing overall energy consumption.\nHigh-efficiency construction machinery, including air compressors and generators, is utilized to minimize energy consumption on-site.\nA power management system is in place to monitor and control energy usage, ensuring that machinery operates efficiently and energy consumption is minimized."
+        }
+       ]
+      },
+      {
+       "heading": "Collaboration with Design Teams",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Design teams collaborate with all relevant stakeholders to ensure the integration of passive energy-saving features, such as maximizing natural light, utilizing thermal mass, and incorporating natural ventilation systems into the building design.\nThe use of energy-efficient solutions, such as optimized shading and the strategic placement of windows for cross-ventilation, is prioritized to reduce dependence on HVAC systems.\nAll materials and construction techniques are thoroughly evaluated to ensure they contribute to long-term energy efficiency and sustainability, supporting the project's overall environmental goals."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure is reviewed annually or whenever significant changes occur in project requirements, construction practices, or applicable regulations. The review evaluates the effectiveness of sustainable construction techniques, energy-efficient measures, and material selection. Improvement opportunities and compliance requirements are incorporated into revisions. Approved updates are communicated to all relevant personnel before implementation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Sustainable Transportation and Logistics",
+   "code": "SOP/5",
+   "catalogId": "transport-emissions",
+   "pillar": "E",
+   "department": "Administration",
+   "owner": "Sustainability Manager",
+   "sourceWords": 339,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To minimize greenhouse gas (GHG) emissions arising from Cherry Hill’s operational transportation and employee commute through efficient logistics planning, sustainable mobility practices, and adoption of cleaner technologies."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all transportation and logistics activities conducted directly by Cherry Hill or through its service providers, including daily employee commutes, intra-city material movement, and inter-site transportation operations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Upgradation of operational fleet by incorporating fuel-efficient vehicles",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Upgradation of operational fleet by incorporating fuel-efficient vehicles to minimize fuel consumption and reduce carbon emissions."
+        }
+       ]
+      },
+      {
+       "heading": "Advanced route optimization tools have been deployed",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Advanced route optimization tools have been deployed to streamline transportation logistics, significantly reducing travel distance and fuel usage, especially for local travels within NCR and neighboring regions."
+        }
+       ]
+      },
+      {
+       "heading": "The company operates a segment of its fleet using electric vehicles",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The company operates a segment of its fleet using electric vehicles for short-distance, intra-city travel, thereby lowering dependency on conventional fuels."
+        }
+       ]
+      },
+      {
+       "heading": "Real-time telematics systems are used",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Real-time telematics systems are used to track vehicle performance and fuel consumption, enabling data-driven decisions for improving transport efficiency and reducing emissions."
+        }
+       ]
+      },
+      {
+       "heading": "Regular vehicle maintenance schedules are enforced",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Regular vehicle maintenance schedules are enforced to ensure peak fuel efficiency and reduced emissions."
+        }
+       ]
+      },
+      {
+       "heading": "Tyre pressure checks, engine tuning, and timely oil replacements",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Tyre pressure checks, engine tuning, and timely oil replacements are strictly monitored."
+        }
+       ]
+      },
+      {
+       "heading": "Employees are encouraged to use pooled transport or car-sharing applications",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees are encouraged to use pooled transport or car-sharing applications facilitated internally."
+        }
+       ]
+      },
+      {
+       "heading": "Public transport passes or subsidies are offered",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Public transport passes or subsidies are offered as incentives for mass transit usage, especially in urban project locations."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Monitoring and Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "paragraph",
+       "text": "GHG emissions from transportation activities are tracked and reported as part of Cherry Hill’s carbon footprint assessment. Metrics include fuel consumption, distance traveled, and mode of transport. Improvements in logistics efficiency and emissions reduction are reviewed annually."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Sustainability Manager",
+       "responsibilities": [
+        "Oversees implementation and tracks GHG impact."
+       ]
+      },
+      {
+       "role": "Administration Team",
+       "responsibilities": [
+        "Coordinates employee commuting options and vendor compliance."
+       ]
+      },
+      {
+       "role": "Fleet Managers",
+       "responsibilities": [
+        "Ensure vehicle compliance and route planning."
+       ]
+      },
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Participate in carpooling, use public transport where possible."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The SOP is reviewed annually by the Sustainability Manager in coordination with the Admin team. Metrics such as GHG emissions from transport, fuel costs, and vehicle efficiency are analyzed to identify improvement areas and set new targets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Hazardous Substances Management and Reduction",
+   "code": "SOP/5",
+   "catalogId": "hazardous-substances",
+   "pillar": "E",
+   "department": "HSSE",
+   "owner": "HSSE Team",
+   "sourceWords": 1147,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish standardized procedures for the identification, traceability, safe handling, and reduction of hazardous substances and to ensure environmentally sound treatment and disposal."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Cherry Hill offices, warehouses, and project execution sites where hazardous substances are procured, stored, used, or disposed of."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Inventory & Material Classification and labelling",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All incoming materials are classified as hazardous, based on manufacturer provided Safety Data Sheets (SDS), GHS symbols, and chemical composition are entered into Cherry Hill’s central inventory system. Materials include but are not limited to:"
+        },
+        {
+         "type": "bullets",
+         "text": "High-VOC paints and adhesives\nFlammable solvents\nChemical cleaners and degreasers\nBatteries and spent electrical components"
+        },
+        {
+         "type": "paragraph",
+         "text": "Each item is recorded with its unique barcode upon receipt, capturing the following details: batch/lot number, expiry date, storage location, and issuing department.\n\nEach hazardous substance container is clearly labelled with the product name, hazard classification, GHS pictograms, handling precautions, storage requirements, and expiry date (where applicable). Damaged or illegible labels are replaced immediately to ensure safe identification and compliance throughout the material lifecycle."
+        }
+       ]
+      },
+      {
+       "heading": "Storage, Handling and Transportation Protocol",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All hazardous substances are stored in pre-designated enclosures fitted with ventilation systems, flame-proof panels, and spill containment trays. Incompatible chemicals are stored separately, and stock rotation is enforced based on expiry tracking. Only trained personnel are authorized to handle these substances, using appropriate PPE (e.g., gloves, respirators, goggles). Emergency response equipment such as eyewash stations, fire extinguishers, and spill kits are available at all relevant locations.\n\nHazardous substances are transported within office premises, warehouses, and project sites using sealed, compatible containers and suitable handling equipment to prevent spills, leaks, or accidental exposure. Containers remain properly labelled during transportation, and incompatible substances are never transported or stored together. Where materials are transported to or from project sites, transportation is carried out in accordance with applicable legal and safety requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Traceability System Implementation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Cherry Hill maintains a systematic traceability process to monitor hazardous substances throughout their lifecycle—from procurement to final disposal. Upon receipt, each hazardous material is assigned a unique identification code or barcode and recorded in the inventory management system along with details such as supplier name, purchase order number, batch/lot number, manufacturing and expiry dates, storage location, quantity received, and Safety Data Sheet (SDS) reference.\n\nWhenever hazardous substances are issued for use at project sites or within office and warehouse operations, the quantity issued, receiving department or project, date of issue, and responsible employee are recorded in the material issue register or digital inventory system. Any returned, unused, expired, or damaged materials are similarly documented to maintain complete accountability and inventory accuracy.\n\nHazardous waste generated during project execution is labelled with the waste type, source location, date of generation, and temporary storage location before being transferred to the designated hazardous waste storage area. Waste movement records are maintained until collection by an authorised waste management agency, ensuring complete traceability through waste manifests, transporter details, and disposal certificates.\n\nPeriodic inventory reconciliation and internal inspections are carried out to verify stock balances, storage conditions, barcode records, and disposal documentation. Any discrepancies identified during inspections are investigated promptly, corrective actions are implemented, and records are retained to demonstrate compliance with regulatory requirements and company procedures."
+        }
+       ]
+      },
+      {
+       "heading": "Minimization of Use and Toxicity",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Where feasible, Cherry Hill prioritizes substitution of hazardous materials with eco-labeled or low-toxicity alternatives. Examples include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Water-based paints and sealants in place of solvent-based options\nMechanical fixing systems that reduce adhesive dependency\nReusable cleaning tools instead of chemical-intensive cleaners"
+        },
+        {
+         "type": "paragraph",
+         "text": "Design teams collaborate with procurement to identify less hazardous options without compromising functionality or finish standards. Controlled dispensing units and pre-measured packaging are employed to reduce material wastage during application, particularly in painting and polishing works.\n\nProcurement teams also evaluate suppliers offering environmentally preferable products with lower hazardous content, while project teams optimize material planning to avoid over-ordering and unnecessary chemical waste generation. Wherever practical, reusable containers, refill systems, and bulk purchasing are adopted to minimise packaging waste and reduce the overall generation of hazardous waste."
+        }
+       ]
+      },
+      {
+       "heading": "Treatment, Disposal and External Coordination",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Cherry Hill ensures that hazardous substances and hazardous waste are managed safely throughout their lifecycle to prevent adverse impacts on employees, the public, and the environment. Disposal activities are carried out in accordance with applicable legal requirements and through authorised service providers."
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Identification and Assessment: Hazardous substances that are expired, damaged, contaminated, or no longer required, along with hazardous waste generated during project execution, maintenance, or office operations, are identified by the responsible department. The HSSE Team assesses whether the material can be safely reused, returned to the supplier, recycled, recovered, or requires specialised treatment and disposal.",
+         "responsible": "HSSE Team"
+        },
+        {
+         "text": "Safe Collection and Temporary Storage: Hazardous substances awaiting treatment or disposal, and hazardous waste such as solvent residues, paint containers, adhesive containers, contaminated absorbents, chemical cleaners, batteries, fluorescent lamps, and electronic components, are collected separately from general waste. All containers are properly sealed, labelled with the contents and hazard classification, and stored in designated hazardous material storage areas equipped with spill containment, ventilation, and restricted access until collection."
+        },
+        {
+         "text": "Specialized Treatment: Where specialised treatment is required, Cherry Hill ensures that hazardous substances or waste are transferred only to authorised facilities capable of carrying out appropriate treatment processes, including recycling, recovery, neutralisation, or other environmentally sound treatment methods, depending on the nature of the material. Whenever feasible, unused hazardous substances are returned to the supplier under take-back programmes or sent to authorised recycling or recovery facilities to minimise disposal."
+        },
+        {
+         "text": "Transportation and Final Disposal: Hazardous substances and hazardous waste are transported only by authorised transporters using suitable containers and packaging to prevent leaks, spills, or accidental exposure during transit. Final treatment and disposal are carried out exclusively by government-authorised Treatment, Storage and Disposal Facilities (TSDFs) or licensed hazardous waste management agencies in accordance with applicable regulatory requirements."
+        },
+        {
+         "text": "Documentation and Verification: The HSSE Team maintains records of hazardous substances and waste sent for treatment or disposal, including inventory details, quantities, transporter information, waste manifests, treatment or recycling certificates, and disposal records. These records are periodically reviewed to verify complete traceability, regulatory compliance, and identify opportunities to reduce the use and disposal of hazardous substances.",
+         "responsible": "HSSE Team"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training & Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Field staff, site supervisors, and warehouse teams undergo annual training on chemical safety, emergency response, waste handling, and the digital traceability platform. Safety drills and toolbox talks reinforce key precautions and promote proactive incident reporting culture."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Monitoring",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The HSSE Team reviews this SOP annually, or earlier if material changes are introduced in operations, materials, or legislation. Review includes evaluation of material usage reports, Feedback from project teams, Incident logs and regulatory updates. Recommended improvements are formally documented and implemented following leadership approval."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Waste Management Procedure",
+   "code": "SOP/5",
+   "catalogId": "waste-management",
+   "pillar": "E",
+   "department": "",
+   "owner": "HSSE Team",
+   "sourceWords": 1326,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Standard Operating Procedure (SOP) establishes Cherry Hill Interiors Pvt. Ltd.'s approach to managing waste generated during office operations, warehouse activities, and project execution. It provides a structured process for reducing waste generation, promoting material reuse and recycling, ensuring proper segregation, and supporting environmentally responsible disposal practices in compliance with applicable legal requirements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all Cherry Hill offices, warehouses, fabrication areas, and project sites where waste is generated through construction, interior fit-out, maintenance, logistics, and administrative activities."
+      },
+      {
+       "type": "paragraph",
+       "text": "It applies to all employees, contractors, subcontractors, and service providers working under Cherry Hill's operational control."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "HSSE Team",
+       "responsibilities": [
+        "Monitors implementation of waste management practices, conducts inspections, and maintains waste management records."
+       ]
+      },
+      {
+       "role": "Project Manager / Site Supervisor",
+       "responsibilities": [
+        "Ensures waste segregation, housekeeping, material reuse, recycling, and disposal activities are effectively implemented at project sites."
+       ]
+      },
+      {
+       "role": "Employees, Contractors & Subcontractors",
+       "responsibilities": [
+        "Segregate waste into designated waste streams, use the assigned collection points, and maintain good housekeeping practices."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification of Waste Streams",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste streams are identified during project planning and throughout project execution to ensure appropriate waste handling and disposal methods are implemented."
+        },
+        {
+         "type": "paragraph",
+         "text": "The common waste streams generated across Cherry Hill operations include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Concrete debris\nCement bags\nGypsum board off-cuts\nTimber and plywood\nWooden pallets\nMetal scrap and aluminium sections\nGlass off-cuts\nElectrical cables and MEP materials\nPaper and cardboard\nPlastic bottles and packaging materials\nUsed paint containers\nFood waste\nGeneral municipal waste"
+        },
+        {
+         "type": "paragraph",
+         "text": "The identified waste streams are reviewed periodically whenever project activities, materials, or construction methods change to ensure suitable waste management arrangements remain effective."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Reduction Planning",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Cherry Hill follows the waste hierarchy by prioritising Reduce, Reuse, Recycle, and Responsible Disposal during all project activities."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste generation is reduced through careful planning of material quantities, controlled procurement, proper storage, and efficient utilisation of construction materials."
+        },
+        {
+         "type": "paragraph",
+         "text": "Project teams minimise waste by:"
+        },
+        {
+         "type": "bullets",
+         "text": "Procuring materials according to approved Bills of Quantities (BOQs) and project schedules.\nScheduling material deliveries in phases to prevent excess storage and material deterioration.\nProtecting materials from moisture, physical damage, and contamination through designated storage arrangements.\nOptimising cutting plans for gypsum boards, laminates, veneers, ceiling tiles, aluminium sections, and glass panels to minimise off-cuts.\nMonitoring material consumption against project progress to identify excessive wastage.\nEncouraging suppliers to provide reusable pallets, returnable packaging, and recyclable materials wherever practical."
+        },
+        {
+         "type": "paragraph",
+         "text": "Material wastage is reviewed during routine site coordination meetings, and improvement opportunities are identified where abnormal consumption trends are observed."
+        }
+       ]
+      },
+      {
+       "heading": "Reduction of Internal Waste through Material Reuse, Recovery and Repurposing",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Before any material is classified as waste, it is assessed to determine whether it can be reused, repaired, recovered, or repurposed within Cherry Hill operations."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reusable materials are segregated from the general waste stream and stored in designated reuse areas within the warehouse or project site. Where necessary, materials are cleaned, repaired, trimmed, or refurbished before being returned to operational use."
+        },
+        {
+         "type": "paragraph",
+         "text": "Typical reuse and repurposing practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Timber, plywood, and wooden boards are reused for temporary site protection, barricading, storage platforms, and access pathways.\nWooden pallets are reused for stacking and protecting construction materials within warehouses and project sites.\nMetal sections and aluminium off-cuts are repurposed for temporary supports, brackets, and fabrication works.\nReusable formwork is inspected, repaired where required, and reused for subsequent construction activities.\nEmpty drums and containers are reused for temporary storage of non-hazardous materials where safe and appropriate.\nSurplus gypsum boards, ceiling tiles, laminates, veneers, and flooring materials that remain in usable condition are retained for future project requirements, sample installations, or mock-up works.\nOrganic waste generated from pantry facilities is directed for composting where practical."
+        },
+        {
+         "type": "paragraph",
+         "text": "Where internal reuse is not feasible, suitable materials are evaluated for recovery or recycling through authorised recycling agencies before disposal is considered."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Sorting and Segregation of Waste",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste generated during office operations, warehouse activities, and project execution is segregated immediately at the point of generation according to the designated waste streams."
+        },
+        {
+         "type": "paragraph",
+         "text": "Colour-coded waste collection bins are provided across project sites and offices to facilitate effective segregation:"
+        },
+        {
+         "type": "bullets",
+         "text": "Green Bin – Food and organic waste\nBlue Bin – Paper and cardboard\nYellow Bin – Plastic bottles, plastic wrapping, and polythene\nGrey Bin – General municipal waste\nRed Bin – Used paint containers and other hazardous waste (where applicable)"
+        },
+        {
+         "type": "paragraph",
+         "text": "Dedicated collection areas are also maintained for:"
+        },
+        {
+         "type": "bullets",
+         "text": "Metal scrap and aluminium sections\nTimber and wooden pallets\nConcrete debris\nElectrical cables\nReusable construction materials"
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste is placed only in the designated containers to prevent cross-contamination between waste streams."
+        },
+        {
+         "type": "paragraph",
+         "text": "Site Supervisors conduct daily housekeeping inspections to verify that waste segregation practices are being followed. Mixed waste identified during inspections is re-segregated before being transferred for reuse, recycling, or disposal. Housekeeping observations are discussed during toolbox talks to reinforce proper waste management practices."
+        }
+       ],
+       "responsible": "Site Supervisors"
+      },
+      {
+       "heading": "Provision of Accessible Waste Collection Points",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste collection points are established throughout project sites, warehouses, offices, and fabrication areas to facilitate efficient waste segregation and recycling."
+        },
+        {
+         "type": "paragraph",
+         "text": "Collection points are strategically located at areas where waste generation is highest, including:"
+        },
+        {
+         "type": "bullets",
+         "text": "Gypsum board and laminate cutting stations.\nCarpentry and fabrication work areas.\nMaterial unloading and storage locations.\nPackaging and unpacking areas.\nWarehouse operations.\nPantry and welfare facilities.\nGeneral work areas within project sites."
+        },
+        {
+         "type": "paragraph",
+         "text": "Each waste collection point includes clearly labelled colour-coded bins and signage indicating the acceptable waste category for each container."
+        },
+        {
+         "type": "paragraph",
+         "text": "Collection points are inspected daily to ensure they remain clean, accessible, and adequately sized for the volume of waste generated. Bins are emptied before reaching full capacity, and damaged containers or missing labels are replaced promptly."
+        },
+        {
+         "type": "paragraph",
+         "text": "As project activities progress, waste collection points are relocated where necessary to maintain easy access for employees and subcontractors and to encourage consistent recycling practices throughout the project lifecycle."
+        }
+       ]
+      },
+      {
+       "heading": "Recycling and Recovery",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Materials that cannot be reused internally are segregated and transferred to authorised recycling agencies."
+        },
+        {
+         "type": "paragraph",
+         "text": "Typical recyclable materials include paper, cardboard, plastics, packaging materials, metal scrap, electrical cables, wooden pallets, and cement bags. Supplier take-back programmes for pallets and packaging materials are utilised wherever available."
+        },
+        {
+         "type": "paragraph",
+         "text": "Records of recyclable materials, including quantities and collection details, are maintained to monitor recycling performance."
+        }
+       ]
+      },
+      {
+       "heading": "Waste Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Waste that cannot be reduced, reused, recovered, or recycled is disposed of through authorised waste management agencies in accordance with applicable statutory and environmental requirements."
+        },
+        {
+         "type": "paragraph",
+         "text": "Prior to disposal, waste is reviewed to ensure that all practical opportunities for reuse, recovery, or recycling have been considered."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste designated for disposal is temporarily stored in identified waste storage areas until collection. Storage areas are maintained in a clean and orderly condition to prevent littering, water contamination, and wind-blown waste."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste disposal practices include:"
+        },
+        {
+         "type": "bullets",
+         "text": "Food waste is directed to composting facilities where available.\nNon-recyclable packaging materials are returned to suppliers wherever feasible or disposed of through authorised waste contractors.\nConcrete debris is transported to approved disposal locations.\nUsed paint containers are returned to suppliers where applicable or disposed of through authorised municipal or licensed waste management agencies.\nGeneral municipal waste is collected by the authorised municipal collection service."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste transfer records, collection receipts, recycling certificates, and disposal documentation are maintained to ensure traceability and demonstrate compliance with applicable legal requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Continuous Improvement",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The HSSE Team conducts periodic inspections and internal audits to monitor waste segregation, housekeeping, recycling performance, contractor compliance, and disposal records."
+        },
+        {
+         "type": "paragraph",
+         "text": "Waste generation trends and recycling performance are reviewed periodically to identify opportunities for improving resource efficiency. Corrective actions arising from inspections or audits are tracked to completion and incorporated into future project improvements."
+        }
+       ],
+       "responsible": "HSSE Team"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually or whenever significant changes occur in project activities, waste streams, or applicable legal requirements."
+      },
+      {
+       "type": "paragraph",
+       "text": "The review considers waste generation trends, reuse and recycling performance, inspection findings, feedback from project teams, and opportunities for continual improvement. Approved revisions are communicated to all relevant employees and contractors before implementation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Compliance Approval of Sensitive Transactions",
+   "code": "SOP/5",
+   "catalogId": "sensitive-transactions",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Ethics & Compliance Officer",
+   "sourceWords": 346,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To define the steps for identifying, approving, documenting, and managing sensitive or high-risk transactions, such as gifts, travel, entertainment, charitable contributions, political donations, and procurement, that may pose ethical, legal, or reputational risks to Cherry Hill."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identify Sensitive Transaction",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Determine if the transaction falls under sensitive categories or consult the Compliance Officer for clarification."
+        }
+       ],
+       "responsible": "Initiating Employee/Department",
+       "substeps": [
+        {
+         "text": "Categories include: gifts, entertainment, hospitality, travel, donations, political contributions, and major procurement."
+        }
+       ]
+      },
+      {
+       "heading": "Seek Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Submit the transaction details to the Ethics & Compliance Officer in person or via email at ethics.compliance@cherryhill.in"
+        }
+       ],
+       "responsible": "Ethics & Compliance Officer",
+       "substeps": [
+        {
+         "text": "Include: Purpose, context, parties involved, and estimated value. High-value or high-risk transactions require a formal approval request. Approval must be provided within 2 business days of submission."
+        }
+       ]
+      },
+      {
+       "heading": "Record Approval",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Once approved, document the approval with all supporting notes or emails."
+        }
+       ],
+       "responsible": "Ethics & Compliance Officer",
+       "substeps": [
+        {
+         "text": "Approval records must be uploaded to the centralized digital repository or stored in the designated transaction folder."
+        }
+       ]
+      },
+      {
+       "heading": "Documentation & Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All documentation including purpose, cost, participants, and approval evidence must accompany the expense report. Records must be retained for a minimum of five years in accordance with Cherry Hill’s record retention policy."
+        }
+       ],
+       "responsible": "Finance Department"
+      },
+      {
+       "heading": "Ethical Review & Conflict Check",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Conduct a post-approval review within 10 business days of the transaction to assess any potential conflict of interest or ethical risk. A short ethical review note must be submitted and filed with the transaction record."
+        }
+       ],
+       "responsible": "Compliance Department"
+      },
+      {
+       "heading": "Review Against Prohibited Items",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Verify the transaction does not involve restricted items such as personal cash, checks, or gifts that breach anti-bribery laws."
+        }
+       ],
+       "responsible": "Compliance Department"
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "The Sensitive Transaction Approval Procedure is reviewed annually by the Ethics & Compliance Officer to ensure continued effectiveness, relevance, and alignment with applicable legal, regulatory, and corporate governance standards. Reviews may also be triggered immediately following any compliance breach or audit observation. Feedback from key departments such as Finance, Legal, and Procurement is incorporated to ensure the procedure remains practical and risk-sensitive. All updates are documented with version history and communicated to relevant stakeholders, with final approval resting with Senior Management and the Compliance Committee."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Confidential Data Handling and Breach Responses",
+   "code": "SOP/5",
+   "catalogId": "confidential-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 775,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish guidelines for classifying, protecting, and managing confidential information, including response procedures for data breaches and measures to secure third-party data against unauthorized access or disclosure at Cherry Hill."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Data Classification and Access Control",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Data Classification: Data must be classified into three categories:"
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Type",
+          "Description"
+         ],
+         "rows": [
+          [
+           "Confidential",
+           "Highly sensitive (e.g., personal data, client data, financial information)."
+          ],
+          [
+           "Sensitive",
+           "Internal use only (e.g., employee records, project documentation)."
+          ],
+          [
+           "Public",
+           "Non-sensitive information (e.g., marketing materials, published case studies)."
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Access Control:"
+        },
+        {
+         "type": "bullets",
+         "text": "Access rights are assigned based on the principle of least privilege. The principle of least privilege (PoLP) refers to granting users only the access rights necessary to perform their job functions, minimizing the risk of unauthorized access or data breaches.\nRoles and responsibilities are defined, and access is granted accordingly.\nA quarterly review of access rights will be conducted by Data Protection Officer through automated access logs and reports, along with manual checks to ensure compliance with the established classifications. In case of non-compliance, access rights will be revoked, investigated, and corrective actions will be implemented, followed by a follow-up review to ensure compliance."
+        }
+       ],
+       "responsible": "Data Protection Officer"
+      },
+      {
+       "heading": "Data Handling and Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Confidential information are stored in secure environments e.g., locked file cabinets and secure servers such as cloud-based servers to guarantee encryption and regulatory compliance.\nTransmission of confidential data is conducted via secure channels i.e. VPNs and encrypted emails.\nAll confidential data are encrypted both in transit and at rest, following industry-standard encryption protocols (e.g., AES-256).\nAccess to storage areas containing confidential data is restricted to authorized personnel.\nAccess control systems i.e. keycards is used to manage physical access."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Detection and Reporting",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Identification:"
+        },
+        {
+         "type": "paragraph",
+         "text": "For IT Department"
+        },
+        {
+         "type": "bullets",
+         "text": "System logs are records generated by operating systems, applications, or network devices that provide a detailed history of events, activities, and transactions occurring within a system\nRegularly analyse system logs for unusual access patterns and failed login attempts to monitor for signs of data breaches."
+        },
+        {
+         "type": "paragraph",
+         "text": "For Employee"
+        },
+        {
+         "type": "bullets",
+         "text": "System logs are records generated by operating systems, applications, or network devices that provide a detailed history of events, activities, and transactions occurring within a system\nRegularly analyse system logs for unusual access patterns and failed login attempts to monitor for signs of data breaches."
+        },
+        {
+         "type": "paragraph",
+         "text": "Reporting:"
+        },
+        {
+         "type": "bullets",
+         "text": "Employees must report any suspected data breaches immediately to their supervisor and the IT department.\nAn incident reporting form must be filled out and submitted to the IT department for documentation."
+        },
+        {
+         "type": "paragraph",
+         "text": "Escalation Protocol:"
+        },
+        {
+         "type": "bullets",
+         "text": "Depending on the severity, escalate incidents to management and legal counsel as necessary."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Response Plan (IRP) - Containment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The IT Security manager will immediately isolate affected systems to prevent further unauthorized access. This team is responsible for implementing containment measures, which may include disconnecting the affected systems from the network, disabling user accounts, or restricting access until a thorough investigation is conducted and the issue is resolved."
+        }
+       ],
+       "responsible": "IT Security manager"
+      },
+      {
+       "heading": "Investigation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The Incident Response Team (IRT) will conduct a thorough investigation to determine the cause and impact of the breach. They will collect relevant logs and evidence, analyse data to identify vulnerabilities, and assess the breach's extent. Interviews with personnel may be conducted for additional insights. The team will document findings and prepare an incident report with recommendations for remediation. This approach helps prevent similar incidents in the future."
+        }
+       ],
+       "responsible": "Incident Response Team (IRT)"
+      },
+      {
+       "heading": "Communication",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Affected stakeholders will be notified via email or formal communication channels, detailing the nature of the breach, affected data, and potential risks. Guidance will include recommended actions to protect their information, such as changing passwords and monitoring for suspicious activities. Regular updates will be provided as more information becomes available."
+        }
+       ]
+      },
+      {
+       "heading": "Internal Communication",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Management and the legal team are kept informed through scheduled progress updates, including regular emails being sent on their respective official email-ids, meetings, and incident reports. All critical developments, decisions, and actions are documented and communicated in a timely manner to ensure alignment and compliance throughout the process."
+        }
+       ]
+      },
+      {
+       "heading": "Resolution and Follow-Up - Remediation",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Corrective actions including revising data access controls, enhancing encryption protocols, updating security policies, providing targeted employee retraining, and improving incident detection systems are take. These measures are designed to address vulnerabilities identified during the investigation and prevent similar breaches in the future."
+        }
+       ]
+      },
+      {
+       "heading": "Resolution and Follow-Up - Post-Incident Review",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A review meeting is conducted by the Incident Response Team, led by the IT Security Manager to analyze response effectiveness and identify improvements by enhancing communication protocols, refining the incident response process and upgrading security monitoring tools."
+        }
+       ],
+       "responsible": "Incident Response Team, led by the IT Security Manager"
+      },
+      {
+       "heading": "Compliance and Record Keeping",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Documentation Retention: Maintain detailed records of the incident, including timelines, actions taken, and any communications for at least three years.\nRegular Review: The IT Security Officer, will review and update the procedures annually or following significant incidents to ensure their effectiveness and alignment with evolving security threats and legal requirements."
+        }
+       ],
+       "responsible": "IT Security Officer"
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Record Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Documentation Retention: Maintain detailed records of the incident, including timelines, actions taken, and any communications for at least three years.\nRegular Review: The IT Security Officer, will review and update the procedures annually or following significant incidents to ensure their effectiveness and alignment with evolving security threats and legal requirements."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Securing Third-Party Data from Unauthorized Access",
+   "code": "SOP/5",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "",
+   "owner": "",
+   "sourceWords": 331,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure the protection of sensitive information received from or shared with third parties by applying stringent access controls, maintaining data confidentiality, and minimizing the risk of unauthorized disclosure or exposure."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Data Access Control",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Access to sensitive third-party data is restricted to authorized personnel only.\nCherry Hill implements Role-Based Access Control (RBAC) to assign access based on employees’ specific roles and responsibilities.\nAccess rights are reviewed periodically to ensure alignment with current job functions."
+        }
+       ]
+      },
+      {
+       "heading": "Data Encryption",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All third-party data is encrypted:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "During transmission using secure protocols such as SSL/TLS."
+        },
+        {
+         "text": "At rest using encryption standards like AES-256."
+        },
+        {
+         "text": "Encryption keys are securely stored and are accessible only on a need-to-know basis."
+        }
+       ]
+      },
+      {
+       "heading": "Secure Data Storage",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Third-party data is stored on encrypted servers with restricted access.\nRegular reviews are conducted to verify access permissions and ensure compliance with internal data protection protocols."
+        }
+       ]
+      },
+      {
+       "heading": "Data Sharing and Transmission",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Data is shared using encrypted emails or Secure File Transfer Protocols (SFTP).\nRecipient identity and authorization are verified prior to sharing.\nAudit logs are maintained for all data-sharing transactions, recording recipient details and timestamps."
+        }
+       ]
+      },
+      {
+       "heading": "Third-Party Agreements",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All vendors or service providers with access to sensitive data are required to sign a Data Protection Agreement (DPA).\nContracts mandate:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Implementation of security measures equivalent to Cherry Hill’s standards."
+        },
+        {
+         "text": "Immediate reporting of any data breaches involving third-party information."
+        }
+       ]
+      },
+      {
+       "heading": "Employee Training and Awareness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Cherry Hill conducts regular data protection training for employees, covering:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Proper handling of third-party information."
+        },
+        {
+         "text": "Secure sharing practices."
+        },
+        {
+         "text": "Legal and organizational responsibilities."
+        },
+        {
+         "text": "Employees are informed of potential consequences of non-compliance."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Auditing",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Monitoring systems are deployed to track access and detect unauthorized attempts.\nPeriodic audits are performed on:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Access logs."
+        },
+        {
+         "text": "Storage and sharing practices."
+        },
+        {
+         "text": "Third-party contract compliance."
+        },
+        {
+         "text": "Identified security gaps are promptly addressed."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Response",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "In the event of a data breach involving third-party data, Cherry Hill’s Incident Response Procedure is activated.\nAffected third parties are:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Notified without delay."
+        },
+        {
+         "text": "Provided with details of the breach, risks, and corrective measures undertaken."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Stakeholder Consent and Data Processing Retention and Disposal",
+   "code": "SOP/5",
+   "catalogId": "consent-retention",
+   "pillar": "G",
+   "department": "",
+   "owner": "Data Protection Officer (DPO)",
+   "sourceWords": 456,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that data is handled in compliance with stakeholder permissions, maintaining appropriate data retention periods and secure disposal practices to uphold privacy standards and regulatory requirements."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Obtaining Consent",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Consent is obtained through formal mechanisms through signed consent form and digital agreements. These documents clearly outline the purpose of data collection, how the data will be used, and stakeholders rights. Additionally, a confirmation process through email verification and electronic signature is used to ensure stakeholders have fully understood the terms before granting their consent."
+        }
+       ]
+      },
+      {
+       "heading": "Transparency",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Stakeholders are provided with clear information which is communicated through a Privacy Notice which outlines how data will be used, the retention periods, and the stakeholders rights regarding their data, including access, correction, or deletion. These documents are provided at the point of data collection, either in print or digital form."
+        }
+       ]
+      },
+      {
+       "heading": "Data Retention and Secure Disposal",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Establishing Retention Timelines: Each type of data is categorized based on its sensitivity and relevance, with specific retention timelines defined according to legal requirements, business needs, or contractual obligations."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Data Type",
+          "Retention Period",
+          "Reason for Retention",
+          "Disposal Method"
+         ],
+         "rows": [
+          [
+           "Personal Identification Data",
+           "5 years after last interaction",
+           "Compliance with legal requirements and identity verification",
+           "Secure deletion (data wiping)"
+          ],
+          [
+           "Financial Records",
+           "7 years",
+           "Tax compliance and audit purposes",
+           "Secure shredding for physical records; cryptographic erasure for digital data"
+          ],
+          [
+           "Consent Records",
+           "Duration of relationship + 2 years",
+           "To demonstrate compliance with data protection laws",
+           "Secure deletion"
+          ],
+          [
+           "Communication Logs",
+           "3 years",
+           "Monitoring and improving service quality",
+           "Secure deletion"
+          ],
+          [
+           "Employment Records",
+           "Duration of employment + 7 years",
+           "Compliance with labor laws and future reference",
+           "Secure shredding for physical records; cryptographic erasure for digital data"
+          ]
+         ]
+        },
+        {
+         "type": "paragraph",
+         "text": "Tracking Retention Periods: Automated systems i.e. Microsoft SQL Server is utilized to track the retention period of stored data, ensuring that data is flagged for review or deletion once the retention period expires."
+        },
+        {
+         "type": "paragraph",
+         "text": "Secure Disposal: Once data is no longer required, it is securely deleted using methods appropriate to its sensitivity. For digital data, secure deletion methods such as data wiping or cryptographic erasure are used. For physical data, documents are shredded or incinerated in a controlled environment."
+        },
+        {
+         "type": "paragraph",
+         "text": "Compliance Checks: Regular audits are conducted to ensure that data is retained or disposed of in accordance with the established policies and legal requirements."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Audit Controls",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Regular Audits: The Data Protection Officer (DPO) will conduct the annual audits of data access and handling practices. The audit will be conducted through a systematic review process, including examining access logs, evaluating data handling procedures, interviewing relevant personnel, and assessing compliance with established policies. Additionally, random sampling of data access and handling activities may be performed to ensure adherence to standards."
+        },
+        {
+         "type": "paragraph",
+         "text": "Continuous Monitoring: Automated monitoring tool i.e Intrusion Detection System (IDS) to detect unauthorized access and anomalies in data access patterns."
+        }
+       ],
+       "responsible": "Data Protection Officer (DPO)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Audits of Control Procedure to ensure Ethical Compliance",
+   "code": "SOP/5",
+   "catalogId": "internal-audit",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Compliance Officer",
+   "sourceWords": 427,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure Ethical Compliance is to regularly assess and verify that ethical standards and controls are effectively implemented across operations, preventing non-compliance and fostering a culture of integrity with Cherry hill."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Audit Planning",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Audits are conducted annually or after significant organizational changes.\nThe Audit Team schedules audits in advance and defines specific objectives and scope."
+        },
+        {
+         "type": "table",
+         "text": "",
+         "columns": [
+          "Audit Schedule",
+          "Department/Area",
+          "Specific Objectives",
+          "Scope of Audit",
+          "Responsible Person"
+         ],
+         "rows": [
+          [
+           "Financial Audit",
+           "Finance Department",
+           "Ensure accuracy of financial statements and compliance with accounting standards.",
+           "Review of financial records, transactions, and reporting practices.",
+           "Audit Team Lead"
+          ],
+          [
+           "Vendor Compliance Audit",
+           "Procurement Department",
+           "Verify adherence to procurement policies and ethical vendor selection.",
+           "Examination of vendor contracts, selection processes, and compliance documentation.",
+           "Procurement Manager"
+          ],
+          [
+           "HR Practices Audit",
+           "Human Resources",
+           "Assess compliance with labor laws and internal policies regarding employee treatment.",
+           "Review of HR records, hiring practices, and employee feedback.",
+           "HR Manager"
+          ],
+          [
+           "Marketing Practices Audit",
+           "Marketing Department",
+           "Evaluate truthfulness in advertising and compliance with marketing regulations.",
+           "Analysis of marketing materials and promotional activities.",
+           "Marketing Manager"
+          ],
+          [
+           "Operational Compliance Audit",
+           "Operations Department",
+           "Review adherence to internal policies and procedures across operations.",
+           "Assessment of operational processes and compliance with standards.",
+           "Operations Manager"
+          ],
+          [
+           "IT Security Audit",
+           "IT Department",
+           "Assess the effectiveness of information security measures and data protection.",
+           "Evaluation of IT systems, access controls, and data management practices.",
+           "IT Manager"
+          ],
+          [
+           "Corruption and Bribery Audit",
+           "Compliance Officer",
+           "Identify and mitigate risks associated with corrupt practices and bribery incidents.",
+           "Review of policies, employee training, and incident reports.",
+           "Compliance Officer"
+          ]
+         ]
+        }
+       ],
+       "responsible": "Audit Team"
+      },
+      {
+       "heading": "Control Procedure Evaluation",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Audit Team reviews documentation and records related to the identified areas of ethics i.e. financial statements, vendor contracts, employee records.\nCompliance with established ethical guidelines, policies, and regulatory requirements is assessed.\nInterviews with key personnel are conducted to gain insights into ethical practices and any concerns."
+        }
+       ],
+       "responsible": "Audit Team"
+      },
+      {
+       "heading": "Data Analysis",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Audit Team analyzes collected data to identify trends, anomalies, and potential areas of ethical non-compliance.\nMetrics and benchmarks are utilized to assess performance against ethical standards."
+        }
+       ],
+       "responsible": "Audit Team"
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Reporting",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "Audit findings are compiled into a detailed report that highlights compliance and non-compliance areas, along with recommendations for improvement.\nThe report is presented to management and relevant stakeholders for review."
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Follow-Up Actions",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "An action plan is developed by the Audit Team in collaboration with relevant stakeholders, such as department heads and management representatives for addressing identified issues, detailing timelines and responsible parties.\nFollow-up audits are scheduled to verify the implementation of corrective actions and assess ongoing compliance."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Documentation and Record Keeping",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "All audit records, including planning documents, evaluation results, reports, and follow-up actions, are maintained for a minimum of five years by the Audit Team in conjunction with the Compliance Department."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Procedure for Employee Compliance and Awareness",
+   "code": "SOP/5",
+   "catalogId": "employee-compliance",
+   "pillar": "G",
+   "department": "Compliance",
+   "owner": "Data Protection Officer",
+   "sourceWords": 354,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To ensure that all Cherry Hill employees understand and comply with data protection policies and ethical standards, fostering a culture of accountability and awareness of applicable regulations."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Mandatory Training",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "All employees must complete compliance training on data protection, confidentiality, and information security:"
+        },
+        {
+         "type": "bullets",
+         "text": "At the time of onboarding\nAnnually thereafter\nTraining topics include:"
+        }
+       ],
+       "substeps": [
+        {
+         "text": "Cherry Hill's data protection policies"
+        },
+        {
+         "text": "Secure handling of sensitive information"
+        },
+        {
+         "text": "Identification of phishing and cybersecurity threats"
+        },
+        {
+         "text": "Breach reporting and response procedures"
+        }
+       ]
+      },
+      {
+       "heading": "Training Materials",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Updated training materials and handbooks are distributed to all employees.\nMaterials are reviewed periodically to ensure compliance with current laws and best practices."
+        }
+       ]
+      },
+      {
+       "heading": "Awareness Campaigns",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Periodic initiatives such as newsletters, posters, and team briefings reinforce key concepts.\nSimulated phishing exercises are conducted to evaluate employee awareness, with feedback provided for improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Reporting Mechanisms",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Employees are encouraged to report any data protection concerns or suspicious activities without fear of retaliation."
+        },
+        {
+         "type": "bullets",
+         "text": "Email: ethics.compliance@cherryhill.in\nContact Person: Data Protection Officer"
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Records of training completion and participation are maintained.\nProgram effectiveness is assessed through employee feedback, and necessary improvements are made."
+        }
+       ]
+      },
+      {
+       "heading": "Compliance Audits",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "The Data Protection Officer conducts audits to evaluate compliance and identify gaps.\nFindings are documented, and corrective actions are implemented accordingly."
+        }
+       ],
+       "responsible": "Data Protection Officer"
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Employees",
+       "responsibilities": [
+        "Complete all mandatory training programs.",
+        "Report suspected breaches or concerns via the designated channels."
+       ]
+      },
+      {
+       "role": "Managers",
+       "responsibilities": [
+        "Ensure team compliance with SOPs and training participation.",
+        "Support the reporting and resolution of data protection issues."
+       ]
+      },
+      {
+       "role": "Data Protection Officer (DPO)",
+       "responsibilities": [
+        "Oversee implementation and enforcement of data protection measures.",
+        "Conduct audits and serve as the main contact for incident reporting."
+       ]
+      },
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Maintain and monitor data security systems.",
+        "Investigate incidents and implement preventive technical measures."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "monitoring",
+     "title": "Compliance and Monitoring",
+     "kpis": [],
+     "narrative": [
+      {
+       "type": "bullets",
+       "text": "The DPO will conduct regular audits to ensure adherence.\nThe IT Manager will track employee training participation and follow up with defaulters."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Enforcement and Penalties",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Non-compliance may result in disciplinary action, depending on the severity:\nVerbal/written warnings\nSuspension\nTermination of employment\nDisciplinary actions are managed by HR in coordination with relevant departments."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Updates",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "The SOP is reviewed annually by the DPO.\nEmergency reviews are conducted if laws or internal processes change significantly.\nAll revisions are documented and shared with employees for acknowledgment."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Equipment Safety Inspections",
+   "code": "SOP/5",
+   "catalogId": "equipment-safety",
+   "pillar": "S",
+   "department": "",
+   "owner": "Safety Officer",
+   "sourceWords": 565,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP outlines the procedures and responsibilities for the systematic inspection of all machinery and equipment used in operations at Cherry Hill. The purpose is to ensure safe working conditions, prevent equipment-related accidents, maintain compliance with local and international safety standards, and reduce downtime due to equipment failure. Regular inspections help identify wear, malfunction, or safety risks early, allowing timely corrective actions."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all equipment and machinery used across Cherry Hill Interiors' project sites, workshops, and offices. It includes tools and equipment such as power drills, cutting machines, welding equipment, scaffolding, ladders, and all other operational equipment used in interior fit-out and construction activities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Safety Officer",
+       "responsibilities": [
+        "Oversees the implementation of equipment safety inspections, ensures compliance with national regulations and client safety requirements, and reports audit findings to management."
+       ]
+      },
+      {
+       "role": "Maintenance Team",
+       "responsibilities": [
+        "Conducts scheduled inspections, completes inspection checklists, addresses issues promptly, and maintains comprehensive inspection records."
+       ]
+      },
+      {
+       "role": "Equipment Operators",
+       "responsibilities": [
+        "Perform basic pre-use visual checks, promptly report any abnormalities or malfunctions, and participate in ongoing safety training sessions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Frequency of Inspections",
+     "steps": [
+      {
+       "heading": "Daily Inspections",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Operators visually check equipment before use, looking for signs of damage, loose wires, leaks, or abnormal noises."
+        }
+       ],
+       "responsible": "Equipment Operators"
+      },
+      {
+       "heading": "Weekly Inspections",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintenance staff conduct functional checks on moving parts, belts, motors, and control panels, focusing on wear and potential hazards."
+        }
+       ],
+       "responsible": "Maintenance Team"
+      },
+      {
+       "heading": "Quarterly Inspections",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Detailed inspections are carried out by qualified personnel, covering electrical systems, mechanical integrity, and safety interlocks."
+        }
+       ]
+      },
+      {
+       "heading": "Annual Inspections",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "A full audit is conducted involving external or senior internal experts to ensure alignment with company compliance and global client standards."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Pre-Use Inspection",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Operators check that all safety features—such as emergency stops, guard covers, and foot pedals—are functional. Any irregularity is recorded in the daily logbook and reported to the supervisor."
+        }
+       ],
+       "responsible": "Equipment Operators"
+      },
+      {
+       "heading": "Routine Safety Checks (Weekly/Monthly)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Maintenance personnel inspect pressure gauges, wiring insulation, control switches, and machine guards. Calibration of sensitive equipment is verified, and any repairs are initiated."
+        }
+       ],
+       "responsible": "Maintenance Team"
+      },
+      {
+       "heading": "Detailed Inspections (Quarterly/Annually)",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Comprehensive review of structural elements, alarm systems, sensor functions, and safety relays. All findings are documented in the Equipment Safety Inspection Form, which is updated after each inspection cycle and stored for records and audit reference."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Recordkeeping",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All inspection records, including the Equipment Safety Inspection Form, are maintained digitally for five years. Each record includes:"
+      },
+      {
+       "type": "bullets",
+       "text": "Date and type of inspection\nInspector's name and designation\nEquipment ID or location\nObservations and test results\nActions taken and resolution timelines"
+      },
+      {
+       "type": "paragraph",
+       "text": "These records are available for internal audits and buyer verifications."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Corrective Actions",
+     "blocks": [
+      {
+       "type": "bullets",
+       "text": "Any equipment with safety risks is immediately tagged as \"Do Not Use\" and removed from operation.\nMaintenance follows up with repairs or replacement, based on manufacturer recommendations.\nCritical faults are escalated to the Safety Officer and Production Head for resolution and tracking."
+      }
+     ]
+    },
+    {
+     "kind": "training",
+     "title": "Training and Awareness",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "All operators and maintenance staff are trained in basic equipment safety, use of personal protective equipment (PPE), and emergency procedures."
+      },
+      {
+       "type": "bullets",
+       "text": "Refresher training is conducted annually.\nAdditional training is given when new machinery is installed or when changes are made to existing equipment."
+      }
+     ]
+    },
+    {
+     "kind": "custom",
+     "title": "Compliance and Audits",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Internal safety audits are conducted periodically by the Safety Officer and reviewed by the Compliance Team."
+      },
+      {
+       "type": "bullets",
+       "text": "Findings are documented and tracked until closure.\nNon-compliance issues are analyzed, and preventive measures are implemented.\nAudit results are also shared during client audits or third-party safety inspections."
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review and Revision",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP is reviewed annually or whenever new equipment is added, safety regulations are updated, or significant process changes occur. The Safety Officer is responsible for initiating the review, and updates are approved by senior management to ensure ongoing effectiveness and compliance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Workplace Safety Procedures",
+   "code": "SOP/5",
+   "catalogId": "workplace-safety",
+   "pillar": "S",
+   "department": "HSE",
+   "owner": "HSE Team",
+   "sourceWords": 878,
+   "sections": [
+    {
+     "kind": "custom",
+     "title": "Overview",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "Cherry Hill Interiors Pvt. Ltd. is committed to providing and maintaining a safe, healthy, and secure working environment for all employees, contractors, subcontractors, and visitors across its offices, manufacturing facility, warehouses, and project sites. Considering the nature of interior fit-out, civil, electrical, HVAC, and MEP activities, workplace safety is integrated into every stage of project planning and execution. This procedure establishes standard workplace safety practices to identify hazards, minimize occupational risks, prevent incidents, and ensure compliance with applicable legal requirements and client safety standards."
+      }
+     ]
+    },
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish standardized workplace safety practices that promote safe working conditions, prevent workplace injuries and occupational illnesses, ensure compliance with health and safety requirements, and encourage a proactive safety culture across all Cherry Hill operations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all Cherry Hill offices, manufacturing facilities, warehouses, project sites, and temporary work locations. It is applicable to all employees, contract workers, subcontractors, consultants, suppliers, and visitors engaged in company activities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Project Managers",
+       "responsibilities": [
+        "Ensure workplace safety requirements are incorporated into project planning and monitor compliance throughout project execution."
+       ]
+      },
+      {
+       "role": "HSE Team",
+       "responsibilities": [
+        "Conduct safety inspections, risk assessments, incident investigations, and awareness programmes while monitoring implementation of workplace safety practices."
+       ]
+      },
+      {
+       "role": "Site Engineers and Supervisors",
+       "responsibilities": [
+        "Ensure safe work practices are followed, conduct daily toolbox talks, verify PPE compliance, and immediately address unsafe conditions."
+       ]
+      },
+      {
+       "role": "Employees and Contractors",
+       "responsibilities": [
+        "Follow all safety procedures, wear required PPE, report hazards or incidents promptly, and participate in mandatory safety training."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Site Safety Planning",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conduct a site-specific Hazard Identification and Risk Assessment (HIRA) before commencement of work."
+        },
+        {
+         "text": "Prepare a Site Safety Plan identifying major hazards, emergency arrangements, and control measures."
+        },
+        {
+         "text": "Ensure required permits, statutory approvals, and emergency contact details are available before mobilization."
+        },
+        {
+         "text": "Identify high-risk activities such as work at height, hot work, lifting operations, and electrical work and implement appropriate controls."
+        }
+       ]
+      },
+      {
+       "heading": "Safety Induction and Training",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Provide mandatory safety induction to all employees, contractors, and visitors before entering the workplace or project site."
+        },
+        {
+         "text": "Conduct daily toolbox talks before the commencement of work to discuss hazards, control measures, and safety precautions."
+        },
+        {
+         "text": "Provide periodic refresher training on emergency response, PPE usage, fire safety, electrical safety, manual handling, and safe work practices."
+        },
+        {
+         "text": "Maintain attendance records for all safety training and awareness programmes."
+        }
+       ]
+      },
+      {
+       "heading": "Personal Protective Equipment (PPE)",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Provide appropriate PPE based on job-specific hazards and work activities."
+        },
+        {
+         "text": "Ensure mandatory use of safety helmets, safety shoes, reflective jackets, gloves, safety goggles, and other PPE wherever applicable."
+        },
+        {
+         "text": "Inspect PPE regularly and replace damaged or expired equipment immediately."
+        },
+        {
+         "text": "Supervisors shall monitor PPE compliance during routine workplace inspections."
+        }
+       ]
+      },
+      {
+       "heading": "Safe Work Practices",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Ensure all tools, machinery, and electrical equipment are inspected before use and are maintained in safe working condition."
+        },
+        {
+         "text": "Restrict unauthorized access to hazardous work areas through barricading and safety signage."
+        },
+        {
+         "text": "Obtain the necessary Permit to Work (PTW) before carrying out hot work, confined space entry, electrical isolation, or work at height."
+        },
+        {
+         "text": "Follow approved lifting techniques and use suitable lifting equipment for handling heavy materials."
+        }
+       ]
+      },
+      {
+       "heading": "Emergency Preparedness and Response",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Maintain clearly identified emergency exits, assembly points, and evacuation routes at all workplaces."
+        },
+        {
+         "text": "Ensure fire extinguishers, first aid kits, emergency lighting, and other emergency equipment are readily accessible and periodically inspected."
+        },
+        {
+         "text": "Display emergency contact numbers at prominent locations."
+        },
+        {
+         "text": "Conduct emergency evacuation and fire drills periodically to assess preparedness and improve response effectiveness."
+        }
+       ]
+      },
+      {
+       "heading": "Incident Reporting and Investigation",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Report all accidents, injuries, near misses, unsafe acts, and unsafe conditions immediately to the Site Supervisor or HSE Team."
+        },
+        {
+         "text": "Investigate all reported incidents to determine root causes and identify corrective and preventive actions."
+        },
+        {
+         "text": "Record incidents and monitor the implementation of corrective actions until closure."
+        },
+        {
+         "text": "Communicate lessons learned from incidents to employees and contractors to prevent recurrence."
+        }
+       ]
+      },
+      {
+       "heading": "Workplace Safety Inspection and Monitoring",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Conduct daily workplace inspections to identify unsafe conditions and verify compliance with safety requirements."
+        },
+        {
+         "text": "Carry out periodic HSE audits across project sites and operational facilities."
+        },
+        {
+         "text": "Track corrective actions arising from inspections and audits until satisfactory closure."
+        },
+        {
+         "text": "Review safety performance indicators, including incident frequency, near misses, inspection findings, and training completion, to identify opportunities for continual improvement."
+        }
+       ]
+      },
+      {
+       "heading": "Ergonomics and Repetitive Strain Injury (RSI) Prevention",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Employees shall maintain proper workstation ergonomics, including correct chair height, monitor position, and keyboard placement to reduce the risk of Repetitive Strain Injuries (RSIs)."
+        },
+        {
+         "text": "Employees performing prolonged desk-based work shall take short stretching or movement breaks at regular intervals to minimize muscle fatigue and discomfort."
+        },
+        {
+         "text": "Ergonomic assessments shall be conducted periodically, and appropriate ergonomic accessories shall be provided where required."
+        },
+        {
+         "text": "Employees experiencing symptoms such as pain, numbness, or discomfort shall promptly report them to their supervisor or the HSE Team for appropriate action."
+        }
+       ]
+      },
+      {
+       "heading": "Slip, Trip & Fall Prevention Measures",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Keep floors and walkways clean, dry, and free from spills, debris, and obstructions."
+        },
+        {
+         "text": "Ensure adequate lighting and use anti-slip mats where necessary."
+        },
+        {
+         "text": "Use handrails on stairs and only approved ladders or platforms for working at height."
+        },
+        {
+         "text": "Wear slip-resistant safety footwear in operational and project areas."
+        },
+        {
+         "text": "Report and rectify damaged flooring or other trip hazards promptly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This Workplace Safety Practices Procedure shall be reviewed annually by the HSE Team in consultation with the Project Management and Operations departments. The review shall consider workplace incidents, inspection findings, employee feedback, legal updates, and changes in operational activities. Where necessary, the procedure shall be revised to strengthen workplace safety controls and support Cherry Hill's commitment to continual improvement in health and safety performance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Provision of Emergency Equipment",
+   "code": "SOP/5",
+   "catalogId": "emergency-equipment",
+   "pillar": "S",
+   "department": "HSE",
+   "owner": "HSE Team",
+   "sourceWords": 620,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "To establish a standardized procedure for identifying, providing, inspecting, maintaining, and monitoring emergency equipment across Cherry Hill Interiors Pvt. Ltd. to ensure prompt response during emergencies, minimize potential risks, and protect employees, contractors, visitors, and company assets."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all Cherry Hill offices, warehouses, manufacturing facilities, and project sites. It covers emergency equipment required for fire protection, first aid, emergency evacuation, spill response, and other emergency situations arising from workplace activities."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "HSE Team",
+       "responsibilities": [
+        "Identify emergency equipment requirements, conduct inspections, maintain records, and coordinate servicing and emergency drills."
+       ]
+      },
+      {
+       "role": "Project Managers / Site Supervisors",
+       "responsibilities": [
+        "Ensure emergency equipment is available, accessible, and properly maintained within their respective work areas."
+       ]
+      },
+      {
+       "role": "Employees and Contractors",
+       "responsibilities": [
+        "Be aware of the location and proper use of emergency equipment, report any deficiencies, and participate in emergency drills and training."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Emergency Equipment Available",
+     "steps": [
+      {
+       "heading": "Emergency Equipment Available",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Based on workplace hazards and operational requirements, the following emergency equipment shall be provided where applicable:"
+        },
+        {
+         "type": "bullets",
+         "text": "Fire extinguishers, fire alarm systems, smoke detectors, and fire hose reels.\nFirst aid kits and emergency medical supplies.\nEmergency exit signage and emergency lighting.\nSpill response kits for paints, adhesives, fuels, and other hazardous substances.\nEye wash stations where hazardous chemicals are handled.\nEmergency contact information, evacuation maps, and designated assembly point signage."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification and Provision of Emergency Equipment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Conduct workplace risk assessments to identify the type, quantity, and location of emergency equipment required based on workplace hazards and operational activities.\nInstall emergency equipment before commencement of operations at offices, warehouses, manufacturing facilities, and project sites.\nPosition emergency equipment at clearly identified, easily accessible, and unobstructed locations with appropriate safety signage.\nMaintain an Emergency Equipment Register containing equipment type, identification number, location, inspection frequency, service due date, and responsible person.\nReview emergency equipment requirements whenever there are significant changes in workplace layout, project activities, or identified risks."
+        }
+       ]
+      },
+      {
+       "heading": "Inspection and Maintenance",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Inspect emergency equipment at scheduled intervals to verify its accessibility, condition, functionality, and compliance with applicable requirements.\nCheck fire extinguishers, first aid kits, emergency lighting, alarms, spill kits, and other emergency equipment for damage, expiry, or operational readiness.\nArrange servicing, refilling, repair, calibration, or replacement of defective or expired equipment through authorized service providers, where applicable.\nEnsure emergency equipment remains free from obstruction and is readily available for immediate use.\nReplenish or replace any emergency equipment used during an emergency, incident, or mock drill before normal operations resume.\nRecord all inspections, maintenance activities, servicing, and replacements for future reference."
+        }
+       ]
+      },
+      {
+       "heading": "Training and Emergency Preparedness",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Provide employees, contractors, and visitors with information on the location and use of emergency equipment during induction programmes.\nConduct periodic awareness sessions on the safe use of fire extinguishers, first aid kits, spill response equipment, and emergency evacuation procedures.\nConduct mock drills at planned intervals to verify emergency preparedness and familiarize personnel with emergency response procedures.\nDisplay emergency response instructions, emergency contact numbers, evacuation routes, and assembly point information at prominent locations."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Continuous Improvement",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Monitor the adequacy and effectiveness of emergency equipment through routine inspections, internal audits, and emergency drills.\nInvestigate any deficiencies or failures identified during inspections or emergency situations and implement corrective actions promptly.\nPeriodically review emergency equipment requirements to ensure they remain suitable for operational activities, workplace hazards, and legal requirements.\nTrack corrective actions until completion and verify their effectiveness during subsequent inspections."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records Maintained",
+     "rows": [
+      {
+       "record": "Emergency Equipment Register",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Emergency Equipment Inspection Checklist",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Fire Extinguisher Service and Maintenance Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "First Aid Kit Inspection Register",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Emergency Drill Reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Corrective Action Register",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure shall be reviewed annually, or earlier if there are significant changes in workplace activities, project scope, facility layout, legal requirements, or following an emergency incident. Feedback from inspections, emergency drills, audits, and incident investigations shall be incorporated to ensure continual improvement in emergency preparedness and the effectiveness of emergency equipment."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Information security due diligence program on third parties",
+   "code": "SOP/5",
+   "catalogId": "third-party-data",
+   "pillar": "G",
+   "department": "IT Department",
+   "owner": "IT Department",
+   "sourceWords": 691,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the framework for conducting information security due diligence on third parties engaged by Cherry Hill Interiors Pvt. Ltd. The objective is to evaluate the information security practices of suppliers, contractors, consultants, service providers, and business partners to safeguard confidential information, protect business systems, and minimize risks associated with third-party engagements."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all third parties that access, process, store, transmit, or manage Cherry Hill's confidential information or information systems, including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Suppliers providing products or services to the company.\nContractors and subcontractors working at offices, warehouses, manufacturing facilities, or project sites.\nIT service providers, cloud service providers, and software vendors.\nConsultants and business partners handling confidential business or customer information."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all third-party engagements before onboarding and throughout the business relationship."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification of Third Parties",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All new suppliers, contractors, consultants, and service providers shall undergo an information security due diligence assessment before engagement.\nThird parties shall be identified based on the nature of services provided, level of access to company information, and potential information security risks.\nThe Procurement Department shall coordinate with the concerned department to determine whether information security due diligence is required."
+        }
+       ],
+       "responsible": "Procurement Department"
+      },
+      {
+       "heading": "Risk Categorization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third parties shall be categorized based on the level of information security risk associated with their services.\n\nThe assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Type and sensitivity of information accessed.\nAccess to company IT systems, applications, or confidential documents.\nCriticality of services provided.\nPrevious information security incidents or regulatory non-compliance."
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Levels"
+        },
+        {
+         "type": "bullets",
+         "text": "Low Risk: Limited or no access to confidential information or company systems.\nMedium Risk: Access to internal business information or selected company systems.\nHigh Risk: Access to confidential business information, customer information, critical systems, or cloud-based services."
+        }
+       ]
+      },
+      {
+       "heading": "Information Security Due Diligence",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following due diligence activities shall be completed before onboarding:"
+        },
+        {
+         "type": "bullets",
+         "text": "Review the supplier's information security policies, procedures, and internal controls.\nEvaluate data protection practices, access control mechanisms, password management, and incident response arrangements.\nVerify compliance with applicable legal, contractual, and customer information security requirements.\nObtain completed supplier information security questionnaires and supporting documents where applicable.\nReview previous security incidents, data breaches, or regulatory actions that may affect the supplier's risk profile."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier On-site Assessment",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Cherry Hill shall conduct supplier on-site assessments, where applicable, as part of the information security due diligence programme.\nThe assessment shall verify the implementation of physical and information security controls at the supplier's premises."
+        },
+        {
+         "type": "paragraph",
+         "text": "The assessment may include verification of:"
+        },
+        {
+         "type": "bullets",
+         "text": "Physical access controls and visitor management.\nProtection of confidential documents and records.\nSecure storage of electronic devices and information.\nUser access management and password controls.\nData backup and recovery practices.\nEmployee awareness of information security requirements."
+        },
+        {
+         "type": "bullets",
+         "text": "Any observations or non-conformities identified during the assessment shall be documented, and corrective actions shall be communicated to the supplier for timely closure."
+        }
+       ]
+      },
+      {
+       "heading": "Contractual Controls and Approval",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Information security and confidentiality requirements shall be incorporated into supplier agreements, purchase orders, or service contracts, wherever applicable.\nNon-Disclosure Agreements (NDAs) shall be executed where confidential or proprietary information is shared.\nHigh-risk suppliers shall be approved only after completion of the due diligence assessment and closure of any significant observations."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Periodic Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "High-risk suppliers shall be reviewed periodically to verify continued compliance with Cherry Hill's information security requirements.\nSupplier performance shall be monitored through contract reviews, audits, incident reports, customer feedback, and periodic supplier evaluations.\nInformation security due diligence shall be repeated whenever there are significant changes in the supplier's services, ownership, information systems, or identified security risks.\nCorrective actions arising from supplier assessments shall be monitored until satisfactory closure."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "IT Department",
+       "responsibilities": [
+        "Conduct information security assessments, review security controls, and monitor compliance."
+       ]
+      },
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Ensure due diligence is completed before supplier onboarding and maintain assessment records."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Participate in supplier evaluations and identify information security risks relevant to their functions."
+       ]
+      },
+      {
+       "role": "Third Parties",
+       "responsibilities": [
+        "Cooperate during assessments, provide requested information, and implement agreed corrective actions."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed annually, or whenever there are significant changes in information security requirements, applicable regulations, business operations, or third-party risks. Findings from supplier assessments, security incidents, internal audits, and management reviews shall be incorporated to continually improve the effectiveness of the Information Security Due Diligence Programme."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Anti-corruption due diligence program on third parties",
+   "code": "SOP/5",
+   "catalogId": "third-party-due-diligence",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Compliance / Management Representative",
+   "sourceWords": 667,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the framework for conducting anti-corruption due diligence on third parties engaged by Cherry Hill Interiors Pvt. Ltd. The objective is to identify and mitigate bribery and corruption risks, promote ethical business practices, and ensure that all third-party engagements comply with applicable anti-corruption laws, company policies, and contractual obligations."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all third parties engaged by Cherry Hill Interiors Pvt. Ltd., including:"
+      },
+      {
+       "type": "bullets",
+       "text": "Suppliers of materials, furniture, fixtures, and equipment.\nContractors and subcontractors working on project sites.\nConsultants, architects, designers, and project management firms.\nService providers, agents, logistics providers, and business partners."
+      },
+      {
+       "type": "paragraph",
+       "text": "This SOP applies to all new third-party engagements and periodic reviews of existing third-party relationships."
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification of Third Parties",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "All new suppliers, contractors, consultants, and business partners shall undergo anti-corruption due diligence before engagement.\nThe Procurement Department shall identify third parties requiring assessment based on the nature of services, contract value, business relationship, and potential corruption risks.\nExisting suppliers may also be reassessed whenever significant changes occur in their operations or contractual arrangements."
+        }
+       ],
+       "responsible": "Procurement Department"
+      },
+      {
+       "heading": "Risk Categorization",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Third parties shall be classified according to their corruption risk profile.\n\nThe assessment shall consider:"
+        },
+        {
+         "type": "bullets",
+         "text": "Nature of goods or services provided.\nContract value and strategic importance.\nGeographic location and corruption risk of the operating region.\nPrevious history of legal, ethical, or regulatory violations.\nLevel of interaction with government authorities or regulatory bodies on behalf of Cherry Hill."
+        },
+        {
+         "type": "paragraph",
+         "text": "Risk Levels"
+        },
+        {
+         "type": "bullets",
+         "text": "Low Risk: Routine suppliers with limited corruption exposure.\nMedium Risk: Contractors and service providers involved in significant operational activities.\nHigh Risk: Third parties engaged in high-value contracts, government-related projects, or operating in higher-risk jurisdictions."
+        }
+       ]
+      },
+      {
+       "heading": "Anti-Corruption Due Diligence",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "The following due diligence activities shall be completed before onboarding:"
+        },
+        {
+         "type": "bullets",
+         "text": "Verify the third party's business registration, ownership structure, and legal status.\nReview the supplier's code of conduct, ethics policy, or anti-corruption practices, where available.\nObtain completed supplier due diligence questionnaires and supporting documentation.\nReview any previous legal proceedings, regulatory sanctions, fraud, bribery, or corruption-related allegations.\nAssess any actual or potential conflicts of interest that may affect the business relationship."
+        }
+       ]
+      },
+      {
+       "heading": "Supplier On-site Assessment",
+       "body": [
+        {
+         "type": "paragraph",
+         "text": "Cherry Hill may conduct supplier on-site assessments as part of its anti-corruption due diligence programme, based on the supplier's risk level and business criticality.\n\nThe assessment may include verification of:"
+        },
+        {
+         "type": "bullets",
+         "text": "Business operations and management practices.\nImplementation of ethical business controls.\nCompliance with anti-bribery and anti-corruption requirements.\nRecord-keeping and supporting documentation related to business transactions.\nAwareness of employees regarding ethical business practices."
+        },
+        {
+         "type": "paragraph",
+         "text": "Any observations or non-conformities identified during the assessment shall be documented, and corrective actions shall be communicated to the supplier for timely implementation."
+        }
+       ]
+      },
+      {
+       "heading": "Contractual Controls and Approval",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Anti-bribery, anti-corruption, and ethical business conduct requirements shall be incorporated into supplier agreements and service contracts, where applicable.\nSuppliers shall be required to comply with Cherry Hill's Supplier Code of Conduct and applicable legal requirements.\nHigh-risk suppliers shall be approved only after satisfactory completion of the due diligence assessment and closure of significant observations."
+        }
+       ]
+      },
+      {
+       "heading": "Monitoring and Periodic Review",
+       "body": [
+        {
+         "type": "bullets",
+         "text": "Supplier performance shall be monitored through periodic supplier evaluations, contract reviews, audits, and feedback received during project execution.\nHigh-risk suppliers may be reassessed periodically or whenever significant changes occur in ownership, management, business operations, or identified corruption risks.\nAny reported allegations of bribery, fraud, unethical conduct, or regulatory non-compliance involving third parties shall be investigated, and appropriate corrective actions shall be implemented.\nCorrective actions arising from supplier assessments or investigations shall be monitored until satisfactory closure."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Conduct third-party due diligence before supplier onboarding and maintain assessment records."
+       ]
+      },
+      {
+       "role": "Compliance / Management Representative",
+       "responsibilities": [
+        "Review due diligence findings, assess corruption risks, and approve high-risk engagements."
+       ]
+      },
+      {
+       "role": "Department Heads",
+       "responsibilities": [
+        "Participate in supplier evaluations and report any unethical practices or conflicts of interest."
+       ]
+      },
+      {
+       "role": "Third Parties",
+       "responsibilities": [
+        "Cooperate during due diligence assessments, provide requested information, and comply with Cherry Hill's anti-corruption requirements."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP shall be reviewed annually, or whenever there are significant changes in applicable anti-corruption regulations, business operations, or supplier risk profiles. Findings from supplier assessments, audits, investigations, and management reviews shall be considered to continually strengthen Cherry Hill's Anti-Corruption Due Diligence Programme."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Safety stock procedure",
+   "code": "SOP/5",
+   "catalogId": "stores-inventory",
+   "pillar": "G",
+   "department": "Procurement",
+   "owner": "Procurement Department",
+   "sourceWords": 450,
+   "sections": [
+    {
+     "kind": "purpose",
+     "title": "Purpose",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This SOP establishes the process followed by Cherry Hill Interiors Pvt. Ltd. to maintain adequate safety stock of critical materials and consumables to minimize supply disruptions, support timely project execution, and ensure business continuity."
+      }
+     ]
+    },
+    {
+     "kind": "scope",
+     "title": "Scope",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure applies to all warehouses, stores, and project sites of Cherry Hill Interiors Pvt. Ltd. and covers critical materials, consumables, and project-specific items that require safety stock based on operational requirements."
+      }
+     ]
+    },
+    {
+     "kind": "responsibilities",
+     "title": "Responsibilities",
+     "rows": [
+      {
+       "role": "Procurement Department",
+       "responsibilities": [
+        "Maintain safety stock levels and ensure timely replenishment of critical materials."
+       ]
+      },
+      {
+       "role": "Stores / Warehouse Team",
+       "responsibilities": [
+        "Monitor inventory levels, maintain stock records, and notify Procurement when stock reaches the reorder level."
+       ]
+      },
+      {
+       "role": "Project Managers",
+       "responsibilities": [
+        "Communicate project material requirements and expected demand to support inventory planning."
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "procedure",
+     "title": "Procedure",
+     "steps": [
+      {
+       "heading": "Identification of Safety Stock Items",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Cherry Hill identifies critical materials that are essential for uninterrupted project execution."
+        },
+        {
+         "text": "Safety stock requirements are determined based on historical consumption, supplier lead time, project schedules, and business-critical requirements."
+        },
+        {
+         "text": "The list of safety stock items is reviewed periodically and updated whenever operational requirements change."
+        }
+       ]
+      },
+      {
+       "heading": "Inventory Planning",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Minimum stock levels and reorder levels are established for identified critical materials."
+        },
+        {
+         "text": "Procurement plans material purchases to maintain the required safety stock and reduce the risk of stock shortages.",
+         "responsible": "Procurement"
+        },
+        {
+         "text": "Where feasible, approved alternate suppliers are identified for critical materials to improve supply continuity."
+        }
+       ]
+      },
+      {
+       "heading": "Inventory Monitoring and Replenishment",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Inventory levels are monitored regularly through stock registers or the inventory management system."
+        },
+        {
+         "text": "When inventory reaches the established reorder level, the Stores Team raises a material replenishment request to Procurement.",
+         "responsible": "Stores Team"
+        },
+        {
+         "text": "Procurement initiates purchase orders to replenish stock before inventory falls below the minimum safety stock level.",
+         "responsible": "Procurement"
+        },
+        {
+         "text": "Any anticipated supply delays or shortages are communicated to the concerned Project Manager so that appropriate mitigation measures can be implemented.",
+         "responsible": "Project Manager"
+        }
+       ]
+      },
+      {
+       "heading": "Storage and Stock Verification",
+       "body": [],
+       "substeps": [
+        {
+         "text": "Safety stock materials are stored in designated locations with proper identification and inventory records."
+        },
+        {
+         "text": "Periodic physical stock verification is conducted to ensure inventory accuracy."
+        },
+        {
+         "text": "Materials are issued following the First-In, First-Out (FIFO) principle, wherever applicable, to minimize damage, deterioration, or expiry."
+        },
+        {
+         "text": "Damaged, obsolete, or excess materials are identified separately and managed in accordance with the company's inventory control procedures."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "records",
+     "title": "Records Maintained",
+     "rows": [
+      {
+       "record": "Safety Stock Register",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Inventory Stock Register",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Material Requisition Records",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Purchase Orders",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      },
+      {
+       "record": "Stock Verification Reports",
+       "owner": "",
+       "retention": "",
+       "format": ""
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "title": "Review Mechanism",
+     "blocks": [
+      {
+       "type": "paragraph",
+       "text": "This procedure shall be reviewed annually or whenever there are significant changes in project activities, inventory management practices, supplier performance, or business continuity requirements. Feedback from inventory reviews and operational teams shall be incorporated to ensure the continued effectiveness of the Safety Stock Procedure."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "parsedAt": "2026-10-17"
+}

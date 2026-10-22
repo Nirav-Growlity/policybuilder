@@ -15,9 +15,13 @@ interface ModalProps {
   children: React.ReactNode;
   width?: number;
   hideClose?: boolean;
+  /** Pinned under the body. With a footer the body is the dialog's only scroller. */
+  footer?: React.ReactNode;
+  /** A tile beside the title, for alert dialogs. */
+  icon?: React.ReactNode;
 }
 
-export function Modal({ open, onClose, title, description, children, width = 460, hideClose }: ModalProps) {
+export function Modal({ open, onClose, title, description, children, width = 460, hideClose, footer, icon }: ModalProps) {
   const application = useApplicationSurface();
   const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
   const dialogRef = React.useRef<HTMLDivElement>(null);
@@ -90,14 +94,17 @@ export function Modal({ open, onClose, title, description, children, width = 460
         aria-label={title ? undefined : "Dialog"}
         tabIndex={-1}
         className={application ? "pc-modal-panel pc-focus overflow-hidden" : "bg-[var(--color-paper)] rounded-2xl shadow-[var(--shadow-lift)] overflow-hidden animate-fade-up focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"}
-        style={{ width, maxWidth: "calc(100vw - 32px)", maxHeight: "calc(100dvh - 32px)", overflowY: "auto" }}
+        style={footer
+          ? { width, maxWidth: "calc(100vw - 32px)", maxHeight: "calc(100dvh - 32px)", display: "flex", flexDirection: "column" }
+          : { width, maxWidth: "calc(100vw - 32px)", maxHeight: "calc(100dvh - 32px)", overflowY: "auto" }}
         initial={application ? { opacity: 0, scale: 0.98 } : false}
         animate={application ? { opacity: 1, scale: 1 } : undefined}
         transition={{ duration: 0.2, ease: "easeOut" }}
       >
         {(title || !hideClose) && (
           <header className={application ? "pc-modal-header" : "flex items-start justify-between gap-4 px-7 pt-6"}>
-            <div className="min-w-0">
+            {icon ? <span className="pc-modal-icon" aria-hidden="true">{icon}</span> : null}
+            <div className="min-w-0 flex-1">
               {title && <h2 id={titleId} className={application ? "pc-modal-title" : "font-display text-[19px] font-semibold text-[var(--color-ink)] tracking-tight"}>{title}</h2>}
               {description && <p id={descriptionId} className={application ? "pc-modal-description" : "text-[12.5px] text-[var(--color-muted)] mt-1.5 leading-relaxed"}>{description}</p>}
             </div>
@@ -113,7 +120,14 @@ export function Modal({ open, onClose, title, description, children, width = 460
             )}
           </header>
         )}
-        <div className={application ? "pc-modal-body" : clsx("px-7", title ? "py-5" : "pt-7 pb-7")}>{children}</div>
+        {footer ? (
+          <>
+            <div className={clsx(application ? "pc-modal-body" : clsx("px-7", title ? "py-5" : "pt-7 pb-7"), "min-h-0 flex-1 overflow-y-auto overscroll-contain scrollbar-thin")} data-lenis-prevent="">{children}</div>
+            <footer className={application ? "pc-modal-footer" : "flex flex-none justify-end gap-2 border-t border-[var(--color-line)] px-7 py-4"}>{footer}</footer>
+          </>
+        ) : (
+          <div className={application ? "pc-modal-body" : clsx("px-7", title ? "py-5" : "pt-7 pb-7")}>{children}</div>
+        )}
       </motion.div>
     </motion.div>,
     document.body

@@ -19,7 +19,7 @@ export async function GET(request: Request) {
   const source: CoverLibrarySource | undefined = sourceParam === "ai" || sourceParam === "manual" ? sourceParam : undefined;
   const policyTypeParam = params.get("policyType");
   const policyType = isPolicyType(policyTypeParam) ? policyTypeParam : undefined;
-  if (source === "ai" && !policyType) return NextResponse.json({ error: "A policy type is required for AI cover templates." }, { status: 400 });
+  // Policies always ask for their own type; SOP manuals (no policy type) list every AI cover.
   const templates = await listCoverTemplates(auth.organization.id, source, policyType);
   return NextResponse.json({ templates: templates.map((template) => ({ ...template, canDelete: template.createdByUserId === Number(auth.user.id) })) });
 }

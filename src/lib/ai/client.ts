@@ -5,6 +5,12 @@ import { useBuilder } from "../store";
 import { policyCraftScopeKey, policyCraftUrl, usePolicyCraftScope } from "../policycraft-client-scope";
 import { parsePartialJson } from "./partial-json";
 
+/** The route's own error message when it sent one, otherwise the status. */
+async function errorFrom(res: Response) {
+  const body = await res.json().catch(() => ({})) as { error?: unknown };
+  return typeof body.error === "string" && body.error ? body.error : `AI request failed: ${res.status}`;
+}
+
 export async function callAI(ctx: AIContext): Promise<AIResponse> {
   const scope = usePolicyCraftScope.getState().scope;
   if (!scope) throw new Error("Select an organization before generating policy content.");
@@ -16,7 +22,7 @@ export async function callAI(ctx: AIContext): Promise<AIResponse> {
       referencePolicy: useBuilder.getState().importedPolicy,
     }),
   });
-  if (!res.ok) throw new Error(`AI request failed: ${res.status}`);
+  if (!res.ok) throw new Error(await errorFrom(res));
   const result = await res.json();
   if (policyCraftScopeKey(scope) !== policyCraftScopeKey(usePolicyCraftScope.getState().scope)) throw new Error("The workspace changed during generation. Generate again in the current organization.");
   return result;
@@ -48,7 +54,7 @@ export async function streamAI(ctx: AIContext, { onPartial, signal }: StreamAIOp
       body: JSON.stringify({ ...ctx, referencePolicy: useBuilder.getState().importedPolicy }),
       signal,
     });
-    if (!res.ok) throw new Error(`AI request failed: ${res.status}`);
+    if (!res.ok) throw new Error(await errorFrom(res));
     if (!res.body || !res.headers.get("content-type")?.includes("ndjson")) {
       const result = await res.json() as AIResponse;
       assertSameScope();
@@ -82,7 +88,7 @@ export async function streamAI(ctx: AIContext, { onPartial, signal }: StreamAIOp
     }
     throw new Error("The generation ended before it finished.");
   } catch (error) {
-    if (signal?.aborted) return { ...partial, source: partial.source ?? "openai" } as AIResponse;
+    if (signal?.aborted) return { ...partial, source: partial.source ?? "claude" } as AIResponse;
     throw error;
   }
 }

@@ -393,6 +393,9 @@ export interface RevisionEntry {
   source?: "scheduled" | "custom";
   /** Scheduled row index that a custom revision follows. */
   scheduleAnchor?: number;
+  /** SOP manuals: who reviewed / approved this revision (printed only when any row has one). */
+  reviewedBy?: string;
+  approvedBy?: string;
 }
 
 export type ImportedPolicyBlock =
