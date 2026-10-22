@@ -22,6 +22,11 @@ const NDJSON = "application/x-ndjson";
 /** Partial parsing is O(length); at most this often while text streams in. */
 const PARTIAL_PARSE_INTERVAL_MS = 80;
 
+/** True when the server has no AI to call (no Anthropic key), so the UI can say so plainly. */
+export function isAiUnavailable(cause: unknown): boolean {
+  return cause instanceof Error && /not wired up|API key is not configured/i.test(cause.message);
+}
+
 export function sopAiUrl(orgId: number, manualId: string) {
   return `/api/documents/sop/ai?orgId=${encodeURIComponent(String(orgId))}&manualId=${encodeURIComponent(manualId)}`;
 }

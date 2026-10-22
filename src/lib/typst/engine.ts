@@ -34,10 +34,10 @@ const CACHE_LIMIT = 8;
  * models (same content, same assets) are served from a small LRU.
  */
 export function renderSopManual(model: SopRenderModel, assets: ManualAsset[] = []): CompiledManual {
-  const key = createHash("sha1")
-    .update(JSON.stringify(model))
-    .update(assets.map((asset) => `${asset.path}:${asset.content.length}`).join("|"))
-    .digest("hex");
+  // Asset bytes are part of the key: two organizations' logos can share a path and a length.
+  const hash = createHash("sha1").update(JSON.stringify(model));
+  for (const asset of assets) hash.update(asset.path).update(asset.content);
+  const key = hash.digest("hex");
   const hit = cache.get(key);
   if (hit) {
     cache.delete(key);

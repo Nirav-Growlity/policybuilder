@@ -31,15 +31,11 @@ function TypingSectionBody({ section, sectionNumber, reveal }: { section: SopSec
  * in, as a single-section AI edit does. A new reveal starts for each section.
  */
 function useLiveReveal(key: string | undefined, text: string) {
-  const [reveal, setReveal] = React.useState<TextReveal>();
-  React.useEffect(() => {
-    if (!key) { setReveal(undefined); return; }
-    const next = createTextReveal();
-    setReveal(next);
-    return () => next.dispose();
-  }, [key]);
+  // A reveal is idle until text is set, so creating one per key while rendering is cheap.
+  const reveal = React.useMemo<TextReveal | undefined>(() => (key ? createTextReveal() : undefined), [key]);
+  React.useEffect(() => () => reveal?.dispose(), [reveal]);
   React.useEffect(() => { reveal?.set(text); }, [reveal, text]);
-  return key ? reveal : undefined;
+  return reveal;
 }
 
 /** One SOP in Write mode: its header facts, then every section as a sheet. */

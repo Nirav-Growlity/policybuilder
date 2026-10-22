@@ -122,7 +122,9 @@ export function createGenerationQueue(
       if (result.type !== "sop") throw new Error("Unexpected result type.");
       job.status = "done";
       report(job);
-      options.onSopDone(job.sopId, result);
+      // Applying the SOP is the caller's job; if it throws, the AI call must not be retried.
+      try { options.onSopDone(job.sopId, result); }
+      catch (error) { console.error("Applying a written SOP failed", error); }
     } catch (error) {
       if (controller.signal.aborted) return;
       if (job.attempts < MAX_ATTEMPTS) {

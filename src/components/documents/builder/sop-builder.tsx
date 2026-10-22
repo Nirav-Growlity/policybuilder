@@ -11,7 +11,8 @@ import { useToast } from "@/components/ui/toast";
 import { createDraftAutosave } from "@/lib/policycraft-autosave";
 import { registerNavigationFlush } from "@/lib/policycraft-navigation-flush";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
-import { startManualGeneration, type GenerationQueueHandle } from "@/lib/sop/ai-client";
+import { isAiUnavailable, startManualGeneration, type GenerationQueueHandle } from "@/lib/sop/ai-client";
+import { applyFrontMatterResult } from "@/lib/sop/apply-ai-result";
 import { downloadSopManual, fetchAccess, getSopManual, ManualConflictError, saveSopManual } from "@/lib/sop/client-api";
 import { useSopBuilder, type RailSelection } from "@/lib/sop/store";
 import type { Sop, SopManual } from "@/lib/sop/types";
@@ -31,8 +32,8 @@ const MODES: readonly BuilderMode[] = ["write", "design", "review"];
 const AI_MISSING = /not wired up/i;
 
 function generationError(cause: unknown) {
-  const message = cause instanceof Error ? cause.message : "AI writing failed.";
-  return AI_MISSING.test(message) ? "SOP AI is not wired up yet." : message;
+  if (isAiUnavailable(cause)) return "SOP AI is not wired up yet.";
+  return cause instanceof Error ? cause.message : "AI writing failed.";
 }
 
 export function SopBuilder({ manualId }: { manualId: string }) {
@@ -121,6 +122,8 @@ function SopBuilderWorkspace({ manualId, requestedOrgId }: { manualId: string; r
     state.setSaveStatus("saving");
     try {
       const saved = await saveSopManual(state.orgId, state.manualId, { title: payload.title, stage: payload.stage, manual: payload.manual, lockVersion: state.lockVersion });
+      // A save that lands after the builder moved to another manual must not hand it this lock version.
+      if (useSopBuilder.getState().manualId !== state.manualId) return;
       useSopBuilder.getState().setLockVersion(saved.lockVersion);
       lastSaved.current = JSON.stringify(payload);
       useSopBuilder.getState().setSaveStatus("saved");
@@ -218,7 +221,7 @@ function SopBuilderWorkspace({ manualId, requestedOrgId }: { manualId: string; r
           }));
           store.clearGeneration(sopId);
         },
-        onFrontMatterDone: (result) => useSopBuilder.getState().setManual((current) => ({ ...current, frontMatter: { ...current.frontMatter, ...result.frontMatter } })),
+        onFrontMatterDone: (result) => useSopBuilder.getState().setManual((current) => applyFrontMatterResult(current, result.frontMatter)),
       });
       queues.current.add(entry);
     } catch (cause) {

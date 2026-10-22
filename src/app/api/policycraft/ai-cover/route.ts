@@ -39,17 +39,10 @@ function isPolicy(value: unknown): value is Policy {
     && Array.isArray(candidate.quantitative);
 }
 
+/** Logs the provider's error on the server; the browser only gets the fallback text. */
 async function responseError(response: Response, fallback: string): Promise<Error> {
   const body = await response.text().catch(() => "");
-  if (body) {
-    try {
-      const parsed = JSON.parse(body) as { error?: { message?: unknown } | string };
-      const message = typeof parsed.error === "string" ? parsed.error : parsed.error?.message;
-      if (typeof message === "string" && message.trim()) return new Error(message.slice(0, 240));
-    } catch {
-      // Keep provider response details out of the client response.
-    }
-  }
+  console.error("AI cover image request failed", response.status, body.slice(0, 500));
   return new Error(fallback);
 }
 

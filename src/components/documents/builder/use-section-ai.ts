@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useToast } from "@/components/ui/toast";
 import { useGenerationStreams, type GenerationRun } from "@/lib/ai/use-generation-streams";
-import { streamSopAi } from "@/lib/sop/ai-client";
+import { isAiUnavailable, streamSopAi } from "@/lib/sop/ai-client";
 import { MANUAL_AI_FIELD_LABELS, type ManualAiField, type SopAiRequest, type SopAiResult } from "@/lib/sop/ai-contract";
 import { applyManualFieldResult, applySopAiResult, partialManualText } from "@/lib/sop/apply-ai-result";
 import { useSopBuilder } from "@/lib/sop/store";
@@ -77,16 +77,16 @@ export function useSectionAi() {
       if (result.type !== "sop-section" && result.type !== "refine") throw new Error("Unexpected AI result.");
       const text = partialText(result);
       if (text) await reveal.finish(text);
-      const next = { ...result.section, id: section.id, title: section.title, enabled: section.enabled } as SopSection;
+      // Title and "Leave out" may have changed while the AI wrote; keep what the section has now.
       useSopBuilder.getState().updateSop(sopId, (sop) => ({
         ...sop,
         status: sop.status === "empty" ? "draft" : sop.status,
-        sections: sop.sections.map((item) => (item.id === section.id ? next : item)),
+        sections: sop.sections.map((item) => (item.id === section.id ? { ...result.section, id: item.id, title: item.title, enabled: item.enabled } as SopSection : item)),
       }));
       push(`${name} ${ACTION_DONE[action]}.`, "success");
     } catch (cause) {
       if (signal.aborted) return;
-      push(cause instanceof Error && /not wired up/i.test(cause.message) ? "AI writing is not available yet. You can write this section yourself." : `Could not update ${name}. Try again.`, "error");
+      push(isAiUnavailable(cause) ? "AI writing is not available yet. You can write this section yourself." : `Could not update ${name}. Try again.`, "error");
     } finally {
       streams.end(key, reveal);
     }
@@ -108,7 +108,7 @@ export const MANUAL_PART_FIELDS: Record<ManualPart, ManualAiField[]> = {
 };
 const PART_TITLE: Record<ManualPart, string> = { "front-matter": "Front matter", closing: "Closing" };
 
-const notWired = (cause: unknown) => cause instanceof Error && /not wired up/i.test(cause.message);
+const notWired = isAiUnavailable;
 
 /** The text one field holds once a finished part is applied, as the editor shows it. */
 function partFieldText(result: SopAiResult, field: ManualAiField): string {

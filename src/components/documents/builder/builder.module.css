@@ -40,7 +40,6 @@
 .railItem.railItem { min-height: 34px; align-items: flex-start; gap: 10px; border: 0; padding: 7px 10px; color: var(--pc-text); font-weight: 400; }
 .railItem.railItem:hover { background: color-mix(in srgb, var(--pc-inset) 70%, transparent); }
 .railItem.railItem[aria-current="step"] { background: var(--pc-inset); font-weight: 400; }
-@media (prefers-reduced-motion: reduce) { .railGroupChevron { transition: none; } }
 
 /* Status circle: dashed while empty, filled once written. */
 .railMark { display: grid; width: 16px; height: 16px; flex: none; place-items: center; margin-top: 1px; border: 1.5px solid var(--pc-control); border-radius: 999px; color: var(--pc-muted); }
