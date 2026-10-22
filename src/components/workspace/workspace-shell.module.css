@@ -1,9 +1,12 @@
 .workspaceRoot {
+  --ws-shell-muted: #5f6e65;
   min-height: 100vh;
   overflow-x: clip;
   color: var(--pc-text);
   background: var(--pc-page);
 }
+
+[data-pc-theme="dark"] .workspaceRoot { --ws-shell-muted: var(--pc-muted); }
 
 .main {
   width: min(100%, 1280px);

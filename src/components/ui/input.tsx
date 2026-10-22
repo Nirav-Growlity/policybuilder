@@ -110,6 +110,7 @@ export function Combobox({ value, options, onValueChange, id, name, required, ar
         aria-label={ariaLabel}
         placeholder={placeholder}
         disabled={disabled}
+        autoComplete="off"
         onFocus={() => { setShowAll(false); setActiveIndex(-1); setOpen(true); }}
         onChange={(event) => {
           onValueChange(event.target.value);
@@ -142,7 +143,7 @@ export function Combobox({ value, options, onValueChange, id, name, required, ar
           type="button"
           aria-label="Clear selection"
           onClick={() => { onValueChange(""); setShowAll(true); setOpen(true); }}
-          className="absolute right-10 top-1 bottom-1 w-8 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] transition-colors cursor-pointer"
+          className="pc-feature-combobox-action absolute right-10 top-1 bottom-1 w-8 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] transition-colors cursor-pointer"
         >
           <svg className="mx-auto" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
         </button>
@@ -154,12 +155,12 @@ export function Combobox({ value, options, onValueChange, id, name, required, ar
           setShowAll(true);
           setOpen((shown) => !shown);
         }}
-        className="absolute right-1 top-1 bottom-1 w-9 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] transition-colors cursor-pointer"
+        className="pc-feature-combobox-action absolute right-1 top-1 bottom-1 w-9 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] transition-colors cursor-pointer"
       >
         <svg className={`mx-auto transition-transform ${open ? "rotate-180" : ""}`} width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>}
       {open && (
-        <div id={listboxId} role="listbox" aria-label={ariaLabel || "Available options"} className="absolute z-30 mt-1.5 w-full max-h-56 overflow-y-auto scrollbar-thin rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] p-1.5 shadow-[0_12px_28px_rgba(38,50,42,0.16)]">
+        <div id={listboxId} role="listbox" aria-label={ariaLabel || "Available options"} className="pc-feature-listbox absolute z-30 mt-1.5 w-full max-h-56 overflow-y-auto scrollbar-thin rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] p-1.5 shadow-[0_12px_28px_rgba(38,50,42,0.16)]">
           {filtered.length ? filtered.map((option, index) => (
             <button
               type="button"
