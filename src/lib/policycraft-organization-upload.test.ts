@@ -42,3 +42,16 @@ test("SVG logos are rasterized to high-resolution PNG assets", async () => {
   assert.equal(result.height, 667);
   assert.equal((await sharp(result.bytes).metadata()).format, "png");
 });
+
+test("SVG logos are recognised by content even when the declared MIME type is missing or generic", async () => {
+  const svg = '<?xml version="1.0" encoding="UTF-8"?>\n<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In -->\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80"><rect width="300" height="80" fill="#2E7D32"/></svg>';
+  for (const type of ["", "application/octet-stream", "text/xml"]) {
+    const outgoing = new FormData();
+    outgoing.set("logo", new File([svg], "growlity.svg", { type }));
+    // Round-trip through a real multipart body, as a route handler receives it.
+    const form = await new Request("http://localhost/upload", { method: "POST", body: outgoing }).formData();
+    const result = await readPolicyCraftOrganizationLogo(form, true);
+    assert.ok(result, `declared type "${type}"`);
+    assert.equal(result.width, 2000);
+  }
+});

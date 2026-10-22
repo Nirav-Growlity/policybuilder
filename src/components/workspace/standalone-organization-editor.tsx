@@ -160,7 +160,9 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
   function chooseLogo(file?: File) {
     setError("");
     if (!file) return;
-    if (!( ["image/png", "image/jpeg", "image/webp", "image/svg+xml"].includes(file.type)) || file.size > 10 * 1024 * 1024) {
+    // Some systems report no MIME type for SVGs, so fall back to the extension; the server checks the bytes.
+    const supported = ["image/png", "image/jpeg", "image/webp", "image/svg+xml"].includes(file.type) || /\.(png|jpe?g|webp|svg)$/i.test(file.name);
+    if (!supported || file.size > 10 * 1024 * 1024) {
       setError("Choose a PNG, JPEG, WebP or SVG image under 10 MB.");
       return;
     }
@@ -257,7 +259,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
                   const selected = field.value === period;
                   return <button key={period} type="button" aria-pressed={selected} disabled={saving} onClick={() => { field.onChange(period); setSaved(false); }} className={`${styles.periodButton} ${selected ? styles.periodSelected : ""}`}>{selected ? <SelectionPill layoutId="organization-reporting-period" /> : null}{period === "FY" ? "Financial year (FY)" : "Calendar year (CY)"}</button>;
                 })}</div></>} /></fieldset>
-                <div className={styles.logoField}><span className={styles.fieldLabel}>Company logo</span><div className={styles.logoRow}>{chosenLogo ? <Image src={chosenLogo} alt="Company logo preview" width={64} height={44} unoptimized className={styles.logoPreview} /> : null}<label className={styles.fileButton}><Upload size={14} aria-hidden="true" />{profile.logo || hasExistingLogo ? "Replace logo" : "Upload logo"}<input {...logoRegistration} name="logo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" required={!hasExistingLogo && !profile.logo} disabled={saving} className={styles.visuallyHidden} onChange={(event) => chooseLogo(event.currentTarget.files?.[0])} /></label><span className={styles.hint}>PNG, JPEG, WebP or SVG · up to 10 MB</span></div></div>
+                <div className={styles.logoField}><span className={styles.fieldLabel}>Company logo</span><div className={styles.logoRow}>{chosenLogo ? <Image src={chosenLogo} alt="Company logo preview" width={64} height={44} unoptimized className={styles.logoPreview} /> : null}<label className={styles.fileButton}><Upload size={14} aria-hidden="true" />{profile.logo || hasExistingLogo ? "Replace logo" : "Upload logo"}<input {...logoRegistration} name="logo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg" required={!hasExistingLogo && !profile.logo} disabled={saving} className={styles.visuallyHidden} onChange={(event) => chooseLogo(event.currentTarget.files?.[0])} /></label><span className={styles.hint}>PNG, JPEG, WebP or SVG · up to 10 MB</span></div></div>
               </div>
             </section>
 
