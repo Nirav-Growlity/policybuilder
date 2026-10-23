@@ -200,7 +200,7 @@ function shortenTarget(text: string) {
 
 const FIELD_GUIDE: Record<HandbookAiField, string> = {
   welcome: "One or two warm paragraphs welcoming the employee, in the voice of the company's leadership, saying what the handbook is for.",
-  about: "Two or three paragraphs on who the company is: what it makes or does, its markets, its sites and size, from the company profile when given.",
+  about: "Two or three paragraphs on who the company is: what it makes or does, its markets and its sites. Mention its size, founding year or figures only when the company profile gives them; never leave a placeholder for them, leave them out instead.",
   purpose: "One paragraph on what this handbook covers, that it does not replace the appointment letter or the law, and who it applies to.",
   howToUse: "One or two paragraphs on how to find a topic, who to ask when something is unclear, and how the company tells employees about changes.",
   reviewMechanism: "One to three paragraphs: scheduled review using the review frequency, triggers for an earlier review (legal change, audit finding, employee feedback), who approves changes and how employees are told.",
@@ -284,6 +284,7 @@ function taskFor(request: HandbookAiRequest): { task: string; maxTokens: number;
           `- welcome: ${FIELD_GUIDE.welcome}`,
           `- about: ${FIELD_GUIDE.about}`,
           "- vision: one sentence. mission: one sentence. Use the company profile's own words when it gives them; otherwise write plausible, modest statements without invented facts.",
+          "- The opening pages are prose about the company: where a fact is not given, write around it instead of leaving a [placeholder].",
           "- coreValues: four to six values, each a short title and one sentence on how it shows at work.",
           `- purpose: ${FIELD_GUIDE.purpose}`,
           `- howToUse: ${FIELD_GUIDE.howToUse}`,

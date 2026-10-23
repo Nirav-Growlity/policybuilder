@@ -49,7 +49,7 @@ export function HandbookReviewMode() {
         </ul>
       </section>
       <section className={styles.reviewPreview} aria-label="Full handbook preview">
-        <SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} surface="card" debounceMs={800} />
+        <SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} surface="card" debounceMs={800} itemLabel="chapter" documentLabel="handbook" />
       </section>
       <HandbookPlaceholdersDialog open={placeholdersOpen} onClose={() => setPlaceholdersOpen(false)} onGoTo={fix} />
     </div>

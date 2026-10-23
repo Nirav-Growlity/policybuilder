@@ -18,7 +18,7 @@ export const SOP_PREVIEW_DEBOUNCE_MS = 500;
  * `sopId` is given, else the whole manual. The last good render stays on
  * screen while the next one is laid out, and pages paint lazily as they scroll in.
  */
-export function SopPdfPreview({ orgId, manualId, manual, sopId, surface = "pane", debounceMs = SOP_PREVIEW_DEBOUNCE_MS }: {
+export function SopPdfPreview({ orgId, manualId, manual, sopId, surface = "pane", debounceMs = SOP_PREVIEW_DEBOUNCE_MS, itemLabel = "SOP", documentLabel = "manual" }: {
   orgId: number;
   manualId: string;
   /** An SOP manual or an employee handbook; `sopId` names an SOP or a chapter. */
@@ -26,6 +26,9 @@ export function SopPdfPreview({ orgId, manualId, manual, sopId, surface = "pane"
   sopId?: string;
   surface?: "card" | "pane";
   debounceMs?: number;
+  /** Names the previewed item and document for screen readers: "SOP" / "manual" or "chapter" / "handbook". */
+  itemLabel?: string;
+  documentLabel?: string;
 }) {
   const key = React.useMemo(() => JSON.stringify({ sopId: sopId ?? null, manual }), [manual, sopId]);
   const [settledKey, setSettledKey] = React.useState(key);
@@ -74,7 +77,7 @@ export function SopPdfPreview({ orgId, manualId, manual, sopId, surface = "pane"
   };
 
   return (
-    <div className={`pdf-preview ${previewStyles.preview}`} data-surface={surface} aria-label={sopId ? "Preview of this SOP" : "Preview of the manual"} aria-busy={updating}>
+    <div className={`pdf-preview ${previewStyles.preview}`} data-surface={surface} aria-label={sopId ? `Preview of this ${itemLabel}` : `Preview of the ${documentLabel}`} aria-busy={updating}>
       <p className="sr-only" role="status" aria-live="polite">{failure ? `Preview failed. ${failure.message}` : updating ? "Updating preview." : "Preview up to date."}</p>
       <div className="relative">
         {results.map((result) => {

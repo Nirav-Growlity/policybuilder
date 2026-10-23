@@ -410,7 +410,7 @@ function HandbookDesignMode({ mobile, onClose, aiCover }: { mobile: boolean; onC
       setManual={setManual as unknown as Parameters<typeof ManualDesignStudio>[0]["setManual"]}
       layout={<HandbookLayoutPanel />}
       label="Handbook"
-      preview={<SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} debounceMs={800} />}
+      preview={<SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} debounceMs={800} itemLabel="chapter" documentLabel="handbook" />}
     />
   );
 }
@@ -465,7 +465,7 @@ function HandbookBody({ mode, selection, saveStatus, exporting, onDownload, onAd
       progressPill={<HandbookProgressPill />}
       design={<HandbookDesignMode mobile={narrow} onClose={() => setMode("write")} aiCover={aiCover} />}
       review={<HandbookReviewMode />}
-      preview={<SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} sopId={chapter?.id} />}
+      preview={<SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} sopId={chapter?.id} itemLabel="chapter" documentLabel="handbook" />}
     >
       {conflict ? (
         <div className={styles.conflict} role="alert">
