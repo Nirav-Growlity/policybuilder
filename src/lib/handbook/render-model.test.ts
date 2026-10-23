@@ -6,6 +6,7 @@ import JSZip from "jszip";
 import { NodeCompiler } from "@myriaddreamin/typst-ts-node-compiler";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { generateSopDocx } from "../docx/sop-generate";
+import { HANDBOOK_DESIGNS } from "../sop/design/templates";
 import { SOP_TEMPLATE_IDS } from "../sop/types";
 import { compileSopManual } from "../typst/compile";
 import { sopFontFiles } from "../typst/fonts";
@@ -78,8 +79,8 @@ test("every template lays out a handbook with chapter labels and the acknowledge
     const compiled = compileSopManual(compiler, template, buildHandbookRenderModel({ ...manual, theme }), [], workspace);
     assert.ok(compiled.pageCount > 10, `${theme}: ${compiled.pageCount} pages`);
     const text = await pdfText(compiled.pdf);
-    assert.match(text, /EmployeeAcknowledgement/, `${theme}: acknowledgement page`);
-    assert.match(text, /LeaveandHolidays/, `${theme}: chapter title`);
+    assert.match(text, /EmployeeAcknowledgement/i, `${theme}: acknowledgement page`);
+    assert.match(text, /LeaveandHolidays/i, `${theme}: chapter title`);
     assert.doesNotMatch(text, /SOPNo\.|Standardoperatingprocedures|SOPsinthismanual|Owner|ReviewMechanism|Preparedby|DocumentNo\.|DocNo:|Classification|Controlledcopy|CertificationsandStandards/i, `${theme}: no SOP wording`);
   }
 });
@@ -115,3 +116,25 @@ test("saved handbook metadata stays in storage but never enters the rendered han
   assert.equal(manual.chapters[0].owner, "LEGACY-OWNER");
   assert.ok(manual.frontMatter.howToUse.length);
 });
+
+
+test("handbook picker includes the reading templates and excludes SOP-specific layouts", () => {
+  assert.deepEqual(HANDBOOK_DESIGNS.map(design => design.id), ["controlled-manual", "compact-register", "modern-banner", "shop-floor", "chapter-book"]);
+});
+
+
+for (const theme of ["shop-floor", "chapter-book"] as const) {
+  test(`${theme}: Word handbook omits SOP controls and renders labelled signature rules`, async () => {
+    const model = buildHandbookRenderModel({ ...buildSampleHandbook(), theme });
+    model.control.docNo = "hidden-handbook-document-number";
+    const zip = await JSZip.loadAsync(await generateSopDocx(model, []));
+    const document = await zip.file("word/document.xml")!.async("string");
+    const text = document.replace(/<[^>]+>/g, "");
+    assert.doesNotMatch(text, /Owner|Document number|Prepared by|Chapter No\.|3\.1|3\.2/);
+    for (const field of ["Employee name", "Employee number", "Department", "Signature", "Date"]) assert.ok(text.includes(field));
+    const headers = await Promise.all(Object.keys(zip.files).filter(name => /^word\/header\d+\.xml$/.test(name)).map(name => zip.file(name)!.async("string")));
+    for (const header of headers) assert.ok(!header.includes(model.control.docNo));
+    assert.ok(text.includes(`Approved by: ${model.control.approvedBy}`));
+    assert.doesNotMatch(document, /w:caps/);
+  });
+}

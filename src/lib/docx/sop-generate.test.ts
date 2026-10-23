@@ -197,3 +197,18 @@ test("an SOP code that already starts with SOP is not printed as \"SOP SOP-…\"
   assert.doesNotMatch(document, /SOP SOP-EHS-001/i);
   assert.match(document, /SOP-EHS-001 {3}\| {3}/);
 });
+
+
+for (const id of ["shop-floor", "chapter-book"] as const) {
+  test(`${id}: Word uses sentence case, horizontal tables and all four font slots`, async () => {
+    const { model, assets } = await sample(id);
+    const { document, fontTable } = await open(await generateSopDocx(model, assets));
+    assert.doesNotMatch(document, /w:caps|w:spacing w:val="12"/);
+    for (const family of new Set([model.design.fonts.heading, model.design.fonts.body])) {
+      const entry = new RegExp(`<w:font w:name="${family}">[\\s\\S]*?</w:font>`).exec(fontTable)?.[0] ?? "";
+      for (const slot of ["Regular", "Bold", "Italic", "BoldItalic"]) assert.match(entry, new RegExp(`<w:embed${slot} `), `${family}: ${slot}`);
+    }
+    assert.match(document, id === "shop-floor" ? /shop-floor-band/ : /w:sz w:val="136"/);
+    assert.ok(SOP_DESIGNS.find(design => design.id === id)?.table.borders === "horizontal");
+  });
+}

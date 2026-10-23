@@ -5,7 +5,7 @@
 // .scratch/sop-parity/<template>/. It also matches text runs between the two
 // PDFs and reports, per page, how far Word's baselines sit from Typst's.
 //
-// Run: npx tsx scripts/sop-parity.ts [templateId|all] [pages=all|1,2,5] [--no-png]
+// Run: npx tsx scripts/sop-parity.ts [templateId[,templateId]|all] [pages=all|1,2,5] [--no-png]
 // Needs Windows with Microsoft Word and Chrome or Edge installed.
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -16,6 +16,8 @@ import { chromium, type Browser, type Page } from "playwright-core";
 import { getDocument, type PDFDocumentProxy } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { generateSopDocx, sopPagesFromPdf } from "../lib/docx/sop-generate";
 import { coverArtSvg } from "../lib/sop/design/cover-art";
+import { buildSampleHandbook } from "../lib/handbook/sample-handbook";
+import { buildHandbookRenderModel } from "../lib/handbook/render-model";
 import { SOP_DESIGNS } from "../lib/sop/design/templates";
 import { buildSampleRenderModel } from "../lib/sop/sample-render-model";
 import { compileSopManual, type ManualAsset } from "../lib/typst/compile";
@@ -25,8 +27,10 @@ const root = resolve(".");
 const args = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
 const only = args[0] && args[0] !== "all" ? args[0] : null;
 const pageFilter = args[1] && args[1] !== "all" ? new Set(args[1].split(",").map(Number)) : null;
+const existing = process.argv.includes("--existing");
 const writePngs = !process.argv.includes("--no-png");
-const outRoot = join(root, ".scratch", "sop-parity");
+const handbook = process.argv.includes("--handbook");
+const outRoot = join(root, ".scratch", handbook ? "handbook-parity" : "sop-parity");
 
 type TextItem = { str: string; x: number; y: number };
 
@@ -132,7 +136,7 @@ async function main() {
   const workspace = join(root, ".typst-workspace");
   const compiler = NodeCompiler.create({ workspace, fontArgs: [{ fontPaths: sopFontFiles(root) }] });
   const template = readFileSync(join(root, "lib", "typst", "sop", "manual.typ"), "utf8");
-  const designs = SOP_DESIGNS.filter((design) => !only || design.id === only);
+  const designs = SOP_DESIGNS.filter((design) => !only || only.split(",").includes(design.id));
   const jobs: Array<{ id: string; dir: string; typstPdf: string; docx: string; pdf: string; typstPages: number }> = [];
 
   for (const design of designs) {
@@ -142,8 +146,12 @@ async function main() {
       coverImage = "/assets/cover-art.png";
       assets.push({ path: "assets/cover-art.png", content: await sharp(Buffer.from(coverArtSvg(design.palette))).png().toBuffer() });
     }
-    const model = buildSampleRenderModel({ templateId: design.id, coverImage });
+    const model = handbook ? buildHandbookRenderModel({ ...buildSampleHandbook(), theme: design.id, themeOptions: { ...buildSampleHandbook().themeOptions, accent: "template" } }) : buildSampleRenderModel({ templateId: design.id, coverImage });
     const dir = join(outRoot, design.id);
+    if (existing) {
+      jobs.push({ id: design.id, dir, typstPdf: join(dir, "typst.pdf"), docx: join(dir, "manual.docx"), pdf: join(dir, "word.pdf"), typstPages: 0 });
+      continue;
+    }
     rmSync(dir, { recursive: true, force: true });
     mkdirSync(dir, { recursive: true });
     const compiled = compileSopManual(compiler, template, model, assets, workspace);
@@ -155,7 +163,7 @@ async function main() {
     jobs.push({ id: design.id, dir, typstPdf, docx, pdf: join(dir, "word.pdf"), typstPages: compiled.pageCount });
   }
 
-  convertWithWord(jobs.map((job) => ({ docx: job.docx, pdf: job.pdf })));
+  if (!existing) convertWithWord(jobs.map((job) => ({ docx: job.docx, pdf: job.pdf })));
   if (writePngs) await startRenderer();
 
   const summary: string[] = [];

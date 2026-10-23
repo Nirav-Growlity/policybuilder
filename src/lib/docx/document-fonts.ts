@@ -10,9 +10,9 @@ import { LIBRARY_WORD_SLOTS } from "../document-font-library";
 type FontSlot = "regular" | "bold" | "italic" | "bold-italic";
 const FONT_FACES: Record<string, readonly FontSlot[]> = {
   "Source Sans 3": ["regular", "bold", "italic"],
-  "Source Serif 4": ["regular", "bold", "italic"],
+  "Source Serif 4": ["regular", "bold", "italic", "bold-italic"],
   "Libre Caslon Text": ["regular", "bold", "italic"],
-  "IBM Plex Sans": ["regular", "bold"],
+  "IBM Plex Sans": ["regular", "bold", "italic", "bold-italic"],
   "IBM Plex Serif": ["regular", "bold", "italic"],
   Inter: ["regular", "bold"],
   "Atkinson Hyperlegible": ["regular", "bold", "italic", "bold-italic"],
