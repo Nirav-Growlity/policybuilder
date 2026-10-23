@@ -13,9 +13,10 @@ import { ApplicationSurface } from "@/components/ui/application-surface";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
 import { DelayedLoading, ListFooter, ListRegion, useProgressiveList } from "@/components/workspace/workspace-list";
 import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
-import { getSopManual, listSopManuals, saveSopManual, setSopManualArchived, deleteSopManual, type ManualSummary, type ManualView } from "@/lib/sop/client-api";
+import { getSopManual, listManuals, saveSopManual, setSopManualArchived, deleteSopManual, type ManualSummary, type ManualView } from "@/lib/sop/client-api";
 import { DEFAULT_SOP_TEMPLATE_ID, SOP_TEMPLATE_IDS } from "@/lib/sop/types";
 import { manualSummaryLine } from "./manual-helpers";
+import { handbookSummaryLine } from "./handbook-helpers";
 import { DocumentTypeChooser } from "./document-type-chooser";
 import styles from "@/app/dashboard/page.module.css";
 import hub from "./documents-hub.module.css";
@@ -61,7 +62,7 @@ export function DocumentsHub() {
     setError("");
     if (!orgId) { setManuals([]); setLoading(false); return; }
     try {
-      const next = await listSopManuals(orgId, view);
+      const next = await listManuals(orgId, view);
       setManuals(next);
       setLoadedView(`${orgId}:${view}`);
       setNow(Date.now());
@@ -88,7 +89,8 @@ export function DocumentsHub() {
   }, [renameTarget]);
 
   const newManualHref = orgId ? `/documents/sop/new?orgId=${orgId}` : "#";
-  const resumeHref = (manual: ManualSummary) => `/documents/sop/${encodeURIComponent(manual.id)}?orgId=${manual.organization?.id || orgId || ""}`;
+  const newHandbookHref = orgId ? `/documents/handbook/new?orgId=${orgId}` : "#";
+  const resumeHref = (manual: ManualSummary) => `/documents/${manual.kind === "handbook" ? "handbook" : "sop"}/${encodeURIComponent(manual.id)}?orgId=${manual.organization?.id || orgId || ""}`;
 
   async function setArchived(manual: ManualSummary, archived: boolean) {
     if (actionId || !orgId) return;
@@ -150,7 +152,7 @@ export function DocumentsHub() {
     .filter((group) => group.manuals.length > 0);
   const recordMotion = useRecordMotion();
   const waiting = loading && manuals.length === 0;
-  const totalSops = manuals.reduce((sum, manual) => sum + manual.partCount, 0);
+  const totalParts = manuals.reduce((sum, manual) => sum + manual.partCount, 0);
   const latestUpdate = manuals.reduce<Date | null>((latest, manual) => {
     const updated = new Date(manual.updatedAt);
     return Number.isNaN(updated.valueOf()) || (latest && latest >= updated) ? latest : updated;
@@ -164,10 +166,10 @@ export function DocumentsHub() {
           eyebrow={organization?.name || "No organization assigned"}
           eyebrowIcon={<Building2 size={14} />}
           title="Your documents"
-          description="SOP manuals for your organization. Employee handbooks are on the way."
+          description="SOP manuals and employee handbooks for your organization."
           stats={[
             { label: isArchived ? "Archived documents" : "Active documents", value: waiting ? null : manuals.length },
-            { label: "SOPs across manuals", value: waiting ? null : totalSops },
+            { label: "SOPs and chapters", value: waiting ? null : totalParts },
             { label: "Last edited", value: waiting ? null : latestUpdate ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(latestUpdate) : "–" },
           ]}
           actions={<>
@@ -218,9 +220,11 @@ export function DocumentsHub() {
                 <motion.span className={styles.emptyIcon} initial={{ scale: 0.6, rotate: -8 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}>
                   {isArchived ? <Archive size={24} aria-hidden="true" /> : <BookOpen size={24} aria-hidden="true" />}
                 </motion.span>
-                <h2>{isArchived ? "No archived documents" : typeFilter === "handbook" ? "Employee handbooks are coming soon" : "Create your first SOP manual"}</h2>
-                <p>{isArchived ? "Archived documents will appear here." : typeFilter === "handbook" ? "SOP manuals are ready to build today." : "Pick the procedures your teams follow and PolicyCraft writes each one, ready to review and export."}</p>
-                {!isArchived && typeFilter !== "handbook" && orgId ? <Link href={newManualHref} className={`${styles.newPolicy} ${hub.emptyAction}`}><Plus size={16} aria-hidden="true" />New SOP manual</Link> : null}
+                <h2>{isArchived ? "No archived documents" : typeFilter === "handbook" ? "No employee handbooks yet" : "Create your first document"}</h2>
+                <p>{isArchived ? "Archived documents will appear here." : typeFilter === "handbook" ? "Pick the chapters your teams need. PolicyCraft writes each one from your company profile and employment terms, ready to review and export." : "Pick the procedures your teams follow, or the chapters of an employee handbook. PolicyCraft writes each one, ready to review and export."}</p>
+                {!isArchived && orgId && typeFilter === "handbook" ? <Link href={newHandbookHref} className={`${styles.newPolicy} ${hub.emptyAction}`}><Plus size={16} aria-hidden="true" />New employee handbook</Link> : null}
+                {!isArchived && orgId && typeFilter === "sop" ? <Link href={newManualHref} className={`${styles.newPolicy} ${hub.emptyAction}`}><Plus size={16} aria-hidden="true" />New SOP manual</Link> : null}
+                {!isArchived && orgId && typeFilter === "all" ? <button type="button" onClick={() => setChooserOpen(true)} className={`${styles.newPolicy} ${hub.emptyAction}`}><Plus size={16} aria-hidden="true" />New document</button> : null}
               </motion.div>
             ) : (
               <div className={styles.groups}>
@@ -240,7 +244,7 @@ export function DocumentsHub() {
                             </TiltCover>
                             <div className={styles.recordBody}>
                               <h3 className={styles.recordTitle}>{manual.title}</h3>
-                              <p className={styles.recordMeta}><span className={styles.stepChip}>{manual.kind === "sop" ? "SOP manual" : "Handbook"}</span><span>{manualSummaryLine(manual, now)}</span></p>
+                              <p className={styles.recordMeta}><span className={styles.stepChip}>{manual.kind === "sop" ? "SOP manual" : "Handbook"}</span><span>{manual.kind === "handbook" ? handbookSummaryLine(manual, now) : manualSummaryLine(manual, now)}</span></p>
                               {!isArchived ? <Link href={resumeHref(manual)} className={styles.resumeLink}>Resume<ArrowRight size={15} aria-hidden="true" /></Link> : <p className={styles.archivedLabel}><Archive size={14} aria-hidden="true" /> Archived</p>}
                             </div>
                             <div className={styles.recordActions}>
@@ -264,7 +268,7 @@ export function DocumentsHub() {
         </WorkspaceSheet>
       </section>
 
-      <DocumentTypeChooser open={chooserOpen} onClose={() => setChooserOpen(false)} onChoose={() => { setChooserOpen(false); router.push(newManualHref); }} />
+      <DocumentTypeChooser open={chooserOpen} onClose={() => setChooserOpen(false)} onChoose={(type) => { setChooserOpen(false); router.push(type === "handbook" ? newHandbookHref : newManualHref); }} />
 
       <Modal open={Boolean(renameTarget)} onClose={() => { if (!renaming) setRenameTarget(null); }} title="Rename manual" description="Choose a name for this document." width={460} hideClose={renaming}>
         <form className={styles.dialogForm} onSubmit={(event) => void submitRename(event)}>

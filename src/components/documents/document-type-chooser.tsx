@@ -17,14 +17,17 @@ const TYPES = [
     id: "handbook",
     title: "Employee handbook",
     description: "Workplace rules, benefits, conduct and leave in one handbook your teams can sign.",
-    meta: "Coming soon",
+    meta: "Ready in about a minute",
     icon: BookUser,
-    available: false,
+    available: true,
   },
 ] as const;
 
+/** The document types offered in the chooser, in order. */
+export const DOCUMENT_TYPES = TYPES;
+
 /** "New document": the document types, in the policy selector's card style. */
-export function DocumentTypeChooser({ open, onClose, onChoose }: { open: boolean; onClose: () => void; onChoose: (type: "sop") => void }) {
+export function DocumentTypeChooser({ open, onClose, onChoose }: { open: boolean; onClose: () => void; onChoose: (type: "sop" | "handbook") => void }) {
   return (
     <Modal open={open} onClose={onClose} title="New document" description="Choose what you want to build. Policies stay under Policies." width={680}>
       <ul className={styles.typeGrid}>
@@ -36,7 +39,7 @@ export function DocumentTypeChooser({ open, onClose, onChoose }: { open: boolean
                 type="button"
                 disabled={!type.available}
                 aria-describedby={`document-type-${type.id}-meta`}
-                onClick={() => type.available && onChoose("sop")}
+                onClick={() => type.available && onChoose(type.id)}
                 className={styles.typeCard}
               >
                 <span className={styles.typeIcon}><Icon size={19} aria-hidden="true" /></span>

@@ -4,7 +4,7 @@
  * (app/api/documents/sop/ai) and the generation queue.
  */
 import { parsePartialJson } from "../ai/partial-json";
-import type { SopAiEvent, SopAiRequest, SopAiResult, SopGenerationState } from "./ai-contract";
+import type { SopAiRequest, SopAiResult, SopGenerationState } from "./ai-contract";
 import { createGenerationQueue, type GenerationQueueHandle } from "./generation-queue";
 import type { SopManual } from "./types";
 

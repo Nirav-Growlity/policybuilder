@@ -23,21 +23,22 @@ export function nextReviewDate(effectiveDate: string, frequency: string): string
   return date.toISOString().slice(0, 10);
 }
 
-export function detailsErrors(company: Company, control: SopManualControl) {
+export function detailsErrors(company: Company, control: SopManualControl, documentNoun = "manual") {
   return {
     name: company.name.trim() ? "" : "Enter the company name.",
-    approvedBy: control.approvedBy.trim() ? "" : "Enter who approves the manual.",
+    approvedBy: control.approvedBy.trim() ? "" : `Enter who approves the ${documentNoun}.`,
   };
 }
 
 /** Manual control fields; the company form above it is the policy setup form. */
-export function ManualDetailsPanel({ control, onChange, showErrors }: { control: SopManualControl; onChange: (patch: Partial<SopManualControl>) => void; showErrors: boolean }) {
-  const approvedError = showErrors && !control.approvedBy.trim() ? "Enter who approves the manual." : undefined;
+export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceholder = "SOP Manual", documentNoun = "manual" }: { control: SopManualControl; onChange: (patch: Partial<SopManualControl>) => void; showErrors: boolean; titlePlaceholder?: string; documentNoun?: string }) {
+  const approvedError = showErrors && !control.approvedBy.trim() ? `Enter who approves the ${documentNoun}.` : undefined;
+  const title = `${documentNoun.charAt(0).toUpperCase()}${documentNoun.slice(1)} details`;
   return (
-    <Panel title="Manual details" description="Document control printed on the cover and in every page header." icon={<FileBadge size={17} strokeWidth={1.8} />}>
+    <Panel title={title} description="Document control printed on the cover and in every page header." icon={<FileBadge size={17} strokeWidth={1.8} />}>
       <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
         <Field label="Manual title" hint="Printed on the cover and in page headers">
-          <Input value={control.title ?? ""} onChange={(event) => onChange({ title: event.target.value })} placeholder="SOP Manual" />
+          <Input value={control.title ?? ""} onChange={(event) => onChange({ title: event.target.value })} placeholder={titlePlaceholder} />
         </Field>
         <Field label="Subtitle" hint="Shown under the title on the cover">
           <Input value={control.subtitle ?? ""} onChange={(event) => onChange({ subtitle: event.target.value })} placeholder="Environmental, Social and Governance procedures" />
@@ -91,7 +92,9 @@ export function ManualDetailsPanel({ control, onChange, showErrors }: { control:
   );
 }
 
-export function DetailsStep({ company, control, facts, onCompanyChange, onControlChange, onFactsChange, onContinue }: {
+export const DEFAULT_NEXT_HINT = "Next, choose the SOPs your teams follow. We suggest a set for your industry.";
+
+export function DetailsStep({ company, control, facts, onCompanyChange, onControlChange, onFactsChange, onContinue, continueLabel = "Continue to choose SOPs", nextHint = DEFAULT_NEXT_HINT, documentNoun = "manual", titlePlaceholder, extra }: {
   company: Company;
   control: SopManualControl;
   facts: SopCompanyFacts;
@@ -99,9 +102,16 @@ export function DetailsStep({ company, control, facts, onCompanyChange, onContro
   onControlChange: (patch: Partial<SopManualControl>) => void;
   onFactsChange: (patch: Partial<SopCompanyFacts>) => void;
   onContinue: () => void;
+  continueLabel?: string;
+  nextHint?: string;
+  /** "manual" or "handbook"; names the document in messages. */
+  documentNoun?: string;
+  titlePlaceholder?: string;
+  /** Rendered after the company facts, e.g. the handbook's employment terms. */
+  extra?: React.ReactNode;
 }) {
   const [attempted, setAttempted] = React.useState(false);
-  const errors = detailsErrors(company, control);
+  const errors = detailsErrors(company, control, documentNoun);
   const missing = [errors.name, errors.approvedBy].filter(Boolean);
 
   return (
@@ -110,21 +120,22 @@ export function DetailsStep({ company, control, facts, onCompanyChange, onContro
         <WizardHeading title="Enter company and manual details." description="We filled in what your organization profile already has. Only the company name and the approver are required; everything else can change later." />
       </div>
       <div className="flex flex-col gap-5">
-        <CompanyInfoForm company={company} onCompanyChange={onCompanyChange} documentLabel="manual" />
-        <ManualDetailsPanel control={control} onChange={onControlChange} showErrors={attempted} />
+        <CompanyInfoForm company={company} onCompanyChange={onCompanyChange} documentLabel={documentNoun} />
+        <ManualDetailsPanel control={control} onChange={onControlChange} showErrors={attempted} documentNoun={documentNoun} titlePlaceholder={titlePlaceholder} />
         <CompanyFactsPanel facts={facts} onChange={onFactsChange} />
+        {extra}
       </div>
       <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-[var(--color-line)] bg-[var(--pc-panel)] p-4 sm:flex-row">
         <div className="flex items-center gap-2 text-[14px] text-[var(--color-muted)]" role={attempted && missing.length ? "alert" : undefined}>
           <ShieldCheck size={16} className="shrink-0 text-[var(--color-forest)]" aria-hidden="true" />
-          <span>{attempted && missing.length ? missing.join(" ") : "Next, choose the SOPs your teams follow. We suggest a set for your industry."}</span>
+          <span>{attempted && missing.length ? missing.join(" ") : nextHint}</span>
         </div>
         <button
           type="button"
           onClick={() => { setAttempted(true); if (!missing.length) onContinue(); }}
           className="inline-flex min-h-11 w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-5 text-[14px] font-semibold text-[var(--pc-primary-text)] transition-colors hover:bg-[var(--color-forest-deep)] sm:w-auto"
         >
-          Continue to choose SOPs <ArrowRight size={16} aria-hidden="true" />
+          {continueLabel} <ArrowRight size={16} aria-hidden="true" />
         </button>
       </div>
     </section>
