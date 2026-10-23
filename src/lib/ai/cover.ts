@@ -297,6 +297,19 @@ export function acceptsAICoverArtworkInspection(value: unknown, requireSceneInsp
     && (requireSceneInspection ? value.hasGraphicOverlays === false && value.hasCroppedSubjects === false : value.hasGraphicOverlays !== true && value.hasCroppedSubjects !== true);
 }
 
+/** Only trusted boolean findings may become instructions to the image model. */
+export function buildAICoverRetryInstruction(value: unknown): string {
+  const findings = isRecord(value) ? value : {};
+  const instructions = [
+    findings.hasText === true ? "remove all text, letters, logos and watermarks" : "",
+    findings.hasDocumentElements === true ? "remove document elements and metadata" : "",
+    findings.hasBorderOrFrame === true ? "remove borders and frames" : "",
+    findings.hasGraphicOverlays === true ? "remove graphic overlays" : "",
+    findings.hasCroppedSubjects === true ? "keep the whole subject inside the frame" : "",
+  ].filter(Boolean);
+  return "Create a new complete scene: " + (instructions.length ? instructions.join("; ") : "keep it free of text, frames, document elements and graphic overlays; keep the whole subject inside the frame") + ".";
+}
+
 function layoutElement(layout: AICoverLayoutSuggestion, role: AICoverLayoutRole): AICoverLayoutElement {
   return layout.elements.find((element) => element.role === role) || fallbackElement(role, layout.railSide);
 }

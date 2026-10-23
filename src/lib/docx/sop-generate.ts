@@ -1534,11 +1534,12 @@ function controlGrid(ctx: Ctx, width: number, indent?: number, photo = false): T
   const rowCount = Math.ceil(pairs.length / columns);
   return table(ctx, {
     widths: Array(columns).fill(width / columns),
+    noShift: photo,
     indent,
     rows: Array.from({ length: rowCount }, (_, row) => ({
       cells: Array.from({ length: photo ? Math.min(columns, pairs.length - row * columns) : columns }, (_, column) => pairs[row * columns + column]).map((pair, column) => ({
         span: photo && row === rowCount - 1 && column === pairs.length % columns - 1 ? columns - pairs.length % columns + 1 : undefined,
-        inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [],
+        fill: photo ? "#FFFFFF" : undefined, inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [],
       })),
     })),
   });
@@ -1588,12 +1589,14 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     const sx = w / 210;
     const sy = h / 297;
     const slot = p.image;
-    const targetWidth = 1600;
-    const targetHeight = Math.round(targetWidth * slot.height * sy / (slot.width * sx));
-    const data = await sharp(coverImage.data).resize({ width: targetWidth, height: targetHeight, fit: "contain", background: ctx.pal.soft }).png().toBuffer();
+    const slotWidth = slot.width * sx;
+    const slotHeight = slot.height * sy;
+    // Shared prepared assets already match. Direct callers still get a cover crop.
+    const photo = Math.abs(coverImage.width / coverImage.height / (slotWidth / slotHeight) - 1) < 0.002
+      ? coverImage : await coverCrop(coverImage, slotWidth, slotHeight);
     const pictures: CoverParts["pictures"] = [
       { image: await solidPng(p.variant === "panel-photo" ? ctx.pal.soft : "#FFFFFF"), x: 0, y: 0, width: w, height: h },
-      { image: { data, width: targetWidth, height: targetHeight }, x: slot.x * sx, y: slot.y * sy, width: slot.width * sx, height: slot.height * sy },
+      { image: photo, x: slot.x * sx, y: slot.y * sy, width: slotWidth, height: slotHeight },
     ];
     if (p.variant === "photo-strip") pictures.push({ image: await solidPng(ctx.pal.primary), x: 0, y: 0, width: 14 * sx, height: h });
     const items: FlowItem[] = [];
@@ -1615,14 +1618,14 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     const subtitle = m.cover.photoSubtitle ?? m.cover.subtitle;
     const title = table(ctx, { widths: [170 * sx], indent: 20 * sx, rows: [{ height: p.titleHeight * sy, exact: true, cells: [{ fill: p.dark ? ctx.pal.primaryDark : "#FFFFFF", inset: inset(8 * MM, 7 * MM), items: [
       par(ctx, [txt(ctx, m.kind === "handbook" ? "Employee handbook" : "Standard operating procedures", { size: 12, color: p.dark ? color : ctx.pal.muted })]),
-      v(5), heading(m.cover.title, color, Math.max(32, ctx.sz.coverTitle)), v(5),
+      v(5), heading(m.cover.title, color, Math.max(34, ctx.sz.coverTitle)), v(5),
       ...(subtitle !== m.cover.title ? [par(ctx, [txt(ctx, subtitle, { size: 13, color: p.dark ? color : ctx.pal.muted })])] : []),
     ] }] }] });
     at(p.titleY * sy, title);
+    // Keep the grid in the body, above anchored photos; footer text sits behind
+    // body drawings in Word. Cell shading grows with actual wrapped row height.
     const controls = controlGrid(ctx, 170 * sx, 20 * sx, true);
-    // A white plate keeps control details readable over full-bleed photography.
-    pictures.push({ image: await solidPng("#FFFFFF"), x: 20 * sx, y: p.detailsY * sy, width: 170 * sx, height: controls.height });
-    at(p.detailsY * sy, controls);
+    at(h - 16 * sy - controls.height, controls);
     return { margins: { top: 0, bottom: 0, left: 0, right: 0 }, items, pictures };
   }
   if (m.cover.image || d.cover === "image-banner") {

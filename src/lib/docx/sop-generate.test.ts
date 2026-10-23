@@ -28,6 +28,8 @@ test("photo covers retain all control fields without padded cells in either docu
       const field = cover.indexOf(kind === "sop" ? "DOCUMENT NO." : "VERSION");
       assert.ok(field > 0);
       const grid = cover.slice(cover.lastIndexOf("<w:tbl>", field), cover.indexOf("</w:tbl>", field));
+      assert.equal((grid.match(/w:fill="FFFFFF"/g) ?? []).length, (grid.match(/<w:tc>/g) ?? []).length, "every control cell has growing white shading");
+      assert.doesNotMatch(grid, /w:hRule="exact"/);
       const cells = (grid.match(/<w:tc>/g) ?? []).length;
       if (kind === "handbook") {
         assert.equal(cells, 3, `${design.id}: exactly three handbook fields`);
@@ -37,7 +39,7 @@ test("photo covers retain all control fields without padded cells in either docu
         assert.equal(cells, 11, `${design.id}: all eleven fields, no empty twelfth cell`);
         assert.match(grid, /<w:gridSpan w:val="2"/);
       }
-      assert.match(cover, /w:sz w:val="6[48]"/);
+      assert.match(cover, /w:sz w:val="68"/);
       assert.match(cover, /relativeFrom="page"/);
       assert.ok(cover.includes(kind === "handbook" ? "Employee handbook" : "Standard operating procedures"));
     }

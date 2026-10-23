@@ -7,14 +7,15 @@
 //
 // Run: npx tsx scripts/sop-parity.ts [templateId|all] [pages=all|1,2,5] [--no-png]
 // --handbook uses the handbook fixture; --baseline uses the original renderers.
-// --photo uses .scratch/photo-scene.jpg and, for full-page artwork when present,
-// .scratch/photo-scene-portrait.jpg. These are stock fixtures, never AI calls.
+// --photo exercises legacy portrait artwork in every template when available,
+// falling back to .scratch/photo-scene.jpg. These are stock fixtures, never AI calls.
 // Needs Windows with Microsoft Word and Chrome or Edge installed.
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import sharp from "sharp";
+import { preparePhotoCoverImage } from "../lib/sop/photo-cover-image";
 import { NodeCompiler } from "@myriaddreamin/typst-ts-node-compiler";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { getDocument, type PDFDocumentProxy } from "pdfjs-dist/legacy/build/pdf.mjs";
@@ -159,11 +160,13 @@ async function main() {
     }
     const model = handbook ? buildHandbookRenderModel({ ...buildSampleHandbook(), theme: design.id }, { coverImagePath: coverImage }) : buildSampleRenderModel({ templateId: design.id, coverImage });
     if (photo) {
-      model.cover.image = "/assets/scene.jpg";
+      model.cover.image = "/assets/scene.png";
       model.cover.photo = true;
       model.cover.photoSubtitle = model.company.name;
       const portrait = join(root, ".scratch", "photo-scene-portrait.jpg");
-      assets.push({ path: "assets/scene.jpg", content: readFileSync(design.photoCover === "full-photo" && existsSync(portrait) ? portrait : join(root, ".scratch", "photo-scene.jpg")) });
+      const source = readFileSync(existsSync(portrait) ? portrait : join(root, ".scratch", "photo-scene.jpg"));
+      const prepared = await preparePhotoCoverImage({ content: source, mime: "image/jpeg" }, model.design.photoLayout.image);
+      assets.push({ path: "assets/scene.png", content: prepared.content });
       model.company.logo = "/assets/logo.png";
       assets.push({ path: "assets/logo.png", content: await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="150"><rect width="400" height="150" fill="white"/><path d="M10 115V35h20l30 45 30-45h20v80H90V70L60 110 30 70v45z" fill="#183A5A"/><text x="125" y="90" font-family="Arial" font-size="40" fill="#183A5A">Meridian</text></svg>')).png().toBuffer() });
     }
