@@ -65,7 +65,10 @@ export async function prepareManualRender(
 
   const model = build(logoPath);
   if (cover) {
-    const image = await toCoverBand(cover, model.page, model.design.palette.soft);
+    // Preserve the complete scene, including older portrait library artwork.
+    // Both renderers contain it in the template slot instead of cropping twice.
+    const image = manual.cover.variant === "ai" ? await toTypstImage(cover, 2000) : await toCoverBand(cover, model.page, model.design.palette.soft);
+    model.cover.photo = manual.cover.variant === "ai";
     model.cover.image = `/assets/cover.${image.ext}`;
     assets.push({ path: `assets/cover.${image.ext}`, content: image.content });
   } else if (!previewOnly && getSopDesign(manual.theme).cover === "image-banner") {

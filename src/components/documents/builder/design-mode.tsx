@@ -42,7 +42,7 @@ export function useAiCover(target?: AiCoverTarget) {
   const generate = React.useCallback(async () => {
     const manual = getManual ? getManual() : useSopBuilder.getState().manual;
     if (!manual || !orgId || !manualId) return;
-    setState({ status: "busy", label: "Drawing your cover…" });
+    setState({ status: "busy", label: "Creating cover artwork" });
     try {
       const result = await generateSopAiCover(orgId, manualId, manual);
       if (result.status === "unavailable") { setState({ status: "unavailable" }); return; }
@@ -66,7 +66,7 @@ function CoverLibrary({ orgId, cover, onChange }: { orgId: number; cover: SopCov
       .then((body: { templates?: CoverLibraryItem[] }) => { if (active) setItems((body.templates ?? []).filter((item) => item.previewAssetId || item.composition.background.assetId)); })
       .catch(() => { if (active) setItems([]); });
     return () => { active = false; };
-  }, [orgId]);
+  }, [orgId, cover.libraryTemplateId]);
   if (!items?.length) return <p className={studio.muted}>{items === null ? "Loading saved covers…" : "Covers you generate are saved here for reuse."}</p>;
   return (
     <ul className={studio.coverGrid}>
@@ -76,7 +76,7 @@ function CoverLibrary({ orgId, cover, onChange }: { orgId: number; cover: SopCov
           <li key={item.id} className={studio.coverCard} data-cover-selected={selected}>
             <button type="button" className={studio.coverThumb} aria-pressed={selected} aria-label={`Use ${item.name}`} onClick={() => onChange({ variant: "ai", composition: item.composition, libraryTemplateId: item.id })}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={coverAssetSrc(orgId, item.previewAssetId || item.composition.background.assetId)} alt="" className="h-full w-full object-cover" loading="lazy" />
+              <img src={coverAssetSrc(orgId, item.previewAssetId || item.composition.background.assetId)} alt="" className="h-full w-full object-contain" loading="lazy" />
             </button>
             <span className={studio.coverDate}>{item.name}</span>
           </li>

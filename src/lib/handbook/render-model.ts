@@ -158,6 +158,7 @@ export function buildHandbookRenderModel(manual: HandbookManual, options: Handbo
     control,
     cover: {
       image: options.coverImagePath ?? null,
+      photoSubtitle: manual.control.subtitle?.trim() || manual.company.name,
       eyebrow: "Employee Handbook",
       title,
       subtitle: manual.control.subtitle?.trim() || manual.company.name,

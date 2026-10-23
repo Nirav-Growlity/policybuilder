@@ -394,6 +394,7 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
     control,
     cover: {
       image: options.coverImagePath ?? null,
+      photoSubtitle: manual.control.subtitle?.trim() || manual.company.name,
       eyebrow: "Standard Operating Procedures",
       title: manualTitle,
       subtitle: manual.control.subtitle?.trim() || [manual.company.name, pillarGrouped ? "Environmental, Social and Governance procedures" : ""].filter(Boolean).join("  |  "),

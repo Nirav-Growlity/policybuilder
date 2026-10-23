@@ -1517,7 +1517,7 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
 
 // ---------------------------------------------------------------- cover
 
-function controlGrid(ctx: Ctx, width: number, indent?: number): TableItem {
+function controlGrid(ctx: Ctx, width: number, indent?: number, photo = false): TableItem {
   const c = ctx.m.control;
   const pairs: Array<[string, string]> = ctx.m.kind === "handbook" ? [["Version", c.revision], ["Effective date", c.effectiveDate], ["Approved by", c.approvedBy]] : [
     ["Document No.", c.docNo], ["Revision", c.revision],
@@ -1530,12 +1530,16 @@ function controlGrid(ctx: Ctx, width: number, indent?: number): TableItem {
   const line = { color: ctx.pal.line, size: RULE };
   const borders = { top: line, bottom: line, left: line, right: line };
   // Optional fields can leave the last row short; empty cells keep the grid square.
-  const rowCount = Math.ceil(pairs.length / 4);
+  const columns = photo ? Math.min(4, pairs.length) : 4;
+  const rowCount = Math.ceil(pairs.length / columns);
   return table(ctx, {
-    widths: Array(4).fill(width / 4),
+    widths: Array(columns).fill(width / columns),
     indent,
     rows: Array.from({ length: rowCount }, (_, row) => ({
-      cells: Array.from({ length: 4 }, (_, column) => pairs[row * 4 + column]).map((pair) => ({ inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [] })),
+      cells: Array.from({ length: photo ? Math.min(columns, pairs.length - row * columns) : columns }, (_, column) => pairs[row * columns + column]).map((pair, column) => ({
+        span: photo && row === rowCount - 1 && column === pairs.length % columns - 1 ? columns - pairs.length % columns + 1 : undefined,
+        inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [],
+      })),
     })),
   });
 }
@@ -1579,6 +1583,48 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
   const inner = w - 2 * padX;
   const coverImage = m.cover.image ? ctx.images.get(m.cover.image) : undefined;
   const heading = (text: string, color: string, size = ctx.sz.coverTitle) => par(ctx, [txt(ctx, text, { font: "heading", size, bold: true, color })]);
+  if (m.cover.photo && coverImage) {
+    const p = d.photoLayout;
+    const sx = w / 210;
+    const sy = h / 297;
+    const slot = p.image;
+    const targetWidth = 1600;
+    const targetHeight = Math.round(targetWidth * slot.height * sy / (slot.width * sx));
+    const data = await sharp(coverImage.data).resize({ width: targetWidth, height: targetHeight, fit: "contain", background: ctx.pal.soft }).png().toBuffer();
+    const pictures: CoverParts["pictures"] = [
+      { image: await solidPng(p.variant === "panel-photo" ? ctx.pal.soft : "#FFFFFF"), x: 0, y: 0, width: w, height: h },
+      { image: { data, width: targetWidth, height: targetHeight }, x: slot.x * sx, y: slot.y * sy, width: slot.width * sx, height: slot.height * sy },
+    ];
+    if (p.variant === "photo-strip") pictures.push({ image: await solidPng(ctx.pal.primary), x: 0, y: 0, width: 14 * sx, height: h });
+    const items: FlowItem[] = [];
+    let cursor = 0;
+    const at = (y: number, item: TableItem) => {
+      items.push(v(y - cursor), { ...item, above: 0, below: 0 });
+      cursor = y + item.height;
+    };
+    const logo = m.company.logo ? ctx.images.get(m.company.logo) : undefined;
+    if (logo) {
+      const height = Math.min(18 * sy, 48 * sx * logo.height / logo.width);
+      at(20 * sy, table(ctx, { widths: [48 * sx + 12], indent: 24 * sx, rows: [{ height: 18 * sy + 12, exact: true, cells: [{ fill: "#FFFFFF", vAlign: "center", inset: inset(6, 6), items: [{ ...par(ctx, [{ image: logo, heightPt: height }], { blockLike: true }), align: "center" }] }] }] }));
+    }
+    if (p.variant === "pillar-photo") {
+      const labels = m.kind === "handbook" ? ["People", "Workplace", "Conduct"] : ["Environmental", "Social", "Governance"];
+      at(122 * sy, table(ctx, { widths: [w / 3, w / 3, w / 3], rows: [{ height: 17 * sy, exact: true, cells: (["E", "S", "G"] as const).map((key, index) => ({ fill: ctx.pal.pillars[key], inset: inset(4 * MM, 4 * MM), items: [par(ctx, [txt(ctx, labels[index], { size: 10, color: "#FFFFFF" })])] })) }] }));
+    }
+    const color = p.dark ? ctx.pal.onPrimary : ctx.pal.primary;
+    const subtitle = m.cover.photoSubtitle ?? m.cover.subtitle;
+    const title = table(ctx, { widths: [170 * sx], indent: 20 * sx, rows: [{ height: p.titleHeight * sy, exact: true, cells: [{ fill: p.dark ? ctx.pal.primaryDark : "#FFFFFF", inset: inset(8 * MM, 7 * MM), items: [
+      par(ctx, [txt(ctx, m.kind === "handbook" ? "Employee handbook" : "Standard operating procedures", { size: 12, color: p.dark ? color : ctx.pal.muted })]),
+      v(5), heading(m.cover.title, color, Math.max(32, ctx.sz.coverTitle)), v(5),
+      ...(subtitle !== m.cover.title ? [par(ctx, [txt(ctx, subtitle, { size: 13, color: p.dark ? color : ctx.pal.muted })])] : []),
+    ] }] }] });
+    at(p.titleY * sy, title);
+    const controls = controlGrid(ctx, 170 * sx, 20 * sx, true);
+    // A white plate keeps control details readable over full-bleed photography.
+    pictures.push({ image: await solidPng("#FFFFFF"), x: 20 * sx, y: p.detailsY * sy, width: 170 * sx, height: controls.height });
+    at(p.detailsY * sy, controls);
+    return { margins: { top: 0, bottom: 0, left: 0, right: 0 }, items, pictures };
+  }
   if (m.cover.image || d.cover === "image-banner") {
     const imageHeight = h * COVER_BAND;
     const pictures = [coverImage

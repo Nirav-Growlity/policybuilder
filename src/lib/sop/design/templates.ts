@@ -60,6 +60,8 @@ export type SopDesign = {
   palette: SopPalette;
   page: { marginTopMm: number; marginBottomMm: number; marginXMm: number; headerGapMm: number };
   cover: "control-sheet" | "pillar-bands" | "card-grid" | "register-plate" | "image-banner";
+  /** Optional so additional templates inherit the inset photo layout. */
+  photoCover?: "inset-photo" | "pillar-photo" | "panel-photo" | "photo-strip" | "full-photo";
   contents: "dotted-leaders" | "pillar-index" | "numbered-cards" | "register-columns" | "banner-index";
   runningHeader: "control-table" | "pillar-rule" | "code-strip" | "register-line" | "banner-rule";
   runningFooter: "prepared-approved" | "outer-folio" | "centered-folio" | "register-folio";
@@ -90,6 +92,7 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
     },
     page: { marginTopMm: 34, marginBottomMm: 24, marginXMm: 20, headerGapMm: 6 },
     cover: "control-sheet",
+    photoCover: "inset-photo",
     contents: "dotted-leaders",
     runningHeader: "control-table",
     runningFooter: "prepared-approved",
@@ -116,6 +119,7 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
     },
     page: { marginTopMm: 26, marginBottomMm: 22, marginXMm: 20, headerGapMm: 5 },
     cover: "pillar-bands",
+    photoCover: "pillar-photo",
     contents: "pillar-index",
     runningHeader: "pillar-rule",
     runningFooter: "outer-folio",
@@ -142,6 +146,7 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
     },
     page: { marginTopMm: 26, marginBottomMm: 22, marginXMm: 19, headerGapMm: 5 },
     cover: "card-grid",
+    photoCover: "panel-photo",
     contents: "numbered-cards",
     runningHeader: "code-strip",
     runningFooter: "centered-folio",
@@ -168,6 +173,7 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
     },
     page: { marginTopMm: 22, marginBottomMm: 18, marginXMm: 16, headerGapMm: 4 },
     cover: "register-plate",
+    photoCover: "photo-strip",
     contents: "register-columns",
     runningHeader: "register-line",
     runningFooter: "register-folio",
@@ -194,6 +200,7 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
     },
     page: { marginTopMm: 26, marginBottomMm: 22, marginXMm: 20, headerGapMm: 5 },
     cover: "image-banner",
+    photoCover: "full-photo",
     contents: "banner-index",
     runningHeader: "banner-rule",
     runningFooter: "outer-folio",

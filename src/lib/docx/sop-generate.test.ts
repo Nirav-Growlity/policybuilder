@@ -11,6 +11,38 @@ import { buildSampleRenderModel } from "../sop/sample-render-model";
 import { compileSopManual, type ManualAsset } from "../typst/compile";
 import { sopFontFiles } from "../typst/fonts";
 import { bookmarkName, generateSopDocx, smartQuotes, sopManualAnchors, sopPagesFromPdf } from "./sop-generate";
+import { buildSampleHandbook } from "../handbook/sample-handbook";
+import { buildHandbookRenderModel } from "../handbook/render-model";
+
+test("photo covers retain all control fields without padded cells in either document kind", async () => {
+  const content = await sharp({ create: { width: 300, height: 200, channels: 3, background: "#597369" } }).png().toBuffer();
+  const assets = [{ path: "assets/photo.png", content }];
+  for (const design of SOP_DESIGNS) {
+    for (const kind of ["sop", "handbook"] as const) {
+      const model = kind === "sop" ? buildSampleRenderModel({ templateId: design.id }) : buildHandbookRenderModel({ ...buildSampleHandbook(), theme: design.id });
+      model.cover.image = "/assets/photo.png";
+      model.cover.photo = true;
+      model.cover.photoSubtitle = model.company.name;
+      const { document } = await open(await generateSopDocx(model, assets));
+      const cover = document.slice(0, document.indexOf("<w:sectPr"));
+      const field = cover.indexOf(kind === "sop" ? "DOCUMENT NO." : "VERSION");
+      assert.ok(field > 0);
+      const grid = cover.slice(cover.lastIndexOf("<w:tbl>", field), cover.indexOf("</w:tbl>", field));
+      const cells = (grid.match(/<w:tc>/g) ?? []).length;
+      if (kind === "handbook") {
+        assert.equal(cells, 3, `${design.id}: exactly three handbook fields`);
+        assert.equal((grid.match(/<w:gridCol /g) ?? []).length, 3);
+        assert.doesNotMatch(cover, /DOCUMENT NO\./);
+      } else {
+        assert.equal(cells, 11, `${design.id}: all eleven fields, no empty twelfth cell`);
+        assert.match(grid, /<w:gridSpan w:val="2"/);
+      }
+      assert.match(cover, /w:sz w:val="6[48]"/);
+      assert.match(cover, /relativeFrom="page"/);
+      assert.ok(cover.includes(kind === "handbook" ? "Employee handbook" : "Standard operating procedures"));
+    }
+  }
+});
 
 async function sample(templateId: string) {
   const design = SOP_DESIGNS.find((entry) => entry.id === templateId)!;

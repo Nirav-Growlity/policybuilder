@@ -3,6 +3,53 @@ import test from "node:test";
 import { acceptsAICoverArtworkInspection, buildAICoverArtworkContext, buildAICoverArtworkValidationPrompt, buildAICoverContext, buildAICoverDesignPrompt, buildAICoverImagePrompt, buildAICoverLayoutPrompt, createAICoverComposition, fallbackAICoverDesign, fallbackAICoverLayout, normalizeAICoverDesign, normalizeAICoverLayout } from "./cover";
 import { getPolicyDocumentTheme } from "../document-themes";
 import { makeSamplePolicy } from "../store";
+import { buildSopCoverArtworkContext, buildHandbookCoverArtworkContext, buildSopCoverImagePrompt } from "./sop-cover";
+import { createEmptyManual } from "../sop/initial-manual";
+import { buildSampleHandbook } from "../handbook/sample-handbook";
+import { SOP_DESIGNS } from "../sop/design/templates";
+import { photoCoverImageSize, photoCoverLayout } from "../sop/design/photo-cover";
+
+test("manual scene prompts carry template safe areas without asking the image model to design the page", () => {
+  const manual = createEmptyManual();
+  const handbook = buildSampleHandbook();
+  for (const design of SOP_DESIGNS) {
+    manual.theme = design.id;
+    handbook.theme = design.id;
+    for (const context of [buildSopCoverArtworkContext(manual), buildHandbookCoverArtworkContext(handbook)]) {
+      const brief = JSON.parse(context);
+      assert.equal(brief.photoComposition.variant, design.photoCover);
+      assert.equal(brief.photoComposition.imageSize, photoCoverImageSize(design));
+      assert.ok(brief.photoComposition.calmSpace);
+      assert.equal(brief.template, undefined);
+      const prompt = buildSopCoverImagePrompt(context);
+      assert.match(prompt, /photographic or editorial-illustration scene/);
+      assert.match(prompt, /natural light/);
+      assert.match(prompt, /colour grading only/);
+      assert.match(prompt, /waves, swooshes, bands, ribbons, panels, frames, icon rows, infographic elements, split layouts and collages/);
+      assert.doesNotMatch(prompt, /decorative motifs|template look|centre.*crop/i);
+    }
+    const { width, height } = photoCoverLayout(design).image;
+    const [iw, ih] = photoCoverImageSize(design).split("x").map(Number);
+    assert.ok(Math.abs(iw / ih - width / height) < 0.04);
+  }
+  assert.equal(photoCoverLayout({}).variant, "inset-photo");
+});
+
+test("scene inspection fails closed for missing flags, overlays and cut subjects", () => {
+  const clean = { hasText: false, hasDocumentElements: false, hasBorderOrFrame: false, hasGraphicOverlays: false, hasCroppedSubjects: false };
+  assert.equal(acceptsAICoverArtworkInspection(JSON.parse(JSON.stringify(clean)), true), true);
+  for (const flag of Object.keys(clean)) {
+    assert.equal(acceptsAICoverArtworkInspection({ ...clean, [flag]: true }, true), false);
+    const missing = { ...clean } as Record<string, boolean>;
+    delete missing[flag];
+    assert.equal(acceptsAICoverArtworkInspection(missing, true), false);
+  }
+  for (const malformed of [null, "", [], true, { acceptable: true }]) assert.equal(acceptsAICoverArtworkInspection(malformed, true), false);
+  const prompt = buildAICoverArtworkValidationPrompt("upper right safe area");
+  assert.match(prompt.system, /waves.*collages/);
+  assert.match(prompt.user, /hasCroppedSubjects/);
+  assert.match(prompt.user, /upper right safe area/);
+});
 
 test("AI cover layout falls back to a complete non-overlapping A4 arrangement", () => {
   const layout = normalizeAICoverLayout({ railSide: "right", elements: [{ role: "policyTitle", x: 0, y: 0, width: 500, height: 500 }] });

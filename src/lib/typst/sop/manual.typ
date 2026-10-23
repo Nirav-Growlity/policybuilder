@@ -437,12 +437,20 @@
 }
 
 // Optional fields can leave the last row short; empty cells keep the grid square.
-#let control-grid(columns: 4) = {
+#let control-grid(columns: 4, photo: false) = {
   let rows = control-rows()
-  let padded = rows + range(calc.rem(columns - calc.rem(rows.len(), columns), columns)).map(_ => ("", ""))
+  if photo {
+    columns = calc.min(4, rows.len())
+  }
+  let padded = if photo { rows } else { rows + range(calc.rem(columns - calc.rem(rows.len(), columns), columns)).map(_ => ("", "")) }
   tight(sz.small * 1pt, table(
     columns: range(columns).map(_ => 1fr), stroke: (paint: line-color, thickness: rule), inset: (x: 6pt, y: 5pt),
-    ..padded.map(((k, v)) => if k == "" { [] } else { meta-pair(k, v) }),
+    ..padded.enumerate().map(((i, pair)) => {
+      let (k, v) = pair
+      if k == "" { [] } else if photo and i == rows.len() - 1 and calc.rem(rows.len(), columns) != 0 {
+        table.cell(colspan: columns - calc.rem(rows.len(), columns) + 1, meta-pair(k, v))
+      } else { meta-pair(k, v) }
+    }),
   ))
 }
 
@@ -451,7 +459,37 @@
   let h = m.page.heightMm * 1mm
   set page(header: none, footer: none, margin: 0pt)
   let pad-x = d.page.marginXMm * 1mm
-  if m.cover.image != none or cover-style == "image-banner" {
+  if m.cover.at("photo", default: false) and m.cover.image != none {
+    let p = d.photoLayout
+    let sx = w / 210
+    let sy = h / 297
+    let ix = p.image.x * sx
+    let iy = p.image.y * sy
+    let iw = p.image.width * sx
+    let ih = p.image.height * sy
+    place(top + left, rect(width: w, height: h, fill: if p.variant == "panel-photo" { soft } else { white }))
+    place(top + left, dx: ix, dy: iy, block(width: iw, height: ih, fill: soft, align(center + horizon, image(m.cover.image, width: iw, height: ih, fit: "contain"))))
+    if p.variant == "photo-strip" { place(top + left, rect(width: 14 * sx, height: h, fill: primary)) }
+    if m.company.logo != none {
+      place(top + left, dx: 24 * sx, dy: 20 * sy, box(fill: white, inset: 6pt, image(m.company.logo, width: 48 * sx, height: 18 * sy, fit: "contain")))
+    }
+    if p.variant == "pillar-photo" {
+      place(top + left, dy: 122 * sy, grid(columns: (w / 3, w / 3, w / 3),
+        ..(("E", "Environmental"), ("S", "Social"), ("G", "Governance")).map(((k, label)) =>
+          block(width: w / 3, height: 17 * sy, fill: col(pal.pillars.at(k)), inset: 4mm,
+            txt(size: 10pt, fill: white, if m.kind == "handbook" { ("People", "Workplace", "Conduct").at(if k == "E" { 0 } else if k == "S" { 1 } else { 2 }) } else { label })))))
+    }
+    place(top + left, dx: 20 * sx, dy: p.titleY * sy, block(width: 170 * sx, height: p.titleHeight * sy,
+      fill: if p.dark { primary-dark } else { white }, inset: (x: 8mm, y: 7mm), {
+        txt(size: 12pt, fill: if p.dark { on-primary } else { muted }, if m.kind == "handbook" { "Employee handbook" } else { "Standard operating procedures" })
+        v(5pt)
+        txt(font: head-font, size: calc.max(32, sz.coverTitle) * 1pt, weight: "bold", fill: if p.dark { on-primary } else { primary }, m.cover.title)
+        v(5pt)
+        let subtitle = m.cover.at("photoSubtitle", default: m.cover.subtitle)
+        if subtitle != m.cover.title { txt(size: 13pt, fill: if p.dark { on-primary } else { muted }, subtitle) }
+      }))
+    place(top + left, dx: 20 * sx, dy: p.detailsY * sy, block(width: 170 * sx, fill: white, control-grid(photo: true)))
+  } else if m.cover.image != none or cover-style == "image-banner" {
     // Image (or a solid primary plate) over the top 58%, title banner below.
     if m.cover.image != none { place(top + left, image(m.cover.image, width: w, height: h * 0.58, fit: "cover")) }
     else { place(top + left, rect(width: w, height: h * 0.58, fill: primary)) }
