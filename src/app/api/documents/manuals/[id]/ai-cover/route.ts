@@ -4,7 +4,10 @@ import sharp from "sharp";
 import { cleanJsonText, createClaudeText, hasClaudeKey } from "@/lib/ai/claude";
 import {
   AI_COVER_IMAGE_MODEL,
-  AI_COVER_IMAGE_SIZE,
+  AI_COVER_IMAGE_MAX_ATTEMPTS,
+  acceptsAICoverArtworkInspection,
+  buildAICoverArtworkValidationPrompt,
+  buildAICoverRetryInstruction,
   buildAICoverDesignPrompt,
   buildAICoverLayoutPrompt,
   fallbackAICoverLayout,
@@ -14,6 +17,8 @@ import {
   type AICoverLayoutSuggestion,
 } from "@/lib/ai/cover";
 import { buildHandbookCoverArtworkContext, buildSopCoverArtworkContext, buildSopCoverImagePrompt, createSopCoverComposition, fallbackSopCoverDesign, sopCoverLibraryName, type CoverManual } from "@/lib/ai/sop-cover";
+import { photoCoverImageSize } from "@/lib/sop/design/photo-cover";
+import { getSopDesign } from "@/lib/sop/design/templates";
 import { parseManualOfKind } from "@/lib/documents/manual-render";
 import { createCoverAsset, createCoverTemplate } from "@/lib/cover-repository";
 import { getManual } from "@/lib/manual-repository";
@@ -103,31 +108,55 @@ export async function POST(request: Request, context: Context) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "OpenAI API key is not configured." }, { status: 503 });
 
+  if (!hasClaudeKey()) return NextResponse.json({ error: "Artwork inspection is unavailable. Please try again later." }, { status: 503 });
+
   const instruction = typeof body.instruction === "string" ? body.instruction.replace(/\s+/g, " ").trim().slice(0, 400) : "";
   const artworkContext = parsed.kind === "handbook" ? buildHandbookCoverArtworkContext(parsed.manual, instruction) : buildSopCoverArtworkContext(parsed.manual, instruction);
   try {
-    const imageResponse = await fetch("https://api.openai.com/v1/images/generations", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({
-        model: AI_COVER_IMAGE_MODEL,
-        prompt: buildSopCoverImagePrompt(artworkContext, parsed.kind === "handbook" ? "employee handbook" : "SOP manual"),
-        n: 1,
-        size: AI_COVER_IMAGE_SIZE,
-        quality: "high",
-        background: "auto",
-        output_format: "png",
-      }),
-      signal: request.signal,
-    });
-    if (!imageResponse.ok) throw await responseError(imageResponse, "The AI cover artwork could not be generated.");
-    const imageData = await imageResponse.json() as { data?: Array<{ b64_json?: unknown; revised_prompt?: unknown }> };
-    const encoded = imageData.data?.[0]?.b64_json;
-    if (typeof encoded !== "string" || !encoded) throw new Error("The image service returned no artwork.");
-    const png = Buffer.from(encoded, "base64");
-    const metadata = await sharp(png).metadata();
-    if (metadata.format !== "png" || !metadata.width || !metadata.height || metadata.width >= metadata.height) {
-      throw new Error("The image service returned artwork with invalid A4 portrait dimensions.");
+    let png!: Buffer;
+    let metadata!: Awaited<ReturnType<ReturnType<typeof sharp>["metadata"]>>;
+    let revisedPrompt: string | undefined;
+    let retryReason = "";
+    const size = photoCoverImageSize(getSopDesign(manual.theme));
+    for (let attempt = 0; attempt < AI_COVER_IMAGE_MAX_ATTEMPTS; attempt++) {
+      const imageResponse = await fetch("https://api.openai.com/v1/images/generations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify({
+          model: AI_COVER_IMAGE_MODEL,
+          prompt: buildSopCoverImagePrompt(artworkContext, parsed.kind === "handbook" ? "employee handbook" : "SOP manual") + (retryReason ? `\n${retryReason}` : ""),
+          n: 1,
+          size,
+          quality: "high",
+          background: "auto",
+          output_format: "png",
+        }),
+        signal: request.signal,
+      });
+      if (!imageResponse.ok) throw await responseError(imageResponse, "The AI cover artwork could not be generated.");
+      const imageData = await imageResponse.json() as { data?: Array<{ b64_json?: unknown; revised_prompt?: unknown }> };
+      const encoded = imageData.data?.[0]?.b64_json;
+      if (typeof encoded !== "string" || !encoded) throw new Error("The image service returned no artwork.");
+      png = Buffer.from(encoded, "base64");
+      metadata = await sharp(png).metadata();
+      if (metadata.format !== "png" || !metadata.width || !metadata.height) {
+        throw new Error("The image service returned artwork with invalid dimensions.");
+      }
+
+      const inspectionPrompt = buildAICoverArtworkValidationPrompt(artworkContext);
+      let verdict: unknown = null;
+      try {
+        const inspection = await createClaudeText({ system: inspectionPrompt.system, user: inspectionPrompt.user, images: [await previewForAnalysis(png)], maxTokens: 800, effort: "low" });
+        verdict = JSON.parse(cleanJsonText(inspection.text));
+      } catch (error) {
+        console.warn("SOP cover inspection attempt failed", error instanceof Error ? error.message : error);
+      }
+      if (acceptsAICoverArtworkInspection(verdict, true)) {
+        revisedPrompt = typeof imageData.data?.[0]?.revised_prompt === "string" ? imageData.data[0].revised_prompt : undefined;
+        break;
+      }
+      retryReason = buildAICoverRetryInstruction(verdict);
+      if (attempt === AI_COVER_IMAGE_MAX_ATTEMPTS - 1) throw new Error("The artwork did not pass the cover quality check. Please try again.");
     }
 
     // The layout prompt also names the exact overlay text, so give it the manual title and company.
@@ -145,7 +174,6 @@ export async function POST(request: Request, context: Context) {
       // The cover still applies; only the library copy is missing.
       console.warn("SOP cover could not be added to the library", error instanceof Error ? error.message : error);
     }
-    const revisedPrompt = typeof imageData.data?.[0]?.revised_prompt === "string" ? imageData.data[0].revised_prompt : undefined;
     const cover: SopCover = { variant: "ai", composition, ...(libraryTemplateId ? { libraryTemplateId } : {}) };
     return NextResponse.json({ cover, composition, libraryTemplateId, layout, revisedPrompt });
   } catch (error) {

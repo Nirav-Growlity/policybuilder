@@ -5,6 +5,7 @@
  * outputs show the same content in the same order with the same numbers.
  */
 import type { SopDesign, SopPalette } from "./design/templates";
+import type { PhotoCoverLayout } from "./design/photo-cover";
 
 export type RenderBlock =
   | { type: "p"; text: string }
@@ -97,6 +98,7 @@ export type ResolvedSopDesign = Omit<SopDesign, "palette" | "fontPair"> & {
   palette: SopPalette;
   fonts: { heading: string; body: string };
   showSopHeaderCard: boolean;
+  photoLayout: PhotoCoverLayout;
 };
 
 export type SopRenderModel = {
@@ -127,6 +129,9 @@ export type SopRenderModel = {
     lastReviewDate: string;
   };
   cover: {
+    /** True only for supplied artwork, never the built-in Modern Banner art. */
+    photo?: boolean;
+    photoSubtitle?: string;
     /** Path of a full-bleed cover image inside the render workspace, or null for the template cover. */
     image: string | null;
     eyebrow: string;

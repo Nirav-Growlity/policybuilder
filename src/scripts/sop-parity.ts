@@ -6,11 +6,16 @@
 // PDFs and reports, per page, how far Word's baselines sit from Typst's.
 //
 // Run: npx tsx scripts/sop-parity.ts [templateId|all] [pages=all|1,2,5] [--no-png]
+// --handbook uses the handbook fixture; --baseline uses the original renderers.
+// --photo exercises legacy portrait artwork in every template when available,
+// falling back to .scratch/photo-scene.jpg. These are stock fixtures, never AI calls.
 // Needs Windows with Microsoft Word and Chrome or Edge installed.
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import sharp from "sharp";
+import { preparePhotoCoverImage } from "../lib/sop/photo-cover-image";
 import { NodeCompiler } from "@myriaddreamin/typst-ts-node-compiler";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { getDocument, type PDFDocumentProxy } from "pdfjs-dist/legacy/build/pdf.mjs";
@@ -20,13 +25,18 @@ import { SOP_DESIGNS } from "../lib/sop/design/templates";
 import { buildSampleRenderModel } from "../lib/sop/sample-render-model";
 import { compileSopManual, type ManualAsset } from "../lib/typst/compile";
 import { sopFontFiles } from "../lib/typst/fonts";
+import { buildSampleHandbook } from "../lib/handbook/sample-handbook";
+import { buildHandbookRenderModel } from "../lib/handbook/render-model";
 
 const root = resolve(".");
 const args = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
 const only = args[0] && args[0] !== "all" ? args[0] : null;
 const pageFilter = args[1] && args[1] !== "all" ? new Set(args[1].split(",").map(Number)) : null;
 const writePngs = !process.argv.includes("--no-png");
-const outRoot = join(root, ".scratch", "sop-parity");
+const photo = process.argv.includes("--photo");
+const handbook = process.argv.includes("--handbook");
+const baseline = process.argv.includes("--baseline");
+const outRoot = join(root, ".scratch", `sop-parity${handbook ? "-handbook" : ""}${photo ? "-photo" : ""}${baseline ? "-original" : ""}`);
 
 type TextItem = { str: string; x: number; y: number };
 
@@ -131,7 +141,13 @@ async function main() {
   mkdirSync(outRoot, { recursive: true });
   const workspace = join(root, ".typst-workspace");
   const compiler = NodeCompiler.create({ workspace, fontArgs: [{ fontPaths: sopFontFiles(root) }] });
-  const template = readFileSync(join(root, "lib", "typst", "sop", "manual.typ"), "utf8");
+  const template = baseline ? execFileSync("git", ["show", "5b0714c:src/lib/typst/sop/manual.typ"], { encoding: "utf8" }) : readFileSync(join(root, "lib", "typst", "sop", "manual.typ"), "utf8");
+  let docxGenerator = generateSopDocx;
+  if (baseline) {
+    const original = join(root, "lib", "docx", ".parity-original.ts");
+    writeFileSync(original, execFileSync("git", ["show", "5b0714c:src/lib/docx/sop-generate.ts"]));
+    docxGenerator = (await import(pathToFileURL(original).href)).generateSopDocx;
+  }
   const designs = SOP_DESIGNS.filter((design) => !only || design.id === only);
   const jobs: Array<{ id: string; dir: string; typstPdf: string; docx: string; pdf: string; typstPages: number }> = [];
 
@@ -142,7 +158,18 @@ async function main() {
       coverImage = "/assets/cover-art.png";
       assets.push({ path: "assets/cover-art.png", content: await sharp(Buffer.from(coverArtSvg(design.palette))).png().toBuffer() });
     }
-    const model = buildSampleRenderModel({ templateId: design.id, coverImage });
+    const model = handbook ? buildHandbookRenderModel({ ...buildSampleHandbook(), theme: design.id }, { coverImagePath: coverImage }) : buildSampleRenderModel({ templateId: design.id, coverImage });
+    if (photo) {
+      model.cover.image = "/assets/scene.png";
+      model.cover.photo = true;
+      model.cover.photoSubtitle = model.company.name;
+      const portrait = join(root, ".scratch", "photo-scene-portrait.jpg");
+      const source = readFileSync(existsSync(portrait) ? portrait : join(root, ".scratch", "photo-scene.jpg"));
+      const prepared = await preparePhotoCoverImage({ content: source, mime: "image/jpeg" }, model.design.photoLayout.image);
+      assets.push({ path: "assets/scene.png", content: prepared.content });
+      model.company.logo = "/assets/logo.png";
+      assets.push({ path: "assets/logo.png", content: await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="150"><rect width="400" height="150" fill="white"/><path d="M10 115V35h20l30 45 30-45h20v80H90V70L60 110 30 70v45z" fill="#183A5A"/><text x="125" y="90" font-family="Arial" font-size="40" fill="#183A5A">Meridian</text></svg>')).png().toBuffer() });
+    }
     const dir = join(outRoot, design.id);
     rmSync(dir, { recursive: true, force: true });
     mkdirSync(dir, { recursive: true });
@@ -151,7 +178,7 @@ async function main() {
     writeFileSync(typstPdf, compiled.pdf);
     const pages = await sopPagesFromPdf(compiled.pdf, model);
     const docx = join(dir, "manual.docx");
-    writeFileSync(docx, await generateSopDocx(model, assets, { pages }));
+    writeFileSync(docx, await docxGenerator(model, assets, { pages }));
     jobs.push({ id: design.id, dir, typstPdf, docx, pdf: join(dir, "word.pdf"), typstPages: compiled.pageCount });
   }
 
@@ -196,6 +223,7 @@ async function main() {
   writeFileSync(join(outRoot, "summary.txt"), summary.join("\n") + "\n");
   console.log("\n" + summary.join("\n"));
   await browser?.close();
+  if (baseline) rmSync(join(root, "lib", "docx", ".parity-original.ts"));
 }
 
 main().catch((error) => {

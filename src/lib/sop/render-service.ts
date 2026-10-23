@@ -1,4 +1,5 @@
 import sharp from "sharp";
+import { preparePhotoCoverImage } from "./photo-cover-image";
 import { getCoverAsset } from "../cover-repository";
 import { coverAssetIdFromReference } from "../cover-composition";
 import { renderSopManual, type CompiledManual, type ManualAsset } from "../typst/engine";
@@ -65,7 +66,15 @@ export async function prepareManualRender(
 
   const model = build(logoPath);
   if (cover) {
-    const image = await toCoverBand(cover, model.page, model.design.palette.soft);
+    // Normalize once to the selected template slot; PDF and Word share these pixels.
+    const slot = model.design.photoLayout.image;
+    const image = manual.cover.variant === "ai"
+      ? await preparePhotoCoverImage(cover, {
+        width: slot.width * model.page.widthMm / 210,
+        height: slot.height * model.page.heightMm / 297,
+      }, manual.cover.composition?.background.focalPoint)
+      : await toCoverBand(cover, model.page, model.design.palette.soft);
+    model.cover.photo = manual.cover.variant === "ai";
     model.cover.image = `/assets/cover.${image.ext}`;
     assets.push({ path: `assets/cover.${image.ext}`, content: image.content });
   } else if (!previewOnly && getSopDesign(manual.theme).cover === "image-banner") {
