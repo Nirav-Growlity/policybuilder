@@ -51,6 +51,8 @@ export const outputFileTracingIncludes: NextConfig["outputFileTracingIncludes"] 
   "/api/documents/manuals/*/pdf": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
   "/api/documents/manuals/*/preview": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
   "/api/documents/manuals/*/docx": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
+  // Handbook writing reads its reference chapters from disk (lib/ai/handbook-template-context.ts).
+  "/api/documents/handbook/ai": ["./data/seed-handbooks/**/*"],
 };
 
 const sopManualExcludes = [TYPST_POLICY_FONTS, ...BROWSER_FONTS, ...nonSopWordFonts(), PRINT_SDG_ICONS, ...BROWSER_ONLY_PUBLIC];

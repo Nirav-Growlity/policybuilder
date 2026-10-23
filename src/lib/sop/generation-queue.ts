@@ -10,25 +10,55 @@
  */
 import type { SopAiRequest, SopAiResult, SopGenerationState } from "./ai-contract";
 import { partialSectionsFromGenerated } from "./apply-ai-result";
-import type { SopManual } from "./types";
+import type { SopManual, SopSection } from "./types";
 
 export const DEFAULT_SOP_CONCURRENCY = 5;
 /** One automatic retry per SOP. */
 const MAX_ATTEMPTS = 2;
 
-export type SopStreamFn = (
-  request: SopAiRequest,
+export type SopStreamFn<Request = SopAiRequest, Result = SopAiResult> = (
+  request: Request,
   options: { signal: AbortSignal; onPartial: (partial: unknown) => void },
-) => Promise<SopAiResult>;
+) => Promise<Result>;
 
-export type ManualGenerationOptions = {
-  getManual: () => SopManual;
+/**
+ * How the queue talks to one document kind: the request for one item and for
+ * the front matter, how to recognise their results, and how to read the
+ * sections out of a partial answer. Items are SOPs by default; the employee
+ * handbook passes chapters (lib/handbook/ai-client.ts). States keep the field
+ * name `sopId` for either kind.
+ */
+export type GenerationAdapter<Manual, Request, Result, ItemResult extends Result, FrontResult extends Result> = {
+  itemRequest: (manual: Manual, itemId: string) => Request;
+  frontMatterRequest: (manual: Manual) => Request;
+  isItemResult: (result: Result) => result is ItemResult;
+  isFrontMatterResult: (result: Result) => result is FrontResult;
+  partialSections: (partial: unknown, manual: Manual, itemId: string) => SopSection[];
+};
+
+type SopItemResult = Extract<SopAiResult, { type: "sop" }>;
+type SopFrontResult = Extract<SopAiResult, { type: "front-matter" }>;
+
+export const SOP_GENERATION_ADAPTER: GenerationAdapter<SopManual, SopAiRequest, SopAiResult, SopItemResult, SopFrontResult> = {
+  itemRequest: (manual, sopId) => ({ type: "sop", manual, sopId }),
+  frontMatterRequest: (manual) => ({ type: "front-matter", manual }),
+  isItemResult: (result): result is SopItemResult => result.type === "sop",
+  isFrontMatterResult: (result): result is SopFrontResult => result.type === "front-matter",
+  partialSections: (partial, manual, sopId) => {
+    // Live sections show the user's headings, as the finished ones will.
+    const titles = Object.fromEntries((manual.sops.find((sop) => sop.id === sopId)?.sections ?? []).map((section) => [section.kind, section.title]));
+    return partialSectionsFromGenerated(partial, titles);
+  },
+};
+
+export type ManualGenerationOptions<Manual = SopManual, ItemResult = SopItemResult, FrontResult = SopFrontResult> = {
+  getManual: () => Manual;
   sopIds: string[];
   includeFrontMatter: boolean;
   concurrency?: number;
   onState: (state: SopGenerationState) => void;
-  onSopDone: (sopId: string, result: Extract<SopAiResult, { type: "sop" }>) => void;
-  onFrontMatterDone?: (result: Extract<SopAiResult, { type: "front-matter" }>) => void;
+  onSopDone: (sopId: string, result: ItemResult) => void;
+  onFrontMatterDone?: (result: FrontResult) => void;
   /** Called when the front matter failed twice or was cancelled. */
   onFrontMatterError?: (message: string) => void;
 };
@@ -53,15 +83,24 @@ function messageOf(error: unknown) {
   return error instanceof Error && error.message ? error.message : "Generation failed.";
 }
 
-export function createGenerationQueue(
-  options: ManualGenerationOptions & {
-    stream: SopStreamFn;
+export function createGenerationQueue<
+  Manual = SopManual,
+  Request = SopAiRequest,
+  Result extends { type: string } = SopAiResult,
+  ItemResult extends Result = Result & SopItemResult,
+  FrontResult extends Result = Result & SopFrontResult,
+>(
+  options: ManualGenerationOptions<Manual, ItemResult, FrontResult> & {
+    stream: SopStreamFn<Request, Result>;
+    /** Defaults to SOPs. */
+    adapter?: GenerationAdapter<Manual, Request, Result, ItemResult, FrontResult>;
     /** How long the first SOP runs alone before the rest start anyway. */
     warmupMs?: number;
     /** Minimum time between partial-section updates for one SOP. */
     partialIntervalMs?: number;
   },
 ): GenerationQueueHandle {
+  const adapter = options.adapter ?? (SOP_GENERATION_ADAPTER as unknown as GenerationAdapter<Manual, Request, Result, ItemResult, FrontResult>);
   const limit = Math.max(1, Math.floor(options.concurrency ?? DEFAULT_SOP_CONCURRENCY));
   const partialInterval = options.partialIntervalMs ?? 120;
   const jobs = new Map<string, Job>();
@@ -102,11 +141,9 @@ export function createGenerationQueue(
     if (!gateOpen && !gateTimer) gateTimer = setTimeout(openGate, options.warmupMs ?? 2_500);
     let lastPartial = 0;
     const manual = options.getManual();
-    // Live sections show the user's headings, as the finished ones will.
-    const titles = Object.fromEntries((manual.sops.find((sop) => sop.id === job.sopId)?.sections ?? []).map((section) => [section.kind, section.title]));
     try {
       const result = await options.stream(
-        { type: "sop", manual, sopId: job.sopId },
+        adapter.itemRequest(manual, job.sopId),
         {
           signal: controller.signal,
           onPartial: (partial) => {
@@ -114,12 +151,12 @@ export function createGenerationQueue(
             const now = Date.now();
             if (controller.signal.aborted || now - lastPartial < partialInterval) return;
             lastPartial = now;
-            report(job, { partialSections: partialSectionsFromGenerated(partial, titles) });
+            report(job, { partialSections: adapter.partialSections(partial, manual, job.sopId) });
           },
         },
       );
       if (controller.signal.aborted) return;
-      if (result.type !== "sop") throw new Error("Unexpected result type.");
+      if (!adapter.isItemResult(result)) throw new Error("Unexpected result type.");
       job.status = "done";
       report(job);
       // Applying the SOP is the caller's job; if it throws, the AI call must not be retried.
@@ -150,11 +187,11 @@ export function createGenerationQueue(
       state.attempts += 1;
       try {
         const result = await options.stream(
-          { type: "front-matter", manual: options.getManual() },
+          adapter.frontMatterRequest(options.getManual()),
           { signal: state.controller.signal, onPartial: () => {} },
         );
         if (state.controller.signal.aborted) break;
-        if (result.type !== "front-matter") throw new Error("Unexpected result type.");
+        if (!adapter.isFrontMatterResult(result)) throw new Error("Unexpected result type.");
         options.onFrontMatterDone?.(result);
         return;
       } catch (error) {

@@ -33,7 +33,15 @@ export function sopAiUrl(orgId: number, manualId: string) {
 
 /** Streams one AI request and resolves with its final result. */
 export async function streamSopAi(request: SopAiRequest, options: StreamSopOptions): Promise<SopAiResult> {
-  const response = await fetch(sopAiUrl(options.orgId, options.manualId), {
+  return streamManualAi<SopAiResult>(sopAiUrl(options.orgId, options.manualId), request, options);
+}
+
+/**
+ * Streams one request to a Documents AI route (SOP or handbook; both answer
+ * with the same NDJSON events) and resolves with its final result.
+ */
+export async function streamManualAi<Result>(url: string, request: unknown, options: Omit<StreamSopOptions, "orgId" | "manualId">): Promise<Result> {
+  const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: NDJSON },
     body: JSON.stringify(request),
@@ -51,7 +59,7 @@ export async function streamSopAi(request: SopAiRequest, options: StreamSopOptio
   let text = "";
   let lastParse = 0;
   let parsedLength = 0;
-  let result: SopAiResult | undefined;
+  let result: Result | undefined;
 
   const emitPartial = (force: boolean) => {
     if (!options.onPartial || text.length === parsedLength) return;
@@ -65,9 +73,9 @@ export async function streamSopAi(request: SopAiRequest, options: StreamSopOptio
 
   const handle = (line: string) => {
     if (!line.trim()) return;
-    let event: SopAiEvent;
+    let event: { delta: string } | { error: string } | { done: true; result: Result };
     try {
-      event = JSON.parse(line) as SopAiEvent;
+      event = JSON.parse(line) as typeof event;
     } catch {
       return;
     }
