@@ -104,7 +104,7 @@ export async function deleteSopManual(orgId: number, id: string): Promise<void> 
 }
 
 /** Renders the edited (unsaved) manual; with `sopId` only that SOP's pages. */
-export async function fetchManualPreview(orgId: number, id: string, manual: SopManual, options: { sopId?: string; signal?: AbortSignal } = {}): Promise<{ bytes: Uint8Array; pageCount: number }> {
+export async function fetchManualPreview(orgId: number, id: string, manual: object, options: { sopId?: string; signal?: AbortSignal } = {}): Promise<{ bytes: Uint8Array; pageCount: number }> {
   const response = await fetch(manualsUrl(`/${encodeURIComponent(id)}/preview`, orgId), {
     method: "POST",
     headers: jsonHeaders,
@@ -172,7 +172,7 @@ export async function importSopDocx(orgId: number, id: string, file: File, signa
 
 export type AiCoverResult = { status: "generated"; cover: SopCover } | { status: "unavailable" };
 
-export async function generateSopAiCover(orgId: number, id: string, manual: SopManual, instruction?: string, signal?: AbortSignal): Promise<AiCoverResult> {
+export async function generateSopAiCover(orgId: number, id: string, manual: object, instruction?: string, signal?: AbortSignal): Promise<AiCoverResult> {
   const response = await fetch(manualsUrl(`/${encodeURIComponent(id)}/ai-cover`, orgId), {
     method: "POST",
     headers: jsonHeaders,

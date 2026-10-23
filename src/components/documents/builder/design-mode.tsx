@@ -13,9 +13,9 @@ import { coverAssetSrc, generateSopAiCover } from "@/lib/sop/client-api";
 import { getSopDesign } from "@/lib/sop/design/templates";
 import { useSopBuilder } from "@/lib/sop/store";
 import type { CoverLibraryItem } from "@/lib/types";
-import type { SopCover, SopGrouping, SopThemeOptions } from "@/lib/sop/types";
+import type { SopCover, SopGrouping, SopManual, SopThemeOptions } from "@/lib/sop/types";
 import { CoverChooser, SopTemplatePicker, ThemeOptionRows, type CoverChoiceState } from "../design/sop-design-controls";
-import { useSopBuilderActions } from "./builder-context";
+import { SopBuilderContext, useSopBuilderActions } from "./builder-context";
 import { SopPdfPreview } from "./sop-pdf-preview";
 import styles from "./builder.module.css";
 
@@ -27,25 +27,33 @@ const SECTIONS = [
 ] as const;
 type SectionId = (typeof SECTIONS)[number]["id"];
 
+/** Where an AI cover is read from and written to; defaults to the open SOP manual. */
+export type AiCoverTarget = { orgId: number; manualId: string; getManual: () => object | null; applyCover: (cover: SopCover) => void };
+
 /** The AI cover request the wizard leaves for the builder (`?cover=ai`), and Design's regenerate. */
-export function useAiCover() {
-  const { orgId, manualId } = useSopBuilderActions();
+export function useAiCover(target?: AiCoverTarget) {
+  const actions = React.useContext(SopBuilderContext);
   const { push } = useToast();
   const [state, setState] = React.useState<CoverChoiceState>({ status: "idle" });
+  const orgId = target?.orgId ?? actions?.orgId ?? 0;
+  const manualId = target?.manualId ?? actions?.manualId ?? "";
+  const getManual = target?.getManual;
+  const applyCover = target?.applyCover;
   const generate = React.useCallback(async () => {
-    const manual = useSopBuilder.getState().manual;
-    if (!manual) return;
+    const manual = getManual ? getManual() : useSopBuilder.getState().manual;
+    if (!manual || !orgId || !manualId) return;
     setState({ status: "busy", label: "Drawing your cover…" });
     try {
       const result = await generateSopAiCover(orgId, manualId, manual);
       if (result.status === "unavailable") { setState({ status: "unavailable" }); return; }
-      useSopBuilder.getState().setManual((current) => ({ ...current, cover: result.cover }));
+      if (applyCover) applyCover(result.cover);
+      else useSopBuilder.getState().setManual((current) => ({ ...current, cover: result.cover }));
       setState({ status: "idle" });
       push("AI cover applied.", "success");
     } catch (cause) {
       setState({ status: "error", message: cause instanceof Error ? cause.message : "Could not generate a cover." });
     }
-  }, [manualId, orgId, push]);
+  }, [applyCover, getManual, manualId, orgId, push]);
   return { state, generate };
 }
 
@@ -78,13 +86,13 @@ function CoverLibrary({ orgId, cover, onChange }: { orgId: number; cover: SopCov
   );
 }
 
-function SectionStage({ section, aiCover }: { section: SectionId; aiCover: ReturnType<typeof useAiCover> }) {
-  const manual = useSopBuilder((state) => state.manual!);
-  const setManual = useSopBuilder((state) => state.setManual);
-  const { orgId } = useSopBuilderActions();
+/** The parts of a manual Design edits; SOP manuals and handbooks both have them. */
+export type DesignableManual = Pick<SopManual, "theme" | "themeOptions" | "cover" | "company">;
+type DesignUpdater = (updater: (manual: DesignableManual) => DesignableManual) => void;
+
+function SectionStage({ section, aiCover, manual, setManual, orgId, layout }: { section: SectionId; aiCover: ReturnType<typeof useAiCover>; manual: DesignableManual; setManual: DesignUpdater; orgId: number; layout: React.ReactNode }) {
   const setOptions = (patch: Partial<SopThemeOptions>) => setManual((current) => ({ ...current, themeOptions: { ...current.themeOptions, ...patch } }));
   const setCover = (cover: SopCover) => setManual((current) => ({ ...current, cover }));
-  const design = getSopDesign(manual.theme);
   if (section === "template") {
     return (
       <>
@@ -105,13 +113,7 @@ function SectionStage({ section, aiCover }: { section: SectionId; aiCover: Retur
     return (
       <>
         <div className={studio.sectionHead}><h2 className={studio.sectionTitle}>Layout</h2></div>
-        <Group title="Group SOPs by">
-          <Segmented<SopGrouping> label="Group SOPs by" value={manual.grouping} onChange={(grouping) => setManual((current) => ({ ...current, grouping }))} options={[{ value: "pillar", label: "ESG pillar" }, { value: "department", label: "Department" }, { value: "none", label: "None" }]} />
-          <p className={studio.muted}>{manual.grouping === "pillar" ? "Environmental, Social and Governance chapters, in that order." : manual.grouping === "department" ? "One chapter per department, in outline order." : "One list of SOPs in outline order."}</p>
-        </Group>
-        <Group title="SOP pages">
-          <SwitchRow label="SOP header card" hint={design.sopOpener === "header-card" ? "Always shown by this template." : "Code, owner, version and dates in a card above each SOP."} checked={manual.themeOptions.showSopHeaderCard || design.sopOpener === "header-card"} onChange={(showSopHeaderCard) => setOptions({ showSopHeaderCard })} />
-        </Group>
+        {layout}
       </>
     );
   }
@@ -128,10 +130,62 @@ function SectionStage({ section, aiCover }: { section: SectionId; aiCover: Retur
   );
 }
 
-/** Design mode: the policy design inspector's frame with the SOP template settings, beside the whole manual. */
+/** Design's Layout panel for an SOP manual: chapter grouping and the SOP header card. */
+function SopLayoutPanel() {
+  const manual = useSopBuilder((state) => state.manual!);
+  const setManual = useSopBuilder((state) => state.setManual);
+  const setOptions = (patch: Partial<SopThemeOptions>) => setManual((current) => ({ ...current, themeOptions: { ...current.themeOptions, ...patch } }));
+  const design = getSopDesign(manual.theme);
+  return (
+    <>
+        <Group title="Group SOPs by">
+          <Segmented<SopGrouping> label="Group SOPs by" value={manual.grouping} onChange={(grouping) => setManual((current) => ({ ...current, grouping }))} options={[{ value: "pillar", label: "ESG pillar" }, { value: "department", label: "Department" }, { value: "none", label: "None" }]} />
+          <p className={studio.muted}>{manual.grouping === "pillar" ? "Environmental, Social and Governance chapters, in that order." : manual.grouping === "department" ? "One chapter per department, in outline order." : "One list of SOPs in outline order."}</p>
+        </Group>
+        <Group title="SOP pages">
+          <SwitchRow label="SOP header card" hint={design.sopOpener === "header-card" ? "Always shown by this template." : "Code, owner, version and dates in a card above each SOP."} checked={manual.themeOptions.showSopHeaderCard || design.sopOpener === "header-card"} onChange={(showSopHeaderCard) => setOptions({ showSopHeaderCard })} />
+        </Group>
+    </>
+  );
+}
+
+/** Design mode for an SOP manual: the shared studio with the SOP layout options, beside the whole manual. */
 export function DesignMode({ mobile, onClose, aiCover }: { mobile: boolean; onClose: () => void; aiCover: ReturnType<typeof useAiCover> }) {
   const manual = useSopBuilder((state) => state.manual!);
+  const setManual = useSopBuilder((state) => state.setManual);
   const { orgId, manualId } = useSopBuilderActions();
+  return (
+    <ManualDesignStudio
+      mobile={mobile}
+      onClose={onClose}
+      aiCover={aiCover}
+      orgId={orgId}
+      manual={manual}
+      setManual={setManual as unknown as DesignUpdater}
+      layout={<SopLayoutPanel />}
+      label="Manual"
+      preview={<SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} debounceMs={800} />}
+    />
+  );
+}
+
+/**
+ * Design mode: the policy design inspector's frame with template, brand,
+ * layout and cover settings, beside the whole document. Shared by SOP
+ * manuals and employee handbooks.
+ */
+export function ManualDesignStudio({ mobile, onClose, aiCover, orgId, manual, setManual, layout, preview, label }: {
+  mobile: boolean;
+  onClose: () => void;
+  aiCover: ReturnType<typeof useAiCover>;
+  orgId: number;
+  manual: DesignableManual;
+  setManual: DesignUpdater;
+  layout: React.ReactNode;
+  preview: React.ReactNode;
+  /** "Manual" or "Handbook", for headings. */
+  label: string;
+}) {
   const [section, setSection] = React.useState<SectionId>("template");
   const [direction, setDirection] = React.useState(1);
   const tabs = React.useRef<Array<HTMLButtonElement | null>>([]);
@@ -153,10 +207,10 @@ export function DesignMode({ mobile, onClose, aiCover }: { mobile: boolean; onCl
 
   return (
     <div className={shell.designLayout}>
-      <h1 className="sr-only">Manual design</h1>
+      <h1 className="sr-only">{label} design</h1>
       <div className={inspector.inspector}>
         <button type="button" aria-label="Close design controls" onClick={onClose} className={inspector.scrim} />
-        <aside id="design-inspector" role={mobile ? "dialog" : undefined} aria-modal={mobile || undefined} aria-label="Manual design" className={inspector.frame}>
+        <aside id="design-inspector" role={mobile ? "dialog" : undefined} aria-modal={mobile || undefined} aria-label={`${label} design`} className={inspector.frame}>
           <nav className={inspector.rail} aria-label="Design sections">
             <div role="tablist" aria-orientation="vertical" aria-label="Design sections" onKeyDown={onKeyDown} className={inspector.railList}>
               {SECTIONS.map((item, index) => {
@@ -179,17 +233,17 @@ export function DesignMode({ mobile, onClose, aiCover }: { mobile: boolean; onCl
             <AnimatePresence mode="wait" initial={false} custom={direction}>
               <motion.div key={section} custom={direction} variants={{ enter: (dir: number) => ({ opacity: 0, y: dir * 14 }), center: { opacity: 1, y: 0 }, exit: (dir: number) => ({ opacity: 0, y: dir * -10 }) }} initial="enter" animate="center" exit="exit" transition={{ duration: 0.2, ease: EASE_OUT }} id="sop-design-section" role="tabpanel" aria-labelledby={`sop-design-tab-${section}`} className={inspector.panel}>
                 <div data-studio-scroll className={inspector.scroll} data-lenis-prevent="">
-                  <SectionStage section={section} aiCover={aiCover} />
+                  <SectionStage section={section} aiCover={aiCover} manual={manual} setManual={setManual} orgId={orgId} layout={layout} />
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
         </aside>
       </div>
-      <section aria-label="Manual preview" className={shell.designPreview}>
-        <div className={shell.paneHeader}><h2 className={shell.paneTitle}>Manual preview</h2><span className={styles.paneNote}>Whole manual, as it will download</span></div>
+      <section aria-label={`${label} preview`} className={shell.designPreview}>
+        <div className={shell.paneHeader}><h2 className={shell.paneTitle}>{label} preview</h2><span className={styles.paneNote}>Whole {label.toLowerCase()}, as it will download</span></div>
         <div className={shell.designPreviewBody}>
-          <SopPdfPreview orgId={orgId} manualId={manualId} manual={manual} debounceMs={800} />
+          {preview}
         </div>
       </section>
     </div>

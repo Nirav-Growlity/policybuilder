@@ -129,9 +129,9 @@ test("the shared generation queue writes handbook chapters and the front matter"
       onSopDone: (chapterId) => { done.push(chapterId); if (done.length === 2 && frontMatter) resolve(); },
       onFrontMatterDone: () => { frontMatter = true; if (done.length === 2) resolve(); },
       stream: async (request) => {
-        if (request.type === "front-matter") return { type: "front-matter", frontMatter: { welcome: [], about: [], vision: "", mission: "", coreValues: [], purpose: [], howToUse: [] } };
+        if (request.type === "front-matter") return { type: "front-matter" as const, frontMatter: { welcome: [], about: [], vision: "", mission: "", coreValues: [], purpose: [], howToUse: [] } };
         assert.equal(request.type, "chapter");
-        return { type: "chapter", chapter: { sections: [] } };
+        return { type: "chapter" as const, chapter: { sections: [] } };
       },
     });
   });

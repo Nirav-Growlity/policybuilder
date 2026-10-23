@@ -6,7 +6,6 @@ import { PdfPages } from "@/components/policy/pdf-policy-preview";
 import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
 import previewStyles from "@/components/policy/pdf-policy-preview.module.css";
 import { fetchManualPreview } from "@/lib/sop/client-api";
-import type { SopManual } from "@/lib/sop/types";
 
 type ViewState = { pageNumber: number; zoom: string; viewMode: "continuous" | "paged" };
 type Rendered = { id: number; key: string; bytes: Uint8Array; pageCount: number };
@@ -22,7 +21,8 @@ export const SOP_PREVIEW_DEBOUNCE_MS = 500;
 export function SopPdfPreview({ orgId, manualId, manual, sopId, surface = "pane", debounceMs = SOP_PREVIEW_DEBOUNCE_MS }: {
   orgId: number;
   manualId: string;
-  manual: SopManual;
+  /** An SOP manual or an employee handbook; `sopId` names an SOP or a chapter. */
+  manual: object;
   sopId?: string;
   surface?: "card" | "pane";
   debounceMs?: number;
@@ -51,7 +51,7 @@ export function SopPdfPreview({ orgId, manualId, manual, sopId, surface = "pane"
     if (shown?.key === settledKey && retry === 0) return;
     const controller = new AbortController();
     const requestKey = settledKey;
-    const { manual: requested, sopId: requestedSop } = JSON.parse(requestKey) as { manual: SopManual; sopId: string | null };
+    const { manual: requested, sopId: requestedSop } = JSON.parse(requestKey) as { manual: object; sopId: string | null };
     void fetchManualPreview(orgId, manualId, requested, { sopId: requestedSop ?? undefined, signal: controller.signal })
       .then(({ bytes, pageCount }) => {
         if (controller.signal.aborted) return;
