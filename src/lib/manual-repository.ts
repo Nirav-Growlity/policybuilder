@@ -87,14 +87,25 @@ function toSummary(row: SummaryRow): ManualSummary {
   };
 }
 
-export async function listManuals(orgId: number, options: { archived?: boolean; kind?: ManualKind } = {}): Promise<ManualSummary[]> {
-  const predicates = ["m.org_id = ?", `m.archived_at IS ${options.archived ? "NOT " : ""}NULL`];
-  const values: (number | string)[] = [orgId];
+/**
+ * Manuals of one organization, or of every live organization when `orgId` is
+ * null (admins' "All organizations" view). Deleted organizations are left out.
+ */
+export async function listManuals(orgId: number | null, options: { archived?: boolean; kind?: ManualKind } = {}): Promise<ManualSummary[]> {
+  const predicates = [`m.archived_at IS ${options.archived ? "NOT " : ""}NULL`];
+  const values: (number | string)[] = [];
+  if (orgId === null) {
+    predicates.push("o.is_deleted = 0");
+  } else {
+    predicates.push("m.org_id = ?");
+    values.push(orgId);
+  }
   if (options.kind) { predicates.push("m.kind = ?"); values.push(options.kind); }
   // Sort lightweight IDs only: the summary reads manual_json, and sorting rows
   // that carry whole manuals exhausts MySQL's sort buffer (ER_OUT_OF_SORTMEMORY).
   const [orderedIds] = await policyCraftPool.execute<(RowDataPacket & { id: string })[]>(
     `SELECT m.id FROM policycraft_manuals m
+      INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = m.org_id
       WHERE ${predicates.join(" AND ")}
       ORDER BY m.updated_at DESC, m.id ASC`,
     values,
@@ -102,8 +113,8 @@ export async function listManuals(orgId: number, options: { archived?: boolean; 
   if (orderedIds.length === 0) return [];
   const [rows] = await policyCraftPool.execute<SummaryRow[]>(
     `SELECT ${summarySelect} ${fromManuals}
-      WHERE m.org_id = ? AND m.id IN (${orderedIds.map(() => "?").join(", ")})`,
-    [orgId, ...orderedIds.map((row) => row.id)],
+      WHERE m.id IN (${orderedIds.map(() => "?").join(", ")})`,
+    orderedIds.map((row) => row.id),
   );
   const byId = new Map(rows.map((row) => [row.id, row]));
   return orderedIds.flatMap(({ id }) => {

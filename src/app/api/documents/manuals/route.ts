@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { policyCraftMutationFailure } from "@/lib/policycraft-auth";
+import { getPolicyCraftActorResult, policyCraftMutationFailure } from "@/lib/policycraft-auth";
 import { createManual, listManuals } from "@/lib/manual-repository";
 import { isManualKind, MAX_MANUAL_JSON_BYTES, resolveManualAuth } from "@/lib/manual-request";
 import { validateManualPayload } from "@/lib/manual-validation";
@@ -7,14 +7,24 @@ import { validateManualPayload } from "@/lib/manual-validation";
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
-  const resolved = await resolveManualAuth(request, { operation: "read" });
-  if ("response" in resolved) return resolved.response;
   const params = new URL(request.url).searchParams;
   const kind = params.get("kind");
-  const manuals = await listManuals(resolved.auth.organization.id, {
+  const filters = {
     archived: params.get("view") === "archived",
     ...(isManualKind(kind) ? { kind } : {}),
-  });
+  };
+  // Admins without an organization selected see documents from every organization.
+  if (!params.has("orgId")) {
+    const { actor, response } = await getPolicyCraftActorResult();
+    if (response) return response;
+    if (actor?.role === "admin") {
+      const manuals = await listManuals(null, filters);
+      return NextResponse.json({ manuals }, { headers: { "Cache-Control": "private, no-store" } });
+    }
+  }
+  const resolved = await resolveManualAuth(request, { operation: "read" });
+  if ("response" in resolved) return resolved.response;
+  const manuals = await listManuals(resolved.auth.organization.id, filters);
   return NextResponse.json({ manuals }, { headers: { "Cache-Control": "private, no-store" } });
 }
 

@@ -62,7 +62,8 @@ export async function listSopManuals(orgId: number, view: ManualView = "active")
 }
 
 /** Every document in the organization, SOP manuals and employee handbooks alike. */
-export async function listManuals(orgId: number, view: ManualView = "active"): Promise<ManualSummary[]> {
+/** A null organization lists every organization's documents (admins only). */
+export async function listManuals(orgId: number | null, view: ManualView = "active"): Promise<ManualSummary[]> {
   const response = await fetch(manualsUrl(`?view=${view}`, orgId), { cache: "no-store" });
   const body = await json<{ manuals?: ManualSummary[] }>(response, "Could not load your documents.");
   return body.manuals ?? [];
