@@ -83,7 +83,7 @@ function PartNotice({ part, empty, ai, subject }: { part: HandbookPart; empty: b
   );
 }
 
-/** Welcome, about the company, vision and mission, values, purpose, how to use, sites, contacts and the glossary. */
+/** Welcome, about the company, vision and mission, values, purpose, sites, contacts and the glossary. */
 export function OpeningWriter() {
   const [front, update] = useHandbookPart("frontMatter");
   const company = useHandbookBuilder((state) => state.manual!.company);
@@ -114,24 +114,20 @@ export function OpeningWriter() {
       <Panel title={heading("Core values")}>
         <RowsTable<SopCoreValue> caption="Core values" rows={front.coreValues} onChange={(coreValues) => update({ coreValues })} newRow={() => ({ title: "", description: "" })} addLabel="Add value" columns={[{ key: "title", label: "Value", width: "28%", placeholder: "Safety first" }, { key: "description", label: "What it means here", width: "auto" }]} />
       </Panel>
-      <FieldPanel part="front-matter" field="purpose" title="Purpose of this handbook" ai={ai} hasContent={hasText(front.purpose)}>
-        <NarrativeField blocks={front.purpose} onChange={(purpose) => update({ purpose })} label="Purpose of this handbook" placeholder="What this handbook covers and what it does not replace, such as the appointment letter or the law." busy={ai.busy("purpose")} stream={ai.reveal("purpose")} />
-      </FieldPanel>
-      <FieldPanel part="front-matter" field="howToUse" title="How to use this handbook" ai={ai} hasContent={hasText(front.howToUse)}>
-        <NarrativeField blocks={front.howToUse} onChange={(howToUse) => update({ howToUse })} label="How to use this handbook" placeholder="How employees find the chapters that apply to them and who to ask when something is unclear." busy={ai.busy("howToUse")} stream={ai.reveal("howToUse")} />
+      <FieldPanel part="front-matter" field="purpose" title="About this handbook" ai={ai} hasContent={hasText(front.purpose)}>
+        <NarrativeField blocks={front.purpose} onChange={(purpose) => update({ purpose })} label="About this handbook" placeholder="What this handbook covers and what it does not replace, such as the appointment letter or the law." busy={ai.busy("purpose")} stream={ai.reveal("purpose")} />
       </FieldPanel>
       <Panel title={heading("Sites covered")} description="From the company details." actions={<Button variant="ghost" size="sm" icon={<Pencil size={13} aria-hidden="true" />} onClick={openDetails}>Edit sites</Button>}>
         {(company.sites ?? []).length ? (
           <ul className={styles.siteList}>{(company.sites ?? []).map((site, index) => <li key={index}><strong>{site.location || `Site ${index + 1}`}</strong><span>{[site.address, site.primaryFunction].filter(Boolean).join(" · ")}</span></li>)}</ul>
         ) : <p className="text-[13px] text-[var(--pc-muted)]">No sites yet. Add them in the company details.</p>}
       </Panel>
-      <Panel title={heading("Contacts and certifications")} description="From the company details. Printed on the opening pages." actions={<Button variant="ghost" size="sm" icon={<Pencil size={13} aria-hidden="true" />} onClick={openDetails}>Edit facts</Button>}>
-        {facts.contacts.length || facts.certifications.length ? (
+      <Panel title={heading("Contacts")} description="From the company details. Printed on the opening pages." actions={<Button variant="ghost" size="sm" icon={<Pencil size={13} aria-hidden="true" />} onClick={openDetails}>Edit facts</Button>}>
+        {facts.contacts.length ? (
           <ul className={styles.siteList}>
             {facts.contacts.map((contact, index) => <li key={`contact-${index}`}><strong>{contact.purpose || "Contact"}</strong><span>{[contact.name, contact.phone, contact.email].filter(Boolean).join(" · ")}</span></li>)}
-            {facts.certifications.length ? <li><strong>Certifications</strong><span>{facts.certifications.join(", ")}</span></li> : null}
           </ul>
-        ) : <p className="text-[13px] text-[var(--pc-muted)]">No contacts or certifications yet. Add them in the company details to print them with the handbook.</p>}
+        ) : <p className="text-[13px] text-[var(--pc-muted)]">No contacts yet. Add them in the company details to print them with the handbook.</p>}
       </Panel>
       <Panel title={heading("Glossary")}>
         <RowsTable<SopDefinitionRow> caption="Glossary" rows={front.glossary} onChange={(glossary) => update({ glossary })} newRow={() => ({ term: "", definition: "" })} addLabel="Add term" columns={[{ key: "term", label: "Term", width: "28%" }, { key: "definition", label: "Definition", width: "auto" }]} />
@@ -140,28 +136,27 @@ export function OpeningWriter() {
   );
 }
 
-/** Review mechanism, revision history, the approval page and the employee acknowledgement. */
+/** Revision history, approval and the employee acknowledgement. */
 export function ClosingWriter() {
   const [closing, update] = useHandbookPart("closing");
-  const control = useHandbookBuilder((state) => state.manual!.control);
   const ai = useHandbookFieldAi();
   const setApproval = (patch: Partial<SopApproval>) => update({ approval: { ...closing.approval, ...patch } });
-  const empty = !hasText(closing.reviewMechanism) && !closing.approval.statement.trim() && !closing.acknowledgement.trim();
+  const empty = !closing.acknowledgement.trim();
   return (
     <StepRoot>
       <PartNotice part="closing" empty={empty} ai={ai} subject="closing" />
-      <FieldPanel part="closing" field="reviewMechanism" title="Review mechanism" ai={ai} hasContent={hasText(closing.reviewMechanism)}>
-        <NarrativeField blocks={closing.reviewMechanism} onChange={(reviewMechanism) => update({ reviewMechanism })} label="Review mechanism" placeholder={`How the handbook is reviewed (${control.reviewFrequency.toLowerCase() || "yearly"}), who approves changes and how employees are told.`} busy={ai.busy("reviewMechanism")} stream={ai.reveal("reviewMechanism")} />
-      </FieldPanel>
       <Panel title={heading("Revision history")}>
         <RowsTable<RevisionEntry & Record<string, unknown>> caption="Revision history" rows={closing.revisionHistory as (RevisionEntry & Record<string, unknown>)[]} onChange={(revisionHistory) => update({ revisionHistory })} newRow={() => ({ revisionNo: String(closing.revisionHistory.length + 1).padStart(2, "0"), date: new Date().toISOString().slice(0, 10), description: "", source: "custom" })} addLabel="Add revision" columns={[{ key: "revisionNo", label: "Rev", width: "9%" }, { key: "date", label: "Date (YYYY-MM-DD)", width: "17%" }, { key: "description", label: "Change", width: "auto" }, { key: "reviewedBy", label: "Reviewed by", width: "17%", placeholder: "HR Manager" }, { key: "approvedBy", label: "Approved by", width: "17%", placeholder: "Managing Director" }]} />
       </Panel>
-      <FieldPanel part="closing" field="approvalStatement" title="Approval" description="Printed on the closing page above the signatures." ai={ai} hasContent={closing.approval.statement.trim() !== ""}>
-        <WritingField value={closing.approval.statement} onChange={(event) => setApproval({ statement: event.target.value })} label="Approval statement" placeholder={`This handbook has been reviewed and approved by ${control.approvedBy || "the Managing Director"} and applies from its effective date.`} busy={ai.busy("approvalStatement")} stream={ai.reveal("approvalStatement")} />
-        <div className="mt-4">
-          <RowsTable caption="Signatories" rows={closing.approval.signatories} onChange={(signatories) => setApproval({ signatories })} newRow={() => ({ role: "", name: "", designation: "", date: "" })} addLabel="Add signatory" columns={[{ key: "role", label: "Role", width: "22%", placeholder: "Approved by" }, { key: "name", label: "Name", width: "26%" }, { key: "designation", label: "Designation", width: "26%" }, { key: "date", label: "Date", width: "auto" }]} />
+      <Panel title={heading("Approved by")}>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {(["name", "designation", "date"] as const).map((key) => (
+            <Field key={key} label={key === "name" ? "Name" : key === "designation" ? "Designation" : "Date"}>
+              <Input type={key === "date" && /^\d{4}-\d{2}-\d{2}$|^$/.test(closing.approval.signatories[0]?.date ?? "") ? "date" : "text"} value={closing.approval.signatories[0]?.[key] ?? ""} onChange={(event) => setApproval({ signatories: [{ ...(closing.approval.signatories[0] ?? { role: "Approved by", name: "", designation: "", date: "" }), [key]: event.target.value }, ...closing.approval.signatories.slice(1)] })} />
+            </Field>
+          ))}
         </div>
-      </FieldPanel>
+      </Panel>
       <FieldPanel part="closing" field="acknowledgement" title="Employee acknowledgement" description="Prints on its own page with signature lines, for each employee to sign on receipt." ai={ai} hasContent={closing.acknowledgement.trim() !== ""}>
         <WritingField value={closing.acknowledgement} onChange={(event) => update({ acknowledgement: event.target.value })} label="Acknowledgement statement" placeholder="I confirm that I have received, read and understood this handbook." busy={ai.busy("acknowledgement")} stream={ai.reveal("acknowledgement")} />
       </FieldPanel>

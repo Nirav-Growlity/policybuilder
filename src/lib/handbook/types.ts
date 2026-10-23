@@ -58,13 +58,7 @@ export type HandbookChapterStatus = "empty" | "generating" | "draft" | "reviewed
 /** Sub-section kinds a chapter may hold. Chapters have no fixed skeleton. */
 export const HANDBOOK_SECTION_KINDS: ReadonlyArray<{ kind: SopSectionKind; label: string }> = [
   { kind: "custom", label: "Text" },
-  { kind: "purpose", label: "Purpose" },
-  { kind: "scope", label: "Scope and eligibility" },
-  { kind: "definitions", label: "Definitions" },
-  { kind: "responsibilities", label: "Roles and responsibilities" },
-  { kind: "procedure", label: "Procedure (steps)" },
-  { kind: "records", label: "Records" },
-  { kind: "references", label: "References" },
+  { kind: "procedure", label: "Steps" },
   { kind: "appendix", label: "Form or annexure" },
 ];
 

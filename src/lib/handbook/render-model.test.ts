@@ -53,7 +53,7 @@ test("chapters group under handbook parts in part order and number in reading or
 
 test("front matter prints welcome, vision and mission, values, sites and facts; closing ends with the acknowledgement", () => {
   const model = buildHandbookRenderModel(buildSampleHandbook());
-  assert.deepEqual(model.frontMatter.map((section) => section.title), ["Welcome", "About the Company", "Vision and Mission", "Our Values", "Purpose of this Handbook", "Scope and Applicability", "Key Contacts", "Certifications and Standards", "How to Use this Handbook"]);
+  assert.deepEqual(model.frontMatter.map((section) => section.title), ["Welcome", "About the Company", "Vision and Mission", "Our Values", "About this handbook", "Scope and Applicability", "Key Contacts"]);
   const vision = model.frontMatter.find((section) => section.id === "vision")!;
   assert.deepEqual(vision.blocks[0], { type: "table", columns: ["Our vision", "Our mission"], widths: [1, 1], rows: [["To be the most trusted fabric finisher in India.", "To deliver consistent quality safely, fairly and with care for the environment."]] });
   assert.equal(model.closing.after.length, 1);
@@ -80,7 +80,7 @@ test("every template lays out a handbook with chapter labels and the acknowledge
     const text = await pdfText(compiled.pdf);
     assert.match(text, /EmployeeAcknowledgement/, `${theme}: acknowledgement page`);
     assert.match(text, /LeaveandHolidays/, `${theme}: chapter title`);
-    assert.doesNotMatch(text, /SOPNo\.|Standardoperatingprocedures|SOPsinthismanual/i, `${theme}: no SOP wording`);
+    assert.doesNotMatch(text, /SOPNo\.|Standardoperatingprocedures|SOPsinthismanual|Owner|ReviewMechanism|Preparedby|DocumentNo\.|DocNo:|Classification|Controlledcopy|CertificationsandStandards/i, `${theme}: no SOP wording`);
   }
 });
 
@@ -89,11 +89,29 @@ test("the Word file uses the handbook labels and ends with the acknowledgement",
   const zip = await JSZip.loadAsync(await generateSopDocx(model, []));
   const document = await zip.file("word/document.xml")!.async("string");
   const text = document.replace(/<[^>]+>/g, "");
-  assert.match(text, /Chapter No\./i);
+  assert.doesNotMatch(text, /Chapter No\.|Owner|Review Mechanism|Prepared by|Document No\.|Classification|Controlled copy/i);
   assert.match(text, /Chapters in this handbook/i);
   assert.match(text, /1 chapter(?!s)/);
   assert.match(text, /Employee Acknowledgement/);
   assert.doesNotMatch(text, /SOP No\.|SOPs in this manual/i);
   const core = await zip.file("docProps/core.xml")!.async("string");
   assert.match(core, /employee handbook/);
+});
+
+test("saved handbook metadata stays in storage but never enters the rendered handbook", () => {
+  const manual = buildSampleHandbook();
+  manual.chapters[0].code = "LEGACY-CODE";
+  manual.chapters[0].owner = "LEGACY-OWNER";
+  manual.themeOptions.showSopHeaderCard = true;
+  const model = buildHandbookRenderModel({ ...manual, theme: "sop-cards" });
+  assert.equal(model.design.showSopHeaderCard, false);
+  assert.notEqual(model.design.sopOpener, "header-card");
+  assert.ok(model.chapters.flatMap((part) => part.sops).every((chapter) => chapter.sections.every((section) => section.number === "")));
+  assert.equal(model.closing.sections.length, 0);
+  assert.equal(model.closing.approval.statement, "");
+  assert.equal(model.closing.approval.signatories.length, 1);
+  assert.doesNotMatch(JSON.stringify(model), /LEGACY-CODE|LEGACY-OWNER/);
+  assert.equal(manual.chapters[0].code, "LEGACY-CODE");
+  assert.equal(manual.chapters[0].owner, "LEGACY-OWNER");
+  assert.ok(manual.frontMatter.howToUse.length);
 });

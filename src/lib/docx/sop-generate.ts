@@ -1020,7 +1020,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
       par(ctx, [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 1 }),
       v(-2),
       rule(ctx.pal.primary, 1.2, { above: ctx.after, below: ctx.after, keepNext: true }),
-      par(ctx, [txt(ctx, `Version ${sop.version}   |   Effective ${sop.effectiveDate}   |   Owner: ${sop.owner}`, { size: ctx.sz.small, color: ctx.pal.muted })]),
+      par(ctx, [txt(ctx, `Version ${sop.version}   |   Effective ${sop.effectiveDate}${ctx.m.kind === "handbook" ? "" : `   |   Owner: ${sop.owner}`}`, { size: ctx.sz.small, color: ctx.pal.muted })]),
     );
   } else if (opener === "pillar-banner") {
     const label = caps(ctx, sop.pillarLabel, { color: ctx.pal.onPrimary });
@@ -1042,7 +1042,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
       widths: quarter,
       rows: [
         { cells: [banner] },
-        { cells: [meta(ctx.m.labels.department, sop.department), meta("Owner", sop.owner), meta("Version", sop.version), meta("Effective", sop.effectiveDate)] },
+        { cells: [meta(ctx.m.labels.department, sop.department), ...(ctx.m.kind === "handbook" ? [] : [meta("Owner", sop.owner)]), meta("Version", sop.version), meta("Effective", sop.effectiveDate)] },
       ],
     }));
   } else if (opener === "header-card") {
@@ -1064,7 +1064,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
         { fill: ctx.pal.primary, vAlign: "center", inset: inset(6, 6), borders: { bottom: { color: ctx.pal.ink, size: 1 } }, items: [par(ctx, [txt(ctx, sop.code, { bold: true, color: ctx.pal.onPrimary, size: ctx.sz.small })], { align: "center" })] },
         { vAlign: "center", inset: inset(6, 6), borders: { bottom: { color: ctx.pal.ink, size: 1 } }, items: [mark(stack(ctx, [
           [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.ink })],
-          [txt(ctx, `${sop.department}  |  Owner: ${sop.owner}  |  Version ${sop.version}  |  Effective ${sop.effectiveDate}`, { size: ctx.sz.small, color: ctx.pal.muted })],
+          [txt(ctx, `${sop.department}${ctx.m.kind === "handbook" ? "" : `  |  Owner: ${sop.owner}`}  |  Version ${sop.version}  |  Effective ${sop.effectiveDate}`, { size: ctx.sz.small, color: ctx.pal.muted })],
         ], { outline: 1 }))] },
       ] }],
     }));
@@ -1317,6 +1317,10 @@ function labelBand(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
 function approvalBlock(ctx: Ctx): FlowItem[] {
   const approval = ctx.m.closing.approval;
   const out: FlowItem[] = [];
+  if (ctx.m.kind === "handbook") {
+    const s = approval.signatories[0];
+    return [par(ctx, [txt(ctx, `Approved by: ${[s?.name, s?.designation, s?.date].filter(Boolean).join(" | ")}`)])];
+  }
   if (approval.statement) out.push(callout(ctx, [par(ctx, [txt(ctx, approval.statement)], { align: "justify" })], ctx.W), v(ctx.after));
   if (ctx.d.approval === "signature-table") {
     out.push(dataTable(ctx, ["Role", "Name", "Designation", "Signature", "Date"], [1.1, 1.3, 1.3, 1.2, 0.9], approval.signatories.map((s) => [s.role, s.name, s.designation, "", s.date]), ctx.W));
@@ -1355,7 +1359,7 @@ type SopMeta = { code: string; title: string; color: string; pillarLabel: string
 
 /** The classification stands in for the old fixed "Controlled copy" label (manual.typ `copy-label`). */
 function copyLabel(m: SopRenderModel): string {
-  return m.control.classification.trim() || "Controlled copy";
+  return m.kind === "handbook" ? "" : m.control.classification.trim() || "Controlled copy";
 }
 
 /** Optional control fields, left out when empty so older manuals keep their layout (manual.typ `optional-control`). */
@@ -1374,6 +1378,9 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
   const sopTitle = sop ? `${sop.code}  ${sop.title}` : m.cover.eyebrow;
   const sopColor = sop ? sop.color : ctx.pal.primary;
   const variant = ctx.d.runningHeader;
+  if (m.kind === "handbook" && variant === "control-table") {
+    return [par(ctx, [txt(ctx, m.title, { bold: true }), { tab: true }, txt(ctx, `Version ${m.control.revision}  |  Effective ${m.control.effectiveDate}`, { size: small })], { tabs: [{ type: "right", pos: ctx.W }] })];
+  }
   if (variant === "control-table") {
     const W = ctx.W;
     const widths = [W * 0.24, W - W * 0.24 - W * 0.4, W * 0.2, W * 0.2];
@@ -1448,7 +1455,7 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
   }
   if (variant === "register-line") {
     return [
-      par(ctx, [txt(ctx, `${m.company.name}  |  ${m.title}`, { size: small, color: ctx.pal.muted }), { tab: true }, txt(ctx, `${m.control.docNo}  Rev ${m.control.revision}`, { size: small, color: ctx.pal.muted })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }),
+      par(ctx, [txt(ctx, `${m.company.name}  |  ${m.title}`, { size: small, color: ctx.pal.muted }), { tab: true }, txt(ctx, m.kind === "handbook" ? `Version ${m.control.revision}` : `${m.control.docNo}  Rev ${m.control.revision}`, { size: small, color: ctx.pal.muted })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }),
       v(2),
       rule(ctx.pal.line, RULE, { above: ctx.after, below: ctx.after }),
     ];
@@ -1475,6 +1482,9 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
   const m = ctx.m;
   const small = ctx.sz.small;
   const style = { size: small, color: ctx.pal.muted };
+  if (m.kind === "handbook" && (ctx.d.runningFooter === "prepared-approved" || ctx.d.runningFooter === "register-folio")) {
+    return [par(ctx, [txt(ctx, `Version ${m.control.revision}  |  Effective ${m.control.effectiveDate}`, style), { tab: true }, ...pageOf(ctx, style)], { tabs: [{ type: "right", pos: ctx.W }] })];
+  }
   const variant = ctx.d.runningFooter;
   if (variant === "prepared-approved") {
     const label = copyLabel(m);
@@ -1509,7 +1519,7 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
 
 function controlGrid(ctx: Ctx, width: number, indent?: number): TableItem {
   const c = ctx.m.control;
-  const pairs: Array<[string, string]> = [
+  const pairs: Array<[string, string]> = ctx.m.kind === "handbook" ? [["Version", c.revision], ["Effective date", c.effectiveDate], ["Approved by", c.approvedBy]] : [
     ["Document No.", c.docNo], ["Revision", c.revision],
     ...optionalControl([["Supersedes", c.supersedes], ["Issue date", c.issueDate]]),
     ["Effective date", c.effectiveDate],
@@ -1601,7 +1611,7 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
           borders: { top: { color: ctx.pal.primary, size: 1 }, bottom: { color: ctx.pal.primary, size: 1 }, left: { color: ctx.pal.primary, size: 1 }, right: { color: ctx.pal.primary, size: 1 } },
           items: [{ ...stack(ctx, [
             [caps(ctx, copyLabel(m), { color: ctx.pal.primary })],
-            [txt(ctx, `Rev ${m.control.revision}`, { size: ctx.sz.small, color: ctx.pal.muted })],
+            [txt(ctx, `${m.kind === "handbook" ? "Version" : "Rev"} ${m.control.revision}`, { size: ctx.sz.small, color: ctx.pal.muted })],
           ], tightOptions(ctx, ctx.sz.small)), align: "center" }],
         },
       ] }],

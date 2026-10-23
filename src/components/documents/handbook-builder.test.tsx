@@ -9,7 +9,7 @@ import { useHandbookBuilder, type StoredHandbook } from "@/lib/handbook/store";
 import { HandbookBuilderContext, type HandbookBuilderActions } from "./handbook-builder/handbook-builder-context";
 import { ChapterWriter } from "./handbook-builder/chapter-writer";
 import { HandbookReviewMode } from "./handbook-builder/handbook-review-mode";
-import { OpeningWriter } from "./handbook-builder/handbook-part-writers";
+import { ClosingWriter, OpeningWriter } from "./handbook-builder/handbook-part-writers";
 
 const noop = () => undefined;
 
@@ -66,7 +66,7 @@ test("review lists the handbook checks, each with a way to fix it when it is ope
   loadSampleHandbook();
   const markup = inBuilder(React.createElement(HandbookReviewMode));
   assert.match(markup, /Company and approver/);
-  assert.match(markup, /Document control/);
+  assert.match(markup, /Version and effective date/);
   assert.match(markup, /Contacts for raising concerns/);
   assert.match(markup, /Chapters written/);
   assert.match(markup, /Employee acknowledgement/);
@@ -81,4 +81,16 @@ test("the opening pages show the welcome and the vision fields", () => {
   assert.match(markup, />Vision</);
   assert.match(markup, new RegExp(`value="${escapeHtml(manual.frontMatter.vision)}"`));
   assert.match(markup, /Edit sites/);
+});
+
+test("handbook writing hides SOP metadata and merges the opening guidance", () => {
+  const manual = loadSampleHandbook();
+  const chapter = inBuilder(React.createElement(ChapterWriter, { chapter: manual.chapters[0] }));
+  assert.doesNotMatch(chapter, />Code<|>Owner<|>1\.0</);
+  const opening = inBuilder(React.createElement(OpeningWriter));
+  assert.match(opening, /About this handbook/);
+  assert.doesNotMatch(opening, /How to use this handbook|Certifications/);
+  const closing = inBuilder(React.createElement(ClosingWriter));
+  assert.match(closing, /Approved by/);
+  assert.doesNotMatch(closing, /Review mechanism|Approval statement|Add signatory|Signatories/);
 });

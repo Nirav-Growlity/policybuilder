@@ -90,20 +90,18 @@ export function useChapterSectionAi() {
 /** The two parts the whole-part request writes, and the fields each one streams into. */
 export type HandbookPart = "front-matter" | "closing";
 export const HANDBOOK_PART_FIELDS: Record<HandbookPart, HandbookAiField[]> = {
-  "front-matter": ["welcome", "about", "purpose", "howToUse"],
-  closing: ["reviewMechanism", "approvalStatement", "acknowledgement"],
+  "front-matter": ["welcome", "about", "purpose"],
+  closing: ["acknowledgement"],
 };
 const PART_TITLE: Record<HandbookPart, string> = { "front-matter": "Opening pages", closing: "Closing" };
 
 /** The text one field holds once a finished part is applied, as the editor shows it. */
 function partFieldText(result: HandbookAiResult, field: HandbookAiField): string {
   if (result.type === "closing") {
-    if (field === "reviewMechanism") return richTextToPlain(result.reviewMechanism);
-    if (field === "approvalStatement") return result.approvalStatement;
     if (field === "acknowledgement") return result.acknowledgement;
     return "";
   }
-  if (result.type === "front-matter" && field !== "approvalStatement" && field !== "reviewMechanism" && field !== "acknowledgement") return richTextToPlain(result.frontMatter[field]);
+  if (result.type === "front-matter" && field !== "acknowledgement") return richTextToPlain(result.frontMatter[field]);
   return "";
 }
 

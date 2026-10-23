@@ -142,7 +142,7 @@ export function HandbookDetailsModal({ open, onClose }: { open: boolean; onClose
     <Modal open={open} onClose={onClose} title="Company and handbook details" description="Changes save automatically. Review the chapters after editing." width={980} footer={<Button variant="primary" size="md" onClick={onClose}>Done</Button>}>
       <div className="pc-builder-authoring flex flex-col gap-5">
         <CompanyInfoForm company={manual.company} onCompanyChange={onCompanyChange} documentLabel="handbook" />
-        <ManualDetailsPanel control={manual.control} titlePlaceholder="Employee Handbook" documentNoun="handbook" onChange={(patch) => {
+        <ManualDetailsPanel control={manual.control} titlePlaceholder="Employee Handbook" subtitlePlaceholder="Policies and practices for everyone who works here" documentNoun="handbook" onChange={(patch) => {
           const store = useHandbookBuilder.getState();
           // A handbook still carrying its automatic name follows its title; a renamed one keeps its name.
           const followsTitle = store.manual !== null && (store.title === handbookTitle(store.manual) || store.title === handbookTitle({ company: store.manual.company }));
@@ -151,7 +151,7 @@ export function HandbookDetailsModal({ open, onClose }: { open: boolean; onClose
           if (followsTitle && next) store.setTitle(handbookTitle(next));
         }} showErrors />
         <HandbookFactsPanel facts={manual.handbookFacts ?? NO_HANDBOOK_FACTS} onChange={(patch) => setManual((current) => ({ ...current, handbookFacts: { ...(current.handbookFacts ?? NO_HANDBOOK_FACTS), ...patch } }))} />
-        <CompanyFactsPanel itemNoun="Chapters" facts={manual.facts ?? NO_FACTS} onChange={(patch) => setManual((current) => ({ ...current, facts: { ...(current.facts ?? NO_FACTS), ...patch } }))} />
+        <CompanyFactsPanel showCertifications={false} itemNoun="Chapters" facts={manual.facts ?? NO_FACTS} onChange={(patch) => setManual((current) => ({ ...current, facts: { ...(current.facts ?? NO_FACTS), ...patch } }))} />
       </div>
     </Modal>
   );

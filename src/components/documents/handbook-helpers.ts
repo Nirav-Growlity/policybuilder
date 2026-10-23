@@ -231,8 +231,8 @@ export function handbookPlaceholders(manual: HandbookManual): HandbookPlaceholde
   }
   const closing = manual.closing;
   collect([
-    ...blockTexts(closing.reviewMechanism), ...closing.revisionHistory.map((entry) => entry.description), closing.approval.statement, closing.acknowledgement,
-    ...closing.approval.signatories.flatMap((signatory) => [signatory.role, signatory.name, signatory.designation]),
+    ...closing.revisionHistory.map((entry) => entry.description), closing.acknowledgement,
+    ...closing.approval.signatories.slice(0, 1).flatMap((signatory) => [signatory.name, signatory.designation]),
   ], "Closing", { kind: "closing" });
   return hits;
 }
@@ -277,18 +277,16 @@ const hasText = (blocks: readonly RichTextBlock[]) => blocks.some((block) => blo
 export function handbookReadinessChecks(manual: HandbookManual): HandbookCheck[] {
   const chapters = enabledChapters(manual);
   const unwritten = chapters.filter((chapter) => !isChapterWritten(chapter));
-  const missingOwner = chapters.filter((chapter) => !chapter.owner.trim());
   const plural = (count: number, noun: string) => `${count} ${noun}${count === 1 ? "" : "s"}`;
   const contacts = reachableContacts(companyFacts(manual));
   const placeholders = handbookPlaceholders(manual);
   const grievance = chapters.some((chapter) => chapter.catalogId === "grievance" || /grievance|complaint/i.test(chapter.title));
   return [
     { id: "company", label: "Company and approver", ok: Boolean(manual.company.name.trim() && manual.control.approvedBy.trim()), detail: manual.company.name.trim() && manual.control.approvedBy.trim() ? `${manual.company.name}, approved by ${manual.control.approvedBy}` : "Add the company name and who approves the handbook.", fix: { kind: "details" } },
-    { id: "control", label: "Document control", ok: Boolean(manual.control.docNo.trim() && manual.control.effectiveDate), detail: manual.control.docNo.trim() && manual.control.effectiveDate ? `${manual.control.docNo}, Rev ${manual.control.revision || "01"}` : "Add a document number and an effective date.", fix: { kind: "details" } },
+    { id: "control", label: "Version and effective date", ok: Boolean(manual.control.effectiveDate), detail: manual.control.effectiveDate ? `Version ${manual.control.revision || "01"}, effective ${manual.control.effectiveDate}` : "Add an effective date.", fix: { kind: "details" } },
     { id: "contacts", label: "Contacts for raising concerns", ok: contacts.length > 0, detail: contacts.length ? `${plural(contacts.length, "contact")} for grievances and questions.` : "Add an email or phone number for grievances, so chapters name a real channel.", fix: { kind: "details" } },
     { id: "chapters", label: "Chapters written", ok: chapters.length > 0 && unwritten.length === 0, detail: chapters.length === 0 ? "Add at least one chapter." : unwritten.length ? `${plural(unwritten.length, "chapter")} still to write.` : `All ${plural(chapters.length, "chapter")} written.`, fix: unwritten[0] ? { kind: "chapter", chapterId: unwritten[0].id } : undefined },
     { id: "grievance", label: "A way to raise grievances", ok: grievance, detail: grievance ? "The handbook explains how to raise a grievance." : "Most handbooks have a Grievance Redressal chapter. Add one from the catalog.", fix: grievance ? undefined : { kind: "details" } },
-    { id: "owners", label: "Chapter owners", ok: missingOwner.length === 0, detail: missingOwner.length ? `${plural(missingOwner.length, "chapter")} without an owner.` : "Every chapter has an owner.", fix: missingOwner[0] ? { kind: "chapter", chapterId: missingOwner[0].id } : undefined },
     { id: "placeholders", label: "Placeholders to fill", ok: placeholders.length === 0, detail: placeholders.length ? `${plural(placeholders.length, "placeholder")} still to replace. First: ${placeholders[0].text} in ${placeholders[0].where}.` : "No [bracketed] placeholders left.", fix: placeholders.length ? { kind: "placeholders" } : undefined },
     { id: "welcome", label: "Welcome and introduction", ok: hasText(manual.frontMatter.welcome), detail: hasText(manual.frontMatter.welcome) ? "Welcome message written." : "The handbook has no welcome message yet.", fix: { kind: "front" } },
     { id: "acknowledgement", label: "Employee acknowledgement", ok: Boolean(manual.closing.acknowledgement.trim()), detail: manual.closing.acknowledgement.trim() ? "Employees sign the acknowledgement page." : "Add the statement employees sign on receipt.", fix: { kind: "closing" } },

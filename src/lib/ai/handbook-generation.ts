@@ -99,7 +99,7 @@ export function finalizeHandbookOutput(request: HandbookAiRequest, value: unknow
       const sections = wireToChapterSections(parsed.data.sections, requested);
       if (!sections.length) throw new HandbookOutputError("The AI response had no sections.");
       if (countWords(sections) < MIN_WORDS_PER_SECTION * sections.length) throw new HandbookOutputError("The AI response was too short. Try again.");
-      return { type: "chapter", chapter: { sections, ...(parsed.data.owner.trim() ? { owner: parsed.data.owner.trim() } : {}) } };
+      return { type: "chapter", chapter: { sections } };
     }
     case "chapter-section":
     case "refine": {
@@ -122,7 +122,6 @@ export function finalizeHandbookOutput(request: HandbookAiRequest, value: unknow
           mission: parsed.data.mission.trim(),
           coreValues: parsed.data.coreValues.filter((item) => item.title.trim()),
           purpose: paragraphs(parsed.data.purpose),
-          howToUse: paragraphs(parsed.data.howToUse),
         },
       };
     }
@@ -131,8 +130,6 @@ export function finalizeHandbookOutput(request: HandbookAiRequest, value: unknow
       if (!parsed.success) throw new HandbookOutputError("The AI response did not match the closing format.");
       return {
         type: "closing",
-        reviewMechanism: paragraphs(parsed.data.reviewMechanism),
-        approvalStatement: parsed.data.approvalStatement.trim().slice(0, MAX_STATEMENT_CHARS),
         acknowledgement: parsed.data.acknowledgement.trim().slice(0, MAX_STATEMENT_CHARS),
       };
     }

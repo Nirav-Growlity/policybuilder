@@ -7,7 +7,7 @@ import { clsx } from "clsx";
 import { ColorField, Row, Segmented, SPRING } from "@/components/builder/design-studio/controls";
 import studio from "@/components/builder/design-studio/design-studio.module.css";
 import { SelectMenu } from "@/components/ui/select-menu";
-import { SOP_DESIGNS, SOP_FONT_PAIRS } from "@/lib/sop/design/templates";
+import { HANDBOOK_DESIGNS, SOP_DESIGNS, SOP_FONT_PAIRS } from "@/lib/sop/design/templates";
 import { coverAssetSrc, uploadCoverImage } from "@/lib/sop/client-api";
 import type { LogoColorPalette } from "@/lib/types";
 import type { SopCover, SopPageSize, SopTemplateId, SopThemeOptions } from "@/lib/sop/types";
@@ -29,11 +29,11 @@ export function SopTemplateSheet({ templateId, compact = false }: { templateId: 
 }
 
 /** The five SOP templates as selectable cards. `layout="grid"` for the wizard, "list" for the Design panel. */
-export function SopTemplatePicker({ value, onChange, layout = "list" }: { value: SopTemplateId; onChange: (value: SopTemplateId) => void; layout?: "list" | "grid" }) {
+export function SopTemplatePicker({ value, onChange, layout = "list", kind = "sop" }: { value: SopTemplateId; onChange: (value: SopTemplateId) => void; layout?: "list" | "grid"; kind?: "sop" | "handbook" }) {
   return (
     <LayoutGroup id={`sop-templates-${layout}`}>
       <ul className={clsx(studio.templateList, layout === "grid" && styles.templateGrid)}>
-        {SOP_DESIGNS.map((design) => {
+        {(kind === "handbook" ? HANDBOOK_DESIGNS : SOP_DESIGNS).map((design) => {
           const selected = design.id === value;
           return (
             <li key={design.id} data-reveal>

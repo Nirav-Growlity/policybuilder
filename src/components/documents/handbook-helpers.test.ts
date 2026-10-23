@@ -1,3 +1,5 @@
+import { buildSampleHandbook } from "@/lib/handbook/sample-handbook";
+import { migrateHandbook } from "@/lib/handbook/migrate-handbook";
 import assert from "node:assert/strict";
 import test from "node:test";
 import { HANDBOOK_CATALOG, getHandbookTopic } from "@/lib/handbook/catalog";
@@ -144,4 +146,36 @@ test("the handbook catalog groups into parts with every topic in exactly one gro
   const groups = groupHandbookCatalog(HANDBOOK_CATALOG);
   assert.equal(groups.reduce((sum, group) => sum + group.topics.length, 0), HANDBOOK_CATALOG.length);
   assert.ok(groups.some((group) => group.label === "Working Here"));
+});
+
+test("handbook readiness needs an effective date without a document number or chapter owners", () => {
+  const manual = buildSampleHandbook();
+  manual.control.docNo = "";
+  manual.control.effectiveDate = "2026-10-23";
+  manual.chapters.forEach((chapter) => { chapter.owner = ""; });
+  const checks = handbookReadinessChecks(manual);
+  assert.equal(checks.find((check) => check.id === "control")?.ok, true);
+  assert.equal(checks.find((check) => check.id === "control")?.label, "Version and effective date");
+  assert.equal(checks.some((check) => check.id === "owners"), false);
+});
+
+test("legacy reading guidance appends to purpose without mutating the saved handbook", () => {
+  const manual = buildSampleHandbook();
+  const purpose = [...manual.frontMatter.purpose];
+  const guidance = [...manual.frontMatter.howToUse];
+  const next = migrateHandbook(manual);
+  assert.deepEqual(next.frontMatter.purpose, [...purpose, ...guidance]);
+  assert.deepEqual(next.frontMatter.howToUse, []);
+  assert.deepEqual(manual.frontMatter.purpose, purpose);
+  assert.deepEqual(manual.frontMatter.howToUse, guidance);
+  assert.equal(migrateHandbook(next), next);
+});
+
+test("blank legacy guidance is cleared without adding empty paragraphs to purpose", () => {
+  const manual = buildSampleHandbook();
+  const purpose = [...manual.frontMatter.purpose];
+  const blank = { ...manual, frontMatter: { ...manual.frontMatter, howToUse: [{ id: "blank", type: "paragraph" as const, text: "   " }] } };
+  const next = migrateHandbook(blank);
+  assert.deepEqual(next.frontMatter.purpose, purpose);
+  assert.deepEqual(next.frontMatter.howToUse, []);
 });

@@ -59,7 +59,6 @@ export function applyChapterResult(chapter: HandbookChapter, result: Extract<Han
   const byId = new Map(result.sections.map((section) => [section.id, section]));
   return {
     ...chapter,
-    owner: chapter.owner.trim() ? chapter.owner : (result.owner ?? chapter.owner),
     status: "draft",
     sections: chapter.sections.map((section) => {
       const next = byId.get(section.id);
@@ -83,9 +82,7 @@ const blocksText = (blocks: readonly RichTextBlock[]) => blocks.filter((block) =
 /** Plain text of one front matter or closing field, as the editor shows it. */
 export function handbookFieldText(manual: HandbookManual, field: HandbookAiField): string {
   switch (field) {
-    case "approvalStatement": return manual.closing.approval.statement.trim();
     case "acknowledgement": return manual.closing.acknowledgement.trim();
-    case "reviewMechanism": return blocksText(manual.closing.reviewMechanism);
     default: return blocksText(manual.frontMatter[field]);
   }
 }
@@ -105,12 +102,7 @@ function withTables(previous: readonly RichTextBlock[], next: RichTextBlock[]): 
 }
 
 export function applyHandbookFieldResult(manual: HandbookManual, result: Extract<HandbookAiResult, { type: "manual-field" }>): HandbookManual {
-  if ("statement" in result) {
-    return result.field === "acknowledgement"
-      ? { ...manual, closing: { ...manual.closing, acknowledgement: result.statement } }
-      : { ...manual, closing: { ...manual.closing, approval: { ...manual.closing.approval, statement: result.statement } } };
-  }
-  if (result.field === "reviewMechanism") return { ...manual, closing: { ...manual.closing, reviewMechanism: withTables(manual.closing.reviewMechanism, result.blocks) } };
+  if ("statement" in result) return { ...manual, closing: { ...manual.closing, acknowledgement: result.statement } };
   return { ...manual, frontMatter: { ...manual.frontMatter, [result.field]: withTables(manual.frontMatter[result.field], result.blocks) } };
 }
 
@@ -123,7 +115,6 @@ export function applyHandbookFrontMatterResult(manual: HandbookManual, frontMatt
       welcome: withTables(current.welcome, frontMatter.welcome),
       about: withTables(current.about, frontMatter.about),
       purpose: withTables(current.purpose, frontMatter.purpose),
-      howToUse: withTables(current.howToUse, frontMatter.howToUse),
       vision: frontMatter.vision || current.vision,
       mission: frontMatter.mission || current.mission,
       coreValues: frontMatter.coreValues.length ? frontMatter.coreValues : current.coreValues,
@@ -136,8 +127,6 @@ export function applyHandbookClosingResult(manual: HandbookManual, result: Extra
     ...manual,
     closing: {
       ...manual.closing,
-      reviewMechanism: withTables(manual.closing.reviewMechanism, result.reviewMechanism),
-      approval: { ...manual.closing.approval, statement: result.approvalStatement || manual.closing.approval.statement },
       acknowledgement: result.acknowledgement || manual.closing.acknowledgement,
     },
   };
@@ -160,6 +149,6 @@ export function applyHandbookAiResult(manual: HandbookManual, target: { chapterI
   }
 }
 
-export function isStatementField(field: HandbookAiField): field is "approvalStatement" | "acknowledgement" {
+export function isStatementField(field: HandbookAiField): field is "acknowledgement" {
   return HANDBOOK_STATEMENT_FIELDS.has(field);
 }

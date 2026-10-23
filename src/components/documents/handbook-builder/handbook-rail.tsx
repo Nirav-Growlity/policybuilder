@@ -156,7 +156,7 @@ export function HandbookRail({ onAddChapter, onDeleteChapter }: { onAddChapter: 
   );
   const hasText = (blocks: readonly { text: string }[]) => blocks.some((block) => block.text.trim());
   const frontWritten = hasText(manual.frontMatter.welcome) && hasText(manual.frontMatter.about);
-  const closingWritten = hasText(manual.closing.reviewMechanism) && Boolean(manual.closing.acknowledgement.trim());
+  const closingWritten = Boolean(manual.closing.acknowledgement.trim());
 
   return (
     <nav className={clsx(shell.nav, styles.railNav)} aria-label="Handbook outline" onKeyDown={onKeyDown}>
@@ -205,7 +205,6 @@ export function HandbookRail({ onAddChapter, onDeleteChapter }: { onAddChapter: 
                       <ChapterMark state={chapterState(chapter, generation[chapter.id]?.status)} />
                       <span className={styles.railText}>
                         <span className={styles.railTitle}>{label}</span>
-                        {chapter.code ? <span className={styles.railCode}>{chapter.code}</span> : null}
                       </span>
                     </button>
                     <span className={styles.railGrip} aria-hidden="true"><GripVertical size={13} /></span>

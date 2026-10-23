@@ -202,7 +202,7 @@ export function NewHandbookWizard() {
             continueLabel="Continue to choose chapters"
             nextHint="Next, choose the chapters your handbook covers. We suggest a set for your industry."
             documentNoun="handbook"
-            titlePlaceholder="Employee Handbook"
+            titlePlaceholder="Employee Handbook" subtitlePlaceholder="Policies and practices for everyone who works here"
             extra={<HandbookFactsPanel facts={handbookFacts} onChange={(patch) => setHandbookFacts((current) => ({ ...current, ...patch }))} />}
           />
         ) : step === 1 ? (
@@ -223,6 +223,7 @@ export function NewHandbookWizard() {
           />
         ) : (
           <LookStep
+            kind="handbook"
             orgId={organization.id}
             theme={theme}
             options={themeOptions}

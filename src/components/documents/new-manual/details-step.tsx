@@ -31,7 +31,7 @@ export function detailsErrors(company: Company, control: SopManualControl, docum
 }
 
 /** Manual control fields; the company form above it is the policy setup form. */
-export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceholder = "SOP Manual", documentNoun = "manual" }: { control: SopManualControl; onChange: (patch: Partial<SopManualControl>) => void; showErrors: boolean; titlePlaceholder?: string; documentNoun?: string }) {
+export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceholder = "SOP Manual", documentNoun = "manual", subtitlePlaceholder = "Environmental, Social and Governance procedures" }: { control: SopManualControl; onChange: (patch: Partial<SopManualControl>) => void; showErrors: boolean; titlePlaceholder?: string; documentNoun?: string; subtitlePlaceholder?: string }) {
   const approvedError = showErrors && !control.approvedBy.trim() ? `Enter who approves the ${documentNoun}.` : undefined;
   const title = `${documentNoun.charAt(0).toUpperCase()}${documentNoun.slice(1)} details`;
   return (
@@ -41,21 +41,21 @@ export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceho
           <Input value={control.title ?? ""} onChange={(event) => onChange({ title: event.target.value })} placeholder={titlePlaceholder} />
         </Field>
         <Field label="Subtitle" hint="Shown under the title on the cover">
-          <Input value={control.subtitle ?? ""} onChange={(event) => onChange({ subtitle: event.target.value })} placeholder="Environmental, Social and Governance procedures" />
+          <Input value={control.subtitle ?? ""} onChange={(event) => onChange({ subtitle: event.target.value })} placeholder={subtitlePlaceholder} />
         </Field>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <Field label="Document number" hint="Suggested from your organization code">
+        {documentNoun !== "handbook" ? <Field label="Document number" hint="Suggested from your organization code">
           <Input value={control.docNo} onChange={(event) => onChange({ docNo: event.target.value })} placeholder="ACME/SOP/01" />
-        </Field>
-        <Field label="Revision">
+        </Field> : null}
+        <Field label={documentNoun === "handbook" ? "Version" : "Revision"}>
           <Input value={control.revision} onChange={(event) => onChange({ revision: event.target.value })} placeholder="01" />
         </Field>
-        <Field label="Classification">
+        {documentNoun !== "handbook" ? <Field label="Classification">
           <SelectMenu size="compact" value={control.classification || "Internal"} onValueChange={(classification) => onChange({ classification })} options={["Internal", "Confidential", "Public", "Controlled copy"].map((value) => ({ value, label: value }))} aria-label="Classification" />
-        </Field>
+        </Field> : null}
       </div>
-      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {documentNoun !== "handbook" ? <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <Field label="Supersedes" hint={`The issue this ${documentNoun} replaces`}>
           <Input value={control.supersedes} onChange={(event) => onChange({ supersedes: event.target.value })} placeholder="Rev 00" />
         </Field>
@@ -65,25 +65,25 @@ export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceho
         <Field label="Last review date">
           <DatePicker value={control.lastReviewDate ?? ""} maxDate={control.nextReviewDate || undefined} onChange={(lastReviewDate) => onChange({ lastReviewDate })} placeholder="DD-MM-YYYY" ariaLabel="Last review date" />
         </Field>
-      </div>
+      </div> : null}
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <Field label="Effective date">
-          <DatePicker value={control.effectiveDate} onChange={(effectiveDate) => onChange({ effectiveDate, nextReviewDate: nextReviewDate(effectiveDate, control.reviewFrequency) })} placeholder="DD-MM-YYYY" ariaLabel="Effective date" />
+          <DatePicker value={control.effectiveDate} onChange={(effectiveDate) => onChange(documentNoun === "handbook" ? { effectiveDate } : { effectiveDate, nextReviewDate: nextReviewDate(effectiveDate, control.reviewFrequency) })} placeholder="DD-MM-YYYY" ariaLabel="Effective date" />
         </Field>
-        <Field label="Review frequency">
+        {documentNoun !== "handbook" ? <Field label="Review frequency">
           <SelectMenu size="compact" value={control.reviewFrequency || "Yearly"} onValueChange={(reviewFrequency) => onChange({ reviewFrequency, nextReviewDate: nextReviewDate(control.effectiveDate, reviewFrequency) })} options={REVIEW_FREQUENCIES.map((value) => ({ value, label: value }))} aria-label="Review frequency" />
-        </Field>
-        <Field label="Next review date">
+        </Field> : null}
+        {documentNoun !== "handbook" ? <Field label="Next review date">
           <DatePicker value={control.nextReviewDate} minDate={control.effectiveDate || undefined} onChange={(nextReviewDate) => onChange({ nextReviewDate })} placeholder="DD-MM-YYYY" ariaLabel="Next review date" />
-        </Field>
+        </Field> : null}
       </div>
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-        <Field label="Prepared by">
+        {documentNoun !== "handbook" ? <Field label="Prepared by">
           <Input value={control.preparedBy} onChange={(event) => onChange({ preparedBy: event.target.value })} placeholder="EHS Manager" />
-        </Field>
-        <Field label="Reviewed by">
+        </Field> : null}
+        {documentNoun !== "handbook" ? <Field label="Reviewed by">
           <Input value={control.reviewedBy} onChange={(event) => onChange({ reviewedBy: event.target.value })} placeholder="Plant Head" />
-        </Field>
+        </Field> : null}
         <Field label="Approved by" required error={approvedError}>
           <Input value={control.approvedBy} onChange={(event) => onChange({ approvedBy: event.target.value })} placeholder="Managing Director" aria-invalid={approvedError ? true : undefined} />
         </Field>
@@ -94,7 +94,7 @@ export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceho
 
 export const DEFAULT_NEXT_HINT = "Next, choose the SOPs your teams follow. We suggest a set for your industry.";
 
-export function DetailsStep({ company, control, facts, onCompanyChange, onControlChange, onFactsChange, onContinue, continueLabel = "Continue to choose SOPs", nextHint = DEFAULT_NEXT_HINT, documentNoun = "manual", titlePlaceholder, extra }: {
+export function DetailsStep({ company, control, facts, onCompanyChange, onControlChange, onFactsChange, onContinue, continueLabel = "Continue to choose SOPs", nextHint = DEFAULT_NEXT_HINT, documentNoun = "manual", titlePlaceholder, subtitlePlaceholder, extra }: {
   company: Company;
   control: SopManualControl;
   facts: SopCompanyFacts;
@@ -107,6 +107,7 @@ export function DetailsStep({ company, control, facts, onCompanyChange, onContro
   /** "manual" or "handbook"; names the document in messages. */
   documentNoun?: string;
   titlePlaceholder?: string;
+  subtitlePlaceholder?: string;
   /** Rendered after the company facts, e.g. the handbook's employment terms. */
   extra?: React.ReactNode;
 }) {
@@ -121,8 +122,8 @@ export function DetailsStep({ company, control, facts, onCompanyChange, onContro
       </div>
       <div className="flex flex-col gap-5">
         <CompanyInfoForm company={company} onCompanyChange={onCompanyChange} documentLabel={documentNoun} />
-        <ManualDetailsPanel control={control} onChange={onControlChange} showErrors={attempted} documentNoun={documentNoun} titlePlaceholder={titlePlaceholder} />
-        <CompanyFactsPanel facts={facts} onChange={onFactsChange} itemNoun={documentNoun === "handbook" ? "Chapters" : "SOPs"} />
+        <ManualDetailsPanel control={control} onChange={onControlChange} showErrors={attempted} documentNoun={documentNoun} titlePlaceholder={titlePlaceholder} subtitlePlaceholder={subtitlePlaceholder} />
+        <CompanyFactsPanel showCertifications={documentNoun !== "handbook"} facts={facts} onChange={onFactsChange} itemNoun={documentNoun === "handbook" ? "Chapters" : "SOPs"} />
         {extra}
       </div>
       <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-[var(--color-line)] bg-[var(--pc-panel)] p-4 sm:flex-row">

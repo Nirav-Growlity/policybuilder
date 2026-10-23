@@ -207,6 +207,9 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
   },
 ];
 
+/** Handbook choices; saved documents can still resolve every SOP template. */
+export const HANDBOOK_DESIGNS = SOP_DESIGNS.filter((design) => design.id !== "esg-pillars" && design.id !== "sop-cards");
+
 const DESIGN_MAP = new Map(SOP_DESIGNS.map((design) => [design.id, design]));
 
 export function getSopDesign(id: string | null | undefined): SopDesign {

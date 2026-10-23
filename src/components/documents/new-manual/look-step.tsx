@@ -10,7 +10,7 @@ import { selectionSummary } from "../manual-helpers";
 import { WizardHeading } from "./wizard-chrome";
 import styles from "./wizard.module.css";
 
-export function LookStep({ orgId, theme, options, cover, logoPalette, sopCount, creating, onTheme, onOptions, onCover, onBack, onCreate, summary, backLabel = "Back to choose SOPs", createLabel = "Create manual", creatingLabel = "Creating manual…", aiCoverNote = "The AI cover is drawn right after the manual is created, while your SOPs are being written." }: {
+export function LookStep({ orgId, theme, options, cover, logoPalette, sopCount, creating, onTheme, onOptions, onCover, onBack, onCreate, summary, kind = "sop", backLabel = "Back to choose SOPs", createLabel = "Create manual", creatingLabel = "Creating manual…", aiCoverNote = "The AI cover is drawn right after the manual is created, while your SOPs are being written." }: {
   orgId: number;
   theme: SopTemplateId;
   options: SopThemeOptions;
@@ -25,6 +25,7 @@ export function LookStep({ orgId, theme, options, cover, logoPalette, sopCount, 
   onCreate: () => void;
   /** Overrides the "N SOPs selected" line; handbooks pass their own. */
   summary?: string;
+  kind?: "sop" | "handbook";
   backLabel?: string;
   createLabel?: string;
   creatingLabel?: string;
@@ -42,7 +43,7 @@ export function LookStep({ orgId, theme, options, cover, logoPalette, sopCount, 
         </div>
         <div className={styles.lookLayout}>
           <section aria-label="Templates">
-            <SopTemplatePicker value={theme} onChange={onTheme} layout="grid" />
+            <SopTemplatePicker value={theme} onChange={onTheme} layout="grid" kind={kind} />
           </section>
           <aside className={styles.lookPanel} aria-label="Colours, fonts and cover">
             <Group title="Colours and type">

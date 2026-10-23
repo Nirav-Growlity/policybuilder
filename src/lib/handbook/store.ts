@@ -5,6 +5,7 @@
  * Generation entries reuse the SOP queue's state shape; its `sopId` holds the
  * chapter id.
  */
+import { migrateHandbook } from "./migrate-handbook";
 import { create } from "zustand";
 import type { StoredManual } from "../manual-repository";
 import type { SopGenerationState } from "../sop/ai-contract";
@@ -72,7 +73,7 @@ export const useHandbookBuilder = create<HandbookBuilderState>()((set, get) => {
         title: stored.title,
         stage: stored.currentStage || "write",
         lockVersion: stored.lockVersion,
-        manual: stored.manual,
+        manual: migrateHandbook(stored.manual),
         selection: firstSelection(stored.manual),
       });
     },

@@ -90,14 +90,14 @@ function CoverLibrary({ orgId, cover, onChange }: { orgId: number; cover: SopCov
 export type DesignableManual = Pick<SopManual, "theme" | "themeOptions" | "cover" | "company">;
 type DesignUpdater = (updater: (manual: DesignableManual) => DesignableManual) => void;
 
-function SectionStage({ section, aiCover, manual, setManual, orgId, layout }: { section: SectionId; aiCover: ReturnType<typeof useAiCover>; manual: DesignableManual; setManual: DesignUpdater; orgId: number; layout: React.ReactNode }) {
+function SectionStage({ section, aiCover, manual, setManual, orgId, layout, kind }: { kind: "sop" | "handbook"; section: SectionId; aiCover: ReturnType<typeof useAiCover>; manual: DesignableManual; setManual: DesignUpdater; orgId: number; layout: React.ReactNode }) {
   const setOptions = (patch: Partial<SopThemeOptions>) => setManual((current) => ({ ...current, themeOptions: { ...current.themeOptions, ...patch } }));
   const setCover = (cover: SopCover) => setManual((current) => ({ ...current, cover }));
   if (section === "template") {
     return (
       <>
         <div className={studio.sectionHead}><h2 className={studio.sectionTitle}>Template</h2></div>
-        <SopTemplatePicker value={manual.theme} onChange={(theme) => setManual((current) => ({ ...current, theme }))} />
+        <SopTemplatePicker kind={kind} value={manual.theme} onChange={(theme) => setManual((current) => ({ ...current, theme }))} />
       </>
     );
   }
@@ -174,11 +174,12 @@ export function DesignMode({ mobile, onClose, aiCover }: { mobile: boolean; onCl
  * layout and cover settings, beside the whole document. Shared by SOP
  * manuals and employee handbooks.
  */
-export function ManualDesignStudio({ mobile, onClose, aiCover, orgId, manual, setManual, layout, preview, label }: {
+export function ManualDesignStudio({ mobile, onClose, aiCover, orgId, manual, setManual, layout, preview, label, kind = "sop" }: {
   mobile: boolean;
   onClose: () => void;
   aiCover: ReturnType<typeof useAiCover>;
   orgId: number;
+  kind?: "sop" | "handbook";
   manual: DesignableManual;
   setManual: DesignUpdater;
   layout: React.ReactNode;
@@ -233,7 +234,7 @@ export function ManualDesignStudio({ mobile, onClose, aiCover, orgId, manual, se
             <AnimatePresence mode="wait" initial={false} custom={direction}>
               <motion.div key={section} custom={direction} variants={{ enter: (dir: number) => ({ opacity: 0, y: dir * 14 }), center: { opacity: 1, y: 0 }, exit: (dir: number) => ({ opacity: 0, y: dir * -10 }) }} initial="enter" animate="center" exit="exit" transition={{ duration: 0.2, ease: EASE_OUT }} id="sop-design-section" role="tabpanel" aria-labelledby={`sop-design-tab-${section}`} className={inspector.panel}>
                 <div data-studio-scroll className={inspector.scroll} data-lenis-prevent="">
-                  <SectionStage section={section} aiCover={aiCover} manual={manual} setManual={setManual} orgId={orgId} layout={layout} />
+                  <SectionStage kind={kind} section={section} aiCover={aiCover} manual={manual} setManual={setManual} orgId={orgId} layout={layout} />
                 </div>
               </motion.div>
             </AnimatePresence>

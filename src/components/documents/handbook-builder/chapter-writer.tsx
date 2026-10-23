@@ -69,14 +69,8 @@ export function ChapterWriter({ chapter }: { chapter: HandbookChapter }) {
           <Field label="Chapter title" className={styles.sopTitleField}>
             <Input value={chapter.title} onChange={(event) => updateChapter(chapter.id, (current) => ({ ...current, title: event.target.value }))} placeholder="e.g. Working Hours and Attendance" />
           </Field>
-          <Field label="Code">
-            <Input value={chapter.code} onChange={(event) => updateChapter(chapter.id, (current) => ({ ...current, code: event.target.value }))} placeholder="Optional" />
-          </Field>
           <Field label="Part">
             <SelectMenu size="compact" value={chapter.part} onValueChange={(value) => updateChapter(chapter.id, (current) => ({ ...current, part: value as HandbookPartId }))} options={PART_OPTIONS} aria-label="Part" />
-          </Field>
-          <Field label="Owner">
-            <Input value={chapter.owner} onChange={(event) => updateChapter(chapter.id, (current) => ({ ...current, owner: event.target.value }))} placeholder="HR Manager" />
           </Field>
         </div>
         {writing ? (
@@ -112,7 +106,7 @@ export function ChapterWriter({ chapter }: { chapter: HandbookChapter }) {
             key={section.id}
             id={sectionAnchorId(section.id)}
             className={clsx(writing && !shown && styles.sectionPending)}
-            title={<span className={styles.sectionTitle}><span className={styles.sectionNumber}>{number}.0</span><input value={section.title} onChange={(event) => setSection({ ...section, title: event.target.value })} aria-label="Section heading" size={Math.max(6, section.title.length + 1)} className={styles.sectionTitleInput} /></span>}
+            title={<span className={styles.sectionTitle}><input value={section.title} onChange={(event) => setSection({ ...section, title: event.target.value })} aria-label="Section heading" size={Math.max(6, section.title.length + 1)} className={styles.sectionTitleInput} /></span>}
             actions={
               <>
                 <button type="button" className={ui.iconButton} data-tone="danger" aria-label={`Remove ${section.title}`} title="Remove this section" onClick={() => removeSection(section.id)}><Trash2 size={15} aria-hidden="true" /></button>

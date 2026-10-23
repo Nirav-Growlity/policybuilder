@@ -21,9 +21,8 @@ import { useHandbookBuilder, type HandbookRailSelection } from "@/lib/handbook/s
 import type { HandbookChapter, HandbookManual } from "@/lib/handbook/types";
 import type { SopCover } from "@/lib/sop/types";
 import { chapterOrder, handbookProgress, isChapterWritten } from "@/components/documents/handbook-helpers";
-import { Group, Segmented, SwitchRow } from "@/components/builder/design-studio/controls";
+import { Group, Segmented } from "@/components/builder/design-studio/controls";
 import studio from "@/components/builder/design-studio/design-studio.module.css";
-import { getSopDesign } from "@/lib/sop/design/templates";
 import type { BuilderMode } from "@/components/documents/builder/builder-context";
 import { UndoToast } from "@/components/documents/builder/builder-dialogs";
 import { ManualDesignStudio, useAiCover } from "@/components/documents/builder/design-mode";
@@ -376,20 +375,15 @@ function headingFor(manual: HandbookManual, selection: HandbookRailSelection, se
   };
 }
 
-/** Design's Layout panel for a handbook: how chapters are grouped, and the chapter header card. */
+/** Design's Layout panel for a handbook: how chapters are grouped. */
 function HandbookLayoutPanel() {
   const manual = useHandbookBuilder((state) => state.manual!);
   const setManual = useHandbookBuilder((state) => state.setManual);
-  const setOptions = (patch: Partial<HandbookManual["themeOptions"]>) => setManual((current) => ({ ...current, themeOptions: { ...current.themeOptions, ...patch } }));
-  const design = getSopDesign(manual.theme);
   return (
     <>
       <Group title="Group chapters by">
         <Segmented<HandbookManual["grouping"]> label="Group chapters by" value={manual.grouping} onChange={(grouping) => setManual((current) => ({ ...current, grouping }))} options={[{ value: "part", label: "By part" }, { value: "none", label: "None" }]} />
         <p className={studio.muted}>{manual.grouping === "part" ? "Chapters under their handbook part, in part order." : "One list of chapters in outline order."}</p>
-      </Group>
-      <Group title="Chapter pages">
-        <SwitchRow label="Chapter header card" hint={design.sopOpener === "header-card" ? "Always shown by this template." : "Code, owner and part in a card above each chapter."} checked={manual.themeOptions.showSopHeaderCard || design.sopOpener === "header-card"} onChange={(showSopHeaderCard) => setOptions({ showSopHeaderCard })} />
       </Group>
     </>
   );
@@ -402,6 +396,7 @@ function HandbookDesignMode({ mobile, onClose, aiCover }: { mobile: boolean; onC
   const { orgId, manualId } = useHandbookBuilderActions();
   return (
     <ManualDesignStudio
+      kind="handbook"
       mobile={mobile}
       onClose={onClose}
       aiCover={aiCover}

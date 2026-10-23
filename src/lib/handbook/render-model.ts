@@ -4,6 +4,7 @@
  * generator lay it out: handbook parts become the chapters of the model and
  * each handbook chapter becomes one numbered item.
  */
+import { migrateHandbook } from "./migrate-handbook";
 import { resolveSopDesign, SOP_PAGE_SIZES } from "../sop/design/resolve";
 import { companyFactSections, formatManualDate, renderSections, toRenderBlocks, type SopRenderOptions } from "../sop/render-model";
 import type { RenderBlock, RenderChapter, RenderFrontSection, RenderLabels, RenderSop, SopRenderModel } from "../sop/render-types";
@@ -29,27 +30,31 @@ export type HandbookRenderOptions = Omit<SopRenderOptions, "onlySopIds"> & {
 };
 
 export function buildHandbookRenderModel(manual: HandbookManual, options: HandbookRenderOptions = {}): SopRenderModel {
+  manual = migrateHandbook(manual);
   const accent = manual.themeOptions.accent;
   const design = resolveSopDesign({
     templateId: manual.theme,
     accent: accent === "" ? (manual.company.logoPalette ? "brand" : "") : accent === "template" ? "" : accent,
     fontPair: manual.themeOptions.fontPair,
-    showSopHeaderCard: manual.themeOptions.showSopHeaderCard,
+    showSopHeaderCard: false,
     logoPalette: manual.company.logoPalette,
   });
+  design.showSopHeaderCard = false;
+  if (design.sopOpener === "header-card") design.sopOpener = "title-banner";
+  if (design.sectionHeading === "number-chip") design.sectionHeading = "numbered-rule";
   const control = {
-    docNo: manual.control.docNo,
+    docNo: "",
     revision: manual.control.revision,
-    supersedes: manual.control.supersedes,
+    supersedes: "",
     effectiveDate: formatManualDate(manual.control.effectiveDate),
-    nextReviewDate: formatManualDate(manual.control.nextReviewDate),
-    reviewFrequency: manual.control.reviewFrequency,
-    preparedBy: manual.control.preparedBy,
-    reviewedBy: manual.control.reviewedBy,
+    nextReviewDate: "",
+    reviewFrequency: "",
+    preparedBy: "",
+    reviewedBy: "",
     approvedBy: manual.control.approvedBy,
-    classification: manual.control.classification,
-    issueDate: formatManualDate(manual.control.issueDate),
-    lastReviewDate: formatManualDate(manual.control.lastReviewDate),
+    classification: "",
+    issueDate: "",
+    lastReviewDate: "",
   };
   const title = manual.control.title?.trim() || "Employee Handbook";
   const enabled = manual.chapters.filter((chapter) => chapter.enabled);
@@ -63,19 +68,19 @@ export function buildHandbookRenderModel(manual: HandbookManual, options: Handbo
       anchor: `chapter-item-${position}`,
       number: String(position),
       // The running header and contents need a code; most handbooks number chapters instead.
-      code: chapter.code.trim() || `Chapter ${position}`,
+      code: `Chapter ${position}`,
       title: chapter.title || "Untitled chapter",
       pillar: "S",
       pillarLabel: handbookPartLabel(chapter.part),
       color: design.palette.primary,
       department: handbookPartLabel(chapter.part),
-      owner: chapter.owner,
+      owner: "",
       version: manual.control.revision || "01",
       effectiveDate: control.effectiveDate,
       nextReviewDate: control.nextReviewDate,
       preparedBy: control.preparedBy,
       approvedBy: control.approvedBy,
-      sections: renderSections(chapter, includeEmpty),
+      sections: renderSections(chapter, includeEmpty).map((section) => ({ ...section, number: "" })),
     };
   };
 
@@ -114,7 +119,7 @@ export function buildHandbookRenderModel(manual: HandbookManual, options: Handbo
       title: "Our Values",
       blocks: front.coreValues.length ? [{ type: "table" as const, columns: ["Value", "What it means here"], widths: [1, 3], rows: front.coreValues.map((value) => [value.title, value.description]) }] : [],
     },
-    { id: "purpose", title: "Purpose of this Handbook", blocks: toRenderBlocks(front.purpose) },
+    { id: "purpose", title: "About this handbook", blocks: toRenderBlocks(front.purpose) },
     {
       id: "scope",
       title: "Scope and Applicability",
@@ -123,8 +128,7 @@ export function buildHandbookRenderModel(manual: HandbookManual, options: Handbo
         { type: "table" as const, columns: ["Sr.", "Site", "Address", "Primary function"], widths: [0.4, 1.4, 2.4, 1.6], rows: front.sites.map((site, index) => [String(index + 1), site.location || "", site.address, site.primaryFunction || ""]) },
       ] : [],
     },
-    ...companyFactSections(manual, "handbook"),
-    { id: "how-to-use", title: "How to Use this Handbook", blocks: toRenderBlocks(front.howToUse) },
+    ...companyFactSections(manual, "handbook").filter((section) => section.id !== "certifications"),
     {
       id: "glossary",
       title: "Glossary",
@@ -134,17 +138,11 @@ export function buildHandbookRenderModel(manual: HandbookManual, options: Handbo
     .filter((section) => section.blocks.length > 0 || includeEmpty)
     .map((section) => ({ ...section, anchor: `front-${section.id}`, number: "", kind: section.id }));
 
-  const signatories = manual.closing.approval.signatories.length
-    ? manual.closing.approval.signatories
-    : [
-      { role: "Prepared by", name: "", designation: control.preparedBy, date: "" },
-      { role: "Reviewed by", name: "", designation: control.reviewedBy, date: "" },
-      { role: "Approved by", name: "", designation: control.approvedBy, date: "" },
-    ].filter((row) => row.designation);
+  const approver = manual.closing.approval.signatories[0];
+  const signatories = [{ role: "Approved by", name: approver?.name ?? "", designation: approver?.designation ?? control.approvedBy, date: approver?.date ? formatManualDate(approver.date) : "" }];
   const revisions = manual.closing.revisionHistory.length
     ? manual.closing.revisionHistory.map((entry) => ({ revision: entry.revisionNo, date: formatManualDate(entry.date), description: entry.description, reviewedBy: entry.reviewedBy?.trim() ?? "", approvedBy: entry.approvedBy?.trim() ?? "" }))
-    : [{ revision: control.revision || "01", date: control.effectiveDate, description: "First issue of the employee handbook.", reviewedBy: control.reviewedBy.trim(), approvedBy: control.approvedBy.trim() }];
-  const reviewBlocks = toRenderBlocks(manual.closing.reviewMechanism);
+    : [{ revision: control.revision || "01", date: control.effectiveDate, description: "First issue of the employee handbook.", reviewedBy: manual.control.reviewedBy.trim(), approvedBy: control.approvedBy.trim() }];
   const acknowledgement = manual.closing.acknowledgement.trim();
 
   const page = manual.themeOptions.pageSize === "Letter" ? "Letter" : "A4";
@@ -173,9 +171,9 @@ export function buildHandbookRenderModel(manual: HandbookManual, options: Handbo
     frontMatter,
     chapters,
     closing: {
-      sections: only ? [] : (reviewBlocks.length || includeEmpty ? [{ id: "review", anchor: "closing-review", number: "", title: "Review Mechanism", kind: "review", blocks: reviewBlocks }] : []),
+      sections: [],
       revisions,
-      approval: { statement: manual.closing.approval.statement, signatories },
+      approval: { statement: "", signatories },
       anchors: { revisions: "closing-revisions", approval: "closing-approval" },
       after: only || !acknowledgement ? [] : [{
         id: "acknowledgement",

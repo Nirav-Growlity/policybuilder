@@ -131,7 +131,7 @@
 #let page-of() = [Page #counter(page).display() of #context counter(page).final().first()]
 
 // The classification stands in for the old fixed "Controlled copy" label.
-#let copy-label = if m.control.classification.trim() != "" { m.control.classification } else { "Controlled copy" }
+#let copy-label = if m.kind == "handbook" { "" } else if m.control.classification.trim() != "" { m.control.classification } else { "Controlled copy" }
 
 // Optional control fields, left out when empty so older manuals keep their layout.
 #let optional-control(pairs) = pairs.filter(((k, v)) => v.trim() != "")
@@ -146,7 +146,9 @@
   let sop-title = if sop != none { sop.code + "  " + sop.title } else { m.cover.eyebrow }
   let sop-color = if sop != none { col(sop.color) } else { primary }
   set par(justify: false)
-  if d.runningHeader == "control-table" {
+  if m.kind == "handbook" and d.runningHeader == "control-table" {
+    grid(columns: (1fr, auto), txt(weight: "bold", fill: primary, m.title), txt(size: sz.small * 1pt, "Version " + m.control.revision + "  |  Effective " + m.control.effectiveDate))
+  } else if d.runningHeader == "control-table" {
     // Issue and last review dates share a row under the four fixed cells, and Supersedes
     // (free text) gets a full-width row; a lone cell spans both columns.
     let dates = optional-control((("Issue date", m.control.issueDate), ("Last review", m.control.lastReviewDate)))
@@ -181,7 +183,7 @@
   } else if d.runningHeader == "register-line" {
     grid(columns: (1fr, auto),
       txt(size: sz.small * 1pt, fill: muted, m.company.name + "  |  " + m.title),
-      txt(size: sz.small * 1pt, fill: muted, m.control.docNo + "  Rev " + m.control.revision))
+      txt(size: sz.small * 1pt, fill: muted, if m.kind == "handbook" { "Version " + m.control.revision } else { m.control.docNo + "  Rev " + m.control.revision }))
     v(2pt)
     line(length: 100%, stroke: (paint: line-color, thickness: rule))
   } else {
@@ -194,7 +196,9 @@
 
 #let running-footer() = context {
   set par(justify: false)
-  if d.runningFooter == "prepared-approved" {
+  if m.kind == "handbook" and d.runningFooter in ("prepared-approved", "register-folio") {
+    grid(columns: (1fr, auto), txt(size: sz.small * 1pt, fill: muted, "Version " + m.control.revision + "  |  Effective " + m.control.effectiveDate), txt(size: sz.small * 1pt, page-of()))
+  } else if d.runningFooter == "prepared-approved" {
     line(length: 100%, stroke: (paint: line-color, thickness: rule))
     v(3pt)
     grid(columns: (1fr, 1fr, auto), column-gutter: 8pt,
@@ -292,7 +296,7 @@
     txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, sop.title)
     v(-2pt)
     line(length: 100%, stroke: (paint: primary, thickness: 1.2pt))
-    txt(size: sz.small * 1pt, fill: muted, "Version " + sop.version + "   |   Effective " + sop.effectiveDate + "   |   Owner: " + sop.owner)
+    txt(size: sz.small * 1pt, fill: muted, "Version " + sop.version + "   |   Effective " + sop.effectiveDate + (if m.kind == "handbook" { "" } else { "   |   Owner: " + sop.owner }))
   } else if d.sopOpener == "pillar-banner" {
     table(columns: (1fr,), stroke: none, fill: color, inset: (x: 10pt, y: 8pt),
       grid(columns: (1fr, auto), align: (left + bottom, right + top),
@@ -300,7 +304,7 @@
         caps(sop.pillarLabel, fill: on-primary)))
     v(-after + 0pt)
     tight(sz.small * 1pt, table(columns: (1fr, 1fr, 1fr, 1fr), stroke: none, fill: soft, inset: (x: 10pt, y: 4pt),
-      meta-pair(L.department, sop.department), meta-pair("Owner", sop.owner), meta-pair("Version", sop.version), meta-pair("Effective", sop.effectiveDate)))
+      meta-pair(L.department, sop.department), ..(if m.kind == "handbook" { () } else { (meta-pair("Owner", sop.owner),) }), meta-pair("Version", sop.version), meta-pair("Effective", sop.effectiveDate)))
   } else if d.sopOpener == "header-card" {
     table(columns: (1fr,), stroke: none, fill: primary, inset: (x: 10pt, y: 9pt),
       [#txt(size: sz.small * 1pt, weight: "bold", fill: col(pal.accent), tracking: 0.6pt, L.item + " " + sop.number) \ #txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: on-primary, sop.title)])
@@ -309,7 +313,7 @@
   } else if d.sopOpener == "register-head" {
     table(columns: (32mm, 1fr), stroke: (bottom: (paint: ink, thickness: 1pt), rest: none), inset: (x: 6pt, y: 6pt), align: (center + horizon, left + horizon),
       table.cell(fill: primary, txt(weight: "bold", fill: on-primary, size: sz.small * 1pt, sop.code)),
-      [#txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: ink, sop.title) \ #txt(size: sz.small * 1pt, fill: muted, sop.department + "  |  Owner: " + sop.owner + "  |  Version " + sop.version + "  |  Effective " + sop.effectiveDate)])
+      [#txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: ink, sop.title) \ #txt(size: sz.small * 1pt, fill: muted, sop.department + (if m.kind == "handbook" { "" } else { "  |  Owner: " + sop.owner }) + "  |  Version " + sop.version + "  |  Effective " + sop.effectiveDate)])
   } else {
     table(columns: (1fr,), stroke: none, fill: primary-dark, inset: (x: 12pt, y: 12pt),
       [#txt(size: sz.small * 1pt + 0.5pt, weight: "bold", fill: accent, tracking: 0.8pt, upper(sop.code + "  |  " + sop.department)) \ #v(2pt) #txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: on-primary, sop.title)])
@@ -421,7 +425,7 @@
 
 // ---------------------------------------------------------------- cover
 
-#let control-rows() = (
+#let control-rows() = if m.kind == "handbook" { (("Version", m.control.revision), ("Effective date", m.control.effectiveDate), ("Approved by", m.control.approvedBy)) } else { (
   ("Document No.", m.control.docNo), ("Revision", m.control.revision),
   ..optional-control((("Supersedes", m.control.supersedes), ("Issue date", m.control.issueDate))),
   ("Effective date", m.control.effectiveDate),
@@ -429,6 +433,8 @@
   ("Next review", m.control.nextReviewDate), ("Prepared by", m.control.preparedBy), ("Reviewed by", m.control.reviewedBy),
   ("Approved by", m.control.approvedBy), ("Classification", m.control.classification),
 )
+
+}
 
 // Optional fields can leave the last row short; empty cells keep the grid square.
 #let control-grid(columns: 4) = {
@@ -463,7 +469,7 @@
       grid(columns: (1fr, 46mm), align: (left + horizon, right + horizon),
         logo-or-name(height: 16mm),
         tight(sz.small * 1pt, table(columns: (1fr,), stroke: (paint: primary, thickness: 1pt), inset: (x: 8pt, y: 5pt), align: center,
-          [#caps(copy-label, fill: primary) \ #txt(size: sz.small * 1pt, fill: muted, "Rev " + m.control.revision)])))
+          [#caps(copy-label, fill: primary) \ #txt(size: sz.small * 1pt, fill: muted, (if m.kind == "handbook" { "Version " } else { "Rev " }) + m.control.revision)])))
       v(46mm)
       caps(m.cover.eyebrow, fill: accent, size: sz.small * 1pt + 1.5pt)
       v(4pt)
@@ -593,6 +599,10 @@
 
 #let approval-block() = {
   let a = m.closing.approval
+  if m.kind == "handbook" {
+    let s = a.signatories.first()
+    par("Approved by: " + (s.name, s.designation, s.date).filter(v => v != "").join(" | "))
+  } else {
   if a.statement != "" { callout(par(a.statement)); v(after) }
   if d.approval == "signature-table" {
     data-table(("Role", "Name", "Designation", "Signature", "Date"), (1.1, 1.3, 1.3, 1.2, 0.9),
@@ -602,6 +612,8 @@
       ..a.signatories.map(s => tight(body-size, table(columns: (1fr,), stroke: none, fill: soft, inset: 9pt,
         [#caps(s.role, fill: primary) \ #v(16mm) #line(length: 100%, stroke: (paint: muted, thickness: rule)) \ #txt(weight: "bold", s.name) \ #txt(size: sz.small * 1pt, fill: muted, s.designation + (if s.date != "" { "  |  " + s.date } else { "" }))]))))
   }
+}
+
 }
 
 // ---------------------------------------------------------------- document

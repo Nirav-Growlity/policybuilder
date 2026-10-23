@@ -1,3 +1,5 @@
+import { SopTemplatePicker } from "./design/sop-design-controls";
+import { CompanyFactsPanel } from "./new-manual/company-facts-panel";
 import assert from "node:assert/strict";
 import test from "node:test";
 import React from "react";
@@ -80,8 +82,12 @@ test("the handbook's details panel names the handbook in its approver message", 
     showErrors: true,
     titlePlaceholder: "Employee Handbook",
     documentNoun: "handbook",
+    subtitlePlaceholder: "Policies and practices for everyone who works here",
   })));
   assert.match(markup, /Handbook details/);
+  assert.match(markup, />Version</);
+  assert.match(markup, /Policies and practices for everyone who works here/);
+  assert.doesNotMatch(markup, /Document number|Classification|Supersedes|Issue date|Last review date|Review frequency|Next review date|Prepared by|Reviewed by/);
   assert.match(markup, /Enter who approves the handbook\./);
   assert.match(markup, /placeholder="Employee Handbook"/);
 });
@@ -93,4 +99,22 @@ test("the new document chooser offers the employee handbook as available", () =>
   assert.equal(handbook.title, "Employee handbook");
   assert.equal(handbook.meta, "Ready in about a minute");
   assert.ok(DOCUMENT_TYPES.every((type) => type.available), "no type is marked coming soon");
+});
+
+test("handbook templates leave out ESG and SOP cards while SOP choices stay available", () => {
+  const handbook = renderToStaticMarkup(React.createElement(SopTemplatePicker, { value: "sop-cards", onChange: noop, kind: "handbook" }));
+  assert.doesNotMatch(handbook, /ESG Pillars|SOP Cards/);
+  const sop = renderToStaticMarkup(React.createElement(SopTemplatePicker, { value: "sop-cards", onChange: noop }));
+  assert.match(sop, /ESG Pillars/);
+  assert.match(sop, /SOP Cards/);
+});
+
+test("handbook facts retain labour laws and contacts without certifications", () => {
+  const markup = renderToStaticMarkup(React.createElement(Toaster, null, React.createElement(CompanyFactsPanel, {
+    facts: { profile: "", certifications: ["ISO 9001"], regulations: ["Factories Act"], contacts: [] },
+    onChange: noop, showCertifications: false, itemNoun: "Chapters",
+  })));
+  assert.doesNotMatch(markup, /Certifications|ISO 9001/);
+  assert.match(markup, /Factories Act/);
+  assert.match(markup, /Key contacts/);
 });

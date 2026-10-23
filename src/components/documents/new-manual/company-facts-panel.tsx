@@ -14,7 +14,7 @@ import builder from "../builder/builder.module.css";
  * company profile, certifications, laws and regulators, and key contacts.
  * Used by the wizard's details step and the builder's details dialog.
  */
-export function CompanyFactsPanel({ facts, onChange, itemNoun = "SOPs" }: { facts: SopCompanyFacts; onChange: (patch: Partial<SopCompanyFacts>) => void; /** "SOPs" or "Chapters": what names the contacts as reporting channels. */ itemNoun?: string }) {
+export function CompanyFactsPanel({ facts, onChange, itemNoun = "SOPs", showCertifications = true }: { facts: SopCompanyFacts; onChange: (patch: Partial<SopCompanyFacts>) => void; /** "SOPs" or "Chapters": what names the contacts as reporting channels. */ itemNoun?: string; showCertifications?: boolean }) {
   // A new row suggests the next common purpose that is not listed yet.
   const newContact = (): SopContact => {
     const used = new Set(facts.contacts.map((contact) => contact.purpose.trim().toLowerCase()));
@@ -24,7 +24,7 @@ export function CompanyFactsPanel({ facts, onChange, itemNoun = "SOPs" }: { fact
   return (
     <Panel
       title="Facts for writing"
-      description="AI uses these in place of placeholders. Contacts and certifications also print in the front matter."
+      description={showCertifications ? "AI uses these in place of placeholders. Contacts and certifications also print in the front matter." : "AI uses these in place of placeholders. Contacts also print on the opening pages."}
       icon={<BookUser size={17} strokeWidth={1.8} />}
       actions={<Badge>Optional</Badge>}
     >
@@ -37,9 +37,9 @@ export function CompanyFactsPanel({ facts, onChange, itemNoun = "SOPs" }: { fact
         />
       </Field>
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Field label="Certifications held" hint="One per line. Printed in the front matter and cited in References.">
+        {showCertifications ? <Field label="Certifications held" hint="One per line. Printed in the front matter and cited in References.">
           <LinesField lines={facts.certifications} onChange={(certifications) => onChange({ certifications })} label="Certifications held" placeholder={"ISO 14001:2015\nSA8000:2014"} className={builder.linesWriting} />
-        </Field>
+        </Field> : null}
         <Field label="Laws and regulators that apply" hint="One per line. AI may name these in References and compliance text.">
           <LinesField lines={facts.regulations} onChange={(regulations) => onChange({ regulations })} label="Laws and regulators that apply" placeholder={"Factories Act, 1948\nState Pollution Control Board"} className={builder.linesWriting} />
         </Field>

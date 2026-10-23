@@ -52,7 +52,6 @@ test("a written chapter maps back onto the chapter's own section ids and heading
   const chapter = manual.chapters[2];
   const request: HandbookAiRequest = { type: "chapter", manual, chapterId: chapter.id };
   const result = finalizeHandbookOutput(request, {
-    owner: "HR Manager",
     sections: {
       s1: [block(words(30)), { type: "table", text: "", columns: ["Leave", "Days"], rows: [["Earned", "[days]"]] }],
       s2: [block(words(25))],
@@ -68,7 +67,7 @@ test("a written chapter maps back onto the chapter's own section ids and heading
   assert.equal("blocks" in written[0] && written[0].blocks[1].type, "table");
   assert.equal(written[3].kind === "procedure" && written[3].steps[0].responsible, "Employee");
 
-  assert.throws(() => finalizeHandbookOutput(request, { owner: "", sections: { s1: [block("Too short")], s2: [], s3: [], s4: [], s5: [] } }), HandbookOutputError);
+  assert.throws(() => finalizeHandbookOutput(request, { sections: { s1: [block("Too short")], s2: [], s3: [], s4: [], s5: [] } }), HandbookOutputError);
 });
 
 test("applying a chapter keeps headings and leaves sections switched off meanwhile untouched", () => {
@@ -79,11 +78,11 @@ test("applying a chapter keeps headings and leaves sections switched off meanwhi
   assert.equal(partial.length, 1);
   assert.equal(partial[0].id, sections[0].id);
   const off = { ...chapter, owner: "", sections: chapter.sections.map((section, index) => (index === 1 ? { ...section, enabled: false } : section)) };
-  const next = applyChapterResult(off, { sections: [{ ...partial[0], title: "Ignored" }, { ...sections[1], blocks: [] } as never], owner: "HR Manager" });
+  const next = applyChapterResult(off, { sections: [{ ...partial[0], title: "Ignored" }, { ...sections[1], blocks: [] } as never] });
   assert.equal(next.sections[0].title, "Types of Leave and Entitlements");
   assert.equal("blocks" in next.sections[0] && next.sections[0].blocks[0].text, "New entitlements text");
   assert.deepEqual(next.sections[1], off.sections[1]);
-  assert.equal(next.owner, "HR Manager");
+  assert.equal(next.owner, "");
   assert.equal(next.status, "draft");
 });
 
@@ -137,4 +136,16 @@ test("the shared generation queue writes handbook chapters and the front matter"
   });
   assert.deepEqual(done.sort(), [...ids].sort());
   assert.ok(states.some((state) => state.status === "writing"));
+});
+
+test("opening and closing generation only writes the simplified handbook fields", () => {
+  const manual = buildSampleHandbook();
+  const opening = buildHandbookPrompt({ type: "front-matter", manual }, "");
+  assert.doesNotMatch(opening.user, /howToUse/);
+  const result = finalizeHandbookOutput({ type: "front-matter", manual }, { welcome: [], about: [], vision: "", mission: "", coreValues: [], purpose: ["Find a topic and ask HR for help."] });
+  assert.equal(result.type, "front-matter");
+  assert.equal("howToUse" in (result as Extract<HandbookAiResult, { type: "front-matter" }>).frontMatter, false);
+  const closing = finalizeHandbookOutput({ type: "closing", manual }, { acknowledgement: "I have read this handbook." });
+  assert.deepEqual(closing, { type: "closing", acknowledgement: "I have read this handbook." });
+  assert.doesNotMatch(buildHandbookPrompt({ type: "closing", manual }, "").user, /reviewMechanism|approvalStatement/);
 });
