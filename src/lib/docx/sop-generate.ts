@@ -995,7 +995,7 @@ function metaCardRows(ctx: Ctx, sop: RenderSop, borderTop = true): RowSpec[] {
     borders: { top: rowIndex === 0 && !borderTop ? null : line, bottom: line, left: line, right: line },
   });
   return [
-    { cells: [cell("SOP No.", sop.code, 0), cell("Version", sop.version, 0), cell("Department", sop.department, 0), cell("Owner", sop.owner, 0)] },
+    { cells: [cell(`${ctx.m.labels.item} No.`, sop.code, 0), cell("Version", sop.version, 0), cell(ctx.m.labels.department, sop.department, 0), cell("Owner", sop.owner, 0)] },
     { cells: [cell("Effective", sop.effectiveDate, 1), cell("Next review", sop.nextReviewDate, 1), cell("Prepared by", sop.preparedBy, 1), cell("Approved by", sop.approvedBy, 1)] },
   ];
 }
@@ -1014,8 +1014,8 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
   };
   if (opener === "ruled-title") {
     out.push(
-      // Codes such as "SOP-EHS-001" already say SOP.
-      mark(par(ctx, [caps(ctx, `${/^sop/i.test(sop.code) ? sop.code : `SOP ${sop.code}`}   |   ${sop.department}`, { color: ctx.pal.accent })], { keepNext: true })),
+      // Codes such as "SOP-EHS-001" or "Chapter 3" already say what they are.
+      mark(par(ctx, [caps(ctx, `${sop.code.toUpperCase().startsWith(ctx.m.labels.item.toUpperCase()) ? sop.code : `${ctx.m.labels.item} ${sop.code}`}   |   ${sop.department}`, { color: ctx.pal.accent })], { keepNext: true })),
       v(2),
       par(ctx, [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 1 }),
       v(-2),
@@ -1042,7 +1042,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
       widths: quarter,
       rows: [
         { cells: [banner] },
-        { cells: [meta("Department", sop.department), meta("Owner", sop.owner), meta("Version", sop.version), meta("Effective", sop.effectiveDate)] },
+        { cells: [meta(ctx.m.labels.department, sop.department), meta("Owner", sop.owner), meta("Version", sop.version), meta("Effective", sop.effectiveDate)] },
       ],
     }));
   } else if (opener === "header-card") {
@@ -1050,7 +1050,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
       widths: quarter,
       rows: [
         { cells: [{ span: 4, fill: ctx.pal.primary, inset: inset(10, 9), items: [mark(stack(ctx, [
-          [txt(ctx, `SOP ${sop.number}`, { size: ctx.sz.small, bold: true, color: ctx.pal.accent, tracking: 0.6 })],
+          [txt(ctx, `${ctx.m.labels.item} ${sop.number}`, { size: ctx.sz.small, bold: true, color: ctx.pal.accent, tracking: 0.6 })],
           [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.onPrimary })],
         ], { outline: 1 }))] }] },
         ...metaCardRows(ctx, sop),
@@ -1264,6 +1264,7 @@ function contentsPage(ctx: Ctx): FlowItem[] {
   for (const section of m.closing.sections) out.push(...contentsRow(ctx, "", section.title, section.anchor, ctx.pal.ink));
   out.push(...contentsRow(ctx, "", "Revision history", m.closing.anchors.revisions, ctx.pal.ink));
   out.push(...contentsRow(ctx, "", "Approval", m.closing.anchors.approval, ctx.pal.ink));
+  for (const section of m.closing.after) out.push(...contentsRow(ctx, "", section.title, section.anchor, ctx.pal.ink));
   return out;
 }
 
@@ -1274,7 +1275,7 @@ function chapterPage(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
     box(ctx, ctx.W, [
       v(26 * MM),
       { ...stack(ctx, [
-        [caps(ctx, "Chapter", { color: ctx.pal.onPrimary })],
+        [caps(ctx, ctx.m.labels.group, { color: ctx.pal.onPrimary })],
         [txt(ctx, chapter.label, { font: "heading", size: ctx.sz.coverTitle * 0.9, bold: true, color: ctx.pal.onPrimary })],
       ]), bookmark: chapter.anchor, outline: 0 },
       v(4),
@@ -1297,7 +1298,7 @@ function chapterPage(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
 }
 
 function labelBand(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
-  const count = txt(ctx, `${chapter.sops.length} SOPs`, { size: ctx.sz.small, color: ctx.pal.muted });
+  const count = txt(ctx, `${chapter.sops.length} ${chapter.sops.length === 1 ? ctx.m.labels.itemSingular : ctx.m.labels.itemPlural}`, { size: ctx.sz.small, color: ctx.pal.muted });
   const countWidth = runsWidth(ctx, [count]) + 16;
   return [
     table(ctx, {
@@ -1560,7 +1561,8 @@ function logoPlate(ctx: Ctx, height: number, indent?: number): TableItem {
 
 async function coverParts(ctx: Ctx): Promise<CoverParts> {
   const m = ctx.m;
-  const d = ctx.d;
+  // A handbook has no ESG pillars, so the pillar-band cover becomes the control sheet (manual.typ `cover-style`).
+  const d = m.kind === "handbook" && ctx.d.cover === "pillar-bands" ? { ...ctx.d, cover: "control-sheet" as const } : ctx.d;
   const w = ctx.pageW;
   const h = ctx.pageH;
   const padX = d.page.marginXMm * MM;
@@ -1606,7 +1608,7 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     });
     const stats = table(ctx, {
       widths: Array(3).fill(inner / 3),
-      rows: [{ cells: statsRows(ctx, ["Standard operating procedures", "Departments covered", "Sites in scope"], ctx.sz.coverTitle * 0.8).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 9), items: [item] })) }],
+      rows: [{ cells: statsRows(ctx, ctx.m.labels.stats, ctx.sz.coverTitle * 0.8).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 9), items: [item] })) }],
     });
     return {
       margins: { top: 20 * MM, bottom: 18 * MM, left: padX, right: padX },
@@ -1690,7 +1692,7 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     const cards = table(ctx, {
       widths: Array(3).fill(inner / 3),
       indent: padX,
-      rows: [{ cells: statsRows(ctx, ["SOPs in this manual", "Departments", "Sites in scope"], ctx.sz.coverTitle).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 10), borders: { top: white, bottom: white, left: white, right: white }, items: [item] })) }],
+      rows: [{ cells: statsRows(ctx, ctx.m.labels.cardStats, ctx.sz.coverTitle).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 10), borders: { top: white, bottom: white, left: white, right: white }, items: [item] })) }],
     });
     return {
       margins: { top: 0, bottom: 0, left: 0, right: 0 },
@@ -1786,6 +1788,7 @@ export function sopManualAnchors(model: SopRenderModel): Array<{ anchor: string;
     for (const section of model.closing.sections) out.push({ anchor: section.anchor, title: section.title });
     out.push({ anchor: model.closing.anchors.revisions, title: "Revision history" });
     out.push({ anchor: model.closing.anchors.approval, title: "Approval" });
+    for (const section of model.closing.after) out.push({ anchor: section.anchor, title: section.title });
   }
   return out;
 }
@@ -1914,6 +1917,10 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     ));
     closing.push(v(ctx.after * 2), ...partTitle(ctx, "Approval", model.closing.anchors.approval), ...approvalBlock(ctx));
     plans.push({ kind: "body", sop: null, items: closing });
+    // Each later part starts its own page, as pagebreak() does in manual.typ.
+    for (const section of model.closing.after) {
+      plans.push({ kind: "body", sop: null, items: [...partTitle(ctx, section.title, section.anchor), ...renderBlocks(ctx, section.blocks, ctx.W)] });
+    }
   }
 
   const marginTop = d.page.marginTopMm * MM;
@@ -1987,7 +1994,7 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
   const doc = new Document({
     creator: "PolicyCraft",
     title: model.title,
-    description: `${model.company.name} SOP manual`,
+    description: `${model.company.name} ${model.labels.document}`,
     fonts: await embeddedDocumentFonts(families),
     features: options.pages ? undefined : { updateFields: true },
     styles: {

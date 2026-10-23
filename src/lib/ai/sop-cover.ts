@@ -8,7 +8,12 @@ import { getCompanyClassificationContext } from "../company-classification";
 import { normalizeCoverComposition } from "../cover-composition";
 import { resolveSopDesign } from "../sop/design/resolve";
 import { getSopDesign } from "../sop/design/templates";
+import type { HandbookManual } from "../handbook/types";
+import { handbookPartLabel } from "../handbook/types";
 import type { SopManual } from "../sop/types";
+
+/** What the cover helpers read; SOP manuals and employee handbooks both have it. */
+export type CoverManual = Pick<SopManual, "company" | "theme" | "themeOptions">;
 import type { CoverComposition, CoverElement, CoverTextElement } from "../types";
 import {
   normalizeAICoverDesign,
@@ -34,7 +39,7 @@ function visualIndustryCategory(value: string): string {
 }
 
 /** The template palette with the user's accent or brand colours applied. */
-export function sopCoverDesign(manual: SopManual) {
+export function sopCoverDesign(manual: CoverManual) {
   return resolveSopDesign({
     templateId: manual.theme,
     accent: manual.themeOptions.accent,
@@ -80,16 +85,45 @@ export function buildSopCoverArtworkContext(manual: SopManual, instruction = "")
   });
 }
 
+/** Design brief for an employee handbook cover: people and workplace themes rather than ESG pillars. */
+export function buildHandbookCoverArtworkContext(manual: HandbookManual, instruction = ""): string {
+  const company = manual.company;
+  const enabled = manual.chapters.filter((chapter) => chapter.enabled);
+  const design = sopCoverDesign(manual);
+  const template = getSopDesign(manual.theme);
+  return JSON.stringify({
+    documentType: "Employee handbook (workplace policies, conduct, pay, leave and well-being for employees)",
+    sector: text(company.industry, 180),
+    subsector: text(company.subCategory, 180),
+    industry: text(company.industryDetail, 180),
+    classificationContext: getCompanyClassificationContext(company),
+    industryStyle: visualIndustryCategory([company.industry, company.subCategory, company.industryDetail].filter(Boolean).join(" ")),
+    mood: "welcoming, people-centred and professional",
+    topics: enabled.map((chapter) => text(chapter.title, 80)).filter(Boolean).slice(0, 10),
+    parts: [...new Set(enabled.map((chapter) => handbookPartLabel(chapter.part)))].slice(0, 8),
+    template: { name: template.name, look: template.descriptors.join(", ") },
+    palette: {
+      primary: design.palette.primary,
+      primaryDark: design.palette.primaryDark,
+      accent: design.palette.accent,
+      soft: design.palette.soft,
+      ink: design.palette.ink,
+      paper: design.palette.paper,
+    },
+    ...(instruction ? { userArtDirection: text(instruction, 400) } : {}),
+  });
+}
+
 /**
  * The image prompt for SOP covers. Unlike policy covers, the manual sets its
  * title on a solid band of its own and shows the artwork as a wide banner, so
  * the artwork must be detailed edge to edge with no space left for text.
  */
-export function buildSopCoverImagePrompt(artworkContext: string): string {
-  return `Create opaque, full-bleed decorative artwork for the cover of an SOP manual. The cover crops a wide banner from the middle of this portrait canvas and sets the title and company on a solid colour band of its own, so do not leave any blank, white, empty or low-detail region for text: fill the whole canvas edge to edge with colour, texture and detail, with the main subject centred vertically. Use the supplied sector, industry, topics, pillar emphasis, template look and palette to create one coherent visual direction; prioritise the most specific industry and never default to generic blue. Generate only decorative motifs, shapes, gradients, organic forms, architecture, equipment or environmental forms. Do not create visible text, pseudo-text, logos, watermarks, signage, labels, document details, borders, frames, panels or other document-like objects.\n\nSOP manual design brief: ${artworkContext}`;
+export function buildSopCoverImagePrompt(artworkContext: string, documentLabel = "SOP manual"): string {
+  return `Create opaque, full-bleed decorative artwork for the cover of an ${documentLabel}. The cover crops a wide banner from the middle of this portrait canvas and sets the title and company on a solid colour band of its own, so do not leave any blank, white, empty or low-detail region for text: fill the whole canvas edge to edge with colour, texture and detail, with the main subject centred vertically. Use the supplied sector, industry, topics, pillar emphasis, template look and palette to create one coherent visual direction; prioritise the most specific industry and never default to generic blue. Generate only decorative motifs, shapes, gradients, organic forms, architecture, equipment or environmental forms. Do not create visible text, pseudo-text, logos, watermarks, signage, labels, document details, borders, frames, panels or other document-like objects.\n\n${documentLabel.charAt(0).toUpperCase()}${documentLabel.slice(1)} design brief: ${artworkContext}`;
 }
 
-export function fallbackSopCoverDesign(manual: SopManual): AICoverDesign {
+export function fallbackSopCoverDesign(manual: CoverManual): AICoverDesign {
   const design = sopCoverDesign(manual);
   return {
     titleColor: design.palette.primaryDark,
@@ -134,7 +168,7 @@ function textElement(layout: AICoverLayoutSuggestion, role: AICoverLayoutRole, v
  * policy bindings.
  */
 export function createSopCoverComposition(
-  manual: SopManual,
+  manual: CoverManual,
   title: string,
   backgroundAssetId: string,
   layoutInput: AICoverLayoutSuggestion,

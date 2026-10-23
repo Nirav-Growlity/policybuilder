@@ -13,13 +13,13 @@ import {
   type AICoverDesign,
   type AICoverLayoutSuggestion,
 } from "@/lib/ai/cover";
-import { buildSopCoverArtworkContext, buildSopCoverImagePrompt, createSopCoverComposition, fallbackSopCoverDesign, sopCoverLibraryName } from "@/lib/ai/sop-cover";
+import { buildHandbookCoverArtworkContext, buildSopCoverArtworkContext, buildSopCoverImagePrompt, createSopCoverComposition, fallbackSopCoverDesign, sopCoverLibraryName, type CoverManual } from "@/lib/ai/sop-cover";
+import { parseManualOfKind } from "@/lib/documents/manual-render";
 import { createCoverAsset, createCoverTemplate } from "@/lib/cover-repository";
 import { getManual } from "@/lib/manual-repository";
 import { MAX_MANUAL_JSON_BYTES, resolveManualAuth } from "@/lib/manual-request";
 import { policyCraftMutationFailure } from "@/lib/policycraft-auth";
-import { sopManualSchema } from "@/lib/sop/schema";
-import type { SopCover, SopManual } from "@/lib/sop/types";
+import type { SopCover } from "@/lib/sop/types";
 
 export const runtime = "nodejs";
 
@@ -50,7 +50,7 @@ async function analyzeLayout(preview: CoverPreview, context: string): Promise<AI
   }
 }
 
-async function analyzeDesign(manual: SopManual, preview: CoverPreview, context: string, layout: AICoverLayoutSuggestion): Promise<AICoverDesign> {
+async function analyzeDesign(manual: CoverManual, preview: CoverPreview, context: string, layout: AICoverLayoutSuggestion): Promise<AICoverDesign> {
   const fallback = fallbackSopCoverDesign(manual);
   const prompt = buildAICoverDesignPrompt(context, layout);
   try {
@@ -63,7 +63,7 @@ async function analyzeDesign(manual: SopManual, preview: CoverPreview, context: 
 }
 
 /**
- * Generates an AI cover for an SOP manual: artwork from the image model,
+ * Generates an AI cover for an SOP manual or employee handbook: artwork from the image model,
  * text placement and colours from Claude, artwork stored as a cover asset
  * and the composition saved to the shared cover library. Responds with
  * `{ cover }` (variant "ai", the composition and its library id) for
@@ -95,24 +95,23 @@ export async function POST(request: Request, context: Context) {
 
   const stored = await getManual<unknown>(auth.organization.id, id);
   if (!stored) return NextResponse.json({ error: "Manual not found." }, { status: 404 });
-  if (stored.kind !== "sop") return NextResponse.json({ error: "This manual is not an SOP manual." }, { status: 400 });
-  const parsed = sopManualSchema.safeParse(body.manual ?? stored.manual);
-  if (!parsed.success) return NextResponse.json({ error: "A valid SOP manual is required." }, { status: 400 });
-  const manual = parsed.data;
+  const parsed = parseManualOfKind(stored.kind, body.manual ?? stored.manual);
+  if (!parsed) return NextResponse.json({ error: stored.kind === "handbook" ? "A valid employee handbook is required." : "A valid SOP manual is required." }, { status: 400 });
+  const manual: CoverManual = parsed.manual;
   const title = stored.title;
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "OpenAI API key is not configured." }, { status: 503 });
 
   const instruction = typeof body.instruction === "string" ? body.instruction.replace(/\s+/g, " ").trim().slice(0, 400) : "";
-  const artworkContext = buildSopCoverArtworkContext(manual, instruction);
+  const artworkContext = parsed.kind === "handbook" ? buildHandbookCoverArtworkContext(parsed.manual, instruction) : buildSopCoverArtworkContext(parsed.manual, instruction);
   try {
     const imageResponse = await fetch("https://api.openai.com/v1/images/generations", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify({
         model: AI_COVER_IMAGE_MODEL,
-        prompt: buildSopCoverImagePrompt(artworkContext),
+        prompt: buildSopCoverImagePrompt(artworkContext, parsed.kind === "handbook" ? "employee handbook" : "SOP manual"),
         n: 1,
         size: AI_COVER_IMAGE_SIZE,
         quality: "high",

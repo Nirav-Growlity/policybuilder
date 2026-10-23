@@ -7,7 +7,7 @@ import type { RichTextBlock } from "../types";
 import { companyFacts } from "./company-facts";
 import { resolveSopDesign, SOP_PAGE_SIZES } from "./design/resolve";
 import { appendixLetter } from "./initial-manual";
-import type { RenderBlock, RenderChapter, RenderFrontSection, RenderSection, RenderSop, SopRenderModel } from "./render-types";
+import type { RenderBlock, RenderChapter, RenderFrontSection, RenderLabels, RenderSection, RenderSop, SopRenderModel } from "./render-types";
 import type { Sop, SopManual, SopPillar, SopRecordRow, SopSection } from "./types";
 
 export const PILLAR_LABELS: Record<SopPillar, string> = { E: "Environmental", S: "Social", G: "Governance" };
@@ -16,6 +16,17 @@ const PILLAR_SUMMARIES: Record<SopPillar, string> = {
   E: "Procedures that control the environmental footprint of the sites.",
   S: "Procedures that protect people and keep the workplace fair.",
   G: "Procedures that keep decisions, data and suppliers accountable.",
+};
+
+export const SOP_RENDER_LABELS: RenderLabels = {
+  item: "SOP",
+  itemSingular: "SOP",
+  itemPlural: "SOPs",
+  department: "Department",
+  group: "Chapter",
+  stats: ["Standard operating procedures", "Departments covered", "Sites in scope"],
+  cardStats: ["SOPs in this manual", "Departments", "Sites in scope"],
+  document: "SOP manual",
 };
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -29,7 +40,7 @@ export function formatManualDate(value: string | undefined): string {
   return month ? `${iso[3]} ${month} ${iso[1]}` : text;
 }
 
-function lines(text: string) {
+export function lines(text: string) {
   return text.split(/\r?\n/).map((line) => line.replace(/^\s*(?:[-*•]|\d+[.)])\s+/, "").trim()).filter(Boolean);
 }
 
@@ -146,14 +157,14 @@ export function letterAppendixTitles(titles: readonly string[]): string[] {
 }
 
 /** Records table columns; the "No." column only when some record has a form or record number. */
-function recordsTable(rows: SopRecordRow[]): RenderBlock {
+export function recordsTable(rows: SopRecordRow[]): RenderBlock {
   const coded = rows.some((row) => (row.code ?? "").trim());
   return coded
     ? { type: "table", columns: ["No.", "Record", "Owner", "Retention", "Format"], widths: [1.4, 2, 1.2, 1, 1], rows: rows.map((row) => [(row.code ?? "").trim(), row.record, row.owner, row.retention, row.format]) }
     : { type: "table", columns: ["Record", "Owner", "Retention", "Format"], widths: [2.2, 1.3, 1, 1], rows: rows.map((row) => [row.record, row.owner, row.retention, row.format]) };
 }
 
-function renderSections(sop: Sop, includeEmpty: boolean): RenderSection[] {
+export function renderSections(sop: Pick<Sop, "sections">, includeEmpty: boolean): RenderSection[] {
   const visible = sop.sections.filter((section) => section.enabled && (includeEmpty || sectionHasContent(section)));
   const appendices = visible.filter((section) => section.kind === "appendix");
   const appendixTitles = new Map<SopSection, string>(letterAppendixTitles(appendices.map((section) => section.title)).map((title, index) => [appendices[index], title]));
@@ -197,6 +208,33 @@ function renderSections(sop: Sop, includeEmpty: boolean): RenderSection[] {
         return { ...base, blocks: toRenderBlocks(section.blocks) };
     }
   });
+}
+
+/**
+ * Key Contacts and Certifications pages, printed only when filled in (also in
+ * the live preview): they come from the company details, not from text the
+ * writer is expected to add. Shared by SOP manuals and employee handbooks.
+ */
+export function companyFactSections(manual: { company: { name: string }; facts?: SopManual["facts"] }, noun: "manual" | "handbook"): Array<{ id: string; title: string; blocks: RenderBlock[] }> {
+  const facts = companyFacts(manual);
+  return [
+    ...(facts.contacts.length ? [{
+      id: "contacts",
+      title: "Key Contacts",
+      blocks: [
+        { type: "p" as const, text: `Raise concerns, report incidents and ask questions about this ${noun} through the contacts below.` },
+        { type: "table" as const, columns: ["Purpose", "Name", "Phone", "Email"], widths: [1.4, 1.4, 1.2, 2], rows: facts.contacts.map((contact) => [contact.purpose, contact.name, contact.phone, contact.email]) },
+      ],
+    }] : []),
+    ...(facts.certifications.length ? [{
+      id: "certifications",
+      title: "Certifications and Standards",
+      blocks: [
+        { type: "p" as const, text: `${manual.company.name || "The Company"} holds the certifications and follows the standards listed below. ${noun === "manual" ? "The procedures in this manual support continued conformity with them." : "The policies in this handbook support continued conformity with them."}` },
+        { type: "ul" as const, items: facts.certifications },
+      ],
+    }] : []),
+  ];
 }
 
 export type SopRenderOptions = {
@@ -297,27 +335,7 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
     .filter((chapter) => chapter.sops.length > 0);
 
   const front = manual.frontMatter;
-  const facts = companyFacts(manual);
-  // Printed only when filled in (also in the live preview): they come from the
-  // company details, not from front-matter text the writer is expected to add.
-  const factSections = [
-    ...(facts.contacts.length ? [{
-      id: "contacts",
-      title: "Key Contacts",
-      blocks: [
-        { type: "p" as const, text: "Raise concerns, report incidents and ask questions about this manual through the contacts below." },
-        { type: "table" as const, columns: ["Purpose", "Name", "Phone", "Email"], widths: [1.4, 1.4, 1.2, 2], rows: facts.contacts.map((contact) => [contact.purpose, contact.name, contact.phone, contact.email]) },
-      ],
-    }] : []),
-    ...(facts.certifications.length ? [{
-      id: "certifications",
-      title: "Certifications and Standards",
-      blocks: [
-        { type: "p" as const, text: `${manual.company.name || "The Company"} holds the certifications and follows the standards listed below. The procedures in this manual support continued conformity with them.` },
-        { type: "ul" as const, items: facts.certifications },
-      ],
-    }] : []),
-  ];
+  const factSections = companyFactSections(manual, "manual");
   const frontMatter: RenderFrontSection[] = only ? [] : [
     { id: "introduction", title: "Introduction", blocks: toRenderBlocks(front.introduction) },
     {
@@ -367,6 +385,8 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
   return {
     version: 1,
     mode: only ? "sops" : "full",
+    kind: "sop",
+    labels: SOP_RENDER_LABELS,
     design,
     page: { size: page, ...SOP_PAGE_SIZES[page] },
     title: manualTitle,
@@ -391,6 +411,7 @@ export function buildSopRenderModel(manual: SopManual, options: SopRenderOptions
       revisions,
       approval: { statement: manual.closing.approval.statement, signatories },
       anchors: { revisions: "closing-revisions", approval: "closing-approval" },
+      after: [],
     },
   };
 }

@@ -34,12 +34,21 @@ async function templateArt(model: SopRenderModel): Promise<Buffer> {
 
 export type PreparedSopRender = { model: SopRenderModel; assets: ManualAsset[] };
 
+/** What image resolution needs from either document kind. */
+export type RenderableManual = Pick<SopManual, "company" | "cover" | "theme">;
+
 /**
  * Resolves the images a manual needs (logo, cover photo or AI cover,
- * template artwork) into workspace files and builds the render model.
- * Shared by the PDF route, the preview route and the DOCX export.
+ * template artwork) into workspace files and builds the render model with
+ * `build`. Shared by SOP manuals and employee handbooks, and by the PDF,
+ * preview and DOCX routes.
  */
-export async function prepareSopRender(manual: SopManual, orgId: number, options: Omit<SopRenderOptions, "logoPath" | "coverImagePath"> = {}): Promise<PreparedSopRender> {
+export async function prepareManualRender(
+  manual: RenderableManual,
+  orgId: number,
+  previewOnly: boolean,
+  build: (logoPath: string | null) => SopRenderModel,
+): Promise<PreparedSopRender> {
   const assets: ManualAsset[] = [];
   let logoPath: string | null = null;
   const logo = await loadImage(orgId, manual.company.companyLogo || undefined).catch(() => null);
@@ -49,13 +58,12 @@ export async function prepareSopRender(manual: SopManual, orgId: number, options
     assets.push({ path: `assets/logo.${image.ext}`, content: image.content });
   }
 
-  const previewOnly = Boolean(options.onlySopIds);
   const reference = previewOnly ? undefined
     : manual.cover.variant === "upload" ? manual.cover.imageUrl
     : manual.cover.variant === "ai" ? manual.cover.composition?.background.assetId : undefined;
   const cover = await loadImage(orgId, reference).catch(() => null);
 
-  const model = buildSopRenderModel(manual, { ...options, logoPath });
+  const model = build(logoPath);
   if (cover) {
     const image = await toCoverBand(cover, model.page, model.design.palette.soft);
     model.cover.image = `/assets/cover.${image.ext}`;
@@ -65,6 +73,10 @@ export async function prepareSopRender(manual: SopManual, orgId: number, options
     assets.push({ path: "assets/cover-art.png", content: await templateArt(model) });
   }
   return { model, assets };
+}
+
+export async function prepareSopRender(manual: SopManual, orgId: number, options: Omit<SopRenderOptions, "logoPath" | "coverImagePath"> = {}): Promise<PreparedSopRender> {
+  return prepareManualRender(manual, orgId, Boolean(options.onlySopIds), (logoPath) => buildSopRenderModel(manual, { ...options, logoPath }));
 }
 
 export async function renderManualPdf(manual: SopManual, orgId: number, options: Omit<SopRenderOptions, "logoPath" | "coverImagePath"> = {}): Promise<CompiledManual & { model: SopRenderModel; assets: ManualAsset[] }> {

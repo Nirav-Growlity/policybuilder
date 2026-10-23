@@ -6,6 +6,7 @@
  */
 import sample from "./fixtures/sample-manual.json";
 import { resolveSopDesign, SOP_PAGE_SIZES, type SopDesignOptions } from "./design/resolve";
+import { SOP_RENDER_LABELS } from "./render-model";
 import type { RenderBlock, RenderChapter, RenderSection, RenderSop, SopRenderModel } from "./render-types";
 
 const PILLAR_LABELS = { E: "Environmental", S: "Social", G: "Governance" } as const;
@@ -125,6 +126,8 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
   return {
     version: 1,
     mode: "full",
+    kind: "sop",
+    labels: SOP_RENDER_LABELS,
     design,
     page: { size: pageSize, ...SOP_PAGE_SIZES[pageSize] },
     title,
@@ -175,6 +178,7 @@ export function buildSampleRenderModel(options: SopDesignOptions & { pageSize?: 
         ],
       },
       anchors: { revisions: "closing-revisions", approval: "closing-approval" },
+      after: [],
     },
   };
 }

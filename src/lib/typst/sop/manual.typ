@@ -11,6 +11,9 @@
 
 #let m = json("/model.json")
 #let d = m.design
+#let L = m.labels
+// A handbook has no ESG pillars, so the pillar-band cover becomes the control sheet.
+#let cover-style = if m.kind == "handbook" and d.cover == "pillar-bands" { "control-sheet" } else { d.cover }
 #let pal = d.palette
 #let col(hex) = rgb(hex)
 #let primary = col(pal.primary)
@@ -276,15 +279,15 @@
 
 #let meta-card(sop) = tight(sz.small * 1pt, table(
   columns: (1fr, 1fr, 1fr, 1fr), stroke: (paint: line-color, thickness: rule), fill: soft.lighten(40%), inset: (x: 6pt, y: 4pt),
-  meta-pair("SOP No.", sop.code), meta-pair("Version", sop.version), meta-pair("Department", sop.department), meta-pair("Owner", sop.owner),
+  meta-pair(L.item + " No.", sop.code), meta-pair("Version", sop.version), meta-pair(L.department, sop.department), meta-pair("Owner", sop.owner),
   meta-pair("Effective", sop.effectiveDate), meta-pair("Next review", sop.nextReviewDate), meta-pair("Prepared by", sop.preparedBy), meta-pair("Approved by", sop.approvedBy),
 ))
 
 #let sop-opener(sop) = {
   let color = col(sop.color)
   if d.sopOpener == "ruled-title" {
-    // Codes such as "SOP-EHS-001" already say SOP.
-    caps((if upper(sop.code).starts-with("SOP") { sop.code } else { "SOP " + sop.code }) + "   |   " + sop.department, fill: accent)
+    // Codes such as "SOP-EHS-001" or "Chapter 3" already say what they are.
+    caps((if upper(sop.code).starts-with(upper(L.item)) { sop.code } else { L.item + " " + sop.code }) + "   |   " + sop.department, fill: accent)
     v(2pt)
     txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, sop.title)
     v(-2pt)
@@ -297,10 +300,10 @@
         caps(sop.pillarLabel, fill: on-primary)))
     v(-after + 0pt)
     tight(sz.small * 1pt, table(columns: (1fr, 1fr, 1fr, 1fr), stroke: none, fill: soft, inset: (x: 10pt, y: 4pt),
-      meta-pair("Department", sop.department), meta-pair("Owner", sop.owner), meta-pair("Version", sop.version), meta-pair("Effective", sop.effectiveDate)))
+      meta-pair(L.department, sop.department), meta-pair("Owner", sop.owner), meta-pair("Version", sop.version), meta-pair("Effective", sop.effectiveDate)))
   } else if d.sopOpener == "header-card" {
     table(columns: (1fr,), stroke: none, fill: primary, inset: (x: 10pt, y: 9pt),
-      [#txt(size: sz.small * 1pt, weight: "bold", fill: col(pal.accent), tracking: 0.6pt, "SOP " + sop.number) \ #txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: on-primary, sop.title)])
+      [#txt(size: sz.small * 1pt, weight: "bold", fill: col(pal.accent), tracking: 0.6pt, L.item + " " + sop.number) \ #txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: on-primary, sop.title)])
     v(-after)
     meta-card(sop)
   } else if d.sopOpener == "register-head" {
@@ -396,7 +399,7 @@
     pagebreak(weak: true)
     anchor(1, ch.label, ch.anchor)
     table(columns: (1fr,), stroke: none, fill: color, inset: (x: 16pt, y: 18pt),
-      [#v(26mm) #caps("Chapter", fill: on-primary) \ #txt(font: head-font, size: half(sz.coverTitle * 0.9), weight: "bold", fill: on-primary, ch.label) \ #v(4pt) #txt(fill: on-primary, ch.summary)])
+      [#v(26mm) #caps(L.group, fill: on-primary) \ #txt(font: head-font, size: half(sz.coverTitle * 0.9), weight: "bold", fill: on-primary, ch.label) \ #v(4pt) #txt(fill: on-primary, ch.summary)])
     v(after * 2)
     for sop in ch.sops {
       grid(columns: (26mm, 1fr, auto), column-gutter: 6pt,
@@ -409,7 +412,7 @@
     pagebreak(weak: true)
     anchor(1, ch.label, ch.anchor)
     table(columns: (1fr, auto), stroke: none, fill: soft, inset: (x: 8pt, y: 5pt),
-      caps(ch.label, fill: color, size: sz.small * 1pt + 1pt), txt(size: sz.small * 1pt, fill: muted, str(ch.sops.len()) + " SOPs"))
+      caps(ch.label, fill: color, size: sz.small * 1pt + 1pt), txt(size: sz.small * 1pt, fill: muted, str(ch.sops.len()) + " " + (if ch.sops.len() == 1 { L.itemSingular } else { L.itemPlural })))
     v(after * 0.5)
   } else {
     anchor(1, ch.label, ch.anchor)
@@ -442,7 +445,7 @@
   let h = m.page.heightMm * 1mm
   set page(header: none, footer: none, margin: 0pt)
   let pad-x = d.page.marginXMm * 1mm
-  if m.cover.image != none or d.cover == "image-banner" {
+  if m.cover.image != none or cover-style == "image-banner" {
     // Image (or a solid primary plate) over the top 58%, title banner below.
     if m.cover.image != none { place(top + left, image(m.cover.image, width: w, height: h * 0.58, fit: "cover")) }
     else { place(top + left, rect(width: w, height: h * 0.58, fill: primary)) }
@@ -455,7 +458,7 @@
       txt(size: sz.h2 * 1pt, fill: on-primary, m.cover.subtitle)
     }))
     place(bottom + left, dx: pad-x, dy: -14mm, block(width: w - 2 * pad-x, control-grid()))
-  } else if d.cover == "control-sheet" {
+  } else if cover-style == "control-sheet" {
     pad(x: pad-x, top: 20mm, bottom: 18mm, {
       grid(columns: (1fr, 46mm), align: (left + horizon, right + horizon),
         logo-or-name(height: 16mm),
@@ -472,12 +475,12 @@
       v(14mm)
       // At a glance: three figures in a shaded band.
       table(columns: (1fr, 1fr, 1fr), stroke: none, fill: soft, inset: (x: 10pt, y: 9pt),
-        ..((str(m.stats.sopCount), "Standard operating procedures"), (str(m.stats.departmentCount), "Departments covered"), (str(m.stats.siteCount), "Sites in scope")).map(((n, label)) =>
+        ..((str(m.stats.sopCount), L.stats.at(0)), (str(m.stats.departmentCount), L.stats.at(1)), (str(m.stats.siteCount), L.stats.at(2))).map(((n, label)) =>
           [#txt(font: head-font, size: half(sz.coverTitle * 0.8), weight: "bold", fill: primary, n) \ #txt(size: sz.small * 1pt + 0.5pt, fill: muted, label)]))
       v(1fr)
       control-grid()
     })
-  } else if d.cover == "pillar-bands" {
+  } else if cover-style == "pillar-bands" {
     let band-h = h * 0.36
     let count(k) = m.chapters.filter(ch => ch.sops.len() > 0 and ch.sops.first().pillar == k).map(ch => ch.sops.len()).sum(default: 0)
     place(top + left, dx: pad-x, dy: 16mm, logo-or-name(height: 12mm))
@@ -498,7 +501,7 @@
       txt(size: sz.h2 * 1pt + 1pt, fill: muted, m.cover.subtitle)
     }))
     place(bottom + left, dx: pad-x, dy: -16mm, block(width: w - 2 * pad-x, control-grid()))
-  } else if d.cover == "card-grid" {
+  } else if cover-style == "card-grid" {
     place(top + left, block(width: w, height: h * 0.42, fill: primary, inset: (x: pad-x, top: 20mm, bottom: 14mm), {
       box(fill: white, inset: 6pt, logo-or-name(height: 11mm))
       v(1fr)
@@ -511,7 +514,7 @@
       v(10mm)
       // Three stat cards, then the control details as smaller cards.
       table(columns: (1fr, 1fr, 1fr), stroke: (paint: white, thickness: 4pt), fill: soft, inset: (x: 10pt, y: 10pt),
-        ..((str(m.stats.sopCount), "SOPs in this manual"), (str(m.stats.departmentCount), "Departments"), (str(m.stats.siteCount), "Sites in scope")).map(((n, label)) =>
+        ..((str(m.stats.sopCount), L.cardStats.at(0)), (str(m.stats.departmentCount), L.cardStats.at(1)), (str(m.stats.siteCount), L.cardStats.at(2))).map(((n, label)) =>
           [#txt(font: head-font, size: sz.coverTitle * 1pt, weight: "bold", fill: primary, n) \ #txt(size: sz.small * 1pt + 0.5pt, fill: muted, label)]))
       v(4mm)
       control-grid()
@@ -583,6 +586,7 @@
   for s in m.closing.sections { contents-row("", s.title, s.anchor) }
   contents-row("", "Revision history", m.closing.anchors.revisions)
   contents-row("", "Approval", m.closing.anchors.approval)
+  for s in m.closing.after { contents-row("", s.title, s.anchor) }
 }
 
 // ---------------------------------------------------------------- closing
@@ -639,6 +643,11 @@
   v(after * 2)
   part-title("Approval", m.closing.anchors.approval)
   approval-block()
+  for s in m.closing.after {
+    pagebreak(weak: true)
+    part-title(s.title, s.anchor)
+    render-blocks(s.blocks)
+  }
 }
 
 // Read back by compile.ts so lists can show the page count without parsing the PDF.

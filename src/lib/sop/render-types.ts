@@ -70,6 +70,29 @@ export type RenderChapter = {
 
 export type RenderFrontSection = RenderSection & { anchor: string };
 
+/**
+ * Words the templates print around the content, so one template lays out SOP
+ * manuals and employee handbooks alike.
+ */
+export type RenderLabels = {
+  /** "SOP" or "Chapter": the opener badge and the meta card's number field ("SOP No."). */
+  item: string;
+  /** "SOP" or "chapter", for a count of one. */
+  itemSingular: string;
+  /** "SOPs" or "chapters", for counts such as "6 SOPs". */
+  itemPlural: string;
+  /** Meta card field for the grouping value: "Department" or "Part". */
+  department: string;
+  /** Divider eyebrow: "Chapter" (an ESG chapter of SOPs) or "Part". */
+  group: string;
+  /** Cover figures on the control-sheet cover. */
+  stats: [string, string, string];
+  /** Cover figures on the card-grid cover. */
+  cardStats: [string, string, string];
+  /** Document description for file properties: "SOP manual" or "employee handbook". */
+  document: string;
+};
+
 export type ResolvedSopDesign = Omit<SopDesign, "palette" | "fontPair"> & {
   palette: SopPalette;
   fonts: { heading: string; body: string };
@@ -81,6 +104,9 @@ export type SopRenderModel = {
   version: 1;
   /** "full" renders the whole manual; "sops" renders only the SOP pages (live preview of one SOP). */
   mode: "full" | "sops";
+  /** Which document this is; a handbook has no ESG pillars, so pillar covers fall back to the control sheet. */
+  kind: "sop" | "handbook";
+  labels: RenderLabels;
   design: ResolvedSopDesign;
   page: { size: "A4" | "Letter"; widthMm: number; heightMm: number };
   title: string;
@@ -116,5 +142,7 @@ export type SopRenderModel = {
     revisions: Array<{ revision: string; date: string; description: string; reviewedBy: string; approvedBy: string }>;
     approval: { statement: string; signatories: Array<{ role: string; name: string; designation: string; date: string }> };
     anchors: { revisions: string; approval: string };
+    /** Parts printed after the approval, each on its own page (the handbook acknowledgement form). */
+    after: RenderFrontSection[];
   };
 };

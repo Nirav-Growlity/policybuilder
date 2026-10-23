@@ -5,7 +5,7 @@ import type { PolicyCraftAuthContext } from "./policycraft-auth";
 import { nextUniqueDraftTitle } from "./policycraft-draft-view";
 import { policyCraftOrganizationLookupSql } from "./policycraft-organization-repository";
 
-/** Long multi-part documents in the Documents area. Handbooks reuse the same storage later. */
+/** Long multi-part documents in the Documents area: SOP manuals and employee handbooks share this storage. */
 export type ManualKind = "sop" | "handbook";
 
 export type ManualSummary = {
@@ -18,7 +18,7 @@ export type ManualSummary = {
   updatedAt: string;
   archivedAt: string | null;
   pageCount: number | null;
-  /** Number of enabled parts (SOPs for an SOP manual). */
+  /** Number of parts: SOPs for an SOP manual, chapters for a handbook. */
   partCount: number;
   templateId: string | null;
   createdBy?: { id: string; name: string; email: string };
@@ -58,7 +58,7 @@ const parseJson = <T>(value: unknown): T => (typeof value === "string" ? JSON.pa
 // Counts and theme come from JSON paths so list queries never load whole manuals.
 const summarySelect = `m.id, m.kind, m.title, m.current_stage, m.lock_version, m.created_at, m.updated_at,
   m.archived_at, m.page_count, m.created_by_user_id,
-  JSON_LENGTH(m.manual_json, '$.sops') AS part_count,
+  CASE m.kind WHEN 'handbook' THEN JSON_LENGTH(m.manual_json, '$.chapters') ELSE JSON_LENGTH(m.manual_json, '$.sops') END AS part_count,
   JSON_UNQUOTE(JSON_EXTRACT(m.manual_json, '$.theme')) AS template_id,
   creator.name AS created_by_name, creator.email AS created_by_email,
   o.id AS organization_id, o.org_code AS organization_code, o.company_name AS organization_name`;
