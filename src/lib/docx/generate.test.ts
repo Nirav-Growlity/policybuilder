@@ -68,6 +68,7 @@ test("active theme fonts are embedded with real bold faces so Word does not synt
     const fontRecord = fontTable.match(new RegExp(`<w:font w:name="${escapedFamily}">[\\s\\S]*?<\\/w:font>`));
     assert.ok(fontRecord, `${fixture.theme}: font table should declare ${family}`);
     assert.equal(/<w:embedItalic\b/.test(fontRecord[0]), fixture.italic, `${fixture.theme}: italic embedding should follow the faces the PDF loads`);
+    if (["IBM Plex Sans", "Source Serif 4"].includes(family)) assert.doesNotMatch(fontRecord[0], /<w:embedBoldItalic\b/, "new manual faces must not change policy font embedding");
     const faces: Buffer[] = [];
     for (const element of ["embedRegular", "embedBold"]) {
       const relationshipId = fontRecord[0].match(new RegExp(`<w:${element} r:id="([^"]+)"`));

@@ -14,7 +14,7 @@ import type { NextConfig } from "next";
 const policyPdfEngine = process.env.POLICY_PDF_ENGINE === "typst" ? "typst" : "chromium";
 
 /** Must equal SOP_FONT_FAMILIES (lib/sop/design/templates.ts); lib/output-tracing.test.ts checks it. */
-export const SOP_FONT_SLUGS = ["caladea", "carlito", "montserrat", "open-sans", "poppins", "lato", "arimo", "merriweather", "pt-sans", "tinos"];
+export const SOP_FONT_SLUGS = ["caladea", "carlito", "montserrat", "open-sans", "poppins", "lato", "arimo", "merriweather", "pt-sans", "tinos", "ibm-plex-sans", "source-serif-4", "atkinson-hyperlegible"];
 
 /** Word TTFs no SOP template uses; the SOP routes leave them out. */
 function nonSopWordFonts(): string[] {

@@ -13,10 +13,6 @@
 #let d = m.design
 #let L = m.labels
 #let editorial = d.id in ("shop-floor", "chapter-book")
-#let sentence(s) = {
-  let words = s.split(" ").map(w => if w == upper(w) { w } else { lower(w) }).join(" ")
-  if words == "" { words } else { upper(words.first()) + words.slice(1) }
-}
 // A handbook has no ESG pillars, so the pillar-band cover becomes the control sheet.
 #let cover-style = if m.kind == "handbook" and d.cover == "pillar-bands" { "control-sheet" } else { d.cover }
 #let pal = d.palette
@@ -49,6 +45,7 @@
 #set list(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
 #set enum(indent: 4pt, body-indent: 6pt, spacing: pitch(body-size) - body-size + after * 0.5)
 #set table(inset: cell-inset)
+#set table.cell(breakable: if editorial { false } else { auto })
 #set block(spacing: after)
 
 // Headings exist only for PDF bookmarks and page lookups; the visible titles
@@ -158,7 +155,7 @@
   set par(justify: false)
   if d.runningHeader in ("plain-line", "book-rule") {
     let color = if d.runningHeader == "book-rule" { primary } else { muted }
-    grid(columns: (1fr, auto), txt(size: sz.small * 1pt, fill: color, if sop != none { sentence(sop.title) } else { sentence(m.title) }),
+    grid(columns: (1fr, auto), txt(size: sz.small * 1pt, fill: color, if sop != none { sop.title } else { m.title }),
       txt(size: sz.small * 1pt, fill: color, if m.kind == "handbook" { "Version " + m.control.revision } else { m.control.docNo + ", revision " + m.control.revision }))
     v(2pt)
     line(length: 100%, stroke: (paint: if d.runningHeader == "book-rule" { primary } else { line-color }, thickness: rule))
@@ -257,7 +254,7 @@
 #let part-title(title, label-name) = block(breakable: false, sticky: true, above: if d.sopOpener in ("pillar-banner", "title-banner", "register-head") { after } else { pitch(body-size) - body-size + after }, {
   anchor(1, title, label-name)
   if editorial {
-    txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, sentence(title))
+    txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: primary, title)
   } else if d.sopOpener == "pillar-banner" or d.sopOpener == "title-banner" {
     table(columns: (1fr,), stroke: none, fill: if d.sopOpener == "title-banner" { primary-dark } else { primary }, inset: (x: 10pt, y: 8pt),
       txt(font: head-font, size: half(sz.h1 * 0.85), weight: "bold", fill: on-primary, title))
@@ -279,9 +276,9 @@
   if d.sectionHeading in ("hanging-number", "serif-heading") {
     block(above: after * 2, below: after, breakable: false, sticky: true, {
       if d.sectionHeading == "hanging-number" and m.kind != "handbook" {
-        grid(columns: (12mm, 1fr), txt(weight: "bold", s.number), txt(font: head-font, size: sz.h2 * 1pt, weight: "bold", sentence(s.title)))
+        grid(columns: (12mm, 1fr), txt(weight: "bold", s.number), txt(font: head-font, size: sz.h2 * 1pt, weight: "bold", s.title))
       } else {
-        txt(font: head-font, size: sz.h2 * 1pt, weight: "bold", fill: primary, [#if m.kind != "handbook" and s.number != "" { txt(font: head-font, size: sz.h2 * 1pt, fill: muted, s.number + "  ") }#sentence(s.title)])
+        txt(font: head-font, size: sz.h2 * 1pt, weight: "bold", fill: primary, [#if m.kind != "handbook" and s.number != "" { txt(font: head-font, size: sz.h2 * 1pt, fill: muted, s.number + "  ") }#s.title])
       }
     })
   } else if d.sectionHeading == "numbered-rule" {
@@ -320,12 +317,12 @@
   let color = col(sop.color)
   if d.sopOpener in ("plain-title", "chapter-numeral") {
     if d.sopOpener == "chapter-numeral" {
-      txt(size: sz.h3 * 1pt, fill: primary, sentence(sop.department))
+      txt(size: sz.h3 * 1pt, fill: primary, sop.department)
       v(3pt)
       txt(font: head-font, size: 68pt, weight: "bold", fill: primary, sop.number)
       v(5pt)
     }
-    txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: if d.sopOpener == "chapter-numeral" { ink } else { primary }, sentence(sop.title))
+    txt(font: head-font, size: sz.h1 * 1pt, weight: "bold", fill: if d.sopOpener == "chapter-numeral" { ink } else { primary }, sop.title)
     if d.sopOpener == "plain-title" and m.kind != "handbook" {
       v(4pt)
       txt(size: sz.small * 1pt, fill: muted, [Code #sop.code #h(6mm) Department #sop.department #h(6mm) Owner #sop.owner])
@@ -374,13 +371,13 @@
       if d.procedure == "yellow-steps" {
         table(columns: (6mm, 2mm, 1fr), stroke: none, inset: 0pt,
           box(width: 6mm, height: 6mm, fill: accent, align(center + horizon, txt(weight: "bold", fill: ink, number))), [], txt(weight: "bold", st.heading))
-        if st.responsible != "" { par(txt(size: sz.small * 1pt, fill: muted, "Responsible: " + st.responsible)) }
       } else {
         txt(weight: "bold", fill: primary-dark, number + "  " + st.heading)
         if st.responsible != "" { linebreak(); txt(size: sz.small * 1pt, fill: muted, "Responsible: " + st.responsible) }
       }
     })
     render-blocks(st.body)
+    if d.procedure == "yellow-steps" and st.responsible != "" { par(txt(size: sz.small * 1pt, fill: muted, "Responsible: " + st.responsible)) }
     if st.substeps.len() > 0 {
       for (sub-index, sub) in st.substeps.enumerate() {
         pad(left: 14pt, par(justify: false, [#txt(weight: "bold", if editorial { str(index + 1) + "." + str(sub-index + 1) } else { sub.number }) #h(4pt) #sub.text #if sub.responsible != "" { txt(size: sz.small * 1pt, fill: muted, "  (" + sub.responsible + ")") }]))
@@ -516,11 +513,12 @@
   } else if cover-style in ("hazard-band", "book-cover") {
     let x = if cover-style == "hazard-band" { 38mm } else { pad-x }
     if cover-style == "hazard-band" { place(top + left, rect(width: 18mm, height: h, fill: accent, stroke: none)) }
-    place(top + left, dx: x, dy: 20mm, logo-or-name(height: 11mm))
+    if m.company.logo != none { place(top + left, dx: x, dy: 20mm, image(m.company.logo, height: 11mm)) }
+    let subtitle = m.cover.subtitle.split(regex("\\s*\\|\\s*")).filter(segment => segment != m.company.name and segment != "").join(", ")
     place(top + left, dx: x, dy: 78mm, block(width: w - x - pad-x, {
       set par(justify: false, leading: 2pt)
-      par(txt(font: head-font, size: sz.coverTitle * 1pt, weight: "bold", fill: primary, sentence(m.cover.title)))
-      if m.cover.subtitle != "" { par(txt(size: sz.h2 * 1pt, fill: muted, m.cover.subtitle.replace(" | ", ", "))) }
+      par(txt(font: head-font, size: sz.coverTitle * 1pt, weight: "bold", fill: primary, m.cover.title))
+      if subtitle != "" { par(txt(size: sz.h2 * 1pt, fill: muted, subtitle)) }
       v(10mm)
       if cover-style == "book-cover" { line(length: 24mm, stroke: (paint: accent, thickness: 3pt)); v(6mm) }
       par(txt(font: head-font, size: 16pt, m.company.name))
@@ -534,7 +532,7 @@
         line(length: 100%, stroke: (paint: ink, thickness: 1.5pt))
         v(5mm)
         let pairs = if m.kind == "handbook" { (("Version", m.control.revision), ("Effective date", m.control.effectiveDate), ("Approved by", m.control.approvedBy)) } else { (("Document number", m.control.docNo), ("Revision", m.control.revision), ("Effective date", m.control.effectiveDate), ("Next review", m.control.nextReviewDate), ("Prepared by", m.control.preparedBy), ("Approved by", m.control.approvedBy)) }
-        grid(columns: (1fr, 1fr), row-gutter: 5mm, column-gutter: 8mm, ..pairs.map(((k, value)) => [#txt(size: sz.small * 1pt, fill: muted, k) \ #txt(value)]))
+        grid(columns: ((w - x - pad-x - 8mm) / 2, (w - x - pad-x - 8mm) / 2), row-gutter: 5mm, column-gutter: 8mm, ..pairs.map(((k, value)) => [#txt(size: sz.small * 1pt, fill: muted, k) \ #txt(value)]))
       }))
     }
   } else if cover-style == "control-sheet" {
@@ -629,7 +627,7 @@
 // a dot leader (Word: a right tab with dot leader), and the page number.
 #let contents-row(left-text, title, anchor-name, color: ink) = {
   if d.contents == "ruled-index" {
-    let cells = (par(justify: false, sentence(title)), txt(fill: muted, page-ref(anchor-name)))
+    let cells = (par(justify: false, title), txt(fill: muted, page-ref(anchor-name)))
     table(columns: if m.kind == "handbook" { (1fr, 10mm) } else { (30mm, 1fr, 10mm) }, stroke: (bottom: (paint: line-color, thickness: rule), rest: none), inset: (x: 0pt, y: 5pt),
       ..(if m.kind == "handbook" { cells } else { (txt(size: sz.small * 1pt, fill: muted, left-text),) + cells }))
   } else {
@@ -656,7 +654,7 @@
   for ch in m.chapters {
     if ch.label != "" {
       v(gap)
-      if editorial { txt(weight: "bold", fill: primary, sentence(ch.label)) } else if d.contents == "pillar-index" or d.contents == "banner-index" {
+      if editorial { txt(weight: "bold", fill: primary, ch.label) } else if d.contents == "pillar-index" or d.contents == "banner-index" {
         table(columns: (1fr,), stroke: none, fill: if d.contents == "pillar-index" { col(ch.color) } else { soft }, inset: (x: 7pt, y: 3pt),
           caps(ch.label, fill: if d.contents == "pillar-index" { on-primary } else { primary }))
       } else {

@@ -10,9 +10,9 @@ import { LIBRARY_WORD_SLOTS } from "../document-font-library";
 type FontSlot = "regular" | "bold" | "italic" | "bold-italic";
 const FONT_FACES: Record<string, readonly FontSlot[]> = {
   "Source Sans 3": ["regular", "bold", "italic"],
-  "Source Serif 4": ["regular", "bold", "italic", "bold-italic"],
+  "Source Serif 4": ["regular", "bold", "italic"],
   "Libre Caslon Text": ["regular", "bold", "italic"],
-  "IBM Plex Sans": ["regular", "bold", "italic", "bold-italic"],
+  "IBM Plex Sans": ["regular", "bold"],
   "IBM Plex Serif": ["regular", "bold", "italic"],
   Inter: ["regular", "bold"],
   "Atkinson Hyperlegible": ["regular", "bold", "italic", "bold-italic"],
@@ -52,7 +52,7 @@ function obfuscateFont(data: Buffer, fontKey: string) {
 }
 
 /** Adds the bold and italic faces next to each regular face the docx package already embedded. */
-export async function embedDocumentFontStyles(docx: Buffer, families: string[]): Promise<Buffer> {
+export async function embedDocumentFontStyles(docx: Buffer, families: string[], includeAllStyles = false): Promise<Buffer> {
   const embeddable = embeddableFamilies(families);
   if (!embeddable.length) return docx;
   const zip = await JSZip.loadAsync(docx);
@@ -70,7 +70,9 @@ export async function embedDocumentFontStyles(docx: Buffer, families: string[]):
     const regular = new RegExp(`(<w:font w:name="${escaped}">[\\s\\S]*?<w:embedRegular\\b[^>]*/>)`);
     if (!regular.test(fontTable)) continue;
     const embeds: string[] = [];
-    for (const slot of FONT_FACES[family]) {
+    // The new manuals use all four faces; policy exports retain their existing slots.
+    const slots: readonly FontSlot[] = includeAllStyles && ["IBM Plex Sans", "Source Serif 4"].includes(family) ? ["regular", "bold", "italic", "bold-italic"] : FONT_FACES[family];
+    for (const slot of slots) {
       if (slot === "regular") continue;
       const fontKey = randomUUID().toUpperCase();
       const id = `rId${nextId++}`;

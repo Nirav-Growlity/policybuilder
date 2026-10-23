@@ -57,10 +57,6 @@ import type { RenderBlock, RenderCell, RenderChapter, RenderSection, RenderSop, 
 import { embedDocumentFontStyles, embeddedDocumentFonts } from "./document-fonts";
 
 const editorial = (ctx: Ctx) => ctx.d.id === "shop-floor" || ctx.d.id === "chapter-book";
-const sentence = (text: string) => {
-  const words = text.split(" ").map(word => word === word.toUpperCase() ? word : word.toLowerCase()).join(" ");
-  return words ? words[0].toUpperCase() + words.slice(1) : words;
-};
 
 // ---------------------------------------------------------------- units
 
@@ -753,6 +749,7 @@ function table(ctx: Ctx, input: TableSpec): TableItem {
     const rowMarginBottom = Math.min(...wanted.map((margin) => margin.bottom));
     return new TableRow({
       tableHeader: spec2.header || undefined,
+      cantSplit: editorial(ctx) || undefined,
       height: spec2.height !== undefined ? { value: tw(spec2.height - (spec2.exact ? 0 : 0)), rule: spec2.exact ? HeightRule.EXACT : HeightRule.ATLEAST } : undefined,
       children: cells.map(({ cell, width, ins, flow, items }, cellIndex) => {
         const extraTop = (cell.vAlign ?? "top") === "top" ? wanted[cellIndex].top - rowMarginTop : 0;
@@ -924,7 +921,7 @@ function callout(ctx: Ctx, items: FlowItem[], width: number): TableItem {
 
 // Every part keeps with the next, so a title never sits alone at the foot of a page (Typst: a sticky block).
 function partTitle(ctx: Ctx, title: string, anchor: string): FlowItem[] {
-  if (editorial(ctx)) return [{ t: "group", above: ctx.lead + ctx.after, below: ctx.after, keep: true, items: [{ ...par(ctx, [txt(ctx, sentence(title), { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 0 }), bookmark: anchor }, v(ctx.after * 0.5)] }];
+  if (editorial(ctx)) return [{ t: "group", above: ctx.lead + ctx.after, below: ctx.after, keep: true, items: [{ ...par(ctx, [txt(ctx, title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 0 }), bookmark: anchor }, v(ctx.after * 0.5)] }];
   const opener = ctx.d.sopOpener;
   const size = ctx.sz.h1 * 0.85;
   if (opener === "pillar-banner" || opener === "title-banner") {
@@ -963,7 +960,7 @@ function sectionTitle(ctx: Ctx, section: RenderSection, color: string, width: nu
     const hanging = ctx.d.sectionHeading === "hanging-number" && numbered;
     const runs: RunSpec[] = [
       ...(numbered ? [txt(ctx, section.number + (hanging ? "" : "  "), { font: "heading", size: hanging ? ctx.sz.body : ctx.sz.h2, bold: true, color: hanging ? ctx.pal.ink : ctx.pal.muted }), ...(hanging ? [{ tab: true } as RunSpec] : [])] : []),
-      txt(ctx, sentence(section.title), { font: "heading", size: ctx.sz.h2, bold: true, color: ctx.pal.primary }),
+      txt(ctx, section.title, { font: "heading", size: ctx.sz.h2, bold: true, color: ctx.pal.primary }),
     ];
     return [{ t: "group", above: ctx.after * 2, below: ctx.after, keep: true, items: [par(ctx, runs, { keepNext: true, ...(hanging ? { indentLeft: 12 * MM, hanging: 12 * MM, tabs: [{ type: "left" as const, pos: 12 * MM }] } : {}) })] }];
   }
@@ -1038,10 +1035,10 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
   };
   if (opener === "plain-title" || opener === "chapter-numeral") {
     if (opener === "chapter-numeral") {
-      out.push(mark(par(ctx, [txt(ctx, sentence(sop.department), { size: ctx.sz.h3, color: ctx.pal.primary })], { keepNext: true })), v(3),
+      out.push(mark(par(ctx, [txt(ctx, sop.department, { size: ctx.sz.h3, color: ctx.pal.primary })], { keepNext: true })), v(3),
         par(ctx, [txt(ctx, sop.number, { font: "heading", size: 68, bold: true, color: ctx.pal.primary })], { keepNext: true }), v(5));
     }
-    const title = par(ctx, [txt(ctx, sentence(sop.title), { font: "heading", size: ctx.sz.h1, bold: true, color: opener === "chapter-numeral" ? ctx.pal.ink : ctx.pal.primary })], { keepNext: true, outline: 1 });
+    const title = par(ctx, [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: opener === "chapter-numeral" ? ctx.pal.ink : ctx.pal.primary })], { keepNext: true, outline: 1 });
     out.push(opener === "plain-title" ? mark(title) : title);
     if (opener === "plain-title" && ctx.m.kind !== "handbook") out.push(v(4), par(ctx, [txt(ctx, `Code ${sop.code}`, { size: ctx.sz.small, color: ctx.pal.muted }), txt(ctx, " ", { tracking: 6 * MM }), txt(ctx, `Department ${sop.department}`, { size: ctx.sz.small, color: ctx.pal.muted }), txt(ctx, " ", { tracking: 6 * MM }), txt(ctx, `Owner ${sop.owner}`, { size: ctx.sz.small, color: ctx.pal.muted })]));
     if (opener === "chapter-numeral") out.push(v(12));
@@ -1134,12 +1131,13 @@ function stepsBlocks(ctx: Ctx, steps: RenderStep[], width: number): FlowItem[] {
         { fill: ctx.pal.accent, inset: inset(0, 0), items: [par(ctx, [txt(ctx, step.number, { bold: true })], { align: "center", keepNext: true })] },
         { inset: inset(0, 0), keepNext: true, items: [] },
         { inset: inset(0, 0), items: [par(ctx, [txt(ctx, step.heading, { bold: true })], { keepNext: true })] },
-      ] }] }), ...(step.responsible ? [par(ctx, [txt(ctx, `Responsible: ${step.responsible}`, { size: ctx.sz.small, color: ctx.pal.muted })], { keepNext: true })] : [])] : [stack(ctx, [
+      ] }] })] : [stack(ctx, [
         [txt(ctx, `${step.number}  ${step.heading}`, { bold: true, color: ctx.pal.primaryDark })],
         step.responsible ? [txt(ctx, `Responsible: ${step.responsible}`, { size: ctx.sz.small, color: ctx.pal.muted })] : null,
       ], { keepNext: true })],
     });
     out.push(...renderBlocks(ctx, step.body, width));
+    if (ctx.d.procedure === "yellow-steps" && step.responsible) out.push(par(ctx, [txt(ctx, `Responsible: ${step.responsible}`, { size: ctx.sz.small, color: ctx.pal.muted })]));
     for (const sub of step.substeps) {
       out.push(par(ctx, [
         txt(ctx, sub.number, { bold: true }),
@@ -1256,7 +1254,7 @@ function contentsRow(ctx: Ctx, lead: string, title: string, anchor: string, colo
   const variant = ctx.d.contents;
   if (variant === "ruled-index") {
     const cells: CellSpec[] = [
-      { inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [{ link: anchor, runs: [txt(ctx, sentence(title))] }])] },
+      { inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [{ link: anchor, runs: [txt(ctx, title)] }])] },
       { inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [{ pageRef: anchor, color: ctx.pal.muted }])] },
     ];
     if (ctx.m.kind !== "handbook") cells.unshift({ inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [txt(ctx, lead, { size: ctx.sz.small, color: ctx.pal.muted })])] });
@@ -1297,7 +1295,7 @@ function contentsPage(ctx: Ctx): FlowItem[] {
   for (const chapter of m.chapters) {
     if (chapter.label) {
       out.push(v(gap));
-      if (editorial(ctx)) { out.push(par(ctx, [txt(ctx, sentence(chapter.label), { bold: true, color: ctx.pal.primary })])); } else if (variant === "pillar-index" || variant === "banner-index") {
+      if (editorial(ctx)) { out.push(par(ctx, [txt(ctx, chapter.label, { bold: true, color: ctx.pal.primary })])); } else if (variant === "pillar-index" || variant === "banner-index") {
         out.push(box(ctx, ctx.W, [par(ctx, [caps(ctx, chapter.label, { color: variant === "pillar-index" ? ctx.pal.onPrimary : ctx.pal.primary })])], {
           fill: variant === "pillar-index" ? chapter.color : ctx.pal.soft,
           inset: inset(7, 3),
@@ -1432,7 +1430,7 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
   const variant = ctx.d.runningHeader;
   if (variant === "plain-line" || variant === "book-rule") {
     const color = variant === "book-rule" ? ctx.pal.primary : ctx.pal.muted;
-    return [par(ctx, [txt(ctx, sentence(sop?.title ?? m.title), { size: small, color }), { tab: true }, txt(ctx, m.kind === "handbook" ? `Version ${m.control.revision}` : `${m.control.docNo}, revision ${m.control.revision}`, { size: small, color })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }), v(2), rule(variant === "book-rule" ? ctx.pal.primary : ctx.pal.line, RULE)];
+    return [par(ctx, [txt(ctx, sop?.title ?? m.title, { size: small, color }), { tab: true }, txt(ctx, m.kind === "handbook" ? `Version ${m.control.revision}` : `${m.control.docNo}, revision ${m.control.revision}`, { size: small, color })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }), v(2), rule(variant === "book-rule" ? ctx.pal.primary : ctx.pal.line, RULE)];
   }
   if (m.kind === "handbook" && variant === "control-table") {
     return [par(ctx, [txt(ctx, m.title, { bold: true }), { tab: true }, txt(ctx, `Version ${m.control.revision}  |  Effective ${m.control.effectiveDate}`, { size: small })], { tabs: [{ type: "right", pos: ctx.W }] })];
@@ -1661,9 +1659,11 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     const shop = d.cover === "hazard-band";
     const x = (shop ? 38 : d.page.marginXMm) * MM;
     const width = w - x - padX;
-    const items: FlowItem[] = [par(ctx, [logoOrName(ctx, 11 * MM)], { blockLike: true }), v(58 * MM - (m.company.logo ? 11 * MM : ctx.sz.h3) - ctx.after),
-      { ...heading(sentence(m.cover.title), ctx.pal.primary), lead: 2 },
-      ...(m.cover.subtitle ? [par(ctx, [txt(ctx, m.cover.subtitle.replaceAll(" | ", ", "), { size: ctx.sz.h2, color: ctx.pal.muted })], { lead: 2 })] : []), v(10 * MM),
+    const subtitle = m.cover.subtitle.split(/\s*\|\s*/).filter(segment => segment !== m.company.name && segment !== "").join(", ");
+    // A leading spacer needs the margin correction that a first text line normally absorbs.
+    const items: FlowItem[] = [...(m.company.logo ? [par(ctx, [logoOrName(ctx, 11 * MM)], { blockLike: true }), v(47 * MM - ctx.after)] : [v(58 * MM + topShift(ctx))]),
+      { ...heading(m.cover.title, ctx.pal.primary), lead: 2 },
+      ...(subtitle ? [par(ctx, [txt(ctx, subtitle, { size: ctx.sz.h2, color: ctx.pal.muted })], { lead: 2 })] : []), v(10 * MM + (subtitle ? 0 : ctx.lead + ctx.after)),
       ...(!shop ? [rule(ctx.pal.accent, 3, { right: width - 24 * MM, above: ctx.after, below: ctx.after }), v(6 * MM)] : []),
       par(ctx, [txt(ctx, m.company.name, { font: "heading", size: 16 })], { lead: 2 }),
     ];
@@ -2114,7 +2114,7 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     },
     sections,
   });
-  return embedDocumentFontStyles(await finishXml(await unpackedDocx(doc)), families);
+  return embedDocumentFontStyles(await finishXml(await unpackedDocx(doc)), families, editorial(ctx));
 }
 
 type DocxCompiler = { compile(file: Document, prettify: undefined, overrides: never[]): JSZip };

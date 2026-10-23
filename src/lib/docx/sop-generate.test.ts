@@ -200,7 +200,7 @@ test("an SOP code that already starts with SOP is not printed as \"SOP SOP-…\"
 
 
 for (const id of ["shop-floor", "chapter-book"] as const) {
-  test(`${id}: Word uses sentence case, horizontal tables and all four font slots`, async () => {
+  test(`${id}: Word preserves authored text, uses horizontal tables and all four font slots`, async () => {
     const { model, assets } = await sample(id);
     const { document, fontTable } = await open(await generateSopDocx(model, assets));
     assert.doesNotMatch(document, /w:caps|w:spacing w:val="12"/);
@@ -210,5 +210,36 @@ for (const id of ["shop-floor", "chapter-book"] as const) {
     }
     assert.match(document, id === "shop-floor" ? /shop-floor-band/ : /w:sz w:val="136"/);
     assert.ok(SOP_DESIGNS.find(design => design.id === id)?.table.borders === "horizontal");
+  });
+}
+
+for (const id of ["shop-floor", "chapter-book"] as const) {
+  test(`${id}: cover has one company name, exact titles, variant step order and whole rows`, async () => {
+    const { model, assets } = await sample(id);
+    model.cover.title = "ESG SOP Manual";
+    model.cover.subtitle = `${model.company.name}  |  ESG Line  |  Operations`;
+    const sop = model.chapters[0].sops[0];
+    sop.title = "ISO Audit SOP";
+    sop.department = "ESG Operations";
+    sop.sections[0].title = "ESG Scope";
+    const { document } = await open(await generateSopDocx(model, assets));
+    const body = document.replace(/<[^>]+>/g, "");
+    const cover = body.slice(0, body.indexOf("Contents"));
+    assert.equal(cover.split(model.company.name).length - 1, 1);
+    assert.ok(cover.includes("ESG SOP Manual"));
+    assert.ok(cover.includes("ESG Line, Operations"));
+    for (const value of [sop.title, sop.department, sop.sections[0].title]) assert.ok(body.includes(value), value);
+    const step = sop.sections.find(section => section.steps?.length)?.steps?.[0];
+    assert.ok(step);
+    const heading = body.lastIndexOf(step.heading);
+    const responsible = body.indexOf(`Responsible: ${step.responsible}`, heading);
+    const paragraph = step.body.find(block => block.type === "p");
+    assert.ok(paragraph && paragraph.type === "p");
+    const action = body.indexOf(smartQuotes(paragraph.text), heading);
+    assert.ok(action > heading);
+    assert.ok(id === "shop-floor" ? action < responsible : responsible < action);
+    const rowProperties = document.match(/<w:trPr>[\s\S]*?<\/w:trPr>/g) ?? [];
+    assert.ok(rowProperties.length > 0);
+    assert.ok(rowProperties.every(row => row.includes("<w:cantSplit")));
   });
 }
