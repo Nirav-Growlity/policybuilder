@@ -64,9 +64,9 @@ test("import shows a friendly coming-soon state when the route is not there yet"
   assert.match(markup, /disabled=""[^>]*>Look &amp; cover/);
 });
 
-test("the template picker shows all five SOP templates and marks the one in use", () => {
+test("the template picker shows all seven SOP templates and marks the one in use", () => {
   const markup = renderToStaticMarkup(React.createElement(SopTemplatePicker, { value: "esg-pillars", onChange: noop, layout: "grid" }));
-  for (const name of ["Controlled Manual", "ESG Pillars", "SOP Cards", "Compact Register", "Modern Banner"]) assert.match(markup, new RegExp(name));
+  for (const name of ["Controlled Manual", "ESG Pillars", "SOP Cards", "Compact Register", "Modern Banner", "Shop Floor", "Chapter Book"]) assert.match(markup, new RegExp(name));
   assert.equal((markup.match(/aria-pressed="true"/g) ?? []).length, 1);
   assert.match(markup, /\/sop-templates\/esg-pillars\/cover\.webp/);
   assert.match(markup, /In use/);

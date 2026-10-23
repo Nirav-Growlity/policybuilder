@@ -8,7 +8,7 @@
  * what keeps the PDF and the Word file looking the same.
  */
 
-export type SopDesignId = "controlled-manual" | "esg-pillars" | "sop-cards" | "compact-register" | "modern-banner";
+export type SopDesignId = "controlled-manual" | "esg-pillars" | "sop-cards" | "compact-register" | "modern-banner" | "shop-floor" | "chapter-book";
 
 export type SopFontPairId =
   | "caladea-carlito"
@@ -16,12 +16,16 @@ export type SopFontPairId =
   | "poppins-lato"
   | "arimo"
   | "merriweather-pt-sans"
-  | "tinos-arimo";
+  | "tinos-arimo"
+  | "ibm-plex-sans"
+  | "source-serif-atkinson";
 
 export type SopFontPair = { id: SopFontPairId; label: string; heading: string; body: string };
 
 /** Families shipped as TTF in assets/typst-fonts and embedded in the DOCX. */
 export const SOP_FONT_PAIRS: readonly SopFontPair[] = [
+  { id: "ibm-plex-sans", label: "IBM Plex Sans", heading: "IBM Plex Sans", body: "IBM Plex Sans" },
+  { id: "source-serif-atkinson", label: "Source Serif 4 and Atkinson Hyperlegible", heading: "Source Serif 4", body: "Atkinson Hyperlegible" },
   { id: "caladea-carlito", label: "Caladea and Carlito (Cambria and Calibri metrics)", heading: "Caladea", body: "Carlito" },
   { id: "montserrat-open-sans", label: "Montserrat and Open Sans", heading: "Montserrat", body: "Open Sans" },
   { id: "poppins-lato", label: "Poppins and Lato", heading: "Poppins", body: "Lato" },
@@ -59,18 +63,18 @@ export type SopDesign = {
   paragraphSpacing: number;
   palette: SopPalette;
   page: { marginTopMm: number; marginBottomMm: number; marginXMm: number; headerGapMm: number };
-  cover: "control-sheet" | "pillar-bands" | "card-grid" | "register-plate" | "image-banner";
+  cover: "control-sheet" | "pillar-bands" | "card-grid" | "register-plate" | "image-banner" | "hazard-band" | "book-cover";
   /** Optional so additional templates inherit the inset photo layout. */
   photoCover?: "inset-photo" | "pillar-photo" | "panel-photo" | "photo-strip" | "full-photo";
-  contents: "dotted-leaders" | "pillar-index" | "numbered-cards" | "register-columns" | "banner-index";
-  runningHeader: "control-table" | "pillar-rule" | "code-strip" | "register-line" | "banner-rule";
-  runningFooter: "prepared-approved" | "outer-folio" | "centered-folio" | "register-folio";
+  contents: "dotted-leaders" | "pillar-index" | "numbered-cards" | "register-columns" | "banner-index" | "ruled-index";
+  runningHeader: "control-table" | "pillar-rule" | "code-strip" | "register-line" | "banner-rule" | "plain-line" | "book-rule";
+  runningFooter: "prepared-approved" | "outer-folio" | "centered-folio" | "register-folio" | "company-folio";
   chapterDivider: "none" | "pillar-page" | "label-band";
-  sopOpener: "ruled-title" | "pillar-banner" | "header-card" | "register-head" | "title-banner";
-  sectionHeading: "numbered-rule" | "pillar-bar" | "number-chip" | "side-label" | "label-chip";
-  procedure: "numbered-blocks" | "step-table";
+  sopOpener: "ruled-title" | "pillar-banner" | "header-card" | "register-head" | "title-banner" | "plain-title" | "chapter-numeral";
+  sectionHeading: "numbered-rule" | "pillar-bar" | "number-chip" | "side-label" | "label-chip" | "hanging-number" | "serif-heading";
+  procedure: "numbered-blocks" | "step-table" | "yellow-steps";
   table: { header: "primary-fill" | "soft-fill" | "rule-only"; zebra: boolean; borders: "grid" | "horizontal" };
-  callout: "soft-panel" | "accent-rule";
+  callout: "soft-panel" | "accent-rule" | "mint-panel" | "hazard-rule";
   approval: "signature-table" | "stamp-panel";
 };
 
@@ -212,6 +216,31 @@ export const SOP_DESIGNS: readonly SopDesign[] = [
     callout: "soft-panel",
     approval: "stamp-panel",
   },
+  {
+    id: "shop-floor", name: "Shop Floor",
+    description: "Clear operational typography, hazard-yellow step markers and horizontal rules.",
+    descriptors: ["Operational", "High contrast", "Print friendly"], fontPair: "ibm-plex-sans",
+    sizes: { body: 10, small: 8.5, h1: 18, h2: 12, h3: 11, coverTitle: 44 },
+    leading: 1.4, paragraphSpacing: 6,
+    palette: { primary: "#1E2A33", primaryDark: "#1E2A33", ink: "#1E2A33", accent: "#F2B705", line: "#D5DAE0", muted: "#5C6873", paper: "#FFFFFF", soft: "#F4F5F7", onPrimary: "#1E2A33", pillars },
+    page: { marginTopMm: 24, marginBottomMm: 22, marginXMm: 20, headerGapMm: 6 },
+    cover: "hazard-band", contents: "ruled-index", runningHeader: "plain-line", runningFooter: "company-folio",
+    chapterDivider: "none", sopOpener: "plain-title", sectionHeading: "hanging-number", procedure: "yellow-steps",
+    table: { header: "rule-only", zebra: false, borders: "horizontal" }, callout: "hazard-rule", approval: "signature-table",
+  },
+  {
+    id: "chapter-book", name: "Chapter Book",
+    description: "Serif chapter openings, generous reading space and quiet teal and mint details.",
+    descriptors: ["Editorial", "Readable", "Chapter openings"], fontPair: "source-serif-atkinson",
+    sizes: { body: 10, small: 8.5, h1: 20, h2: 13, h3: 11, coverTitle: 40 },
+    leading: 1.45, paragraphSpacing: 6,
+    palette: { primary: "#0F5257", primaryDark: "#0A3B3F", soft: "#E6F0EF", accent: "#E8A33D", ink: "#1F2430", muted: "#5B6470", line: "#CFDCDB", paper: "#FFFFFF", onPrimary: "#FFFFFF", pillars },
+    page: { marginTopMm: 24, marginBottomMm: 22, marginXMm: 20, headerGapMm: 6 },
+    cover: "book-cover", contents: "ruled-index", runningHeader: "book-rule", runningFooter: "company-folio",
+    chapterDivider: "none", sopOpener: "chapter-numeral", sectionHeading: "serif-heading", procedure: "numbered-blocks",
+    table: { header: "soft-fill", zebra: false, borders: "horizontal" }, callout: "mint-panel", approval: "signature-table",
+  },
+
 ];
 
 /** Handbook choices; saved documents can still resolve every SOP template. */

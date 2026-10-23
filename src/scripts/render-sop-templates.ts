@@ -5,6 +5,8 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import sharp from "sharp";
 import { NodeCompiler } from "@myriaddreamin/typst-ts-node-compiler";
+import { buildSampleHandbook } from "../lib/handbook/sample-handbook";
+import { buildHandbookRenderModel } from "../lib/handbook/render-model";
 import { SOP_DESIGNS } from "../lib/sop/design/templates";
 import { buildSampleRenderModel } from "../lib/sop/sample-render-model";
 import { compileSopManual, TypstCompileError, type ManualAsset } from "../lib/typst/compile";
@@ -14,6 +16,9 @@ import { coverArtSvg } from "../lib/sop/design/cover-art";
 const root = resolve(".");
 const workspace = join(root, ".typst-workspace");
 const only = process.argv[2] && process.argv[2] !== "all" ? process.argv[2] : null;
+const handbook = process.argv.includes("--handbook");
+const picker = process.argv.includes("--picker");
+if (picker && !["shop-floor", "chapter-book"].includes(only ?? "")) throw new Error("Picker generation requires one new template id.");
 const wanted = (process.argv[3] ?? "1,2,3,4,6").split(",").map(Number);
 
 const compiler = NodeCompiler.create({ workspace, fontArgs: [{ fontPaths: sopFontFiles(root) }] });
@@ -47,12 +52,13 @@ async function main() {
       coverImage = "/assets/cover-art.png";
       assets.push({ path: "assets/cover-art.png", content: await sharp(Buffer.from(coverArtSvg(design.palette))).png().toBuffer() });
     }
-    const model = buildSampleRenderModel({ templateId: design.id, coverImage });
+    const sample = buildSampleHandbook();
+    const model = handbook ? buildHandbookRenderModel({ ...sample, theme: design.id, themeOptions: { ...sample.themeOptions, accent: "template" } }) : buildSampleRenderModel({ templateId: design.id, coverImage });
     const started = performance.now();
     try {
       const out = compileSopManual(compiler, template, model, assets, workspace, { svg: true });
       const ms = performance.now() - started;
-      const dir = join(root, ".scratch", "sop-templates", design.id);
+      const dir = join(root, ".scratch", handbook ? "handbook-templates" : "sop-templates", design.id);
       mkdirSync(dir, { recursive: true });
       writeFileSync(join(dir, "manual.pdf"), out.pdf);
       const widthPt = (model.page.widthMm / 25.4) * 72;
@@ -61,6 +67,14 @@ async function main() {
       for (const n of wanted) {
         if (!pages[n - 1]) continue;
         await sharp(Buffer.from(pages[n - 1])).png().toFile(join(dir, `page-${String(n).padStart(2, "0")}.png`));
+      }
+      if (picker) {
+        const target = join(root, "public", "sop-templates", design.id);
+        mkdirSync(target, { recursive: true });
+        const first = model.chapters.flatMap(chapter => chapter.sops)[0];
+        for (const [name, n] of [["cover", 1], ["body", out.anchorPages[first.anchor]]] as const) {
+          await sharp(Buffer.from(pages[n - 1])).resize({ width: 560 }).webp({ quality: 88 }).toFile(join(target, `${name}.webp`));
+        }
       }
       console.log(`${design.id}: ${out.pageCount} pages in ${ms.toFixed(0)}ms (svg pages found: ${pages.length})`);
     } catch (error) {

@@ -5,7 +5,7 @@
 // .scratch/sop-parity/<template>/. It also matches text runs between the two
 // PDFs and reports, per page, how far Word's baselines sit from Typst's.
 //
-// Run: npx tsx scripts/sop-parity.ts [templateId|all] [pages=all|1,2,5] [--no-png]
+// Run: npx tsx scripts/sop-parity.ts [templateId[,templateId]|all] [pages=all|1,2,5] [--no-png]
 // --handbook uses the handbook fixture; --baseline uses the original renderers.
 // --photo exercises legacy portrait artwork in every template when available,
 // falling back to .scratch/photo-scene.jpg. These are stock fixtures, never AI calls.
@@ -21,22 +21,23 @@ import { chromium, type Browser, type Page } from "playwright-core";
 import { getDocument, type PDFDocumentProxy } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { generateSopDocx, sopPagesFromPdf } from "../lib/docx/sop-generate";
 import { coverArtSvg } from "../lib/sop/design/cover-art";
+import { buildSampleHandbook } from "../lib/handbook/sample-handbook";
+import { buildHandbookRenderModel } from "../lib/handbook/render-model";
 import { SOP_DESIGNS } from "../lib/sop/design/templates";
 import { buildSampleRenderModel } from "../lib/sop/sample-render-model";
 import { compileSopManual, type ManualAsset } from "../lib/typst/compile";
 import { sopFontFiles } from "../lib/typst/fonts";
-import { buildSampleHandbook } from "../lib/handbook/sample-handbook";
-import { buildHandbookRenderModel } from "../lib/handbook/render-model";
 
 const root = resolve(".");
 const args = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
 const only = args[0] && args[0] !== "all" ? args[0] : null;
 const pageFilter = args[1] && args[1] !== "all" ? new Set(args[1].split(",").map(Number)) : null;
+const existing = process.argv.includes("--existing");
 const writePngs = !process.argv.includes("--no-png");
 const photo = process.argv.includes("--photo");
 const handbook = process.argv.includes("--handbook");
 const baseline = process.argv.includes("--baseline");
-const outRoot = join(root, ".scratch", `sop-parity${handbook ? "-handbook" : ""}${photo ? "-photo" : ""}${baseline ? "-original" : ""}`);
+const outRoot = join(root, ".scratch", `${handbook ? "handbook-parity" : "sop-parity"}${photo ? "-photo" : ""}${baseline ? "-original" : ""}`);
 
 type TextItem = { str: string; x: number; y: number };
 
@@ -148,7 +149,7 @@ async function main() {
     writeFileSync(original, execFileSync("git", ["show", "5b0714c:src/lib/docx/sop-generate.ts"]));
     docxGenerator = (await import(pathToFileURL(original).href)).generateSopDocx;
   }
-  const designs = SOP_DESIGNS.filter((design) => !only || design.id === only);
+  const designs = SOP_DESIGNS.filter((design) => !only || only.split(",").includes(design.id));
   const jobs: Array<{ id: string; dir: string; typstPdf: string; docx: string; pdf: string; typstPages: number }> = [];
 
   for (const design of designs) {
@@ -158,7 +159,7 @@ async function main() {
       coverImage = "/assets/cover-art.png";
       assets.push({ path: "assets/cover-art.png", content: await sharp(Buffer.from(coverArtSvg(design.palette))).png().toBuffer() });
     }
-    const model = handbook ? buildHandbookRenderModel({ ...buildSampleHandbook(), theme: design.id }, { coverImagePath: coverImage }) : buildSampleRenderModel({ templateId: design.id, coverImage });
+    const model = handbook ? buildHandbookRenderModel({ ...buildSampleHandbook(), theme: design.id, themeOptions: { ...buildSampleHandbook().themeOptions, accent: "template" } }, { coverImagePath: coverImage }) : buildSampleRenderModel({ templateId: design.id, coverImage });
     if (photo) {
       model.cover.image = "/assets/scene.png";
       model.cover.photo = true;
@@ -171,6 +172,10 @@ async function main() {
       assets.push({ path: "assets/logo.png", content: await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="150"><rect width="400" height="150" fill="white"/><path d="M10 115V35h20l30 45 30-45h20v80H90V70L60 110 30 70v45z" fill="#183A5A"/><text x="125" y="90" font-family="Arial" font-size="40" fill="#183A5A">Meridian</text></svg>')).png().toBuffer() });
     }
     const dir = join(outRoot, design.id);
+    if (existing) {
+      jobs.push({ id: design.id, dir, typstPdf: join(dir, "typst.pdf"), docx: join(dir, "manual.docx"), pdf: join(dir, "word.pdf"), typstPages: 0 });
+      continue;
+    }
     rmSync(dir, { recursive: true, force: true });
     mkdirSync(dir, { recursive: true });
     const compiled = compileSopManual(compiler, template, model, assets, workspace);
@@ -182,7 +187,7 @@ async function main() {
     jobs.push({ id: design.id, dir, typstPdf, docx, pdf: join(dir, "word.pdf"), typstPages: compiled.pageCount });
   }
 
-  convertWithWord(jobs.map((job) => ({ docx: job.docx, pdf: job.pdf })));
+  if (!existing) convertWithWord(jobs.map((job) => ({ docx: job.docx, pdf: job.pdf })));
   if (writePngs) await startRenderer();
 
   const summary: string[] = [];

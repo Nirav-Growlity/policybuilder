@@ -19,6 +19,8 @@ export const SOP_TEMPLATE_IDS = [
   "sop-cards",
   "compact-register",
   "modern-banner",
+  "shop-floor",
+  "chapter-book",
 ] as const;
 
 export type SopTemplateId = (typeof SOP_TEMPLATE_IDS)[number];
