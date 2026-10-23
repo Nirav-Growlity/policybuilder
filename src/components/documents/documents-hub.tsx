@@ -25,6 +25,9 @@ type TypeFilter = "all" | "sop" | "handbook";
 
 const TYPE_LABEL: Record<ManualSummary["kind"], string> = { sop: "SOP manuals", handbook: "Employee handbooks" };
 
+/** "manual" or "handbook", for button titles and dialogs. */
+const noun = (manual: Pick<ManualSummary, "kind">) => (manual.kind === "handbook" ? "handbook" : "manual");
+
 function templateCover(templateId: string | null) {
   const id = templateId && (SOP_TEMPLATE_IDS as readonly string[]).includes(templateId) ? templateId : DEFAULT_SOP_TEMPLATE_ID;
   return `/sop-templates/${id}/cover.webp`;
@@ -248,12 +251,12 @@ export function DocumentsHub() {
                               {!isArchived ? <Link href={resumeHref(manual)} className={styles.resumeLink}>Resume<ArrowRight size={15} aria-hidden="true" /></Link> : <p className={styles.archivedLabel}><Archive size={14} aria-hidden="true" /> Archived</p>}
                             </div>
                             <div className={styles.recordActions}>
-                              {!isArchived ? <button type="button" title="Rename manual" onClick={() => { setRenameTarget(manual); setRenameTitle(manual.title); setError(""); }} className={styles.textAction}><Pencil size={14} aria-hidden="true" /> Rename</button> : null}
-                              <button type="button" title={isArchived ? "Restore manual" : "Archive manual"} onClick={() => void setArchived(manual, !isArchived)} disabled={actionId === manual.id} className={styles.textAction}>
+                              {!isArchived ? <button type="button" title={`Rename ${noun(manual)}`} onClick={() => { setRenameTarget(manual); setRenameTitle(manual.title); setError(""); }} className={styles.textAction}><Pencil size={14} aria-hidden="true" /> Rename</button> : null}
+                              <button type="button" title={`${isArchived ? "Restore" : "Archive"} ${noun(manual)}`} onClick={() => void setArchived(manual, !isArchived)} disabled={actionId === manual.id} className={styles.textAction}>
                                 {actionId === manual.id ? <Loader2 size={15} className={styles.spinner} aria-hidden="true" /> : isArchived ? <ArchiveRestore size={15} aria-hidden="true" /> : <Archive size={15} aria-hidden="true" />}
                                 {isArchived ? "Restore" : "Archive"}
                               </button>
-                              {isArchived ? <button type="button" title="Delete archived manual" onClick={() => setDeleteTarget(manual)} disabled={actionId === manual.id} className={`${styles.textAction} ${styles.dangerAction}`}><Trash2 size={14} aria-hidden="true" /> Delete</button> : null}
+                              {isArchived ? <button type="button" title={`Delete archived ${noun(manual)}`} onClick={() => setDeleteTarget(manual)} disabled={actionId === manual.id} className={`${styles.textAction} ${styles.dangerAction}`}><Trash2 size={14} aria-hidden="true" /> Delete</button> : null}
                             </div>
                           </motion.article>
                         ))}
@@ -270,7 +273,7 @@ export function DocumentsHub() {
 
       <DocumentTypeChooser open={chooserOpen} onClose={() => setChooserOpen(false)} onChoose={(type) => { setChooserOpen(false); router.push(type === "handbook" ? newHandbookHref : newManualHref); }} />
 
-      <Modal open={Boolean(renameTarget)} onClose={() => { if (!renaming) setRenameTarget(null); }} title="Rename manual" description="Choose a name for this document." width={460} hideClose={renaming}>
+      <Modal open={Boolean(renameTarget)} onClose={() => { if (!renaming) setRenameTarget(null); }} title={renameTarget ? `Rename ${noun(renameTarget)}` : "Rename document"} description="Choose a name for this document." width={460} hideClose={renaming}>
         <form className={styles.dialogForm} onSubmit={(event) => void submitRename(event)}>
           {error ? <p role="alert" className={styles.inlineError}>{error}</p> : null}
           <ApplicationField id="rename-manual-input" label="Document name" className={styles.dialogField}>
@@ -283,7 +286,7 @@ export function DocumentsHub() {
         </form>
       </Modal>
 
-      <Modal open={Boolean(deleteTarget)} onClose={() => { if (!actionId) setDeleteTarget(null); }} title="Delete archived manual?" description={deleteTarget ? `“${deleteTarget.title}” will be permanently deleted. This cannot be undone.` : undefined} width={460} hideClose={Boolean(actionId)}>
+      <Modal open={Boolean(deleteTarget)} onClose={() => { if (!actionId) setDeleteTarget(null); }} title={deleteTarget ? `Delete archived ${noun(deleteTarget)}?` : "Delete archived document?"} description={deleteTarget ? `“${deleteTarget.title}” will be permanently deleted. This cannot be undone.` : undefined} width={460} hideClose={Boolean(actionId)}>
         {error ? <p role="alert" className={styles.inlineError}>{error}</p> : null}
         <div className={styles.deleteIntro}><div className={styles.deleteIcon} aria-hidden="true"><Trash2 size={18} /></div></div>
         <div className={styles.dialogActions}>

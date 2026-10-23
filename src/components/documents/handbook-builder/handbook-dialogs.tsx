@@ -151,7 +151,7 @@ export function HandbookDetailsModal({ open, onClose }: { open: boolean; onClose
           if (followsTitle && next) store.setTitle(handbookTitle(next));
         }} showErrors />
         <HandbookFactsPanel facts={manual.handbookFacts ?? NO_HANDBOOK_FACTS} onChange={(patch) => setManual((current) => ({ ...current, handbookFacts: { ...(current.handbookFacts ?? NO_HANDBOOK_FACTS), ...patch } }))} />
-        <CompanyFactsPanel facts={manual.facts ?? NO_FACTS} onChange={(patch) => setManual((current) => ({ ...current, facts: { ...(current.facts ?? NO_FACTS), ...patch } }))} />
+        <CompanyFactsPanel itemNoun="Chapters" facts={manual.facts ?? NO_FACTS} onChange={(patch) => setManual((current) => ({ ...current, facts: { ...(current.facts ?? NO_FACTS), ...patch } }))} />
       </div>
     </Modal>
   );

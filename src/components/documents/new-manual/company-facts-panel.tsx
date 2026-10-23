@@ -14,7 +14,7 @@ import builder from "../builder/builder.module.css";
  * company profile, certifications, laws and regulators, and key contacts.
  * Used by the wizard's details step and the builder's details dialog.
  */
-export function CompanyFactsPanel({ facts, onChange }: { facts: SopCompanyFacts; onChange: (patch: Partial<SopCompanyFacts>) => void }) {
+export function CompanyFactsPanel({ facts, onChange, itemNoun = "SOPs" }: { facts: SopCompanyFacts; onChange: (patch: Partial<SopCompanyFacts>) => void; /** "SOPs" or "Chapters": what names the contacts as reporting channels. */ itemNoun?: string }) {
   // A new row suggests the next common purpose that is not listed yet.
   const newContact = (): SopContact => {
     const used = new Set(facts.contacts.map((contact) => contact.purpose.trim().toLowerCase()));
@@ -44,7 +44,7 @@ export function CompanyFactsPanel({ facts, onChange }: { facts: SopCompanyFacts;
           <LinesField lines={facts.regulations} onChange={(regulations) => onChange({ regulations })} label="Laws and regulators that apply" placeholder={"Factories Act, 1948\nState Pollution Control Board"} className={builder.linesWriting} />
         </Field>
       </div>
-      <Field className="mt-4" label="Key contacts" hint="Printed as a Key Contacts table. SOPs name them as reporting channels.">
+      <Field className="mt-4" label="Key contacts" hint={`Printed as a Key Contacts table. ${itemNoun} name them as reporting channels.`}>
         <RowsTable<SopContact>
           caption="Key contacts"
           rows={facts.contacts}

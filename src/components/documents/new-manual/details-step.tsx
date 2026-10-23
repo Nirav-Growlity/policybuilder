@@ -37,7 +37,7 @@ export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceho
   return (
     <Panel title={title} description="Document control printed on the cover and in every page header." icon={<FileBadge size={17} strokeWidth={1.8} />}>
       <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Field label="Manual title" hint="Printed on the cover and in page headers">
+        <Field label={`${documentNoun.charAt(0).toUpperCase()}${documentNoun.slice(1)} title`} hint="Printed on the cover and in page headers">
           <Input value={control.title ?? ""} onChange={(event) => onChange({ title: event.target.value })} placeholder={titlePlaceholder} />
         </Field>
         <Field label="Subtitle" hint="Shown under the title on the cover">
@@ -56,7 +56,7 @@ export function ManualDetailsPanel({ control, onChange, showErrors, titlePlaceho
         </Field>
       </div>
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Field label="Supersedes" hint="The issue this manual replaces">
+        <Field label="Supersedes" hint={`The issue this ${documentNoun} replaces`}>
           <Input value={control.supersedes} onChange={(event) => onChange({ supersedes: event.target.value })} placeholder="Rev 00" />
         </Field>
         <Field label="Issue date">
@@ -117,12 +117,12 @@ export function DetailsStep({ company, control, facts, onCompanyChange, onContro
   return (
     <section className="mx-auto max-w-5xl px-4 pt-8 sm:px-6">
       <div className="mb-8">
-        <WizardHeading title="Enter company and manual details." description="We filled in what your organization profile already has. Only the company name and the approver are required; everything else can change later." />
+        <WizardHeading title={`Enter company and ${documentNoun} details.`} description="We filled in what your organization profile already has. Only the company name and the approver are required; everything else can change later." />
       </div>
       <div className="flex flex-col gap-5">
         <CompanyInfoForm company={company} onCompanyChange={onCompanyChange} documentLabel={documentNoun} />
         <ManualDetailsPanel control={control} onChange={onControlChange} showErrors={attempted} documentNoun={documentNoun} titlePlaceholder={titlePlaceholder} />
-        <CompanyFactsPanel facts={facts} onChange={onFactsChange} />
+        <CompanyFactsPanel facts={facts} onChange={onFactsChange} itemNoun={documentNoun === "handbook" ? "Chapters" : "SOPs"} />
         {extra}
       </div>
       <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-[var(--color-line)] bg-[var(--pc-panel)] p-4 sm:flex-row">
