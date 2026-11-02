@@ -61,6 +61,14 @@ export async function listSopManuals(orgId: number, view: ManualView = "active")
   return body.manuals ?? [];
 }
 
+/** Every document in the organization, SOP manuals and employee handbooks alike. */
+/** A null organization lists every organization's documents (admins only). */
+export async function listManuals(orgId: number | null, view: ManualView = "active"): Promise<ManualSummary[]> {
+  const response = await fetch(manualsUrl(`?view=${view}`, orgId), { cache: "no-store" });
+  const body = await json<{ manuals?: ManualSummary[] }>(response, "Could not load your documents.");
+  return body.manuals ?? [];
+}
+
 /** Without an organization, the server resolves it from the manual. */
 export async function getSopManual(orgId: number | null, id: string): Promise<StoredSopManual> {
   const response = await fetch(manualsUrl(`/${encodeURIComponent(id)}`, orgId), { cache: "no-store" });
@@ -104,7 +112,7 @@ export async function deleteSopManual(orgId: number, id: string): Promise<void> 
 }
 
 /** Renders the edited (unsaved) manual; with `sopId` only that SOP's pages. */
-export async function fetchManualPreview(orgId: number, id: string, manual: SopManual, options: { sopId?: string; signal?: AbortSignal } = {}): Promise<{ bytes: Uint8Array; pageCount: number }> {
+export async function fetchManualPreview(orgId: number, id: string, manual: object, options: { sopId?: string; signal?: AbortSignal } = {}): Promise<{ bytes: Uint8Array; pageCount: number }> {
   const response = await fetch(manualsUrl(`/${encodeURIComponent(id)}/preview`, orgId), {
     method: "POST",
     headers: jsonHeaders,
@@ -172,7 +180,7 @@ export async function importSopDocx(orgId: number, id: string, file: File, signa
 
 export type AiCoverResult = { status: "generated"; cover: SopCover } | { status: "unavailable" };
 
-export async function generateSopAiCover(orgId: number, id: string, manual: SopManual, instruction?: string, signal?: AbortSignal): Promise<AiCoverResult> {
+export async function generateSopAiCover(orgId: number, id: string, manual: object, instruction?: string, signal?: AbortSignal): Promise<AiCoverResult> {
   const response = await fetch(manualsUrl(`/${encodeURIComponent(id)}/ai-cover`, orgId), {
     method: "POST",
     headers: jsonHeaders,

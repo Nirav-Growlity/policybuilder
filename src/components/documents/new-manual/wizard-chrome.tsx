@@ -6,7 +6,7 @@ import { ArrowLeft, Leaf } from "lucide-react";
 export const WIZARD_STEPS = ["Company & manual", "Choose SOPs", "Look & cover"] as const;
 
 /** The policy setup screens' sticky header: brand on the left, the step on the right. */
-export function WizardHeader({ step, backHref }: { step: number; backHref: string }) {
+export function WizardHeader({ step, backHref, steps = WIZARD_STEPS }: { step: number; backHref: string; steps?: readonly string[] }) {
   return (
     <header className="sticky top-0 z-20 flex items-center justify-between gap-4 border-b border-[var(--pc-divider)] bg-[var(--pc-panel)] px-5 py-3 lg:px-8">
       <div className="flex min-w-0 items-center gap-4">
@@ -22,7 +22,7 @@ export function WizardHeader({ step, backHref }: { step: number; backHref: strin
         </Link>
       </div>
       <span className="text-[13px] font-medium text-[var(--color-muted)]">
-        Step {step + 1} of {WIZARD_STEPS.length}<span className="hidden sm:inline">: {WIZARD_STEPS[step]}</span>
+        Step {step + 1} of {steps.length}<span className="hidden sm:inline">: {steps[step]}</span>
       </span>
     </header>
   );

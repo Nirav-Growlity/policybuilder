@@ -3,6 +3,7 @@
 .orgPicker { min-width: 220px; }
 .coverImage { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; background: #fff; }
 .emptyAction { margin-top: 22px; }
+.chooserOrganization { display: grid; gap: 6px; margin: 0 0 16px; color: var(--pc-muted); font-size: 12px; font-weight: 600; }
 
 /* Document type chooser: the policy selector's start cards. */
 .typeGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 4px 0 0; padding: 0; list-style: none; }

@@ -88,7 +88,7 @@ function unique(values: string[]) {
 const PROFILE_MAX_CHARS = 2_000;
 
 /** The optional company facts; nothing at all when a manual has none, so older manuals keep their cached context. */
-function companyFactLines(facts: SopCompanyFacts): string[] {
+export function companyFactLines(facts: SopCompanyFacts): string[] {
   const field = (value: string) => clean(value) || "-";
   return [
     ...(facts.profile ? [`Company profile (use for the introduction and front matter): ${compact(facts.profile, PROFILE_MAX_CHARS)}`] : []),
@@ -237,7 +237,7 @@ const wireBlock = z.object({
 });
 const wireBlocks = z.array(wireBlock);
 
-const WIRE_SECTION_SCHEMAS: Record<SopSectionKind, z.ZodType> = {
+export const WIRE_SECTION_SCHEMAS: Record<SopSectionKind, z.ZodType> = {
   introduction: wireBlocks,
   purpose: wireBlocks,
   scope: wireBlocks,
@@ -299,7 +299,7 @@ export function manualFieldOutputSchema(field: ManualAiField) {
   return MANUAL_FIELD_SCHEMAS[field];
 }
 
-const SECTION_GUIDE: Record<SopSectionKind, string> = {
+export const SECTION_GUIDE: Record<SopSectionKind, string> = {
   introduction: "blocks (usually one short paragraph)",
   purpose: "blocks (usually one paragraph)",
   scope: "blocks (usually one paragraph)",
@@ -343,7 +343,7 @@ export function estimatePromptTokens(parts: SopPromptParts) {
 }
 
 /** Cuts text to about `maxChars`, at a line break where possible. Below 400 characters it is dropped. */
-function cutText(text: string, maxChars: number) {
+export function cutText(text: string, maxChars: number) {
   if (text.length <= maxChars) return text;
   if (maxChars < 400) return "";
   const cut = text.slice(0, maxChars);

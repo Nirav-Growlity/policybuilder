@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import { policyCraftMutationFailure } from "@/lib/policycraft-auth";
 import { MAX_MANUAL_JSON_BYTES, resolveManualAuth } from "@/lib/manual-request";
-import { renderManualPdf } from "@/lib/sop/render-service";
-import { sopManualSchema } from "@/lib/sop/schema";
-import type { SopManual } from "@/lib/sop/types";
+import { manualItemIds, parseAnyManual, renderParsedPdf } from "@/lib/documents/manual-render";
 import { TypstCompileError } from "@/lib/typst/compile";
 
 export const runtime = "nodejs";
@@ -12,9 +10,10 @@ export const maxDuration = 30;
 type Context = { params: Promise<{ id: string }> };
 
 /**
- * Live preview of the manual as it is being edited (not yet saved). With a
- * `sopId`, only that SOP's pages are laid out, which keeps the preview fast
- * on long manuals. Returns a PDF for the in-app pdf.js viewer.
+ * Live preview of the manual or handbook as it is being edited (not yet
+ * saved). With an item id (`sopId`, which also names a handbook chapter),
+ * only that item's pages are laid out, which keeps the preview fast on long
+ * documents. Returns a PDF for the in-app pdf.js viewer.
  */
 export async function POST(request: Request, context: Context) {
   const invalid = policyCraftMutationFailure(request);
@@ -34,16 +33,15 @@ export async function POST(request: Request, context: Context) {
   });
   if ("response" in resolved) return resolved.response;
 
-  const parsed = sopManualSchema.safeParse(body.manual);
-  if (!parsed.success) return NextResponse.json({ error: "The manual is not valid.", issues: parsed.error.issues.slice(0, 5) }, { status: 400 });
-  const manual = parsed.data as SopManual;
-  const sopId = typeof body.sopId === "string" && manual.sops.some((sop) => sop.id === body!.sopId) ? body.sopId : null;
+  const parsed = parseAnyManual(body.manual);
+  if (!parsed) return NextResponse.json({ error: "The document is not valid." }, { status: 400 });
+  const itemId = typeof body.sopId === "string" && manualItemIds(parsed).includes(body.sopId) ? body.sopId : null;
 
   try {
     const started = performance.now();
-    const rendered = await renderManualPdf(manual, resolved.auth.organization.id, {
-      includeEmptySections: Boolean(sopId),
-      ...(sopId ? { onlySopIds: [sopId] } : {}),
+    const rendered = await renderParsedPdf(parsed, resolved.auth.organization.id, {
+      includeEmptySections: Boolean(itemId),
+      ...(itemId ? { onlyItemIds: [itemId] } : {}),
     });
     return new Response(new Uint8Array(rendered.pdf), {
       headers: {
@@ -55,7 +53,7 @@ export async function POST(request: Request, context: Context) {
     });
   } catch (error) {
     if (error instanceof TypstCompileError) {
-      console.error("SOP preview layout failed", JSON.stringify(error.diagnostics).slice(0, 2000));
+      console.error("Manual preview layout failed", JSON.stringify(error.diagnostics).slice(0, 2000));
       return NextResponse.json({ error: "The preview could not be laid out." }, { status: 500 });
     }
     throw error;

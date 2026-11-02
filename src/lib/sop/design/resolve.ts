@@ -1,4 +1,5 @@
 import { normalizeLogoPalette } from "../../logo-palette";
+import { photoCoverLayout } from "./photo-cover";
 import type { LogoColorPalette } from "../../types";
 import type { ResolvedSopDesign } from "../render-types";
 import { getSopDesign, getSopFontPair, type SopPalette } from "./templates";
@@ -48,6 +49,7 @@ export function resolveSopDesign(options: SopDesignOptions): ResolvedSopDesign {
   }
   return {
     ...rest,
+    photoLayout: photoCoverLayout(rest),
     palette,
     fonts: { heading: pair.heading, body: pair.body },
     showSopHeaderCard: Boolean(options.showSopHeaderCard),

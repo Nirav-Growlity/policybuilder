@@ -56,6 +56,8 @@ import { COVER_BAND } from "../sop/cover-band";
 import type { RenderBlock, RenderCell, RenderChapter, RenderSection, RenderSop, RenderStep, SopRenderModel } from "../sop/render-types";
 import { embedDocumentFontStyles, embeddedDocumentFonts } from "./document-fonts";
 
+const editorial = (ctx: Ctx) => ctx.d.id === "shop-floor" || ctx.d.id === "chapter-book";
+
 // ---------------------------------------------------------------- units
 
 const MM = 72 / 25.4;
@@ -747,6 +749,7 @@ function table(ctx: Ctx, input: TableSpec): TableItem {
     const rowMarginBottom = Math.min(...wanted.map((margin) => margin.bottom));
     return new TableRow({
       tableHeader: spec2.header || undefined,
+      cantSplit: editorial(ctx) || undefined,
       height: spec2.height !== undefined ? { value: tw(spec2.height - (spec2.exact ? 0 : 0)), rule: spec2.exact ? HeightRule.EXACT : HeightRule.ATLEAST } : undefined,
       children: cells.map(({ cell, width, ins, flow, items }, cellIndex) => {
         const extraTop = (cell.vAlign ?? "top") === "top" ? wanted[cellIndex].top - rowMarginTop : 0;
@@ -868,7 +871,7 @@ function headerCell(ctx: Ctx, text: string): CellSpec {
 function strokeFor(ctx: Ctx, rowIndex: number, rowCount: number): CellSpec["borders"] {
   const line = { color: ctx.pal.line, size: RULE };
   if (ctx.d.table.borders === "grid") return { top: line, bottom: line, left: line, right: line };
-  const headerRule = ctx.d.table.header === "rule-only" ? { color: ctx.pal.ink, size: 1 } : line;
+  const headerRule = ctx.d.table.header === "rule-only" ? { color: ctx.pal.ink, size: ctx.d.id === "shop-floor" ? 1.5 : 1 } : line;
   if (rowIndex === 0) return { top: null, bottom: headerRule, left: null, right: null };
   return { top: rowIndex === 1 ? headerRule : line, bottom: rowIndex === rowCount ? line : null, left: null, right: null };
 }
@@ -902,6 +905,14 @@ function dataTable(ctx: Ctx, columns: string[], widths: number[], rows: RenderCe
 }
 
 function callout(ctx: Ctx, items: FlowItem[], width: number): TableItem {
+  if (ctx.d.callout === "hazard-rule") {
+    items = items.map((item, index) => item.t === "par" && index === 0 ? { ...item, lines: item.lines.map((line, lineIndex) => ({ ...line, runs: line.runs.flatMap((run, runIndex) => {
+      if (!("text" in run) || lineIndex !== 0 || runIndex !== 0) return [run];
+      const match = /^([^.!?]+[.!?]?)([\s\S]*)$/.exec(run.text);
+      return match ? [{ ...run, text: match[1], bold: true }, { ...run, text: match[2] }] : [run];
+    }) })) } : item);
+  }
+  if (ctx.d.callout === "mint-panel") return box(ctx, width, items, { fill: ctx.pal.soft, inset: inset(9, 7), borders: { left: { color: ctx.pal.accent, size: 3 } } });
   if (ctx.d.callout === "soft-panel") return box(ctx, width, items, { fill: ctx.pal.soft, inset: inset(9, 7) });
   return box(ctx, width, items, { inset: { l: 9, r: 4, t: 4, b: 4 }, borders: { left: { color: ctx.pal.accent, size: 2.5 } } });
 }
@@ -910,6 +921,7 @@ function callout(ctx: Ctx, items: FlowItem[], width: number): TableItem {
 
 // Every part keeps with the next, so a title never sits alone at the foot of a page (Typst: a sticky block).
 function partTitle(ctx: Ctx, title: string, anchor: string): FlowItem[] {
+  if (editorial(ctx)) return [{ t: "group", above: ctx.lead + ctx.after, below: ctx.after, keep: true, items: [{ ...par(ctx, [txt(ctx, title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 0 }), bookmark: anchor }, v(ctx.after * 0.5)] }];
   const opener = ctx.d.sopOpener;
   const size = ctx.sz.h1 * 0.85;
   if (opener === "pillar-banner" || opener === "title-banner") {
@@ -943,6 +955,15 @@ function partTitle(ctx: Ctx, title: string, anchor: string): FlowItem[] {
 const sectionLabel = (section: RenderSection) => (section.number ? `${section.number}  ${section.title}` : section.title);
 
 function sectionTitle(ctx: Ctx, section: RenderSection, color: string, width: number): FlowItem[] {
+  if (editorial(ctx)) {
+    const numbered = ctx.m.kind !== "handbook" && Boolean(section.number);
+    const hanging = ctx.d.sectionHeading === "hanging-number" && numbered;
+    const runs: RunSpec[] = [
+      ...(numbered ? [txt(ctx, section.number + (hanging ? "" : "  "), { font: "heading", size: hanging ? ctx.sz.body : ctx.sz.h2, bold: true, color: hanging ? ctx.pal.ink : ctx.pal.muted }), ...(hanging ? [{ tab: true } as RunSpec] : [])] : []),
+      txt(ctx, section.title, { font: "heading", size: ctx.sz.h2, bold: true, color: ctx.pal.primary }),
+    ];
+    return [{ t: "group", above: ctx.after * 2, below: ctx.after, keep: true, items: [par(ctx, runs, { keepNext: true, ...(hanging ? { indentLeft: 12 * MM, hanging: 12 * MM, tabs: [{ type: "left" as const, pos: 12 * MM }] } : {}) })] }];
+  }
   const group = (items: FlowItem[]): GroupItem => ({ t: "group", above: ctx.after * 2, below: ctx.after, keep: true, items });
   const heading = ctx.d.sectionHeading;
   if (heading === "numbered-rule") {
@@ -995,7 +1016,7 @@ function metaCardRows(ctx: Ctx, sop: RenderSop, borderTop = true): RowSpec[] {
     borders: { top: rowIndex === 0 && !borderTop ? null : line, bottom: line, left: line, right: line },
   });
   return [
-    { cells: [cell("SOP No.", sop.code, 0), cell("Version", sop.version, 0), cell("Department", sop.department, 0), cell("Owner", sop.owner, 0)] },
+    { cells: [cell(`${ctx.m.labels.item} No.`, sop.code, 0), cell("Version", sop.version, 0), cell(ctx.m.labels.department, sop.department, 0), cell("Owner", sop.owner, 0)] },
     { cells: [cell("Effective", sop.effectiveDate, 1), cell("Next review", sop.nextReviewDate, 1), cell("Prepared by", sop.preparedBy, 1), cell("Approved by", sop.approvedBy, 1)] },
   ];
 }
@@ -1012,15 +1033,27 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
     }
     return item;
   };
+  if (opener === "plain-title" || opener === "chapter-numeral") {
+    if (opener === "chapter-numeral") {
+      out.push(mark(par(ctx, [txt(ctx, sop.department, { size: ctx.sz.h3, color: ctx.pal.primary })], { keepNext: true })), v(3),
+        par(ctx, [txt(ctx, sop.number, { font: "heading", size: 68, bold: true, color: ctx.pal.primary })], { keepNext: true }), v(5));
+    }
+    const title = par(ctx, [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: opener === "chapter-numeral" ? ctx.pal.ink : ctx.pal.primary })], { keepNext: true, outline: 1 });
+    out.push(opener === "plain-title" ? mark(title) : title);
+    if (opener === "plain-title" && ctx.m.kind !== "handbook") out.push(v(4), par(ctx, [txt(ctx, `Code ${sop.code}`, { size: ctx.sz.small, color: ctx.pal.muted }), txt(ctx, " ", { tracking: 6 * MM }), txt(ctx, `Department ${sop.department}`, { size: ctx.sz.small, color: ctx.pal.muted }), txt(ctx, " ", { tracking: 6 * MM }), txt(ctx, `Owner ${sop.owner}`, { size: ctx.sz.small, color: ctx.pal.muted })]));
+    if (opener === "chapter-numeral") out.push(v(12));
+    out.push(v(ctx.after));
+    return out;
+  }
   if (opener === "ruled-title") {
     out.push(
-      // Codes such as "SOP-EHS-001" already say SOP.
-      mark(par(ctx, [caps(ctx, `${/^sop/i.test(sop.code) ? sop.code : `SOP ${sop.code}`}   |   ${sop.department}`, { color: ctx.pal.accent })], { keepNext: true })),
+      // Codes such as "SOP-EHS-001" or "Chapter 3" already say what they are.
+      mark(par(ctx, [caps(ctx, `${sop.code.toUpperCase().startsWith(ctx.m.labels.item.toUpperCase()) ? sop.code : `${ctx.m.labels.item} ${sop.code}`}   |   ${sop.department}`, { color: ctx.pal.accent })], { keepNext: true })),
       v(2),
       par(ctx, [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.primary })], { keepNext: true, outline: 1 }),
       v(-2),
       rule(ctx.pal.primary, 1.2, { above: ctx.after, below: ctx.after, keepNext: true }),
-      par(ctx, [txt(ctx, `Version ${sop.version}   |   Effective ${sop.effectiveDate}   |   Owner: ${sop.owner}`, { size: ctx.sz.small, color: ctx.pal.muted })]),
+      par(ctx, [txt(ctx, `Version ${sop.version}   |   Effective ${sop.effectiveDate}${ctx.m.kind === "handbook" ? "" : `   |   Owner: ${sop.owner}`}`, { size: ctx.sz.small, color: ctx.pal.muted })]),
     );
   } else if (opener === "pillar-banner") {
     const label = caps(ctx, sop.pillarLabel, { color: ctx.pal.onPrimary });
@@ -1042,7 +1075,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
       widths: quarter,
       rows: [
         { cells: [banner] },
-        { cells: [meta("Department", sop.department), meta("Owner", sop.owner), meta("Version", sop.version), meta("Effective", sop.effectiveDate)] },
+        { cells: [meta(ctx.m.labels.department, sop.department), ...(ctx.m.kind === "handbook" ? [] : [meta("Owner", sop.owner)]), meta("Version", sop.version), meta("Effective", sop.effectiveDate)] },
       ],
     }));
   } else if (opener === "header-card") {
@@ -1050,7 +1083,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
       widths: quarter,
       rows: [
         { cells: [{ span: 4, fill: ctx.pal.primary, inset: inset(10, 9), items: [mark(stack(ctx, [
-          [txt(ctx, `SOP ${sop.number}`, { size: ctx.sz.small, bold: true, color: ctx.pal.accent, tracking: 0.6 })],
+          [txt(ctx, `${ctx.m.labels.item} ${sop.number}`, { size: ctx.sz.small, bold: true, color: ctx.pal.accent, tracking: 0.6 })],
           [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.onPrimary })],
         ], { outline: 1 }))] }] },
         ...metaCardRows(ctx, sop),
@@ -1064,7 +1097,7 @@ function sopOpener(ctx: Ctx, sop: RenderSop, bookmarks: string[]): FlowItem[] {
         { fill: ctx.pal.primary, vAlign: "center", inset: inset(6, 6), borders: { bottom: { color: ctx.pal.ink, size: 1 } }, items: [par(ctx, [txt(ctx, sop.code, { bold: true, color: ctx.pal.onPrimary, size: ctx.sz.small })], { align: "center" })] },
         { vAlign: "center", inset: inset(6, 6), borders: { bottom: { color: ctx.pal.ink, size: 1 } }, items: [mark(stack(ctx, [
           [txt(ctx, sop.title, { font: "heading", size: ctx.sz.h1, bold: true, color: ctx.pal.ink })],
-          [txt(ctx, `${sop.department}  |  Owner: ${sop.owner}  |  Version ${sop.version}  |  Effective ${sop.effectiveDate}`, { size: ctx.sz.small, color: ctx.pal.muted })],
+          [txt(ctx, `${sop.department}${ctx.m.kind === "handbook" ? "" : `  |  Owner: ${sop.owner}`}  |  Version ${sop.version}  |  Effective ${sop.effectiveDate}`, { size: ctx.sz.small, color: ctx.pal.muted })],
         ], { outline: 1 }))] },
       ] }],
     }));
@@ -1087,18 +1120,24 @@ const extraBookmarks = new WeakMap<ParItem, string[]>();
 
 function stepsBlocks(ctx: Ctx, steps: RenderStep[], width: number): FlowItem[] {
   const out: FlowItem[] = [];
-  for (const step of steps) {
+  for (const [index, original] of steps.entries()) {
+    const step = editorial(ctx) ? { ...original, number: String(index + 1), substeps: original.substeps.map((sub, subIndex) => ({ ...sub, number: `${index + 1}.${subIndex + 1}` })) } : original;
     out.push({
       t: "group",
       above: ctx.after * 1.2,
       below: ctx.after * 0.6,
       keep: true,
-      items: [stack(ctx, [
+      items: ctx.d.procedure === "yellow-steps" ? [table(ctx, { keepNext: true, widths: [6 * MM, 2 * MM, width - 8 * MM], rows: [{ height: 6 * MM, cells: [
+        { fill: ctx.pal.accent, inset: inset(0, 0), items: [par(ctx, [txt(ctx, step.number, { bold: true })], { align: "center", keepNext: true })] },
+        { inset: inset(0, 0), keepNext: true, items: [] },
+        { inset: inset(0, 0), items: [par(ctx, [txt(ctx, step.heading, { bold: true })], { keepNext: true })] },
+      ] }] })] : [stack(ctx, [
         [txt(ctx, `${step.number}  ${step.heading}`, { bold: true, color: ctx.pal.primaryDark })],
         step.responsible ? [txt(ctx, `Responsible: ${step.responsible}`, { size: ctx.sz.small, color: ctx.pal.muted })] : null,
       ], { keepNext: true })],
     });
     out.push(...renderBlocks(ctx, step.body, width));
+    if (ctx.d.procedure === "yellow-steps" && step.responsible) out.push(par(ctx, [txt(ctx, `Responsible: ${step.responsible}`, { size: ctx.sz.small, color: ctx.pal.muted })]));
     for (const sub of step.substeps) {
       out.push(par(ctx, [
         txt(ctx, sub.number, { bold: true }),
@@ -1205,6 +1244,7 @@ function renderSection(ctx: Ctx, section: RenderSection, color: string): FlowIte
       ],
     }];
   }
+  if (ctx.d.sectionHeading === "hanging-number" && ctx.m.kind !== "handbook") return [...sectionTitle(ctx, section, color, ctx.W), ...shiftItems(sectionBody(ctx, section, ctx.W - 12 * MM), 12 * MM)];
   return [...sectionTitle(ctx, section, color, ctx.W), ...sectionBody(ctx, section, ctx.W)];
 }
 
@@ -1212,6 +1252,14 @@ function renderSection(ctx: Ctx, section: RenderSection, color: string): FlowIte
 
 function contentsRow(ctx: Ctx, lead: string, title: string, anchor: string, color: string): FlowItem[] {
   const variant = ctx.d.contents;
+  if (variant === "ruled-index") {
+    const cells: CellSpec[] = [
+      { inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [{ link: anchor, runs: [txt(ctx, title)] }])] },
+      { inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [{ pageRef: anchor, color: ctx.pal.muted }])] },
+    ];
+    if (ctx.m.kind !== "handbook") cells.unshift({ inset: { l: 0, r: 0, t: 5, b: 5 }, items: [par(ctx, [txt(ctx, lead, { size: ctx.sz.small, color: ctx.pal.muted })])] });
+    return [table(ctx, { widths: ctx.m.kind === "handbook" ? [ctx.W - 10 * MM, 10 * MM] : [30 * MM, ctx.W - 40 * MM, 10 * MM], rows: [{ cells: cells.map(cell => ({ ...cell, borders: { bottom: { color: ctx.pal.line, size: RULE } } })) }] })];
+  }
   const leadWidth = variant === "dotted-leaders" ? 10 * MM : 30 * MM;
   const leader = variant === "dotted-leaders" || variant === "pillar-index";
   const pageColor = variant === "dotted-leaders" ? ctx.pal.ink : ctx.pal.muted;
@@ -1241,12 +1289,13 @@ function contentsPage(ctx: Ctx): FlowItem[] {
   const variant = ctx.d.contents;
   const gap = variant === "register-columns" ? 2 : 4;
   const out: FlowItem[] = [...partTitle(ctx, "Contents", "contents")];
+  if (variant === "ruled-index") out.push(dataTable(ctx, m.kind === "handbook" ? ["Chapter", "Page"] : ["Code", "Procedure", "Page"], m.kind === "handbook" ? [10, 1] : [3, 10, 1], [], ctx.W));
   for (const section of m.frontMatter) out.push(...contentsRow(ctx, "", section.title, section.anchor, ctx.pal.ink));
   out.push(v(gap * 2));
   for (const chapter of m.chapters) {
     if (chapter.label) {
       out.push(v(gap));
-      if (variant === "pillar-index" || variant === "banner-index") {
+      if (editorial(ctx)) { out.push(par(ctx, [txt(ctx, chapter.label, { bold: true, color: ctx.pal.primary })])); } else if (variant === "pillar-index" || variant === "banner-index") {
         out.push(box(ctx, ctx.W, [par(ctx, [caps(ctx, chapter.label, { color: variant === "pillar-index" ? ctx.pal.onPrimary : ctx.pal.primary })])], {
           fill: variant === "pillar-index" ? chapter.color : ctx.pal.soft,
           inset: inset(7, 3),
@@ -1264,6 +1313,7 @@ function contentsPage(ctx: Ctx): FlowItem[] {
   for (const section of m.closing.sections) out.push(...contentsRow(ctx, "", section.title, section.anchor, ctx.pal.ink));
   out.push(...contentsRow(ctx, "", "Revision history", m.closing.anchors.revisions, ctx.pal.ink));
   out.push(...contentsRow(ctx, "", "Approval", m.closing.anchors.approval, ctx.pal.ink));
+  for (const section of m.closing.after) out.push(...contentsRow(ctx, "", section.title, section.anchor, ctx.pal.ink));
   return out;
 }
 
@@ -1274,7 +1324,7 @@ function chapterPage(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
     box(ctx, ctx.W, [
       v(26 * MM),
       { ...stack(ctx, [
-        [caps(ctx, "Chapter", { color: ctx.pal.onPrimary })],
+        [caps(ctx, ctx.m.labels.group, { color: ctx.pal.onPrimary })],
         [txt(ctx, chapter.label, { font: "heading", size: ctx.sz.coverTitle * 0.9, bold: true, color: ctx.pal.onPrimary })],
       ]), bookmark: chapter.anchor, outline: 0 },
       v(4),
@@ -1297,7 +1347,7 @@ function chapterPage(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
 }
 
 function labelBand(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
-  const count = txt(ctx, `${chapter.sops.length} SOPs`, { size: ctx.sz.small, color: ctx.pal.muted });
+  const count = txt(ctx, `${chapter.sops.length} ${chapter.sops.length === 1 ? ctx.m.labels.itemSingular : ctx.m.labels.itemPlural}`, { size: ctx.sz.small, color: ctx.pal.muted });
   const countWidth = runsWidth(ctx, [count]) + 16;
   return [
     table(ctx, {
@@ -1316,6 +1366,11 @@ function labelBand(ctx: Ctx, chapter: RenderChapter): FlowItem[] {
 function approvalBlock(ctx: Ctx): FlowItem[] {
   const approval = ctx.m.closing.approval;
   const out: FlowItem[] = [];
+  if (ctx.m.kind === "handbook" && editorial(ctx)) return [par(ctx, [txt(ctx, `Approved by: ${ctx.m.control.approvedBy}`)])];
+  if (ctx.m.kind === "handbook") {
+    const s = approval.signatories[0];
+    return [par(ctx, [txt(ctx, `Approved by: ${[s?.name, s?.designation, s?.date].filter(Boolean).join(" | ")}`)])];
+  }
   if (approval.statement) out.push(callout(ctx, [par(ctx, [txt(ctx, approval.statement)], { align: "justify" })], ctx.W), v(ctx.after));
   if (ctx.d.approval === "signature-table") {
     out.push(dataTable(ctx, ["Role", "Name", "Designation", "Signature", "Date"], [1.1, 1.3, 1.3, 1.2, 0.9], approval.signatories.map((s) => [s.role, s.name, s.designation, "", s.date]), ctx.W));
@@ -1354,7 +1409,7 @@ type SopMeta = { code: string; title: string; color: string; pillarLabel: string
 
 /** The classification stands in for the old fixed "Controlled copy" label (manual.typ `copy-label`). */
 function copyLabel(m: SopRenderModel): string {
-  return m.control.classification.trim() || "Controlled copy";
+  return m.kind === "handbook" ? "" : m.control.classification.trim() || "Controlled copy";
 }
 
 /** Optional control fields, left out when empty so older manuals keep their layout (manual.typ `optional-control`). */
@@ -1373,6 +1428,13 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
   const sopTitle = sop ? `${sop.code}  ${sop.title}` : m.cover.eyebrow;
   const sopColor = sop ? sop.color : ctx.pal.primary;
   const variant = ctx.d.runningHeader;
+  if (variant === "plain-line" || variant === "book-rule") {
+    const color = variant === "book-rule" ? ctx.pal.primary : ctx.pal.muted;
+    return [par(ctx, [txt(ctx, sop?.title ?? m.title, { size: small, color }), { tab: true }, txt(ctx, m.kind === "handbook" ? `Version ${m.control.revision}` : `${m.control.docNo}, revision ${m.control.revision}`, { size: small, color })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }), v(2), rule(variant === "book-rule" ? ctx.pal.primary : ctx.pal.line, RULE)];
+  }
+  if (m.kind === "handbook" && variant === "control-table") {
+    return [par(ctx, [txt(ctx, m.title, { bold: true }), { tab: true }, txt(ctx, `Version ${m.control.revision}  |  Effective ${m.control.effectiveDate}`, { size: small })], { tabs: [{ type: "right", pos: ctx.W }] })];
+  }
   if (variant === "control-table") {
     const W = ctx.W;
     const widths = [W * 0.24, W - W * 0.24 - W * 0.4, W * 0.2, W * 0.2];
@@ -1447,7 +1509,7 @@ function headerItems(ctx: Ctx, sop: SopMeta): FlowItem[] {
   }
   if (variant === "register-line") {
     return [
-      par(ctx, [txt(ctx, `${m.company.name}  |  ${m.title}`, { size: small, color: ctx.pal.muted }), { tab: true }, txt(ctx, `${m.control.docNo}  Rev ${m.control.revision}`, { size: small, color: ctx.pal.muted })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }),
+      par(ctx, [txt(ctx, `${m.company.name}  |  ${m.title}`, { size: small, color: ctx.pal.muted }), { tab: true }, txt(ctx, m.kind === "handbook" ? `Version ${m.control.revision}` : `${m.control.docNo}  Rev ${m.control.revision}`, { size: small, color: ctx.pal.muted })], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] }),
       v(2),
       rule(ctx.pal.line, RULE, { above: ctx.after, below: ctx.after }),
     ];
@@ -1474,6 +1536,10 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
   const m = ctx.m;
   const small = ctx.sz.small;
   const style = { size: small, color: ctx.pal.muted };
+  if (ctx.d.runningFooter === "company-folio") return [par(ctx, [txt(ctx, m.company.name, style), { tab: true }, ...(ctx.d.id === "shop-floor" ? [txt(ctx, "Page ", style)] : []), { field: "PAGE", ...style }], { blockLike: true, tabs: [{ type: "right", pos: ctx.W }] })];
+  if (m.kind === "handbook" && (ctx.d.runningFooter === "prepared-approved" || ctx.d.runningFooter === "register-folio")) {
+    return [par(ctx, [txt(ctx, `Version ${m.control.revision}  |  Effective ${m.control.effectiveDate}`, style), { tab: true }, ...pageOf(ctx, style)], { tabs: [{ type: "right", pos: ctx.W }] })];
+  }
   const variant = ctx.d.runningFooter;
   if (variant === "prepared-approved") {
     const label = copyLabel(m);
@@ -1506,9 +1572,9 @@ function footerItems(ctx: Ctx, pageDigits: number): FlowItem[] {
 
 // ---------------------------------------------------------------- cover
 
-function controlGrid(ctx: Ctx, width: number, indent?: number): TableItem {
+function controlGrid(ctx: Ctx, width: number, indent?: number, photo = false): TableItem {
   const c = ctx.m.control;
-  const pairs: Array<[string, string]> = [
+  const pairs: Array<[string, string]> = ctx.m.kind === "handbook" ? [["Version", c.revision], ["Effective date", c.effectiveDate], ["Approved by", c.approvedBy]] : [
     ["Document No.", c.docNo], ["Revision", c.revision],
     ...optionalControl([["Supersedes", c.supersedes], ["Issue date", c.issueDate]]),
     ["Effective date", c.effectiveDate],
@@ -1519,12 +1585,17 @@ function controlGrid(ctx: Ctx, width: number, indent?: number): TableItem {
   const line = { color: ctx.pal.line, size: RULE };
   const borders = { top: line, bottom: line, left: line, right: line };
   // Optional fields can leave the last row short; empty cells keep the grid square.
-  const rowCount = Math.ceil(pairs.length / 4);
+  const columns = photo ? Math.min(4, pairs.length) : 4;
+  const rowCount = Math.ceil(pairs.length / columns);
   return table(ctx, {
-    widths: Array(4).fill(width / 4),
+    widths: Array(columns).fill(width / columns),
+    noShift: photo,
     indent,
     rows: Array.from({ length: rowCount }, (_, row) => ({
-      cells: Array.from({ length: 4 }, (_, column) => pairs[row * 4 + column]).map((pair) => ({ inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [] })),
+      cells: Array.from({ length: photo ? Math.min(columns, pairs.length - row * columns) : columns }, (_, column) => pairs[row * columns + column]).map((pair, column) => ({
+        span: photo && row === rowCount - 1 && column === pairs.length % columns - 1 ? columns - pairs.length % columns + 1 : undefined,
+        fill: photo ? "#FFFFFF" : undefined, inset: inset(6, 5), borders, items: pair ? [metaPair(ctx, pair[0], pair[1])] : [],
+      })),
     })),
   });
 }
@@ -1560,13 +1631,58 @@ function logoPlate(ctx: Ctx, height: number, indent?: number): TableItem {
 
 async function coverParts(ctx: Ctx): Promise<CoverParts> {
   const m = ctx.m;
-  const d = ctx.d;
+  // A handbook has no ESG pillars, so the pillar-band cover becomes the control sheet (manual.typ `cover-style`).
+  const d = m.kind === "handbook" && ctx.d.cover === "pillar-bands" ? { ...ctx.d, cover: "control-sheet" as const } : ctx.d;
   const w = ctx.pageW;
   const h = ctx.pageH;
   const padX = d.page.marginXMm * MM;
   const inner = w - 2 * padX;
   const coverImage = m.cover.image ? ctx.images.get(m.cover.image) : undefined;
   const heading = (text: string, color: string, size = ctx.sz.coverTitle) => par(ctx, [txt(ctx, text, { font: "heading", size, bold: true, color })]);
+  if (m.cover.photo && coverImage) {
+    const p = d.photoLayout;
+    const sx = w / 210;
+    const sy = h / 297;
+    const slot = p.image;
+    const slotWidth = slot.width * sx;
+    const slotHeight = slot.height * sy;
+    // Shared prepared assets already match. Direct callers still get a cover crop.
+    const photo = Math.abs(coverImage.width / coverImage.height / (slotWidth / slotHeight) - 1) < 0.002
+      ? coverImage : await coverCrop(coverImage, slotWidth, slotHeight);
+    const pictures: CoverParts["pictures"] = [
+      { image: await solidPng(p.variant === "panel-photo" ? ctx.pal.soft : "#FFFFFF"), x: 0, y: 0, width: w, height: h },
+      { image: photo, x: slot.x * sx, y: slot.y * sy, width: slotWidth, height: slotHeight },
+    ];
+    if (p.variant === "photo-strip") pictures.push({ image: await solidPng(ctx.pal.primary), x: 0, y: 0, width: 14 * sx, height: h });
+    const items: FlowItem[] = [];
+    let cursor = 0;
+    const at = (y: number, item: TableItem) => {
+      items.push(v(y - cursor), { ...item, above: 0, below: 0 });
+      cursor = y + item.height;
+    };
+    const logo = m.company.logo ? ctx.images.get(m.company.logo) : undefined;
+    if (logo) {
+      const height = Math.min(18 * sy, 48 * sx * logo.height / logo.width);
+      at(20 * sy, table(ctx, { widths: [48 * sx + 12], indent: 24 * sx, rows: [{ height: 18 * sy + 12, exact: true, cells: [{ fill: "#FFFFFF", vAlign: "center", inset: inset(6, 6), items: [{ ...par(ctx, [{ image: logo, heightPt: height }], { blockLike: true }), align: "center" }] }] }] }));
+    }
+    if (p.variant === "pillar-photo") {
+      const labels = m.kind === "handbook" ? ["People", "Workplace", "Conduct"] : ["Environmental", "Social", "Governance"];
+      at(122 * sy, table(ctx, { widths: [w / 3, w / 3, w / 3], rows: [{ height: 17 * sy, exact: true, cells: (["E", "S", "G"] as const).map((key, index) => ({ fill: ctx.pal.pillars[key], inset: inset(4 * MM, 4 * MM), items: [par(ctx, [txt(ctx, labels[index], { size: 10, color: "#FFFFFF" })])] })) }] }));
+    }
+    const color = p.dark ? ctx.pal.onPrimary : ctx.pal.primary;
+    const subtitle = m.cover.photoSubtitle ?? m.cover.subtitle;
+    const title = table(ctx, { widths: [170 * sx], indent: 20 * sx, rows: [{ height: p.titleHeight * sy, exact: true, cells: [{ fill: p.dark ? ctx.pal.primaryDark : "#FFFFFF", inset: inset(8 * MM, 7 * MM), items: [
+      par(ctx, [txt(ctx, m.kind === "handbook" ? "Employee handbook" : "Standard operating procedures", { size: 12, color: p.dark ? color : ctx.pal.muted })]),
+      v(5), heading(m.cover.title, color, Math.max(34, ctx.sz.coverTitle)), v(5),
+      ...(subtitle !== m.cover.title ? [par(ctx, [txt(ctx, subtitle, { size: 13, color: p.dark ? color : ctx.pal.muted })])] : []),
+    ] }] }] });
+    at(p.titleY * sy, title);
+    // Keep the grid in the body, above anchored photos; footer text sits behind
+    // body drawings in Word. Cell shading grows with actual wrapped row height.
+    const controls = controlGrid(ctx, 170 * sx, 20 * sx, true);
+    at(h - 16 * sy - controls.height, controls);
+    return { margins: { top: 0, bottom: 0, left: 0, right: 0 }, items, pictures };
+  }
   if (m.cover.image || d.cover === "image-banner") {
     const imageHeight = h * COVER_BAND;
     const pictures = [coverImage
@@ -1588,6 +1704,28 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
       bottom: { items: [controlGrid(ctx, inner, padX)], distance: 14 * MM },
     };
   }
+  if (d.cover === "hazard-band" || d.cover === "book-cover") {
+    const shop = d.cover === "hazard-band";
+    const x = (shop ? 38 : d.page.marginXMm) * MM;
+    const width = w - x - padX;
+    const subtitle = m.cover.subtitle.split(/\s*\|\s*/).filter(segment => segment !== m.company.name && segment !== "").join(", ");
+    // A leading spacer needs the margin correction that a first text line normally absorbs.
+    const items: FlowItem[] = [...(m.company.logo ? [par(ctx, [logoOrName(ctx, 11 * MM)], { blockLike: true }), v(47 * MM - ctx.after)] : [v(58 * MM + topShift(ctx))]),
+      { ...heading(m.cover.title, ctx.pal.primary), lead: 2 },
+      ...(subtitle ? [par(ctx, [txt(ctx, subtitle, { size: ctx.sz.h2, color: ctx.pal.muted })], { lead: 2 })] : []), v(10 * MM + (subtitle ? 0 : ctx.lead + ctx.after)),
+      ...(!shop ? [rule(ctx.pal.accent, 3, { right: width - 24 * MM, above: ctx.after, below: ctx.after }), v(6 * MM)] : []),
+      par(ctx, [txt(ctx, m.company.name, { font: "heading", size: 16 })], { lead: 2 }),
+    ];
+    if (!shop) items.push(v(4 * MM), par(ctx, [txt(ctx, `${m.kind === "handbook" ? "Version" : `Document number ${m.control.docNo}. Revision`} ${m.control.revision}. Effective ${m.control.effectiveDate}. Approved by ${m.control.approvedBy}.`, { size: ctx.sz.small, color: ctx.pal.muted })]));
+    const pairs = m.kind === "handbook" ? [["Version", m.control.revision], ["Effective date", m.control.effectiveDate], ["Approved by", m.control.approvedBy]] : [["Document number", m.control.docNo], ["Revision", m.control.revision], ["Effective date", m.control.effectiveDate], ["Next review", m.control.nextReviewDate], ["Prepared by", m.control.preparedBy], ["Approved by", m.control.approvedBy]];
+    const bottom: FlowItem[] = [rule(ctx.pal.ink, 1.5), v(5 * MM), table(ctx, { widths: [width / 2 + 4 * MM, width / 2 - 4 * MM], rows: Array.from({ length: Math.ceil(pairs.length / 2) }, (_, row) => ({ cells: [0, 1].map(column => {
+      const pair = pairs[row * 2 + column];
+      return { inset: { l: 0, r: column === 0 ? 8 * MM : 0, t: 0, b: row === Math.ceil(pairs.length / 2) - 1 ? 0 : 5 * MM }, items: pair ? [stack(ctx, [[txt(ctx, pair[0], { size: ctx.sz.small, color: ctx.pal.muted })], [txt(ctx, pair[1])]])] : [] };
+    }) })) })];
+    return { margins: { top: 20 * MM, bottom: 20 * MM, left: x, right: padX }, items,
+      pictures: [], ...(shop ? { bottom: { items: bottom, distance: 20 * MM } } : {}),
+    };
+  }
   if (d.cover === "control-sheet") {
     const boxWidth = 46 * MM;
     const top = table(ctx, {
@@ -1599,14 +1737,14 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
           borders: { top: { color: ctx.pal.primary, size: 1 }, bottom: { color: ctx.pal.primary, size: 1 }, left: { color: ctx.pal.primary, size: 1 }, right: { color: ctx.pal.primary, size: 1 } },
           items: [{ ...stack(ctx, [
             [caps(ctx, copyLabel(m), { color: ctx.pal.primary })],
-            [txt(ctx, `Rev ${m.control.revision}`, { size: ctx.sz.small, color: ctx.pal.muted })],
+            [txt(ctx, `${m.kind === "handbook" ? "Version" : "Rev"} ${m.control.revision}`, { size: ctx.sz.small, color: ctx.pal.muted })],
           ], tightOptions(ctx, ctx.sz.small)), align: "center" }],
         },
       ] }],
     });
     const stats = table(ctx, {
       widths: Array(3).fill(inner / 3),
-      rows: [{ cells: statsRows(ctx, ["Standard operating procedures", "Departments covered", "Sites in scope"], ctx.sz.coverTitle * 0.8).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 9), items: [item] })) }],
+      rows: [{ cells: statsRows(ctx, ctx.m.labels.stats, ctx.sz.coverTitle * 0.8).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 9), items: [item] })) }],
     });
     return {
       margins: { top: 20 * MM, bottom: 18 * MM, left: padX, right: padX },
@@ -1690,7 +1828,7 @@ async function coverParts(ctx: Ctx): Promise<CoverParts> {
     const cards = table(ctx, {
       widths: Array(3).fill(inner / 3),
       indent: padX,
-      rows: [{ cells: statsRows(ctx, ["SOPs in this manual", "Departments", "Sites in scope"], ctx.sz.coverTitle).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 10), borders: { top: white, bottom: white, left: white, right: white }, items: [item] })) }],
+      rows: [{ cells: statsRows(ctx, ctx.m.labels.cardStats, ctx.sz.coverTitle).map((item) => ({ fill: ctx.pal.soft, inset: inset(10, 10), borders: { top: white, bottom: white, left: white, right: white }, items: [item] })) }],
     });
     return {
       margins: { top: 0, bottom: 0, left: 0, right: 0 },
@@ -1786,6 +1924,7 @@ export function sopManualAnchors(model: SopRenderModel): Array<{ anchor: string;
     for (const section of model.closing.sections) out.push({ anchor: section.anchor, title: section.title });
     out.push({ anchor: model.closing.anchors.revisions, title: "Revision history" });
     out.push({ anchor: model.closing.anchors.approval, title: "Approval" });
+    for (const section of model.closing.after) out.push({ anchor: section.anchor, title: section.title });
   }
   return out;
 }
@@ -1914,6 +2053,14 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     ));
     closing.push(v(ctx.after * 2), ...partTitle(ctx, "Approval", model.closing.anchors.approval), ...approvalBlock(ctx));
     plans.push({ kind: "body", sop: null, items: closing });
+    // Each later part starts its own page, as pagebreak() does in manual.typ.
+    for (const section of model.closing.after) {
+      plans.push({ kind: "body", sop: null, items: [...partTitle(ctx, section.title, section.anchor), ...(editorial(ctx) && section.kind === "acknowledgement" ? [
+        ...renderBlocks(ctx, section.blocks.slice(0, 1), ctx.W),
+        ...["Employee name", "Employee number", "Department", "Signature", "Date"].flatMap(field => [v(9 * MM), par(ctx, [txt(ctx, field, { size: ctx.sz.small, color: ctx.pal.muted })]), v(2 * MM), rule(ctx.pal.primary, RULE, { above: ctx.after, below: ctx.after })]),
+        v(5 * MM), callout(ctx, renderBlocks(ctx, section.blocks.slice(-1), ctx.W), ctx.W),
+      ] : renderBlocks(ctx, section.blocks, ctx.W))] });
+    }
   }
 
   const marginTop = d.page.marginTopMm * MM;
@@ -1938,7 +2085,8 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     const cover = await coverParts(ctx);
     const flow = resolveFlow(ctx, cover.items, pageW - cover.margins.left - cover.margins.right);
     const children = [...flow.children];
-    const anchor = cover.pictures.map(anchoredPicture);
+    const anchor: ParagraphChild[] = cover.pictures.map(anchoredPicture);
+    if (d.cover === "hazard-band" && !model.cover.image) anchor.push(importRun(`<w:r><w:pict><v:rect id="shop-floor-band" fillcolor="#${hex(ctx.pal.accent)}" stroked="f" style="position:absolute;left:0;top:0;width:${18 * MM}pt;height:${pageH}pt;z-index:-1;mso-position-horizontal-relative:page;mso-position-vertical-relative:page"><w10:wrap type="none"/></v:rect></w:pict></w:r>`));
     if (anchor.length) {
       // Pictures ride on a hairline paragraph so they do not move the text.
       children.unshift(new Paragraph({ spacing: { before: 0, after: 0, line: 1, lineRule: LineRuleType.EXACT }, children: anchor }));
@@ -1987,7 +2135,7 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
   const doc = new Document({
     creator: "PolicyCraft",
     title: model.title,
-    description: `${model.company.name} SOP manual`,
+    description: `${model.company.name} ${model.labels.document}`,
     fonts: await embeddedDocumentFonts(families),
     features: options.pages ? undefined : { updateFields: true },
     styles: {
@@ -2015,7 +2163,7 @@ export async function generateSopDocx(model: SopRenderModel, assets: ManualAsset
     },
     sections,
   });
-  return embedDocumentFontStyles(await finishXml(await unpackedDocx(doc)), families);
+  return embedDocumentFontStyles(await finishXml(await unpackedDocx(doc)), families, editorial(ctx));
 }
 
 type DocxCompiler = { compile(file: Document, prettify: undefined, overrides: never[]): JSZip };

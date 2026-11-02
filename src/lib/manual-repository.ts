@@ -5,7 +5,7 @@ import type { PolicyCraftAuthContext } from "./policycraft-auth";
 import { nextUniqueDraftTitle } from "./policycraft-draft-view";
 import { policyCraftOrganizationLookupSql } from "./policycraft-organization-repository";
 
-/** Long multi-part documents in the Documents area. Handbooks reuse the same storage later. */
+/** Long multi-part documents in the Documents area: SOP manuals and employee handbooks share this storage. */
 export type ManualKind = "sop" | "handbook";
 
 export type ManualSummary = {
@@ -18,7 +18,7 @@ export type ManualSummary = {
   updatedAt: string;
   archivedAt: string | null;
   pageCount: number | null;
-  /** Number of enabled parts (SOPs for an SOP manual). */
+  /** Number of parts: SOPs for an SOP manual, chapters for a handbook. */
   partCount: number;
   templateId: string | null;
   createdBy?: { id: string; name: string; email: string };
@@ -58,7 +58,7 @@ const parseJson = <T>(value: unknown): T => (typeof value === "string" ? JSON.pa
 // Counts and theme come from JSON paths so list queries never load whole manuals.
 const summarySelect = `m.id, m.kind, m.title, m.current_stage, m.lock_version, m.created_at, m.updated_at,
   m.archived_at, m.page_count, m.created_by_user_id,
-  JSON_LENGTH(m.manual_json, '$.sops') AS part_count,
+  CASE m.kind WHEN 'handbook' THEN JSON_LENGTH(m.manual_json, '$.chapters') ELSE JSON_LENGTH(m.manual_json, '$.sops') END AS part_count,
   JSON_UNQUOTE(JSON_EXTRACT(m.manual_json, '$.theme')) AS template_id,
   creator.name AS created_by_name, creator.email AS created_by_email,
   o.id AS organization_id, o.org_code AS organization_code, o.company_name AS organization_name`;
@@ -87,14 +87,25 @@ function toSummary(row: SummaryRow): ManualSummary {
   };
 }
 
-export async function listManuals(orgId: number, options: { archived?: boolean; kind?: ManualKind } = {}): Promise<ManualSummary[]> {
-  const predicates = ["m.org_id = ?", `m.archived_at IS ${options.archived ? "NOT " : ""}NULL`];
-  const values: (number | string)[] = [orgId];
+/**
+ * Manuals of one organization, or of every live organization when `orgId` is
+ * null (admins' "All organizations" view). Deleted organizations are left out.
+ */
+export async function listManuals(orgId: number | null, options: { archived?: boolean; kind?: ManualKind } = {}): Promise<ManualSummary[]> {
+  const predicates = [`m.archived_at IS ${options.archived ? "NOT " : ""}NULL`];
+  const values: (number | string)[] = [];
+  if (orgId === null) {
+    predicates.push("o.is_deleted = 0");
+  } else {
+    predicates.push("m.org_id = ?");
+    values.push(orgId);
+  }
   if (options.kind) { predicates.push("m.kind = ?"); values.push(options.kind); }
   // Sort lightweight IDs only: the summary reads manual_json, and sorting rows
   // that carry whole manuals exhausts MySQL's sort buffer (ER_OUT_OF_SORTMEMORY).
   const [orderedIds] = await policyCraftPool.execute<(RowDataPacket & { id: string })[]>(
     `SELECT m.id FROM policycraft_manuals m
+      INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = m.org_id
       WHERE ${predicates.join(" AND ")}
       ORDER BY m.updated_at DESC, m.id ASC`,
     values,
@@ -102,8 +113,8 @@ export async function listManuals(orgId: number, options: { archived?: boolean; 
   if (orderedIds.length === 0) return [];
   const [rows] = await policyCraftPool.execute<SummaryRow[]>(
     `SELECT ${summarySelect} ${fromManuals}
-      WHERE m.org_id = ? AND m.id IN (${orderedIds.map(() => "?").join(", ")})`,
-    [orgId, ...orderedIds.map((row) => row.id)],
+      WHERE m.id IN (${orderedIds.map(() => "?").join(", ")})`,
+    orderedIds.map((row) => row.id),
   );
   const byId = new Map(rows.map((row) => [row.id, row]));
   return orderedIds.flatMap(({ id }) => {

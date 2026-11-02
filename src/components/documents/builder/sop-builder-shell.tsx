@@ -48,11 +48,7 @@ export function useNarrowViewport() {
 
 export type WriteHeading = { title: string; subtitle?: string; position: string; prev?: { label: string; onSelect: () => void }; next?: { label: string; onSelect: () => void } };
 
-/**
- * The policy BuilderShell's frame for an SOP manual: same top bar, mode switch,
- * rail, footer and preview pane, with the manual outline in the rail.
- */
-export function SopBuilderShell({ mode, saveStatus, heading, children, preview, design, review, exporting, onDownload, onAddSop, onDeleteSop }: {
+type ShellProps = {
   mode: BuilderMode;
   saveStatus: string | null;
   heading: WriteHeading;
@@ -62,19 +58,63 @@ export function SopBuilderShell({ mode, saveStatus, heading, children, preview, 
   review: React.ReactNode;
   exporting: "pdf" | "docx" | null;
   onDownload: (format: "pdf" | "docx") => void;
-  onAddSop: () => void;
-  onDeleteSop: (sopId: string) => void;
-}) {
+};
+
+/**
+ * The policy BuilderShell's frame for an SOP manual: same top bar, mode switch,
+ * rail, footer and preview pane, with the manual outline in the rail.
+ */
+export function SopBuilderShell({ onAddSop, onDeleteSop, ...props }: ShellProps & { onAddSop: () => void; onDeleteSop: (sopId: string) => void }) {
   const { workspaceHref, setMode, openDetails } = useSopBuilderActions();
   const manual = useSopBuilder((state) => state.manual!);
   const title = useSopBuilder((state) => state.title);
   const selectionKey = useSopBuilder((state) => (state.selection.kind === "sop" ? state.selection.sopId : state.selection.kind));
+  return (
+    <BuilderFrame
+      {...props}
+      workspaceHref={workspaceHref}
+      setMode={setMode}
+      openDetails={openDetails}
+      title={title}
+      documentLabel="SOP manual"
+      selectionKey={selectionKey}
+      progress={manualProgress(manual)}
+      kindIcon={<ListChecks size={15} aria-hidden="true" />}
+      railSummary={<ManualSummary title={manual.company.name || title || "SOP manual"} />}
+      rail={<ManualRail onAddSop={onAddSop} onDeleteSop={onDeleteSop} />}
+      railMini={<ManualRailMini />}
+      progressPill={<ProgressPill />}
+    />
+  );
+}
+
+/**
+ * The builder chrome shared by SOP manuals and employee handbooks: top bar,
+ * mode switch, collapsible outline rail, Write footer and live preview pane.
+ * Everything document-specific arrives as props.
+ */
+export function BuilderFrame({ mode, saveStatus, heading, children, preview, design, review, exporting, onDownload, workspaceHref, setMode, openDetails, title, documentLabel, selectionKey, progress, kindIcon, railSummary, rail, railMini, progressPill }: ShellProps & {
+  workspaceHref: string;
+  setMode: (mode: BuilderMode) => void;
+  openDetails: () => void;
+  /** The document's name in the top bar. */
+  title: string;
+  /** "SOP manual" or "Employee handbook", where the title is empty. */
+  documentLabel: string;
+  /** Changes when the outline selection changes; the content scrolls to the top. */
+  selectionKey: string;
+  progress: { written: number; total: number };
+  kindIcon: React.ReactNode;
+  railSummary: React.ReactNode;
+  rail: React.ReactNode;
+  railMini: React.ReactNode;
+  progressPill: React.ReactNode;
+}) {
   const narrow = useNarrowViewport();
   const collapsed = React.useSyncExternalStore(subscribeCollapse, () => readFlag(COLLAPSE_KEY), serverFalse);
   const previewOpen = React.useSyncExternalStore(subscribePreview, () => readFlag(PREVIEW_KEY), serverFalse);
   const [workflowOpen, setWorkflowOpen] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement>(null);
-  const progress = manualProgress(manual);
   const percent = progress.total ? Math.round((progress.written / progress.total) * 100) : 0;
   const showRail = mode === "write";
   const railExpanded = narrow || !collapsed;
@@ -115,14 +155,14 @@ export function SopBuilderShell({ mode, saveStatus, heading, children, preview, 
               <button type="button" onClick={toggleSidebar} title="Collapse sidebar (Ctrl+\)" aria-label="Collapse sidebar" className={clsx(shell.railButton, shell.wideOnly)}><PanelLeftClose size={16} aria-hidden="true" /></button>
               <button type="button" onClick={() => setWorkflowOpen(false)} aria-label="Close outline" className={clsx(shell.railButton, shell.narrowOnly)}><X size={16} aria-hidden="true" /></button>
             </div>
-            <ManualSummary title={manual.company.name || title || "SOP manual"} />
-            <ManualRail onAddSop={onAddSop} onDeleteSop={onDeleteSop} />
+            {railSummary}
+            {rail}
           </> : <>
             <div className={shell.collapsedBrand}><Link href="/" className={shell.brandMarkLink} aria-label="PolicyCraft home"><span className={shell.brandMark}><Leaf size={16} aria-hidden="true" /></span></Link></div>
             <div className={shell.collapsedContent}>
-              <span className={shell.miniPolicy} title="SOP manual"><ListChecks size={15} aria-hidden="true" /></span>
+              <span className={shell.miniPolicy} title={documentLabel}>{kindIcon}</span>
               <span className={shell.miniProgress} title={`${progress.written} of ${progress.total} written`}>{percent}%</span>
-              <ManualRailMini />
+              {railMini}
             </div>
           </>}
         </aside>
@@ -135,7 +175,7 @@ export function SopBuilderShell({ mode, saveStatus, heading, children, preview, 
             <Link href={workspaceHref} className={shell.workspaceLink}><ArrowLeft size={13} aria-hidden="true" />Documents</Link>
             <span aria-hidden="true" className={shell.divider} />
             <p className={shell.identity}>
-              <span className={shell.policyLabel}>{title || "SOP manual"}</span>
+              <span className={shell.policyLabel}>{title || documentLabel}</span>
             </p>
             {saveStatus !== null ? <span role="status" aria-live="polite" className={shell.saveStatus}>{saveStatus}</span> : null}
           </div>
@@ -145,8 +185,8 @@ export function SopBuilderShell({ mode, saveStatus, heading, children, preview, 
             {modeButton("review", "Review & export")}
           </div>
           <div className={shell.headerEnd}>
-            <ProgressPill />
-            {mode === "write" ? <button type="button" onClick={openDetails} aria-label="Company and manual details" title="Company and manual details" className={shell.headerButton}><Settings2 size={14} aria-hidden="true" /><span className={styles.wideLabel}>Details</span></button> : null}
+            {progressPill}
+            {mode === "write" ? <button type="button" onClick={openDetails} aria-label={`Company and ${documentLabel.toLowerCase()} details`} title={`Company and ${documentLabel.toLowerCase()} details`} className={shell.headerButton}><Settings2 size={14} aria-hidden="true" /><span className={styles.wideLabel}>Details</span></button> : null}
             {mode === "write" ? <button type="button" aria-pressed={previewOpen} aria-controls={previewOpen ? "builder-preview" : undefined} onClick={() => (previewOpen ? closePreview() : writeFlag(PREVIEW_KEY, PREVIEW_EVENT, true))} className={clsx(shell.headerButton, previewOpen && shell.headerButtonActive)}>Preview</button> : null}
             <ApplicationSessionMenu workspaceHref={workspaceHref} />
             {mode === "write" ? <button type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={() => setWorkflowOpen((open) => !open)} className={clsx(shell.headerButton, shell.mobileWorkflow)}>{workflowOpen ? "Hide outline" : "Outline"}</button> : null}
@@ -162,7 +202,7 @@ export function SopBuilderShell({ mode, saveStatus, heading, children, preview, 
                     <div className={clsx(shell.stepHeading, mode === "review" && shell.stepHeadingWithActions)}>
                       <div className="min-w-0">
                         <h1 className={shell.title}>{mode === "review" ? "Review & export" : heading.title}</h1>
-                        <p className={shell.subtitle}>{mode === "review" ? "Check what is left, preview the whole manual, then download it." : heading.subtitle}</p>
+                        <p className={shell.subtitle}>{mode === "review" ? `Check what is left, preview the whole ${documentLabel === "SOP manual" ? "manual" : "handbook"}, then download it.` : heading.subtitle}</p>
                       </div>
                       {mode === "review" ? (
                         <div role="group" aria-label="Export document" className={shell.exportActions}>

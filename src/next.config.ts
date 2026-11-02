@@ -14,7 +14,7 @@ import type { NextConfig } from "next";
 const policyPdfEngine = process.env.POLICY_PDF_ENGINE === "typst" ? "typst" : "chromium";
 
 /** Must equal SOP_FONT_FAMILIES (lib/sop/design/templates.ts); lib/output-tracing.test.ts checks it. */
-export const SOP_FONT_SLUGS = ["caladea", "carlito", "montserrat", "open-sans", "poppins", "lato", "arimo", "merriweather", "pt-sans", "tinos"];
+export const SOP_FONT_SLUGS = ["caladea", "carlito", "montserrat", "open-sans", "poppins", "lato", "arimo", "merriweather", "pt-sans", "tinos", "ibm-plex-sans", "source-serif-4", "atkinson-hyperlegible"];
 
 /** Word TTFs no SOP template uses; the SOP routes leave them out. */
 function nonSopWordFonts(): string[] {
@@ -51,6 +51,8 @@ export const outputFileTracingIncludes: NextConfig["outputFileTracingIncludes"] 
   "/api/documents/manuals/*/pdf": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
   "/api/documents/manuals/*/preview": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
   "/api/documents/manuals/*/docx": ["./lib/typst/sop/**/*", "./public/fonts/word/**/*"],
+  // Handbook writing reads its reference chapters from disk (lib/ai/handbook-template-context.ts).
+  "/api/documents/handbook/ai": ["./data/seed-handbooks/**/*"],
 };
 
 const sopManualExcludes = [TYPST_POLICY_FONTS, ...BROWSER_FONTS, ...nonSopWordFonts(), PRINT_SDG_ICONS, ...BROWSER_ONLY_PUBLIC];
