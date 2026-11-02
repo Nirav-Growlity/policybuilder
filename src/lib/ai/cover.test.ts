@@ -17,7 +17,7 @@ test("manual scene prompts carry template safe areas without asking the image mo
     handbook.theme = design.id;
     for (const context of [buildSopCoverArtworkContext(manual), buildHandbookCoverArtworkContext(handbook)]) {
       const brief = JSON.parse(context);
-      assert.equal(brief.photoComposition.variant, design.photoCover);
+      assert.equal(brief.photoComposition.variant, photoCoverLayout(design).variant);
       assert.equal(brief.photoComposition.imageSize, photoCoverImageSize(design));
       assert.ok(brief.photoComposition.calmSpace);
       assert.equal(brief.template, undefined);
