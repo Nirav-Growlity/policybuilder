@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { parseDocxBuffer } from "@/lib/docx/parse";
+import { parseDocxWithImages } from "@/lib/docx/parse";
+import { addSdgGoalsFromImages } from "@/lib/ai/sdg-vision";
 import type { PolicyType } from "@/lib/types";
 import {
   getPolicyCraftAuthResult,
@@ -51,7 +52,12 @@ export async function POST(req: NextRequest) {
       requestedType === "labour-human-rights" || requestedType === "living-wage" || requestedType === "ethics" || requestedType === "sustainable-procurement"
         ? requestedType
         : "environmental";
-    const referencePolicy = await parseDocxBuffer(buf, { fileName: file.name, policyType });
+    const parsed = await parseDocxWithImages(buf, { fileName: file.name, policyType });
+    // Goal tiles set as pictures are read by the model; a failure leaves the goals for the user to pick.
+    // Only "Load existing policy" uses the goals; attaching AI context skips the model call.
+    const { reference: referencePolicy } = fd.get("readSdgImages") === "1"
+      ? await addSdgGoalsFromImages(parsed.reference, parsed.sdgImages)
+      : { reference: parsed.reference };
     return NextResponse.json({ referencePolicy });
   } catch (e) {
     console.error("Parse failed", e);

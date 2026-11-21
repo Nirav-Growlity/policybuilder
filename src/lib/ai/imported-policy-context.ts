@@ -1,9 +1,10 @@
-import type { AIRequestType } from "./prompts";
+import type { AIEdit, AIRequestType } from "./prompts";
 import type { ImportedPolicyBlock, ImportedPolicyContext, ImportedPolicySection, StandardSectionKind } from "../types";
 
 const MAX_IMPORTED_CONTEXT_CHARS = 36_000;
 
 const REQUEST_KINDS: Partial<Record<AIRequestType, StandardSectionKind[]>> = {
+  definitions: ["definitions"],
   preface: ["preface"],
   declaration: ["declaration", "preface"],
   scope: ["scope"],
@@ -17,11 +18,19 @@ const REQUEST_KINDS: Partial<Record<AIRequestType, StandardSectionKind[]>> = {
   review: ["review", "revision", "monitoring"],
 };
 
+/**
+ * The imported policy as AI context for writing new content. An edit gets none:
+ * when a policy was loaded from this document, the text being edited already
+ * is the source, and a brief that says "preserve the source" would make a
+ * rewrite or a shorten hand the original text back unchanged. The text under
+ * edit and the user's directive are the whole brief.
+ */
 export function buildImportedPolicyContext(
   reference: ImportedPolicyContext | null | undefined,
-  requestType: AIRequestType
+  requestType: AIRequestType,
+  edit?: AIEdit
 ): string {
-  if (!reference) return "";
+  if (!reference || edit) return "";
 
   const preferredKinds = new Set<StandardSectionKind | "custom">(REQUEST_KINDS[requestType] || []);
   const relevant = reference.sections.filter((section) => preferredKinds.has(section.kind));

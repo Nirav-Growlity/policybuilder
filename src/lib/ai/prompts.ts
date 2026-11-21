@@ -12,7 +12,13 @@ export type AIRequestType =
   | "responsibilities"
   | "monitoring"
   | "review"
+  | "definitions"
+  /** One paragraph or list block of a custom section; areaName carries the section title. */
+  | "custom-block"
   | "all";
+
+/** How a custom block is laid out, so an edited list stays one item per line. */
+export type AIBlockFormat = "paragraph" | "bullets" | "numbered";
 
 /** What the AI edit menu does to text that is already written, in menu order. */
 export type AIEditAction = "improve" | "shorten" | "grammar" | "rewrite" | "custom";
@@ -33,6 +39,8 @@ export interface AIContext {
   existingContent?: unknown;
   /** Edit the text in existingContent instead of writing new content. */
   edit?: AIEdit;
+  /** For "custom-block" requests: the block's format. */
+  blockFormat?: AIBlockFormat;
 }
 
 export interface AIResponse {

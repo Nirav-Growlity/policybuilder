@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { makeSamplePolicy } from "../store";
-import { editDirective, editSourceText, parseEdit, shortenLimit } from "./policy-edit";
+import { blockFormatNote, editDirective, editSourceText, isEditableTextType, parseBlockFormat, parseEdit, shortenLimit } from "./policy-edit";
 
 const LONG = "The Company commits to reduce energy use across every site. It will report progress each year. It will train all staff on energy saving. It will review this policy every two years.";
 
@@ -28,6 +28,22 @@ test("edits from a request body are validated", () => {
   assert.equal(parseEdit({ action: "delete" }), null);
   assert.equal(parseEdit({ action: "custom", instruction: 4 }), null);
   assert.equal(parseEdit("improve"), null);
+});
+
+test("definitions and custom blocks can be edited like the other text sections", () => {
+  assert.equal(isEditableTextType("definitions"), true);
+  assert.equal(isEditableTextType("custom-block"), true);
+  assert.equal(isEditableTextType("qualitative"), false);
+});
+
+test("a custom block's format is validated and lists are told to carry no markers", () => {
+  assert.equal(parseBlockFormat("bullets"), "bullets");
+  assert.equal(parseBlockFormat("numbered"), "numbered");
+  assert.equal(parseBlockFormat("table"), "paragraph");
+  assert.equal(parseBlockFormat(undefined), "paragraph");
+  assert.match(blockFormatNote("paragraph"), /one paragraph/);
+  assert.match(blockFormatNote("bullets"), /one item per line.*no bullet characters/);
+  assert.match(blockFormatNote("numbered"), /numbered list/);
 });
 
 test("the edit source is a section's text or one target's sentence", () => {

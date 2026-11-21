@@ -31,6 +31,22 @@ test("maps alternate policy headings and preserves every source block", () => {
   assert.equal(reference.sections[4].blocks[0].type, "paragraph");
 });
 
+test("a first heading that names a section word but is a title is still the title", () => {
+  const titleOf = (heading: string, fileName = "file name.docx") => parseImportedPolicyHtml(`<h1>${heading}</h1><p>Opening line.</p><h1>Scope</h1><p>All sites.</p>`, { fileName, policyType: "ethics", importedAt: "2026-11-21T00:00:00.000Z" }).title;
+  assert.equal(titleOf("Governance Policy"), "Governance Policy");
+  assert.equal(titleOf("Human Rights Commitment"), "Human Rights Commitment");
+  assert.equal(titleOf("1. Anti-Corruption Framework"), "Anti-Corruption Framework");
+  assert.equal(titleOf("Environmental Policy Statement"), "Environmental Policy Statement", "a longer 'policy statement' heading is a title");
+});
+
+test("a first heading that is exactly a standard section means there is no title page", () => {
+  const titleOf = (heading: string) => parseImportedPolicyHtml(`<h1>${heading}</h1><p>Some text.</p>`, { fileName: "Ethics Policy.docx", policyType: "ethics", importedAt: "2026-11-21T00:00:00.000Z" }).title;
+  assert.equal(titleOf("Preface"), "Ethics Policy");
+  assert.equal(titleOf("Policy Declaration"), "Ethics Policy");
+  assert.equal(titleOf("Key Focus Areas"), "Ethics Policy");
+  assert.equal(titleOf("SDG Alignment"), "Ethics Policy");
+});
+
 test("recognizes numbered, non-PolicyCraft section titles", () => {
   assert.equal(classifySectionHeading("2. Applicability and reach"), "scope");
   assert.equal(classifySectionHeading("5. Accountabilities and policy ownership"), "responsibilities");
