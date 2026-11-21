@@ -23,7 +23,10 @@ import { PolicySelector } from "@/components/builder/policy-selector";
 import { CompanySetupScreen } from "@/components/builder/company-setup-screen";
 import { CompanyInfoForm } from "@/components/builder/company-info-form";
 import { Modal } from "@/components/ui/modal";
-import type { PolicyType } from "@/lib/types";
+import type { ImportedPolicyContext, Policy, PolicyType } from "@/lib/types";
+import { importedPolicyToPolicy, policyTypeLabel, sectionLabel, summarizeImport, type ImportResult } from "@/lib/docx/import-to-policy";
+import { flattenUnits, type ImportClassification } from "@/lib/docx/import-classification";
+import { revertPatch, sameDraftIdentity, touchedFieldsSnapshot, type DraftIdentity } from "@/lib/docx/load-guard";
 import { extractLogoPalette } from "@/lib/logo-palette";
 import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState, StoredPolicyDocument } from "@/lib/policycraft-types";
@@ -81,7 +84,7 @@ function BuilderClientWorkspace() {
     updatePolicy,
     hydrated,
   } = useBuilder();
-  const { push } = useToast();
+  const { push, update: updateToast, dismiss: dismissToast } = useToast();
   const searchParams = useSearchParams();
   const selectedType = searchParams.get("type") as PolicyType | null;
   const draftId = searchParams.get("draft");
@@ -618,33 +621,164 @@ function BuilderClientWorkspace() {
     await uploadFile(file);
   };
 
-  const uploadFile = async (file: File) => {
+  // Which draft this component is showing. A scope key only names user and organization,
+  // so two drafts of one organization share it; the draft id tells them apart.
+  const draftIdentityRef = React.useRef({ draftId, backendDocumentId });
+  draftIdentityRef.current = { draftId, backendDocumentId };
+  const mountedRef = React.useRef(true);
+  React.useEffect(() => {
+    mountedRef.current = true;
+    return () => { mountedRef.current = false; };
+  }, []);
+  const sameDraft = (before: DraftIdentity) => mountedRef.current && sameDraftIdentity(before, draftIdentityRef.current);
+
+  /** Sends a .docx to the parse endpoint. Resolves null when the file is rejected or the draft or workspace changed meanwhile. */
+  const requestParsedPolicy = async (file: File, options: { readSdgImages?: boolean; quiet?: boolean } = {}): Promise<ImportedPolicyContext | null> => {
     const uploadScope = workspaceScope;
     const uploadScopeKey = policyCraftScopeKey(uploadScope);
+    const uploadDraft = { draftId, backendDocumentId };
     if (!file.name.toLowerCase().endsWith(".docx")) {
       push("Please select a .docx file", "error");
-      return;
+      return null;
     }
+    if (!options.quiet) push("Parsing document…", "info");
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("policyType", policy.policyType);
+    if (options.readSdgImages) fd.append("readSdgImages", "1");
+    const res = await fetch(policyCraftUrl("/api/parse/docx", uploadScope), { method: "POST", body: fd });
+    if (!res.ok) {
+      const error = await res.json().catch(() => null);
+      throw new Error(error?.error || "Parse failed");
+    }
+    const data = await res.json();
+    if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== uploadScopeKey || !sameDraft(uploadDraft)) return null;
+    return data.referencePolicy as ImportedPolicyContext;
+  };
+
+  const uploadFile = async (file: File) => {
     try {
-      push("Parsing document…", "info");
-      const fd = new FormData();
-      fd.append("file", file);
-      fd.append("policyType", policy.policyType);
-      const res = await fetch(policyCraftUrl("/api/parse/docx", uploadScope), { method: "POST", body: fd });
-      if (!res.ok) {
-        const error = await res.json().catch(() => null);
-        throw new Error(error?.error || "Parse failed");
-      }
-      const data = await res.json();
-      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== uploadScopeKey) return;
-      setImportedPolicy(data.referencePolicy);
+      const reference = await requestParsedPolicy(file);
+      if (!reference) return;
+      setImportedPolicy(reference);
       push("Policy attached as the primary AI context. Your current fields were not changed.", "success");
     } catch (error) {
       push(error instanceof Error ? error.message : "Could not parse file", "error");
     }
   };
 
+  // "Load existing policy": the same parse, but the content goes into the fields
+  // once the user confirms. The pending result waits in state for that dialog.
+  type PendingLoad = {
+    reference: ImportedPolicyContext;
+    result: ImportResult;
+    /** Where the AI reader placed the document's parts; null when the built-in rules did it. */
+    classification: ImportClassification | null;
+    scopeKey: string | null;
+    draftId: string | null;
+    backendDocumentId: string | null;
+  };
+  const [pendingLoad, setPendingLoad] = React.useState<PendingLoad | null>(null);
+  // A load waiting for confirmation belongs to the draft it was read for.
+  if (pendingLoad && !sameDraftIdentity(pendingLoad, { draftId, backendDocumentId })) setPendingLoad(null);
+
+  /** Asks the server where each part of the document belongs. Resolves null (built-in rules) on any failure or after 40 seconds (the server gives up at 30). */
+  const requestClassification = async (reference: ImportedPolicyContext): Promise<ImportClassification | null> => {
+    try {
+      const res = await fetch(policyCraftUrl("/api/ai/classify-import", workspaceScope), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ referencePolicy: reference }),
+        signal: AbortSignal.timeout(40_000),
+      });
+      if (!res.ok) return null;
+      const data = await res.json() as { classification?: ImportClassification; unitCount?: number };
+      // The labels are ids into the document; they only apply to the document the server counted.
+      if (!data.classification || !Array.isArray(data.classification.u) || data.unitCount !== flattenUnits(reference).length) return null;
+      return data.classification;
+    } catch {
+      return null;
+    }
+  };
+
+  const loadExistingFile = async (file: File) => {
+    const scopeKey = policyCraftScopeKey(workspaceScope);
+    const uploadDraft = { draftId, backendDocumentId };
+    if (!file.name.toLowerCase().endsWith(".docx")) {
+      push("Please select a .docx file", "error");
+      return;
+    }
+    // One toast follows the whole load and stays until the confirmation dialog opens.
+    const progress = push(`Reading ${file.name}…`, "info", { busy: true });
+    try {
+      const reference = await requestParsedPolicy(file, { readSdgImages: true, quiet: true });
+      if (!reference) return;
+      updateToast(progress, "Sorting the content into sections…");
+      const classification = await requestClassification(reference);
+      if (!sameDraft(uploadDraft) || policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== scopeKey) return;
+      const result = importedPolicyToPolicy(reference, useBuilder.getState().policy, classification);
+      if (!result.report.filled.length && !result.report.custom.length) {
+        push("No policy sections found in this document. Use \"Add policy context\" instead.", "info");
+        return;
+      }
+      setPendingLoad({ reference, result, classification, scopeKey, ...uploadDraft });
+    } catch (error) {
+      push(error instanceof Error ? error.message : "Could not parse file", "error");
+    } finally {
+      dismissToast(progress);
+    }
+  };
+
+  const confirmLoadExisting = () => {
+    const pending = pendingLoad;
+    if (!pending) return;
+    setPendingLoad(null);
+    if (!sameDraft(pending)) return;
+    if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== pending.scopeKey) {
+      push("The workspace changed while the document was read. Load it again in the current organization.", "error");
+      return;
+    }
+    const before = useBuilder.getState();
+    const previous = { policy: before.policy, importedPolicy: before.importedPolicy };
+    // Map again against the policy as it is now, in case it was edited while the dialog was open.
+    const { patch, report } = importedPolicyToPolicy(pending.reference, previous.policy, pending.classification);
+    updatePolicy(() => patch);
+    setImportedPolicy(pending.reference);
+    // Undo works on the fields the load touched. It is allowed while they still hold what
+    // the load wrote; edits to other fields are kept. (Comparing whole policy objects does
+    // not work: every store update, even a no-op one, makes a new object.)
+    // Compare before and after rather than trusting the patch keys: the store's
+    // normalizers can change fields the patch never named (focusAreaSelection).
+    const after = useBuilder.getState().policy;
+    const touched = (Object.keys({ ...previous.policy, ...after }) as (keyof Policy)[])
+      .filter((key) => JSON.stringify(previous.policy[key] ?? null) !== JSON.stringify(after[key] ?? null));
+    const loadedSnapshot = touchedFieldsSnapshot(useBuilder.getState().policy, touched);
+    push(summarizeImport(report), "success", {
+      duration: 15000,
+      action: {
+        label: "Undo",
+        onClick: () => {
+          if (!sameDraft(pending) || policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== pending.scopeKey) {
+            push("Undo is no longer available because you switched policies.", "info");
+            return;
+          }
+          if (touchedFieldsSnapshot(useBuilder.getState().policy, touched) !== loadedSnapshot) {
+            push("Undo is no longer available because the loaded fields were edited after loading.", "info");
+            return;
+          }
+          updatePolicy(() => revertPatch(previous.policy, touched));
+          if (useBuilder.getState().importedPolicy === pending.reference) useBuilder.setState({ importedPolicy: previous.importedPolicy });
+          push("Restored the policy from before the load.", "info");
+        },
+      },
+    });
+    if (report.mismatch) {
+      push(`This document reads like a ${policyTypeLabel(report.mismatch.detected)} policy, but this builder is for a ${policyTypeLabel(report.mismatch.expected)} policy. Review what was loaded.`, "info", { duration: 12000 });
+    }
+  };
+
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const loadInputRef = React.useRef<HTMLInputElement>(null);
   const [setupPhase, setSetupPhase] = React.useState<"company" | "policy">("company");
   const [showCompanyWarning, setShowCompanyWarning] = React.useState(false);
   const [showCompanyEditor, setShowCompanyEditor] = React.useState(false);
@@ -707,6 +841,7 @@ function BuilderClientWorkspace() {
       contextFileName={importedPolicy?.fileName ?? null}
       onChooseContext={() => fileInputRef.current?.click()}
       onRemoveContext={clearImportedPolicy}
+      onLoadExisting={() => loadInputRef.current?.click()}
       onCompanyDetails={draftId || backendDocumentId ? () => setShowCompanyWarning(true) : undefined}
     />
   );
@@ -738,6 +873,18 @@ function BuilderClientWorkspace() {
           e.target.value = "";
         }}
       />
+      <input
+        ref={loadInputRef}
+        type="file"
+        accept=".docx"
+        className="hidden"
+        aria-label="Load an existing policy from a .docx file"
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) void loadExistingFile(f);
+          e.target.value = "";
+        }}
+      />
       <BuilderShell coverEditing={coverEditing} saveStatus={saveStatusLabel} policyMenu={policyMenu} taskChip={taskChip} isFirstStep={isFirst}>
         <div key={step} className={step === "export" ? undefined : `pc-builder-authoring ${styles.stepContent}`}>
           <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
@@ -757,6 +904,44 @@ function BuilderClientWorkspace() {
           </div>
         </div>
       )}
+      <Modal
+        open={Boolean(pendingLoad)}
+        onClose={() => setPendingLoad(null)}
+        title="Replace this policy with the document?"
+        description={pendingLoad ? pendingLoad.reference.fileName : undefined}
+        width={520}
+      >
+        {pendingLoad ? (
+          <div className="pc-builder-authoring">
+            <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
+              <AlertTriangle size={18} className="mt-0.5 shrink-0 text-amber-700" aria-hidden="true" />
+              <p className="text-[13px] leading-relaxed text-amber-950">The current content is replaced. You can undo right after.</p>
+            </div>
+            {pendingLoad.result.report.mismatch ? (
+              <p role="alert" className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-[13px] leading-relaxed text-amber-950">
+                This looks like a {policyTypeLabel(pendingLoad.result.report.mismatch.detected)} policy, not {policyTypeLabel(pendingLoad.result.report.mismatch.expected)}.
+              </p>
+            ) : null}
+            <p className="mt-4 text-[13px] font-semibold">Sections found</p>
+            <p className="mt-1 text-[13px] leading-relaxed text-[var(--color-ink-2)]">
+              {[...pendingLoad.result.report.filled.map(sectionLabel), ...pendingLoad.result.report.custom].join(", ") || "None"}
+            </p>
+            {pendingLoad.result.report.notLoaded.length ? (
+              <>
+                <p className="mt-3 text-[13px] font-semibold">Not loaded</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-[var(--color-ink-2)]">{pendingLoad.result.report.notLoaded.join(", ")}</p>
+              </>
+            ) : null}
+            {pendingLoad.result.report.sdgGoalsUnread ? (
+              <p className="mt-3 text-[13px] leading-relaxed text-[var(--color-ink-2)]">The SDG goals could not be read. Pick them in the SDG step.</p>
+            ) : null}
+            <div className="mt-5 flex flex-col-reverse justify-end gap-2 sm:flex-row">
+              <Button variant="ghost" size="md" onClick={() => setPendingLoad(null)}>Cancel</Button>
+              <Button variant="primary" size="md" onClick={confirmLoadExisting}>Load policy</Button>
+            </div>
+          </div>
+        ) : null}
+      </Modal>
       <Modal
         open={showCompanyWarning}
         onClose={() => setShowCompanyWarning(false)}

@@ -1,0 +1,14 @@
+{
+  "name": "policycraft-root",
+  "private": true,
+  "description": "Runs PolicyCraft (the Next.js app in src/) from the repository root.",
+  "packageManager": "bun@1.3.14",
+  "scripts": {
+    "dev": "bun run --cwd src dev",
+    "build": "bun run --cwd src build",
+    "start": "bun run --cwd src start",
+    "lint": "bun run --cwd src lint",
+    "test": "bun run --cwd src test",
+    "install:app": "bun install --cwd src"
+  }
+}

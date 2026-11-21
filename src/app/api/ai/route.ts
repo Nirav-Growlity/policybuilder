@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { parseRequestedCount, type AIContext } from "@/lib/ai/prompts";
 import { buildTemplateContext } from "@/lib/ai/template-context";
 import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
-import { editPromptBody, editSourceText, isEditableTextType, parseEdit, textSectionName } from "@/lib/ai/policy-edit";
+import { blockFormatNote, editPromptBody, editSourceText, isEditableTextType, parseBlockFormat, parseEdit, textSectionName } from "@/lib/ai/policy-edit";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
 import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
 import { getCompanyClassificationContext } from "@/lib/company-classification";
@@ -51,7 +51,11 @@ function buildPrompt(ctx: AIContext): { user: string; system: string; context: s
     requestType: ctx.type,
     areaName: activeArea,
   });
-  const importedReference = buildImportedPolicyContext(ctx.referencePolicy, ctx.type);
+  // An edit changes what is already written, so the "only new points" and quantity rules below do not apply.
+  const current = ctx.edit ? editSourceText(ctx.existingContent) : "";
+  // The imported policy guides new writing. It is withheld from a real edit: the text being edited
+  // may itself have been loaded from that document, and "preserve the source" would echo it back.
+  const importedReference = buildImportedPolicyContext(ctx.referencePolicy, ctx.type, ctx.edit && current ? ctx.edit : undefined);
   const co = p.company;
   const classificationContext = getCompanyClassificationContext(co);
   const SYSTEM = SYSTEM_BASE;
@@ -84,9 +88,15 @@ function buildPrompt(ctx: AIContext): { user: string; system: string; context: s
       }`
     : "";
 
-  // An edit changes what is already written, so the "only new points" and quantity rules above do not apply.
-  const current = ctx.edit ? editSourceText(ctx.existingContent) : "";
   if (ctx.edit && current) {
+    if (ctx.type === "custom-block") {
+      const format = parseBlockFormat(ctx.blockFormat);
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Edit one block of the custom section "${ctx.areaName || "Untitled"}" in a ${profile.label} of ${company}. ${blockFormatNote(format)}\n\n${editPromptBody(ctx.edit, format === "paragraph" ? "section text" : "list", current)}\nReturn JSON: {"text": "..."}`,
+      };
+    }
     if (isEditableTextType(ctx.type)) {
       return {
         system: SYSTEM,
@@ -190,6 +200,20 @@ function buildPrompt(ctx: AIContext): { user: string; system: string; context: s
         context: CONTEXT,
         user: `Write a Review Mechanism & Continuous Improvement section for a ${profile.label} of ${company}. Name the responsible reviewer designation(s) explicitly (for example, Sustainability Manager, EHS Manager, Compliance Officer, or Executive Committee); do not refer only to a department or function. ${reviewerDesignations.length ? `Use these configured reviewer designation(s): ${reviewerDesignations.join(", ")}.` : "If no designation is configured, propose at least one suitable named designation."} State review frequency, triggers, approval, feedback, and communication.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
+    case "definitions":
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Write a Definitions section for a ${profile.label} of ${company}: define the key terms and the methodology the policy relies on, one term per line in the form "Term: meaning".${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
+      };
+    case "custom-block": {
+      const format = parseBlockFormat(ctx.blockFormat);
+      return {
+        system: SYSTEM,
+        context: CONTEXT,
+        user: `Write content for one block of the custom section "${ctx.areaName || "Untitled"}" in a ${profile.label} of ${company}. ${blockFormatNote(format)}${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
+      };
+    }
     case "all":
     default:
       return {
@@ -237,6 +261,10 @@ export async function POST(req: NextRequest) {
     const edit = parseEdit(ctx.edit);
     if (!edit) return NextResponse.json({ error: "Unsupported AI edit." }, { status: 400 });
     ctx = { ...ctx, edit };
+  }
+  // The section title and block format come from the browser and are put in the prompt, so bound them.
+  if (ctx.type === "custom-block") {
+    ctx = { ...ctx, areaName: typeof ctx.areaName === "string" ? ctx.areaName.trim().slice(0, 200) : undefined, blockFormat: parseBlockFormat(ctx.blockFormat) };
   }
   const streaming = req.headers.get("accept")?.includes(NDJSON) ?? false;
 

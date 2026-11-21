@@ -101,7 +101,7 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
       policy.company.lastReviewDate,
       policy.company.reviewFrequency,
     ).length > 0;
-    case "custom": return Boolean(section.blocks?.some((b) => b.text.trim()));
+    case "custom": return Boolean(section.blocks?.some((b) => b.text.trim() || (b.type === "table" && (b.rows ?? []).some((row) => row.some((cell) => cell.trim())))));
   }
 }
 

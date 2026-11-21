@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { DropdownMenu } from "radix-ui";
-import { Building2, Ellipsis, FileUp, RotateCcw, X } from "lucide-react";
+import { Building2, Ellipsis, FileInput, FileUp, RotateCcw, X } from "lucide-react";
 import { useBuilder } from "@/lib/store";
 import styles from "./policy-menu.module.css";
 
@@ -10,13 +10,15 @@ type PolicyMenuProps = {
   contextFileName: string | null;
   onChooseContext: () => void;
   onRemoveContext: () => void;
+  /** Picks a .docx whose content is loaded into the policy fields. */
+  onLoadExisting: () => void;
   onCompanyDetails?: () => void;
 };
 
 // One place for policy-level actions that used to sit in the toolbar and rail
 // footer. The handlers are supplied by the builder so the file input, company
 // warning modal and autosave wiring stay where they were.
-export function PolicyMenu({ contextFileName, onChooseContext, onRemoveContext, onCompanyDetails }: PolicyMenuProps) {
+export function PolicyMenu({ contextFileName, onChooseContext, onRemoveContext, onLoadExisting, onCompanyDetails }: PolicyMenuProps) {
   const reset = useBuilder((state) => state.reset);
   const contextId = React.useId();
   // The company warning is a dialog. Radix would otherwise return focus to the
@@ -42,6 +44,10 @@ export function PolicyMenu({ contextFileName, onChooseContext, onRemoveContext, 
             event.preventDefault();
           }}
         >
+          <DropdownMenu.Item className={styles.item} onSelect={onLoadExisting}>
+            <FileInput size={16} aria-hidden="true" />Load existing policy (.docx)
+          </DropdownMenu.Item>
+          <DropdownMenu.Separator className={styles.separator} />
           {contextFileName ? (
             <>
               <DropdownMenu.Label className={styles.label}>Policy context</DropdownMenu.Label>

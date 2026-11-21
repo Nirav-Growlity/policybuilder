@@ -1,7 +1,7 @@
-import type { AIContext, AIEdit, AIRequestType, AIResponse } from "./prompts";
+import type { AIBlockFormat, AIContext, AIEdit, AIRequestType, AIResponse } from "./prompts";
 
 /** Request types whose existing text the AI edit menu can change. */
-export const EDITABLE_TEXT_TYPES = ["preface", "declaration", "scope", "monitoring", "review"] as const satisfies readonly AIRequestType[];
+export const EDITABLE_TEXT_TYPES = ["preface", "declaration", "scope", "monitoring", "review", "definitions", "custom-block"] as const satisfies readonly AIRequestType[];
 export type EditableTextType = (typeof EDITABLE_TEXT_TYPES)[number];
 
 const TEXT_SECTION_NAMES: Record<EditableTextType, string> = {
@@ -10,7 +10,22 @@ const TEXT_SECTION_NAMES: Record<EditableTextType, string> = {
   scope: "Scope",
   monitoring: "Monitoring, reporting and transparency",
   review: "Review mechanism and continuous improvement",
+  definitions: "Definitions",
+  "custom-block": "Custom section",
 };
+
+const BLOCK_FORMATS: readonly AIBlockFormat[] = ["paragraph", "bullets", "numbered"];
+
+/** Validates a custom block's format from a request body; anything else is treated as a paragraph. */
+export function parseBlockFormat(value: unknown): AIBlockFormat {
+  return (BLOCK_FORMATS as readonly unknown[]).includes(value) ? (value as AIBlockFormat) : "paragraph";
+}
+
+/** Tells the model to keep a list one item per line, with no markers the builder would print twice. */
+export function blockFormatNote(format: AIBlockFormat): string {
+  if (format === "paragraph") return "The block is one paragraph of running prose.";
+  return `The block is a ${format === "numbered" ? "numbered" : "bulleted"} list stored as one item per line. Return one item per line, separated by a single newline, with no bullet characters and no numbering: the document adds them.`;
+}
 
 export function isEditableTextType(type: AIRequestType): type is EditableTextType {
   return (EDITABLE_TEXT_TYPES as readonly string[]).includes(type);

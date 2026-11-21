@@ -409,6 +409,10 @@ export interface ImportedPolicySection {
   level: 1 | 2 | 3;
   kind: StandardSectionKind | "custom";
   blocks: ImportedPolicyBlock[];
+  /** One entry (the picture's alt text, "" when it has none) for each picture inside the section. */
+  imageAlts?: string[];
+  /** SDG numbers read from the section's pictures, set by the server when it could read them. */
+  sdgGoals?: number[];
 }
 
 /** Optional employee supplied details printed on the acknowledgement form. */

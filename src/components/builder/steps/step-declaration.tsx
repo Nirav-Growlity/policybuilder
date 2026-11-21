@@ -44,11 +44,11 @@ export function StepDeclaration() {
   const { push } = useToast();
   const streams = useGenerationStreams();
 
-  const generate = async (key: "preface" | "declaration" | "scope", customPrompt?: string, edit?: AIEdit) => {
+  const generate = async (key: "preface" | "declaration" | "scope" | "definitions", customPrompt?: string, edit?: AIEdit) => {
     const { reveal, signal } = streams.start(key);
     const name = key[0].toUpperCase() + key.slice(1);
     try {
-      const existing = policy.declaration[key];
+      const existing = key === "definitions" ? policy.definitions?.content || "" : policy.declaration[key];
       const r = await streamAI({ type: key, policy, customPrompt, existingContent: existing, edit }, {
         signal,
         onPartial: (partial) => reveal.set(partial.text ?? ""),
@@ -58,7 +58,9 @@ export function StepDeclaration() {
       const text = signal.aborted ? keepFinishedSentences(r.text ?? "") : r.text;
       if (text) {
         await reveal.finish(text);
-        updatePolicy((p) => ({ declaration: { ...p.declaration, [key]: text } }));
+        updatePolicy((p) => key === "definitions"
+          ? { definitions: { title: p.definitions?.title || getSection(p, "definitions")?.title || "Definitions", content: text } }
+          : { declaration: { ...p.declaration, [key]: text } });
         push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : edit ? `${name} ${EDIT_DONE[edit.action]}.` : `${name} generated`, signal.aborted ? "info" : "success");
       } else if (signal.aborted) {
         push(`${name} stopped before any text was written`, "info");
@@ -107,11 +109,26 @@ export function StepDeclaration() {
       })}
 
       {getSection(policy, "definitions")?.enabled && (
-        <Panel title={getSection(policy, "definitions")?.title || "Definition & Methodology"} icon={<BookOpen size={17} strokeWidth={1.8} />}>
+        <Panel
+          title={getSection(policy, "definitions")?.title || "Definition & Methodology"}
+          icon={<BookOpen size={17} strokeWidth={1.8} />}
+          actions={
+            <AIActionButton
+              label="AI Write"
+              loading={streams.busy("definitions")}
+              onGenerate={(prompt) => generate("definitions", prompt)}
+              onStop={() => streams.stop("definitions")}
+              hasContent={Boolean(policy.definitions?.content?.trim())}
+              onEdit={(action, instruction) => generate("definitions", undefined, { action, instruction })}
+            />
+          }
+        >
           <WritingField
             value={policy.definitions?.content || ""}
             label={getSection(policy, "definitions")?.title || "Definition & Methodology"}
-            onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || "Living Wage", content: e.target.value } }))}
+            busy={streams.busy("definitions")}
+            stream={streams.reveal("definitions")}
+            onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || getSection(p, "definitions")?.title || "Definitions", content: e.target.value } }))}
           />
         </Panel>
       )}
