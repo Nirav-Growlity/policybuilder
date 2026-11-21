@@ -311,7 +311,7 @@ policybuilder/
 
 ### Prerequisites
 
-- **Node.js 20.9+**, plus [Bun](https://bun.sh/) (there is a `bun.lock`; npm also works)
+- **Node.js 20.9+** and [Bun](https://bun.sh/) 1.3+, the package manager (`bun.lock` is the lockfile)
 - **MySQL 8**, either the shared ESG database or a local copy containing its `users`, `account` and `organizations` tables
 - **Google Chrome or Microsoft Edge** installed locally, for PDF export
 - Optional: an **OpenAI API key**. Without one, the app uses mock AI content.
@@ -321,7 +321,7 @@ policybuilder/
 ```bash
 git clone https://github.com/Nirav-Growlity/policybuilder.git
 cd policybuilder/src
-bun install        # or: npm install
+bun install
 ```
 
 ### 2. Configure
@@ -339,8 +339,10 @@ Apply the migrations in `src/migrations/` in date order, then make an existing a
 ### 4. Run
 
 ```bash
-bun run dev -- -p 3000     # or: npm run dev -- -p 3000
+bun run dev -p 3000
 ```
+
+You can also run it from the repository root without `cd src`: the root `package.json` forwards `bun run dev`, `build`, `start`, `lint` and `test` to `src/` (for example `bun run dev -p 3000`). `bun run install:app` installs the app's dependencies. Use `bun run test`, not `bun test`: the suite runs on Node's test runner, and `bun test` would start Bun's own.
 
 Open <http://localhost:3000> and sign in at `/login`. The development server builds into `.next-local/` so that a stale `.next/` folder can't block compilation.
 
@@ -404,18 +406,18 @@ Run these from `src/`.
 
 | Command | What it checks |
 | --- | --- |
-| `npm test` | The main unit and integration suite: AI context, templates, themes, PDF and DOCX generation, access rules, invitations, organizations, tasks, autosave |
-| `npm run test:access` | Access control, invitations, storage scoping and export authorization |
-| `npm run test:organizations` | Organization profiles, logos, mapping and task integration |
-| `npm run test:tasks` | Task rules, progress tracking and transactional persistence |
-| `npm run test:signatures` | Signature storage, scope and rendering in exports |
-| `npm run lint` | ESLint |
+| `bun run test` | The main unit and integration suite: AI context, templates, themes, PDF and DOCX generation, access rules, invitations, organizations, tasks, autosave |
+| `bun run test:access` | Access control, invitations, storage scoping and export authorization |
+| `bun run test:organizations` | Organization profiles, logos, mapping and task integration |
+| `bun run test:tasks` | Task rules, progress tracking and transactional persistence |
+| `bun run test:signatures` | Signature storage, scope and rendering in exports |
+| `bun run lint` | ESLint |
 
 Browser checks run against a dev server you start yourself. They mock every API, so no live data changes and no email is sent. Set `POLICYCRAFT_UI_URL` to the server's address and `POLICYCRAFT_UI_OUTPUT` to choose the screenshot folder.
 
 ```bash
 node --import tsx scripts/verify-access-ui.mjs
-npm run tasks:verify-ui
+bun run tasks:verify-ui
 node scripts/verify-admin-add-ui.mjs
 ```
 
@@ -436,12 +438,12 @@ node scripts/verify-tasks-anonymous.mjs
 They were built from real company policy documents (the company folders at the repo root) by:
 
 ```bash
-npm run seeds:import
+bun run seeds:import
 ```
 
 `scripts/import-policy-seeds.ts` walks the source folders and reads `.docx` files (mammoth), legacy `.doc` files (word-extractor) and scanned PDFs (as page images). It sends each document to OpenAI to extract the structured policy (declaration, scope, focus areas, objectives, targets, SDGs, responsibilities) and writes one JSON file per company and policy type. `scripts/verify-seed-policies.js` and `scripts/find-duplicates.js` check the results.
 
-To regenerate the template preview images in `public/template-previews/`, run `npm run templates:previews`.
+To regenerate the template preview images in `public/template-previews/`, run `bun run templates:previews`.
 
 ---
 
